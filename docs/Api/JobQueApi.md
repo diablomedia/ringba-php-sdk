@@ -1,0 +1,212 @@
+# Ringba\JobQueApi
+
+All URIs are relative to *http://api.ringba.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**jobQueGet**](JobQueApi.md#jobQueGet) | **GET** /{accountid}/jobQueue | Gets a list of job que items that meet the search criteria
+[**jobQueGetItem**](JobQueApi.md#jobQueGetItem) | **GET** /{accountid}/jobQueue/{id} | Gets the admin task and all of its details
+[**jobQueGetOfferParticipationRequests**](JobQueApi.md#jobQueGetOfferParticipationRequests) | **GET** /{accountid}/jobQueue/offers/participation/{cmpid} | 
+[**jobQueProcessAction**](JobQueApi.md#jobQueProcessAction) | **POST** /{accountid}/jobQueue/{id}/action | Process an action for a job que
+
+
+# **jobQueGet**
+> \Ringba\Model\JobsResponseModel jobQueGet($accountid, $status)
+
+Gets a list of job que items that meet the search criteria
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Ringba\Api\JobQueApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$accountid = "accountid_example"; // string | 
+$status = "status_example"; // string | completed, non_completed, open, waiting
+
+try {
+    $result = $apiInstance->jobQueGet($accountid, $status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling JobQueApi->jobQueGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountid** | **string**|  |
+ **status** | **string**| completed, non_completed, open, waiting | [optional]
+
+### Return type
+
+[**\Ringba\Model\JobsResponseModel**](../Model/JobsResponseModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **jobQueGetItem**
+> \Ringba\Model\JobResponseModel jobQueGetItem($id, $accountid)
+
+Gets the admin task and all of its details
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Ringba\Api\JobQueApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | the id of the item
+$accountid = "accountid_example"; // string | 
+
+try {
+    $result = $apiInstance->jobQueGetItem($id, $accountid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling JobQueApi->jobQueGetItem: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| the id of the item |
+ **accountid** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\JobResponseModel**](../Model/JobResponseModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **jobQueGetOfferParticipationRequests**
+> \Ringba\Model\JobsResponseModel jobQueGetOfferParticipationRequests($cmpid, $accountid, $status)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Ringba\Api\JobQueApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cmpid = "cmpid_example"; // string | 
+$accountid = "accountid_example"; // string | 
+$status = "status_example"; // string | 
+
+try {
+    $result = $apiInstance->jobQueGetOfferParticipationRequests($cmpid, $accountid, $status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling JobQueApi->jobQueGetOfferParticipationRequests: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cmpid** | **string**|  |
+ **accountid** | **string**|  |
+ **status** | **string**|  | [optional]
+
+### Return type
+
+[**\Ringba\Model\JobsResponseModel**](../Model/JobsResponseModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **jobQueProcessAction**
+> \Ringba\Model\JobActionResultModel jobQueProcessAction($id, $model, $accountid)
+
+Process an action for a job que
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Ringba\Api\JobQueApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | the id of the job
+$model = new \Ringba\Model\JobActionModel(); // \Ringba\Model\JobActionModel | the arguments for the job
+$accountid = "accountid_example"; // string | 
+
+try {
+    $result = $apiInstance->jobQueProcessAction($id, $model, $accountid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling JobQueApi->jobQueProcessAction: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| the id of the job |
+ **model** | [**\Ringba\Model\JobActionModel**](../Model/JobActionModel.md)| the arguments for the job |
+ **accountid** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\JobActionResultModel**](../Model/JobActionResultModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
