@@ -81,7 +81,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://api.ringba.com';
+    protected $host = 'https://api.ringba.com';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
