@@ -1,17 +1,17 @@
 # Ringba\TagsApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**tagsGetTags**](TagsApi.md#tagsGetTags) | **GET** /{accountId}/Tags | returns a list of Known Tags
-[**tagsGetTagsFull**](TagsApi.md#tagsGetTagsFull) | **GET** /{accountId}/Tags/full | returns a list of Known Tags
+[**tagsGetTags**](TagsApi.md#tagsGetTags) | **GET** /{accountId}/Tags | 
+[**tagsGetTagsFull**](TagsApi.md#tagsGetTagsFull) | **GET** /{accountId}/Tags/full | 
 
 
 # **tagsGetTags**
 > object tagsGetTags($account_id)
 
-returns a list of Known Tags
+
 
 ### Example
 ```php
@@ -58,7 +58,7 @@ No authorization required
 # **tagsGetTagsFull**
 > object tagsGetTagsFull($account_id)
 
-returns a list of Known Tags
+
 
 ### Example
 ```php

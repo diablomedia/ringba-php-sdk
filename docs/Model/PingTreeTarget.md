@@ -5,8 +5,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **string** |  | [optional] 
 **method** | **string** |  | [optional] 
+**body** | **string** |  | [optional] 
+**content_type** | **string** |  | [optional] 
 **headers** | **map[string,string]** |  | [optional] 
 **parse_settings** | [**map[string,\Ringba\Model\ParseSetting[]]**](array.md) |  | [optional] 
+**bid_acceptance_settings** | [**\Ringba\Model\BidAcceptanceSettings**](BidAcceptanceSettings.md) |  | [optional] 
 **is_number_dynamic** | **bool** |  | [optional] 
 **ping_tree_id** | **string** |  | [optional] 
 **error_settings** | [**\Ringba\Model\ErrorSettings**](ErrorSettings.md) |  | [optional] 

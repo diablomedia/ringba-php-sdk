@@ -1,23 +1,23 @@
 # Ringba\WhiteLabelApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**whiteLabelCnameSettings**](WhiteLabelApi.md#whiteLabelCnameSettings) | **GET** /{accountid}/whiteLabel/Cname | returns the settings and the status of a CName Request
+[**whiteLabelCnameSettings**](WhiteLabelApi.md#whiteLabelCnameSettings) | **GET** /{accountid}/whiteLabel/Cname | 
 [**whiteLabelDeleteCname**](WhiteLabelApi.md#whiteLabelDeleteCname) | **DELETE** /{accountid}/whiteLabel/Cname | 
-[**whiteLabelGet**](WhiteLabelApi.md#whiteLabelGet) | **GET** /{accountid}/whiteLabel | returns the current white label settings for an account
+[**whiteLabelGet**](WhiteLabelApi.md#whiteLabelGet) | **GET** /{accountid}/whiteLabel | 
 [**whiteLabelPublishTheme**](WhiteLabelApi.md#whiteLabelPublishTheme) | **POST** /{accountid}/whiteLabel/publish | 
-[**whiteLabelRequestCname**](WhiteLabelApi.md#whiteLabelRequestCname) | **POST** /{accountid}/whiteLabel/Cname | creates a CName request
-[**whiteLabelSetFriendlyName**](WhiteLabelApi.md#whiteLabelSetFriendlyName) | **PATCH** /{accountid}/whiteLabel/friendlyName | sets the white lable friendly name for the account
-[**whiteLabelUpdateStagingTheme**](WhiteLabelApi.md#whiteLabelUpdateStagingTheme) | **PATCH** /{accountid}/whiteLabel/theme | Update the account&#39;s whitelabel theme
-[**whiteLabelValidateFriendlyName**](WhiteLabelApi.md#whiteLabelValidateFriendlyName) | **GET** /{accountid}/whiteLabel/friendlyName/validate | tests the availability of a friendly name
+[**whiteLabelRequestCname**](WhiteLabelApi.md#whiteLabelRequestCname) | **POST** /{accountid}/whiteLabel/Cname | 
+[**whiteLabelSetFriendlyName**](WhiteLabelApi.md#whiteLabelSetFriendlyName) | **PATCH** /{accountid}/whiteLabel/friendlyName | 
+[**whiteLabelUpdateStagingTheme**](WhiteLabelApi.md#whiteLabelUpdateStagingTheme) | **PATCH** /{accountid}/whiteLabel/theme | 
+[**whiteLabelValidateFriendlyName**](WhiteLabelApi.md#whiteLabelValidateFriendlyName) | **GET** /{accountid}/whiteLabel/friendlyName/validate | 
 
 
 # **whiteLabelCnameSettings**
 > object whiteLabelCnameSettings($accountid)
 
-returns the settings and the status of a CName Request
+
 
 ### Example
 ```php
@@ -111,7 +111,7 @@ No authorization required
 # **whiteLabelGet**
 > object whiteLabelGet($accountid)
 
-returns the current white label settings for an account
+
 
 ### Example
 ```php
@@ -205,7 +205,7 @@ No authorization required
 # **whiteLabelRequestCname**
 > object whiteLabelRequestCname($request, $accountid)
 
-creates a CName request
+
 
 ### Example
 ```php
@@ -254,7 +254,7 @@ No authorization required
 # **whiteLabelSetFriendlyName**
 > object whiteLabelSetFriendlyName($request, $accountid)
 
-sets the white lable friendly name for the account
+
 
 ### Example
 ```php
@@ -303,7 +303,7 @@ No authorization required
 # **whiteLabelUpdateStagingTheme**
 > object whiteLabelUpdateStagingTheme($request, $accountid)
 
-Update the account's whitelabel theme
+
 
 ### Example
 ```php
@@ -352,7 +352,7 @@ No authorization required
 # **whiteLabelValidateFriendlyName**
 > object whiteLabelValidateFriendlyName($friendly_name, $accountid)
 
-tests the availability of a friendly name
+
 
 ### Example
 ```php

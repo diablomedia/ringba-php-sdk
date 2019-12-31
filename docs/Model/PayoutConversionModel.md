@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **is_rev_share** | **bool** |  | [optional] 
 **payout_amount** | **double** |  | [optional] 
 **rev_share_percentage** | **double** |  | [optional] 
+**rev_share_max_payout_amount** | **double** |  | [optional] 
+**rev_share_min_payout_amount** | **double** |  | [optional] 
 **payout_conversion_type** | **string** |  | [optional] 
 **payout_conversion_args** | **map[string,object]** |  | [optional] 
 **is_global** | **bool** |  | [optional] 

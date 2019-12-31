@@ -1,24 +1,24 @@
 # Ringba\AffiliatesApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**affiliatesCreateAffiliate**](AffiliatesApi.md#affiliatesCreateAffiliate) | **POST** /{accountId}/Affiliates | Creates an new Affiliate and adds it to the current account;
+[**affiliatesCreateAffiliate**](AffiliatesApi.md#affiliatesCreateAffiliate) | **POST** /{accountId}/Affiliates | 
 [**affiliatesDeleteAffiliate**](AffiliatesApi.md#affiliatesDeleteAffiliate) | **DELETE** /{accountId}/Affiliates/{id} | 
-[**affiliatesGet**](AffiliatesApi.md#affiliatesGet) | **GET** /{accountId}/Affiliates | List the Affiliates Associated with this account.
+[**affiliatesGet**](AffiliatesApi.md#affiliatesGet) | **GET** /{accountId}/Affiliates | 
 [**affiliatesGetInboundReferences**](AffiliatesApi.md#affiliatesGetInboundReferences) | **GET** /{accountId}/Affiliates/{id}/InboundReferences | 
-[**affiliatesGetItem**](AffiliatesApi.md#affiliatesGetItem) | **GET** /{accountId}/Affiliates/{id} | Get a specific Affiliate by the id of the Affiliate
+[**affiliatesGetItem**](AffiliatesApi.md#affiliatesGetItem) | **GET** /{accountId}/Affiliates/{id} | 
 [**affiliatesGetNumbers**](AffiliatesApi.md#affiliatesGetNumbers) | **GET** /{accountId}/Affiliates/{id}/Numbers | 
-[**affiliatesGetStats**](AffiliatesApi.md#affiliatesGetStats) | **GET** /{accountId}/Affiliates/stats | Gets the Publishers Stats
+[**affiliatesGetStats**](AffiliatesApi.md#affiliatesGetStats) | **GET** /{accountId}/Affiliates/stats | 
 [**affiliatesGetUsers**](AffiliatesApi.md#affiliatesGetUsers) | **GET** /{accountId}/Affiliates/{id}/Users | 
-[**affiliatesPatchItem**](AffiliatesApi.md#affiliatesPatchItem) | **PATCH** /{accountId}/Affiliates/{id} | patches or updates specific properties of an Affiliate
+[**affiliatesPatchItem**](AffiliatesApi.md#affiliatesPatchItem) | **PATCH** /{accountId}/Affiliates/{id} | 
 
 
 # **affiliatesCreateAffiliate**
 > object affiliatesCreateAffiliate($affiliate, $account_id)
 
-Creates an new Affiliate and adds it to the current account;
+
 
 ### Example
 ```php
@@ -30,7 +30,7 @@ $apiInstance = new Ringba\Api\AffiliatesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$affiliate = new \Ringba\Model\CreateAffiliateModel(); // \Ringba\Model\CreateAffiliateModel | The Affilliate to create
+$affiliate = new \Ringba\Model\CreateAffiliateModel(); // \Ringba\Model\CreateAffiliateModel | 
 $account_id = "account_id_example"; // string | 
 
 try {
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **affiliate** | [**\Ringba\Model\CreateAffiliateModel**](../Model/CreateAffiliateModel.md)| The Affilliate to create |
+ **affiliate** | [**\Ringba\Model\CreateAffiliateModel**](../Model/CreateAffiliateModel.md)|  |
  **account_id** | **string**|  |
 
 ### Return type
@@ -120,7 +120,7 @@ No authorization required
 # **affiliatesGet**
 > object affiliatesGet($account_id, $include_stats)
 
-List the Affiliates Associated with this account.
+
 
 ### Example
 ```php
@@ -218,7 +218,7 @@ No authorization required
 # **affiliatesGetItem**
 > object affiliatesGetItem($id, $account_id)
 
-Get a specific Affiliate by the id of the Affiliate
+
 
 ### Example
 ```php
@@ -230,7 +230,7 @@ $apiInstance = new Ringba\Api\AffiliatesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | The Id of the affiliate
+$id = "id_example"; // string | 
 $account_id = "account_id_example"; // string | 
 
 try {
@@ -246,7 +246,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The Id of the affiliate |
+ **id** | **string**|  |
  **account_id** | **string**|  |
 
 ### Return type
@@ -316,7 +316,7 @@ No authorization required
 # **affiliatesGetStats**
 > object affiliatesGetStats($account_id)
 
-Gets the Publishers Stats
+
 
 ### Example
 ```php
@@ -412,7 +412,7 @@ No authorization required
 # **affiliatesPatchItem**
 > object affiliatesPatchItem($id, $values, $account_id)
 
-patches or updates specific properties of an Affiliate
+
 
 ### Example
 ```php
@@ -424,8 +424,8 @@ $apiInstance = new Ringba\Api\AffiliatesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the affiliate to update
-$values = new \stdClass; // object | the list of fields and values to updte
+$id = "id_example"; // string | 
+$values = new \stdClass; // object | 
 $account_id = "account_id_example"; // string | 
 
 try {
@@ -441,8 +441,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the affiliate to update |
- **values** | **object**| the list of fields and values to updte |
+ **id** | **string**|  |
+ **values** | **object**|  |
  **account_id** | **string**|  |
 
 ### Return type

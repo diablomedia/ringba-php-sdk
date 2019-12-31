@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **publisher_id** | **string** |  | [optional] 
 **number_id** | **string** |  | [optional] 
 **previous_number** | [**\Ringba\Model\NumberLookup**](NumberLookup.md) |  | [optional] 
+**integration_settings** | [**\Ringba\Model\IntegrationSetting[]**](IntegrationSetting.md) |  | [optional] 
+**int_setting_ids** | **string[]** |  | [optional] 
 **id** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **account_id** | **string** |  | [optional] 

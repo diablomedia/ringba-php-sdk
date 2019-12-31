@@ -56,18 +56,19 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Ringba\Api\AccountUISettingsApi(
+$apiInstance = new Ringba\Api\AccountSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = "account_id_example"; // string | 
+$account_settings_model = array(new \Ringba\Model\CreateAccountSettingsRequest()); // \Ringba\Model\CreateAccountSettingsRequest[] |
+$accountid = "accountid_example"; // string |
 
 try {
-    $result = $apiInstance->accountUISettingsGet($account_id);
+    $result = $apiInstance->accountSettingsCreateOrUpdateSettings($account_settings_model, $accountid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountUISettingsApi->accountUISettingsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountSettingsApi->accountSettingsCreateOrUpdateSettings: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -75,337 +76,391 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountUISettingsApi* | [**accountUISettingsGet**](docs/Api/AccountUISettingsApi.md#accountuisettingsget) | **GET** /{accountId}/UISettings | 
-*AccountUISettingsApi* | [**accountUISettingsSetUiItem**](docs/Api/AccountUISettingsApi.md#accountuisettingssetuiitem) | **POST** /{accountId}/UISettings | 
-*AddressApi* | [**addressCreateAddress**](docs/Api/AddressApi.md#addresscreateaddress) | **POST** /{accountid}/addresses | 
-*AddressApi* | [**addressDeleteItem**](docs/Api/AddressApi.md#addressdeleteitem) | **DELETE** /{accountid}/addresses/{id} | 
-*AddressApi* | [**addressGet**](docs/Api/AddressApi.md#addressget) | **GET** /{accountid}/addresses | 
-*AddressApi* | [**addressGetCountries**](docs/Api/AddressApi.md#addressgetcountries) | **GET** /{accountid}/addresses/countries | 
-*AddressApi* | [**addressGetCountryAddressRequirements**](docs/Api/AddressApi.md#addressgetcountryaddressrequirements) | **GET** /{accountid}/addresses/requirements/{countryCode} | 
-*AddressApi* | [**addressGet_0**](docs/Api/AddressApi.md#addressget_0) | **GET** /{accountid}/addresses/{id} | 
-*AddressApi* | [**addressPatchItem**](docs/Api/AddressApi.md#addresspatchitem) | **PATCH** /{accountid}/addresses/{id} | 
-*AddressApi* | [**addressSetAsDefault**](docs/Api/AddressApi.md#addresssetasdefault) | **POST** /{accountid}/addresses/{id}/SetDefault | 
-*AddressApi* | [**addressSubmitProofDocument**](docs/Api/AddressApi.md#addresssubmitproofdocument) | **PUT** /{accountid}/addresses/{id}/proof | updates a creditcard for this account
-*AffiliatesApi* | [**affiliatesCreateAffiliate**](docs/Api/AffiliatesApi.md#affiliatescreateaffiliate) | **POST** /{accountId}/Affiliates | Creates an new Affiliate and adds it to the current account;
-*AffiliatesApi* | [**affiliatesDeleteAffiliate**](docs/Api/AffiliatesApi.md#affiliatesdeleteaffiliate) | **DELETE** /{accountId}/Affiliates/{id} | 
-*AffiliatesApi* | [**affiliatesGet**](docs/Api/AffiliatesApi.md#affiliatesget) | **GET** /{accountId}/Affiliates | List the Affiliates Associated with this account.
-*AffiliatesApi* | [**affiliatesGetInboundReferences**](docs/Api/AffiliatesApi.md#affiliatesgetinboundreferences) | **GET** /{accountId}/Affiliates/{id}/InboundReferences | 
-*AffiliatesApi* | [**affiliatesGetItem**](docs/Api/AffiliatesApi.md#affiliatesgetitem) | **GET** /{accountId}/Affiliates/{id} | Get a specific Affiliate by the id of the Affiliate
-*AffiliatesApi* | [**affiliatesGetNumbers**](docs/Api/AffiliatesApi.md#affiliatesgetnumbers) | **GET** /{accountId}/Affiliates/{id}/Numbers | 
-*AffiliatesApi* | [**affiliatesGetStats**](docs/Api/AffiliatesApi.md#affiliatesgetstats) | **GET** /{accountId}/Affiliates/stats | Gets the Publishers Stats
-*AffiliatesApi* | [**affiliatesGetUsers**](docs/Api/AffiliatesApi.md#affiliatesgetusers) | **GET** /{accountId}/Affiliates/{id}/Users | 
-*AffiliatesApi* | [**affiliatesPatchItem**](docs/Api/AffiliatesApi.md#affiliatespatchitem) | **PATCH** /{accountId}/Affiliates/{id} | patches or updates specific properties of an Affiliate
-*BillingApi* | [**billingAddCreditCard**](docs/Api/BillingApi.md#billingaddcreditcard) | **POST** /{accountid}/Billing/CreditCards | creates a new credit card for this account
-*BillingApi* | [**billingAddFunds**](docs/Api/BillingApi.md#billingaddfunds) | **POST** /{accountid}/Billing/Balance | increases the balance for this account
-*BillingApi* | [**billingBillSettings**](docs/Api/BillingApi.md#billingbillsettings) | **PUT** /{accountid}/Billing/BillingSettings | updates the billing setting for this account
-*BillingApi* | [**billingCCTransactions**](docs/Api/BillingApi.md#billingcctransactions) | **GET** /{accountid}/Billing/CCTransactions | gets the cc transactionss from this account, The lookup model is optional,   by defualt, the current months transactions will be shown
-*BillingApi* | [**billingDeleteCreditCard**](docs/Api/BillingApi.md#billingdeletecreditcard) | **DELETE** /{accountid}/Billing/CreditCards/{id} | removes a credit card for this account
-*BillingApi* | [**billingDisableAccount**](docs/Api/BillingApi.md#billingdisableaccount) | **DELETE** /{accountid}/Billing/Disable | Disables the account and haults all further charges to credit cards on file
-*BillingApi* | [**billingEnableAccount**](docs/Api/BillingApi.md#billingenableaccount) | **PUT** /{accountid}/Billing/Enable | Re-enables a disabled account and haults all further charges to credit cards on file
-*BillingApi* | [**billingFunds**](docs/Api/BillingApi.md#billingfunds) | **GET** /{accountid}/Billing/Balance | gets the balance for this account
-*BillingApi* | [**billingGet**](docs/Api/BillingApi.md#billingget) | **GET** /{accountid}/Billing | Gets the billing settings, Balance, and CreditCard info for this account
-*BillingApi* | [**billingGetAccountTypes**](docs/Api/BillingApi.md#billinggetaccounttypes) | **GET** /{accountid}/Billing/Plans | 
-*BillingApi* | [**billingGetBillSettings**](docs/Api/BillingApi.md#billinggetbillsettings) | **GET** /{accountid}/Billing/BillingSettings | get the billing settings for this account
-*BillingApi* | [**billingGetCreditCards**](docs/Api/BillingApi.md#billinggetcreditcards) | **GET** /{accountid}/Billing/CreditCards | getst the credit cards for htis account
-*BillingApi* | [**billingUpdateAccountType**](docs/Api/BillingApi.md#billingupdateaccounttype) | **PUT** /{accountid}/Billing/Plans | Updates the account type from one of the Account Types  IE: Basic, Plus, Advance
-*BillingApi* | [**billingUpdateCreditCard**](docs/Api/BillingApi.md#billingupdatecreditcard) | **PUT** /{accountid}/Billing/CreditCards/{id} | updates a creditcard for this account
-*BillingApi* | [**billingVerify**](docs/Api/BillingApi.md#billingverify) | **PUT** /{accountid}/Billing/CreditCards/{id}/verify | updates a creditcard for this account
-*BlockedNumberApi* | [**blockedNumberCreate**](docs/Api/BlockedNumberApi.md#blockednumbercreate) | **POST** /{accountid}/blockedNumbers | 
-*BlockedNumberApi* | [**blockedNumberDeleteNumber**](docs/Api/BlockedNumberApi.md#blockednumberdeletenumber) | **DELETE** /{accountid}/blockedNumbers/{id} | 
-*BlockedNumberApi* | [**blockedNumberGet**](docs/Api/BlockedNumberApi.md#blockednumberget) | **GET** /{accountid}/blockedNumbers | 
-*BlockedNumberApi* | [**blockedNumberGetItem**](docs/Api/BlockedNumberApi.md#blockednumbergetitem) | **GET** /{accountid}/blockedNumbers/{id} | 
-*BlockedNumberApi* | [**blockedNumberPatch**](docs/Api/BlockedNumberApi.md#blockednumberpatch) | **PATCH** /{accountid}/blockedNumbers/{id} | 
-*BulkTagApi* | [**bulkTagCreateBulkTag**](docs/Api/BulkTagApi.md#bulktagcreatebulktag) | **POST** /{accountid}/bulkTags | creates a bulk tag record
-*BulkTagApi* | [**bulkTagDeleteId**](docs/Api/BulkTagApi.md#bulktagdeleteid) | **DELETE** /{accountid}/bulkTags/{id} | creates a bulk tag record
-*BulkTagApi* | [**bulkTagGet**](docs/Api/BulkTagApi.md#bulktagget) | **GET** /{accountid}/bulkTags | Returns all bulk tag for a given account
-*BulkTagApi* | [**bulkTagGetItem**](docs/Api/BulkTagApi.md#bulktaggetitem) | **GET** /{accountid}/bulkTags/{id} | Returns the bulk tag for the account
-*BulkTagApi* | [**bulkTagUpdateBulkTag**](docs/Api/BulkTagApi.md#bulktagupdatebulktag) | **PUT** /{accountid}/bulkTags/{id} | creates a bulk tag record
-*BuyersApi* | [**buyersCreateBuyer**](docs/Api/BuyersApi.md#buyerscreatebuyer) | **POST** /{accountId}/Buyers | Creates an new buyer and adds it to the current account;
-*BuyersApi* | [**buyersDelete**](docs/Api/BuyersApi.md#buyersdelete) | **DELETE** /{accountId}/Buyers/{id} | 
-*BuyersApi* | [**buyersGet**](docs/Api/BuyersApi.md#buyersget) | **GET** /{accountId}/Buyers | List the Buyers Associated with this account.
-*BuyersApi* | [**buyersGetItem**](docs/Api/BuyersApi.md#buyersgetitem) | **GET** /{accountId}/Buyers/{id} | Get a specific Buyer by the id of the Buyer
-*BuyersApi* | [**buyersGetReferences**](docs/Api/BuyersApi.md#buyersgetreferences) | **GET** /{accountId}/Buyers/{id}/InboundReferences | Get a specific Buyer&#39;s references
-*BuyersApi* | [**buyersGetTargets**](docs/Api/BuyersApi.md#buyersgettargets) | **GET** /{accountId}/Buyers/{id}/Targets | 
-*BuyersApi* | [**buyersGetUsers**](docs/Api/BuyersApi.md#buyersgetusers) | **GET** /{accountId}/Buyers/{id}/Users | 
-*BuyersApi* | [**buyersPatchItem**](docs/Api/BuyersApi.md#buyerspatchitem) | **PATCH** /{accountId}/Buyers/{id} | patches or updates specific properties of an Buyer
-*CallApi* | [**callAdjustPayments**](docs/Api/CallApi.md#calladjustpayments) | **POST** /{accountid}/Calls/Payments | Adjusts payout and/or conversion on the call. The payout and conversion events will be added or removed if necessary.
-*CallApi* | [**callAnnotateCall**](docs/Api/CallApi.md#callannotatecall) | **POST** /{accountid}/Calls/Annotate | 
-*CallApi* | [**callRequestConversionAdjustment**](docs/Api/CallApi.md#callrequestconversionadjustment) | **POST** /{accountid}/Calls/RequestConversionAdjustment | 
-*CallApi* | [**callVoidCall**](docs/Api/CallApi.md#callvoidcall) | **POST** /{accountid}/Calls/Void | 
-*CallLogApi* | [**callLogExportCallLogs**](docs/Api/CallLogApi.md#calllogexportcalllogs) | **POST** /{accountid}/CallLogs/Date/Export/{format} | 
-*CallLogApi* | [**callLogGetAvailableGroupBys**](docs/Api/CallLogApi.md#callloggetavailablegroupbys) | **GET** /{accountid}/CallLogs/AvailableGroupBys | 
-*CallLogApi* | [**callLogGetEvents**](docs/Api/CallLogApi.md#callloggetevents) | **GET** /{accountid}/CallLogs/Events | 
-*CallLogApi* | [**callLogGetExportProgress**](docs/Api/CallLogApi.md#callloggetexportprogress) | **GET** /{accountid}/CallLogs/Date/Export/{jobId} | 
-*CallLogApi* | [**callLogGetLogsByDate**](docs/Api/CallLogApi.md#callloggetlogsbydate) | **POST** /{accountid}/CallLogs/Date | 
-*CallLogApi* | [**callLogGetSearchField**](docs/Api/CallLogApi.md#callloggetsearchfield) | **GET** /{accountid}/CallLogs/SearchFields/{fieldName} | 
-*CallLogApi* | [**callLogGetSearchField_0**](docs/Api/CallLogApi.md#callloggetsearchfield_0) | **GET** /{accountid}/CallLogs/SearchFields/{fieldName}/Values | 
-*CallLogApi* | [**callLogGetSearchFields**](docs/Api/CallLogApi.md#callloggetsearchfields) | **GET** /{accountid}/CallLogs/SearchFields | 
-*CallLogApi* | [**callLogGetTagNames**](docs/Api/CallLogApi.md#callloggettagnames) | **GET** /{accountid}/CallLogs/Tags/{type} | 
-*CallLogApi* | [**callLogGetTagTypes**](docs/Api/CallLogApi.md#callloggettagtypes) | **GET** /{accountid}/CallLogs/Tags | 
-*CallLogApi* | [**callLogGetTagValues**](docs/Api/CallLogApi.md#callloggettagvalues) | **GET** /{accountid}/CallLogs/Tags/{type}/{name}/Values | 
-*CallPlanApi* | [**callPlanAddRoute**](docs/Api/CallPlanApi.md#callplanaddroute) | **POST** /{accountid}/callplan/{id}/callRoute | 
-*CallPlanApi* | [**callPlanCreate**](docs/Api/CallPlanApi.md#callplancreate) | **POST** /{accountid}/callplan | creates a new call plan with the given information
-*CallPlanApi* | [**callPlanDeleteCallPlan**](docs/Api/CallPlanApi.md#callplandeletecallplan) | **DELETE** /{accountid}/callplan/{id} | 
-*CallPlanApi* | [**callPlanDeleteRoute**](docs/Api/CallPlanApi.md#callplandeleteroute) | **DELETE** /{accountid}/callplan/{id}/callRoute/{routeId} | 
-*CallPlanApi* | [**callPlanGet**](docs/Api/CallPlanApi.md#callplanget) | **GET** /{accountid}/callplan | Gets a list of Call Plans for the given account
-*CallPlanApi* | [**callPlanGetCallRoutes**](docs/Api/CallPlanApi.md#callplangetcallroutes) | **GET** /{accountid}/callplan/{id}/callRoute | gets the call routes fro the given plan
-*CallPlanApi* | [**callPlanGetInboundReferences**](docs/Api/CallPlanApi.md#callplangetinboundreferences) | **GET** /{accountid}/callplan/{id}/InboundReferences | 
-*CallPlanApi* | [**callPlanGetItem**](docs/Api/CallPlanApi.md#callplangetitem) | **GET** /{accountid}/callplan/{id} | Gets a call plan for the given account
-*CallPlanApi* | [**callPlanPatch**](docs/Api/CallPlanApi.md#callplanpatch) | **PATCH** /{accountid}/callplan/{id} | updates the attributes of the call plan
-*CallRouteApi* | [**callRouteCreate**](docs/Api/CallRouteApi.md#callroutecreate) | **POST** /{accountid}/CallRoutes | 
-*CallRouteApi* | [**callRouteGet**](docs/Api/CallRouteApi.md#callrouteget) | **GET** /{accountid}/CallRoutes | 
-*CallRouteApi* | [**callRouteGetItem**](docs/Api/CallRouteApi.md#callroutegetitem) | **GET** /{accountid}/CallRoutes/{id} | 
-*CallRouteApi* | [**callRouteLink**](docs/Api/CallRouteApi.md#callroutelink) | **PATCH** /{accountid}/CallRoutes/{id}/Link | 
-*CallRouteApi* | [**callRoutePatch**](docs/Api/CallRouteApi.md#callroutepatch) | **PATCH** /{accountid}/CallRoutes/{id} | 
-*CallRouteApi* | [**callRouteUnLink**](docs/Api/CallRouteApi.md#callrouteunlink) | **PATCH** /{accountid}/CallRoutes/{id}/UnLink | 
-*CampaignApi* | [**campaignAddAffiliateNumber**](docs/Api/CampaignApi.md#campaignaddaffiliatenumber) | **PATCH** /{accountid}/campaigns/{id}/AffiliateNumbers | Adds an Affiliate number to a campaign
-*CampaignApi* | [**campaignAddCallRoute**](docs/Api/CampaignApi.md#campaignaddcallroute) | **POST** /{accountid}/campaigns/{id}/Routes | adds a Call route to the campaign
-*CampaignApi* | [**campaignAddDefaultNumber**](docs/Api/CampaignApi.md#campaignadddefaultnumber) | **PATCH** /{accountid}/campaigns/{id}/DefaultNumber | updates the campaigns default number
-*CampaignApi* | [**campaignAddDefaultPayoutV2**](docs/Api/CampaignApi.md#campaignadddefaultpayoutv2) | **POST** /{accountid}/campaigns/{id}/DefaultPayouts | add a default payout
-*CampaignApi* | [**campaignAddIvrTree**](docs/Api/CampaignApi.md#campaignaddivrtree) | **POST** /{accountid}/campaigns/{id}/IVRTree | adds a Call route to the campaign
-*CampaignApi* | [**campaignAddPublisher**](docs/Api/CampaignApi.md#campaignaddpublisher) | **PATCH** /{accountid}/campaigns/{id}/Affiliates | Add an existing affilliate to a campaign
-*CampaignApi* | [**campaignAddPublisherPayout**](docs/Api/CampaignApi.md#campaignaddpublisherpayout) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts | Add/Update Publisher Campaign Payout Settings
-*CampaignApi* | [**campaignArchiveOffer**](docs/Api/CampaignApi.md#campaignarchiveoffer) | **DELETE** /{accountid}/campaigns/{id}/Offers/Published | 
-*CampaignApi* | [**campaignBatchUpdateCampaignDefaultPayouts**](docs/Api/CampaignApi.md#campaignbatchupdatecampaigndefaultpayouts) | **PUT** /{accountid}/campaigns/{id}/DefaultPayouts | 
-*CampaignApi* | [**campaignBatchUpdatePublisherPayouts**](docs/Api/CampaignApi.md#campaignbatchupdatepublisherpayouts) | **PUT** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts | 
-*CampaignApi* | [**campaignCloneCampaign**](docs/Api/CampaignApi.md#campaignclonecampaign) | **POST** /{accountid}/campaigns/{id}/clone | 
-*CampaignApi* | [**campaignCreateCampaign**](docs/Api/CampaignApi.md#campaigncreatecampaign) | **POST** /{accountid}/campaigns | creates a campaign
-*CampaignApi* | [**campaignCreateTag**](docs/Api/CampaignApi.md#campaigncreatetag) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag | Creates a JS tag to use on a web page
-*CampaignApi* | [**campaignDeleteCallRoute**](docs/Api/CampaignApi.md#campaigndeletecallroute) | **DELETE** /{accountid}/campaigns/{id}/Routes | removes the call route
-*CampaignApi* | [**campaignDeleteCampaign**](docs/Api/CampaignApi.md#campaigndeletecampaign) | **DELETE** /{accountid}/campaigns/{id} | 
-*CampaignApi* | [**campaignDeleteCampaignOfferDraft**](docs/Api/CampaignApi.md#campaigndeletecampaignofferdraft) | **DELETE** /{accountid}/campaigns/{id}/Offers/Draft | 
-*CampaignApi* | [**campaignDeleteDefaultNumber**](docs/Api/CampaignApi.md#campaigndeletedefaultnumber) | **DELETE** /{accountid}/campaigns/{id}/DefaultNumber | updates the campaigns default number
-*CampaignApi* | [**campaignDeleteDefaultPayout**](docs/Api/CampaignApi.md#campaigndeletedefaultpayout) | **DELETE** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | update the default payout
-*CampaignApi* | [**campaignDeleteIVRTree**](docs/Api/CampaignApi.md#campaigndeleteivrtree) | **DELETE** /{accountid}/campaigns/{id}/IVRTree | deletes the IVR Tree from the Campaign
-*CampaignApi* | [**campaignDeletePublisher**](docs/Api/CampaignApi.md#campaigndeletepublisher) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId} | Add an existing affilliate to a campaign
-*CampaignApi* | [**campaignDeletePublisherPayout**](docs/Api/CampaignApi.md#campaigndeletepublisherpayout) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | Remove Publisher Campaign Payout Settings
-*CampaignApi* | [**campaignDeleteTag**](docs/Api/CampaignApi.md#campaigndeletetag) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag | removes a tag
-*CampaignApi* | [**campaignGet**](docs/Api/CampaignApi.md#campaignget) | **GET** /{accountid}/campaigns | return the campaigns for this account
-*CampaignApi* | [**campaignGetCampaignOfferDraft**](docs/Api/CampaignApi.md#campaigngetcampaignofferdraft) | **GET** /{accountid}/campaigns/{id}/Offers/Draft | 
-*CampaignApi* | [**campaignGetCampaignOfferLive**](docs/Api/CampaignApi.md#campaigngetcampaignofferlive) | **GET** /{accountid}/campaigns/{id}/Offers/Published | 
-*CampaignApi* | [**campaignGetCampaignOffers**](docs/Api/CampaignApi.md#campaigngetcampaignoffers) | **GET** /{accountid}/campaigns/{id}/Offers | 
-*CampaignApi* | [**campaignGetInboundReferences**](docs/Api/CampaignApi.md#campaigngetinboundreferences) | **GET** /{accountid}/campaigns/{id}/InboundReferences | 
-*CampaignApi* | [**campaignGetOfferParticipants**](docs/Api/CampaignApi.md#campaigngetofferparticipants) | **GET** /{accountid}/campaigns/{id}/Offers/Published/Participants | 
-*CampaignApi* | [**campaignGetPublisherPayouts**](docs/Api/CampaignApi.md#campaigngetpublisherpayouts) | **GET** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts | Get Publisher Campaign Payout Settings
-*CampaignApi* | [**campaignGetTags**](docs/Api/CampaignApi.md#campaigngettags) | **GET** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag | 
-*CampaignApi* | [**campaignGetTags_0**](docs/Api/CampaignApi.md#campaigngettags_0) | **GET** /{accountid}/campaigns/{id}/Tags | returns the available tags for a given Campaign
-*CampaignApi* | [**campaignGet_0**](docs/Api/CampaignApi.md#campaignget_0) | **GET** /{accountid}/campaigns/{id} | gets the campaign with the matching id
-*CampaignApi* | [**campaignGetstats**](docs/Api/CampaignApi.md#campaigngetstats) | **GET** /{accountid}/campaigns/stats | return the campaigns for this account
-*CampaignApi* | [**campaignInvitePublisherToOffer**](docs/Api/CampaignApi.md#campaigninvitepublishertooffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Invite | 
-*CampaignApi* | [**campaignLinkItem**](docs/Api/CampaignApi.md#campaignlinkitem) | **PATCH** /{accountid}/campaigns/{id}/Link | links an item to the campaign
-*CampaignApi* | [**campaignPatchItem**](docs/Api/CampaignApi.md#campaignpatchitem) | **PATCH** /{accountid}/campaigns/{id} | Updates the values of a campaign
-*CampaignApi* | [**campaignPauseCampaignOffer**](docs/Api/CampaignApi.md#campaignpausecampaignoffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Pause | 
-*CampaignApi* | [**campaignPublishCampaignOfferDraft**](docs/Api/CampaignApi.md#campaignpublishcampaignofferdraft) | **POST** /{accountid}/campaigns/{id}/Offers/Draft/Publish | 
-*CampaignApi* | [**campaignResumeCampaignOffer**](docs/Api/CampaignApi.md#campaignresumecampaignoffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Resume | 
-*CampaignApi* | [**campaignSetCampaignOfferDraft**](docs/Api/CampaignApi.md#campaignsetcampaignofferdraft) | **PUT** /{accountid}/campaigns/{id}/Offers/Draft | 
-*CampaignApi* | [**campaignUnLinkItem**](docs/Api/CampaignApi.md#campaignunlinkitem) | **PATCH** /{accountid}/campaigns/{id}/UnLink | unlinks an item form the campaign
-*CampaignApi* | [**campaignUpdateDefaultPayout**](docs/Api/CampaignApi.md#campaignupdatedefaultpayout) | **POST** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | update the default payout
-*CampaignApi* | [**campaignUpdateDefaultPayout_0**](docs/Api/CampaignApi.md#campaignupdatedefaultpayout_0) | **PATCH** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | update the default payout
-*CampaignApi* | [**campaignUpdatePublisherPayoutById**](docs/Api/CampaignApi.md#campaignupdatepublisherpayoutbyid) | **PUT** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | Add/Update Publisher Campaign Payout Settings
-*CampaignApi* | [**campaignUpdatePublisherPayoutById_0**](docs/Api/CampaignApi.md#campaignupdatepublisherpayoutbyid_0) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | Add/Update Publisher Campaign Payout Settings
-*CampaignApi* | [**campaignUpdatePublisherPayoutById_1**](docs/Api/CampaignApi.md#campaignupdatepublisherpayoutbyid_1) | **PATCH** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | Add/Update Publisher Campaign Payout Settings
-*CampaignApi* | [**campaignUpdateTag**](docs/Api/CampaignApi.md#campaignupdatetag) | **PATCH** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag/{jsTagId} | update the tag
-*EventCallBackApi* | [**eventCallBackCreate**](docs/Api/EventCallBackApi.md#eventcallbackcreate) | **POST** /{accountid}/EventCallBacks | 
-*EventCallBackApi* | [**eventCallBackDelete**](docs/Api/EventCallBackApi.md#eventcallbackdelete) | **DELETE** /{accountid}/EventCallBacks/{id} | 
-*EventCallBackApi* | [**eventCallBackGet**](docs/Api/EventCallBackApi.md#eventcallbackget) | **GET** /{accountid}/EventCallBacks | 
-*EventCallBackApi* | [**eventCallBackGetInboundReferences**](docs/Api/EventCallBackApi.md#eventcallbackgetinboundreferences) | **GET** /{accountid}/EventCallBacks/{id}/InboundReferences | 
-*EventCallBackApi* | [**eventCallBackGetItem**](docs/Api/EventCallBackApi.md#eventcallbackgetitem) | **GET** /{accountid}/EventCallBacks/{id} | 
-*EventCallBackApi* | [**eventCallBackGetMacros**](docs/Api/EventCallBackApi.md#eventcallbackgetmacros) | **GET** /{accountid}/EventCallBacks/macros | a list of macros that can be used in a callback
-*EventCallBackApi* | [**eventCallBackPatch**](docs/Api/EventCallBackApi.md#eventcallbackpatch) | **PATCH** /{accountid}/EventCallBacks/{id} | 
-*FeatureToggleApi* | [**featureToggleGet**](docs/Api/FeatureToggleApi.md#featuretoggleget) | **GET** /{accountid}/flipper | returns all the feature toggles associated w/ this account
-*FeatureToggleApi* | [**featureToggleGet_0**](docs/Api/FeatureToggleApi.md#featuretoggleget_0) | **GET** /{accountid}/flipper/{featureName} | returns all the feature toggles associated w/ this account
-*FileAssetApi* | [**fileAssetCreateAsset**](docs/Api/FileAssetApi.md#fileassetcreateasset) | **POST** /{accountid}/assets | Creates an Asset  The request must be a mulipart form request with the first item being the   json body of the request labeled asset, then the file attached second as file
-*FileAssetApi* | [**fileAssetDelete**](docs/Api/FileAssetApi.md#fileassetdelete) | **DELETE** /{accountid}/assets/{id} | Deletes the asset
-*FileAssetApi* | [**fileAssetDownloadItem**](docs/Api/FileAssetApi.md#fileassetdownloaditem) | **GET** /{accountid}/assets/{id}/download | Returns the asset for the account
-*FileAssetApi* | [**fileAssetGet**](docs/Api/FileAssetApi.md#fileassetget) | **GET** /{accountid}/assets | Returns all Assests for a given account
-*FileAssetApi* | [**fileAssetGetItem**](docs/Api/FileAssetApi.md#fileassetgetitem) | **GET** /{accountid}/assets/{id} | Returns the asset for the account
-*IVRApi* | [**iVRAddNode**](docs/Api/IVRApi.md#ivraddnode) | **POST** /{accountid}/ivrtree/node | adds a node to the provided tree as a child to the given parent node described by the   parentNodeId. If the request is successfull, the updated tree is returned. If there are any errors  the errors are returned.
-*IVRApi* | [**iVRClone**](docs/Api/IVRApi.md#ivrclone) | **POST** /{accountid}/ivrtree/{id}/clone | Clone a specific IVR Tree for a given account
-*IVRApi* | [**iVRDelete**](docs/Api/IVRApi.md#ivrdelete) | **DELETE** /{accountid}/ivrtree/{id} | Get inbound references to an IVR tree
-*IVRApi* | [**iVRDeleteNode**](docs/Api/IVRApi.md#ivrdeletenode) | **PATCH** /{accountid}/ivrtree/removeNode | Removes the node from the ivr tree with the given nodeId.
-*IVRApi* | [**iVREditNode**](docs/Api/IVRApi.md#ivreditnode) | **PATCH** /{accountid}/ivrtree/editNode | edits the node from the given tree
-*IVRApi* | [**iVREditNodeLink**](docs/Api/IVRApi.md#ivreditnodelink) | **PATCH** /{accountid}/ivrtree/editLink | edits the node from the given tree
-*IVRApi* | [**iVRFinalizeNode**](docs/Api/IVRApi.md#ivrfinalizenode) | **POST** /{accountid}/ivrtree/finalizeTree | Removes the node from the ivr tree with the given nodeId.
-*IVRApi* | [**iVRGet**](docs/Api/IVRApi.md#ivrget) | **GET** /{accountid}/ivrtree | Returns all IVR Trees for a given account
-*IVRApi* | [**iVRGetAvailableNodes**](docs/Api/IVRApi.md#ivrgetavailablenodes) | **POST** /{accountid}/ivrtree/availableNodes | Returns a list of nodes that are eligible to be a child node of the given   tree and parent node.
-*IVRApi* | [**iVRGetAvailableTags**](docs/Api/IVRApi.md#ivrgetavailabletags) | **POST** /{accountid}/ivrtree/availableTags | Returns a list of nodes that are eligible to be a child node of the given   tree and parent node.
-*IVRApi* | [**iVRGetItem**](docs/Api/IVRApi.md#ivrgetitem) | **GET** /{accountid}/ivrtree/{id} | Gets a specific IVR Tree for a given account
-*IVRApi* | [**iVRGetReferences**](docs/Api/IVRApi.md#ivrgetreferences) | **GET** /{accountid}/ivrtree/{id}/InboundReferences | Get inbound references to an IVR tree
-*IVRApi* | [**iVRInitializeNewTree**](docs/Api/IVRApi.md#ivrinitializenewtree) | **POST** /{accountid}/ivrtree/initialize | Returns a intiliazed  tree for the given account that   is not saved. This will be the base object to build the tree  structure off of.
-*InAppNotificationApi* | [**inAppNotificationDeleteMessage**](docs/Api/InAppNotificationApi.md#inappnotificationdeletemessage) | **DELETE** /notifications/{id} | deletes a givent message
-*InAppNotificationApi* | [**inAppNotificationGetAll**](docs/Api/InAppNotificationApi.md#inappnotificationgetall) | **GET** /notifications/all | returns the message toasts and message counts
-*InAppNotificationApi* | [**inAppNotificationGetCounts**](docs/Api/InAppNotificationApi.md#inappnotificationgetcounts) | **GET** /notifications/counts | returns the counts for a the loged in user. Such as total and unread counts
-*InAppNotificationApi* | [**inAppNotificationGetMessage**](docs/Api/InAppNotificationApi.md#inappnotificationgetmessage) | **GET** /notifications/{id} | gets the message
-*InAppNotificationApi* | [**inAppNotificationGetMessages**](docs/Api/InAppNotificationApi.md#inappnotificationgetmessages) | **GET** /notifications | returns the notifications for a given user  in order to get the tope 5 message, you would call this method with pageSize&#x3D;5  and leave rest of the responses blank
-*InAppNotificationApi* | [**inAppNotificationGetPreviews**](docs/Api/InAppNotificationApi.md#inappnotificationgetpreviews) | **GET** /notifications/toasts | returns the message toasts to show a user
-*InAppNotificationApi* | [**inAppNotificationMarkMessageRead**](docs/Api/InAppNotificationApi.md#inappnotificationmarkmessageread) | **PUT** /notifications/{id} | marks a given message as read
-*InfoApi* | [**infoAvailableCountries**](docs/Api/InfoApi.md#infoavailablecountries) | **GET** /info/countries | Gets a list of supported countries and there settings
-*InfoApi* | [**infoAvailableLanguages**](docs/Api/InfoApi.md#infoavailablelanguages) | **GET** /info/languages | 
-*InfoApi* | [**infoGetAccountTypes**](docs/Api/InfoApi.md#infogetaccounttypes) | **GET** /info/Plans | 
-*InfoApi* | [**infoGetOfferCategories**](docs/Api/InfoApi.md#infogetoffercategories) | **GET** /{accountId}/info/offerCategories | 
-*InfoApi* | [**infoGetSettings**](docs/Api/InfoApi.md#infogetsettings) | **GET** /info/conversionSettings | Gets a list of conversion settings and the Settings for each conversion type.
-*InfoApi* | [**infoGetTimezone**](docs/Api/InfoApi.md#infogettimezone) | **GET** /info/timezones | Retreives a list of System wide Timezones
-*InfoApi* | [**infoIsRingbaNumber**](docs/Api/InfoApi.md#infoisringbanumber) | **GET** /info/isNumber | 
-*JobQueApi* | [**jobQueGet**](docs/Api/JobQueApi.md#jobqueget) | **GET** /{accountid}/jobQueue | Gets a list of job que items that meet the search criteria
-*JobQueApi* | [**jobQueGetItem**](docs/Api/JobQueApi.md#jobquegetitem) | **GET** /{accountid}/jobQueue/{id} | Gets the admin task and all of its details
-*JobQueApi* | [**jobQueGetOfferParticipationRequests**](docs/Api/JobQueApi.md#jobquegetofferparticipationrequests) | **GET** /{accountid}/jobQueue/offers/participation/{cmpid} | 
-*JobQueApi* | [**jobQueProcessAction**](docs/Api/JobQueApi.md#jobqueprocessaction) | **POST** /{accountid}/jobQueue/{id}/action | Process an action for a job que
-*NotificationsApi* | [**notificationsGet**](docs/Api/NotificationsApi.md#notificationsget) | **GET** /{accountid}/notifications/user | Returns all notification settings of the current user
-*NotificationsApi* | [**notificationsPatch**](docs/Api/NotificationsApi.md#notificationspatch) | **PATCH** /{accountid}/notifications/user | Overwrites the existing notification settings of the current user with the new ones
-*NumberApi* | [**numberAddAffiliate**](docs/Api/NumberApi.md#numberaddaffiliate) | **PUT** /{accountid}/numbers/{id}/Affiliate | 
-*NumberApi* | [**numberCreateNumber**](docs/Api/NumberApi.md#numbercreatenumber) | **POST** /{accountid}/numbers | 
-*NumberApi* | [**numberGet**](docs/Api/NumberApi.md#numberget) | **GET** /{accountid}/numbers | 
-*NumberApi* | [**numberGetInboundReferences**](docs/Api/NumberApi.md#numbergetinboundreferences) | **GET** /{accountid}/numbers/{id}/InboundReferences | 
-*NumberApi* | [**numberGetItem**](docs/Api/NumberApi.md#numbergetitem) | **GET** /{accountid}/numbers/{id} | 
-*NumberApi* | [**numberPatchItem**](docs/Api/NumberApi.md#numberpatchitem) | **PATCH** /{accountid}/numbers/{id} | 
-*NumberApi* | [**numberRelease**](docs/Api/NumberApi.md#numberrelease) | **DELETE** /{accountid}/numbers/{id} | Releases the phone number from the account. Once the number is released, It will no longer belong to the account and no calls to that number will be routed through the platform.  Note: Affiliates can only release numbers that belong to them and that are treated as Offer numbers, meaning that they exist for the purpose of publisher&#39;s participation in the offer.
-*NumberApi* | [**numberReleaseNonUsedNumbers**](docs/Api/NumberApi.md#numberreleasenonusednumbers) | **DELETE** /{accountid}/numbers/ReleaseNonUsedNumbers | 
-*NumberApi* | [**numberRemoveAffilaite**](docs/Api/NumberApi.md#numberremoveaffilaite) | **DELETE** /{accountid}/numbers/{id}/Affiliate/{affiliateId} | 
-*NumberPoolApi* | [**numberPoolAddAffiliate**](docs/Api/NumberPoolApi.md#numberpooladdaffiliate) | **PUT** /{accountid}/numberpools/{id}/Affiliate | 
-*NumberPoolApi* | [**numberPoolAddNumber**](docs/Api/NumberPoolApi.md#numberpooladdnumber) | **PUT** /{accountid}/numberpools/{id}/Numbers | 
-*NumberPoolApi* | [**numberPoolAddNumbers**](docs/Api/NumberPoolApi.md#numberpooladdnumbers) | **PUT** /{accountid}/numberpools/{id}/AllocateMoreNumbers | 
-*NumberPoolApi* | [**numberPoolAddNumbers_0**](docs/Api/NumberPoolApi.md#numberpooladdnumbers_0) | **PUT** /{accountid}/numberpools/{id}/Expand | 
-*NumberPoolApi* | [**numberPoolCreatePool**](docs/Api/NumberPoolApi.md#numberpoolcreatepool) | **POST** /{accountid}/numberpools | 
-*NumberPoolApi* | [**numberPoolDeletePool**](docs/Api/NumberPoolApi.md#numberpooldeletepool) | **DELETE** /{accountid}/numberpools/{id} | 
-*NumberPoolApi* | [**numberPoolGet**](docs/Api/NumberPoolApi.md#numberpoolget) | **GET** /{accountid}/numberpools | 
-*NumberPoolApi* | [**numberPoolGetAllocationJob**](docs/Api/NumberPoolApi.md#numberpoolgetallocationjob) | **GET** /{accountid}/numberpools/{id}/AllocationJobs/{allocationJobId} | 
-*NumberPoolApi* | [**numberPoolGetAllocationJobs**](docs/Api/NumberPoolApi.md#numberpoolgetallocationjobs) | **GET** /{accountid}/numberpools/{id}/AllocationJobs | 
-*NumberPoolApi* | [**numberPoolGetFreePoolSize**](docs/Api/NumberPoolApi.md#numberpoolgetfreepoolsize) | **GET** /{accountid}/numberpools/{id}/FreeNumberCount | 
-*NumberPoolApi* | [**numberPoolGetInboundReferences**](docs/Api/NumberPoolApi.md#numberpoolgetinboundreferences) | **GET** /{accountid}/numberpools/{id}/InboundReferences | 
-*NumberPoolApi* | [**numberPoolGetItem**](docs/Api/NumberPoolApi.md#numberpoolgetitem) | **GET** /{accountid}/numberpools/{id} | 
-*NumberPoolApi* | [**numberPoolGetNumbers**](docs/Api/NumberPoolApi.md#numberpoolgetnumbers) | **GET** /{accountid}/numberpools/{id}/Numbers | 
-*NumberPoolApi* | [**numberPoolInUseNumbers**](docs/Api/NumberPoolApi.md#numberpoolinusenumbers) | **GET** /{accountid}/numberpools/{id}/Numbers/InUse | 
-*NumberPoolApi* | [**numberPoolPatchItem**](docs/Api/NumberPoolApi.md#numberpoolpatchitem) | **PATCH** /{accountid}/numberpools/{id} | Updates the values of number pool
-*NumberPoolApi* | [**numberPoolRemoveAffilaite**](docs/Api/NumberPoolApi.md#numberpoolremoveaffilaite) | **DELETE** /{accountid}/numberpools/{id}/Affiliate/{affiliateId} | 
-*NumberPoolApi* | [**numberPoolRemoveNumber**](docs/Api/NumberPoolApi.md#numberpoolremovenumber) | **DELETE** /{accountid}/numberpools/{id}/Numbers/{numberId} | 
-*NumberPoolApi* | [**numberPoolRemoveNumbers**](docs/Api/NumberPoolApi.md#numberpoolremovenumbers) | **POST** /{accountid}/numberpools/{id}/Shrink | 
-*NumberPoolApi* | [**numberPoolReplaceNumbers**](docs/Api/NumberPoolApi.md#numberpoolreplacenumbers) | **POST** /{accountid}/numberpools/{id}/Replace | 
-*NumberPoolApi* | [**numberPoolSyncNumberCount**](docs/Api/NumberPoolApi.md#numberpoolsyncnumbercount) | **POST** /{accountid}/numberpools/SyncNumberCount | 
-*NumberPoolApi* | [**numberPoolVerifyNumbers**](docs/Api/NumberPoolApi.md#numberpoolverifynumbers) | **GET** /{accountid}/numberpools/{id}/Numbers/Verify | 
-*OffersApi* | [**offersAddNumber**](docs/Api/OffersApi.md#offersaddnumber) | **POST** /{accountid}/offers/{cmpId}/number | 
-*OffersApi* | [**offersGet**](docs/Api/OffersApi.md#offersget) | **GET** /{accountid}/offers | 
-*OffersApi* | [**offersGetPublisherNumbers**](docs/Api/OffersApi.md#offersgetpublishernumbers) | **GET** /{accountid}/offers/{cmpId}/number | 
-*OffersApi* | [**offersGet_0**](docs/Api/OffersApi.md#offersget_0) | **GET** /{accountid}/offers/{cmpid} | 
-*OffersApi* | [**offersHide**](docs/Api/OffersApi.md#offershide) | **POST** /{accountid}/offers/{cmpid}/hide | 
-*OffersApi* | [**offersJoin**](docs/Api/OffersApi.md#offersjoin) | **POST** /{accountid}/offers/{cmpid}/join | 
-*OffersApi* | [**offersLeave**](docs/Api/OffersApi.md#offersleave) | **POST** /{accountid}/offers/{cmpid}/leave | 
-*OffersApi* | [**offersUnhide**](docs/Api/OffersApi.md#offersunhide) | **POST** /{accountid}/offers/{cmpid}/unhide | 
-*PhoneLookupApi* | [**phoneLookupTestPhoneSettings**](docs/Api/PhoneLookupApi.md#phonelookuptestphonesettings) | **POST** /{accountid}/phoneNumberLookup | The params to get available Numbers
-*PingTreeApi* | [**pingTreeAddTargets**](docs/Api/PingTreeApi.md#pingtreeaddtargets) | **PATCH** /{accountid}/pingtrees/{id}/Targets | 
-*PingTreeApi* | [**pingTreeCreatePingTree**](docs/Api/PingTreeApi.md#pingtreecreatepingtree) | **POST** /{accountid}/pingtrees | 
-*PingTreeApi* | [**pingTreeDeleteTarget**](docs/Api/PingTreeApi.md#pingtreedeletetarget) | **DELETE** /{accountid}/pingtrees/{id}/Targets/{targetId} | 
-*PingTreeApi* | [**pingTreeGet**](docs/Api/PingTreeApi.md#pingtreeget) | **GET** /{accountid}/pingtrees | 
-*PingTreeApi* | [**pingTreeGetCurrentCounts**](docs/Api/PingTreeApi.md#pingtreegetcurrentcounts) | **GET** /{accountid}/pingtrees/{id}/Counts | 
-*PingTreeApi* | [**pingTreeGetItem**](docs/Api/PingTreeApi.md#pingtreegetitem) | **GET** /{accountid}/pingtrees/{id} | Gets the Item with usage counts
-*PingTreeApi* | [**pingTreeGetTargets**](docs/Api/PingTreeApi.md#pingtreegettargets) | **GET** /{accountid}/pingtrees/{id}/Targets | returns targets attached to the target group
-*PingTreeApi* | [**pingTreePatchItem**](docs/Api/PingTreeApi.md#pingtreepatchitem) | **PATCH** /{accountid}/pingtrees/{id} | updated the Ping Tree
-*PingTreeApi* | [**pingTreeResetCount**](docs/Api/PingTreeApi.md#pingtreeresetcount) | **DELETE** /{accountid}/pingtrees/{id}/ResetCount | 
-*PingTreeApi* | [**pingTreeUpdateTargets**](docs/Api/PingTreeApi.md#pingtreeupdatetargets) | **PATCH** /{accountid}/pingtrees/{id}/Targets/BulkUpdate | 
-*PingTreeTargetApi* | [**pingTreeTargetAddBuyerToTarget**](docs/Api/PingTreeTargetApi.md#pingtreetargetaddbuyertotarget) | **PUT** /{accountid}/pingtreetargets/{id}/Buyer | 
-*PingTreeTargetApi* | [**pingTreeTargetBuyerSetConcurrencyCap**](docs/Api/PingTreeTargetApi.md#pingtreetargetbuyersetconcurrencycap) | **PUT** /{accountid}/pingtreetargets/{id}/BuyerSetConcurrencyCap | 
-*PingTreeTargetApi* | [**pingTreeTargetCheckIfDuplicate**](docs/Api/PingTreeTargetApi.md#pingtreetargetcheckifduplicate) | **POST** /{accountid}/pingtreetargets/isDuplicate | 
-*PingTreeTargetApi* | [**pingTreeTargetGet**](docs/Api/PingTreeTargetApi.md#pingtreetargetget) | **GET** /{accountid}/pingtreetargets | 
-*PingTreeTargetApi* | [**pingTreeTargetGetCurrentCounts**](docs/Api/PingTreeTargetApi.md#pingtreetargetgetcurrentcounts) | **GET** /{accountid}/pingtreetargets/{id}/Counts | 
-*PingTreeTargetApi* | [**pingTreeTargetGetItem**](docs/Api/PingTreeTargetApi.md#pingtreetargetgetitem) | **GET** /{accountid}/pingtreetargets/{id} | Gets the Item with usage counts
-*PingTreeTargetApi* | [**pingTreeTargetPatch**](docs/Api/PingTreeTargetApi.md#pingtreetargetpatch) | **PATCH** /{accountid}/pingtreetargets/{id} | Update a Target
-*PingTreeTargetApi* | [**pingTreeTargetPost**](docs/Api/PingTreeTargetApi.md#pingtreetargetpost) | **POST** /{accountid}/pingtreetargets | Create Target
-*PingTreeTargetApi* | [**pingTreeTargetRemoveBuyerFromTargetGroup**](docs/Api/PingTreeTargetApi.md#pingtreetargetremovebuyerfromtargetgroup) | **DELETE** /{accountid}/pingtreetargets/{id}/Buyer/{buyerId} | 
-*PingTreeTargetApi* | [**pingTreeTargetResetCount**](docs/Api/PingTreeTargetApi.md#pingtreetargetresetcount) | **DELETE** /{accountid}/pingtreetargets/{id}/ResetCount | 
-*PingTreeTargetApi* | [**pingTreeTargetUpdateParseSettings**](docs/Api/PingTreeTargetApi.md#pingtreetargetupdateparsesettings) | **PUT** /{accountid}/pingtreetargets/{id}/ParseSetting | 
-*ProfileApi* | [**profileChangePassword**](docs/Api/ProfileApi.md#profilechangepassword) | **POST** /Profile/ChangePassword | 
-*ProfileApi* | [**profileGet**](docs/Api/ProfileApi.md#profileget) | **GET** /Profile | 
-*ProfileApi* | [**profilePatch**](docs/Api/ProfileApi.md#profilepatch) | **PATCH** /Profile | 
-*QueryPathMapApi* | [**queryPathMapCreate**](docs/Api/QueryPathMapApi.md#querypathmapcreate) | **POST** /{accountid}/QueryPathMaps | 
-*QueryPathMapApi* | [**queryPathMapDeleteQueryPathMap**](docs/Api/QueryPathMapApi.md#querypathmapdeletequerypathmap) | **DELETE** /{accountid}/QueryPathMaps/{id} | 
-*QueryPathMapApi* | [**queryPathMapGet**](docs/Api/QueryPathMapApi.md#querypathmapget) | **GET** /{accountid}/QueryPathMaps | 
-*QueryPathMapApi* | [**queryPathMapGetItem**](docs/Api/QueryPathMapApi.md#querypathmapgetitem) | **GET** /{accountid}/QueryPathMaps/{id} | 
-*QueryPathMapApi* | [**queryPathMapGetReferences**](docs/Api/QueryPathMapApi.md#querypathmapgetreferences) | **GET** /{accountid}/QueryPathMaps/{id}/InboundReferences | 
-*QueryPathMapApi* | [**queryPathMapPatch**](docs/Api/QueryPathMapApi.md#querypathmappatch) | **PATCH** /{accountid}/QueryPathMaps/{id} | 
-*RingbaAccountApi* | [**ringbaAccountAddUser**](docs/Api/RingbaAccountApi.md#ringbaaccountadduser) | **PUT** /{accountid}/users | 
-*RingbaAccountApi* | [**ringbaAccountAddUser_0**](docs/Api/RingbaAccountApi.md#ringbaaccountadduser_0) | **PUT** /RingbaAccounts/{accountid}/users | 
-*RingbaAccountApi* | [**ringbaAccountGet**](docs/Api/RingbaAccountApi.md#ringbaaccountget) | **GET** /RingbaAccounts | 
-*RingbaAccountApi* | [**ringbaAccountGet_0**](docs/Api/RingbaAccountApi.md#ringbaaccountget_0) | **GET** /RingbaAccounts/{accountId} | 
-*RingbaAccountApi* | [**ringbaAccountListUsers**](docs/Api/RingbaAccountApi.md#ringbaaccountlistusers) | **GET** /{accountid}/users | 
-*RingbaAccountApi* | [**ringbaAccountListUsers_0**](docs/Api/RingbaAccountApi.md#ringbaaccountlistusers_0) | **GET** /RingbaAccounts/{accountid}/users | 
-*RingbaAccountApi* | [**ringbaAccountRemoveUser**](docs/Api/RingbaAccountApi.md#ringbaaccountremoveuser) | **DELETE** /{accountid}/users/{userId} | 
-*RingbaAccountApi* | [**ringbaAccountRemoveUser_0**](docs/Api/RingbaAccountApi.md#ringbaaccountremoveuser_0) | **DELETE** /RingbaAccounts/{accountid}/users/{userId} | 
-*RingbaAccountApi* | [**ringbaAccountUpdate**](docs/Api/RingbaAccountApi.md#ringbaaccountupdate) | **PATCH** /RingbaAccounts/{accountid} | 
-*RingbaUserApi* | [**ringbaUserGet**](docs/Api/RingbaUserApi.md#ringbauserget) | **GET** /uiUserSettings | 
-*RingbaUserApi* | [**ringbaUserSetUiItem**](docs/Api/RingbaUserApi.md#ringbausersetuiitem) | **POST** /uiUserSettings | 
-*SavedReportApi* | [**savedReportCreate**](docs/Api/SavedReportApi.md#savedreportcreate) | **POST** /{accountid}/savedReports | 
-*SavedReportApi* | [**savedReportDelete**](docs/Api/SavedReportApi.md#savedreportdelete) | **DELETE** /{accountid}/savedReports/{id} | 
-*SavedReportApi* | [**savedReportGetItem**](docs/Api/SavedReportApi.md#savedreportgetitem) | **GET** /{accountid}/savedReports/{id} | 
-*SavedReportApi* | [**savedReportIndex**](docs/Api/SavedReportApi.md#savedreportindex) | **GET** /{accountid}/savedReports | 
-*SavedReportApi* | [**savedReportUpdate**](docs/Api/SavedReportApi.md#savedreportupdate) | **PUT** /{accountid}/savedReports/{id} | 
-*StatsApi* | [**statsGetAccountCount**](docs/Api/StatsApi.md#statsgetaccountcount) | **GET** /{accountid}/stats | 
-*StatsApi* | [**statsGetAllCounts**](docs/Api/StatsApi.md#statsgetallcounts) | **GET** /{accountid}/stats/allCampaigns | 
-*StatsApi* | [**statsGetLiveCalls**](docs/Api/StatsApi.md#statsgetlivecalls) | **GET** /{accountid}/stats/live | 
-*StatsApi* | [**statsGetLiveCallsByAffiliate**](docs/Api/StatsApi.md#statsgetlivecallsbyaffiliate) | **GET** /{accountid}/stats/live/publisher/{affiliateId} | 
-*StatsApi* | [**statsGetLiveCallsByCampaign**](docs/Api/StatsApi.md#statsgetlivecallsbycampaign) | **GET** /{accountid}/stats/live/campaign/{campaignId} | 
-*StatsApi* | [**statsGetStats**](docs/Api/StatsApi.md#statsgetstats) | **GET** /{accountid}/stats/byDay | 
-*StatsApi* | [**statsGetStatsRolledUp**](docs/Api/StatsApi.md#statsgetstatsrolledup) | **GET** /{accountid}/stats/Sum | 
-*StatsApi* | [**statsGetTopStats**](docs/Api/StatsApi.md#statsgettopstats) | **GET** /{accountid}/stats/TopByDay | 
-*StatsApi* | [**statsGetTopStatsByHours**](docs/Api/StatsApi.md#statsgettopstatsbyhours) | **GET** /{accountid}/stats/TopByHour | 
-*TagsApi* | [**tagsGetTags**](docs/Api/TagsApi.md#tagsgettags) | **GET** /{accountId}/Tags | returns a list of Known Tags
-*TagsApi* | [**tagsGetTagsFull**](docs/Api/TagsApi.md#tagsgettagsfull) | **GET** /{accountId}/Tags/full | returns a list of Known Tags
-*TargetApi* | [**targetAddBuyerToTarget**](docs/Api/TargetApi.md#targetaddbuyertotarget) | **PUT** /{accountid}/targets/{id}/Buyer | 
-*TargetApi* | [**targetBuyerSetConcurrencyCap**](docs/Api/TargetApi.md#targetbuyersetconcurrencycap) | **PUT** /{accountid}/targets/{id}/BuyerSetConcurrencyCap | 
-*TargetApi* | [**targetBuyerTogglePause**](docs/Api/TargetApi.md#targetbuyertogglepause) | **PUT** /{accountid}/targets/{id}/BuyerTogglePause | 
-*TargetApi* | [**targetCheckIfDuplicate**](docs/Api/TargetApi.md#targetcheckifduplicate) | **POST** /{accountid}/targets/isDuplicate | 
-*TargetApi* | [**targetDeleteTarget**](docs/Api/TargetApi.md#targetdeletetarget) | **DELETE** /{accountid}/targets/{id} | 
-*TargetApi* | [**targetGet**](docs/Api/TargetApi.md#targetget) | **GET** /{accountid}/targets | 
-*TargetApi* | [**targetGetCurrentCounts**](docs/Api/TargetApi.md#targetgetcurrentcounts) | **GET** /{accountid}/targets/{id}/Counts | 
-*TargetApi* | [**targetGetInboundReferences**](docs/Api/TargetApi.md#targetgetinboundreferences) | **GET** /{accountid}/targets/{id}/InboundReferences | 
-*TargetApi* | [**targetGetItem**](docs/Api/TargetApi.md#targetgetitem) | **GET** /{accountid}/targets/{id} | Gets the Item with usage counts
-*TargetApi* | [**targetPatch**](docs/Api/TargetApi.md#targetpatch) | **PATCH** /{accountid}/targets/{id} | Update a Target
-*TargetApi* | [**targetPost**](docs/Api/TargetApi.md#targetpost) | **POST** /{accountid}/targets | Create Target
-*TargetApi* | [**targetRemoveBuyerFromTargetGroup**](docs/Api/TargetApi.md#targetremovebuyerfromtargetgroup) | **DELETE** /{accountid}/targets/{id}/Buyer/{buyerId} | 
-*TargetApi* | [**targetResetCount**](docs/Api/TargetApi.md#targetresetcount) | **DELETE** /{accountid}/targets/{id}/ResetCount | 
-*TargetGroupApi* | [**targetGroupAddBuyerToTargetGroup**](docs/Api/TargetGroupApi.md#targetgroupaddbuyertotargetgroup) | **PUT** /{accountid}/TargetGroups/{id}/Buyer | 
-*TargetGroupApi* | [**targetGroupAddTargets**](docs/Api/TargetGroupApi.md#targetgroupaddtargets) | **PATCH** /{accountid}/TargetGroups/{id}/Targets | 
-*TargetGroupApi* | [**targetGroupCreateTargetGroup**](docs/Api/TargetGroupApi.md#targetgroupcreatetargetgroup) | **POST** /{accountid}/TargetGroups | 
-*TargetGroupApi* | [**targetGroupDeleteTarget**](docs/Api/TargetGroupApi.md#targetgroupdeletetarget) | **DELETE** /{accountid}/TargetGroups/{id}/Targets/{targetId} | 
-*TargetGroupApi* | [**targetGroupGet**](docs/Api/TargetGroupApi.md#targetgroupget) | **GET** /{accountid}/TargetGroups | 
-*TargetGroupApi* | [**targetGroupGetCurrentCounts**](docs/Api/TargetGroupApi.md#targetgroupgetcurrentcounts) | **GET** /{accountid}/TargetGroups/{id}/Counts | 
-*TargetGroupApi* | [**targetGroupGetItem**](docs/Api/TargetGroupApi.md#targetgroupgetitem) | **GET** /{accountid}/TargetGroups/{id} | Gets the Item with usage counts
-*TargetGroupApi* | [**targetGroupGetTargets**](docs/Api/TargetGroupApi.md#targetgroupgettargets) | **GET** /{accountid}/TargetGroups/{id}/Targets | returns targets attached to the target group
-*TargetGroupApi* | [**targetGroupPatchItem**](docs/Api/TargetGroupApi.md#targetgrouppatchitem) | **PATCH** /{accountid}/TargetGroups/{id} | updated the TargetGroup
-*TargetGroupApi* | [**targetGroupRemoveBuyerFromTargetGroup**](docs/Api/TargetGroupApi.md#targetgroupremovebuyerfromtargetgroup) | **DELETE** /{accountid}/TargetGroups/{id}/Buyer/{buyerId} | 
-*TargetGroupApi* | [**targetGroupResetCount**](docs/Api/TargetGroupApi.md#targetgroupresetcount) | **DELETE** /{accountid}/TargetGroups/{id}/ResetCount | 
-*TargetGroupApi* | [**targetGroupUpdateTargets**](docs/Api/TargetGroupApi.md#targetgroupupdatetargets) | **PATCH** /{accountid}/TargetGroups/{id}/Targets/BulkUpdate | 
-*UserInvitationApi* | [**userInvitationAcceptInvitation**](docs/Api/UserInvitationApi.md#userinvitationacceptinvitation) | **POST** /Invitations/{id}/join | 
-*UserInvitationApi* | [**userInvitationBuyerDelete**](docs/Api/UserInvitationApi.md#userinvitationbuyerdelete) | **DELETE** /{accountId}/Buyers/{buyerId}/Invitations/{id} | 
-*UserInvitationApi* | [**userInvitationBuyerGetInvitation**](docs/Api/UserInvitationApi.md#userinvitationbuyergetinvitation) | **GET** /{accountId}/Buyers/{buyerId}/Invitations/{id} | 
-*UserInvitationApi* | [**userInvitationBuyerInviteUser**](docs/Api/UserInvitationApi.md#userinvitationbuyerinviteuser) | **POST** /{accountId}/Buyers/{buyerId}/Invitations | 
-*UserInvitationApi* | [**userInvitationBuyerListInvitations**](docs/Api/UserInvitationApi.md#userinvitationbuyerlistinvitations) | **GET** /{accountId}/Buyers/{buyerId}/Invitations | 
-*UserInvitationApi* | [**userInvitationDescribeInvitation**](docs/Api/UserInvitationApi.md#userinvitationdescribeinvitation) | **GET** /Invitations/{id} | 
-*UserInvitationApi* | [**userInvitationPublisherDelete**](docs/Api/UserInvitationApi.md#userinvitationpublisherdelete) | **DELETE** /{accountId}/Affiliates/{affiliateId}/Invitations/{id} | 
-*UserInvitationApi* | [**userInvitationPublisherGetInvitation**](docs/Api/UserInvitationApi.md#userinvitationpublishergetinvitation) | **GET** /{accountId}/Affiliates/{affiliateId}/Invitations/{id} | 
-*UserInvitationApi* | [**userInvitationPublisherInviteUser**](docs/Api/UserInvitationApi.md#userinvitationpublisherinviteuser) | **POST** /{accountId}/Affiliates/{affiliateId}/Invitations | 
-*UserInvitationApi* | [**userInvitationPublisherListInvitations**](docs/Api/UserInvitationApi.md#userinvitationpublisherlistinvitations) | **GET** /{accountId}/Affiliates/{affiliateId}/Invitations | 
-*UserInvitationApi* | [**userInvitationUserDelete**](docs/Api/UserInvitationApi.md#userinvitationuserdelete) | **DELETE** /{accountid}/invitations/{id} | 
-*UserInvitationApi* | [**userInvitationUserGetInvitation**](docs/Api/UserInvitationApi.md#userinvitationusergetinvitation) | **GET** /{accountid}/invitations/{id} | 
-*UserInvitationApi* | [**userInvitationUserInviteUser**](docs/Api/UserInvitationApi.md#userinvitationuserinviteuser) | **POST** /{accountid}/invitations | 
-*UserInvitationApi* | [**userInvitationUserListInvitations**](docs/Api/UserInvitationApi.md#userinvitationuserlistinvitations) | **GET** /{accountid}/invitations | 
-*WebHookApi* | [**webHookCreateConversion**](docs/Api/WebHookApi.md#webhookcreateconversion) | **POST** /{accountid}/WebHooks/createConversion | 
-*WebHookApi* | [**webHookDelete**](docs/Api/WebHookApi.md#webhookdelete) | **DELETE** /{accountid}/WebHooks/{id} | 
-*WebHookApi* | [**webHookGet**](docs/Api/WebHookApi.md#webhookget) | **GET** /{accountid}/WebHooks | 
-*WebHookApi* | [**webHookGetItem**](docs/Api/WebHookApi.md#webhookgetitem) | **GET** /{accountid}/WebHooks/{id} | 
-*WebHookApi* | [**webHookGetUrl**](docs/Api/WebHookApi.md#webhookgeturl) | **POST** /{accountid}/WebHooks/{id}/getUrl | 
-*WebHookApi* | [**webHookPatch**](docs/Api/WebHookApi.md#webhookpatch) | **PATCH** /{accountid}/WebHooks/{id} | 
-*WebHookApi* | [**webHookTestConversion**](docs/Api/WebHookApi.md#webhooktestconversion) | **POST** /{accountid}/WebHooks/testConversion | 
-*WhiteLabelApi* | [**whiteLabelCnameSettings**](docs/Api/WhiteLabelApi.md#whitelabelcnamesettings) | **GET** /{accountid}/whiteLabel/Cname | returns the settings and the status of a CName Request
-*WhiteLabelApi* | [**whiteLabelDeleteCname**](docs/Api/WhiteLabelApi.md#whitelabeldeletecname) | **DELETE** /{accountid}/whiteLabel/Cname | 
-*WhiteLabelApi* | [**whiteLabelGet**](docs/Api/WhiteLabelApi.md#whitelabelget) | **GET** /{accountid}/whiteLabel | returns the current white label settings for an account
-*WhiteLabelApi* | [**whiteLabelPublishTheme**](docs/Api/WhiteLabelApi.md#whitelabelpublishtheme) | **POST** /{accountid}/whiteLabel/publish | 
-*WhiteLabelApi* | [**whiteLabelRequestCname**](docs/Api/WhiteLabelApi.md#whitelabelrequestcname) | **POST** /{accountid}/whiteLabel/Cname | creates a CName request
-*WhiteLabelApi* | [**whiteLabelSetFriendlyName**](docs/Api/WhiteLabelApi.md#whitelabelsetfriendlyname) | **PATCH** /{accountid}/whiteLabel/friendlyName | sets the white lable friendly name for the account
-*WhiteLabelApi* | [**whiteLabelUpdateStagingTheme**](docs/Api/WhiteLabelApi.md#whitelabelupdatestagingtheme) | **PATCH** /{accountid}/whiteLabel/theme | Update the account&#39;s whitelabel theme
-*WhiteLabelApi* | [**whiteLabelValidateFriendlyName**](docs/Api/WhiteLabelApi.md#whitelabelvalidatefriendlyname) | **GET** /{accountid}/whiteLabel/friendlyName/validate | tests the availability of a friendly name
+*AccountSettingsApi* | [**accountSettingsCreateOrUpdateSettings**](docs/Api/AccountSettingsApi.md#accountsettingscreateorupdatesettings) | **PUT** /{accountid}/accountsettings |
+*AccountSettingsApi* | [**accountSettingsGetItem**](docs/Api/AccountSettingsApi.md#accountsettingsgetitem) | **GET** /{accountid}/accountsettings |
+*AccountUISettingsApi* | [**accountUISettingsGet**](docs/Api/AccountUISettingsApi.md#accountuisettingsget) | **GET** /{accountId}/UISettings |
+*AccountUISettingsApi* | [**accountUISettingsSetUiItem**](docs/Api/AccountUISettingsApi.md#accountuisettingssetuiitem) | **POST** /{accountId}/UISettings |
+*AddressApi* | [**addressCreateAddress**](docs/Api/AddressApi.md#addresscreateaddress) | **POST** /{accountid}/addresses |
+*AddressApi* | [**addressDeleteItem**](docs/Api/AddressApi.md#addressdeleteitem) | **DELETE** /{accountid}/addresses/{id} |
+*AddressApi* | [**addressGet**](docs/Api/AddressApi.md#addressget) | **GET** /{accountid}/addresses |
+*AddressApi* | [**addressGetCountries**](docs/Api/AddressApi.md#addressgetcountries) | **GET** /{accountid}/addresses/countries |
+*AddressApi* | [**addressGetCountryAddressRequirements**](docs/Api/AddressApi.md#addressgetcountryaddressrequirements) | **GET** /{accountid}/addresses/requirements/{countryCode} |
+*AddressApi* | [**addressGet_0**](docs/Api/AddressApi.md#addressget_0) | **GET** /{accountid}/addresses/{id} |
+*AddressApi* | [**addressPatchItem**](docs/Api/AddressApi.md#addresspatchitem) | **PATCH** /{accountid}/addresses/{id} |
+*AddressApi* | [**addressSetAsDefault**](docs/Api/AddressApi.md#addresssetasdefault) | **POST** /{accountid}/addresses/{id}/SetDefault |
+*AddressApi* | [**addressSubmitProofDocument**](docs/Api/AddressApi.md#addresssubmitproofdocument) | **PUT** /{accountid}/addresses/{id}/proof |
+*AffiliatesApi* | [**affiliatesCreateAffiliate**](docs/Api/AffiliatesApi.md#affiliatescreateaffiliate) | **POST** /{accountId}/Affiliates |
+*AffiliatesApi* | [**affiliatesDeleteAffiliate**](docs/Api/AffiliatesApi.md#affiliatesdeleteaffiliate) | **DELETE** /{accountId}/Affiliates/{id} |
+*AffiliatesApi* | [**affiliatesGet**](docs/Api/AffiliatesApi.md#affiliatesget) | **GET** /{accountId}/Affiliates |
+*AffiliatesApi* | [**affiliatesGetInboundReferences**](docs/Api/AffiliatesApi.md#affiliatesgetinboundreferences) | **GET** /{accountId}/Affiliates/{id}/InboundReferences |
+*AffiliatesApi* | [**affiliatesGetItem**](docs/Api/AffiliatesApi.md#affiliatesgetitem) | **GET** /{accountId}/Affiliates/{id} |
+*AffiliatesApi* | [**affiliatesGetNumbers**](docs/Api/AffiliatesApi.md#affiliatesgetnumbers) | **GET** /{accountId}/Affiliates/{id}/Numbers |
+*AffiliatesApi* | [**affiliatesGetStats**](docs/Api/AffiliatesApi.md#affiliatesgetstats) | **GET** /{accountId}/Affiliates/stats |
+*AffiliatesApi* | [**affiliatesGetUsers**](docs/Api/AffiliatesApi.md#affiliatesgetusers) | **GET** /{accountId}/Affiliates/{id}/Users |
+*AffiliatesApi* | [**affiliatesPatchItem**](docs/Api/AffiliatesApi.md#affiliatespatchitem) | **PATCH** /{accountId}/Affiliates/{id} |
+*BillingApi* | [**billingAddCreditCard**](docs/Api/BillingApi.md#billingaddcreditcard) | **POST** /{accountid}/Billing/CreditCards |
+*BillingApi* | [**billingAddFunds**](docs/Api/BillingApi.md#billingaddfunds) | **POST** /{accountid}/Billing/Balance |
+*BillingApi* | [**billingBillSettings**](docs/Api/BillingApi.md#billingbillsettings) | **PUT** /{accountid}/Billing/BillingSettings |
+*BillingApi* | [**billingCCTransactions**](docs/Api/BillingApi.md#billingcctransactions) | **GET** /{accountid}/Billing/CCTransactions |
+*BillingApi* | [**billingDeleteCreditCard**](docs/Api/BillingApi.md#billingdeletecreditcard) | **DELETE** /{accountid}/Billing/CreditCards/{id} |
+*BillingApi* | [**billingDisableAccount**](docs/Api/BillingApi.md#billingdisableaccount) | **DELETE** /{accountid}/Billing/Disable |
+*BillingApi* | [**billingEnableAccount**](docs/Api/BillingApi.md#billingenableaccount) | **PUT** /{accountid}/Billing/Enable |
+*BillingApi* | [**billingFunds**](docs/Api/BillingApi.md#billingfunds) | **GET** /{accountid}/Billing/Balance |
+*BillingApi* | [**billingGet**](docs/Api/BillingApi.md#billingget) | **GET** /{accountid}/Billing |
+*BillingApi* | [**billingGetAccountTypes**](docs/Api/BillingApi.md#billinggetaccounttypes) | **GET** /{accountid}/Billing/Plans |
+*BillingApi* | [**billingGetBillSettings**](docs/Api/BillingApi.md#billinggetbillsettings) | **GET** /{accountid}/Billing/BillingSettings |
+*BillingApi* | [**billingGetCreditCards**](docs/Api/BillingApi.md#billinggetcreditcards) | **GET** /{accountid}/Billing/CreditCards |
+*BillingApi* | [**billingUpdateAccountType**](docs/Api/BillingApi.md#billingupdateaccounttype) | **PUT** /{accountid}/Billing/Plans |
+*BillingApi* | [**billingUpdateCreditCard**](docs/Api/BillingApi.md#billingupdatecreditcard) | **PUT** /{accountid}/Billing/CreditCards/{id} |
+*BillingApi* | [**billingVerify**](docs/Api/BillingApi.md#billingverify) | **PUT** /{accountid}/Billing/CreditCards/{id}/verify |
+*BlockedNumberApi* | [**blockedNumberCreate**](docs/Api/BlockedNumberApi.md#blockednumbercreate) | **POST** /{accountid}/blockedNumbers |
+*BlockedNumberApi* | [**blockedNumberDeleteNumber**](docs/Api/BlockedNumberApi.md#blockednumberdeletenumber) | **DELETE** /{accountid}/blockedNumbers/{id} |
+*BlockedNumberApi* | [**blockedNumberGet**](docs/Api/BlockedNumberApi.md#blockednumberget) | **GET** /{accountid}/blockedNumbers |
+*BlockedNumberApi* | [**blockedNumberGetItem**](docs/Api/BlockedNumberApi.md#blockednumbergetitem) | **GET** /{accountid}/blockedNumbers/{id} |
+*BlockedNumberApi* | [**blockedNumberPatch**](docs/Api/BlockedNumberApi.md#blockednumberpatch) | **PATCH** /{accountid}/blockedNumbers/{id} |
+*BulkBlockedNumberApi* | [**bulkBlockedNumberDelete**](docs/Api/BulkBlockedNumberApi.md#bulkblockednumberdelete) | **DELETE** /{accountid}/bulkBlockedNumbers |
+*BulkBlockedNumberApi* | [**bulkBlockedNumberDeleteNumber**](docs/Api/BulkBlockedNumberApi.md#bulkblockednumberdeletenumber) | **DELETE** /{accountid}/bulkBlockedNumbers/{E164Number} |
+*BulkBlockedNumberApi* | [**bulkBlockedNumberGet**](docs/Api/BulkBlockedNumberApi.md#bulkblockednumberget) | **GET** /{accountid}/bulkBlockedNumbers |
+*BulkBlockedNumberApi* | [**bulkBlockedNumberTestItem**](docs/Api/BulkBlockedNumberApi.md#bulkblockednumbertestitem) | **GET** /{accountid}/bulkBlockedNumbers/test |
+*BulkBlockedNumberApi* | [**bulkBlockedNumberUploadBulk**](docs/Api/BulkBlockedNumberApi.md#bulkblockednumberuploadbulk) | **POST** /{accountid}/bulkBlockedNumbers |
+*BulkTagApi* | [**bulkTagCreateBulkTag**](docs/Api/BulkTagApi.md#bulktagcreatebulktag) | **POST** /{accountid}/bulkTags |
+*BulkTagApi* | [**bulkTagDeleteId**](docs/Api/BulkTagApi.md#bulktagdeleteid) | **DELETE** /{accountid}/bulkTags/{id} |
+*BulkTagApi* | [**bulkTagGet**](docs/Api/BulkTagApi.md#bulktagget) | **GET** /{accountid}/bulkTags |
+*BulkTagApi* | [**bulkTagGetItem**](docs/Api/BulkTagApi.md#bulktaggetitem) | **GET** /{accountid}/bulkTags/{id} |
+*BulkTagApi* | [**bulkTagGetItems**](docs/Api/BulkTagApi.md#bulktaggetitems) | **GET** /{accountid}/bulkTags/{id}/values |
+*BulkTagApi* | [**bulkTagTestItem**](docs/Api/BulkTagApi.md#bulktagtestitem) | **GET** /{accountid}/bulkTags/{id}/test |
+*BulkTagApi* | [**bulkTagUpdateBulkTag**](docs/Api/BulkTagApi.md#bulktagupdatebulktag) | **PUT** /{accountid}/bulkTags/{id} |
+*BuyersApi* | [**buyersCreateBuyer**](docs/Api/BuyersApi.md#buyerscreatebuyer) | **POST** /{accountId}/Buyers |
+*BuyersApi* | [**buyersDelete**](docs/Api/BuyersApi.md#buyersdelete) | **DELETE** /{accountId}/Buyers/{id} |
+*BuyersApi* | [**buyersGet**](docs/Api/BuyersApi.md#buyersget) | **GET** /{accountId}/Buyers |
+*BuyersApi* | [**buyersGetItem**](docs/Api/BuyersApi.md#buyersgetitem) | **GET** /{accountId}/Buyers/{id} |
+*BuyersApi* | [**buyersGetReferences**](docs/Api/BuyersApi.md#buyersgetreferences) | **GET** /{accountId}/Buyers/{id}/InboundReferences |
+*BuyersApi* | [**buyersGetTargets**](docs/Api/BuyersApi.md#buyersgettargets) | **GET** /{accountId}/Buyers/{id}/Targets |
+*BuyersApi* | [**buyersGetUsers**](docs/Api/BuyersApi.md#buyersgetusers) | **GET** /{accountId}/Buyers/{id}/Users |
+*BuyersApi* | [**buyersPatchItem**](docs/Api/BuyersApi.md#buyerspatchitem) | **PATCH** /{accountId}/Buyers/{id} |
+*CallApi* | [**callAdjustPayments**](docs/Api/CallApi.md#calladjustpayments) | **POST** /{accountid}/Calls/Payments |
+*CallApi* | [**callAnnotateCall**](docs/Api/CallApi.md#callannotatecall) | **POST** /{accountid}/Calls/Annotate |
+*CallApi* | [**callRequestConversionAdjustment**](docs/Api/CallApi.md#callrequestconversionadjustment) | **POST** /{accountid}/Calls/RequestConversionAdjustment |
+*CallApi* | [**callVoidCall**](docs/Api/CallApi.md#callvoidcall) | **POST** /{accountid}/Calls/Void |
+*CallLogApi* | [**callLogExportCallLogs**](docs/Api/CallLogApi.md#calllogexportcalllogs) | **POST** /{accountid}/CallLogs/Date/Export/{format} |
+*CallLogApi* | [**callLogExportRollUp**](docs/Api/CallLogApi.md#calllogexportrollup) | **POST** /{accountid}/CallLogs/Date/RollUp |
+*CallLogApi* | [**callLogGetAvailableGroupBys**](docs/Api/CallLogApi.md#callloggetavailablegroupbys) | **GET** /{accountid}/CallLogs/AvailableGroupBys |
+*CallLogApi* | [**callLogGetEvents**](docs/Api/CallLogApi.md#callloggetevents) | **GET** /{accountid}/CallLogs/Events |
+*CallLogApi* | [**callLogGetExportProgress**](docs/Api/CallLogApi.md#callloggetexportprogress) | **GET** /{accountid}/CallLogs/Date/Export/{jobId} |
+*CallLogApi* | [**callLogGetLogsByDate**](docs/Api/CallLogApi.md#callloggetlogsbydate) | **POST** /{accountid}/CallLogs/Date |
+*CallLogApi* | [**callLogGetSearchField**](docs/Api/CallLogApi.md#callloggetsearchfield) | **GET** /{accountid}/CallLogs/SearchFields/{fieldName} |
+*CallLogApi* | [**callLogGetSearchField_0**](docs/Api/CallLogApi.md#callloggetsearchfield_0) | **GET** /{accountid}/CallLogs/SearchFields/{fieldName}/Values |
+*CallLogApi* | [**callLogGetSearchFields**](docs/Api/CallLogApi.md#callloggetsearchfields) | **GET** /{accountid}/CallLogs/SearchFields |
+*CallLogApi* | [**callLogGetTagNames**](docs/Api/CallLogApi.md#callloggettagnames) | **GET** /{accountid}/CallLogs/Tags/{type} |
+*CallLogApi* | [**callLogGetTagTypes**](docs/Api/CallLogApi.md#callloggettagtypes) | **GET** /{accountid}/CallLogs/Tags |
+*CallLogApi* | [**callLogGetTagValues**](docs/Api/CallLogApi.md#callloggettagvalues) | **GET** /{accountid}/CallLogs/Tags/{type}/{name}/Values |
+*CallPlanApi* | [**callPlanAddRoute**](docs/Api/CallPlanApi.md#callplanaddroute) | **POST** /{accountid}/callplan/{id}/callRoute |
+*CallPlanApi* | [**callPlanCreate**](docs/Api/CallPlanApi.md#callplancreate) | **POST** /{accountid}/callplan |
+*CallPlanApi* | [**callPlanDeleteCallPlan**](docs/Api/CallPlanApi.md#callplandeletecallplan) | **DELETE** /{accountid}/callplan/{id} |
+*CallPlanApi* | [**callPlanDeleteRoute**](docs/Api/CallPlanApi.md#callplandeleteroute) | **DELETE** /{accountid}/callplan/{id}/callRoute/{routeId} |
+*CallPlanApi* | [**callPlanDuplicate**](docs/Api/CallPlanApi.md#callplanduplicate) | **POST** /{accountid}/callplan/duplicate/{id} |
+*CallPlanApi* | [**callPlanGet**](docs/Api/CallPlanApi.md#callplanget) | **GET** /{accountid}/callplan |
+*CallPlanApi* | [**callPlanGetCallRoutes**](docs/Api/CallPlanApi.md#callplangetcallroutes) | **GET** /{accountid}/callplan/{id}/callRoute |
+*CallPlanApi* | [**callPlanGetInboundReferences**](docs/Api/CallPlanApi.md#callplangetinboundreferences) | **GET** /{accountid}/callplan/{id}/InboundReferences |
+*CallPlanApi* | [**callPlanGetItem**](docs/Api/CallPlanApi.md#callplangetitem) | **GET** /{accountid}/callplan/{id} |
+*CallPlanApi* | [**callPlanPatch**](docs/Api/CallPlanApi.md#callplanpatch) | **PATCH** /{accountid}/callplan/{id} |
+*CallRouteApi* | [**callRouteCreate**](docs/Api/CallRouteApi.md#callroutecreate) | **POST** /{accountid}/CallRoutes |
+*CallRouteApi* | [**callRouteGet**](docs/Api/CallRouteApi.md#callrouteget) | **GET** /{accountid}/CallRoutes |
+*CallRouteApi* | [**callRouteGetItem**](docs/Api/CallRouteApi.md#callroutegetitem) | **GET** /{accountid}/CallRoutes/{id} |
+*CallRouteApi* | [**callRouteLink**](docs/Api/CallRouteApi.md#callroutelink) | **PATCH** /{accountid}/CallRoutes/{id}/Link |
+*CallRouteApi* | [**callRoutePatch**](docs/Api/CallRouteApi.md#callroutepatch) | **PATCH** /{accountid}/CallRoutes/{id} |
+*CallRouteApi* | [**callRouteUnLink**](docs/Api/CallRouteApi.md#callrouteunlink) | **PATCH** /{accountid}/CallRoutes/{id}/UnLink |
+*CampaignApi* | [**campaignAddAffiliateNumber**](docs/Api/CampaignApi.md#campaignaddaffiliatenumber) | **PATCH** /{accountid}/campaigns/{id}/AffiliateNumbers |
+*CampaignApi* | [**campaignAddCallRoute**](docs/Api/CampaignApi.md#campaignaddcallroute) | **POST** /{accountid}/campaigns/{id}/Routes |
+*CampaignApi* | [**campaignAddDefaultNumber**](docs/Api/CampaignApi.md#campaignadddefaultnumber) | **PATCH** /{accountid}/campaigns/{id}/DefaultNumber |
+*CampaignApi* | [**campaignAddDefaultPayoutV2**](docs/Api/CampaignApi.md#campaignadddefaultpayoutv2) | **POST** /{accountid}/campaigns/{id}/DefaultPayouts |
+*CampaignApi* | [**campaignAddIvrTree**](docs/Api/CampaignApi.md#campaignaddivrtree) | **POST** /{accountid}/campaigns/{id}/IVRTree |
+*CampaignApi* | [**campaignAddPublisher**](docs/Api/CampaignApi.md#campaignaddpublisher) | **PATCH** /{accountid}/campaigns/{id}/Affiliates |
+*CampaignApi* | [**campaignAddPublisherPayout**](docs/Api/CampaignApi.md#campaignaddpublisherpayout) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts |
+*CampaignApi* | [**campaignArchiveOffer**](docs/Api/CampaignApi.md#campaignarchiveoffer) | **DELETE** /{accountid}/campaigns/{id}/Offers/Published |
+*CampaignApi* | [**campaignBatchUpdateCampaignDefaultPayouts**](docs/Api/CampaignApi.md#campaignbatchupdatecampaigndefaultpayouts) | **PUT** /{accountid}/campaigns/{id}/DefaultPayouts |
+*CampaignApi* | [**campaignBatchUpdatePublisherPayouts**](docs/Api/CampaignApi.md#campaignbatchupdatepublisherpayouts) | **PUT** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts |
+*CampaignApi* | [**campaignCloneCampaign**](docs/Api/CampaignApi.md#campaignclonecampaign) | **POST** /{accountid}/campaigns/{id}/clone |
+*CampaignApi* | [**campaignCreateCampaign**](docs/Api/CampaignApi.md#campaigncreatecampaign) | **POST** /{accountid}/campaigns |
+*CampaignApi* | [**campaignCreateTag**](docs/Api/CampaignApi.md#campaigncreatetag) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag |
+*CampaignApi* | [**campaignDeleteCallRoute**](docs/Api/CampaignApi.md#campaigndeletecallroute) | **DELETE** /{accountid}/campaigns/{id}/Routes |
+*CampaignApi* | [**campaignDeleteCampaign**](docs/Api/CampaignApi.md#campaigndeletecampaign) | **DELETE** /{accountid}/campaigns/{id} |
+*CampaignApi* | [**campaignDeleteCampaignOfferDraft**](docs/Api/CampaignApi.md#campaigndeletecampaignofferdraft) | **DELETE** /{accountid}/campaigns/{id}/Offers/Draft |
+*CampaignApi* | [**campaignDeleteDefaultNumber**](docs/Api/CampaignApi.md#campaigndeletedefaultnumber) | **DELETE** /{accountid}/campaigns/{id}/DefaultNumber |
+*CampaignApi* | [**campaignDeleteDefaultPayout**](docs/Api/CampaignApi.md#campaigndeletedefaultpayout) | **DELETE** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} |
+*CampaignApi* | [**campaignDeleteIVRTree**](docs/Api/CampaignApi.md#campaigndeleteivrtree) | **DELETE** /{accountid}/campaigns/{id}/IVRTree |
+*CampaignApi* | [**campaignDeletePublisher**](docs/Api/CampaignApi.md#campaigndeletepublisher) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId} |
+*CampaignApi* | [**campaignDeletePublisherPayout**](docs/Api/CampaignApi.md#campaigndeletepublisherpayout) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} |
+*CampaignApi* | [**campaignDeleteTag**](docs/Api/CampaignApi.md#campaigndeletetag) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag |
+*CampaignApi* | [**campaignGet**](docs/Api/CampaignApi.md#campaignget) | **GET** /{accountid}/campaigns |
+*CampaignApi* | [**campaignGetCampaignOfferDraft**](docs/Api/CampaignApi.md#campaigngetcampaignofferdraft) | **GET** /{accountid}/campaigns/{id}/Offers/Draft |
+*CampaignApi* | [**campaignGetCampaignOfferLive**](docs/Api/CampaignApi.md#campaigngetcampaignofferlive) | **GET** /{accountid}/campaigns/{id}/Offers/Published |
+*CampaignApi* | [**campaignGetCampaignOffers**](docs/Api/CampaignApi.md#campaigngetcampaignoffers) | **GET** /{accountid}/campaigns/{id}/Offers |
+*CampaignApi* | [**campaignGetInboundReferences**](docs/Api/CampaignApi.md#campaigngetinboundreferences) | **GET** /{accountid}/campaigns/{id}/InboundReferences |
+*CampaignApi* | [**campaignGetOfferParticipants**](docs/Api/CampaignApi.md#campaigngetofferparticipants) | **GET** /{accountid}/campaigns/{id}/Offers/Published/Participants |
+*CampaignApi* | [**campaignGetPublisherPayouts**](docs/Api/CampaignApi.md#campaigngetpublisherpayouts) | **GET** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts |
+*CampaignApi* | [**campaignGetTags**](docs/Api/CampaignApi.md#campaigngettags) | **GET** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag |
+*CampaignApi* | [**campaignGetTags_0**](docs/Api/CampaignApi.md#campaigngettags_0) | **GET** /{accountid}/campaigns/{id}/Tags |
+*CampaignApi* | [**campaignGet_0**](docs/Api/CampaignApi.md#campaignget_0) | **GET** /{accountid}/campaigns/{id} |
+*CampaignApi* | [**campaignGetstats**](docs/Api/CampaignApi.md#campaigngetstats) | **GET** /{accountid}/campaigns/stats |
+*CampaignApi* | [**campaignInvitePublisherToOffer**](docs/Api/CampaignApi.md#campaigninvitepublishertooffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Invite |
+*CampaignApi* | [**campaignLinkItem**](docs/Api/CampaignApi.md#campaignlinkitem) | **PATCH** /{accountid}/campaigns/{id}/Link |
+*CampaignApi* | [**campaignPatchItem**](docs/Api/CampaignApi.md#campaignpatchitem) | **PATCH** /{accountid}/campaigns/{id} |
+*CampaignApi* | [**campaignPauseCampaignOffer**](docs/Api/CampaignApi.md#campaignpausecampaignoffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Pause |
+*CampaignApi* | [**campaignPublishCampaignOfferDraft**](docs/Api/CampaignApi.md#campaignpublishcampaignofferdraft) | **POST** /{accountid}/campaigns/{id}/Offers/Draft/Publish |
+*CampaignApi* | [**campaignResumeCampaignOffer**](docs/Api/CampaignApi.md#campaignresumecampaignoffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Resume |
+*CampaignApi* | [**campaignSetCampaignOfferDraft**](docs/Api/CampaignApi.md#campaignsetcampaignofferdraft) | **PUT** /{accountid}/campaigns/{id}/Offers/Draft |
+*CampaignApi* | [**campaignUnLinkItem**](docs/Api/CampaignApi.md#campaignunlinkitem) | **PATCH** /{accountid}/campaigns/{id}/UnLink |
+*CampaignApi* | [**campaignUpdateDefaultPayout**](docs/Api/CampaignApi.md#campaignupdatedefaultpayout) | **POST** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} |
+*CampaignApi* | [**campaignUpdateDefaultPayout_0**](docs/Api/CampaignApi.md#campaignupdatedefaultpayout_0) | **PATCH** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} |
+*CampaignApi* | [**campaignUpdatePublisherPayoutById**](docs/Api/CampaignApi.md#campaignupdatepublisherpayoutbyid) | **PUT** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} |
+*CampaignApi* | [**campaignUpdatePublisherPayoutById_0**](docs/Api/CampaignApi.md#campaignupdatepublisherpayoutbyid_0) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} |
+*CampaignApi* | [**campaignUpdatePublisherPayoutById_1**](docs/Api/CampaignApi.md#campaignupdatepublisherpayoutbyid_1) | **PATCH** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} |
+*CampaignApi* | [**campaignUpdateTag**](docs/Api/CampaignApi.md#campaignupdatetag) | **PATCH** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag/{jsTagId} |
+*ChangeLogApi* | [**changeLogGetChangelogByAccount**](docs/Api/ChangeLogApi.md#changeloggetchangelogbyaccount) | **POST** /{accountid}/changelog |
+*ChangeLogApi* | [**changeLogGetChangelogByObjectId**](docs/Api/ChangeLogApi.md#changeloggetchangelogbyobjectid) | **POST** /{accountid}/changelog/object/{objectId} |
+*ChangeLogApi* | [**changeLogGetChangelogByUser**](docs/Api/ChangeLogApi.md#changeloggetchangelogbyuser) | **POST** /{accountid}/changelog/user |
+*EventCallBackApi* | [**eventCallBackCreate**](docs/Api/EventCallBackApi.md#eventcallbackcreate) | **POST** /{accountid}/EventCallBacks |
+*EventCallBackApi* | [**eventCallBackDelete**](docs/Api/EventCallBackApi.md#eventcallbackdelete) | **DELETE** /{accountid}/EventCallBacks/{id} |
+*EventCallBackApi* | [**eventCallBackGet**](docs/Api/EventCallBackApi.md#eventcallbackget) | **GET** /{accountid}/EventCallBacks |
+*EventCallBackApi* | [**eventCallBackGetInboundReferences**](docs/Api/EventCallBackApi.md#eventcallbackgetinboundreferences) | **GET** /{accountid}/EventCallBacks/{id}/InboundReferences |
+*EventCallBackApi* | [**eventCallBackGetItem**](docs/Api/EventCallBackApi.md#eventcallbackgetitem) | **GET** /{accountid}/EventCallBacks/{id} |
+*EventCallBackApi* | [**eventCallBackGetMacros**](docs/Api/EventCallBackApi.md#eventcallbackgetmacros) | **GET** /{accountid}/EventCallBacks/macros |
+*EventCallBackApi* | [**eventCallBackPatch**](docs/Api/EventCallBackApi.md#eventcallbackpatch) | **PATCH** /{accountid}/EventCallBacks/{id} |
+*FeatureToggleApi* | [**featureToggleGet**](docs/Api/FeatureToggleApi.md#featuretoggleget) | **GET** /{accountid}/flipper |
+*FeatureToggleApi* | [**featureToggleGet_0**](docs/Api/FeatureToggleApi.md#featuretoggleget_0) | **GET** /{accountid}/flipper/{featureName} |
+*FileAssetApi* | [**fileAssetCreateAsset**](docs/Api/FileAssetApi.md#fileassetcreateasset) | **POST** /{accountid}/assets |
+*FileAssetApi* | [**fileAssetDelete**](docs/Api/FileAssetApi.md#fileassetdelete) | **DELETE** /{accountid}/assets/{id} |
+*FileAssetApi* | [**fileAssetDownloadItem**](docs/Api/FileAssetApi.md#fileassetdownloaditem) | **GET** /{accountid}/assets/{id}/download |
+*FileAssetApi* | [**fileAssetGet**](docs/Api/FileAssetApi.md#fileassetget) | **GET** /{accountid}/assets |
+*FileAssetApi* | [**fileAssetGetItem**](docs/Api/FileAssetApi.md#fileassetgetitem) | **GET** /{accountid}/assets/{id} |
+*IVRApi* | [**iVRAddNode**](docs/Api/IVRApi.md#ivraddnode) | **POST** /{accountid}/ivrtree/node |
+*IVRApi* | [**iVRClone**](docs/Api/IVRApi.md#ivrclone) | **POST** /{accountid}/ivrtree/{id}/clone |
+*IVRApi* | [**iVRDelete**](docs/Api/IVRApi.md#ivrdelete) | **DELETE** /{accountid}/ivrtree/{id} |
+*IVRApi* | [**iVRDeleteNode**](docs/Api/IVRApi.md#ivrdeletenode) | **PATCH** /{accountid}/ivrtree/removeNode |
+*IVRApi* | [**iVREditNode**](docs/Api/IVRApi.md#ivreditnode) | **PATCH** /{accountid}/ivrtree/editNode |
+*IVRApi* | [**iVREditNodeLink**](docs/Api/IVRApi.md#ivreditnodelink) | **PATCH** /{accountid}/ivrtree/editLink |
+*IVRApi* | [**iVRFinalizeNode**](docs/Api/IVRApi.md#ivrfinalizenode) | **POST** /{accountid}/ivrtree/finalizeTree |
+*IVRApi* | [**iVRGet**](docs/Api/IVRApi.md#ivrget) | **GET** /{accountid}/ivrtree |
+*IVRApi* | [**iVRGetAvailableNodes**](docs/Api/IVRApi.md#ivrgetavailablenodes) | **POST** /{accountid}/ivrtree/availableNodes |
+*IVRApi* | [**iVRGetAvailableTags**](docs/Api/IVRApi.md#ivrgetavailabletags) | **POST** /{accountid}/ivrtree/availableTags |
+*IVRApi* | [**iVRGetItem**](docs/Api/IVRApi.md#ivrgetitem) | **GET** /{accountid}/ivrtree/{id} |
+*IVRApi* | [**iVRGetReferences**](docs/Api/IVRApi.md#ivrgetreferences) | **GET** /{accountid}/ivrtree/{id}/InboundReferences |
+*IVRApi* | [**iVRInitializeNewTree**](docs/Api/IVRApi.md#ivrinitializenewtree) | **POST** /{accountid}/ivrtree/initialize |
+*InAppNotificationApi* | [**inAppNotificationDeleteMessage**](docs/Api/InAppNotificationApi.md#inappnotificationdeletemessage) | **DELETE** /notifications/{id} |
+*InAppNotificationApi* | [**inAppNotificationGetAll**](docs/Api/InAppNotificationApi.md#inappnotificationgetall) | **GET** /notifications/all |
+*InAppNotificationApi* | [**inAppNotificationGetCounts**](docs/Api/InAppNotificationApi.md#inappnotificationgetcounts) | **GET** /notifications/counts |
+*InAppNotificationApi* | [**inAppNotificationGetMessage**](docs/Api/InAppNotificationApi.md#inappnotificationgetmessage) | **GET** /notifications/{id} |
+*InAppNotificationApi* | [**inAppNotificationGetMessages**](docs/Api/InAppNotificationApi.md#inappnotificationgetmessages) | **GET** /notifications |
+*InAppNotificationApi* | [**inAppNotificationGetPreviews**](docs/Api/InAppNotificationApi.md#inappnotificationgetpreviews) | **GET** /notifications/toasts |
+*InAppNotificationApi* | [**inAppNotificationMarkMessageRead**](docs/Api/InAppNotificationApi.md#inappnotificationmarkmessageread) | **PUT** /notifications/{id} |
+*InfoApi* | [**infoAvailableCountries**](docs/Api/InfoApi.md#infoavailablecountries) | **GET** /info/countries |
+*InfoApi* | [**infoAvailableLanguages**](docs/Api/InfoApi.md#infoavailablelanguages) | **GET** /info/languages |
+*InfoApi* | [**infoGetAccountTypes**](docs/Api/InfoApi.md#infogetaccounttypes) | **GET** /info/Plans |
+*InfoApi* | [**infoGetOfferCategories**](docs/Api/InfoApi.md#infogetoffercategories) | **GET** /{accountId}/info/offerCategories |
+*InfoApi* | [**infoGetSettings**](docs/Api/InfoApi.md#infogetsettings) | **GET** /info/conversionSettings |
+*InfoApi* | [**infoGetTimezone**](docs/Api/InfoApi.md#infogettimezone) | **GET** /info/timezones |
+*InfoApi* | [**infoIsRingbaNumber**](docs/Api/InfoApi.md#infoisringbanumber) | **GET** /info/isNumber |
+*InsightsApi* | [**insightsGetAggregatedColumnDefinitions**](docs/Api/InsightsApi.md#insightsgetaggregatedcolumndefinitions) | **GET** /{accountid}/insights/columns |
+*InsightsApi* | [**insightsGetRollups**](docs/Api/InsightsApi.md#insightsgetrollups) | **POST** /{accountid}/insights |
+*IntegrationSettingApi* | [**integrationSettingGetIntegrationSetting**](docs/Api/IntegrationSettingApi.md#integrationsettinggetintegrationsetting) | **GET** /{accountId}/integrationsettings/{id} |
+*IntegrationsApi* | [**integrationsGetAdWordsAccounts**](docs/Api/IntegrationsApi.md#integrationsgetadwordsaccounts) | **GET** /{accountId}/integrations/ga/{integrationId}/accounts |
+*IntegrationsApi* | [**integrationsGetAdWordsConversionSets**](docs/Api/IntegrationsApi.md#integrationsgetadwordsconversionsets) | **GET** /{accountId}/integrations/ga/{integrationId}/conversionsets |
+*IntegrationsApi* | [**integrationsGetAllIntegrations**](docs/Api/IntegrationsApi.md#integrationsgetallintegrations) | **GET** /{accountId}/integrations |
+*IntegrationsApi* | [**integrationsGetFacebookAccountDetails**](docs/Api/IntegrationsApi.md#integrationsgetfacebookaccountdetails) | **GET** /{accountId}/integrations/fb/{integrationId}/accountdetails |
+*IntegrationsApi* | [**integrationsGetFacebookConversionSets**](docs/Api/IntegrationsApi.md#integrationsgetfacebookconversionsets) | **GET** /{accountId}/integrations/fb/{integrationId}/conversionsets |
+*IntegrationsApi* | [**integrationsRemoveIntegrationSetting**](docs/Api/IntegrationsApi.md#integrationsremoveintegrationsetting) | **DELETE** /{accountId}/integrations/integrationsetting/{id} |
+*IntegrationsApi* | [**integrationsSetFacebookIntegrationSettingForJsTag**](docs/Api/IntegrationsApi.md#integrationssetfacebookintegrationsettingforjstag) | **POST** /{accountId}/integrations/fb/{integrationId}/jstag/conversion |
+*IntegrationsApi* | [**integrationsSetFacebookIntegrationSettingForNumbers**](docs/Api/IntegrationsApi.md#integrationssetfacebookintegrationsettingfornumbers) | **POST** /{accountId}/integrations/fb/{integrationId}/number/conversion |
+*IntegrationsApi* | [**integrationsSetIntegrationSettingForNumbers**](docs/Api/IntegrationsApi.md#integrationssetintegrationsettingfornumbers) | **POST** /{accountId}/integrations/ga/{integrationId}/number/conversion |
+*IntegrationsApi* | [**integrationsSetIntegrationSettingForNumbers_0**](docs/Api/IntegrationsApi.md#integrationssetintegrationsettingfornumbers_0) | **POST** /{accountId}/integrations/ga/{integrationId}/jstag/conversion |
+*IntegrationsApi* | [**integrationsUpdateAdWordsIntegration**](docs/Api/IntegrationsApi.md#integrationsupdateadwordsintegration) | **PATCH** /{accountId}/integrations/ga/{id} |
+*IntegrationsApi* | [**integrationsUpdateFacebookIntegration**](docs/Api/IntegrationsApi.md#integrationsupdatefacebookintegration) | **PATCH** /{accountId}/integrations/fb/{id} |
+*IntegrationsApi* | [**integrationsUpdateFacebookIntegrationSetting**](docs/Api/IntegrationsApi.md#integrationsupdatefacebookintegrationsetting) | **PUT** /{accountId}/integrations/fb/{integrationSettingId}/conversion |
+*IntegrationsApi* | [**integrationsUpdateIntegrationSetting**](docs/Api/IntegrationsApi.md#integrationsupdateintegrationsetting) | **PUT** /{accountId}/integrations/ga/{integrationSettingId}/conversion |
+*JobQueApi* | [**jobQueGet**](docs/Api/JobQueApi.md#jobqueget) | **GET** /{accountid}/jobQueue |
+*JobQueApi* | [**jobQueGetItem**](docs/Api/JobQueApi.md#jobquegetitem) | **GET** /{accountid}/jobQueue/{id} |
+*JobQueApi* | [**jobQueGetOfferParticipationRequests**](docs/Api/JobQueApi.md#jobquegetofferparticipationrequests) | **GET** /{accountid}/jobQueue/offers/participation/{cmpid} |
+*JobQueApi* | [**jobQueProcessAction**](docs/Api/JobQueApi.md#jobqueprocessaction) | **POST** /{accountid}/jobQueue/{id}/action |
+*NotificationsApi* | [**notificationsGet**](docs/Api/NotificationsApi.md#notificationsget) | **GET** /{accountid}/notifications/user |
+*NotificationsApi* | [**notificationsPatch**](docs/Api/NotificationsApi.md#notificationspatch) | **PATCH** /{accountid}/notifications/user |
+*NumberApi* | [**numberAddAffiliate**](docs/Api/NumberApi.md#numberaddaffiliate) | **PUT** /{accountid}/numbers/{id}/Affiliate |
+*NumberApi* | [**numberCreateNumber**](docs/Api/NumberApi.md#numbercreatenumber) | **POST** /{accountid}/numbers |
+*NumberApi* | [**numberGet**](docs/Api/NumberApi.md#numberget) | **GET** /{accountid}/numbers |
+*NumberApi* | [**numberGetInboundReferences**](docs/Api/NumberApi.md#numbergetinboundreferences) | **GET** /{accountid}/numbers/{id}/InboundReferences |
+*NumberApi* | [**numberGetItem**](docs/Api/NumberApi.md#numbergetitem) | **GET** /{accountid}/numbers/{id} |
+*NumberApi* | [**numberPatchItem**](docs/Api/NumberApi.md#numberpatchitem) | **PATCH** /{accountid}/numbers/{id} |
+*NumberApi* | [**numberRelease**](docs/Api/NumberApi.md#numberrelease) | **DELETE** /{accountid}/numbers/{id} |
+*NumberApi* | [**numberReleaseNonUsedNumbers**](docs/Api/NumberApi.md#numberreleasenonusednumbers) | **DELETE** /{accountid}/numbers/ReleaseNonUsedNumbers |
+*NumberApi* | [**numberRemoveAffilaite**](docs/Api/NumberApi.md#numberremoveaffilaite) | **DELETE** /{accountid}/numbers/{id}/Affiliate/{affiliateId} |
+*NumberPoolApi* | [**numberPoolAddAffiliate**](docs/Api/NumberPoolApi.md#numberpooladdaffiliate) | **PUT** /{accountid}/numberpools/{id}/Affiliate |
+*NumberPoolApi* | [**numberPoolAddNumber**](docs/Api/NumberPoolApi.md#numberpooladdnumber) | **PUT** /{accountid}/numberpools/{id}/Numbers |
+*NumberPoolApi* | [**numberPoolAddNumbers**](docs/Api/NumberPoolApi.md#numberpooladdnumbers) | **PUT** /{accountid}/numberpools/{id}/AllocateMoreNumbers |
+*NumberPoolApi* | [**numberPoolAddNumbers_0**](docs/Api/NumberPoolApi.md#numberpooladdnumbers_0) | **PUT** /{accountid}/numberpools/{id}/Expand |
+*NumberPoolApi* | [**numberPoolCreatePool**](docs/Api/NumberPoolApi.md#numberpoolcreatepool) | **POST** /{accountid}/numberpools |
+*NumberPoolApi* | [**numberPoolDeletePool**](docs/Api/NumberPoolApi.md#numberpooldeletepool) | **DELETE** /{accountid}/numberpools/{id} |
+*NumberPoolApi* | [**numberPoolGet**](docs/Api/NumberPoolApi.md#numberpoolget) | **GET** /{accountid}/numberpools |
+*NumberPoolApi* | [**numberPoolGetAllocationJob**](docs/Api/NumberPoolApi.md#numberpoolgetallocationjob) | **GET** /{accountid}/numberpools/{id}/AllocationJobs/{allocationJobId} |
+*NumberPoolApi* | [**numberPoolGetAllocationJobs**](docs/Api/NumberPoolApi.md#numberpoolgetallocationjobs) | **GET** /{accountid}/numberpools/{id}/AllocationJobs |
+*NumberPoolApi* | [**numberPoolGetFreePoolSize**](docs/Api/NumberPoolApi.md#numberpoolgetfreepoolsize) | **GET** /{accountid}/numberpools/{id}/FreeNumberCount |
+*NumberPoolApi* | [**numberPoolGetInboundReferences**](docs/Api/NumberPoolApi.md#numberpoolgetinboundreferences) | **GET** /{accountid}/numberpools/{id}/InboundReferences |
+*NumberPoolApi* | [**numberPoolGetItem**](docs/Api/NumberPoolApi.md#numberpoolgetitem) | **GET** /{accountid}/numberpools/{id} |
+*NumberPoolApi* | [**numberPoolGetNumbers**](docs/Api/NumberPoolApi.md#numberpoolgetnumbers) | **GET** /{accountid}/numberpools/{id}/Numbers |
+*NumberPoolApi* | [**numberPoolInUseNumbers**](docs/Api/NumberPoolApi.md#numberpoolinusenumbers) | **GET** /{accountid}/numberpools/{id}/Numbers/InUse |
+*NumberPoolApi* | [**numberPoolPatchItem**](docs/Api/NumberPoolApi.md#numberpoolpatchitem) | **PATCH** /{accountid}/numberpools/{id} |
+*NumberPoolApi* | [**numberPoolRemoveAffilaite**](docs/Api/NumberPoolApi.md#numberpoolremoveaffilaite) | **DELETE** /{accountid}/numberpools/{id}/Affiliate/{affiliateId} |
+*NumberPoolApi* | [**numberPoolRemoveNumber**](docs/Api/NumberPoolApi.md#numberpoolremovenumber) | **DELETE** /{accountid}/numberpools/{id}/Numbers/{numberId} |
+*NumberPoolApi* | [**numberPoolRemoveNumbers**](docs/Api/NumberPoolApi.md#numberpoolremovenumbers) | **POST** /{accountid}/numberpools/{id}/Shrink |
+*NumberPoolApi* | [**numberPoolReplaceNumbers**](docs/Api/NumberPoolApi.md#numberpoolreplacenumbers) | **POST** /{accountid}/numberpools/{id}/Replace |
+*NumberPoolApi* | [**numberPoolSyncNumberCount**](docs/Api/NumberPoolApi.md#numberpoolsyncnumbercount) | **POST** /{accountid}/numberpools/SyncNumberCount |
+*NumberPoolApi* | [**numberPoolVerifyNumbers**](docs/Api/NumberPoolApi.md#numberpoolverifynumbers) | **GET** /{accountid}/numberpools/{id}/Numbers/Verify |
+*OAuthApi* | [**oAuthAddFacebookUser**](docs/Api/OAuthApi.md#oauthaddfacebookuser) | **POST** /{accountId}/oauth/fb/callback |
+*OAuthApi* | [**oAuthAddUserAdwordsData**](docs/Api/OAuthApi.md#oauthadduseradwordsdata) | **POST** /{accountId}/oauth/ga/callback |
+*OAuthApi* | [**oAuthGetAuthorizationUrl**](docs/Api/OAuthApi.md#oauthgetauthorizationurl) | **GET** /{accountId}/oauth/ga/authurl |
+*OAuthApi* | [**oAuthGetFacebookAuthorisationUrl**](docs/Api/OAuthApi.md#oauthgetfacebookauthorisationurl) | **GET** /{accountId}/oauth/fb/authurl |
+*OffersApi* | [**offersAddNumber**](docs/Api/OffersApi.md#offersaddnumber) | **POST** /{accountid}/offers/{cmpId}/number |
+*OffersApi* | [**offersGet**](docs/Api/OffersApi.md#offersget) | **GET** /{accountid}/offers |
+*OffersApi* | [**offersGetPublisherNumbers**](docs/Api/OffersApi.md#offersgetpublishernumbers) | **GET** /{accountid}/offers/{cmpId}/number |
+*OffersApi* | [**offersGet_0**](docs/Api/OffersApi.md#offersget_0) | **GET** /{accountid}/offers/{cmpid} |
+*OffersApi* | [**offersHide**](docs/Api/OffersApi.md#offershide) | **POST** /{accountid}/offers/{cmpid}/hide |
+*OffersApi* | [**offersJoin**](docs/Api/OffersApi.md#offersjoin) | **POST** /{accountid}/offers/{cmpid}/join |
+*OffersApi* | [**offersLeave**](docs/Api/OffersApi.md#offersleave) | **POST** /{accountid}/offers/{cmpid}/leave |
+*OffersApi* | [**offersUnhide**](docs/Api/OffersApi.md#offersunhide) | **POST** /{accountid}/offers/{cmpid}/unhide |
+*PhoneLookupApi* | [**phoneLookupTestPhoneSettings**](docs/Api/PhoneLookupApi.md#phonelookuptestphonesettings) | **POST** /{accountid}/phoneNumberLookup |
+*PingTreeApi* | [**pingTreeAddTargets**](docs/Api/PingTreeApi.md#pingtreeaddtargets) | **PATCH** /{accountid}/pingtrees/{id}/Targets |
+*PingTreeApi* | [**pingTreeCreatePingTree**](docs/Api/PingTreeApi.md#pingtreecreatepingtree) | **POST** /{accountid}/pingtrees |
+*PingTreeApi* | [**pingTreeDeletePingTree**](docs/Api/PingTreeApi.md#pingtreedeletepingtree) | **DELETE** /{accountid}/pingtrees/{id} |
+*PingTreeApi* | [**pingTreeDeleteTarget**](docs/Api/PingTreeApi.md#pingtreedeletetarget) | **DELETE** /{accountid}/pingtrees/{id}/Targets/{targetId} |
+*PingTreeApi* | [**pingTreeGet**](docs/Api/PingTreeApi.md#pingtreeget) | **GET** /{accountid}/pingtrees |
+*PingTreeApi* | [**pingTreeGetCurrentCounts**](docs/Api/PingTreeApi.md#pingtreegetcurrentcounts) | **GET** /{accountid}/pingtrees/{id}/Counts |
+*PingTreeApi* | [**pingTreeGetItem**](docs/Api/PingTreeApi.md#pingtreegetitem) | **GET** /{accountid}/pingtrees/{id} |
+*PingTreeApi* | [**pingTreeGetReferences**](docs/Api/PingTreeApi.md#pingtreegetreferences) | **GET** /{accountid}/pingtrees/{id}/InboundReferences |
+*PingTreeApi* | [**pingTreeGetTargets**](docs/Api/PingTreeApi.md#pingtreegettargets) | **GET** /{accountid}/pingtrees/{id}/Targets |
+*PingTreeApi* | [**pingTreePatchItem**](docs/Api/PingTreeApi.md#pingtreepatchitem) | **PATCH** /{accountid}/pingtrees/{id} |
+*PingTreeApi* | [**pingTreeResetCount**](docs/Api/PingTreeApi.md#pingtreeresetcount) | **DELETE** /{accountid}/pingtrees/{id}/ResetCount |
+*PingTreeApi* | [**pingTreeUpdateTargets**](docs/Api/PingTreeApi.md#pingtreeupdatetargets) | **PATCH** /{accountid}/pingtrees/{id}/Targets/BulkUpdate |
+*PingTreeTargetApi* | [**pingTreeTargetAddBuyerToTarget**](docs/Api/PingTreeTargetApi.md#pingtreetargetaddbuyertotarget) | **PUT** /{accountid}/pingtreetargets/{id}/Buyer |
+*PingTreeTargetApi* | [**pingTreeTargetBuyerSetConcurrencyCap**](docs/Api/PingTreeTargetApi.md#pingtreetargetbuyersetconcurrencycap) | **PUT** /{accountid}/pingtreetargets/{id}/BuyerSetConcurrencyCap |
+*PingTreeTargetApi* | [**pingTreeTargetCheckIfDuplicate**](docs/Api/PingTreeTargetApi.md#pingtreetargetcheckifduplicate) | **POST** /{accountid}/pingtreetargets/isDuplicate |
+*PingTreeTargetApi* | [**pingTreeTargetDeleteTarget**](docs/Api/PingTreeTargetApi.md#pingtreetargetdeletetarget) | **DELETE** /{accountid}/pingtreetargets/{id} |
+*PingTreeTargetApi* | [**pingTreeTargetGet**](docs/Api/PingTreeTargetApi.md#pingtreetargetget) | **GET** /{accountid}/pingtreetargets |
+*PingTreeTargetApi* | [**pingTreeTargetGetCurrentCounts**](docs/Api/PingTreeTargetApi.md#pingtreetargetgetcurrentcounts) | **GET** /{accountid}/pingtreetargets/{id}/Counts |
+*PingTreeTargetApi* | [**pingTreeTargetGetInboundReferences**](docs/Api/PingTreeTargetApi.md#pingtreetargetgetinboundreferences) | **GET** /{accountid}/pingtreetargets/{id}/InboundReferences |
+*PingTreeTargetApi* | [**pingTreeTargetGetItem**](docs/Api/PingTreeTargetApi.md#pingtreetargetgetitem) | **GET** /{accountid}/pingtreetargets/{id} |
+*PingTreeTargetApi* | [**pingTreeTargetPatch**](docs/Api/PingTreeTargetApi.md#pingtreetargetpatch) | **PATCH** /{accountid}/pingtreetargets/{id} |
+*PingTreeTargetApi* | [**pingTreeTargetPost**](docs/Api/PingTreeTargetApi.md#pingtreetargetpost) | **POST** /{accountid}/pingtreetargets |
+*PingTreeTargetApi* | [**pingTreeTargetRemoveBuyerFromTargetGroup**](docs/Api/PingTreeTargetApi.md#pingtreetargetremovebuyerfromtargetgroup) | **DELETE** /{accountid}/pingtreetargets/{id}/Buyer/{buyerId} |
+*PingTreeTargetApi* | [**pingTreeTargetResetCount**](docs/Api/PingTreeTargetApi.md#pingtreetargetresetcount) | **DELETE** /{accountid}/pingtreetargets/{id}/ResetCount |
+*PingTreeTargetApi* | [**pingTreeTargetUpdateParseSettings**](docs/Api/PingTreeTargetApi.md#pingtreetargetupdateparsesettings) | **PUT** /{accountid}/pingtreetargets/{id}/ParseSetting |
+*ProfileApi* | [**profileChangePassword**](docs/Api/ProfileApi.md#profilechangepassword) | **POST** /Profile/ChangePassword |
+*ProfileApi* | [**profileGet**](docs/Api/ProfileApi.md#profileget) | **GET** /Profile |
+*ProfileApi* | [**profilePatch**](docs/Api/ProfileApi.md#profilepatch) | **PATCH** /Profile |
+*PublisherRegistrationApi* | [**publisherRegistrationCreatePublisherRegistrationPage**](docs/Api/PublisherRegistrationApi.md#publisherregistrationcreatepublisherregistrationpage) | **POST** /{accountid}/publisher-registration |
+*PublisherRegistrationApi* | [**publisherRegistrationGet**](docs/Api/PublisherRegistrationApi.md#publisherregistrationget) | **GET** /{accountid}/publisher-registration |
+*PublisherRegistrationApi* | [**publisherRegistrationGetSignupFormDetails**](docs/Api/PublisherRegistrationApi.md#publisherregistrationgetsignupformdetails) | **GET** /PublisherSignup/{id} |
+*PublisherRegistrationApi* | [**publisherRegistrationGet_0**](docs/Api/PublisherRegistrationApi.md#publisherregistrationget_0) | **GET** /{accountid}/publisher-registration/{id} |
+*PublisherRegistrationApi* | [**publisherRegistrationNewPublisherRegistration**](docs/Api/PublisherRegistrationApi.md#publisherregistrationnewpublisherregistration) | **POST** /PublisherSignup/{id} |
+*PublisherRegistrationApi* | [**publisherRegistrationPatchItem**](docs/Api/PublisherRegistrationApi.md#publisherregistrationpatchitem) | **PATCH** /{accountid}/publisher-registration/{id} |
+*PublisherRegistrationApi* | [**publisherRegistrationSetDefault**](docs/Api/PublisherRegistrationApi.md#publisherregistrationsetdefault) | **POST** /{accountid}/publisher-registration/default |
+*QueryPathMapApi* | [**queryPathMapCreate**](docs/Api/QueryPathMapApi.md#querypathmapcreate) | **POST** /{accountid}/QueryPathMaps |
+*QueryPathMapApi* | [**queryPathMapDeleteQueryPathMap**](docs/Api/QueryPathMapApi.md#querypathmapdeletequerypathmap) | **DELETE** /{accountid}/QueryPathMaps/{id} |
+*QueryPathMapApi* | [**queryPathMapGet**](docs/Api/QueryPathMapApi.md#querypathmapget) | **GET** /{accountid}/QueryPathMaps |
+*QueryPathMapApi* | [**queryPathMapGetItem**](docs/Api/QueryPathMapApi.md#querypathmapgetitem) | **GET** /{accountid}/QueryPathMaps/{id} |
+*QueryPathMapApi* | [**queryPathMapGetReferences**](docs/Api/QueryPathMapApi.md#querypathmapgetreferences) | **GET** /{accountid}/QueryPathMaps/{id}/InboundReferences |
+*QueryPathMapApi* | [**queryPathMapPatch**](docs/Api/QueryPathMapApi.md#querypathmappatch) | **PATCH** /{accountid}/QueryPathMaps/{id} |
+*RingbaAccountApi* | [**ringbaAccountAddUser**](docs/Api/RingbaAccountApi.md#ringbaaccountadduser) | **PUT** /{accountid}/users |
+*RingbaAccountApi* | [**ringbaAccountAddUser_0**](docs/Api/RingbaAccountApi.md#ringbaaccountadduser_0) | **PUT** /RingbaAccounts/{accountid}/users |
+*RingbaAccountApi* | [**ringbaAccountGet**](docs/Api/RingbaAccountApi.md#ringbaaccountget) | **GET** /RingbaAccounts |
+*RingbaAccountApi* | [**ringbaAccountGetMyPermissions**](docs/Api/RingbaAccountApi.md#ringbaaccountgetmypermissions) | **GET** /RingbaAccounts/{accountId}/permissions |
+*RingbaAccountApi* | [**ringbaAccountGet_0**](docs/Api/RingbaAccountApi.md#ringbaaccountget_0) | **GET** /RingbaAccounts/{accountId} |
+*RingbaAccountApi* | [**ringbaAccountListUsers**](docs/Api/RingbaAccountApi.md#ringbaaccountlistusers) | **GET** /{accountid}/users |
+*RingbaAccountApi* | [**ringbaAccountListUsers_0**](docs/Api/RingbaAccountApi.md#ringbaaccountlistusers_0) | **GET** /RingbaAccounts/{accountid}/users |
+*RingbaAccountApi* | [**ringbaAccountRemoveUser**](docs/Api/RingbaAccountApi.md#ringbaaccountremoveuser) | **DELETE** /{accountid}/users/{userId} |
+*RingbaAccountApi* | [**ringbaAccountRemoveUser_0**](docs/Api/RingbaAccountApi.md#ringbaaccountremoveuser_0) | **DELETE** /RingbaAccounts/{accountid}/users/{userId} |
+*RingbaAccountApi* | [**ringbaAccountUpdate**](docs/Api/RingbaAccountApi.md#ringbaaccountupdate) | **PATCH** /RingbaAccounts/{accountid} |
+*RingbaUserApi* | [**ringbaUserGet**](docs/Api/RingbaUserApi.md#ringbauserget) | **GET** /uiUserSettings |
+*RingbaUserApi* | [**ringbaUserSetUiItem**](docs/Api/RingbaUserApi.md#ringbausersetuiitem) | **POST** /uiUserSettings |
+*SavedInsightApi* | [**savedInsightCreate**](docs/Api/SavedInsightApi.md#savedinsightcreate) | **POST** /{accountid}/savedInsights |
+*SavedInsightApi* | [**savedInsightDelete**](docs/Api/SavedInsightApi.md#savedinsightdelete) | **DELETE** /{accountid}/savedInsights/{id} |
+*SavedInsightApi* | [**savedInsightGetItem**](docs/Api/SavedInsightApi.md#savedinsightgetitem) | **GET** /{accountid}/savedInsights/{id} |
+*SavedInsightApi* | [**savedInsightIndex**](docs/Api/SavedInsightApi.md#savedinsightindex) | **GET** /{accountid}/savedInsights |
+*SavedInsightApi* | [**savedInsightUpdate**](docs/Api/SavedInsightApi.md#savedinsightupdate) | **PUT** /{accountid}/savedInsights/{id} |
+*SavedReportApi* | [**savedReportCreate**](docs/Api/SavedReportApi.md#savedreportcreate) | **POST** /{accountid}/savedReports |
+*SavedReportApi* | [**savedReportDelete**](docs/Api/SavedReportApi.md#savedreportdelete) | **DELETE** /{accountid}/savedReports/{id} |
+*SavedReportApi* | [**savedReportGetItem**](docs/Api/SavedReportApi.md#savedreportgetitem) | **GET** /{accountid}/savedReports/{id} |
+*SavedReportApi* | [**savedReportIndex**](docs/Api/SavedReportApi.md#savedreportindex) | **GET** /{accountid}/savedReports |
+*SavedReportApi* | [**savedReportUpdate**](docs/Api/SavedReportApi.md#savedreportupdate) | **PUT** /{accountid}/savedReports/{id} |
+*StatsApi* | [**statsGetAccountCount**](docs/Api/StatsApi.md#statsgetaccountcount) | **GET** /{accountid}/stats |
+*StatsApi* | [**statsGetAllCounts**](docs/Api/StatsApi.md#statsgetallcounts) | **GET** /{accountid}/stats/allCampaigns |
+*StatsApi* | [**statsGetLiveCalls**](docs/Api/StatsApi.md#statsgetlivecalls) | **GET** /{accountid}/stats/live |
+*StatsApi* | [**statsGetLiveCallsByAffiliate**](docs/Api/StatsApi.md#statsgetlivecallsbyaffiliate) | **GET** /{accountid}/stats/live/publisher/{affiliateId} |
+*StatsApi* | [**statsGetLiveCallsByCampaign**](docs/Api/StatsApi.md#statsgetlivecallsbycampaign) | **GET** /{accountid}/stats/live/campaign/{campaignId} |
+*StatsApi* | [**statsGetStats**](docs/Api/StatsApi.md#statsgetstats) | **GET** /{accountid}/stats/byDay |
+*StatsApi* | [**statsGetStatsRolledUp**](docs/Api/StatsApi.md#statsgetstatsrolledup) | **GET** /{accountid}/stats/Sum |
+*StatsApi* | [**statsGetTopStats**](docs/Api/StatsApi.md#statsgettopstats) | **GET** /{accountid}/stats/TopByDay |
+*StatsApi* | [**statsGetTopStatsByHours**](docs/Api/StatsApi.md#statsgettopstatsbyhours) | **GET** /{accountid}/stats/TopByHour |
+*TagsApi* | [**tagsGetTags**](docs/Api/TagsApi.md#tagsgettags) | **GET** /{accountId}/Tags |
+*TagsApi* | [**tagsGetTagsFull**](docs/Api/TagsApi.md#tagsgettagsfull) | **GET** /{accountId}/Tags/full |
+*TargetApi* | [**targetAddBuyerToTarget**](docs/Api/TargetApi.md#targetaddbuyertotarget) | **PUT** /{accountid}/targets/{id}/Buyer |
+*TargetApi* | [**targetBuyerSetConcurrencyCap**](docs/Api/TargetApi.md#targetbuyersetconcurrencycap) | **PUT** /{accountid}/targets/{id}/BuyerSetConcurrencyCap |
+*TargetApi* | [**targetBuyerTogglePause**](docs/Api/TargetApi.md#targetbuyertogglepause) | **PUT** /{accountid}/targets/{id}/BuyerTogglePause |
+*TargetApi* | [**targetCheckIfDuplicate**](docs/Api/TargetApi.md#targetcheckifduplicate) | **POST** /{accountid}/targets/isDuplicate |
+*TargetApi* | [**targetDeleteTarget**](docs/Api/TargetApi.md#targetdeletetarget) | **DELETE** /{accountid}/targets/{id} |
+*TargetApi* | [**targetGet**](docs/Api/TargetApi.md#targetget) | **GET** /{accountid}/targets |
+*TargetApi* | [**targetGetCurrentCounts**](docs/Api/TargetApi.md#targetgetcurrentcounts) | **GET** /{accountid}/targets/{id}/Counts |
+*TargetApi* | [**targetGetInboundReferences**](docs/Api/TargetApi.md#targetgetinboundreferences) | **GET** /{accountid}/targets/{id}/InboundReferences |
+*TargetApi* | [**targetGetItem**](docs/Api/TargetApi.md#targetgetitem) | **GET** /{accountid}/targets/{id} |
+*TargetApi* | [**targetPatch**](docs/Api/TargetApi.md#targetpatch) | **PATCH** /{accountid}/targets/{id} |
+*TargetApi* | [**targetPost**](docs/Api/TargetApi.md#targetpost) | **POST** /{accountid}/targets |
+*TargetApi* | [**targetRemoveBuyerFromTargetGroup**](docs/Api/TargetApi.md#targetremovebuyerfromtargetgroup) | **DELETE** /{accountid}/targets/{id}/Buyer/{buyerId} |
+*TargetApi* | [**targetResetCount**](docs/Api/TargetApi.md#targetresetcount) | **DELETE** /{accountid}/targets/{id}/ResetCount |
+*TargetGroupApi* | [**targetGroupAddBuyerToTargetGroup**](docs/Api/TargetGroupApi.md#targetgroupaddbuyertotargetgroup) | **PUT** /{accountid}/TargetGroups/{id}/Buyer |
+*TargetGroupApi* | [**targetGroupAddTargets**](docs/Api/TargetGroupApi.md#targetgroupaddtargets) | **PATCH** /{accountid}/TargetGroups/{id}/Targets |
+*TargetGroupApi* | [**targetGroupCreateTargetGroup**](docs/Api/TargetGroupApi.md#targetgroupcreatetargetgroup) | **POST** /{accountid}/TargetGroups |
+*TargetGroupApi* | [**targetGroupDeleteTarget**](docs/Api/TargetGroupApi.md#targetgroupdeletetarget) | **DELETE** /{accountid}/TargetGroups/{id}/Targets/{targetId} |
+*TargetGroupApi* | [**targetGroupDeleteTargetGroup**](docs/Api/TargetGroupApi.md#targetgroupdeletetargetgroup) | **DELETE** /{accountid}/TargetGroups/{id} |
+*TargetGroupApi* | [**targetGroupGet**](docs/Api/TargetGroupApi.md#targetgroupget) | **GET** /{accountid}/TargetGroups |
+*TargetGroupApi* | [**targetGroupGetCurrentCounts**](docs/Api/TargetGroupApi.md#targetgroupgetcurrentcounts) | **GET** /{accountid}/TargetGroups/{id}/Counts |
+*TargetGroupApi* | [**targetGroupGetItem**](docs/Api/TargetGroupApi.md#targetgroupgetitem) | **GET** /{accountid}/TargetGroups/{id} |
+*TargetGroupApi* | [**targetGroupGetReferences**](docs/Api/TargetGroupApi.md#targetgroupgetreferences) | **GET** /{accountid}/TargetGroups/{id}/InboundReferences |
+*TargetGroupApi* | [**targetGroupGetTargets**](docs/Api/TargetGroupApi.md#targetgroupgettargets) | **GET** /{accountid}/TargetGroups/{id}/Targets |
+*TargetGroupApi* | [**targetGroupPatchItem**](docs/Api/TargetGroupApi.md#targetgrouppatchitem) | **PATCH** /{accountid}/TargetGroups/{id} |
+*TargetGroupApi* | [**targetGroupRemoveBuyerFromTargetGroup**](docs/Api/TargetGroupApi.md#targetgroupremovebuyerfromtargetgroup) | **DELETE** /{accountid}/TargetGroups/{id}/Buyer/{buyerId} |
+*TargetGroupApi* | [**targetGroupResetCount**](docs/Api/TargetGroupApi.md#targetgroupresetcount) | **DELETE** /{accountid}/TargetGroups/{id}/ResetCount |
+*TargetGroupApi* | [**targetGroupUpdateTargets**](docs/Api/TargetGroupApi.md#targetgroupupdatetargets) | **PATCH** /{accountid}/TargetGroups/{id}/Targets/BulkUpdate |
+*UserInvitationApi* | [**userInvitationAcceptInvitation**](docs/Api/UserInvitationApi.md#userinvitationacceptinvitation) | **POST** /Invitations/{id}/join |
+*UserInvitationApi* | [**userInvitationBuyerDelete**](docs/Api/UserInvitationApi.md#userinvitationbuyerdelete) | **DELETE** /{accountId}/Buyers/{buyerId}/Invitations/{id} |
+*UserInvitationApi* | [**userInvitationBuyerGetInvitation**](docs/Api/UserInvitationApi.md#userinvitationbuyergetinvitation) | **GET** /{accountId}/Buyers/{buyerId}/Invitations/{id} |
+*UserInvitationApi* | [**userInvitationBuyerInviteUser**](docs/Api/UserInvitationApi.md#userinvitationbuyerinviteuser) | **POST** /{accountId}/Buyers/{buyerId}/Invitations |
+*UserInvitationApi* | [**userInvitationBuyerListInvitations**](docs/Api/UserInvitationApi.md#userinvitationbuyerlistinvitations) | **GET** /{accountId}/Buyers/{buyerId}/Invitations |
+*UserInvitationApi* | [**userInvitationDescribeInvitation**](docs/Api/UserInvitationApi.md#userinvitationdescribeinvitation) | **GET** /Invitations/{id} |
+*UserInvitationApi* | [**userInvitationPublisherDelete**](docs/Api/UserInvitationApi.md#userinvitationpublisherdelete) | **DELETE** /{accountId}/Affiliates/{affiliateId}/Invitations/{id} |
+*UserInvitationApi* | [**userInvitationPublisherGetInvitation**](docs/Api/UserInvitationApi.md#userinvitationpublishergetinvitation) | **GET** /{accountId}/Affiliates/{affiliateId}/Invitations/{id} |
+*UserInvitationApi* | [**userInvitationPublisherInviteUser**](docs/Api/UserInvitationApi.md#userinvitationpublisherinviteuser) | **POST** /{accountId}/Affiliates/{affiliateId}/Invitations |
+*UserInvitationApi* | [**userInvitationPublisherListInvitations**](docs/Api/UserInvitationApi.md#userinvitationpublisherlistinvitations) | **GET** /{accountId}/Affiliates/{affiliateId}/Invitations |
+*UserInvitationApi* | [**userInvitationUserDelete**](docs/Api/UserInvitationApi.md#userinvitationuserdelete) | **DELETE** /{accountid}/invitations/{id} |
+*UserInvitationApi* | [**userInvitationUserGetInvitation**](docs/Api/UserInvitationApi.md#userinvitationusergetinvitation) | **GET** /{accountid}/invitations/{id} |
+*UserInvitationApi* | [**userInvitationUserInviteUser**](docs/Api/UserInvitationApi.md#userinvitationuserinviteuser) | **POST** /{accountid}/invitations |
+*UserInvitationApi* | [**userInvitationUserListInvitations**](docs/Api/UserInvitationApi.md#userinvitationuserlistinvitations) | **GET** /{accountid}/invitations |
+*WebHookApi* | [**webHookCreateConversion**](docs/Api/WebHookApi.md#webhookcreateconversion) | **POST** /{accountid}/WebHooks/createConversion |
+*WebHookApi* | [**webHookDelete**](docs/Api/WebHookApi.md#webhookdelete) | **DELETE** /{accountid}/WebHooks/{id} |
+*WebHookApi* | [**webHookGet**](docs/Api/WebHookApi.md#webhookget) | **GET** /{accountid}/WebHooks |
+*WebHookApi* | [**webHookGetItem**](docs/Api/WebHookApi.md#webhookgetitem) | **GET** /{accountid}/WebHooks/{id} |
+*WebHookApi* | [**webHookGetUrl**](docs/Api/WebHookApi.md#webhookgeturl) | **POST** /{accountid}/WebHooks/{id}/getUrl |
+*WebHookApi* | [**webHookPatch**](docs/Api/WebHookApi.md#webhookpatch) | **PATCH** /{accountid}/WebHooks/{id} |
+*WebHookApi* | [**webHookTestConversion**](docs/Api/WebHookApi.md#webhooktestconversion) | **POST** /{accountid}/WebHooks/testConversion |
+*WhiteLabelApi* | [**whiteLabelCnameSettings**](docs/Api/WhiteLabelApi.md#whitelabelcnamesettings) | **GET** /{accountid}/whiteLabel/Cname |
+*WhiteLabelApi* | [**whiteLabelDeleteCname**](docs/Api/WhiteLabelApi.md#whitelabeldeletecname) | **DELETE** /{accountid}/whiteLabel/Cname |
+*WhiteLabelApi* | [**whiteLabelGet**](docs/Api/WhiteLabelApi.md#whitelabelget) | **GET** /{accountid}/whiteLabel |
+*WhiteLabelApi* | [**whiteLabelPublishTheme**](docs/Api/WhiteLabelApi.md#whitelabelpublishtheme) | **POST** /{accountid}/whiteLabel/publish |
+*WhiteLabelApi* | [**whiteLabelRequestCname**](docs/Api/WhiteLabelApi.md#whitelabelrequestcname) | **POST** /{accountid}/whiteLabel/Cname |
+*WhiteLabelApi* | [**whiteLabelSetFriendlyName**](docs/Api/WhiteLabelApi.md#whitelabelsetfriendlyname) | **PATCH** /{accountid}/whiteLabel/friendlyName |
+*WhiteLabelApi* | [**whiteLabelUpdateStagingTheme**](docs/Api/WhiteLabelApi.md#whitelabelupdatestagingtheme) | **PATCH** /{accountid}/whiteLabel/theme |
+*WhiteLabelApi* | [**whiteLabelValidateFriendlyName**](docs/Api/WhiteLabelApi.md#whitelabelvalidatefriendlyname) | **GET** /{accountid}/whiteLabel/friendlyName/validate |
 
 
 ## Documentation For Models
@@ -428,10 +483,16 @@ Class | Method | HTTP request | Description
  - [Affiliate](docs/Model/Affiliate.md)
  - [AnnotateCallRequest](docs/Model/AnnotateCallRequest.md)
  - [BaseConversion](docs/Model/BaseConversion.md)
+ - [BaseOAuthCallbackRequestModel](docs/Model/BaseOAuthCallbackRequestModel.md)
+ - [BaseSetIntegrationSettingRequestModel](docs/Model/BaseSetIntegrationSettingRequestModel.md)
  - [BatchPayoutUpdateModel](docs/Model/BatchPayoutUpdateModel.md)
+ - [BidAcceptanceSettings](docs/Model/BidAcceptanceSettings.md)
  - [BillingConfirmModel](docs/Model/BillingConfirmModel.md)
  - [BillingSettingsModel](docs/Model/BillingSettingsModel.md)
+ - [BulkBlockNumberRequest](docs/Model/BulkBlockNumberRequest.md)
  - [BulkCriteria](docs/Model/BulkCriteria.md)
+ - [BulkSetNumbersIntegrationSettingRequest](docs/Model/BulkSetNumbersIntegrationSettingRequest.md)
+ - [BulkSetNumbersIntegrationSettingRequestModel](docs/Model/BulkSetNumbersIntegrationSettingRequestModel.md)
  - [BulkTagUploadRequest](docs/Model/BulkTagUploadRequest.md)
  - [BulkTargetUpdate](docs/Model/BulkTargetUpdate.md)
  - [Buyer](docs/Model/Buyer.md)
@@ -453,6 +514,7 @@ Class | Method | HTTP request | Description
  - [CnameCreationRequest](docs/Model/CnameCreationRequest.md)
  - [ConversionWebhookRequest](docs/Model/ConversionWebhookRequest.md)
  - [CountResponse](docs/Model/CountResponse.md)
+ - [CreateAccountSettingsRequest](docs/Model/CreateAccountSettingsRequest.md)
  - [CreateAffiliateModel](docs/Model/CreateAffiliateModel.md)
  - [CreateBlockedNumberRequest](docs/Model/CreateBlockedNumberRequest.md)
  - [CreateBuyerModel](docs/Model/CreateBuyerModel.md)
@@ -460,6 +522,8 @@ Class | Method | HTTP request | Description
  - [CreateIVRCallRouteModel](docs/Model/CreateIVRCallRouteModel.md)
  - [CreateIVRTreeRequestModel](docs/Model/CreateIVRTreeRequestModel.md)
  - [CreateNumberRequestModel](docs/Model/CreateNumberRequestModel.md)
+ - [CreatePRPModel](docs/Model/CreatePRPModel.md)
+ - [CreateSavedInsightRequest](docs/Model/CreateSavedInsightRequest.md)
  - [CreateSavedReportRequest](docs/Model/CreateSavedReportRequest.md)
  - [Criteria](docs/Model/Criteria.md)
  - [DeleteCallRouteModel](docs/Model/DeleteCallRouteModel.md)
@@ -477,6 +541,8 @@ Class | Method | HTTP request | Description
  - [GetAllResponse](docs/Model/GetAllResponse.md)
  - [GetAvailableNodesRequestModel](docs/Model/GetAvailableNodesRequestModel.md)
  - [GetAvailableTagsRequestModel](docs/Model/GetAvailableTagsRequestModel.md)
+ - [GetChangeLogBaseRequest](docs/Model/GetChangeLogBaseRequest.md)
+ - [GetChangeLogByUserRequest](docs/Model/GetChangeLogByUserRequest.md)
  - [GetJobQueItemResult](docs/Model/GetJobQueItemResult.md)
  - [GetMessageCountResponse](docs/Model/GetMessageCountResponse.md)
  - [GetMessagesResponse](docs/Model/GetMessagesResponse.md)
@@ -489,6 +555,9 @@ Class | Method | HTTP request | Description
  - [IVRTreeNodesResponse](docs/Model/IVRTreeNodesResponse.md)
  - [IVRTreeRequestModel](docs/Model/IVRTreeRequestModel.md)
  - [IVRTreeResponse](docs/Model/IVRTreeResponse.md)
+ - [Integration](docs/Model/Integration.md)
+ - [IntegrationConversionSet](docs/Model/IntegrationConversionSet.md)
+ - [IntegrationSetting](docs/Model/IntegrationSetting.md)
  - [JobActionModel](docs/Model/JobActionModel.md)
  - [JobActionResultModel](docs/Model/JobActionResultModel.md)
  - [JobQueItem](docs/Model/JobQueItem.md)
@@ -519,9 +588,11 @@ Class | Method | HTTP request | Description
  - [OfferDetailModel](docs/Model/OfferDetailModel.md)
  - [OfferInvitationModel](docs/Model/OfferInvitationModel.md)
  - [OfferNumberRestrictions](docs/Model/OfferNumberRestrictions.md)
+ - [OfficeBreak](docs/Model/OfficeBreak.md)
  - [OpenSetting](docs/Model/OpenSetting.md)
  - [OperationTime](docs/Model/OperationTime.md)
  - [OverideSetting](docs/Model/OverideSetting.md)
+ - [PRPCustomField](docs/Model/PRPCustomField.md)
  - [ParseSetting](docs/Model/ParseSetting.md)
  - [ParseSettingModel](docs/Model/ParseSettingModel.md)
  - [PayoutConversionModel](docs/Model/PayoutConversionModel.md)
@@ -536,6 +607,7 @@ Class | Method | HTTP request | Description
  - [PingTreeTargetCreateModel](docs/Model/PingTreeTargetCreateModel.md)
  - [PreviewRecord](docs/Model/PreviewRecord.md)
  - [PreviewResponse](docs/Model/PreviewResponse.md)
+ - [PublisherSignupModel](docs/Model/PublisherSignupModel.md)
  - [QueryPathMap](docs/Model/QueryPathMap.md)
  - [QueryPathMapCreateModel](docs/Model/QueryPathMapCreateModel.md)
  - [RecordCallSetting](docs/Model/RecordCallSetting.md)
@@ -549,6 +621,8 @@ Class | Method | HTTP request | Description
  - [RootNode](docs/Model/RootNode.md)
  - [RoutingPriority](docs/Model/RoutingPriority.md)
  - [ScheduleAndCapacity](docs/Model/ScheduleAndCapacity.md)
+ - [SetJsTagIntegrationSettingRequest](docs/Model/SetJsTagIntegrationSettingRequest.md)
+ - [SetJsTagIntegrationSettingRequestModel](docs/Model/SetJsTagIntegrationSettingRequestModel.md)
  - [SipNumber](docs/Model/SipNumber.md)
  - [SpamDetectionSettings](docs/Model/SpamDetectionSettings.md)
  - [Tag](docs/Model/Tag.md)

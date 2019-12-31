@@ -1,6 +1,6 @@
 # Ringba\TargetGroupApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,11 +8,13 @@ Method | HTTP request | Description
 [**targetGroupAddTargets**](TargetGroupApi.md#targetGroupAddTargets) | **PATCH** /{accountid}/TargetGroups/{id}/Targets | 
 [**targetGroupCreateTargetGroup**](TargetGroupApi.md#targetGroupCreateTargetGroup) | **POST** /{accountid}/TargetGroups | 
 [**targetGroupDeleteTarget**](TargetGroupApi.md#targetGroupDeleteTarget) | **DELETE** /{accountid}/TargetGroups/{id}/Targets/{targetId} | 
+[**targetGroupDeleteTargetGroup**](TargetGroupApi.md#targetGroupDeleteTargetGroup) | **DELETE** /{accountid}/TargetGroups/{id} | 
 [**targetGroupGet**](TargetGroupApi.md#targetGroupGet) | **GET** /{accountid}/TargetGroups | 
 [**targetGroupGetCurrentCounts**](TargetGroupApi.md#targetGroupGetCurrentCounts) | **GET** /{accountid}/TargetGroups/{id}/Counts | 
-[**targetGroupGetItem**](TargetGroupApi.md#targetGroupGetItem) | **GET** /{accountid}/TargetGroups/{id} | Gets the Item with usage counts
-[**targetGroupGetTargets**](TargetGroupApi.md#targetGroupGetTargets) | **GET** /{accountid}/TargetGroups/{id}/Targets | returns targets attached to the target group
-[**targetGroupPatchItem**](TargetGroupApi.md#targetGroupPatchItem) | **PATCH** /{accountid}/TargetGroups/{id} | updated the TargetGroup
+[**targetGroupGetItem**](TargetGroupApi.md#targetGroupGetItem) | **GET** /{accountid}/TargetGroups/{id} | 
+[**targetGroupGetReferences**](TargetGroupApi.md#targetGroupGetReferences) | **GET** /{accountid}/TargetGroups/{id}/InboundReferences | 
+[**targetGroupGetTargets**](TargetGroupApi.md#targetGroupGetTargets) | **GET** /{accountid}/TargetGroups/{id}/Targets | 
+[**targetGroupPatchItem**](TargetGroupApi.md#targetGroupPatchItem) | **PATCH** /{accountid}/TargetGroups/{id} | 
 [**targetGroupRemoveBuyerFromTargetGroup**](TargetGroupApi.md#targetGroupRemoveBuyerFromTargetGroup) | **DELETE** /{accountid}/TargetGroups/{id}/Buyer/{buyerId} | 
 [**targetGroupResetCount**](TargetGroupApi.md#targetGroupResetCount) | **DELETE** /{accountid}/TargetGroups/{id}/ResetCount | 
 [**targetGroupUpdateTargets**](TargetGroupApi.md#targetGroupUpdateTargets) | **PATCH** /{accountid}/TargetGroups/{id}/Targets/BulkUpdate | 
@@ -220,6 +222,57 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **targetGroupDeleteTargetGroup**
+> object targetGroupDeleteTargetGroup($id, $accountid, $force)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Ringba\Api\TargetGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | 
+$accountid = "accountid_example"; // string | 
+$force = true; // bool | 
+
+try {
+    $result = $apiInstance->targetGroupDeleteTargetGroup($id, $accountid, $force);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TargetGroupApi->targetGroupDeleteTargetGroup: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **accountid** | **string**|  |
+ **force** | **bool**|  | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **targetGroupGet**
 > object targetGroupGet($accountid, $include_stats)
 
@@ -321,7 +374,7 @@ No authorization required
 # **targetGroupGetItem**
 > object targetGroupGetItem($id, $accountid)
 
-Gets the Item with usage counts
+
 
 ### Example
 ```php
@@ -367,10 +420,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **targetGroupGetTargets**
-> object targetGroupGetTargets($id, $accountid, $include_stats)
+# **targetGroupGetReferences**
+> object targetGroupGetReferences($id, $accountid)
 
-returns targets attached to the target group
+
 
 ### Example
 ```php
@@ -382,9 +435,58 @@ $apiInstance = new Ringba\Api\TargetGroupApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | target group id
+$id = "id_example"; // string | 
 $accountid = "accountid_example"; // string | 
-$include_stats = true; // bool | true if you want stats returend
+
+try {
+    $result = $apiInstance->targetGroupGetReferences($id, $accountid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TargetGroupApi->targetGroupGetReferences: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **accountid** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **targetGroupGetTargets**
+> object targetGroupGetTargets($id, $accountid, $include_stats)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Ringba\Api\TargetGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | 
+$accountid = "accountid_example"; // string | 
+$include_stats = true; // bool | 
 
 try {
     $result = $apiInstance->targetGroupGetTargets($id, $accountid, $include_stats);
@@ -399,9 +501,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| target group id |
+ **id** | **string**|  |
  **accountid** | **string**|  |
- **include_stats** | **bool**| true if you want stats returend | [optional]
+ **include_stats** | **bool**|  | [optional]
 
 ### Return type
 
@@ -421,7 +523,7 @@ No authorization required
 # **targetGroupPatchItem**
 > object targetGroupPatchItem($id, $values, $accountid)
 
-updated the TargetGroup
+
 
 ### Example
 ```php
@@ -433,8 +535,8 @@ $apiInstance = new Ringba\Api\TargetGroupApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the target group to update
-$values = new \stdClass; // object | the list of fields and values to update
+$id = "id_example"; // string | 
+$values = new \stdClass; // object | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -450,8 +552,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the target group to update |
- **values** | **object**| the list of fields and values to update |
+ **id** | **string**|  |
+ **values** | **object**|  |
  **accountid** | **string**|  |
 
 ### Return type

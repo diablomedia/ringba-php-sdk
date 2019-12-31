@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [optional] 
 **is_simal_dial** | **bool** |  | [optional] 
 **o_route_settings** | [**\Ringba\Model\OverideSetting**](OverideSetting.md) |  | [optional] 
 **o_capacity** | [**\Ringba\Model\OverideSetting**](OverideSetting.md) |  | [optional] 
@@ -14,7 +15,6 @@ Name | Type | Description | Notes
 **conversion_timer_offset** | **int** |  | [optional] 
 **schedule** | [**\Ringba\Model\ScheduleAndCapacity**](ScheduleAndCapacity.md) |  | [optional] 
 **criteria** | [**\Ringba\Model\TagRoutableRule[]**](TagRoutableRule.md) |  | [optional] 
-**id** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **account_id** | **string** |  | [optional] 
 **enabled** | **bool** |  | [optional] 

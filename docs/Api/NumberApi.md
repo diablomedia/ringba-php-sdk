@@ -1,6 +1,6 @@
 # Ringba\NumberApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**numberGetInboundReferences**](NumberApi.md#numberGetInboundReferences) | **GET** /{accountid}/numbers/{id}/InboundReferences | 
 [**numberGetItem**](NumberApi.md#numberGetItem) | **GET** /{accountid}/numbers/{id} | 
 [**numberPatchItem**](NumberApi.md#numberPatchItem) | **PATCH** /{accountid}/numbers/{id} | 
-[**numberRelease**](NumberApi.md#numberRelease) | **DELETE** /{accountid}/numbers/{id} | Releases the phone number from the account. Once the number is released, It will no longer belong to the account and no calls to that number will be routed through the platform.  Note: Affiliates can only release numbers that belong to them and that are treated as Offer numbers, meaning that they exist for the purpose of publisher&#39;s participation in the offer.
+[**numberRelease**](NumberApi.md#numberRelease) | **DELETE** /{accountid}/numbers/{id} | 
 [**numberReleaseNonUsedNumbers**](NumberApi.md#numberReleaseNonUsedNumbers) | **DELETE** /{accountid}/numbers/ReleaseNonUsedNumbers | 
 [**numberRemoveAffilaite**](NumberApi.md#numberRemoveAffilaite) | **DELETE** /{accountid}/numbers/{id}/Affiliate/{affiliateId} | 
 
@@ -314,7 +314,7 @@ No authorization required
 # **numberRelease**
 > object numberRelease($id, $accountid, $unlink)
 
-Releases the phone number from the account. Once the number is released, It will no longer belong to the account and no calls to that number will be routed through the platform.  Note: Affiliates can only release numbers that belong to them and that are treated as Offer numbers, meaning that they exist for the purpose of publisher's participation in the offer.
+
 
 ### Example
 ```php
@@ -328,7 +328,7 @@ $apiInstance = new Ringba\Api\NumberApi(
 );
 $id = "id_example"; // string | 
 $accountid = "accountid_example"; // string | 
-$unlink = true; // bool | If true, the number will be unlinked from all other objects in the system that refer to it. Default is false.
+$unlink = true; // bool | 
 
 try {
     $result = $apiInstance->numberRelease($id, $accountid, $unlink);
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
  **accountid** | **string**|  |
- **unlink** | **bool**| If true, the number will be unlinked from all other objects in the system that refer to it. Default is false. | [optional]
+ **unlink** | **bool**|  | [optional]
 
 ### Return type
 

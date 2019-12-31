@@ -1,62 +1,62 @@
 # Ringba\CampaignApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**campaignAddAffiliateNumber**](CampaignApi.md#campaignAddAffiliateNumber) | **PATCH** /{accountid}/campaigns/{id}/AffiliateNumbers | Adds an Affiliate number to a campaign
-[**campaignAddCallRoute**](CampaignApi.md#campaignAddCallRoute) | **POST** /{accountid}/campaigns/{id}/Routes | adds a Call route to the campaign
-[**campaignAddDefaultNumber**](CampaignApi.md#campaignAddDefaultNumber) | **PATCH** /{accountid}/campaigns/{id}/DefaultNumber | updates the campaigns default number
-[**campaignAddDefaultPayoutV2**](CampaignApi.md#campaignAddDefaultPayoutV2) | **POST** /{accountid}/campaigns/{id}/DefaultPayouts | add a default payout
-[**campaignAddIvrTree**](CampaignApi.md#campaignAddIvrTree) | **POST** /{accountid}/campaigns/{id}/IVRTree | adds a Call route to the campaign
-[**campaignAddPublisher**](CampaignApi.md#campaignAddPublisher) | **PATCH** /{accountid}/campaigns/{id}/Affiliates | Add an existing affilliate to a campaign
-[**campaignAddPublisherPayout**](CampaignApi.md#campaignAddPublisherPayout) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts | Add/Update Publisher Campaign Payout Settings
+[**campaignAddAffiliateNumber**](CampaignApi.md#campaignAddAffiliateNumber) | **PATCH** /{accountid}/campaigns/{id}/AffiliateNumbers | 
+[**campaignAddCallRoute**](CampaignApi.md#campaignAddCallRoute) | **POST** /{accountid}/campaigns/{id}/Routes | 
+[**campaignAddDefaultNumber**](CampaignApi.md#campaignAddDefaultNumber) | **PATCH** /{accountid}/campaigns/{id}/DefaultNumber | 
+[**campaignAddDefaultPayoutV2**](CampaignApi.md#campaignAddDefaultPayoutV2) | **POST** /{accountid}/campaigns/{id}/DefaultPayouts | 
+[**campaignAddIvrTree**](CampaignApi.md#campaignAddIvrTree) | **POST** /{accountid}/campaigns/{id}/IVRTree | 
+[**campaignAddPublisher**](CampaignApi.md#campaignAddPublisher) | **PATCH** /{accountid}/campaigns/{id}/Affiliates | 
+[**campaignAddPublisherPayout**](CampaignApi.md#campaignAddPublisherPayout) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts | 
 [**campaignArchiveOffer**](CampaignApi.md#campaignArchiveOffer) | **DELETE** /{accountid}/campaigns/{id}/Offers/Published | 
 [**campaignBatchUpdateCampaignDefaultPayouts**](CampaignApi.md#campaignBatchUpdateCampaignDefaultPayouts) | **PUT** /{accountid}/campaigns/{id}/DefaultPayouts | 
 [**campaignBatchUpdatePublisherPayouts**](CampaignApi.md#campaignBatchUpdatePublisherPayouts) | **PUT** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts | 
 [**campaignCloneCampaign**](CampaignApi.md#campaignCloneCampaign) | **POST** /{accountid}/campaigns/{id}/clone | 
-[**campaignCreateCampaign**](CampaignApi.md#campaignCreateCampaign) | **POST** /{accountid}/campaigns | creates a campaign
-[**campaignCreateTag**](CampaignApi.md#campaignCreateTag) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag | Creates a JS tag to use on a web page
-[**campaignDeleteCallRoute**](CampaignApi.md#campaignDeleteCallRoute) | **DELETE** /{accountid}/campaigns/{id}/Routes | removes the call route
+[**campaignCreateCampaign**](CampaignApi.md#campaignCreateCampaign) | **POST** /{accountid}/campaigns | 
+[**campaignCreateTag**](CampaignApi.md#campaignCreateTag) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag | 
+[**campaignDeleteCallRoute**](CampaignApi.md#campaignDeleteCallRoute) | **DELETE** /{accountid}/campaigns/{id}/Routes | 
 [**campaignDeleteCampaign**](CampaignApi.md#campaignDeleteCampaign) | **DELETE** /{accountid}/campaigns/{id} | 
 [**campaignDeleteCampaignOfferDraft**](CampaignApi.md#campaignDeleteCampaignOfferDraft) | **DELETE** /{accountid}/campaigns/{id}/Offers/Draft | 
-[**campaignDeleteDefaultNumber**](CampaignApi.md#campaignDeleteDefaultNumber) | **DELETE** /{accountid}/campaigns/{id}/DefaultNumber | updates the campaigns default number
-[**campaignDeleteDefaultPayout**](CampaignApi.md#campaignDeleteDefaultPayout) | **DELETE** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | update the default payout
-[**campaignDeleteIVRTree**](CampaignApi.md#campaignDeleteIVRTree) | **DELETE** /{accountid}/campaigns/{id}/IVRTree | deletes the IVR Tree from the Campaign
-[**campaignDeletePublisher**](CampaignApi.md#campaignDeletePublisher) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId} | Add an existing affilliate to a campaign
-[**campaignDeletePublisherPayout**](CampaignApi.md#campaignDeletePublisherPayout) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | Remove Publisher Campaign Payout Settings
-[**campaignDeleteTag**](CampaignApi.md#campaignDeleteTag) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag | removes a tag
-[**campaignGet**](CampaignApi.md#campaignGet) | **GET** /{accountid}/campaigns | return the campaigns for this account
+[**campaignDeleteDefaultNumber**](CampaignApi.md#campaignDeleteDefaultNumber) | **DELETE** /{accountid}/campaigns/{id}/DefaultNumber | 
+[**campaignDeleteDefaultPayout**](CampaignApi.md#campaignDeleteDefaultPayout) | **DELETE** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | 
+[**campaignDeleteIVRTree**](CampaignApi.md#campaignDeleteIVRTree) | **DELETE** /{accountid}/campaigns/{id}/IVRTree | 
+[**campaignDeletePublisher**](CampaignApi.md#campaignDeletePublisher) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId} | 
+[**campaignDeletePublisherPayout**](CampaignApi.md#campaignDeletePublisherPayout) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | 
+[**campaignDeleteTag**](CampaignApi.md#campaignDeleteTag) | **DELETE** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag | 
+[**campaignGet**](CampaignApi.md#campaignGet) | **GET** /{accountid}/campaigns | 
 [**campaignGetCampaignOfferDraft**](CampaignApi.md#campaignGetCampaignOfferDraft) | **GET** /{accountid}/campaigns/{id}/Offers/Draft | 
 [**campaignGetCampaignOfferLive**](CampaignApi.md#campaignGetCampaignOfferLive) | **GET** /{accountid}/campaigns/{id}/Offers/Published | 
 [**campaignGetCampaignOffers**](CampaignApi.md#campaignGetCampaignOffers) | **GET** /{accountid}/campaigns/{id}/Offers | 
 [**campaignGetInboundReferences**](CampaignApi.md#campaignGetInboundReferences) | **GET** /{accountid}/campaigns/{id}/InboundReferences | 
 [**campaignGetOfferParticipants**](CampaignApi.md#campaignGetOfferParticipants) | **GET** /{accountid}/campaigns/{id}/Offers/Published/Participants | 
-[**campaignGetPublisherPayouts**](CampaignApi.md#campaignGetPublisherPayouts) | **GET** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts | Get Publisher Campaign Payout Settings
+[**campaignGetPublisherPayouts**](CampaignApi.md#campaignGetPublisherPayouts) | **GET** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts | 
 [**campaignGetTags**](CampaignApi.md#campaignGetTags) | **GET** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag | 
-[**campaignGetTags_0**](CampaignApi.md#campaignGetTags_0) | **GET** /{accountid}/campaigns/{id}/Tags | returns the available tags for a given Campaign
-[**campaignGet_0**](CampaignApi.md#campaignGet_0) | **GET** /{accountid}/campaigns/{id} | gets the campaign with the matching id
-[**campaignGetstats**](CampaignApi.md#campaignGetstats) | **GET** /{accountid}/campaigns/stats | return the campaigns for this account
+[**campaignGetTags_0**](CampaignApi.md#campaignGetTags_0) | **GET** /{accountid}/campaigns/{id}/Tags | 
+[**campaignGet_0**](CampaignApi.md#campaignGet_0) | **GET** /{accountid}/campaigns/{id} | 
+[**campaignGetstats**](CampaignApi.md#campaignGetstats) | **GET** /{accountid}/campaigns/stats | 
 [**campaignInvitePublisherToOffer**](CampaignApi.md#campaignInvitePublisherToOffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Invite | 
-[**campaignLinkItem**](CampaignApi.md#campaignLinkItem) | **PATCH** /{accountid}/campaigns/{id}/Link | links an item to the campaign
-[**campaignPatchItem**](CampaignApi.md#campaignPatchItem) | **PATCH** /{accountid}/campaigns/{id} | Updates the values of a campaign
+[**campaignLinkItem**](CampaignApi.md#campaignLinkItem) | **PATCH** /{accountid}/campaigns/{id}/Link | 
+[**campaignPatchItem**](CampaignApi.md#campaignPatchItem) | **PATCH** /{accountid}/campaigns/{id} | 
 [**campaignPauseCampaignOffer**](CampaignApi.md#campaignPauseCampaignOffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Pause | 
 [**campaignPublishCampaignOfferDraft**](CampaignApi.md#campaignPublishCampaignOfferDraft) | **POST** /{accountid}/campaigns/{id}/Offers/Draft/Publish | 
 [**campaignResumeCampaignOffer**](CampaignApi.md#campaignResumeCampaignOffer) | **POST** /{accountid}/campaigns/{id}/Offers/Published/Resume | 
 [**campaignSetCampaignOfferDraft**](CampaignApi.md#campaignSetCampaignOfferDraft) | **PUT** /{accountid}/campaigns/{id}/Offers/Draft | 
-[**campaignUnLinkItem**](CampaignApi.md#campaignUnLinkItem) | **PATCH** /{accountid}/campaigns/{id}/UnLink | unlinks an item form the campaign
-[**campaignUpdateDefaultPayout**](CampaignApi.md#campaignUpdateDefaultPayout) | **POST** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | update the default payout
-[**campaignUpdateDefaultPayout_0**](CampaignApi.md#campaignUpdateDefaultPayout_0) | **PATCH** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | update the default payout
-[**campaignUpdatePublisherPayoutById**](CampaignApi.md#campaignUpdatePublisherPayoutById) | **PUT** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | Add/Update Publisher Campaign Payout Settings
-[**campaignUpdatePublisherPayoutById_0**](CampaignApi.md#campaignUpdatePublisherPayoutById_0) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | Add/Update Publisher Campaign Payout Settings
-[**campaignUpdatePublisherPayoutById_1**](CampaignApi.md#campaignUpdatePublisherPayoutById_1) | **PATCH** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | Add/Update Publisher Campaign Payout Settings
-[**campaignUpdateTag**](CampaignApi.md#campaignUpdateTag) | **PATCH** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag/{jsTagId} | update the tag
+[**campaignUnLinkItem**](CampaignApi.md#campaignUnLinkItem) | **PATCH** /{accountid}/campaigns/{id}/UnLink | 
+[**campaignUpdateDefaultPayout**](CampaignApi.md#campaignUpdateDefaultPayout) | **POST** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | 
+[**campaignUpdateDefaultPayout_0**](CampaignApi.md#campaignUpdateDefaultPayout_0) | **PATCH** /{accountid}/campaigns/{id}/DefaultPayouts/{payoutId} | 
+[**campaignUpdatePublisherPayoutById**](CampaignApi.md#campaignUpdatePublisherPayoutById) | **PUT** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | 
+[**campaignUpdatePublisherPayoutById_0**](CampaignApi.md#campaignUpdatePublisherPayoutById_0) | **POST** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | 
+[**campaignUpdatePublisherPayoutById_1**](CampaignApi.md#campaignUpdatePublisherPayoutById_1) | **PATCH** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/payouts/{payoutId} | 
+[**campaignUpdateTag**](CampaignApi.md#campaignUpdateTag) | **PATCH** /{accountid}/campaigns/{id}/Affiliates/{affiliateId}/Numbers/{numberId}/JsTag/{jsTagId} | 
 
 
 # **campaignAddAffiliateNumber**
 > object campaignAddAffiliateNumber($id, $request, $accountid)
 
-Adds an Affiliate number to a campaign
+
 
 ### Example
 ```php
@@ -68,8 +68,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to add
-$request = new \Ringba\Model\NumberRequestModel(); // \Ringba\Model\NumberRequestModel | the number request
+$id = "id_example"; // string | 
+$request = new \Ringba\Model\NumberRequestModel(); // \Ringba\Model\NumberRequestModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -85,8 +85,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to add |
- **request** | [**\Ringba\Model\NumberRequestModel**](../Model/NumberRequestModel.md)| the number request |
+ **id** | **string**|  |
+ **request** | [**\Ringba\Model\NumberRequestModel**](../Model/NumberRequestModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -107,7 +107,7 @@ No authorization required
 # **campaignAddCallRoute**
 > object campaignAddCallRoute($id, $create_call_route, $accountid)
 
-adds a Call route to the campaign
+
 
 ### Example
 ```php
@@ -119,8 +119,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
-$create_call_route = new \Ringba\Model\CreateCallRouteModel(); // \Ringba\Model\CreateCallRouteModel | the call route
+$id = "id_example"; // string | 
+$create_call_route = new \Ringba\Model\CreateCallRouteModel(); // \Ringba\Model\CreateCallRouteModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -136,8 +136,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
- **create_call_route** | [**\Ringba\Model\CreateCallRouteModel**](../Model/CreateCallRouteModel.md)| the call route |
+ **id** | **string**|  |
+ **create_call_route** | [**\Ringba\Model\CreateCallRouteModel**](../Model/CreateCallRouteModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -158,7 +158,7 @@ No authorization required
 # **campaignAddDefaultNumber**
 > object campaignAddDefaultNumber($id, $request, $accountid)
 
-updates the campaigns default number
+
 
 ### Example
 ```php
@@ -170,8 +170,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
-$request = new \Ringba\Model\NumberRequestModel(); // \Ringba\Model\NumberRequestModel | the defualt number request
+$id = "id_example"; // string | 
+$request = new \Ringba\Model\NumberRequestModel(); // \Ringba\Model\NumberRequestModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -187,8 +187,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
- **request** | [**\Ringba\Model\NumberRequestModel**](../Model/NumberRequestModel.md)| the defualt number request |
+ **id** | **string**|  |
+ **request** | [**\Ringba\Model\NumberRequestModel**](../Model/NumberRequestModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -209,7 +209,7 @@ No authorization required
 # **campaignAddDefaultPayoutV2**
 > object campaignAddDefaultPayoutV2($id, $request, $accountid)
 
-add a default payout
+
 
 ### Example
 ```php
@@ -221,8 +221,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update the payout
-$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | Payout Conversion Request
+$id = "id_example"; // string | 
+$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -238,8 +238,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update the payout |
- **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)| Payout Conversion Request |
+ **id** | **string**|  |
+ **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -260,7 +260,7 @@ No authorization required
 # **campaignAddIvrTree**
 > object campaignAddIvrTree($id, $create_call_route, $accountid)
 
-adds a Call route to the campaign
+
 
 ### Example
 ```php
@@ -272,8 +272,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
-$create_call_route = new \Ringba\Model\CreateIVRCallRouteModel(); // \Ringba\Model\CreateIVRCallRouteModel | the call route
+$id = "id_example"; // string | 
+$create_call_route = new \Ringba\Model\CreateIVRCallRouteModel(); // \Ringba\Model\CreateIVRCallRouteModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -289,8 +289,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
- **create_call_route** | [**\Ringba\Model\CreateIVRCallRouteModel**](../Model/CreateIVRCallRouteModel.md)| the call route |
+ **id** | **string**|  |
+ **create_call_route** | [**\Ringba\Model\CreateIVRCallRouteModel**](../Model/CreateIVRCallRouteModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -311,7 +311,7 @@ No authorization required
 # **campaignAddPublisher**
 > object campaignAddPublisher($id, $request, $accountid)
 
-Add an existing affilliate to a campaign
+
 
 ### Example
 ```php
@@ -323,8 +323,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to add the affiliate to
-$request = new \Ringba\Model\AddPayoutToCampaignModel(); // \Ringba\Model\AddPayoutToCampaignModel | Payout Conversion Request
+$id = "id_example"; // string | 
+$request = new \Ringba\Model\AddPayoutToCampaignModel(); // \Ringba\Model\AddPayoutToCampaignModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -340,8 +340,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to add the affiliate to |
- **request** | [**\Ringba\Model\AddPayoutToCampaignModel**](../Model/AddPayoutToCampaignModel.md)| Payout Conversion Request |
+ **id** | **string**|  |
+ **request** | [**\Ringba\Model\AddPayoutToCampaignModel**](../Model/AddPayoutToCampaignModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -362,7 +362,7 @@ No authorization required
 # **campaignAddPublisherPayout**
 > object campaignAddPublisherPayout($id, $affiliate_id, $request, $accountid)
 
-Add/Update Publisher Campaign Payout Settings
+
 
 ### Example
 ```php
@@ -374,9 +374,9 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign
-$affiliate_id = "affiliate_id_example"; // string | the id of the affilaite
-$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | Payout Settings
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
+$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -392,9 +392,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign |
- **affiliate_id** | **string**| the id of the affilaite |
- **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)| Payout Settings |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
+ **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -619,7 +619,7 @@ No authorization required
 # **campaignCreateCampaign**
 > object campaignCreateCampaign($campaign, $accountid)
 
-creates a campaign
+
 
 ### Example
 ```php
@@ -631,7 +631,7 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign = new \Ringba\Model\Campaign(); // \Ringba\Model\Campaign | The campaign to create
+$campaign = new \Ringba\Model\Campaign(); // \Ringba\Model\Campaign | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -647,7 +647,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign** | [**\Ringba\Model\Campaign**](../Model/Campaign.md)| The campaign to create |
+ **campaign** | [**\Ringba\Model\Campaign**](../Model/Campaign.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -668,7 +668,7 @@ No authorization required
 # **campaignCreateTag**
 > object campaignCreateTag($id, $affiliate_id, $number_id, $model, $accountid)
 
-Creates a JS tag to use on a web page
+
 
 ### Example
 ```php
@@ -680,10 +680,10 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the campaign id
-$affiliate_id = "affiliate_id_example"; // string | the affiliate id
-$number_id = "number_id_example"; // string | the number id
-$model = new \Ringba\Model\TagRequestModel(); // \Ringba\Model\TagRequestModel | the request
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
+$number_id = "number_id_example"; // string | 
+$model = new \Ringba\Model\TagRequestModel(); // \Ringba\Model\TagRequestModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -699,10 +699,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the campaign id |
- **affiliate_id** | **string**| the affiliate id |
- **number_id** | **string**| the number id |
- **model** | [**\Ringba\Model\TagRequestModel**](../Model/TagRequestModel.md)| the request |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
+ **number_id** | **string**|  |
+ **model** | [**\Ringba\Model\TagRequestModel**](../Model/TagRequestModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -723,7 +723,7 @@ No authorization required
 # **campaignDeleteCallRoute**
 > object campaignDeleteCallRoute($id, $delete_call_route, $accountid)
 
-removes the call route
+
 
 ### Example
 ```php
@@ -735,8 +735,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
-$delete_call_route = new \Ringba\Model\DeleteCallRouteModel(); // \Ringba\Model\DeleteCallRouteModel | the call route
+$id = "id_example"; // string | 
+$delete_call_route = new \Ringba\Model\DeleteCallRouteModel(); // \Ringba\Model\DeleteCallRouteModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -752,8 +752,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
- **delete_call_route** | [**\Ringba\Model\DeleteCallRouteModel**](../Model/DeleteCallRouteModel.md)| the call route |
+ **id** | **string**|  |
+ **delete_call_route** | [**\Ringba\Model\DeleteCallRouteModel**](../Model/DeleteCallRouteModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -876,7 +876,7 @@ No authorization required
 # **campaignDeleteDefaultNumber**
 > object campaignDeleteDefaultNumber($id, $request, $accountid)
 
-updates the campaigns default number
+
 
 ### Example
 ```php
@@ -888,8 +888,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
-$request = new \Ringba\Model\NumberRequestModel(); // \Ringba\Model\NumberRequestModel | the defualt number request
+$id = "id_example"; // string | 
+$request = new \Ringba\Model\NumberRequestModel(); // \Ringba\Model\NumberRequestModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -905,8 +905,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
- **request** | [**\Ringba\Model\NumberRequestModel**](../Model/NumberRequestModel.md)| the defualt number request |
+ **id** | **string**|  |
+ **request** | [**\Ringba\Model\NumberRequestModel**](../Model/NumberRequestModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -927,7 +927,7 @@ No authorization required
 # **campaignDeleteDefaultPayout**
 > object campaignDeleteDefaultPayout($id, $payout_id, $accountid)
 
-update the default payout
+
 
 ### Example
 ```php
@@ -939,8 +939,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update the payout
-$payout_id = "payout_id_example"; // string | the id of the payout
+$id = "id_example"; // string | 
+$payout_id = "payout_id_example"; // string | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -956,8 +956,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update the payout |
- **payout_id** | **string**| the id of the payout |
+ **id** | **string**|  |
+ **payout_id** | **string**|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -978,7 +978,7 @@ No authorization required
 # **campaignDeleteIVRTree**
 > object campaignDeleteIVRTree($id, $accountid)
 
-deletes the IVR Tree from the Campaign
+
 
 ### Example
 ```php
@@ -990,7 +990,7 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
+$id = "id_example"; // string | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -1006,7 +1006,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
+ **id** | **string**|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -1027,7 +1027,7 @@ No authorization required
 # **campaignDeletePublisher**
 > object campaignDeletePublisher($id, $affiliate_id, $accountid, $keep_offer_numbers)
 
-Add an existing affilliate to a campaign
+
 
 ### Example
 ```php
@@ -1039,10 +1039,10 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign remove the affiliate
-$affiliate_id = "affiliate_id_example"; // string | the id of the affilaite to remove
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
 $accountid = "accountid_example"; // string | 
-$keep_offer_numbers = true; // bool | true if the offer-related numbers should be preserved instead of releasing them. Default is false, and the offer numbers are removed from the account.
+$keep_offer_numbers = true; // bool | 
 
 try {
     $result = $apiInstance->campaignDeletePublisher($id, $affiliate_id, $accountid, $keep_offer_numbers);
@@ -1057,10 +1057,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign remove the affiliate |
- **affiliate_id** | **string**| the id of the affilaite to remove |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
  **accountid** | **string**|  |
- **keep_offer_numbers** | **bool**| true if the offer-related numbers should be preserved instead of releasing them. Default is false, and the offer numbers are removed from the account. | [optional]
+ **keep_offer_numbers** | **bool**|  | [optional]
 
 ### Return type
 
@@ -1080,7 +1080,7 @@ No authorization required
 # **campaignDeletePublisherPayout**
 > object campaignDeletePublisherPayout($id, $affiliate_id, $payout_id, $accountid)
 
-Remove Publisher Campaign Payout Settings
+
 
 ### Example
 ```php
@@ -1092,9 +1092,9 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign
-$affiliate_id = "affiliate_id_example"; // string | the id of the affilaite
-$payout_id = "payout_id_example"; // string | The id of the payout setting to remove
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
+$payout_id = "payout_id_example"; // string | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -1110,9 +1110,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign |
- **affiliate_id** | **string**| the id of the affilaite |
- **payout_id** | **string**| The id of the payout setting to remove |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
+ **payout_id** | **string**|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -1133,7 +1133,7 @@ No authorization required
 # **campaignDeleteTag**
 > object campaignDeleteTag($id, $affiliate_id, $number_id, $accountid)
 
-removes a tag
+
 
 ### Example
 ```php
@@ -1145,9 +1145,9 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the campaign id
-$affiliate_id = "affiliate_id_example"; // string | the affiliate id
-$number_id = "number_id_example"; // string | the number id
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
+$number_id = "number_id_example"; // string | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -1163,9 +1163,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the campaign id |
- **affiliate_id** | **string**| the affiliate id |
- **number_id** | **string**| the number id |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
+ **number_id** | **string**|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -1186,7 +1186,7 @@ No authorization required
 # **campaignGet**
 > object campaignGet($accountid, $include_stats)
 
-return the campaigns for this account
+
 
 ### Example
 ```php
@@ -1480,7 +1480,7 @@ No authorization required
 # **campaignGetPublisherPayouts**
 > object campaignGetPublisherPayouts($id, $affiliate_id, $accountid)
 
-Get Publisher Campaign Payout Settings
+
 
 ### Example
 ```php
@@ -1492,8 +1492,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign
-$affiliate_id = "affiliate_id_example"; // string | the id of the affilaite
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -1509,8 +1509,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign |
- **affiliate_id** | **string**| the id of the affilaite |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -1584,7 +1584,7 @@ No authorization required
 # **campaignGetTags_0**
 > object campaignGetTags_0($id, $accountid)
 
-returns the available tags for a given Campaign
+
 
 ### Example
 ```php
@@ -1596,7 +1596,7 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to return the available tags for
+$id = "id_example"; // string | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -1612,7 +1612,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to return the available tags for |
+ **id** | **string**|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -1631,9 +1631,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **campaignGet_0**
-> object campaignGet_0($id, $accountid)
+> object campaignGet_0($id, $accountid, $include_integration_settings)
 
-gets the campaign with the matching id
+
 
 ### Example
 ```php
@@ -1645,11 +1645,12 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign
+$id = "id_example"; // string | 
 $accountid = "accountid_example"; // string | 
+$include_integration_settings = true; // bool | 
 
 try {
-    $result = $apiInstance->campaignGet_0($id, $accountid);
+    $result = $apiInstance->campaignGet_0($id, $accountid, $include_integration_settings);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignApi->campaignGet_0: ', $e->getMessage(), PHP_EOL;
@@ -1661,8 +1662,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign |
+ **id** | **string**|  |
  **accountid** | **string**|  |
+ **include_integration_settings** | **bool**|  | [optional]
 
 ### Return type
 
@@ -1682,7 +1684,7 @@ No authorization required
 # **campaignGetstats**
 > object campaignGetstats($accountid)
 
-return the campaigns for this account
+
 
 ### Example
 ```php
@@ -1780,7 +1782,7 @@ No authorization required
 # **campaignLinkItem**
 > object campaignLinkItem($id, $request, $accountid)
 
-links an item to the campaign
+
 
 ### Example
 ```php
@@ -1792,8 +1794,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
-$request = new \Ringba\Model\LinkRequest(); // \Ringba\Model\LinkRequest | the property name and id of the item to link
+$id = "id_example"; // string | 
+$request = new \Ringba\Model\LinkRequest(); // \Ringba\Model\LinkRequest | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -1809,8 +1811,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
- **request** | [**\Ringba\Model\LinkRequest**](../Model/LinkRequest.md)| the property name and id of the item to link |
+ **id** | **string**|  |
+ **request** | [**\Ringba\Model\LinkRequest**](../Model/LinkRequest.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -1831,7 +1833,7 @@ No authorization required
 # **campaignPatchItem**
 > object campaignPatchItem($id, $values, $accountid)
 
-Updates the values of a campaign
+
 
 ### Example
 ```php
@@ -1843,8 +1845,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
-$values = new \stdClass; // object | the values of the campaign to update
+$id = "id_example"; // string | 
+$values = new \stdClass; // object | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -1860,8 +1862,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
- **values** | **object**| the values of the campaign to update |
+ **id** | **string**|  |
+ **values** | **object**|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -2080,7 +2082,7 @@ No authorization required
 # **campaignUnLinkItem**
 > object campaignUnLinkItem($id, $request, $accountid)
 
-unlinks an item form the campaign
+
 
 ### Example
 ```php
@@ -2092,8 +2094,8 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update
-$request = new \Ringba\Model\LinkRequest(); // \Ringba\Model\LinkRequest | the property name and id of the item to remove
+$id = "id_example"; // string | 
+$request = new \Ringba\Model\LinkRequest(); // \Ringba\Model\LinkRequest | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -2109,8 +2111,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update |
- **request** | [**\Ringba\Model\LinkRequest**](../Model/LinkRequest.md)| the property name and id of the item to remove |
+ **id** | **string**|  |
+ **request** | [**\Ringba\Model\LinkRequest**](../Model/LinkRequest.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -2131,7 +2133,7 @@ No authorization required
 # **campaignUpdateDefaultPayout**
 > object campaignUpdateDefaultPayout($id, $payout_id, $request, $accountid)
 
-update the default payout
+
 
 ### Example
 ```php
@@ -2143,9 +2145,9 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update the payout
-$payout_id = "payout_id_example"; // string | the payout id for the request
-$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | Payout Conversion Request
+$id = "id_example"; // string | 
+$payout_id = "payout_id_example"; // string | 
+$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -2161,9 +2163,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update the payout |
- **payout_id** | **string**| the payout id for the request |
- **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)| Payout Conversion Request |
+ **id** | **string**|  |
+ **payout_id** | **string**|  |
+ **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -2184,7 +2186,7 @@ No authorization required
 # **campaignUpdateDefaultPayout_0**
 > object campaignUpdateDefaultPayout_0($id, $payout_id, $request, $accountid)
 
-update the default payout
+
 
 ### Example
 ```php
@@ -2196,9 +2198,9 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign to update the payout
-$payout_id = "payout_id_example"; // string | the payout id for the request
-$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | Payout Conversion Request
+$id = "id_example"; // string | 
+$payout_id = "payout_id_example"; // string | 
+$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -2214,9 +2216,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign to update the payout |
- **payout_id** | **string**| the payout id for the request |
- **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)| Payout Conversion Request |
+ **id** | **string**|  |
+ **payout_id** | **string**|  |
+ **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -2237,7 +2239,7 @@ No authorization required
 # **campaignUpdatePublisherPayoutById**
 > object campaignUpdatePublisherPayoutById($id, $affiliate_id, $payout_id, $request, $accountid)
 
-Add/Update Publisher Campaign Payout Settings
+
 
 ### Example
 ```php
@@ -2249,10 +2251,10 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign
-$affiliate_id = "affiliate_id_example"; // string | the id of the affilaite
-$payout_id = "payout_id_example"; // string | The id of the payout
-$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | Payout Settings
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
+$payout_id = "payout_id_example"; // string | 
+$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -2268,10 +2270,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign |
- **affiliate_id** | **string**| the id of the affilaite |
- **payout_id** | **string**| The id of the payout |
- **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)| Payout Settings |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
+ **payout_id** | **string**|  |
+ **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -2292,7 +2294,7 @@ No authorization required
 # **campaignUpdatePublisherPayoutById_0**
 > object campaignUpdatePublisherPayoutById_0($id, $affiliate_id, $payout_id, $request, $accountid)
 
-Add/Update Publisher Campaign Payout Settings
+
 
 ### Example
 ```php
@@ -2304,10 +2306,10 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign
-$affiliate_id = "affiliate_id_example"; // string | the id of the affilaite
-$payout_id = "payout_id_example"; // string | The id of the payout
-$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | Payout Settings
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
+$payout_id = "payout_id_example"; // string | 
+$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -2323,10 +2325,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign |
- **affiliate_id** | **string**| the id of the affilaite |
- **payout_id** | **string**| The id of the payout |
- **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)| Payout Settings |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
+ **payout_id** | **string**|  |
+ **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -2347,7 +2349,7 @@ No authorization required
 # **campaignUpdatePublisherPayoutById_1**
 > object campaignUpdatePublisherPayoutById_1($id, $affiliate_id, $payout_id, $request, $accountid)
 
-Add/Update Publisher Campaign Payout Settings
+
 
 ### Example
 ```php
@@ -2359,10 +2361,10 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the campaign
-$affiliate_id = "affiliate_id_example"; // string | the id of the affilaite
-$payout_id = "payout_id_example"; // string | The id of the payout
-$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | Payout Settings
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
+$payout_id = "payout_id_example"; // string | 
+$request = new \Ringba\Model\PayoutConversionModel(); // \Ringba\Model\PayoutConversionModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -2378,10 +2380,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the campaign |
- **affiliate_id** | **string**| the id of the affilaite |
- **payout_id** | **string**| The id of the payout |
- **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)| Payout Settings |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
+ **payout_id** | **string**|  |
+ **request** | [**\Ringba\Model\PayoutConversionModel**](../Model/PayoutConversionModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -2402,7 +2404,7 @@ No authorization required
 # **campaignUpdateTag**
 > object campaignUpdateTag($id, $affiliate_id, $number_id, $js_tag_id, $model, $accountid)
 
-update the tag
+
 
 ### Example
 ```php
@@ -2414,11 +2416,11 @@ $apiInstance = new Ringba\Api\CampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | id of the campaign
-$affiliate_id = "affiliate_id_example"; // string | the affiliateid
-$number_id = "number_id_example"; // string | the affiliate number id
-$js_tag_id = "js_tag_id_example"; // string | the js tag id
-$model = new \Ringba\Model\TagUpdateRequestModel(); // \Ringba\Model\TagUpdateRequestModel | the update model
+$id = "id_example"; // string | 
+$affiliate_id = "affiliate_id_example"; // string | 
+$number_id = "number_id_example"; // string | 
+$js_tag_id = "js_tag_id_example"; // string | 
+$model = new \Ringba\Model\TagUpdateRequestModel(); // \Ringba\Model\TagUpdateRequestModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -2434,11 +2436,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| id of the campaign |
- **affiliate_id** | **string**| the affiliateid |
- **number_id** | **string**| the affiliate number id |
- **js_tag_id** | **string**| the js tag id |
- **model** | [**\Ringba\Model\TagUpdateRequestModel**](../Model/TagUpdateRequestModel.md)| the update model |
+ **id** | **string**|  |
+ **affiliate_id** | **string**|  |
+ **number_id** | **string**|  |
+ **js_tag_id** | **string**|  |
+ **model** | [**\Ringba\Model\TagUpdateRequestModel**](../Model/TagUpdateRequestModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type

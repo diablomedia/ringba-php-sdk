@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **offer_id** | **string** |  | [optional] 
 **offer_draft_id** | **string** |  | [optional] 
 **eval_anonym_duplication** | **bool** |  | [optional] 
+**payout_dupes_global** | **bool** |  | [optional] 
 **spam_detection** | [**\Ringba\Model\SpamDetectionSettings**](SpamDetectionSettings.md) |  | [optional] 
 **default_number** | [**\Ringba\Model\Number**](Number.md) |  | [optional] 
 **affiliate_numbers** | [**\Ringba\Model\Number[]**](Number.md) |  | [optional] 
