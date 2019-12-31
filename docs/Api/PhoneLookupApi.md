@@ -1,16 +1,16 @@
 # Ringba\PhoneLookupApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**phoneLookupTestPhoneSettings**](PhoneLookupApi.md#phoneLookupTestPhoneSettings) | **POST** /{accountid}/phoneNumberLookup | The params to get available Numbers
+[**phoneLookupTestPhoneSettings**](PhoneLookupApi.md#phoneLookupTestPhoneSettings) | **POST** /{accountid}/phoneNumberLookup | 
 
 
 # **phoneLookupTestPhoneSettings**
 > object phoneLookupTestPhoneSettings($request, $accountid)
 
-The params to get available Numbers
+
 
 ### Example
 ```php
@@ -22,7 +22,7 @@ $apiInstance = new Ringba\Api\PhoneLookupApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \Ringba\Model\CreateNumberRequestModel(); // \Ringba\Model\CreateNumberRequestModel | The Request
+$request = new \Ringba\Model\CreateNumberRequestModel(); // \Ringba\Model\CreateNumberRequestModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\Ringba\Model\CreateNumberRequestModel**](../Model/CreateNumberRequestModel.md)| The Request |
+ **request** | [**\Ringba\Model\CreateNumberRequestModel**](../Model/CreateNumberRequestModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type

@@ -1,28 +1,28 @@
 # Ringba\IVRApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**iVRAddNode**](IVRApi.md#iVRAddNode) | **POST** /{accountid}/ivrtree/node | adds a node to the provided tree as a child to the given parent node described by the   parentNodeId. If the request is successfull, the updated tree is returned. If there are any errors  the errors are returned.
-[**iVRClone**](IVRApi.md#iVRClone) | **POST** /{accountid}/ivrtree/{id}/clone | Clone a specific IVR Tree for a given account
-[**iVRDelete**](IVRApi.md#iVRDelete) | **DELETE** /{accountid}/ivrtree/{id} | Get inbound references to an IVR tree
-[**iVRDeleteNode**](IVRApi.md#iVRDeleteNode) | **PATCH** /{accountid}/ivrtree/removeNode | Removes the node from the ivr tree with the given nodeId.
-[**iVREditNode**](IVRApi.md#iVREditNode) | **PATCH** /{accountid}/ivrtree/editNode | edits the node from the given tree
-[**iVREditNodeLink**](IVRApi.md#iVREditNodeLink) | **PATCH** /{accountid}/ivrtree/editLink | edits the node from the given tree
-[**iVRFinalizeNode**](IVRApi.md#iVRFinalizeNode) | **POST** /{accountid}/ivrtree/finalizeTree | Removes the node from the ivr tree with the given nodeId.
-[**iVRGet**](IVRApi.md#iVRGet) | **GET** /{accountid}/ivrtree | Returns all IVR Trees for a given account
-[**iVRGetAvailableNodes**](IVRApi.md#iVRGetAvailableNodes) | **POST** /{accountid}/ivrtree/availableNodes | Returns a list of nodes that are eligible to be a child node of the given   tree and parent node.
-[**iVRGetAvailableTags**](IVRApi.md#iVRGetAvailableTags) | **POST** /{accountid}/ivrtree/availableTags | Returns a list of nodes that are eligible to be a child node of the given   tree and parent node.
-[**iVRGetItem**](IVRApi.md#iVRGetItem) | **GET** /{accountid}/ivrtree/{id} | Gets a specific IVR Tree for a given account
-[**iVRGetReferences**](IVRApi.md#iVRGetReferences) | **GET** /{accountid}/ivrtree/{id}/InboundReferences | Get inbound references to an IVR tree
-[**iVRInitializeNewTree**](IVRApi.md#iVRInitializeNewTree) | **POST** /{accountid}/ivrtree/initialize | Returns a intiliazed  tree for the given account that   is not saved. This will be the base object to build the tree  structure off of.
+[**iVRAddNode**](IVRApi.md#iVRAddNode) | **POST** /{accountid}/ivrtree/node | 
+[**iVRClone**](IVRApi.md#iVRClone) | **POST** /{accountid}/ivrtree/{id}/clone | 
+[**iVRDelete**](IVRApi.md#iVRDelete) | **DELETE** /{accountid}/ivrtree/{id} | 
+[**iVRDeleteNode**](IVRApi.md#iVRDeleteNode) | **PATCH** /{accountid}/ivrtree/removeNode | 
+[**iVREditNode**](IVRApi.md#iVREditNode) | **PATCH** /{accountid}/ivrtree/editNode | 
+[**iVREditNodeLink**](IVRApi.md#iVREditNodeLink) | **PATCH** /{accountid}/ivrtree/editLink | 
+[**iVRFinalizeNode**](IVRApi.md#iVRFinalizeNode) | **POST** /{accountid}/ivrtree/finalizeTree | 
+[**iVRGet**](IVRApi.md#iVRGet) | **GET** /{accountid}/ivrtree | 
+[**iVRGetAvailableNodes**](IVRApi.md#iVRGetAvailableNodes) | **POST** /{accountid}/ivrtree/availableNodes | 
+[**iVRGetAvailableTags**](IVRApi.md#iVRGetAvailableTags) | **POST** /{accountid}/ivrtree/availableTags | 
+[**iVRGetItem**](IVRApi.md#iVRGetItem) | **GET** /{accountid}/ivrtree/{id} | 
+[**iVRGetReferences**](IVRApi.md#iVRGetReferences) | **GET** /{accountid}/ivrtree/{id}/InboundReferences | 
+[**iVRInitializeNewTree**](IVRApi.md#iVRInitializeNewTree) | **POST** /{accountid}/ivrtree/initialize | 
 
 
 # **iVRAddNode**
 > \Ringba\Model\IVRTreeResponse iVRAddNode($request, $accountid)
 
-adds a node to the provided tree as a child to the given parent node described by the   parentNodeId. If the request is successfull, the updated tree is returned. If there are any errors  the errors are returned.
+
 
 ### Example
 ```php
@@ -71,7 +71,7 @@ No authorization required
 # **iVRClone**
 > object iVRClone($id, $accountid)
 
-Clone a specific IVR Tree for a given account
+
 
 ### Example
 ```php
@@ -120,7 +120,7 @@ No authorization required
 # **iVRDelete**
 > object iVRDelete($id, $accountid, $force)
 
-Get inbound references to an IVR tree
+
 
 ### Example
 ```php
@@ -171,7 +171,7 @@ No authorization required
 # **iVRDeleteNode**
 > \Ringba\Model\IVRTreeResponse iVRDeleteNode($request, $accountid)
 
-Removes the node from the ivr tree with the given nodeId.
+
 
 ### Example
 ```php
@@ -220,7 +220,7 @@ No authorization required
 # **iVREditNode**
 > \Ringba\Model\IVRTreeResponse iVREditNode($request, $accountid)
 
-edits the node from the given tree
+
 
 ### Example
 ```php
@@ -232,7 +232,7 @@ $apiInstance = new Ringba\Api\IVRApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \Ringba\Model\EditNodeRequestModel(); // \Ringba\Model\EditNodeRequestModel | the request tree
+$request = new \Ringba\Model\EditNodeRequestModel(); // \Ringba\Model\EditNodeRequestModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -248,7 +248,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\Ringba\Model\EditNodeRequestModel**](../Model/EditNodeRequestModel.md)| the request tree |
+ **request** | [**\Ringba\Model\EditNodeRequestModel**](../Model/EditNodeRequestModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -269,7 +269,7 @@ No authorization required
 # **iVREditNodeLink**
 > \Ringba\Model\IVRTreeResponse iVREditNodeLink($request, $accountid)
 
-edits the node from the given tree
+
 
 ### Example
 ```php
@@ -281,7 +281,7 @@ $apiInstance = new Ringba\Api\IVRApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \Ringba\Model\EditNodeLinkModel(); // \Ringba\Model\EditNodeLinkModel | the request tree
+$request = new \Ringba\Model\EditNodeLinkModel(); // \Ringba\Model\EditNodeLinkModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -297,7 +297,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\Ringba\Model\EditNodeLinkModel**](../Model/EditNodeLinkModel.md)| the request tree |
+ **request** | [**\Ringba\Model\EditNodeLinkModel**](../Model/EditNodeLinkModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -318,7 +318,7 @@ No authorization required
 # **iVRFinalizeNode**
 > \Ringba\Model\IVRTreeResponse iVRFinalizeNode($request, $accountid)
 
-Removes the node from the ivr tree with the given nodeId.
+
 
 ### Example
 ```php
@@ -367,7 +367,7 @@ No authorization required
 # **iVRGet**
 > object iVRGet($accountid)
 
-Returns all IVR Trees for a given account
+
 
 ### Example
 ```php
@@ -414,7 +414,7 @@ No authorization required
 # **iVRGetAvailableNodes**
 > \Ringba\Model\IVRTreeNodesResponse iVRGetAvailableNodes($request, $accountid)
 
-Returns a list of nodes that are eligible to be a child node of the given   tree and parent node.
+
 
 ### Example
 ```php
@@ -463,7 +463,7 @@ No authorization required
 # **iVRGetAvailableTags**
 > \Ringba\Model\IVRTreeNodesResponse iVRGetAvailableTags($request, $accountid)
 
-Returns a list of nodes that are eligible to be a child node of the given   tree and parent node.
+
 
 ### Example
 ```php
@@ -512,7 +512,7 @@ No authorization required
 # **iVRGetItem**
 > object iVRGetItem($id, $accountid)
 
-Gets a specific IVR Tree for a given account
+
 
 ### Example
 ```php
@@ -561,7 +561,7 @@ No authorization required
 # **iVRGetReferences**
 > object iVRGetReferences($id, $accountid)
 
-Get inbound references to an IVR tree
+
 
 ### Example
 ```php
@@ -610,7 +610,7 @@ No authorization required
 # **iVRInitializeNewTree**
 > \Ringba\Model\IVRTreeResponse iVRInitializeNewTree($request, $accountid)
 
-Returns a intiliazed  tree for the given account that   is not saved. This will be the base object to build the tree  structure off of.
+
 
 ### Example
 ```php

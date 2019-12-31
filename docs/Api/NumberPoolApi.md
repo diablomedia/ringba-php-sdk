@@ -1,6 +1,6 @@
 # Ringba\NumberPoolApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**numberPoolGetItem**](NumberPoolApi.md#numberPoolGetItem) | **GET** /{accountid}/numberpools/{id} | 
 [**numberPoolGetNumbers**](NumberPoolApi.md#numberPoolGetNumbers) | **GET** /{accountid}/numberpools/{id}/Numbers | 
 [**numberPoolInUseNumbers**](NumberPoolApi.md#numberPoolInUseNumbers) | **GET** /{accountid}/numberpools/{id}/Numbers/InUse | 
-[**numberPoolPatchItem**](NumberPoolApi.md#numberPoolPatchItem) | **PATCH** /{accountid}/numberpools/{id} | Updates the values of number pool
+[**numberPoolPatchItem**](NumberPoolApi.md#numberPoolPatchItem) | **PATCH** /{accountid}/numberpools/{id} | 
 [**numberPoolRemoveAffilaite**](NumberPoolApi.md#numberPoolRemoveAffilaite) | **DELETE** /{accountid}/numberpools/{id}/Affiliate/{affiliateId} | 
 [**numberPoolRemoveNumber**](NumberPoolApi.md#numberPoolRemoveNumber) | **DELETE** /{accountid}/numberpools/{id}/Numbers/{numberId} | 
 [**numberPoolRemoveNumbers**](NumberPoolApi.md#numberPoolRemoveNumbers) | **POST** /{accountid}/numberpools/{id}/Shrink | 
@@ -730,7 +730,7 @@ No authorization required
 # **numberPoolPatchItem**
 > object numberPoolPatchItem($id, $values, $accountid)
 
-Updates the values of number pool
+
 
 ### Example
 ```php
@@ -742,8 +742,8 @@ $apiInstance = new Ringba\Api\NumberPoolApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the numberpool to update
-$values = new \stdClass; // object | the values of the numberpool to update
+$id = "id_example"; // string | 
+$values = new \stdClass; // object | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -759,8 +759,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the numberpool to update |
- **values** | **object**| the values of the numberpool to update |
+ **id** | **string**|  |
+ **values** | **object**|  |
  **accountid** | **string**|  |
 
 ### Return type

@@ -1,22 +1,22 @@
 # Ringba\InfoApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**infoAvailableCountries**](InfoApi.md#infoAvailableCountries) | **GET** /info/countries | Gets a list of supported countries and there settings
+[**infoAvailableCountries**](InfoApi.md#infoAvailableCountries) | **GET** /info/countries | 
 [**infoAvailableLanguages**](InfoApi.md#infoAvailableLanguages) | **GET** /info/languages | 
 [**infoGetAccountTypes**](InfoApi.md#infoGetAccountTypes) | **GET** /info/Plans | 
 [**infoGetOfferCategories**](InfoApi.md#infoGetOfferCategories) | **GET** /{accountId}/info/offerCategories | 
-[**infoGetSettings**](InfoApi.md#infoGetSettings) | **GET** /info/conversionSettings | Gets a list of conversion settings and the Settings for each conversion type.
-[**infoGetTimezone**](InfoApi.md#infoGetTimezone) | **GET** /info/timezones | Retreives a list of System wide Timezones
+[**infoGetSettings**](InfoApi.md#infoGetSettings) | **GET** /info/conversionSettings | 
+[**infoGetTimezone**](InfoApi.md#infoGetTimezone) | **GET** /info/timezones | 
 [**infoIsRingbaNumber**](InfoApi.md#infoIsRingbaNumber) | **GET** /info/isNumber | 
 
 
 # **infoAvailableCountries**
 > object infoAvailableCountries()
 
-Gets a list of supported countries and there settings
+
 
 ### Example
 ```php
@@ -192,7 +192,7 @@ No authorization required
 # **infoGetSettings**
 > object infoGetSettings()
 
-Gets a list of conversion settings and the Settings for each conversion type.
+
 
 ### Example
 ```php
@@ -235,7 +235,7 @@ No authorization required
 # **infoGetTimezone**
 > object infoGetTimezone()
 
-Retreives a list of System wide Timezones
+
 
 ### Example
 ```php

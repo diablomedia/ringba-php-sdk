@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **allowed_parent_types** | **string[]** |  | [optional] 
 **banned_parent_types** | **string[]** |  | [optional] 
 **potential_links** | [**\Ringba\Model\Link[]**](Link.md) |  | [optional] 
+**required_feature_flag** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

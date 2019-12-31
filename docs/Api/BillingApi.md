@@ -1,30 +1,30 @@
 # Ringba\BillingApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**billingAddCreditCard**](BillingApi.md#billingAddCreditCard) | **POST** /{accountid}/Billing/CreditCards | creates a new credit card for this account
-[**billingAddFunds**](BillingApi.md#billingAddFunds) | **POST** /{accountid}/Billing/Balance | increases the balance for this account
-[**billingBillSettings**](BillingApi.md#billingBillSettings) | **PUT** /{accountid}/Billing/BillingSettings | updates the billing setting for this account
-[**billingCCTransactions**](BillingApi.md#billingCCTransactions) | **GET** /{accountid}/Billing/CCTransactions | gets the cc transactionss from this account, The lookup model is optional,   by defualt, the current months transactions will be shown
-[**billingDeleteCreditCard**](BillingApi.md#billingDeleteCreditCard) | **DELETE** /{accountid}/Billing/CreditCards/{id} | removes a credit card for this account
-[**billingDisableAccount**](BillingApi.md#billingDisableAccount) | **DELETE** /{accountid}/Billing/Disable | Disables the account and haults all further charges to credit cards on file
-[**billingEnableAccount**](BillingApi.md#billingEnableAccount) | **PUT** /{accountid}/Billing/Enable | Re-enables a disabled account and haults all further charges to credit cards on file
-[**billingFunds**](BillingApi.md#billingFunds) | **GET** /{accountid}/Billing/Balance | gets the balance for this account
-[**billingGet**](BillingApi.md#billingGet) | **GET** /{accountid}/Billing | Gets the billing settings, Balance, and CreditCard info for this account
+[**billingAddCreditCard**](BillingApi.md#billingAddCreditCard) | **POST** /{accountid}/Billing/CreditCards | 
+[**billingAddFunds**](BillingApi.md#billingAddFunds) | **POST** /{accountid}/Billing/Balance | 
+[**billingBillSettings**](BillingApi.md#billingBillSettings) | **PUT** /{accountid}/Billing/BillingSettings | 
+[**billingCCTransactions**](BillingApi.md#billingCCTransactions) | **GET** /{accountid}/Billing/CCTransactions | 
+[**billingDeleteCreditCard**](BillingApi.md#billingDeleteCreditCard) | **DELETE** /{accountid}/Billing/CreditCards/{id} | 
+[**billingDisableAccount**](BillingApi.md#billingDisableAccount) | **DELETE** /{accountid}/Billing/Disable | 
+[**billingEnableAccount**](BillingApi.md#billingEnableAccount) | **PUT** /{accountid}/Billing/Enable | 
+[**billingFunds**](BillingApi.md#billingFunds) | **GET** /{accountid}/Billing/Balance | 
+[**billingGet**](BillingApi.md#billingGet) | **GET** /{accountid}/Billing | 
 [**billingGetAccountTypes**](BillingApi.md#billingGetAccountTypes) | **GET** /{accountid}/Billing/Plans | 
-[**billingGetBillSettings**](BillingApi.md#billingGetBillSettings) | **GET** /{accountid}/Billing/BillingSettings | get the billing settings for this account
-[**billingGetCreditCards**](BillingApi.md#billingGetCreditCards) | **GET** /{accountid}/Billing/CreditCards | getst the credit cards for htis account
-[**billingUpdateAccountType**](BillingApi.md#billingUpdateAccountType) | **PUT** /{accountid}/Billing/Plans | Updates the account type from one of the Account Types  IE: Basic, Plus, Advance
-[**billingUpdateCreditCard**](BillingApi.md#billingUpdateCreditCard) | **PUT** /{accountid}/Billing/CreditCards/{id} | updates a creditcard for this account
-[**billingVerify**](BillingApi.md#billingVerify) | **PUT** /{accountid}/Billing/CreditCards/{id}/verify | updates a creditcard for this account
+[**billingGetBillSettings**](BillingApi.md#billingGetBillSettings) | **GET** /{accountid}/Billing/BillingSettings | 
+[**billingGetCreditCards**](BillingApi.md#billingGetCreditCards) | **GET** /{accountid}/Billing/CreditCards | 
+[**billingUpdateAccountType**](BillingApi.md#billingUpdateAccountType) | **PUT** /{accountid}/Billing/Plans | 
+[**billingUpdateCreditCard**](BillingApi.md#billingUpdateCreditCard) | **PUT** /{accountid}/Billing/CreditCards/{id} | 
+[**billingVerify**](BillingApi.md#billingVerify) | **PUT** /{accountid}/Billing/CreditCards/{id}/verify | 
 
 
 # **billingAddCreditCard**
 > object billingAddCreditCard($model, $accountid)
 
-creates a new credit card for this account
+
 
 ### Example
 ```php
@@ -73,7 +73,7 @@ No authorization required
 # **billingAddFunds**
 > object billingAddFunds($model, $accountid)
 
-increases the balance for this account
+
 
 ### Example
 ```php
@@ -122,7 +122,7 @@ No authorization required
 # **billingBillSettings**
 > object billingBillSettings($model, $accountid)
 
-updates the billing setting for this account
+
 
 ### Example
 ```php
@@ -171,7 +171,7 @@ No authorization required
 # **billingCCTransactions**
 > object billingCCTransactions($accountid, $past_days, $days, $past_months, $months)
 
-gets the cc transactionss from this account, The lookup model is optional,   by defualt, the current months transactions will be shown
+
 
 ### Example
 ```php
@@ -226,7 +226,7 @@ No authorization required
 # **billingDeleteCreditCard**
 > object billingDeleteCreditCard($id, $accountid)
 
-removes a credit card for this account
+
 
 ### Example
 ```php
@@ -275,7 +275,7 @@ No authorization required
 # **billingDisableAccount**
 > object billingDisableAccount($model, $accountid)
 
-Disables the account and haults all further charges to credit cards on file
+
 
 ### Example
 ```php
@@ -324,7 +324,7 @@ No authorization required
 # **billingEnableAccount**
 > object billingEnableAccount($model, $accountid)
 
-Re-enables a disabled account and haults all further charges to credit cards on file
+
 
 ### Example
 ```php
@@ -373,7 +373,7 @@ No authorization required
 # **billingFunds**
 > object billingFunds($accountid)
 
-gets the balance for this account
+
 
 ### Example
 ```php
@@ -420,7 +420,7 @@ No authorization required
 # **billingGet**
 > object billingGet($accountid)
 
-Gets the billing settings, Balance, and CreditCard info for this account
+
 
 ### Example
 ```php
@@ -514,7 +514,7 @@ No authorization required
 # **billingGetBillSettings**
 > object billingGetBillSettings($accountid)
 
-get the billing settings for this account
+
 
 ### Example
 ```php
@@ -561,7 +561,7 @@ No authorization required
 # **billingGetCreditCards**
 > object billingGetCreditCards($accountid)
 
-getst the credit cards for htis account
+
 
 ### Example
 ```php
@@ -608,7 +608,7 @@ No authorization required
 # **billingUpdateAccountType**
 > object billingUpdateAccountType($plan, $accountid)
 
-Updates the account type from one of the Account Types  IE: Basic, Plus, Advance
+
 
 ### Example
 ```php
@@ -657,7 +657,7 @@ No authorization required
 # **billingUpdateCreditCard**
 > object billingUpdateCreditCard($id, $update_model, $accountid)
 
-updates a creditcard for this account
+
 
 ### Example
 ```php
@@ -708,7 +708,7 @@ No authorization required
 # **billingVerify**
 > object billingVerify($id, $accountid)
 
-updates a creditcard for this account
+
 
 ### Example
 ```php

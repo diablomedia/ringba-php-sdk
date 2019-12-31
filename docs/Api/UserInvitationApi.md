@@ -1,6 +1,6 @@
 # Ringba\UserInvitationApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -674,7 +674,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userInvitationUserListInvitations**
-> object userInvitationUserListInvitations($accountid)
+> object userInvitationUserListInvitations($accountid, $all_roles)
 
 
 
@@ -689,9 +689,10 @@ $apiInstance = new Ringba\Api\UserInvitationApi(
     new GuzzleHttp\Client()
 );
 $accountid = "accountid_example"; // string | 
+$all_roles = true; // bool | 
 
 try {
-    $result = $apiInstance->userInvitationUserListInvitations($accountid);
+    $result = $apiInstance->userInvitationUserListInvitations($accountid, $all_roles);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserInvitationApi->userInvitationUserListInvitations: ', $e->getMessage(), PHP_EOL;
@@ -704,6 +705,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountid** | **string**|  |
+ **all_roles** | **bool**|  | [optional]
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # Ringba\AddressApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**addressGet_0**](AddressApi.md#addressGet_0) | **GET** /{accountid}/addresses/{id} | 
 [**addressPatchItem**](AddressApi.md#addressPatchItem) | **PATCH** /{accountid}/addresses/{id} | 
 [**addressSetAsDefault**](AddressApi.md#addressSetAsDefault) | **POST** /{accountid}/addresses/{id}/SetDefault | 
-[**addressSubmitProofDocument**](AddressApi.md#addressSubmitProofDocument) | **PUT** /{accountid}/addresses/{id}/proof | updates a creditcard for this account
+[**addressSubmitProofDocument**](AddressApi.md#addressSubmitProofDocument) | **PUT** /{accountid}/addresses/{id}/proof | 
 
 
 # **addressCreateAddress**
@@ -412,7 +412,7 @@ No authorization required
 # **addressSubmitProofDocument**
 > object addressSubmitProofDocument($id, $accountid)
 
-updates a creditcard for this account
+
 
 ### Example
 ```php

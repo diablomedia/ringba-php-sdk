@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **can_pause_targets** | **bool** |  | [optional] 
 **can_set_concurrency_caps** | **bool** |  | [optional] 
+**can_dispute_conversions** | **bool** |  | [optional] 
 **sub_id** | **string** |  | [optional] 
 **email** | **string** |  | [optional] 
 **confirm_email** | **string** |  | [optional] 

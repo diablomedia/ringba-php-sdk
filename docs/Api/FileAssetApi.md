@@ -1,22 +1,20 @@
 # Ringba\FileAssetApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fileAssetCreateAsset**](FileAssetApi.md#fileAssetCreateAsset) | **POST** /{accountid}/assets | Creates an Asset  The request must be a mulipart form request with the first item being the   json body of the request labeled asset, then the file attached second as file
-[**fileAssetDelete**](FileAssetApi.md#fileAssetDelete) | **DELETE** /{accountid}/assets/{id} | Deletes the asset
-[**fileAssetDownloadItem**](FileAssetApi.md#fileAssetDownloadItem) | **GET** /{accountid}/assets/{id}/download | Returns the asset for the account
-[**fileAssetGet**](FileAssetApi.md#fileAssetGet) | **GET** /{accountid}/assets | Returns all Assests for a given account
-[**fileAssetGetItem**](FileAssetApi.md#fileAssetGetItem) | **GET** /{accountid}/assets/{id} | Returns the asset for the account
+[**fileAssetCreateAsset**](FileAssetApi.md#fileAssetCreateAsset) | **POST** /{accountid}/assets | 
+[**fileAssetDelete**](FileAssetApi.md#fileAssetDelete) | **DELETE** /{accountid}/assets/{id} | 
+[**fileAssetDownloadItem**](FileAssetApi.md#fileAssetDownloadItem) | **GET** /{accountid}/assets/{id}/download | 
+[**fileAssetGet**](FileAssetApi.md#fileAssetGet) | **GET** /{accountid}/assets | 
+[**fileAssetGetItem**](FileAssetApi.md#fileAssetGetItem) | **GET** /{accountid}/assets/{id} | 
 
 
 # **fileAssetCreateAsset**
 > \Ringba\Model\FileAssetCreationResponse fileAssetCreateAsset($accountid)
 
-Creates an Asset  The request must be a mulipart form request with the first item being the   json body of the request labeled asset, then the file attached second as file
 
-Sample request:           var form = new FormData();          form.append(\"asset\", \"{\\\"fileType\\\":\\\"ivr-upload\\\", \\\"isPublic\\\":true, \\\"links\\\":[]}\");          form.append(\"file\", \"[path to file]\");                        var settings = {              \"async\": true,              \"crossDomain\": true,              \"url\": \"{accountId}/assets\",              \"method\": \"POST\",              \"headers\": {                  \"Cache-Control\": \"no-cache\",              },              \"processData\": false,              \"contentType\": false,              \"mimeType\": \"multipart/form-data\",              \"data\": form          }                        $.ajax(settings).done(function (response) {              console.log(response);          });
 
 ### Example
 ```php
@@ -63,7 +61,7 @@ No authorization required
 # **fileAssetDelete**
 > object fileAssetDelete($id, $accountid)
 
-Deletes the asset
+
 
 ### Example
 ```php
@@ -112,7 +110,7 @@ No authorization required
 # **fileAssetDownloadItem**
 > object fileAssetDownloadItem($id, $accountid, $inline)
 
-Returns the asset for the account
+
 
 ### Example
 ```php
@@ -163,7 +161,7 @@ No authorization required
 # **fileAssetGet**
 > object fileAssetGet($accountid)
 
-Returns all Assests for a given account
+
 
 ### Example
 ```php
@@ -210,7 +208,7 @@ No authorization required
 # **fileAssetGetItem**
 > object fileAssetGetItem($id, $accountid)
 
-Returns the asset for the account
+
 
 ### Example
 ```php

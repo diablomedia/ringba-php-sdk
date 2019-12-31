@@ -1,6 +1,6 @@
 # Ringba\TargetApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,9 +12,9 @@ Method | HTTP request | Description
 [**targetGet**](TargetApi.md#targetGet) | **GET** /{accountid}/targets | 
 [**targetGetCurrentCounts**](TargetApi.md#targetGetCurrentCounts) | **GET** /{accountid}/targets/{id}/Counts | 
 [**targetGetInboundReferences**](TargetApi.md#targetGetInboundReferences) | **GET** /{accountid}/targets/{id}/InboundReferences | 
-[**targetGetItem**](TargetApi.md#targetGetItem) | **GET** /{accountid}/targets/{id} | Gets the Item with usage counts
-[**targetPatch**](TargetApi.md#targetPatch) | **PATCH** /{accountid}/targets/{id} | Update a Target
-[**targetPost**](TargetApi.md#targetPost) | **POST** /{accountid}/targets | Create Target
+[**targetGetItem**](TargetApi.md#targetGetItem) | **GET** /{accountid}/targets/{id} | 
+[**targetPatch**](TargetApi.md#targetPatch) | **PATCH** /{accountid}/targets/{id} | 
+[**targetPost**](TargetApi.md#targetPost) | **POST** /{accountid}/targets | 
 [**targetRemoveBuyerFromTargetGroup**](TargetApi.md#targetRemoveBuyerFromTargetGroup) | **DELETE** /{accountid}/targets/{id}/Buyer/{buyerId} | 
 [**targetResetCount**](TargetApi.md#targetResetCount) | **DELETE** /{accountid}/targets/{id}/ResetCount | 
 
@@ -422,7 +422,7 @@ No authorization required
 # **targetGetItem**
 > object targetGetItem($id, $accountid)
 
-Gets the Item with usage counts
+
 
 ### Example
 ```php
@@ -471,7 +471,7 @@ No authorization required
 # **targetPatch**
 > object targetPatch($id, $values, $accountid)
 
-Update a Target
+
 
 ### Example
 ```php
@@ -522,7 +522,7 @@ No authorization required
 # **targetPost**
 > object targetPost($target, $accountid)
 
-Create Target
+
 
 ### Example
 ```php

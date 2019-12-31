@@ -27,6 +27,8 @@ Name | Type | Description | Notes
 **dealloc_flag** | **bool** |  | [optional] 
 **failed_recharge_attempts** | **int** |  | [optional] 
 **is_carrier_number** | **bool** |  | [optional] 
+**integration_settings** | [**\Ringba\Model\IntegrationSetting[]**](IntegrationSetting.md) |  | [optional] 
+**int_setting_ids** | **string[]** |  | [optional] 
 **affiliate** | [**\Ringba\Model\Affiliate**](Affiliate.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 

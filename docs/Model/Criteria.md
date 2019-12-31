@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag_id** | **string** |  | [optional] 
+**tag_ids** | **string[]** |  | [optional] 
 **comparison_type** | **string** |  | [optional] 
 **value** | **string** |  | [optional] 
 **is_negative_match** | **bool** |  | [optional] 

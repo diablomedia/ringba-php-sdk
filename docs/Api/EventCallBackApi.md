@@ -1,6 +1,6 @@
 # Ringba\EventCallBackApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**eventCallBackGet**](EventCallBackApi.md#eventCallBackGet) | **GET** /{accountid}/EventCallBacks | 
 [**eventCallBackGetInboundReferences**](EventCallBackApi.md#eventCallBackGetInboundReferences) | **GET** /{accountid}/EventCallBacks/{id}/InboundReferences | 
 [**eventCallBackGetItem**](EventCallBackApi.md#eventCallBackGetItem) | **GET** /{accountid}/EventCallBacks/{id} | 
-[**eventCallBackGetMacros**](EventCallBackApi.md#eventCallBackGetMacros) | **GET** /{accountid}/EventCallBacks/macros | a list of macros that can be used in a callback
+[**eventCallBackGetMacros**](EventCallBackApi.md#eventCallBackGetMacros) | **GET** /{accountid}/EventCallBacks/macros | 
 [**eventCallBackPatch**](EventCallBackApi.md#eventCallBackPatch) | **PATCH** /{accountid}/EventCallBacks/{id} | 
 
 
@@ -259,7 +259,7 @@ No authorization required
 # **eventCallBackGetMacros**
 > object eventCallBackGetMacros($accountid)
 
-a list of macros that can be used in a callback
+
 
 ### Example
 ```php

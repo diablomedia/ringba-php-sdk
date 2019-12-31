@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [optional] 
 **customer_name** | **string** |  | [optional] 
 **street_address** | **string** |  | [optional] 
 **city** | **string** |  | [optional] 
@@ -14,7 +15,6 @@ Name | Type | Description | Notes
 **status** | **string** |  | [optional] 
 **verification** | [**\Ringba\Model\AddressVerification**](AddressVerification.md) |  | [optional] 
 **telco_links** | [**\Ringba\Model\AddressTelcoLink[]**](AddressTelcoLink.md) |  | [optional] 
-**id** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **account_id** | **string** |  | [optional] 
 **enabled** | **bool** |  | [optional] 

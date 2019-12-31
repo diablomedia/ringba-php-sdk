@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **last_name** | **string** |  | [optional] 
 **mobile_number** | **string** |  | [optional] 
 **role** | **string** |  | 
+**can_export_reports** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

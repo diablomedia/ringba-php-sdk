@@ -1,17 +1,17 @@
 # Ringba\NotificationsApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**notificationsGet**](NotificationsApi.md#notificationsGet) | **GET** /{accountid}/notifications/user | Returns all notification settings of the current user
-[**notificationsPatch**](NotificationsApi.md#notificationsPatch) | **PATCH** /{accountid}/notifications/user | Overwrites the existing notification settings of the current user with the new ones
+[**notificationsGet**](NotificationsApi.md#notificationsGet) | **GET** /{accountid}/notifications/user | 
+[**notificationsPatch**](NotificationsApi.md#notificationsPatch) | **PATCH** /{accountid}/notifications/user | 
 
 
 # **notificationsGet**
 > object notificationsGet($accountid)
 
-Returns all notification settings of the current user
+
 
 ### Example
 ```php
@@ -58,7 +58,7 @@ No authorization required
 # **notificationsPatch**
 > object notificationsPatch($settings, $accountid)
 
-Overwrites the existing notification settings of the current user with the new ones
+
 
 ### Example
 ```php

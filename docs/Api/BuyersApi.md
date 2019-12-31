@@ -1,23 +1,23 @@
 # Ringba\BuyersApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**buyersCreateBuyer**](BuyersApi.md#buyersCreateBuyer) | **POST** /{accountId}/Buyers | Creates an new buyer and adds it to the current account;
+[**buyersCreateBuyer**](BuyersApi.md#buyersCreateBuyer) | **POST** /{accountId}/Buyers | 
 [**buyersDelete**](BuyersApi.md#buyersDelete) | **DELETE** /{accountId}/Buyers/{id} | 
-[**buyersGet**](BuyersApi.md#buyersGet) | **GET** /{accountId}/Buyers | List the Buyers Associated with this account.
-[**buyersGetItem**](BuyersApi.md#buyersGetItem) | **GET** /{accountId}/Buyers/{id} | Get a specific Buyer by the id of the Buyer
-[**buyersGetReferences**](BuyersApi.md#buyersGetReferences) | **GET** /{accountId}/Buyers/{id}/InboundReferences | Get a specific Buyer&#39;s references
+[**buyersGet**](BuyersApi.md#buyersGet) | **GET** /{accountId}/Buyers | 
+[**buyersGetItem**](BuyersApi.md#buyersGetItem) | **GET** /{accountId}/Buyers/{id} | 
+[**buyersGetReferences**](BuyersApi.md#buyersGetReferences) | **GET** /{accountId}/Buyers/{id}/InboundReferences | 
 [**buyersGetTargets**](BuyersApi.md#buyersGetTargets) | **GET** /{accountId}/Buyers/{id}/Targets | 
 [**buyersGetUsers**](BuyersApi.md#buyersGetUsers) | **GET** /{accountId}/Buyers/{id}/Users | 
-[**buyersPatchItem**](BuyersApi.md#buyersPatchItem) | **PATCH** /{accountId}/Buyers/{id} | patches or updates specific properties of an Buyer
+[**buyersPatchItem**](BuyersApi.md#buyersPatchItem) | **PATCH** /{accountId}/Buyers/{id} | 
 
 
 # **buyersCreateBuyer**
 > object buyersCreateBuyer($buyer, $account_id)
 
-Creates an new buyer and adds it to the current account;
+
 
 ### Example
 ```php
@@ -29,7 +29,7 @@ $apiInstance = new Ringba\Api\BuyersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$buyer = new \Ringba\Model\CreateBuyerModel(); // \Ringba\Model\CreateBuyerModel | The buyer to create
+$buyer = new \Ringba\Model\CreateBuyerModel(); // \Ringba\Model\CreateBuyerModel | 
 $account_id = "account_id_example"; // string | 
 
 try {
@@ -45,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer** | [**\Ringba\Model\CreateBuyerModel**](../Model/CreateBuyerModel.md)| The buyer to create |
+ **buyer** | [**\Ringba\Model\CreateBuyerModel**](../Model/CreateBuyerModel.md)|  |
  **account_id** | **string**|  |
 
 ### Return type
@@ -117,7 +117,7 @@ No authorization required
 # **buyersGet**
 > object buyersGet($account_id)
 
-List the Buyers Associated with this account.
+
 
 ### Example
 ```php
@@ -164,7 +164,7 @@ No authorization required
 # **buyersGetItem**
 > object buyersGetItem($id, $account_id)
 
-Get a specific Buyer by the id of the Buyer
+
 
 ### Example
 ```php
@@ -176,7 +176,7 @@ $apiInstance = new Ringba\Api\BuyersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | The Id of the buyer
+$id = "id_example"; // string | 
 $account_id = "account_id_example"; // string | 
 
 try {
@@ -192,7 +192,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The Id of the buyer |
+ **id** | **string**|  |
  **account_id** | **string**|  |
 
 ### Return type
@@ -213,7 +213,7 @@ No authorization required
 # **buyersGetReferences**
 > object buyersGetReferences($id, $account_id)
 
-Get a specific Buyer's references
+
 
 ### Example
 ```php
@@ -225,7 +225,7 @@ $apiInstance = new Ringba\Api\BuyersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | The Id of the buyer
+$id = "id_example"; // string | 
 $account_id = "account_id_example"; // string | 
 
 try {
@@ -241,7 +241,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The Id of the buyer |
+ **id** | **string**|  |
  **account_id** | **string**|  |
 
 ### Return type
@@ -360,7 +360,7 @@ No authorization required
 # **buyersPatchItem**
 > object buyersPatchItem($id, $values, $account_id)
 
-patches or updates specific properties of an Buyer
+
 
 ### Example
 ```php
@@ -372,8 +372,8 @@ $apiInstance = new Ringba\Api\BuyersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the Buyer to update
-$values = new \stdClass; // object | the list of fields and values to updte
+$id = "id_example"; // string | 
+$values = new \stdClass; // object | 
 $account_id = "account_id_example"; // string | 
 
 try {
@@ -389,8 +389,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the Buyer to update |
- **values** | **object**| the list of fields and values to updte |
+ **id** | **string**|  |
+ **values** | **object**|  |
  **account_id** | **string**|  |
 
 ### Return type

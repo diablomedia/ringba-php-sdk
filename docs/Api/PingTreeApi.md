@@ -1,17 +1,19 @@
 # Ringba\PingTreeApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**pingTreeAddTargets**](PingTreeApi.md#pingTreeAddTargets) | **PATCH** /{accountid}/pingtrees/{id}/Targets | 
 [**pingTreeCreatePingTree**](PingTreeApi.md#pingTreeCreatePingTree) | **POST** /{accountid}/pingtrees | 
+[**pingTreeDeletePingTree**](PingTreeApi.md#pingTreeDeletePingTree) | **DELETE** /{accountid}/pingtrees/{id} | 
 [**pingTreeDeleteTarget**](PingTreeApi.md#pingTreeDeleteTarget) | **DELETE** /{accountid}/pingtrees/{id}/Targets/{targetId} | 
 [**pingTreeGet**](PingTreeApi.md#pingTreeGet) | **GET** /{accountid}/pingtrees | 
 [**pingTreeGetCurrentCounts**](PingTreeApi.md#pingTreeGetCurrentCounts) | **GET** /{accountid}/pingtrees/{id}/Counts | 
-[**pingTreeGetItem**](PingTreeApi.md#pingTreeGetItem) | **GET** /{accountid}/pingtrees/{id} | Gets the Item with usage counts
-[**pingTreeGetTargets**](PingTreeApi.md#pingTreeGetTargets) | **GET** /{accountid}/pingtrees/{id}/Targets | returns targets attached to the target group
-[**pingTreePatchItem**](PingTreeApi.md#pingTreePatchItem) | **PATCH** /{accountid}/pingtrees/{id} | updated the Ping Tree
+[**pingTreeGetItem**](PingTreeApi.md#pingTreeGetItem) | **GET** /{accountid}/pingtrees/{id} | 
+[**pingTreeGetReferences**](PingTreeApi.md#pingTreeGetReferences) | **GET** /{accountid}/pingtrees/{id}/InboundReferences | 
+[**pingTreeGetTargets**](PingTreeApi.md#pingTreeGetTargets) | **GET** /{accountid}/pingtrees/{id}/Targets | 
+[**pingTreePatchItem**](PingTreeApi.md#pingTreePatchItem) | **PATCH** /{accountid}/pingtrees/{id} | 
 [**pingTreeResetCount**](PingTreeApi.md#pingTreeResetCount) | **DELETE** /{accountid}/pingtrees/{id}/ResetCount | 
 [**pingTreeUpdateTargets**](PingTreeApi.md#pingTreeUpdateTargets) | **PATCH** /{accountid}/pingtrees/{id}/Targets/BulkUpdate | 
 
@@ -112,6 +114,57 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **pingTreeDeletePingTree**
+> object pingTreeDeletePingTree($id, $accountid, $force)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Ringba\Api\PingTreeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | 
+$accountid = "accountid_example"; // string | 
+$force = true; // bool | 
+
+try {
+    $result = $apiInstance->pingTreeDeletePingTree($id, $accountid, $force);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PingTreeApi->pingTreeDeletePingTree: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **accountid** | **string**|  |
+ **force** | **bool**|  | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -268,7 +321,7 @@ No authorization required
 # **pingTreeGetItem**
 > object pingTreeGetItem($id, $accountid)
 
-Gets the Item with usage counts
+
 
 ### Example
 ```php
@@ -314,10 +367,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **pingTreeGetTargets**
-> object pingTreeGetTargets($id, $accountid, $include_stats)
+# **pingTreeGetReferences**
+> object pingTreeGetReferences($id, $accountid)
 
-returns targets attached to the target group
+
 
 ### Example
 ```php
@@ -329,9 +382,58 @@ $apiInstance = new Ringba\Api\PingTreeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | target group id
+$id = "id_example"; // string | 
 $accountid = "accountid_example"; // string | 
-$include_stats = true; // bool | true if you want stats returend
+
+try {
+    $result = $apiInstance->pingTreeGetReferences($id, $accountid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PingTreeApi->pingTreeGetReferences: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **accountid** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **pingTreeGetTargets**
+> object pingTreeGetTargets($id, $accountid, $include_stats)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Ringba\Api\PingTreeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | 
+$accountid = "accountid_example"; // string | 
+$include_stats = true; // bool | 
 
 try {
     $result = $apiInstance->pingTreeGetTargets($id, $accountid, $include_stats);
@@ -346,9 +448,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| target group id |
+ **id** | **string**|  |
  **accountid** | **string**|  |
- **include_stats** | **bool**| true if you want stats returend | [optional]
+ **include_stats** | **bool**|  | [optional]
 
 ### Return type
 
@@ -368,7 +470,7 @@ No authorization required
 # **pingTreePatchItem**
 > object pingTreePatchItem($id, $values, $accountid)
 
-updated the Ping Tree
+
 
 ### Example
 ```php
@@ -380,8 +482,8 @@ $apiInstance = new Ringba\Api\PingTreeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the ping tree to update
-$values = new \stdClass; // object | the list of fields and values to update
+$id = "id_example"; // string | 
+$values = new \stdClass; // object | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -397,8 +499,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the ping tree to update |
- **values** | **object**| the list of fields and values to update |
+ **id** | **string**|  |
+ **values** | **object**|  |
  **accountid** | **string**|  |
 
 ### Return type

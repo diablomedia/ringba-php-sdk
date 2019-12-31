@@ -1,19 +1,19 @@
 # Ringba\JobQueApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**jobQueGet**](JobQueApi.md#jobQueGet) | **GET** /{accountid}/jobQueue | Gets a list of job que items that meet the search criteria
-[**jobQueGetItem**](JobQueApi.md#jobQueGetItem) | **GET** /{accountid}/jobQueue/{id} | Gets the admin task and all of its details
+[**jobQueGet**](JobQueApi.md#jobQueGet) | **GET** /{accountid}/jobQueue | 
+[**jobQueGetItem**](JobQueApi.md#jobQueGetItem) | **GET** /{accountid}/jobQueue/{id} | 
 [**jobQueGetOfferParticipationRequests**](JobQueApi.md#jobQueGetOfferParticipationRequests) | **GET** /{accountid}/jobQueue/offers/participation/{cmpid} | 
-[**jobQueProcessAction**](JobQueApi.md#jobQueProcessAction) | **POST** /{accountid}/jobQueue/{id}/action | Process an action for a job que
+[**jobQueProcessAction**](JobQueApi.md#jobQueProcessAction) | **POST** /{accountid}/jobQueue/{id}/action | 
 
 
 # **jobQueGet**
 > \Ringba\Model\JobsResponseModel jobQueGet($accountid, $status)
 
-Gets a list of job que items that meet the search criteria
+
 
 ### Example
 ```php
@@ -26,7 +26,7 @@ $apiInstance = new Ringba\Api\JobQueApi(
     new GuzzleHttp\Client()
 );
 $accountid = "accountid_example"; // string | 
-$status = "status_example"; // string | completed, non_completed, open, waiting
+$status = "status_example"; // string | 
 
 try {
     $result = $apiInstance->jobQueGet($accountid, $status);
@@ -42,7 +42,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountid** | **string**|  |
- **status** | **string**| completed, non_completed, open, waiting | [optional]
+ **status** | **string**|  | [optional]
 
 ### Return type
 
@@ -62,7 +62,7 @@ No authorization required
 # **jobQueGetItem**
 > \Ringba\Model\JobResponseModel jobQueGetItem($id, $accountid)
 
-Gets the admin task and all of its details
+
 
 ### Example
 ```php
@@ -74,7 +74,7 @@ $apiInstance = new Ringba\Api\JobQueApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the item
+$id = "id_example"; // string | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the item |
+ **id** | **string**|  |
  **accountid** | **string**|  |
 
 ### Return type
@@ -162,7 +162,7 @@ No authorization required
 # **jobQueProcessAction**
 > \Ringba\Model\JobActionResultModel jobQueProcessAction($id, $model, $accountid)
 
-Process an action for a job que
+
 
 ### Example
 ```php
@@ -174,8 +174,8 @@ $apiInstance = new Ringba\Api\JobQueApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "id_example"; // string | the id of the job
-$model = new \Ringba\Model\JobActionModel(); // \Ringba\Model\JobActionModel | the arguments for the job
+$id = "id_example"; // string | 
+$model = new \Ringba\Model\JobActionModel(); // \Ringba\Model\JobActionModel | 
 $accountid = "accountid_example"; // string | 
 
 try {
@@ -191,8 +191,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| the id of the job |
- **model** | [**\Ringba\Model\JobActionModel**](../Model/JobActionModel.md)| the arguments for the job |
+ **id** | **string**|  |
+ **model** | [**\Ringba\Model\JobActionModel**](../Model/JobActionModel.md)|  |
  **accountid** | **string**|  |
 
 ### Return type

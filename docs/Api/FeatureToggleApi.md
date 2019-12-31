@@ -1,17 +1,17 @@
 # Ringba\FeatureToggleApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**featureToggleGet**](FeatureToggleApi.md#featureToggleGet) | **GET** /{accountid}/flipper | returns all the feature toggles associated w/ this account
-[**featureToggleGet_0**](FeatureToggleApi.md#featureToggleGet_0) | **GET** /{accountid}/flipper/{featureName} | returns all the feature toggles associated w/ this account
+[**featureToggleGet**](FeatureToggleApi.md#featureToggleGet) | **GET** /{accountid}/flipper | 
+[**featureToggleGet_0**](FeatureToggleApi.md#featureToggleGet_0) | **GET** /{accountid}/flipper/{featureName} | 
 
 
 # **featureToggleGet**
 > object featureToggleGet($accountid)
 
-returns all the feature toggles associated w/ this account
+
 
 ### Example
 ```php
@@ -58,7 +58,7 @@ No authorization required
 # **featureToggleGet_0**
 > object featureToggleGet_0($feature_name, $accountid)
 
-returns all the feature toggles associated w/ this account
+
 
 ### Example
 ```php

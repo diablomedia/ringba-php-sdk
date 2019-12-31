@@ -1,22 +1,22 @@
 # Ringba\InAppNotificationApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**inAppNotificationDeleteMessage**](InAppNotificationApi.md#inAppNotificationDeleteMessage) | **DELETE** /notifications/{id} | deletes a givent message
-[**inAppNotificationGetAll**](InAppNotificationApi.md#inAppNotificationGetAll) | **GET** /notifications/all | returns the message toasts and message counts
-[**inAppNotificationGetCounts**](InAppNotificationApi.md#inAppNotificationGetCounts) | **GET** /notifications/counts | returns the counts for a the loged in user. Such as total and unread counts
-[**inAppNotificationGetMessage**](InAppNotificationApi.md#inAppNotificationGetMessage) | **GET** /notifications/{id} | gets the message
-[**inAppNotificationGetMessages**](InAppNotificationApi.md#inAppNotificationGetMessages) | **GET** /notifications | returns the notifications for a given user  in order to get the tope 5 message, you would call this method with pageSize&#x3D;5  and leave rest of the responses blank
-[**inAppNotificationGetPreviews**](InAppNotificationApi.md#inAppNotificationGetPreviews) | **GET** /notifications/toasts | returns the message toasts to show a user
-[**inAppNotificationMarkMessageRead**](InAppNotificationApi.md#inAppNotificationMarkMessageRead) | **PUT** /notifications/{id} | marks a given message as read
+[**inAppNotificationDeleteMessage**](InAppNotificationApi.md#inAppNotificationDeleteMessage) | **DELETE** /notifications/{id} | 
+[**inAppNotificationGetAll**](InAppNotificationApi.md#inAppNotificationGetAll) | **GET** /notifications/all | 
+[**inAppNotificationGetCounts**](InAppNotificationApi.md#inAppNotificationGetCounts) | **GET** /notifications/counts | 
+[**inAppNotificationGetMessage**](InAppNotificationApi.md#inAppNotificationGetMessage) | **GET** /notifications/{id} | 
+[**inAppNotificationGetMessages**](InAppNotificationApi.md#inAppNotificationGetMessages) | **GET** /notifications | 
+[**inAppNotificationGetPreviews**](InAppNotificationApi.md#inAppNotificationGetPreviews) | **GET** /notifications/toasts | 
+[**inAppNotificationMarkMessageRead**](InAppNotificationApi.md#inAppNotificationMarkMessageRead) | **PUT** /notifications/{id} | 
 
 
 # **inAppNotificationDeleteMessage**
 > object inAppNotificationDeleteMessage($id)
 
-deletes a givent message
+
 
 ### Example
 ```php
@@ -63,7 +63,7 @@ No authorization required
 # **inAppNotificationGetAll**
 > \Ringba\Model\GetAllResponse inAppNotificationGetAll()
 
-returns the message toasts and message counts
+
 
 ### Example
 ```php
@@ -106,7 +106,7 @@ No authorization required
 # **inAppNotificationGetCounts**
 > \Ringba\Model\CountResponse inAppNotificationGetCounts()
 
-returns the counts for a the loged in user. Such as total and unread counts
+
 
 ### Example
 ```php
@@ -149,7 +149,7 @@ No authorization required
 # **inAppNotificationGetMessage**
 > \Ringba\Model\MessageResponse inAppNotificationGetMessage($id, $mark_as_read)
 
-gets the message
+
 
 ### Example
 ```php
@@ -162,7 +162,7 @@ $apiInstance = new Ringba\Api\InAppNotificationApi(
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | 
-$mark_as_read = true; // bool | if you want to mark the messaeg as read
+$mark_as_read = true; // bool | 
 
 try {
     $result = $apiInstance->inAppNotificationGetMessage($id, $mark_as_read);
@@ -178,7 +178,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **mark_as_read** | **bool**| if you want to mark the messaeg as read | [optional]
+ **mark_as_read** | **bool**|  | [optional]
 
 ### Return type
 
@@ -198,7 +198,7 @@ No authorization required
 # **inAppNotificationGetMessages**
 > \Ringba\Model\MessagesResponse inAppNotificationGetMessages($page, $page_size, $pagination_key)
 
-returns the notifications for a given user  in order to get the tope 5 message, you would call this method with pageSize=5  and leave rest of the responses blank
+
 
 ### Example
 ```php
@@ -210,9 +210,9 @@ $apiInstance = new Ringba\Api\InAppNotificationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$page = 56; // int | the current page
-$page_size = 56; // int | the desired page size
-$pagination_key = 56; // int | the pagination key for a request
+$page = 56; // int | 
+$page_size = 56; // int | 
+$pagination_key = 56; // int | 
 
 try {
     $result = $apiInstance->inAppNotificationGetMessages($page, $page_size, $pagination_key);
@@ -227,9 +227,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| the current page | [optional]
- **page_size** | **int**| the desired page size | [optional]
- **pagination_key** | **int**| the pagination key for a request | [optional]
+ **page** | **int**|  | [optional]
+ **page_size** | **int**|  | [optional]
+ **pagination_key** | **int**|  | [optional]
 
 ### Return type
 
@@ -249,7 +249,7 @@ No authorization required
 # **inAppNotificationGetPreviews**
 > \Ringba\Model\PreviewResponse inAppNotificationGetPreviews()
 
-returns the message toasts to show a user
+
 
 ### Example
 ```php
@@ -292,7 +292,7 @@ No authorization required
 # **inAppNotificationMarkMessageRead**
 > object inAppNotificationMarkMessageRead($id)
 
-marks a given message as read
+
 
 ### Example
 ```php

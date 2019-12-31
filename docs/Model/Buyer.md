@@ -5,8 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **login_id** | **string** |  | [optional] 
 **users** | [**\Ringba\Model\RingbaUser[]**](RingbaUser.md) |  | [optional] 
+**user_ids** | **string[]** |  | [optional] 
 **can_pause_targets** | **bool** |  | [optional] 
 **can_set_concurrency_caps** | **bool** |  | [optional] 
+**can_dispute_conversions** | **bool** |  | [optional] 
 **sub_id** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 

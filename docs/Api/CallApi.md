@@ -1,10 +1,10 @@
 # Ringba\CallApi
 
-All URIs are relative to *http://api.ringba.com*
+All URIs are relative to *https://api.ringba.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callAdjustPayments**](CallApi.md#callAdjustPayments) | **POST** /{accountid}/Calls/Payments | Adjusts payout and/or conversion on the call. The payout and conversion events will be added or removed if necessary.
+[**callAdjustPayments**](CallApi.md#callAdjustPayments) | **POST** /{accountid}/Calls/Payments | 
 [**callAnnotateCall**](CallApi.md#callAnnotateCall) | **POST** /{accountid}/Calls/Annotate | 
 [**callRequestConversionAdjustment**](CallApi.md#callRequestConversionAdjustment) | **POST** /{accountid}/Calls/RequestConversionAdjustment | 
 [**callVoidCall**](CallApi.md#callVoidCall) | **POST** /{accountid}/Calls/Void | 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 # **callAdjustPayments**
 > object callAdjustPayments($request, $accountid)
 
-Adjusts payout and/or conversion on the call. The payout and conversion events will be added or removed if necessary.
+
 
 ### Example
 ```php
