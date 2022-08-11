@@ -238,7 +238,7 @@ class ObjectSerializer
      */
     public static function convertBoolToQueryStringFormat(bool $value)
     {
-        if (Configuration::BOOLEAN_FORMAT_STRING == Configuration::getDefaultConfiguration()->getBooleanFormatForQueryString()) {
+        if (Configuration::BOOLEAN_FORMAT_STRING === Configuration::getDefaultConfiguration()->getBooleanFormatForQueryString()) {
             return $value ? 'true' : 'false';
         }
 
