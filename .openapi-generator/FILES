@@ -75,6 +75,7 @@ test/Api/AccountInformationApiTest.php
 test/Api/AddressesApiTest.php
 test/Api/BearerTokensApiTest.php
 test/Api/BlockedNumbersApiTest.php
+test/Api/BuyersApiTest.php
 test/Api/CallAdjustmentsApiTest.php
 test/Api/CallLogsExportCallLogsApiTest.php
 test/Api/CallLogsGetCallLogsApiTest.php
