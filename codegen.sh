@@ -1,4 +1,5 @@
-docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate \
-    -i https://api.ringba.com/swagger/docs/v1 -l php \
-    -c /local/config.json \
+docker run --rm \
+    -v $PWD:/local openapitools/openapi-generator-cli generate \
+    -i /local/ringba_v2_openapi.yml \
+    -g php \
     -o /local
