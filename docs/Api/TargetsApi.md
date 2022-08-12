@@ -1,26 +1,26 @@
-# OpenAPI\Client\TargetsApi
+# Ringba\TargetsApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdTargetsGet()**](TargetsApi.md#accountIdTargetsGet) | **GET** /{accountId}/targets | Get Targets |
-| [**accountIdTargetsIsDuplicatePost()**](TargetsApi.md#accountIdTargetsIsDuplicatePost) | **POST** /{accountId}/targets/isDuplicate | Check Duplicate Targets |
-| [**accountIdTargetsPost()**](TargetsApi.md#accountIdTargetsPost) | **POST** /{accountId}/targets | Create New Target |
-| [**accountIdTargetsTargetIdBuyerBuyerIdDelete()**](TargetsApi.md#accountIdTargetsTargetIdBuyerBuyerIdDelete) | **DELETE** /{accountId}/targets/{targetId}/Buyer/{buyerId} | Delete Buyer From Target |
-| [**accountIdTargetsTargetIdBuyerPut()**](TargetsApi.md#accountIdTargetsTargetIdBuyerPut) | **PUT** /{accountId}/targets/{targetId}/Buyer | Assign Target to Buyer |
-| [**accountIdTargetsTargetIdCountsGet()**](TargetsApi.md#accountIdTargetsTargetIdCountsGet) | **GET** /{accountId}/targets/{targetId}/Counts | Get Stats for a Specific Target |
-| [**accountIdTargetsTargetIdDelete()**](TargetsApi.md#accountIdTargetsTargetIdDelete) | **DELETE** /{accountId}/targets/{targetId} | Delete Target |
-| [**accountIdTargetsTargetIdGet()**](TargetsApi.md#accountIdTargetsTargetIdGet) | **GET** /{accountId}/targets/{targetId} | Get Details About a Specific Target |
-| [**accountIdTargetsTargetIdInboundReferencesGet()**](TargetsApi.md#accountIdTargetsTargetIdInboundReferencesGet) | **GET** /{accountId}/targets/{targetId}/InboundReferences | Get Inbound References for a Specific Target |
-| [**accountIdTargetsTargetIdPatch()**](TargetsApi.md#accountIdTargetsTargetIdPatch) | **PATCH** /{accountId}/targets/{targetId} | Update Target |
-| [**accountIdTargetsTargetIdResetCountDelete()**](TargetsApi.md#accountIdTargetsTargetIdResetCountDelete) | **DELETE** /{accountId}/targets/{targetId}/ResetCount | Reset Count for a Specific Target |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdTargetsGet()**](TargetsApi.md#accountIdTargetsGet) | **GET** /{accountId}/targets | Get Targets
+[**accountIdTargetsIsDuplicatePost()**](TargetsApi.md#accountIdTargetsIsDuplicatePost) | **POST** /{accountId}/targets/isDuplicate | Check Duplicate Targets
+[**accountIdTargetsPost()**](TargetsApi.md#accountIdTargetsPost) | **POST** /{accountId}/targets | Create New Target
+[**accountIdTargetsTargetIdBuyerBuyerIdDelete()**](TargetsApi.md#accountIdTargetsTargetIdBuyerBuyerIdDelete) | **DELETE** /{accountId}/targets/{targetId}/Buyer/{buyerId} | Delete Buyer From Target
+[**accountIdTargetsTargetIdBuyerPut()**](TargetsApi.md#accountIdTargetsTargetIdBuyerPut) | **PUT** /{accountId}/targets/{targetId}/Buyer | Assign Target to Buyer
+[**accountIdTargetsTargetIdCountsGet()**](TargetsApi.md#accountIdTargetsTargetIdCountsGet) | **GET** /{accountId}/targets/{targetId}/Counts | Get Stats for a Specific Target
+[**accountIdTargetsTargetIdDelete()**](TargetsApi.md#accountIdTargetsTargetIdDelete) | **DELETE** /{accountId}/targets/{targetId} | Delete Target
+[**accountIdTargetsTargetIdGet()**](TargetsApi.md#accountIdTargetsTargetIdGet) | **GET** /{accountId}/targets/{targetId} | Get Details About a Specific Target
+[**accountIdTargetsTargetIdInboundReferencesGet()**](TargetsApi.md#accountIdTargetsTargetIdInboundReferencesGet) | **GET** /{accountId}/targets/{targetId}/InboundReferences | Get Inbound References for a Specific Target
+[**accountIdTargetsTargetIdPatch()**](TargetsApi.md#accountIdTargetsTargetIdPatch) | **PATCH** /{accountId}/targets/{targetId} | Update Target
+[**accountIdTargetsTargetIdResetCountDelete()**](TargetsApi.md#accountIdTargetsTargetIdResetCountDelete) | **DELETE** /{accountId}/targets/{targetId}/ResetCount | Reset Count for a Specific Target
 
 
 ## `accountIdTargetsGet()`
 
 ```php
-accountIdTargetsGet($account_id, $authorization): object
+accountIdTargetsGet($accountId, $authorization): object
 ```
 
 Get Targets
@@ -35,16 +35,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdTargetsGet($account_id, $authorization);
+    $result = $apiInstance->accountIdTargetsGet($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsGet: ', $e->getMessage(), PHP_EOL;
@@ -53,10 +53,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -78,7 +78,7 @@ No authorization required
 ## `accountIdTargetsIsDuplicatePost()`
 
 ```php
-accountIdTargetsIsDuplicatePost($account_id, $authorization, $body): object
+accountIdTargetsIsDuplicatePost($accountId, $authorization, $body): object
 ```
 
 Check Duplicate Targets
@@ -93,17 +93,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdTargetsIsDuplicatePost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdTargetsIsDuplicatePost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsIsDuplicatePost: ', $e->getMessage(), PHP_EOL;
@@ -112,11 +112,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -138,7 +138,7 @@ No authorization required
 ## `accountIdTargetsPost()`
 
 ```php
-accountIdTargetsPost($account_id, $authorization, $body): object
+accountIdTargetsPost($accountId, $authorization, $body): object
 ```
 
 Create New Target
@@ -153,17 +153,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdTargetsPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdTargetsPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsPost: ', $e->getMessage(), PHP_EOL;
@@ -172,11 +172,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -198,7 +198,7 @@ No authorization required
 ## `accountIdTargetsTargetIdBuyerBuyerIdDelete()`
 
 ```php
-accountIdTargetsTargetIdBuyerBuyerIdDelete($account_id, $target_id, $buyer_id, $authorization): object
+accountIdTargetsTargetIdBuyerBuyerIdDelete($accountId, $targetId, $buyerId, $authorization): object
 ```
 
 Delete Buyer From Target
@@ -213,18 +213,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$target_id = 'target_id_example'; // string
-$buyer_id = 'buyer_id_example'; // string
+$accountId = 'accountId_example'; // string
+$targetId = 'targetId_example'; // string
+$buyerId = 'buyerId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdTargetsTargetIdBuyerBuyerIdDelete($account_id, $target_id, $buyer_id, $authorization);
+    $result = $apiInstance->accountIdTargetsTargetIdBuyerBuyerIdDelete($accountId, $targetId, $buyerId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsTargetIdBuyerBuyerIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -233,12 +233,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **target_id** | **string**|  | |
-| **buyer_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **targetId** | **string**|  |
+ **buyerId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -260,7 +260,7 @@ No authorization required
 ## `accountIdTargetsTargetIdBuyerPut()`
 
 ```php
-accountIdTargetsTargetIdBuyerPut($account_id, $target_id, $authorization, $body): object
+accountIdTargetsTargetIdBuyerPut($accountId, $targetId, $authorization, $body): object
 ```
 
 Assign Target to Buyer
@@ -275,18 +275,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$target_id = 'target_id_example'; // string
+$accountId = 'accountId_example'; // string
+$targetId = 'targetId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdTargetsTargetIdBuyerPut($account_id, $target_id, $authorization, $body);
+    $result = $apiInstance->accountIdTargetsTargetIdBuyerPut($accountId, $targetId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsTargetIdBuyerPut: ', $e->getMessage(), PHP_EOL;
@@ -295,12 +295,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **target_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -322,7 +322,7 @@ No authorization required
 ## `accountIdTargetsTargetIdCountsGet()`
 
 ```php
-accountIdTargetsTargetIdCountsGet($account_id, $target_id, $authorization): object
+accountIdTargetsTargetIdCountsGet($accountId, $targetId, $authorization): object
 ```
 
 Get Stats for a Specific Target
@@ -337,17 +337,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$target_id = 'target_id_example'; // string
+$accountId = 'accountId_example'; // string
+$targetId = 'targetId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdTargetsTargetIdCountsGet($account_id, $target_id, $authorization);
+    $result = $apiInstance->accountIdTargetsTargetIdCountsGet($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsTargetIdCountsGet: ', $e->getMessage(), PHP_EOL;
@@ -356,11 +356,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **target_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -382,7 +382,7 @@ No authorization required
 ## `accountIdTargetsTargetIdDelete()`
 
 ```php
-accountIdTargetsTargetIdDelete($account_id, $target_id, $authorization): object
+accountIdTargetsTargetIdDelete($accountId, $targetId, $authorization): object
 ```
 
 Delete Target
@@ -397,17 +397,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$target_id = 'target_id_example'; // string
+$accountId = 'accountId_example'; // string
+$targetId = 'targetId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdTargetsTargetIdDelete($account_id, $target_id, $authorization);
+    $result = $apiInstance->accountIdTargetsTargetIdDelete($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsTargetIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -416,11 +416,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **target_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -442,7 +442,7 @@ No authorization required
 ## `accountIdTargetsTargetIdGet()`
 
 ```php
-accountIdTargetsTargetIdGet($account_id, $target_id, $authorization): object
+accountIdTargetsTargetIdGet($accountId, $targetId, $authorization): object
 ```
 
 Get Details About a Specific Target
@@ -457,17 +457,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$target_id = 'target_id_example'; // string
+$accountId = 'accountId_example'; // string
+$targetId = 'targetId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdTargetsTargetIdGet($account_id, $target_id, $authorization);
+    $result = $apiInstance->accountIdTargetsTargetIdGet($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsTargetIdGet: ', $e->getMessage(), PHP_EOL;
@@ -476,11 +476,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **target_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -502,7 +502,7 @@ No authorization required
 ## `accountIdTargetsTargetIdInboundReferencesGet()`
 
 ```php
-accountIdTargetsTargetIdInboundReferencesGet($account_id, $target_id, $authorization): object
+accountIdTargetsTargetIdInboundReferencesGet($accountId, $targetId, $authorization): object
 ```
 
 Get Inbound References for a Specific Target
@@ -517,17 +517,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$target_id = 'target_id_example'; // string
+$accountId = 'accountId_example'; // string
+$targetId = 'targetId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdTargetsTargetIdInboundReferencesGet($account_id, $target_id, $authorization);
+    $result = $apiInstance->accountIdTargetsTargetIdInboundReferencesGet($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsTargetIdInboundReferencesGet: ', $e->getMessage(), PHP_EOL;
@@ -536,11 +536,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **target_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -562,7 +562,7 @@ No authorization required
 ## `accountIdTargetsTargetIdPatch()`
 
 ```php
-accountIdTargetsTargetIdPatch($account_id, $target_id, $authorization, $body): object
+accountIdTargetsTargetIdPatch($accountId, $targetId, $authorization, $body): object
 ```
 
 Update Target
@@ -577,18 +577,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$target_id = 'target_id_example'; // string
+$accountId = 'accountId_example'; // string
+$targetId = 'targetId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdTargetsTargetIdPatch($account_id, $target_id, $authorization, $body);
+    $result = $apiInstance->accountIdTargetsTargetIdPatch($accountId, $targetId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsTargetIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -597,12 +597,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **target_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -624,7 +624,7 @@ No authorization required
 ## `accountIdTargetsTargetIdResetCountDelete()`
 
 ```php
-accountIdTargetsTargetIdResetCountDelete($account_id, $target_id, $authorization): object
+accountIdTargetsTargetIdResetCountDelete($accountId, $targetId, $authorization): object
 ```
 
 Reset Count for a Specific Target
@@ -639,17 +639,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TargetsApi(
+$apiInstance = new Ringba\Api\TargetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$target_id = 'target_id_example'; // string
+$accountId = 'accountId_example'; // string
+$targetId = 'targetId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdTargetsTargetIdResetCountDelete($account_id, $target_id, $authorization);
+    $result = $apiInstance->accountIdTargetsTargetIdResetCountDelete($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->accountIdTargetsTargetIdResetCountDelete: ', $e->getMessage(), PHP_EOL;
@@ -658,11 +658,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **target_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

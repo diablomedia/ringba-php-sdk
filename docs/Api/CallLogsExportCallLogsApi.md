@@ -1,17 +1,17 @@
-# OpenAPI\Client\CallLogsExportCallLogsApi
+# Ringba\CallLogsExportCallLogsApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCalllogsExportCSVJobIdGet()**](CallLogsExportCallLogsApi.md#accountIdCalllogsExportCSVJobIdGet) | **GET** /{accountId}/calllogs/export/{CSVJobId} | Export CSV By Job Id |
-| [**accountIdCalllogsExportCsvPost()**](CallLogsExportCallLogsApi.md#accountIdCalllogsExportCsvPost) | **POST** /{accountId}/calllogs/export/csv | Export Call Log - CSV |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCalllogsExportCSVJobIdGet()**](CallLogsExportCallLogsApi.md#accountIdCalllogsExportCSVJobIdGet) | **GET** /{accountId}/calllogs/export/{CSVJobId} | Export CSV By Job Id
+[**accountIdCalllogsExportCsvPost()**](CallLogsExportCallLogsApi.md#accountIdCalllogsExportCsvPost) | **POST** /{accountId}/calllogs/export/csv | Export Call Log - CSV
 
 
 ## `accountIdCalllogsExportCSVJobIdGet()`
 
 ```php
-accountIdCalllogsExportCSVJobIdGet($account_id, $csv_job_id, $authorization): object
+accountIdCalllogsExportCSVJobIdGet($accountId, $cSVJobId, $authorization): object
 ```
 
 Export CSV By Job Id
@@ -26,17 +26,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallLogsExportCallLogsApi(
+$apiInstance = new Ringba\Api\CallLogsExportCallLogsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$csv_job_id = 'csv_job_id_example'; // string
+$accountId = 'accountId_example'; // string
+$cSVJobId = 'cSVJobId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCalllogsExportCSVJobIdGet($account_id, $csv_job_id, $authorization);
+    $result = $apiInstance->accountIdCalllogsExportCSVJobIdGet($accountId, $cSVJobId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallLogsExportCallLogsApi->accountIdCalllogsExportCSVJobIdGet: ', $e->getMessage(), PHP_EOL;
@@ -45,11 +45,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **csv_job_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **cSVJobId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 ## `accountIdCalllogsExportCsvPost()`
 
 ```php
-accountIdCalllogsExportCsvPost($account_id, $authorization, $body): object
+accountIdCalllogsExportCsvPost($accountId, $authorization, $body): object
 ```
 
 Export Call Log - CSV
@@ -86,17 +86,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallLogsExportCallLogsApi(
+$apiInstance = new Ringba\Api\CallLogsExportCallLogsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCalllogsExportCsvPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdCalllogsExportCsvPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallLogsExportCallLogsApi->accountIdCalllogsExportCsvPost: ', $e->getMessage(), PHP_EOL;
@@ -105,11 +105,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

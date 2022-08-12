@@ -1,4 +1,4 @@
-# OpenAPIClient-php
+# Ringba
 
 Ringba’s APIs allow you to interact, gather information, and make dynamic changes in real-time. All functions found within the Ringba portal are also available programmatically through our API.
 
@@ -21,11 +21,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://github.com/diablomedia/ringba-php-sdk.git"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "diablomedia/ringba-php-sdk": "*@dev"
   }
 }
 ```
@@ -38,7 +38,7 @@ Download the files and include `autoload.php`:
 
 ```php
 <?php
-require_once('/path/to/OpenAPIClient-php/vendor/autoload.php');
+require_once('/path/to/Ringba/vendor/autoload.php');
 ```
 
 ## Getting Started
@@ -52,17 +52,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\APITokensApi(
+$apiInstance = new Ringba\Api\APITokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$api_token_id = 'api_token_id_example'; // string
-$content_type = application/x-www-form-urlencoded; charset=UTF-8; // string
+$apiTokenId = 'apiTokenId_example'; // string
+$contentType = application/x-www-form-urlencoded; charset=UTF-8; // string
 $authorization = Bearer {{accessToken}}; // string | Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token)
 
 try {
-    $result = $apiInstance->apiTokensApiTokenIdDelete($api_token_id, $content_type, $authorization);
+    $result = $apiInstance->apiTokensApiTokenIdDelete($apiTokenId, $contentType, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling APITokensApi->apiTokensApiTokenIdDelete: ', $e->getMessage(), PHP_EOL;

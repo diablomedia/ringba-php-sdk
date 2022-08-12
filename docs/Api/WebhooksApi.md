@@ -1,19 +1,19 @@
-# OpenAPI\Client\WebhooksApi
+# Ringba\WebhooksApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdWebHooksCreateConversionPost()**](WebhooksApi.md#accountIdWebHooksCreateConversionPost) | **POST** /{accountId}/WebHooks/CreateConversion | Create New Webhook |
-| [**accountIdWebHooksGet()**](WebhooksApi.md#accountIdWebHooksGet) | **GET** /{accountId}/WebHooks | Get Webhooks |
-| [**accountIdWebHooksWebHookIdDelete()**](WebhooksApi.md#accountIdWebHooksWebHookIdDelete) | **DELETE** /{accountId}/WebHooks/{webHookId} | Delete a Webhook |
-| [**accountIdWebHooksWebHookIdGet()**](WebhooksApi.md#accountIdWebHooksWebHookIdGet) | **GET** /{accountId}/WebHooks/{webHookId} | Get Details for a Single Webhook |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdWebHooksCreateConversionPost()**](WebhooksApi.md#accountIdWebHooksCreateConversionPost) | **POST** /{accountId}/WebHooks/CreateConversion | Create New Webhook
+[**accountIdWebHooksGet()**](WebhooksApi.md#accountIdWebHooksGet) | **GET** /{accountId}/WebHooks | Get Webhooks
+[**accountIdWebHooksWebHookIdDelete()**](WebhooksApi.md#accountIdWebHooksWebHookIdDelete) | **DELETE** /{accountId}/WebHooks/{webHookId} | Delete a Webhook
+[**accountIdWebHooksWebHookIdGet()**](WebhooksApi.md#accountIdWebHooksWebHookIdGet) | **GET** /{accountId}/WebHooks/{webHookId} | Get Details for a Single Webhook
 
 
 ## `accountIdWebHooksCreateConversionPost()`
 
 ```php
-accountIdWebHooksCreateConversionPost($account_id, $authorization, $body): object
+accountIdWebHooksCreateConversionPost($accountId, $authorization, $body): object
 ```
 
 Create New Webhook
@@ -28,17 +28,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new Ringba\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdWebHooksCreateConversionPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdWebHooksCreateConversionPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->accountIdWebHooksCreateConversionPost: ', $e->getMessage(), PHP_EOL;
@@ -47,11 +47,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `accountIdWebHooksGet()`
 
 ```php
-accountIdWebHooksGet($account_id, $authorization): object
+accountIdWebHooksGet($accountId, $authorization): object
 ```
 
 Get Webhooks
@@ -88,16 +88,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new Ringba\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdWebHooksGet($account_id, $authorization);
+    $result = $apiInstance->accountIdWebHooksGet($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->accountIdWebHooksGet: ', $e->getMessage(), PHP_EOL;
@@ -106,10 +106,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -131,7 +131,7 @@ No authorization required
 ## `accountIdWebHooksWebHookIdDelete()`
 
 ```php
-accountIdWebHooksWebHookIdDelete($account_id, $web_hook_id, $authorization): object
+accountIdWebHooksWebHookIdDelete($accountId, $webHookId, $authorization): object
 ```
 
 Delete a Webhook
@@ -146,17 +146,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new Ringba\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$web_hook_id = 'web_hook_id_example'; // string
+$accountId = 'accountId_example'; // string
+$webHookId = 'webHookId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdWebHooksWebHookIdDelete($account_id, $web_hook_id, $authorization);
+    $result = $apiInstance->accountIdWebHooksWebHookIdDelete($accountId, $webHookId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->accountIdWebHooksWebHookIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -165,11 +165,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **web_hook_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **webHookId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -191,7 +191,7 @@ No authorization required
 ## `accountIdWebHooksWebHookIdGet()`
 
 ```php
-accountIdWebHooksWebHookIdGet($account_id, $web_hook_id, $authorization): object
+accountIdWebHooksWebHookIdGet($accountId, $webHookId, $authorization): object
 ```
 
 Get Details for a Single Webhook
@@ -206,17 +206,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new Ringba\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$web_hook_id = 'web_hook_id_example'; // string
+$accountId = 'accountId_example'; // string
+$webHookId = 'webHookId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdWebHooksWebHookIdGet($account_id, $web_hook_id, $authorization);
+    $result = $apiInstance->accountIdWebHooksWebHookIdGet($accountId, $webHookId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->accountIdWebHooksWebHookIdGet: ', $e->getMessage(), PHP_EOL;
@@ -225,11 +225,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **web_hook_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **webHookId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

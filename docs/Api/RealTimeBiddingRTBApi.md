@@ -1,19 +1,19 @@
-# OpenAPI\Client\RealTimeBiddingRTBApi
+# Ringba\RealTimeBiddingRTBApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**v1EnvironmentRtbIdJsonGet()**](RealTimeBiddingRTBApi.md#v1EnvironmentRtbIdJsonGet) | **GET** /v1/{environment}/{rtbId}.json | GET JSON |
-| [**v1EnvironmentRtbIdJsonPost()**](RealTimeBiddingRTBApi.md#v1EnvironmentRtbIdJsonPost) | **POST** /v1/{environment}/{rtbId}.json | POST JSON |
-| [**v1EnvironmentRtbIdXmlGet()**](RealTimeBiddingRTBApi.md#v1EnvironmentRtbIdXmlGet) | **GET** /v1/{environment}/{rtbId}.xml | GET XML |
-| [**v1EnvironmentRtbIdXmlPost()**](RealTimeBiddingRTBApi.md#v1EnvironmentRtbIdXmlPost) | **POST** /v1/{environment}/{rtbId}.xml | POST XML |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**v1EnvironmentRtbIdJsonGet()**](RealTimeBiddingRTBApi.md#v1EnvironmentRtbIdJsonGet) | **GET** /v1/{environment}/{rtbId}.json | GET JSON
+[**v1EnvironmentRtbIdJsonPost()**](RealTimeBiddingRTBApi.md#v1EnvironmentRtbIdJsonPost) | **POST** /v1/{environment}/{rtbId}.json | POST JSON
+[**v1EnvironmentRtbIdXmlGet()**](RealTimeBiddingRTBApi.md#v1EnvironmentRtbIdXmlGet) | **GET** /v1/{environment}/{rtbId}.xml | GET XML
+[**v1EnvironmentRtbIdXmlPost()**](RealTimeBiddingRTBApi.md#v1EnvironmentRtbIdXmlPost) | **POST** /v1/{environment}/{rtbId}.xml | POST XML
 
 
 ## `v1EnvironmentRtbIdJsonGet()`
 
 ```php
-v1EnvironmentRtbIdJsonGet($environment, $rtb_id, $cid, $sip_ok): object
+v1EnvironmentRtbIdJsonGet($environment, $rtbId, $cID, $sipOk): object
 ```
 
 GET JSON
@@ -28,18 +28,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\RealTimeBiddingRTBApi(
+$apiInstance = new Ringba\Api\RealTimeBiddingRTBApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $environment = 'environment_example'; // string
-$rtb_id = 'rtb_id_example'; // string
-$cid = 140615719531; // int
-$sip_ok = yes; // string
+$rtbId = 'rtbId_example'; // string
+$cID = 140615719531; // int
+$sipOk = yes; // string
 
 try {
-    $result = $apiInstance->v1EnvironmentRtbIdJsonGet($environment, $rtb_id, $cid, $sip_ok);
+    $result = $apiInstance->v1EnvironmentRtbIdJsonGet($environment, $rtbId, $cID, $sipOk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RealTimeBiddingRTBApi->v1EnvironmentRtbIdJsonGet: ', $e->getMessage(), PHP_EOL;
@@ -48,12 +48,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **environment** | **string**|  | |
-| **rtb_id** | **string**|  | |
-| **cid** | **int**|  | [optional] |
-| **sip_ok** | **string**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **environment** | **string**|  |
+ **rtbId** | **string**|  |
+ **cID** | **int**|  | [optional]
+ **sipOk** | **string**|  | [optional]
 
 ### Return type
 
@@ -75,7 +75,7 @@ No authorization required
 ## `v1EnvironmentRtbIdJsonPost()`
 
 ```php
-v1EnvironmentRtbIdJsonPost($environment, $rtb_id, $content_type, $body): object
+v1EnvironmentRtbIdJsonPost($environment, $rtbId, $contentType, $body): object
 ```
 
 POST JSON
@@ -90,18 +90,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\RealTimeBiddingRTBApi(
+$apiInstance = new Ringba\Api\RealTimeBiddingRTBApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $environment = 'environment_example'; // string
-$rtb_id = 'rtb_id_example'; // string
-$content_type = application/xml; // string
+$rtbId = 'rtbId_example'; // string
+$contentType = application/xml; // string
 $body = 'body_example'; // string
 
 try {
-    $result = $apiInstance->v1EnvironmentRtbIdJsonPost($environment, $rtb_id, $content_type, $body);
+    $result = $apiInstance->v1EnvironmentRtbIdJsonPost($environment, $rtbId, $contentType, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RealTimeBiddingRTBApi->v1EnvironmentRtbIdJsonPost: ', $e->getMessage(), PHP_EOL;
@@ -110,12 +110,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **environment** | **string**|  | |
-| **rtb_id** | **string**|  | |
-| **content_type** | **string**|  | [optional] |
-| **body** | **string**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **environment** | **string**|  |
+ **rtbId** | **string**|  |
+ **contentType** | **string**|  | [optional]
+ **body** | **string**|  | [optional]
 
 ### Return type
 
@@ -137,7 +137,7 @@ No authorization required
 ## `v1EnvironmentRtbIdXmlGet()`
 
 ```php
-v1EnvironmentRtbIdXmlGet($environment, $rtb_id, $cid, $sip_ok): string
+v1EnvironmentRtbIdXmlGet($environment, $rtbId, $cID, $sipOk): string
 ```
 
 GET XML
@@ -152,18 +152,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\RealTimeBiddingRTBApi(
+$apiInstance = new Ringba\Api\RealTimeBiddingRTBApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $environment = 'environment_example'; // string
-$rtb_id = 'rtb_id_example'; // string
-$cid = 140615719531; // int
-$sip_ok = yes; // string
+$rtbId = 'rtbId_example'; // string
+$cID = 140615719531; // int
+$sipOk = yes; // string
 
 try {
-    $result = $apiInstance->v1EnvironmentRtbIdXmlGet($environment, $rtb_id, $cid, $sip_ok);
+    $result = $apiInstance->v1EnvironmentRtbIdXmlGet($environment, $rtbId, $cID, $sipOk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RealTimeBiddingRTBApi->v1EnvironmentRtbIdXmlGet: ', $e->getMessage(), PHP_EOL;
@@ -172,12 +172,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **environment** | **string**|  | |
-| **rtb_id** | **string**|  | |
-| **cid** | **int**|  | [optional] |
-| **sip_ok** | **string**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **environment** | **string**|  |
+ **rtbId** | **string**|  |
+ **cID** | **int**|  | [optional]
+ **sipOk** | **string**|  | [optional]
 
 ### Return type
 
@@ -199,7 +199,7 @@ No authorization required
 ## `v1EnvironmentRtbIdXmlPost()`
 
 ```php
-v1EnvironmentRtbIdXmlPost($environment, $rtb_id, $content_type, $body): string
+v1EnvironmentRtbIdXmlPost($environment, $rtbId, $contentType, $body): string
 ```
 
 POST XML
@@ -214,18 +214,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\RealTimeBiddingRTBApi(
+$apiInstance = new Ringba\Api\RealTimeBiddingRTBApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $environment = 'environment_example'; // string
-$rtb_id = 'rtb_id_example'; // string
-$content_type = application/json; // string
+$rtbId = 'rtbId_example'; // string
+$contentType = application/json; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->v1EnvironmentRtbIdXmlPost($environment, $rtb_id, $content_type, $body);
+    $result = $apiInstance->v1EnvironmentRtbIdXmlPost($environment, $rtbId, $contentType, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RealTimeBiddingRTBApi->v1EnvironmentRtbIdXmlPost: ', $e->getMessage(), PHP_EOL;
@@ -234,12 +234,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **environment** | **string**|  | |
-| **rtb_id** | **string**|  | |
-| **content_type** | **string**|  | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **environment** | **string**|  |
+ **rtbId** | **string**|  |
+ **contentType** | **string**|  | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

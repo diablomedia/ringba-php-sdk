@@ -1,18 +1,18 @@
-# OpenAPI\Client\CampaignsCampaignNumbersApi
+# Ringba\CampaignsCampaignNumbersApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdAffiliateNumbersPatch()**](CampaignsCampaignNumbersApi.md#accountIdCampaignsCampaignIdAffiliateNumbersPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/affiliateNumbers | Add Publisher Number to a Campaign |
-| [**accountIdCampaignsCampaignIdDefaultNumberDelete()**](CampaignsCampaignNumbersApi.md#accountIdCampaignsCampaignIdDefaultNumberDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/defaultNumber | Remove Default Number from a Campaign |
-| [**accountIdCampaignsCampaignIdDefaultNumberPatch()**](CampaignsCampaignNumbersApi.md#accountIdCampaignsCampaignIdDefaultNumberPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/defaultNumber | Add a Default Number for a Campaign |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdAffiliateNumbersPatch()**](CampaignsCampaignNumbersApi.md#accountIdCampaignsCampaignIdAffiliateNumbersPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/affiliateNumbers | Add Publisher Number to a Campaign
+[**accountIdCampaignsCampaignIdDefaultNumberDelete()**](CampaignsCampaignNumbersApi.md#accountIdCampaignsCampaignIdDefaultNumberDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/defaultNumber | Remove Default Number from a Campaign
+[**accountIdCampaignsCampaignIdDefaultNumberPatch()**](CampaignsCampaignNumbersApi.md#accountIdCampaignsCampaignIdDefaultNumberPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/defaultNumber | Add a Default Number for a Campaign
 
 
 ## `accountIdCampaignsCampaignIdAffiliateNumbersPatch()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliateNumbersPatch($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdAffiliateNumbersPatch($accountId, $campaignId, $authorization, $body): object
 ```
 
 Add Publisher Number to a Campaign
@@ -27,18 +27,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignNumbersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliateNumbersPatch($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliateNumbersPatch($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignNumbersApi->accountIdCampaignsCampaignIdAffiliateNumbersPatch: ', $e->getMessage(), PHP_EOL;
@@ -47,12 +47,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdDefaultNumberDelete()`
 
 ```php
-accountIdCampaignsCampaignIdDefaultNumberDelete($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdDefaultNumberDelete($accountId, $campaignId, $authorization): object
 ```
 
 Remove Default Number from a Campaign
@@ -89,17 +89,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignNumbersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultNumberDelete($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultNumberDelete($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignNumbersApi->accountIdCampaignsCampaignIdDefaultNumberDelete: ', $e->getMessage(), PHP_EOL;
@@ -108,11 +108,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -134,7 +134,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdDefaultNumberPatch()`
 
 ```php
-accountIdCampaignsCampaignIdDefaultNumberPatch($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdDefaultNumberPatch($accountId, $campaignId, $authorization, $body): object
 ```
 
 Add a Default Number for a Campaign
@@ -149,18 +149,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignNumbersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultNumberPatch($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultNumberPatch($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignNumbersApi->accountIdCampaignsCampaignIdDefaultNumberPatch: ', $e->getMessage(), PHP_EOL;
@@ -169,12 +169,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

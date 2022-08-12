@@ -1,17 +1,17 @@
-# OpenAPI\Client\CampaignsCampaignTargetRoutesApi
+# Ringba\CampaignsCampaignTargetRoutesApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdRoutesDelete()**](CampaignsCampaignTargetRoutesApi.md#accountIdCampaignsCampaignIdRoutesDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Routes | Remove Target Route from a Campaign |
-| [**accountIdCampaignsCampaignIdRoutesPost()**](CampaignsCampaignTargetRoutesApi.md#accountIdCampaignsCampaignIdRoutesPost) | **POST** /{accountId}/campaigns/{campaignId}/Routes | Add Target Group Route to a Campaign |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdRoutesDelete()**](CampaignsCampaignTargetRoutesApi.md#accountIdCampaignsCampaignIdRoutesDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Routes | Remove Target Route from a Campaign
+[**accountIdCampaignsCampaignIdRoutesPost()**](CampaignsCampaignTargetRoutesApi.md#accountIdCampaignsCampaignIdRoutesPost) | **POST** /{accountId}/campaigns/{campaignId}/Routes | Add Target Group Route to a Campaign
 
 
 ## `accountIdCampaignsCampaignIdRoutesDelete()`
 
 ```php
-accountIdCampaignsCampaignIdRoutesDelete($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdRoutesDelete($accountId, $campaignId, $authorization): object
 ```
 
 Remove Target Route from a Campaign
@@ -26,17 +26,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignTargetRoutesApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignTargetRoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdRoutesDelete($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdRoutesDelete($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignTargetRoutesApi->accountIdCampaignsCampaignIdRoutesDelete: ', $e->getMessage(), PHP_EOL;
@@ -45,11 +45,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdRoutesPost()`
 
 ```php
-accountIdCampaignsCampaignIdRoutesPost($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdRoutesPost($accountId, $campaignId, $authorization, $body): object
 ```
 
 Add Target Group Route to a Campaign
@@ -86,18 +86,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignTargetRoutesApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignTargetRoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdRoutesPost($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdRoutesPost($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignTargetRoutesApi->accountIdCampaignsCampaignIdRoutesPost: ', $e->getMessage(), PHP_EOL;
@@ -106,12 +106,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

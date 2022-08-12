@@ -1,18 +1,18 @@
-# OpenAPI\Client\APITokensApi
+# Ringba\APITokensApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**apiTokensApiTokenIdDelete()**](APITokensApi.md#apiTokensApiTokenIdDelete) | **DELETE** /ApiTokens/{apiTokenId} | Delete Api Token |
-| [**apiTokensGet()**](APITokensApi.md#apiTokensGet) | **GET** /ApiTokens | Get API Tokens |
-| [**apiTokensPost()**](APITokensApi.md#apiTokensPost) | **POST** /ApiTokens | Create Api Token |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**apiTokensApiTokenIdDelete()**](APITokensApi.md#apiTokensApiTokenIdDelete) | **DELETE** /ApiTokens/{apiTokenId} | Delete Api Token
+[**apiTokensGet()**](APITokensApi.md#apiTokensGet) | **GET** /ApiTokens | Get API Tokens
+[**apiTokensPost()**](APITokensApi.md#apiTokensPost) | **POST** /ApiTokens | Create Api Token
 
 
 ## `apiTokensApiTokenIdDelete()`
 
 ```php
-apiTokensApiTokenIdDelete($api_token_id, $content_type, $authorization): object
+apiTokensApiTokenIdDelete($apiTokenId, $contentType, $authorization): object
 ```
 
 Delete Api Token
@@ -27,17 +27,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\APITokensApi(
+$apiInstance = new Ringba\Api\APITokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$api_token_id = 'api_token_id_example'; // string
-$content_type = application/x-www-form-urlencoded; charset=UTF-8; // string
+$apiTokenId = 'apiTokenId_example'; // string
+$contentType = application/x-www-form-urlencoded; charset=UTF-8; // string
 $authorization = Bearer {{accessToken}}; // string | Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token)
 
 try {
-    $result = $apiInstance->apiTokensApiTokenIdDelete($api_token_id, $content_type, $authorization);
+    $result = $apiInstance->apiTokensApiTokenIdDelete($apiTokenId, $contentType, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling APITokensApi->apiTokensApiTokenIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -46,11 +46,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **api_token_id** | **string**|  | |
-| **content_type** | **string**|  | [optional] |
-| **authorization** | **string**| Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apiTokenId** | **string**|  |
+ **contentType** | **string**|  | [optional]
+ **authorization** | **string**| Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token) | [optional]
 
 ### Return type
 
@@ -72,7 +72,7 @@ No authorization required
 ## `apiTokensGet()`
 
 ```php
-apiTokensGet($content_type, $authorization): object
+apiTokensGet($contentType, $authorization): object
 ```
 
 Get API Tokens
@@ -87,16 +87,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\APITokensApi(
+$apiInstance = new Ringba\Api\APITokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$content_type = application/x-www-form-urlencoded; charset=UTF-8; // string
+$contentType = application/x-www-form-urlencoded; charset=UTF-8; // string
 $authorization = Bearer {{accessToken}}; // string | Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token)
 
 try {
-    $result = $apiInstance->apiTokensGet($content_type, $authorization);
+    $result = $apiInstance->apiTokensGet($contentType, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling APITokensApi->apiTokensGet: ', $e->getMessage(), PHP_EOL;
@@ -105,10 +105,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **content_type** | **string**|  | [optional] |
-| **authorization** | **string**| Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contentType** | **string**|  | [optional]
+ **authorization** | **string**| Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token) | [optional]
 
 ### Return type
 
@@ -130,7 +130,7 @@ No authorization required
 ## `apiTokensPost()`
 
 ```php
-apiTokensPost($content_type, $authorization, $body): string
+apiTokensPost($contentType, $authorization, $body): string
 ```
 
 Create Api Token
@@ -145,17 +145,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\APITokensApi(
+$apiInstance = new Ringba\Api\APITokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$content_type = application/x-www-form-urlencoded; charset=UTF-8; // string
+$contentType = application/x-www-form-urlencoded; charset=UTF-8; // string
 $authorization = Bearer {{accessToken}}; // string | Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->apiTokensPost($content_type, $authorization, $body);
+    $result = $apiInstance->apiTokensPost($contentType, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling APITokensApi->apiTokensPost: ', $e->getMessage(), PHP_EOL;
@@ -164,11 +164,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **content_type** | **string**|  | [optional] |
-| **authorization** | **string**| Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contentType** | **string**|  | [optional]
+ **authorization** | **string**| Get a [Bearer accessToken](#how-to-generate-and-utilize-your-bearer-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

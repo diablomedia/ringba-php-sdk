@@ -1,4 +1,5 @@
 {
+    "name": "diablomedia/ringba-php-sdk",
     "description": "Ringba’s APIs allow you to interact, gather information, and make dynamic changes in real-time. All functions found within the Ringba portal are also available programmatically through our API.  If this is your first time using our API, please read the __Getting Started__ section below.",
     "keywords": [
         "openapitools",
@@ -30,9 +31,9 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "OpenAPI\\Client\\" : "lib/" }
+        "psr-4": { "Ringba\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "OpenAPI\\Client\\Test\\" : "test/" }
+        "psr-4": { "Ringba\\Test\\" : "test/" }
     }
 }

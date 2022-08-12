@@ -1,21 +1,21 @@
-# OpenAPI\Client\CallAdjustmentsApi
+# Ringba\CallAdjustmentsApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCallsAnnotatePost()**](CallAdjustmentsApi.md#accountIdCallsAnnotatePost) | **POST** /{accountId}/calls/annotate | Add Annotation to a Call |
-| [**accountIdCallsPaymentsOverridePost()**](CallAdjustmentsApi.md#accountIdCallsPaymentsOverridePost) | **POST** /{accountId}/calls/payments/override | Adjust Revenue and/or Payment for a Call (with absolute adjustments) |
-| [**accountIdCallsPaymentsPost()**](CallAdjustmentsApi.md#accountIdCallsPaymentsPost) | **POST** /{accountId}/calls/payments | Adjust Revenue and/or Payment for a Call (with relative adjustments) |
-| [**accountIdCallsVoidPost()**](CallAdjustmentsApi.md#accountIdCallsVoidPost) | **POST** /{accountId}/calls/void | Void Revenue and/or Payment for a Call |
-| [**buyerAccountIdCallsRequestConversionAdjustmentPost()**](CallAdjustmentsApi.md#buyerAccountIdCallsRequestConversionAdjustmentPost) | **POST** /{buyerAccountId}/calls/requestConversionAdjustment | BUYER Request for Payout Adjustment (with relative adjustment) |
-| [**buyerAccountIdCallsRequestConversionOverridePost()**](CallAdjustmentsApi.md#buyerAccountIdCallsRequestConversionOverridePost) | **POST** /{buyerAccountId}/calls/requestConversionOverride | BUYER Request for Payout Adjustment (with absolute adjustment) |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCallsAnnotatePost()**](CallAdjustmentsApi.md#accountIdCallsAnnotatePost) | **POST** /{accountId}/calls/annotate | Add Annotation to a Call
+[**accountIdCallsPaymentsOverridePost()**](CallAdjustmentsApi.md#accountIdCallsPaymentsOverridePost) | **POST** /{accountId}/calls/payments/override | Adjust Revenue and/or Payment for a Call (with absolute adjustments)
+[**accountIdCallsPaymentsPost()**](CallAdjustmentsApi.md#accountIdCallsPaymentsPost) | **POST** /{accountId}/calls/payments | Adjust Revenue and/or Payment for a Call (with relative adjustments)
+[**accountIdCallsVoidPost()**](CallAdjustmentsApi.md#accountIdCallsVoidPost) | **POST** /{accountId}/calls/void | Void Revenue and/or Payment for a Call
+[**buyerAccountIdCallsRequestConversionAdjustmentPost()**](CallAdjustmentsApi.md#buyerAccountIdCallsRequestConversionAdjustmentPost) | **POST** /{buyerAccountId}/calls/requestConversionAdjustment | BUYER Request for Payout Adjustment (with relative adjustment)
+[**buyerAccountIdCallsRequestConversionOverridePost()**](CallAdjustmentsApi.md#buyerAccountIdCallsRequestConversionOverridePost) | **POST** /{buyerAccountId}/calls/requestConversionOverride | BUYER Request for Payout Adjustment (with absolute adjustment)
 
 
 ## `accountIdCallsAnnotatePost()`
 
 ```php
-accountIdCallsAnnotatePost($account_id, $authorization, $body): object
+accountIdCallsAnnotatePost($accountId, $authorization, $body): object
 ```
 
 Add Annotation to a Call
@@ -30,17 +30,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallAdjustmentsApi(
+$apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCallsAnnotatePost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdCallsAnnotatePost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->accountIdCallsAnnotatePost: ', $e->getMessage(), PHP_EOL;
@@ -49,11 +49,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -75,7 +75,7 @@ No authorization required
 ## `accountIdCallsPaymentsOverridePost()`
 
 ```php
-accountIdCallsPaymentsOverridePost($account_id, $authorization, $body): object
+accountIdCallsPaymentsOverridePost($accountId, $authorization, $body): object
 ```
 
 Adjust Revenue and/or Payment for a Call (with absolute adjustments)
@@ -90,17 +90,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallAdjustmentsApi(
+$apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCallsPaymentsOverridePost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdCallsPaymentsOverridePost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->accountIdCallsPaymentsOverridePost: ', $e->getMessage(), PHP_EOL;
@@ -109,11 +109,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -135,7 +135,7 @@ No authorization required
 ## `accountIdCallsPaymentsPost()`
 
 ```php
-accountIdCallsPaymentsPost($account_id, $authorization, $body): object
+accountIdCallsPaymentsPost($accountId, $authorization, $body): object
 ```
 
 Adjust Revenue and/or Payment for a Call (with relative adjustments)
@@ -150,17 +150,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallAdjustmentsApi(
+$apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCallsPaymentsPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdCallsPaymentsPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->accountIdCallsPaymentsPost: ', $e->getMessage(), PHP_EOL;
@@ -169,11 +169,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -195,7 +195,7 @@ No authorization required
 ## `accountIdCallsVoidPost()`
 
 ```php
-accountIdCallsVoidPost($account_id, $authorization, $body): object
+accountIdCallsVoidPost($accountId, $authorization, $body): object
 ```
 
 Void Revenue and/or Payment for a Call
@@ -210,17 +210,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallAdjustmentsApi(
+$apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCallsVoidPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdCallsVoidPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->accountIdCallsVoidPost: ', $e->getMessage(), PHP_EOL;
@@ -229,11 +229,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -255,7 +255,7 @@ No authorization required
 ## `buyerAccountIdCallsRequestConversionAdjustmentPost()`
 
 ```php
-buyerAccountIdCallsRequestConversionAdjustmentPost($buyer_account_id, $authorization, $body): object
+buyerAccountIdCallsRequestConversionAdjustmentPost($buyerAccountId, $authorization, $body): object
 ```
 
 BUYER Request for Payout Adjustment (with relative adjustment)
@@ -270,17 +270,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallAdjustmentsApi(
+$apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$buyer_account_id = 'buyer_account_id_example'; // string
+$buyerAccountId = 'buyerAccountId_example'; // string
 $authorization = Token {{buyerApiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->buyerAccountIdCallsRequestConversionAdjustmentPost($buyer_account_id, $authorization, $body);
+    $result = $apiInstance->buyerAccountIdCallsRequestConversionAdjustmentPost($buyerAccountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->buyerAccountIdCallsRequestConversionAdjustmentPost: ', $e->getMessage(), PHP_EOL;
@@ -289,11 +289,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **buyer_account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buyerAccountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -315,7 +315,7 @@ No authorization required
 ## `buyerAccountIdCallsRequestConversionOverridePost()`
 
 ```php
-buyerAccountIdCallsRequestConversionOverridePost($buyer_account_id, $authorization, $body): object
+buyerAccountIdCallsRequestConversionOverridePost($buyerAccountId, $authorization, $body): object
 ```
 
 BUYER Request for Payout Adjustment (with absolute adjustment)
@@ -330,17 +330,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallAdjustmentsApi(
+$apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$buyer_account_id = 'buyer_account_id_example'; // string
+$buyerAccountId = 'buyerAccountId_example'; // string
 $authorization = Token {{buyerApiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->buyerAccountIdCallsRequestConversionOverridePost($buyer_account_id, $authorization, $body);
+    $result = $apiInstance->buyerAccountIdCallsRequestConversionOverridePost($buyerAccountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->buyerAccountIdCallsRequestConversionOverridePost: ', $e->getMessage(), PHP_EOL;
@@ -349,11 +349,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **buyer_account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buyerAccountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

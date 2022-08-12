@@ -1,19 +1,19 @@
-# OpenAPI\Client\CampaignsCampaignRTBSettingsApi
+# Ringba\CampaignsCampaignRTBSettingsApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdRtbDelete()**](CampaignsCampaignRTBSettingsApi.md#accountIdCampaignsCampaignIdRtbDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/rtb | Disable RTB for a Campaign |
-| [**accountIdCampaignsCampaignIdRtbGet()**](CampaignsCampaignRTBSettingsApi.md#accountIdCampaignsCampaignIdRtbGet) | **GET** /{accountId}/campaigns/{campaignId}/rtb | Get RTB for Campaign |
-| [**accountIdCampaignsCampaignIdRtbPatch()**](CampaignsCampaignRTBSettingsApi.md#accountIdCampaignsCampaignIdRtbPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/rtb | Edit RTB Settings for a Campaign |
-| [**accountIdCampaignsCampaignIdRtbPut()**](CampaignsCampaignRTBSettingsApi.md#accountIdCampaignsCampaignIdRtbPut) | **PUT** /{accountId}/campaigns/{campaignId}/rtb | Enable RTB for a Campaign |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdRtbDelete()**](CampaignsCampaignRTBSettingsApi.md#accountIdCampaignsCampaignIdRtbDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/rtb | Disable RTB for a Campaign
+[**accountIdCampaignsCampaignIdRtbGet()**](CampaignsCampaignRTBSettingsApi.md#accountIdCampaignsCampaignIdRtbGet) | **GET** /{accountId}/campaigns/{campaignId}/rtb | Get RTB for Campaign
+[**accountIdCampaignsCampaignIdRtbPatch()**](CampaignsCampaignRTBSettingsApi.md#accountIdCampaignsCampaignIdRtbPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/rtb | Edit RTB Settings for a Campaign
+[**accountIdCampaignsCampaignIdRtbPut()**](CampaignsCampaignRTBSettingsApi.md#accountIdCampaignsCampaignIdRtbPut) | **PUT** /{accountId}/campaigns/{campaignId}/rtb | Enable RTB for a Campaign
 
 
 ## `accountIdCampaignsCampaignIdRtbDelete()`
 
 ```php
-accountIdCampaignsCampaignIdRtbDelete($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdRtbDelete($accountId, $campaignId, $authorization): object
 ```
 
 Disable RTB for a Campaign
@@ -28,17 +28,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignRTBSettingsApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignRTBSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdRtbDelete($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdRtbDelete($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignRTBSettingsApi->accountIdCampaignsCampaignIdRtbDelete: ', $e->getMessage(), PHP_EOL;
@@ -47,11 +47,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdRtbGet()`
 
 ```php
-accountIdCampaignsCampaignIdRtbGet($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdRtbGet($accountId, $campaignId, $authorization): object
 ```
 
 Get RTB for Campaign
@@ -88,17 +88,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignRTBSettingsApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignRTBSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdRtbGet($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdRtbGet($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignRTBSettingsApi->accountIdCampaignsCampaignIdRtbGet: ', $e->getMessage(), PHP_EOL;
@@ -107,11 +107,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -133,7 +133,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdRtbPatch()`
 
 ```php
-accountIdCampaignsCampaignIdRtbPatch($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdRtbPatch($accountId, $campaignId, $authorization, $body): object
 ```
 
 Edit RTB Settings for a Campaign
@@ -148,18 +148,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignRTBSettingsApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignRTBSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdRtbPatch($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdRtbPatch($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignRTBSettingsApi->accountIdCampaignsCampaignIdRtbPatch: ', $e->getMessage(), PHP_EOL;
@@ -168,12 +168,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -195,7 +195,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdRtbPut()`
 
 ```php
-accountIdCampaignsCampaignIdRtbPut($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdRtbPut($accountId, $campaignId, $authorization, $body): object
 ```
 
 Enable RTB for a Campaign
@@ -210,18 +210,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignRTBSettingsApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignRTBSettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdRtbPut($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdRtbPut($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignRTBSettingsApi->accountIdCampaignsCampaignIdRtbPut: ', $e->getMessage(), PHP_EOL;
@@ -230,12 +230,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

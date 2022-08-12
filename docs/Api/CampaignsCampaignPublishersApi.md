@@ -1,17 +1,17 @@
-# OpenAPI\Client\CampaignsCampaignPublishersApi
+# Ringba\CampaignsCampaignPublishersApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdAffiliatesPatch()**](CampaignsCampaignPublishersApi.md#accountIdCampaignsCampaignIdAffiliatesPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/affiliates | Add Publisher to a Campaign |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete()**](CampaignsCampaignPublishersApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/affiliates/{publisherId} | Remove Publisher from a Campaign |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdAffiliatesPatch()**](CampaignsCampaignPublishersApi.md#accountIdCampaignsCampaignIdAffiliatesPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/affiliates | Add Publisher to a Campaign
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete()**](CampaignsCampaignPublishersApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/affiliates/{publisherId} | Remove Publisher from a Campaign
 
 
 ## `accountIdCampaignsCampaignIdAffiliatesPatch()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPatch($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdAffiliatesPatch($accountId, $campaignId, $authorization, $body): object
 ```
 
 Add Publisher to a Campaign
@@ -26,18 +26,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignPublishersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignPublishersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPatch($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPatch($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignPublishersApi->accountIdCampaignsCampaignIdAffiliatesPatch: ', $e->getMessage(), PHP_EOL;
@@ -46,12 +46,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete($account_id, $campaign_id, $publisher_id, $authorization): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete($accountId, $campaignId, $publisherId, $authorization): object
 ```
 
 Remove Publisher from a Campaign
@@ -88,18 +88,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignPublishersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignPublishersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete($account_id, $campaign_id, $publisher_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete($accountId, $campaignId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignPublishersApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -108,12 +108,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

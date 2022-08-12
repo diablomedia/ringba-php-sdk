@@ -1,10 +1,10 @@
-# OpenAPI\Client\AccountInformationApi
+# Ringba\AccountInformationApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**ringbaaccountsGet()**](AccountInformationApi.md#ringbaaccountsGet) | **GET** /ringbaaccounts | Get Account Info using API Token |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**ringbaaccountsGet()**](AccountInformationApi.md#ringbaaccountsGet) | **GET** /ringbaaccounts | Get Account Info using API Token
 
 
 ## `ringbaaccountsGet()`
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\AccountInformationApi(
+$apiInstance = new Ringba\Api\AccountInformationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -42,9 +42,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

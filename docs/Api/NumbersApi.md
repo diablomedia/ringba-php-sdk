@@ -1,24 +1,24 @@
-# OpenAPI\Client\NumbersApi
+# Ringba\NumbersApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdNumbersGet()**](NumbersApi.md#accountIdNumbersGet) | **GET** /{accountId}/numbers | Get Numbers Associated with Account |
-| [**accountIdNumbersNumberIdAffiliatePublisherIdDelete()**](NumbersApi.md#accountIdNumbersNumberIdAffiliatePublisherIdDelete) | **DELETE** /{accountId}/numbers/{numberId}/Affiliate/{publisherId} | Remove a Publisher from a Number |
-| [**accountIdNumbersNumberIdAffiliatePut()**](NumbersApi.md#accountIdNumbersNumberIdAffiliatePut) | **PUT** /{accountId}/numbers/{numberId}/affiliate | Add a Publisher to a Number |
-| [**accountIdNumbersNumberIdDelete()**](NumbersApi.md#accountIdNumbersNumberIdDelete) | **DELETE** /{accountId}/numbers/{numberId} | Delete a Number From Your Account |
-| [**accountIdNumbersNumberIdGet()**](NumbersApi.md#accountIdNumbersNumberIdGet) | **GET** /{accountId}/numbers/{numberId} | Get Details About a Specific Number |
-| [**accountIdNumbersNumberIdInboundReferencesGet()**](NumbersApi.md#accountIdNumbersNumberIdInboundReferencesGet) | **GET** /{accountId}/numbers/{numberId}/InboundReferences | Get Inbound References for a Specific Number |
-| [**accountIdNumbersPost()**](NumbersApi.md#accountIdNumbersPost) | **POST** /{accountId}/numbers | Create New Number |
-| [**accountIdNumbersReleaseNonUsedNumbersDelete()**](NumbersApi.md#accountIdNumbersReleaseNonUsedNumbersDelete) | **DELETE** /{accountId}/numbers/ReleaseNonUsedNumbers | Delete Unused Numbers From Your Account |
-| [**accountIdNumbersUCLTDOMQPatch()**](NumbersApi.md#accountIdNumbersUCLTDOMQPatch) | **PATCH** /{accountId}/numbers/UCLTDOMQ | Edit Information About a Number |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdNumbersGet()**](NumbersApi.md#accountIdNumbersGet) | **GET** /{accountId}/numbers | Get Numbers Associated with Account
+[**accountIdNumbersNumberIdAffiliatePublisherIdDelete()**](NumbersApi.md#accountIdNumbersNumberIdAffiliatePublisherIdDelete) | **DELETE** /{accountId}/numbers/{numberId}/Affiliate/{publisherId} | Remove a Publisher from a Number
+[**accountIdNumbersNumberIdAffiliatePut()**](NumbersApi.md#accountIdNumbersNumberIdAffiliatePut) | **PUT** /{accountId}/numbers/{numberId}/affiliate | Add a Publisher to a Number
+[**accountIdNumbersNumberIdDelete()**](NumbersApi.md#accountIdNumbersNumberIdDelete) | **DELETE** /{accountId}/numbers/{numberId} | Delete a Number From Your Account
+[**accountIdNumbersNumberIdGet()**](NumbersApi.md#accountIdNumbersNumberIdGet) | **GET** /{accountId}/numbers/{numberId} | Get Details About a Specific Number
+[**accountIdNumbersNumberIdInboundReferencesGet()**](NumbersApi.md#accountIdNumbersNumberIdInboundReferencesGet) | **GET** /{accountId}/numbers/{numberId}/InboundReferences | Get Inbound References for a Specific Number
+[**accountIdNumbersPost()**](NumbersApi.md#accountIdNumbersPost) | **POST** /{accountId}/numbers | Create New Number
+[**accountIdNumbersReleaseNonUsedNumbersDelete()**](NumbersApi.md#accountIdNumbersReleaseNonUsedNumbersDelete) | **DELETE** /{accountId}/numbers/ReleaseNonUsedNumbers | Delete Unused Numbers From Your Account
+[**accountIdNumbersUCLTDOMQPatch()**](NumbersApi.md#accountIdNumbersUCLTDOMQPatch) | **PATCH** /{accountId}/numbers/UCLTDOMQ | Edit Information About a Number
 
 
 ## `accountIdNumbersGet()`
 
 ```php
-accountIdNumbersGet($account_id, $authorization): object
+accountIdNumbersGet($accountId, $authorization): object
 ```
 
 Get Numbers Associated with Account
@@ -33,16 +33,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdNumbersGet($account_id, $authorization);
+    $result = $apiInstance->accountIdNumbersGet($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersGet: ', $e->getMessage(), PHP_EOL;
@@ -51,10 +51,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -76,7 +76,7 @@ No authorization required
 ## `accountIdNumbersNumberIdAffiliatePublisherIdDelete()`
 
 ```php
-accountIdNumbersNumberIdAffiliatePublisherIdDelete($account_id, $number_id, $publisher_id, $authorization): object
+accountIdNumbersNumberIdAffiliatePublisherIdDelete($accountId, $numberId, $publisherId, $authorization): object
 ```
 
 Remove a Publisher from a Number
@@ -91,18 +91,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$number_id = 'number_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
+$accountId = 'accountId_example'; // string
+$numberId = 'numberId_example'; // string
+$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdNumbersNumberIdAffiliatePublisherIdDelete($account_id, $number_id, $publisher_id, $authorization);
+    $result = $apiInstance->accountIdNumbersNumberIdAffiliatePublisherIdDelete($accountId, $numberId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdAffiliatePublisherIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -111,12 +111,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+ **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -138,7 +138,7 @@ No authorization required
 ## `accountIdNumbersNumberIdAffiliatePut()`
 
 ```php
-accountIdNumbersNumberIdAffiliatePut($account_id, $number_id, $authorization, $body): object
+accountIdNumbersNumberIdAffiliatePut($accountId, $numberId, $authorization, $body): object
 ```
 
 Add a Publisher to a Number
@@ -153,18 +153,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$number_id = 'number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$numberId = 'numberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdNumbersNumberIdAffiliatePut($account_id, $number_id, $authorization, $body);
+    $result = $apiInstance->accountIdNumbersNumberIdAffiliatePut($accountId, $numberId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdAffiliatePut: ', $e->getMessage(), PHP_EOL;
@@ -173,12 +173,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -200,7 +200,7 @@ No authorization required
 ## `accountIdNumbersNumberIdDelete()`
 
 ```php
-accountIdNumbersNumberIdDelete($account_id, $number_id, $authorization): object
+accountIdNumbersNumberIdDelete($accountId, $numberId, $authorization): object
 ```
 
 Delete a Number From Your Account
@@ -215,17 +215,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$number_id = 'number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$numberId = 'numberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdNumbersNumberIdDelete($account_id, $number_id, $authorization);
+    $result = $apiInstance->accountIdNumbersNumberIdDelete($accountId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -234,11 +234,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -260,7 +260,7 @@ No authorization required
 ## `accountIdNumbersNumberIdGet()`
 
 ```php
-accountIdNumbersNumberIdGet($account_id, $number_id, $authorization): object
+accountIdNumbersNumberIdGet($accountId, $numberId, $authorization): object
 ```
 
 Get Details About a Specific Number
@@ -275,17 +275,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$number_id = 'number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$numberId = 'numberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdNumbersNumberIdGet($account_id, $number_id, $authorization);
+    $result = $apiInstance->accountIdNumbersNumberIdGet($accountId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdGet: ', $e->getMessage(), PHP_EOL;
@@ -294,11 +294,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -320,7 +320,7 @@ No authorization required
 ## `accountIdNumbersNumberIdInboundReferencesGet()`
 
 ```php
-accountIdNumbersNumberIdInboundReferencesGet($account_id, $number_id, $authorization): object
+accountIdNumbersNumberIdInboundReferencesGet($accountId, $numberId, $authorization): object
 ```
 
 Get Inbound References for a Specific Number
@@ -335,17 +335,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$number_id = 'number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$numberId = 'numberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdNumbersNumberIdInboundReferencesGet($account_id, $number_id, $authorization);
+    $result = $apiInstance->accountIdNumbersNumberIdInboundReferencesGet($accountId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdInboundReferencesGet: ', $e->getMessage(), PHP_EOL;
@@ -354,11 +354,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -380,7 +380,7 @@ No authorization required
 ## `accountIdNumbersPost()`
 
 ```php
-accountIdNumbersPost($account_id, $authorization, $body): object
+accountIdNumbersPost($accountId, $authorization, $body): object
 ```
 
 Create New Number
@@ -395,17 +395,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdNumbersPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdNumbersPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersPost: ', $e->getMessage(), PHP_EOL;
@@ -414,11 +414,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -440,7 +440,7 @@ No authorization required
 ## `accountIdNumbersReleaseNonUsedNumbersDelete()`
 
 ```php
-accountIdNumbersReleaseNonUsedNumbersDelete($account_id, $authorization): object
+accountIdNumbersReleaseNonUsedNumbersDelete($accountId, $authorization): object
 ```
 
 Delete Unused Numbers From Your Account
@@ -455,16 +455,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdNumbersReleaseNonUsedNumbersDelete($account_id, $authorization);
+    $result = $apiInstance->accountIdNumbersReleaseNonUsedNumbersDelete($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersReleaseNonUsedNumbersDelete: ', $e->getMessage(), PHP_EOL;
@@ -473,10 +473,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -498,7 +498,7 @@ No authorization required
 ## `accountIdNumbersUCLTDOMQPatch()`
 
 ```php
-accountIdNumbersUCLTDOMQPatch($account_id, $authorization, $body): object
+accountIdNumbersUCLTDOMQPatch($accountId, $authorization, $body): object
 ```
 
 Edit Information About a Number
@@ -513,17 +513,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\NumbersApi(
+$apiInstance = new Ringba\Api\NumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdNumbersUCLTDOMQPatch($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdNumbersUCLTDOMQPatch($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->accountIdNumbersUCLTDOMQPatch: ', $e->getMessage(), PHP_EOL;
@@ -532,11 +532,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

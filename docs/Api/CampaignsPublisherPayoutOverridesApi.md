@@ -1,20 +1,20 @@
-# OpenAPI\Client\CampaignsPublisherPayoutOverridesApi
+# Ringba\CampaignsPublisherPayoutOverridesApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet) | **GET** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts | Get Publisher Payout Overrides |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts/{payoutId} | Remove a Publisher Payout Override |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts/{payoutId} | Update Single Publisher Payout Override |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost) | **POST** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts | Create New Publisher Payout Override |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut) | **PUT** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts | Update ALL Publisher Payout Overrides |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet) | **GET** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts | Get Publisher Payout Overrides
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts/{payoutId} | Remove a Publisher Payout Override
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts/{payoutId} | Update Single Publisher Payout Override
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost) | **POST** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts | Create New Publisher Payout Override
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut()**](CampaignsPublisherPayoutOverridesApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut) | **PUT** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/payouts | Update ALL Publisher Payout Overrides
 
 
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet($account_id, $campaign_id, $publisher_id, $authorization)
+accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet($accountId, $campaignId, $publisherId, $authorization)
 ```
 
 Get Publisher Payout Overrides
@@ -29,18 +29,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsPublisherPayoutOverridesApi(
+$apiInstance = new Ringba\Api\CampaignsPublisherPayoutOverridesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet($account_id, $campaign_id, $publisher_id, $authorization);
+    $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet($accountId, $campaignId, $publisherId, $authorization);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsPublisherPayoutOverridesApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -48,12 +48,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -75,7 +75,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete($account_id, $campaign_id, $publisher_id, $payout_id, $authorization): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete($accountId, $campaignId, $publisherId, $payoutId, $authorization): object
 ```
 
 Remove a Publisher Payout Override
@@ -90,19 +90,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsPublisherPayoutOverridesApi(
+$apiInstance = new Ringba\Api\CampaignsPublisherPayoutOverridesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
-$payout_id = 'payout_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
+$payoutId = 'payoutId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete($account_id, $campaign_id, $publisher_id, $payout_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete($accountId, $campaignId, $publisherId, $payoutId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsPublisherPayoutOverridesApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -111,13 +111,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **payout_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **payoutId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -139,7 +139,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch($account_id, $campaign_id, $publisher_id, $payout_id, $authorization, $body): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch($accountId, $campaignId, $publisherId, $payoutId, $authorization, $body): object
 ```
 
 Update Single Publisher Payout Override
@@ -154,20 +154,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsPublisherPayoutOverridesApi(
+$apiInstance = new Ringba\Api\CampaignsPublisherPayoutOverridesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
-$payout_id = 'payout_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
+$payoutId = 'payoutId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch($account_id, $campaign_id, $publisher_id, $payout_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch($accountId, $campaignId, $publisherId, $payoutId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsPublisherPayoutOverridesApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPayoutIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -176,14 +176,14 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **payout_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **payoutId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -205,7 +205,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost($account_id, $campaign_id, $publisher_id, $authorization, $body): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost($accountId, $campaignId, $publisherId, $authorization, $body): object
 ```
 
 Create New Publisher Payout Override
@@ -220,19 +220,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsPublisherPayoutOverridesApi(
+$apiInstance = new Ringba\Api\CampaignsPublisherPayoutOverridesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost($account_id, $campaign_id, $publisher_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost($accountId, $campaignId, $publisherId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsPublisherPayoutOverridesApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPost: ', $e->getMessage(), PHP_EOL;
@@ -241,13 +241,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -269,7 +269,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut($account_id, $campaign_id, $publisher_id, $authorization, $body): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut($accountId, $campaignId, $publisherId, $authorization, $body): object
 ```
 
 Update ALL Publisher Payout Overrides
@@ -284,19 +284,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsPublisherPayoutOverridesApi(
+$apiInstance = new Ringba\Api\CampaignsPublisherPayoutOverridesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut($account_id, $campaign_id, $publisher_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut($accountId, $campaignId, $publisherId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsPublisherPayoutOverridesApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdPayoutsPut: ', $e->getMessage(), PHP_EOL;
@@ -305,13 +305,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

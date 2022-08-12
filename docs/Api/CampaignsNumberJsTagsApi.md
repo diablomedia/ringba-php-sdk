@@ -1,19 +1,19 @@
-# OpenAPI\Client\CampaignsNumberJsTagsApi
+# Ringba\CampaignsNumberJsTagsApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete()**](CampaignsNumberJsTagsApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/Numbers/{numberId}/JsTag | Remove a Js Tag from a Number |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet()**](CampaignsNumberJsTagsApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet) | **GET** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/Numbers/{numberId}/JsTag | Get Js Tags for a Number |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch()**](CampaignsNumberJsTagsApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/Numbers/{numberId}/JsTag/{JsTagId} | Modify Js Tag for a Number |
-| [**accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost()**](CampaignsNumberJsTagsApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost) | **POST** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/Numbers/{numberId}/JsTag | Create New Js Tag for a Number |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete()**](CampaignsNumberJsTagsApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/Numbers/{numberId}/JsTag | Remove a Js Tag from a Number
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet()**](CampaignsNumberJsTagsApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet) | **GET** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/Numbers/{numberId}/JsTag | Get Js Tags for a Number
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch()**](CampaignsNumberJsTagsApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/Numbers/{numberId}/JsTag/{JsTagId} | Modify Js Tag for a Number
+[**accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost()**](CampaignsNumberJsTagsApi.md#accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost) | **POST** /{accountId}/campaigns/{campaignId}/Affiliates/{publisherId}/Numbers/{numberId}/JsTag | Create New Js Tag for a Number
 
 
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete($account_id, $campaign_id, $publisher_id, $number_id, $authorization): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete($accountId, $campaignId, $publisherId, $numberId, $authorization): object
 ```
 
 Remove a Js Tag from a Number
@@ -28,19 +28,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsNumberJsTagsApi(
+$apiInstance = new Ringba\Api\CampaignsNumberJsTagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
-$number_id = 'number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
+$numberId = 'numberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete($account_id, $campaign_id, $publisher_id, $number_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete($accountId, $campaignId, $publisherId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsNumberJsTagsApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagDelete: ', $e->getMessage(), PHP_EOL;
@@ -49,13 +49,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -77,7 +77,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet($account_id, $campaign_id, $publisher_id, $number_id, $authorization): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet($accountId, $campaignId, $publisherId, $numberId, $authorization): object
 ```
 
 Get Js Tags for a Number
@@ -92,19 +92,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsNumberJsTagsApi(
+$apiInstance = new Ringba\Api\CampaignsNumberJsTagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
-$number_id = 'number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
+$numberId = 'numberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet($account_id, $campaign_id, $publisher_id, $number_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet($accountId, $campaignId, $publisherId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsNumberJsTagsApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagGet: ', $e->getMessage(), PHP_EOL;
@@ -113,13 +113,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -141,7 +141,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch($account_id, $campaign_id, $publisher_id, $number_id, $js_tag_id, $authorization, $body): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $authorization, $body): object
 ```
 
 Modify Js Tag for a Number
@@ -156,21 +156,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsNumberJsTagsApi(
+$apiInstance = new Ringba\Api\CampaignsNumberJsTagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
-$number_id = 'number_id_example'; // string
-$js_tag_id = 'js_tag_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
+$numberId = 'numberId_example'; // string
+$jsTagId = 'jsTagId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch($account_id, $campaign_id, $publisher_id, $number_id, $js_tag_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsNumberJsTagsApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagJsTagIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -179,15 +179,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **js_tag_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **numberId** | **string**|  |
+ **jsTagId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -209,7 +209,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost()`
 
 ```php
-accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost($account_id, $campaign_id, $publisher_id, $number_id, $authorization, $body): object
+accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost($accountId, $campaignId, $publisherId, $numberId, $authorization, $body): object
 ```
 
 Create New Js Tag for a Number
@@ -224,20 +224,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsNumberJsTagsApi(
+$apiInstance = new Ringba\Api\CampaignsNumberJsTagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
-$number_id = 'number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
+$numberId = 'numberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost($account_id, $campaign_id, $publisher_id, $number_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost($accountId, $campaignId, $publisherId, $numberId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsNumberJsTagsApi->accountIdCampaignsCampaignIdAffiliatesPublisherIdNumbersNumberIdJsTagPost: ', $e->getMessage(), PHP_EOL;
@@ -246,14 +246,14 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

@@ -1,16 +1,16 @@
-# OpenAPI\Client\BuyersApi
+# Ringba\BuyersApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdBuyersGet()**](BuyersApi.md#accountIdBuyersGet) | **GET** /{accountId}/Buyers | Get Buyers |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdBuyersGet()**](BuyersApi.md#accountIdBuyersGet) | **GET** /{accountId}/Buyers | Get Buyers
 
 
 ## `accountIdBuyersGet()`
 
 ```php
-accountIdBuyersGet($account_id, $authorization): object
+accountIdBuyersGet($accountId, $authorization): object
 ```
 
 Get Buyers
@@ -25,16 +25,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\BuyersApi(
+$apiInstance = new Ringba\Api\BuyersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdBuyersGet($account_id, $authorization);
+    $result = $apiInstance->accountIdBuyersGet($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BuyersApi->accountIdBuyersGet: ', $e->getMessage(), PHP_EOL;
@@ -43,10 +43,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

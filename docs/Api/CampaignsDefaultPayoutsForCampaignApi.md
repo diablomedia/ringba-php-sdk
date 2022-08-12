@@ -1,19 +1,19 @@
-# OpenAPI\Client\CampaignsDefaultPayoutsForCampaignApi
+# Ringba\CampaignsDefaultPayoutsForCampaignApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete()**](CampaignsDefaultPayoutsForCampaignApi.md#accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/DefaultPayouts/{payoutId} | Remove Default Payout Setting form a Campaign |
-| [**accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch()**](CampaignsDefaultPayoutsForCampaignApi.md#accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/DefaultPayouts/{payoutId} | Update Single Default Payout Settings |
-| [**accountIdCampaignsCampaignIdDefaultPayoutsPost()**](CampaignsDefaultPayoutsForCampaignApi.md#accountIdCampaignsCampaignIdDefaultPayoutsPost) | **POST** /{accountId}/campaigns/{campaignId}/DefaultPayouts | Add New Default Payout for a Campaign |
-| [**accountIdCampaignsCampaignIdDefaultPayoutsPut()**](CampaignsDefaultPayoutsForCampaignApi.md#accountIdCampaignsCampaignIdDefaultPayoutsPut) | **PUT** /{accountId}/campaigns/{campaignId}/DefaultPayouts | Update ALL Default Payout Settings for a Campaign |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete()**](CampaignsDefaultPayoutsForCampaignApi.md#accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/DefaultPayouts/{payoutId} | Remove Default Payout Setting form a Campaign
+[**accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch()**](CampaignsDefaultPayoutsForCampaignApi.md#accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/DefaultPayouts/{payoutId} | Update Single Default Payout Settings
+[**accountIdCampaignsCampaignIdDefaultPayoutsPost()**](CampaignsDefaultPayoutsForCampaignApi.md#accountIdCampaignsCampaignIdDefaultPayoutsPost) | **POST** /{accountId}/campaigns/{campaignId}/DefaultPayouts | Add New Default Payout for a Campaign
+[**accountIdCampaignsCampaignIdDefaultPayoutsPut()**](CampaignsDefaultPayoutsForCampaignApi.md#accountIdCampaignsCampaignIdDefaultPayoutsPut) | **PUT** /{accountId}/campaigns/{campaignId}/DefaultPayouts | Update ALL Default Payout Settings for a Campaign
 
 
 ## `accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete()`
 
 ```php
-accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete($account_id, $campaign_id, $payout_id, $authorization): object
+accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete($accountId, $campaignId, $payoutId, $authorization): object
 ```
 
 Remove Default Payout Setting form a Campaign
@@ -28,18 +28,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsDefaultPayoutsForCampaignApi(
+$apiInstance = new Ringba\Api\CampaignsDefaultPayoutsForCampaignApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$payout_id = 'payout_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$payoutId = 'payoutId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete($account_id, $campaign_id, $payout_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete($accountId, $campaignId, $payoutId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsDefaultPayoutsForCampaignApi->accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -48,12 +48,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **payout_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **payoutId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -75,7 +75,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch()`
 
 ```php
-accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch($account_id, $campaign_id, $payout_id, $authorization, $body): object
+accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch($accountId, $campaignId, $payoutId, $authorization, $body): object
 ```
 
 Update Single Default Payout Settings
@@ -90,19 +90,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsDefaultPayoutsForCampaignApi(
+$apiInstance = new Ringba\Api\CampaignsDefaultPayoutsForCampaignApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$payout_id = 'payout_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$payoutId = 'payoutId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch($account_id, $campaign_id, $payout_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch($accountId, $campaignId, $payoutId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsDefaultPayoutsForCampaignApi->accountIdCampaignsCampaignIdDefaultPayoutsPayoutIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -111,13 +111,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **payout_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **payoutId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -139,7 +139,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdDefaultPayoutsPost()`
 
 ```php
-accountIdCampaignsCampaignIdDefaultPayoutsPost($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdDefaultPayoutsPost($accountId, $campaignId, $authorization, $body): object
 ```
 
 Add New Default Payout for a Campaign
@@ -154,18 +154,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsDefaultPayoutsForCampaignApi(
+$apiInstance = new Ringba\Api\CampaignsDefaultPayoutsForCampaignApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultPayoutsPost($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultPayoutsPost($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsDefaultPayoutsForCampaignApi->accountIdCampaignsCampaignIdDefaultPayoutsPost: ', $e->getMessage(), PHP_EOL;
@@ -174,12 +174,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -201,7 +201,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdDefaultPayoutsPut()`
 
 ```php
-accountIdCampaignsCampaignIdDefaultPayoutsPut($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdDefaultPayoutsPut($accountId, $campaignId, $authorization, $body): object
 ```
 
 Update ALL Default Payout Settings for a Campaign
@@ -216,18 +216,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsDefaultPayoutsForCampaignApi(
+$apiInstance = new Ringba\Api\CampaignsDefaultPayoutsForCampaignApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultPayoutsPut($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdDefaultPayoutsPut($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsDefaultPayoutsForCampaignApi->accountIdCampaignsCampaignIdDefaultPayoutsPut: ', $e->getMessage(), PHP_EOL;
@@ -236,12 +236,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

@@ -1,16 +1,16 @@
-# OpenAPI\Client\RTBBulkModifiersApi
+# Ringba\RTBBulkModifiersApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdRtbBulkModifiersFromCSVPut()**](RTBBulkModifiersApi.md#accountIdRtbBulkModifiersFromCSVPut) | **PUT** /{accountId}/rtb/bulk-modifiers/fromCSV | Create RTB Bulk Adjustment from CSV |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdRtbBulkModifiersFromCSVPut()**](RTBBulkModifiersApi.md#accountIdRtbBulkModifiersFromCSVPut) | **PUT** /{accountId}/rtb/bulk-modifiers/fromCSV | Create RTB Bulk Adjustment from CSV
 
 
 ## `accountIdRtbBulkModifiersFromCSVPut()`
 
 ```php
-accountIdRtbBulkModifiersFromCSVPut($account_id, $authorization, $name): object
+accountIdRtbBulkModifiersFromCSVPut($accountId, $authorization, $name): object
 ```
 
 Create RTB Bulk Adjustment from CSV
@@ -25,17 +25,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\RTBBulkModifiersApi(
+$apiInstance = new Ringba\Api\RTBBulkModifiersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $name = Age-Bulk-Modifier; // string
 
 try {
-    $result = $apiInstance->accountIdRtbBulkModifiersFromCSVPut($account_id, $authorization, $name);
+    $result = $apiInstance->accountIdRtbBulkModifiersFromCSVPut($accountId, $authorization, $name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RTBBulkModifiersApi->accountIdRtbBulkModifiersFromCSVPut: ', $e->getMessage(), PHP_EOL;
@@ -44,11 +44,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **name** | **string**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **name** | **string**|  | [optional]
 
 ### Return type
 

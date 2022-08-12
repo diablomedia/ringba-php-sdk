@@ -1,0 +1,8 @@
+{
+    "variableNamingConvention": "camelCase",
+    "srcBasePath": "src",
+    "packageName": "Ringba",
+    "invokerPackage": "Ringba",
+    "apiPackage": "Api",
+    "modelPackage": "Model"
+}

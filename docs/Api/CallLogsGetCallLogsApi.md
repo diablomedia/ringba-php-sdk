@@ -1,19 +1,19 @@
-# OpenAPI\Client\CallLogsGetCallLogsApi
+# Ringba\CallLogsGetCallLogsApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCalllogsColumnsGet()**](CallLogsGetCallLogsApi.md#accountIdCalllogsColumnsGet) | **GET** /{accountId}/calllogs/columns | Get Column Names |
-| [**accountIdCalllogsDetailPost()**](CallLogsGetCallLogsApi.md#accountIdCalllogsDetailPost) | **POST** /{accountId}/calllogs/detail | Get Details About Specific Calls |
-| [**accountIdCalllogsPost()**](CallLogsGetCallLogsApi.md#accountIdCalllogsPost) | **POST** /{accountId}/calllogs | Get Call Log |
-| [**accountIdCalllogsTagsGet()**](CallLogsGetCallLogsApi.md#accountIdCalllogsTagsGet) | **GET** /{accountId}/calllogs/tags | Get Tags for Filtering Call Log |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCalllogsColumnsGet()**](CallLogsGetCallLogsApi.md#accountIdCalllogsColumnsGet) | **GET** /{accountId}/calllogs/columns | Get Column Names
+[**accountIdCalllogsDetailPost()**](CallLogsGetCallLogsApi.md#accountIdCalllogsDetailPost) | **POST** /{accountId}/calllogs/detail | Get Details About Specific Calls
+[**accountIdCalllogsPost()**](CallLogsGetCallLogsApi.md#accountIdCalllogsPost) | **POST** /{accountId}/calllogs | Get Call Log
+[**accountIdCalllogsTagsGet()**](CallLogsGetCallLogsApi.md#accountIdCalllogsTagsGet) | **GET** /{accountId}/calllogs/tags | Get Tags for Filtering Call Log
 
 
 ## `accountIdCalllogsColumnsGet()`
 
 ```php
-accountIdCalllogsColumnsGet($account_id, $authorization): object
+accountIdCalllogsColumnsGet($accountId, $authorization): object
 ```
 
 Get Column Names
@@ -28,16 +28,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallLogsGetCallLogsApi(
+$apiInstance = new Ringba\Api\CallLogsGetCallLogsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCalllogsColumnsGet($account_id, $authorization);
+    $result = $apiInstance->accountIdCalllogsColumnsGet($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallLogsGetCallLogsApi->accountIdCalllogsColumnsGet: ', $e->getMessage(), PHP_EOL;
@@ -46,10 +46,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 ## `accountIdCalllogsDetailPost()`
 
 ```php
-accountIdCalllogsDetailPost($account_id, $authorization, $body): object
+accountIdCalllogsDetailPost($accountId, $authorization, $body): object
 ```
 
 Get Details About Specific Calls
@@ -86,17 +86,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallLogsGetCallLogsApi(
+$apiInstance = new Ringba\Api\CallLogsGetCallLogsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCalllogsDetailPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdCalllogsDetailPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallLogsGetCallLogsApi->accountIdCalllogsDetailPost: ', $e->getMessage(), PHP_EOL;
@@ -105,11 +105,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -131,7 +131,7 @@ No authorization required
 ## `accountIdCalllogsPost()`
 
 ```php
-accountIdCalllogsPost($account_id, $authorization, $body): object
+accountIdCalllogsPost($accountId, $authorization, $body): object
 ```
 
 Get Call Log
@@ -146,17 +146,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallLogsGetCallLogsApi(
+$apiInstance = new Ringba\Api\CallLogsGetCallLogsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCalllogsPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdCalllogsPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallLogsGetCallLogsApi->accountIdCalllogsPost: ', $e->getMessage(), PHP_EOL;
@@ -165,11 +165,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -191,7 +191,7 @@ No authorization required
 ## `accountIdCalllogsTagsGet()`
 
 ```php
-accountIdCalllogsTagsGet($account_id, $authorization): object
+accountIdCalllogsTagsGet($accountId, $authorization): object
 ```
 
 Get Tags for Filtering Call Log
@@ -206,16 +206,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CallLogsGetCallLogsApi(
+$apiInstance = new Ringba\Api\CallLogsGetCallLogsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCalllogsTagsGet($account_id, $authorization);
+    $result = $apiInstance->accountIdCalllogsTagsGet($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallLogsGetCallLogsApi->accountIdCalllogsTagsGet: ', $e->getMessage(), PHP_EOL;
@@ -224,10 +224,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

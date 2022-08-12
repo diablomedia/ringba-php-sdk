@@ -1,16 +1,16 @@
-# OpenAPI\Client\BearerTokensApi
+# Ringba\BearerTokensApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**tokenPost()**](BearerTokensApi.md#tokenPost) | **POST** /token | Get User Authentication Bearer Token |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**tokenPost()**](BearerTokensApi.md#tokenPost) | **POST** /token | Get User Authentication Bearer Token
 
 
 ## `tokenPost()`
 
 ```php
-tokenPost($content_type, $grant_type, $username, $password): object
+tokenPost($contentType, $grantType, $username, $password): object
 ```
 
 Get User Authentication Bearer Token
@@ -23,18 +23,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\BearerTokensApi(
+$apiInstance = new Ringba\Api\BearerTokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$content_type = application/x-www-form-urlencoded; charset=UTF-8; // string
-$grant_type = 'grant_type_example'; // string
+$contentType = application/x-www-form-urlencoded; charset=UTF-8; // string
+$grantType = 'grantType_example'; // string
 $username = 'username_example'; // string
 $password = 'password_example'; // string
 
 try {
-    $result = $apiInstance->tokenPost($content_type, $grant_type, $username, $password);
+    $result = $apiInstance->tokenPost($contentType, $grantType, $username, $password);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BearerTokensApi->tokenPost: ', $e->getMessage(), PHP_EOL;
@@ -43,12 +43,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **content_type** | **string**|  | [optional] |
-| **grant_type** | **string**|  | [optional] |
-| **username** | **string**|  | [optional] |
-| **password** | **string**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contentType** | **string**|  | [optional]
+ **grantType** | **string**|  | [optional]
+ **username** | **string**|  | [optional]
+ **password** | **string**|  | [optional]
 
 ### Return type
 

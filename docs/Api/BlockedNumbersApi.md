@@ -1,20 +1,20 @@
-# OpenAPI\Client\BlockedNumbersApi
+# Ringba\BlockedNumbersApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdBlockedNumbersBlockedNumberIdDelete()**](BlockedNumbersApi.md#accountIdBlockedNumbersBlockedNumberIdDelete) | **DELETE** /{accountId}/blockedNumbers/{blockedNumberId} | Unblock a Phone Number |
-| [**accountIdBlockedNumbersBlockedNumberIdGet()**](BlockedNumbersApi.md#accountIdBlockedNumbersBlockedNumberIdGet) | **GET** /{accountId}/blockedNumbers/{blockedNumberId} | Get Details About a Single Blocked Number |
-| [**accountIdBlockedNumbersBlockedNumberIdPatch()**](BlockedNumbersApi.md#accountIdBlockedNumbersBlockedNumberIdPatch) | **PATCH** /{accountId}/blockedNumbers/{blockedNumberId} | Update a Blocked Phone Number |
-| [**accountIdBlockedNumbersGet()**](BlockedNumbersApi.md#accountIdBlockedNumbersGet) | **GET** /{accountId}/blockedNumbers | Get Blocked Phone Numbers |
-| [**accountIdBlockedNumbersPost()**](BlockedNumbersApi.md#accountIdBlockedNumbersPost) | **POST** /{accountId}/blockedNumbers | Block a Phone Number |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdBlockedNumbersBlockedNumberIdDelete()**](BlockedNumbersApi.md#accountIdBlockedNumbersBlockedNumberIdDelete) | **DELETE** /{accountId}/blockedNumbers/{blockedNumberId} | Unblock a Phone Number
+[**accountIdBlockedNumbersBlockedNumberIdGet()**](BlockedNumbersApi.md#accountIdBlockedNumbersBlockedNumberIdGet) | **GET** /{accountId}/blockedNumbers/{blockedNumberId} | Get Details About a Single Blocked Number
+[**accountIdBlockedNumbersBlockedNumberIdPatch()**](BlockedNumbersApi.md#accountIdBlockedNumbersBlockedNumberIdPatch) | **PATCH** /{accountId}/blockedNumbers/{blockedNumberId} | Update a Blocked Phone Number
+[**accountIdBlockedNumbersGet()**](BlockedNumbersApi.md#accountIdBlockedNumbersGet) | **GET** /{accountId}/blockedNumbers | Get Blocked Phone Numbers
+[**accountIdBlockedNumbersPost()**](BlockedNumbersApi.md#accountIdBlockedNumbersPost) | **POST** /{accountId}/blockedNumbers | Block a Phone Number
 
 
 ## `accountIdBlockedNumbersBlockedNumberIdDelete()`
 
 ```php
-accountIdBlockedNumbersBlockedNumberIdDelete($account_id, $blocked_number_id, $authorization): object
+accountIdBlockedNumbersBlockedNumberIdDelete($accountId, $blockedNumberId, $authorization): object
 ```
 
 Unblock a Phone Number
@@ -29,17 +29,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\BlockedNumbersApi(
+$apiInstance = new Ringba\Api\BlockedNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$blocked_number_id = 'blocked_number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$blockedNumberId = 'blockedNumberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdBlockedNumbersBlockedNumberIdDelete($account_id, $blocked_number_id, $authorization);
+    $result = $apiInstance->accountIdBlockedNumbersBlockedNumberIdDelete($accountId, $blockedNumberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->accountIdBlockedNumbersBlockedNumberIdDelete: ', $e->getMessage(), PHP_EOL;
@@ -48,11 +48,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **blocked_number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **blockedNumberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ No authorization required
 ## `accountIdBlockedNumbersBlockedNumberIdGet()`
 
 ```php
-accountIdBlockedNumbersBlockedNumberIdGet($account_id, $blocked_number_id, $authorization): object
+accountIdBlockedNumbersBlockedNumberIdGet($accountId, $blockedNumberId, $authorization): object
 ```
 
 Get Details About a Single Blocked Number
@@ -89,17 +89,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\BlockedNumbersApi(
+$apiInstance = new Ringba\Api\BlockedNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$blocked_number_id = 'blocked_number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$blockedNumberId = 'blockedNumberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdBlockedNumbersBlockedNumberIdGet($account_id, $blocked_number_id, $authorization);
+    $result = $apiInstance->accountIdBlockedNumbersBlockedNumberIdGet($accountId, $blockedNumberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->accountIdBlockedNumbersBlockedNumberIdGet: ', $e->getMessage(), PHP_EOL;
@@ -108,11 +108,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **blocked_number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **blockedNumberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -134,7 +134,7 @@ No authorization required
 ## `accountIdBlockedNumbersBlockedNumberIdPatch()`
 
 ```php
-accountIdBlockedNumbersBlockedNumberIdPatch($account_id, $blocked_number_id, $authorization, $body): object
+accountIdBlockedNumbersBlockedNumberIdPatch($accountId, $blockedNumberId, $authorization, $body): object
 ```
 
 Update a Blocked Phone Number
@@ -149,18 +149,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\BlockedNumbersApi(
+$apiInstance = new Ringba\Api\BlockedNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$blocked_number_id = 'blocked_number_id_example'; // string
+$accountId = 'accountId_example'; // string
+$blockedNumberId = 'blockedNumberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdBlockedNumbersBlockedNumberIdPatch($account_id, $blocked_number_id, $authorization, $body);
+    $result = $apiInstance->accountIdBlockedNumbersBlockedNumberIdPatch($accountId, $blockedNumberId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->accountIdBlockedNumbersBlockedNumberIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -169,12 +169,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **blocked_number_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **blockedNumberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -196,7 +196,7 @@ No authorization required
 ## `accountIdBlockedNumbersGet()`
 
 ```php
-accountIdBlockedNumbersGet($account_id, $authorization): object
+accountIdBlockedNumbersGet($accountId, $authorization): object
 ```
 
 Get Blocked Phone Numbers
@@ -211,16 +211,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\BlockedNumbersApi(
+$apiInstance = new Ringba\Api\BlockedNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdBlockedNumbersGet($account_id, $authorization);
+    $result = $apiInstance->accountIdBlockedNumbersGet($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->accountIdBlockedNumbersGet: ', $e->getMessage(), PHP_EOL;
@@ -229,10 +229,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -254,7 +254,7 @@ No authorization required
 ## `accountIdBlockedNumbersPost()`
 
 ```php
-accountIdBlockedNumbersPost($account_id, $authorization, $body): object
+accountIdBlockedNumbersPost($accountId, $authorization, $body): object
 ```
 
 Block a Phone Number
@@ -269,17 +269,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\BlockedNumbersApi(
+$apiInstance = new Ringba\Api\BlockedNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
+$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdBlockedNumbersPost($account_id, $authorization, $body);
+    $result = $apiInstance->accountIdBlockedNumbersPost($accountId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->accountIdBlockedNumbersPost: ', $e->getMessage(), PHP_EOL;
@@ -288,11 +288,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 

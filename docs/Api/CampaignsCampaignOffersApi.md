@@ -1,26 +1,26 @@
-# OpenAPI\Client\CampaignsCampaignOffersApi
+# Ringba\CampaignsCampaignOffersApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdOffersDraftDelete()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersDraftDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Offers/Draft | Delete a Draft Offer Before Publishing |
-| [**accountIdCampaignsCampaignIdOffersDraftGet()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersDraftGet) | **GET** /{accountId}/campaigns/{campaignId}/Offers/Draft | Get Draft Offers for a Campaign |
-| [**accountIdCampaignsCampaignIdOffersDraftPublishPost()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersDraftPublishPost) | **POST** /{accountId}/campaigns/{campaignId}/Offers/Draft/Publish | Publish Draft Offers |
-| [**accountIdCampaignsCampaignIdOffersDraftPut()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersDraftPut) | **PUT** /{accountId}/campaigns/{campaignId}/Offers/Draft | Create a Draft Offer for a Campaign |
-| [**accountIdCampaignsCampaignIdOffersGet()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersGet) | **GET** /{accountId}/campaigns/{campaignId}/Offers | Get All Offers for a Campaign |
-| [**accountIdCampaignsCampaignIdOffersPublishedDelete()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Offers/Published | Delete Published Offer for a Campaign |
-| [**accountIdCampaignsCampaignIdOffersPublishedGet()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedGet) | **GET** /{accountId}/campaigns/{campaignId}/Offers/Published | Get Published Offers for a Campaign |
-| [**accountIdCampaignsCampaignIdOffersPublishedInvitePost()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedInvitePost) | **POST** /{accountId}/campaigns/{campaignId}/Offers/Published/Invite | Invite Publisher to Participate in Offer |
-| [**accountIdCampaignsCampaignIdOffersPublishedParticipantsGet()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedParticipantsGet) | **GET** /{accountId}/campaigns/{campaignId}/Offers/Published/Participants | View Publishers Participating in Published Offer |
-| [**accountIdCampaignsCampaignIdOffersPublishedPausePost()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedPausePost) | **POST** /{accountId}/campaigns/{campaignId}/Offers/Published/Pause | Pause a Published Offer for a Campaign |
-| [**accountIdCampaignsCampaignIdOffersPublishedResumePost()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedResumePost) | **POST** /{accountId}/campaigns/{campaignId}/Offers/Published/Resume | Resume a Paused Offer |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdOffersDraftDelete()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersDraftDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Offers/Draft | Delete a Draft Offer Before Publishing
+[**accountIdCampaignsCampaignIdOffersDraftGet()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersDraftGet) | **GET** /{accountId}/campaigns/{campaignId}/Offers/Draft | Get Draft Offers for a Campaign
+[**accountIdCampaignsCampaignIdOffersDraftPublishPost()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersDraftPublishPost) | **POST** /{accountId}/campaigns/{campaignId}/Offers/Draft/Publish | Publish Draft Offers
+[**accountIdCampaignsCampaignIdOffersDraftPut()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersDraftPut) | **PUT** /{accountId}/campaigns/{campaignId}/Offers/Draft | Create a Draft Offer for a Campaign
+[**accountIdCampaignsCampaignIdOffersGet()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersGet) | **GET** /{accountId}/campaigns/{campaignId}/Offers | Get All Offers for a Campaign
+[**accountIdCampaignsCampaignIdOffersPublishedDelete()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/Offers/Published | Delete Published Offer for a Campaign
+[**accountIdCampaignsCampaignIdOffersPublishedGet()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedGet) | **GET** /{accountId}/campaigns/{campaignId}/Offers/Published | Get Published Offers for a Campaign
+[**accountIdCampaignsCampaignIdOffersPublishedInvitePost()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedInvitePost) | **POST** /{accountId}/campaigns/{campaignId}/Offers/Published/Invite | Invite Publisher to Participate in Offer
+[**accountIdCampaignsCampaignIdOffersPublishedParticipantsGet()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedParticipantsGet) | **GET** /{accountId}/campaigns/{campaignId}/Offers/Published/Participants | View Publishers Participating in Published Offer
+[**accountIdCampaignsCampaignIdOffersPublishedPausePost()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedPausePost) | **POST** /{accountId}/campaigns/{campaignId}/Offers/Published/Pause | Pause a Published Offer for a Campaign
+[**accountIdCampaignsCampaignIdOffersPublishedResumePost()**](CampaignsCampaignOffersApi.md#accountIdCampaignsCampaignIdOffersPublishedResumePost) | **POST** /{accountId}/campaigns/{campaignId}/Offers/Published/Resume | Resume a Paused Offer
 
 
 ## `accountIdCampaignsCampaignIdOffersDraftDelete()`
 
 ```php
-accountIdCampaignsCampaignIdOffersDraftDelete($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersDraftDelete($accountId, $campaignId, $authorization): object
 ```
 
 Delete a Draft Offer Before Publishing
@@ -35,17 +35,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersDraftDelete($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersDraftDelete($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersDraftDelete: ', $e->getMessage(), PHP_EOL;
@@ -54,11 +54,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -80,7 +80,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersDraftGet()`
 
 ```php
-accountIdCampaignsCampaignIdOffersDraftGet($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersDraftGet($accountId, $campaignId, $authorization): object
 ```
 
 Get Draft Offers for a Campaign
@@ -95,17 +95,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersDraftGet($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersDraftGet($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersDraftGet: ', $e->getMessage(), PHP_EOL;
@@ -114,11 +114,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -140,7 +140,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersDraftPublishPost()`
 
 ```php
-accountIdCampaignsCampaignIdOffersDraftPublishPost($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersDraftPublishPost($accountId, $campaignId, $authorization): object
 ```
 
 Publish Draft Offers
@@ -155,17 +155,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersDraftPublishPost($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersDraftPublishPost($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersDraftPublishPost: ', $e->getMessage(), PHP_EOL;
@@ -174,11 +174,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -200,7 +200,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersDraftPut()`
 
 ```php
-accountIdCampaignsCampaignIdOffersDraftPut($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdOffersDraftPut($accountId, $campaignId, $authorization, $body): object
 ```
 
 Create a Draft Offer for a Campaign
@@ -215,18 +215,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersDraftPut($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersDraftPut($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersDraftPut: ', $e->getMessage(), PHP_EOL;
@@ -235,12 +235,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -262,7 +262,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersGet()`
 
 ```php
-accountIdCampaignsCampaignIdOffersGet($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersGet($accountId, $campaignId, $authorization): object
 ```
 
 Get All Offers for a Campaign
@@ -277,17 +277,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersGet($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersGet($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersGet: ', $e->getMessage(), PHP_EOL;
@@ -296,11 +296,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -322,7 +322,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersPublishedDelete()`
 
 ```php
-accountIdCampaignsCampaignIdOffersPublishedDelete($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersPublishedDelete($accountId, $campaignId, $authorization): object
 ```
 
 Delete Published Offer for a Campaign
@@ -337,17 +337,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedDelete($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedDelete($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersPublishedDelete: ', $e->getMessage(), PHP_EOL;
@@ -356,11 +356,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -382,7 +382,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersPublishedGet()`
 
 ```php
-accountIdCampaignsCampaignIdOffersPublishedGet($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersPublishedGet($accountId, $campaignId, $authorization): object
 ```
 
 Get Published Offers for a Campaign
@@ -397,17 +397,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedGet($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedGet($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersPublishedGet: ', $e->getMessage(), PHP_EOL;
@@ -416,11 +416,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -442,7 +442,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersPublishedInvitePost()`
 
 ```php
-accountIdCampaignsCampaignIdOffersPublishedInvitePost($account_id, $campaign_id, $authorization, $body): object
+accountIdCampaignsCampaignIdOffersPublishedInvitePost($accountId, $campaignId, $authorization, $body): object
 ```
 
 Invite Publisher to Participate in Offer
@@ -457,18 +457,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedInvitePost($account_id, $campaign_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedInvitePost($accountId, $campaignId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersPublishedInvitePost: ', $e->getMessage(), PHP_EOL;
@@ -477,12 +477,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -504,7 +504,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersPublishedParticipantsGet()`
 
 ```php
-accountIdCampaignsCampaignIdOffersPublishedParticipantsGet($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersPublishedParticipantsGet($accountId, $campaignId, $authorization): object
 ```
 
 View Publishers Participating in Published Offer
@@ -519,17 +519,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedParticipantsGet($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedParticipantsGet($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersPublishedParticipantsGet: ', $e->getMessage(), PHP_EOL;
@@ -538,11 +538,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -564,7 +564,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersPublishedPausePost()`
 
 ```php
-accountIdCampaignsCampaignIdOffersPublishedPausePost($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersPublishedPausePost($accountId, $campaignId, $authorization): object
 ```
 
 Pause a Published Offer for a Campaign
@@ -579,17 +579,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedPausePost($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedPausePost($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersPublishedPausePost: ', $e->getMessage(), PHP_EOL;
@@ -598,11 +598,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -624,7 +624,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdOffersPublishedResumePost()`
 
 ```php
-accountIdCampaignsCampaignIdOffersPublishedResumePost($account_id, $campaign_id, $authorization): object
+accountIdCampaignsCampaignIdOffersPublishedResumePost($accountId, $campaignId, $authorization): object
 ```
 
 Resume a Paused Offer
@@ -639,17 +639,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsCampaignOffersApi(
+$apiInstance = new Ringba\Api\CampaignsCampaignOffersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedResumePost($account_id, $campaign_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdOffersPublishedResumePost($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsCampaignOffersApi->accountIdCampaignsCampaignIdOffersPublishedResumePost: ', $e->getMessage(), PHP_EOL;
@@ -658,11 +658,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

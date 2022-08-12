@@ -1,18 +1,18 @@
-# OpenAPI\Client\CampaignsPublisherRTBOverridesApi
+# Ringba\CampaignsPublisherRTBOverridesApi
 
-All URIs are relative to https://api.ringba.com, except if the operation defines another base path.
+All URIs are relative to https://api.ringba.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet()**](CampaignsPublisherRTBOverridesApi.md#accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet) | **GET** /{accountId}/campaigns/{campaignId}/rtb/publishers/{publisherId} | Get RTB Settings for a Publisher |
-| [**accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch()**](CampaignsPublisherRTBOverridesApi.md#accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/rtb/publishers/{publisherId} | Override RTB Settings for a Publisher |
-| [**accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet()**](CampaignsPublisherRTBOverridesApi.md#accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet) | **GET** /{accountId}/campaigns/{campaignId}/rtb/publishers/{publisherId}/url | Get RTB URLs for a Publisher |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet()**](CampaignsPublisherRTBOverridesApi.md#accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet) | **GET** /{accountId}/campaigns/{campaignId}/rtb/publishers/{publisherId} | Get RTB Settings for a Publisher
+[**accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch()**](CampaignsPublisherRTBOverridesApi.md#accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch) | **PATCH** /{accountId}/campaigns/{campaignId}/rtb/publishers/{publisherId} | Override RTB Settings for a Publisher
+[**accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet()**](CampaignsPublisherRTBOverridesApi.md#accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet) | **GET** /{accountId}/campaigns/{campaignId}/rtb/publishers/{publisherId}/url | Get RTB URLs for a Publisher
 
 
 ## `accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet()`
 
 ```php
-accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet($account_id, $campaign_id, $publisher_id, $authorization)
+accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet($accountId, $campaignId, $publisherId, $authorization)
 ```
 
 Get RTB Settings for a Publisher
@@ -27,18 +27,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsPublisherRTBOverridesApi(
+$apiInstance = new Ringba\Api\CampaignsPublisherRTBOverridesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $apiInstance->accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet($account_id, $campaign_id, $publisher_id, $authorization);
+    $apiInstance->accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet($accountId, $campaignId, $publisherId, $authorization);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsPublisherRTBOverridesApi->accountIdCampaignsCampaignIdRtbPublishersPublisherIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -46,12 +46,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch()`
 
 ```php
-accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch($account_id, $campaign_id, $publisher_id, $authorization, $body): object
+accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch($accountId, $campaignId, $publisherId, $authorization, $body): object
 ```
 
 Override RTB Settings for a Publisher
@@ -88,19 +88,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsPublisherRTBOverridesApi(
+$apiInstance = new Ringba\Api\CampaignsPublisherRTBOverridesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch($account_id, $campaign_id, $publisher_id, $authorization, $body);
+    $result = $apiInstance->accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch($accountId, $campaignId, $publisherId, $authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsPublisherRTBOverridesApi->accountIdCampaignsCampaignIdRtbPublishersPublisherIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -109,13 +109,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
-| **body** | **object**|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -137,7 +137,7 @@ No authorization required
 ## `accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet()`
 
 ```php
-accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet($account_id, $campaign_id, $publisher_id, $authorization): object
+accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet($accountId, $campaignId, $publisherId, $authorization): object
 ```
 
 Get RTB URLs for a Publisher
@@ -152,18 +152,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsPublisherRTBOverridesApi(
+$apiInstance = new Ringba\Api\CampaignsPublisherRTBOverridesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$account_id = 'account_id_example'; // string
-$campaign_id = 'campaign_id_example'; // string
-$publisher_id = 'publisher_id_example'; // string
+$accountId = 'accountId_example'; // string
+$campaignId = 'campaignId_example'; // string
+$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet($account_id, $campaign_id, $publisher_id, $authorization);
+    $result = $apiInstance->accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet($accountId, $campaignId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsPublisherRTBOverridesApi->accountIdCampaignsCampaignIdRtbPublishersPublisherIdUrlGet: ', $e->getMessage(), PHP_EOL;
@@ -172,12 +172,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_id** | **string**|  | |
-| **campaign_id** | **string**|  | |
-| **publisher_id** | **string**|  | |
-| **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
