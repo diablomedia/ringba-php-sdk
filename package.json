@@ -13,14 +13,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/diablomedia/leadspedia-php-sdk.git"
+        "url": "git+https://github.com/diablomedia/ringba-php-sdk.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/diablomedia/leadspedia-php-sdk/issues"
+        "url": "https://github.com/diablomedia/ringba-php-sdk/issues"
     },
-    "homepage": "https://github.com/diablomedia/leadspedia-php-sdk#readme",
+    "homepage": "https://github.com/diablomedia/ringba-php-sdk#readme",
     "devDependencies": {
         "@openapitools/openapi-generator-cli": "^2.5.1"
     }

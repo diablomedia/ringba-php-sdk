@@ -1,83 +1,23 @@
 # Ringba\IVRTreesApi
 
-All URIs are relative to https://api.ringba.com.
+All URIs are relative to http://example.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountIdCampaignsCampaignIdIVRTreeDelete()**](IVRTreesApi.md#accountIdCampaignsCampaignIdIVRTreeDelete) | **DELETE** /{accountId}/campaigns/{campaignId}/IVRTree | Remove IVR Tree from a Campaign
-[**accountIdCampaignsCampaignIdIVRTreePost()**](IVRTreesApi.md#accountIdCampaignsCampaignIdIVRTreePost) | **POST** /{accountId}/campaigns/{campaignId}/IVRTree | Add IVR Tree to a Campaign
-[**accountIdIvrtreeGet()**](IVRTreesApi.md#accountIdIvrtreeGet) | **GET** /{accountId}/ivrtree | Get IVR Trees Associated with Account
+[**addIVRTreetoaCampaign()**](IVRTreesApi.md#addIVRTreetoaCampaign) | **POST** /{accountId}/campaigns/{campaignId}/IVRTree | Add IVR Tree to a Campaign
+[**getIVRTreesAssociatedwithAccount()**](IVRTreesApi.md#getIVRTreesAssociatedwithAccount) | **GET** /{accountId}/ivrtree | Get IVR Trees Associated with Account
+[**removeIVRTreefromaCampaign()**](IVRTreesApi.md#removeIVRTreefromaCampaign) | **DELETE** /{accountId}/campaigns/{campaignId}/IVRTree | Remove IVR Tree from a Campaign
 
 
-## `accountIdCampaignsCampaignIdIVRTreeDelete()`
-
-```php
-accountIdCampaignsCampaignIdIVRTreeDelete($accountId, $campaignId, $authorization): object
-```
-
-Remove IVR Tree from a Campaign
-
-Request to remove an IVR tree from a campaign.  ### Path Variables <hr> <br>  ``accountId`` Find your [accountId](#get-your-account-information) <br>  `campaignId` get IDs of your [campaigns](#get-campaign-information) <br>
-
-### Example
+## `addIVRTreetoaCampaign()`
 
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Ringba\Api\IVRTreesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$accountId = 'accountId_example'; // string
-$campaignId = 'campaignId_example'; // string
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-
-try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdIVRTreeDelete($accountId, $campaignId, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling IVRTreesApi->accountIdCampaignsCampaignIdIVRTreeDelete: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**|  |
- **campaignId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `accountIdCampaignsCampaignIdIVRTreePost()`
-
-```php
-accountIdCampaignsCampaignIdIVRTreePost($accountId, $campaignId, $authorization, $body): object
+addIVRTreetoaCampaign($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest): \Ringba\Model\AddIVRTreetoaCampaign
 ```
 
 Add IVR Tree to a Campaign
 
-Request to add an IVR Tree associated with your account to the specified campaign.  ### Path Variables <hr> <br>  ``accountId`` Find your [accountId](#get-your-account-information) <br>  `campaignId` get IDs of your [campaigns](#get-campaign-information) <br>
+Request to add an IVR Tree associated with your account to the specified campaign.  ### Path Variables  <hr> <br>  ``accountId`` Find your [accountId](#get-your-account-information) <br>  `campaignId` get IDs of your [campaigns](#get-campaign-information) <br>
 
 ### Example
 
@@ -92,16 +32,16 @@ $apiInstance = new Ringba\Api\IVRTreesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
-$campaignId = 'campaignId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-$body = array('key' => new \stdClass); // object
+$accountId = 'accountId_example'; // string | 
+$campaignId = 'campaignId_example'; // string | 
+$addIVRTreetoaCampaignRequest = {"ivrTreeId":"{{IVRTreeId}}"}; // \Ringba\Model\AddIVRTreetoaCampaignRequest | 
 
 try {
-    $result = $apiInstance->accountIdCampaignsCampaignIdIVRTreePost($accountId, $campaignId, $authorization, $body);
+    $result = $apiInstance->addIVRTreetoaCampaign($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling IVRTreesApi->accountIdCampaignsCampaignIdIVRTreePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling IVRTreesApi->addIVRTreetoaCampaign: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -109,14 +49,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
- **body** | **object**|  | [optional]
+ **addIVRTreetoaCampaignRequest** | [**\Ringba\Model\AddIVRTreetoaCampaignRequest**](../Model/AddIVRTreetoaCampaignRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Ringba\Model\AddIVRTreetoaCampaign**](../Model/AddIVRTreetoaCampaign.md)
 
 ### Authorization
 
@@ -125,21 +65,21 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `accountIdIvrtreeGet()`
+## `getIVRTreesAssociatedwithAccount()`
 
 ```php
-accountIdIvrtreeGet($accountId, $authorization)
+getIVRTreesAssociatedwithAccount($authorization, $accountId)
 ```
 
 Get IVR Trees Associated with Account
 
-Request to get the IVR Tree(s) associated with the specified account.  ### Path Variables <hr> <br>  ``accountId`` Find your [accountId](#get-your-account-information) <br>
+Request to get the IVR Tree(s) associated with the specified account.  ### Path Variables  <hr> <br>  ``accountId`` Find your [accountId](#get-your-account-information) <br>
 
 ### Example
 
@@ -154,13 +94,13 @@ $apiInstance = new Ringba\Api\IVRTreesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
 
 try {
-    $apiInstance->accountIdIvrtreeGet($accountId, $authorization);
+    $apiInstance->getIVRTreesAssociatedwithAccount($authorization, $accountId);
 } catch (Exception $e) {
-    echo 'Exception when calling IVRTreesApi->accountIdIvrtreeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling IVRTreesApi->getIVRTreesAssociatedwithAccount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -168,8 +108,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -182,7 +122,67 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `removeIVRTreefromaCampaign()`
+
+```php
+removeIVRTreefromaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\RemoveIVRTreefromaCampaign
+```
+
+Remove IVR Tree from a Campaign
+
+Request to remove an IVR tree from a campaign.  ### Path Variables  <hr> <br>  ``accountId`` Find your [accountId](#get-your-account-information) <br>  `campaignId` get IDs of your [campaigns](#get-campaign-information) <br>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Ringba\Api\IVRTreesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+$campaignId = 'campaignId_example'; // string | 
+
+try {
+    $result = $apiInstance->removeIVRTreefromaCampaign($authorization, $accountId, $campaignId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling IVRTreesApi->removeIVRTreefromaCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\RemoveIVRTreefromaCampaign**](../Model/RemoveIVRTreefromaCampaign.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

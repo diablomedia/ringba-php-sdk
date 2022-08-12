@@ -1,0 +1,10 @@
+# # ReplaceNumbersInaNumberPool
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**countAdded** | **int** |  |
+**countReleased** | **int** |  |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

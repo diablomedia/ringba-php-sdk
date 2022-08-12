@@ -1,6 +1,6 @@
 {
     "name": "diablomedia/ringba-php-sdk",
-    "description": "Ringba’s APIs allow you to interact, gather information, and make dynamic changes in real-time. All functions found within the Ringba portal are also available programmatically through our API.  If this is your first time using our API, please read the __Getting Started__ section below.",
+    "description": "Ringba’s APIs allow you to interact, gather information, and make dynamic changes in real-time. All functions found within the Ringba portal are also available programmatically through our API.   If this is your first time using our API, please read the __Getting Started__ section below.",
     "keywords": [
         "openapitools",
         "openapi-generator",

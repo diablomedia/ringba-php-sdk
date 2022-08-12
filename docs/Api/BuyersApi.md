@@ -1,16 +1,16 @@
 # Ringba\BuyersApi
 
-All URIs are relative to https://api.ringba.com.
+All URIs are relative to http://example.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountIdBuyersGet()**](BuyersApi.md#accountIdBuyersGet) | **GET** /{accountId}/Buyers | Get Buyers
+[**getBuyers()**](BuyersApi.md#getBuyers) | **GET** /{accountId}/Buyers | Get Buyers
 
 
-## `accountIdBuyersGet()`
+## `getBuyers()`
 
 ```php
-accountIdBuyersGet($accountId, $authorization): object
+getBuyers($authorization, $accountId): \Ringba\Model\GetBuyers
 ```
 
 Get Buyers
@@ -30,14 +30,14 @@ $apiInstance = new Ringba\Api\BuyersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
 
 try {
-    $result = $apiInstance->accountIdBuyersGet($accountId, $authorization);
+    $result = $apiInstance->getBuyers($authorization, $accountId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BuyersApi->accountIdBuyersGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BuyersApi->getBuyers: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -45,12 +45,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
-**object**
+[**\Ringba\Model\GetBuyers**](../Model/GetBuyers.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

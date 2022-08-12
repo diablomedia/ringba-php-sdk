@@ -1,79 +1,19 @@
 # Ringba\PublisherInvitationsApi
 
-All URIs are relative to https://api.ringba.com.
+All URIs are relative to http://example.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountIdAffiliatesPublisherIdInvitationsGet()**](PublisherInvitationsApi.md#accountIdAffiliatesPublisherIdInvitationsGet) | **GET** /{accountId}/Affiliates/{publisherId}/Invitations | Get Invitations for a Publisher
-[**accountIdAffiliatesPublisherIdInvitationsInvitationIdDelete()**](PublisherInvitationsApi.md#accountIdAffiliatesPublisherIdInvitationsInvitationIdDelete) | **DELETE** /{accountId}/Affiliates/{publisherId}/Invitations/{invitationId} | Delete an Invitation
-[**accountIdAffiliatesPublisherIdInvitationsInvitationIdGet()**](PublisherInvitationsApi.md#accountIdAffiliatesPublisherIdInvitationsInvitationIdGet) | **GET** /{accountId}/Affiliates/{publisherId}/Invitations/{invitationId} | Get Details About an Invitation
-[**accountIdAffiliatesPublisherIdInvitationsPost()**](PublisherInvitationsApi.md#accountIdAffiliatesPublisherIdInvitationsPost) | **POST** /{accountId}/Affiliates/{publisherId}/Invitations | Invite User to Join Publisher
+[**deleteanInvitation()**](PublisherInvitationsApi.md#deleteanInvitation) | **DELETE** /{accountId}/Affiliates/{publisherId}/Invitations/{invitationId} | Delete an Invitation
+[**getDetailsAboutanInvitation()**](PublisherInvitationsApi.md#getDetailsAboutanInvitation) | **GET** /{accountId}/Affiliates/{publisherId}/Invitations/{invitationId} | Get Details About an Invitation
+[**getInvitationsforaPublisher()**](PublisherInvitationsApi.md#getInvitationsforaPublisher) | **GET** /{accountId}/Affiliates/{publisherId}/Invitations | Get Invitations for a Publisher
+[**inviteUsertoJoinPublisher()**](PublisherInvitationsApi.md#inviteUsertoJoinPublisher) | **POST** /{accountId}/Affiliates/{publisherId}/Invitations | Invite User to Join Publisher
 
 
-## `accountIdAffiliatesPublisherIdInvitationsGet()`
-
-```php
-accountIdAffiliatesPublisherIdInvitationsGet($accountId, $publisherId, $authorization): object
-```
-
-Get Invitations for a Publisher
-
-Request to view a list of invitations currently associated with a publisher.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information) <br>  `publisherId` Find a list of [publishers](#get-information-about-publishers) associated with your account.
-
-### Example
+## `deleteanInvitation()`
 
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Ringba\Api\PublisherInvitationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$accountId = 'accountId_example'; // string
-$publisherId = 'publisherId_example'; // string
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-
-try {
-    $result = $apiInstance->accountIdAffiliatesPublisherIdInvitationsGet($accountId, $publisherId, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PublisherInvitationsApi->accountIdAffiliatesPublisherIdInvitationsGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**|  |
- **publisherId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `accountIdAffiliatesPublisherIdInvitationsInvitationIdDelete()`
-
-```php
-accountIdAffiliatesPublisherIdInvitationsInvitationIdDelete($accountId, $publisherId, $invitationId, $authorization): object
+deleteanInvitation($authorization, $accountId, $publisherId, $invitationId): \Ringba\Model\DeleteanInvitation
 ```
 
 Delete an Invitation
@@ -93,16 +33,16 @@ $apiInstance = new Ringba\Api\PublisherInvitationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
-$publisherId = 'publisherId_example'; // string
-$invitationId = 'invitationId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+$publisherId = 'publisherId_example'; // string | 
+$invitationId = 'invitationId_example'; // string | 
 
 try {
-    $result = $apiInstance->accountIdAffiliatesPublisherIdInvitationsInvitationIdDelete($accountId, $publisherId, $invitationId, $authorization);
+    $result = $apiInstance->deleteanInvitation($authorization, $accountId, $publisherId, $invitationId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PublisherInvitationsApi->accountIdAffiliatesPublisherIdInvitationsInvitationIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PublisherInvitationsApi->deleteanInvitation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -110,14 +50,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
  **invitationId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
-**object**
+[**\Ringba\Model\DeleteanInvitation**](../Model/DeleteanInvitation.md)
 
 ### Authorization
 
@@ -126,16 +66,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `accountIdAffiliatesPublisherIdInvitationsInvitationIdGet()`
+## `getDetailsAboutanInvitation()`
 
 ```php
-accountIdAffiliatesPublisherIdInvitationsInvitationIdGet($accountId, $publisherId, $invitationId, $authorization): object
+getDetailsAboutanInvitation($authorization, $accountId, $publisherId, $invitationId): \Ringba\Model\GetDetailsAboutanInvitation
 ```
 
 Get Details About an Invitation
@@ -155,16 +95,16 @@ $apiInstance = new Ringba\Api\PublisherInvitationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
-$publisherId = 'publisherId_example'; // string
-$invitationId = 'invitationId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+$publisherId = 'publisherId_example'; // string | 
+$invitationId = 'invitationId_example'; // string | 
 
 try {
-    $result = $apiInstance->accountIdAffiliatesPublisherIdInvitationsInvitationIdGet($accountId, $publisherId, $invitationId, $authorization);
+    $result = $apiInstance->getDetailsAboutanInvitation($authorization, $accountId, $publisherId, $invitationId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PublisherInvitationsApi->accountIdAffiliatesPublisherIdInvitationsInvitationIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PublisherInvitationsApi->getDetailsAboutanInvitation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -172,14 +112,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
  **invitationId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
-**object**
+[**\Ringba\Model\GetDetailsAboutanInvitation**](../Model/GetDetailsAboutanInvitation.md)
 
 ### Authorization
 
@@ -188,16 +128,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `accountIdAffiliatesPublisherIdInvitationsPost()`
+## `getInvitationsforaPublisher()`
 
 ```php
-accountIdAffiliatesPublisherIdInvitationsPost($accountId, $publisherId, $authorization, $body): object
+getInvitationsforaPublisher($authorization, $accountId, $publisherId): \Ringba\Model\GetInvitationsforaPublisher
+```
+
+Get Invitations for a Publisher
+
+Request to view a list of invitations currently associated with a publisher.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information) <br>  `publisherId` Find a list of [publishers](#get-information-about-publishers) associated with your account.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Ringba\Api\PublisherInvitationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+$publisherId = 'publisherId_example'; // string | 
+
+try {
+    $result = $apiInstance->getInvitationsforaPublisher($authorization, $accountId, $publisherId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PublisherInvitationsApi->getInvitationsforaPublisher: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
+ **accountId** | **string**|  |
+ **publisherId** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\GetInvitationsforaPublisher**](../Model/GetInvitationsforaPublisher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json; charset=utf-8`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `inviteUsertoJoinPublisher()`
+
+```php
+inviteUsertoJoinPublisher($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest): \Ringba\Model\InviteUser
 ```
 
 Invite User to Join Publisher
@@ -217,16 +217,16 @@ $apiInstance = new Ringba\Api\PublisherInvitationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
-$publisherId = 'publisherId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-$body = array('key' => new \stdClass); // object
+$accountId = 'accountId_example'; // string | 
+$publisherId = 'publisherId_example'; // string | 
+$inviteUsertoJoinPublisherRequest = {"email":"new.publisher@email.com","confirmEmail":"new.publisher@email.com","firstName":"New","lastName":"Pub"}; // \Ringba\Model\InviteUsertoJoinPublisherRequest | 
 
 try {
-    $result = $apiInstance->accountIdAffiliatesPublisherIdInvitationsPost($accountId, $publisherId, $authorization, $body);
+    $result = $apiInstance->inviteUsertoJoinPublisher($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PublisherInvitationsApi->accountIdAffiliatesPublisherIdInvitationsPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PublisherInvitationsApi->inviteUsertoJoinPublisher: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -234,14 +234,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
- **body** | **object**|  | [optional]
+ **inviteUsertoJoinPublisherRequest** | [**\Ringba\Model\InviteUsertoJoinPublisherRequest**](../Model/InviteUsertoJoinPublisherRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Ringba\Model\InviteUser**](../Model/InviteUser.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

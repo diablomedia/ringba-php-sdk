@@ -1,17 +1,17 @@
 # Ringba\TCPAShieldApi
 
-All URIs are relative to https://api.ringba.com.
+All URIs are relative to http://example.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV1AccountIdLookupGet()**](TCPAShieldApi.md#apiV1AccountIdLookupGet) | **GET** /api/v1/{accountId}/lookup | Lookup Number
-[**apiV1AccountIdLookupbulkPost()**](TCPAShieldApi.md#apiV1AccountIdLookupbulkPost) | **POST** /api/v1/{accountId}/lookupbulk | Lookup Numbers Bulk
+[**lookupNumber()**](TCPAShieldApi.md#lookupNumber) | **GET** /api/v1/{accountId}/lookup | Lookup Number
+[**lookupNumbersBulk()**](TCPAShieldApi.md#lookupNumbersBulk) | **POST** /api/v1/{accountId}/lookupbulk | Lookup Numbers Bulk
 
 
-## `apiV1AccountIdLookupGet()`
+## `lookupNumber()`
 
 ```php
-apiV1AccountIdLookupGet($accountId, $authorization, $number): object
+lookupNumber($number, $authorization, $accountId): \Ringba\Model\LookupNumberNumbernotblocked
 ```
 
 Lookup Number
@@ -29,15 +29,15 @@ $apiInstance = new Ringba\Api\TCPAShieldApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $number = 16195643321; // int | Phone number with country code that you want to look up
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
 
 try {
-    $result = $apiInstance->apiV1AccountIdLookupGet($accountId, $authorization, $number);
+    $result = $apiInstance->lookupNumber($number, $authorization, $accountId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TCPAShieldApi->apiV1AccountIdLookupGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TCPAShieldApi->lookupNumber: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -45,13 +45,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **number** | **int**| Phone number with country code that you want to look up |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
- **number** | **int**| Phone number with country code that you want to look up | [optional]
 
 ### Return type
 
-**object**
+[**\Ringba\Model\LookupNumberNumbernotblocked**](../Model/LookupNumberNumbernotblocked.md)
 
 ### Authorization
 
@@ -60,16 +60,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`, `text/plain`
+- **Accept**: `application/json; charset=utf-8`, `text/plain; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `apiV1AccountIdLookupbulkPost()`
+## `lookupNumbersBulk()`
 
 ```php
-apiV1AccountIdLookupbulkPost($accountId, $authorization, $body): object
+lookupNumbersBulk($authorization, $accountId, $lookupNumbersBulkRequest): string[]
 ```
 
 Lookup Numbers Bulk
@@ -89,15 +89,15 @@ $apiInstance = new Ringba\Api\TCPAShieldApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-$body = array('key' => new \stdClass); // object
+$accountId = 'accountId_example'; // string | 
+$lookupNumbersBulkRequest = {"phones":["16196308544","15555558353","15555555555","15555552740","15555552741","15555552738","16196308541"]}; // \Ringba\Model\LookupNumbersBulkRequest | 
 
 try {
-    $result = $apiInstance->apiV1AccountIdLookupbulkPost($accountId, $authorization, $body);
+    $result = $apiInstance->lookupNumbersBulk($authorization, $accountId, $lookupNumbersBulkRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TCPAShieldApi->apiV1AccountIdLookupbulkPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TCPAShieldApi->lookupNumbersBulk: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -105,13 +105,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
- **body** | **object**|  | [optional]
+ **lookupNumbersBulkRequest** | [**\Ringba\Model\LookupNumbersBulkRequest**](../Model/LookupNumbersBulkRequest.md)|  |
 
 ### Return type
 
-**object**
+**string[]**
 
 ### Authorization
 
@@ -120,7 +120,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

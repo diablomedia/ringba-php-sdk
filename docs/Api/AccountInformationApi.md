@@ -1,16 +1,16 @@
 # Ringba\AccountInformationApi
 
-All URIs are relative to https://api.ringba.com.
+All URIs are relative to http://example.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ringbaaccountsGet()**](AccountInformationApi.md#ringbaaccountsGet) | **GET** /ringbaaccounts | Get Account Info using API Token
+[**getAccountInfousingAPIToken()**](AccountInformationApi.md#getAccountInfousingAPIToken) | **GET** /ringbaaccounts | Get Account Info using API Token
 
 
-## `ringbaaccountsGet()`
+## `getAccountInfousingAPIToken()`
 
 ```php
-ringbaaccountsGet($authorization): object
+getAccountInfousingAPIToken($authorization): \Ringba\Model\GetAccountInfo
 ```
 
 Get Account Info using API Token
@@ -33,10 +33,10 @@ $apiInstance = new Ringba\Api\AccountInformationApi(
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->ringbaaccountsGet($authorization);
+    $result = $apiInstance->getAccountInfousingAPIToken($authorization);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountInformationApi->ringbaaccountsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountInformationApi->getAccountInfousingAPIToken: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -44,11 +44,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
 
 ### Return type
 
-**object**
+[**\Ringba\Model\GetAccountInfo**](../Model/GetAccountInfo.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

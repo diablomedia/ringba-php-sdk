@@ -1,16 +1,16 @@
 # Ringba\BearerTokensApi
 
-All URIs are relative to https://api.ringba.com.
+All URIs are relative to http://example.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**tokenPost()**](BearerTokensApi.md#tokenPost) | **POST** /token | Get User Authentication Bearer Token
+[**getUserAuthenticationBearerToken()**](BearerTokensApi.md#getUserAuthenticationBearerToken) | **POST** /token | Get User Authentication Bearer Token
 
 
-## `tokenPost()`
+## `getUserAuthenticationBearerToken()`
 
 ```php
-tokenPost($contentType, $grantType, $username, $password): object
+getUserAuthenticationBearerToken($contentType, $grantType, $username, $password): \Ringba\Model\GetUserAuthenticationBearerToken
 ```
 
 Get User Authentication Bearer Token
@@ -22,22 +22,26 @@ Get User Authentication Bearer Token
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: httpBearer
+$config = Ringba\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Ringba\Api\BearerTokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$contentType = application/x-www-form-urlencoded; charset=UTF-8; // string
+$contentType = application/x-www-form-urlencoded; charset=UTF-8; // string | 
 $grantType = 'grantType_example'; // string
 $username = 'username_example'; // string
 $password = 'password_example'; // string
 
 try {
-    $result = $apiInstance->tokenPost($contentType, $grantType, $username, $password);
+    $result = $apiInstance->getUserAuthenticationBearerToken($contentType, $grantType, $username, $password);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BearerTokensApi->tokenPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BearerTokensApi->getUserAuthenticationBearerToken: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -45,23 +49,23 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **grantType** | **string**|  | [optional]
- **username** | **string**|  | [optional]
- **password** | **string**|  | [optional]
+ **contentType** | **string**|  |
+ **grantType** | **string**|  |
+ **username** | **string**|  |
+ **password** | **string**|  |
 
 ### Return type
 
-**object**
+[**\Ringba\Model\GetUserAuthenticationBearerToken**](../Model/GetUserAuthenticationBearerToken.md)
 
 ### Authorization
 
-No authorization required
+[httpBearer](../../README.md#httpBearer)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/x-www-form-urlencoded`
-- **Accept**: `application/json`
+- **Accept**: `application/json;charset=UTF-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

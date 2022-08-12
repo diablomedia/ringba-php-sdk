@@ -1,144 +1,24 @@
 # Ringba\NumbersApi
 
-All URIs are relative to https://api.ringba.com.
+All URIs are relative to http://example.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountIdNumbersGet()**](NumbersApi.md#accountIdNumbersGet) | **GET** /{accountId}/numbers | Get Numbers Associated with Account
-[**accountIdNumbersNumberIdAffiliatePublisherIdDelete()**](NumbersApi.md#accountIdNumbersNumberIdAffiliatePublisherIdDelete) | **DELETE** /{accountId}/numbers/{numberId}/Affiliate/{publisherId} | Remove a Publisher from a Number
-[**accountIdNumbersNumberIdAffiliatePut()**](NumbersApi.md#accountIdNumbersNumberIdAffiliatePut) | **PUT** /{accountId}/numbers/{numberId}/affiliate | Add a Publisher to a Number
-[**accountIdNumbersNumberIdDelete()**](NumbersApi.md#accountIdNumbersNumberIdDelete) | **DELETE** /{accountId}/numbers/{numberId} | Delete a Number From Your Account
-[**accountIdNumbersNumberIdGet()**](NumbersApi.md#accountIdNumbersNumberIdGet) | **GET** /{accountId}/numbers/{numberId} | Get Details About a Specific Number
-[**accountIdNumbersNumberIdInboundReferencesGet()**](NumbersApi.md#accountIdNumbersNumberIdInboundReferencesGet) | **GET** /{accountId}/numbers/{numberId}/InboundReferences | Get Inbound References for a Specific Number
-[**accountIdNumbersPost()**](NumbersApi.md#accountIdNumbersPost) | **POST** /{accountId}/numbers | Create New Number
-[**accountIdNumbersReleaseNonUsedNumbersDelete()**](NumbersApi.md#accountIdNumbersReleaseNonUsedNumbersDelete) | **DELETE** /{accountId}/numbers/ReleaseNonUsedNumbers | Delete Unused Numbers From Your Account
-[**accountIdNumbersUCLTDOMQPatch()**](NumbersApi.md#accountIdNumbersUCLTDOMQPatch) | **PATCH** /{accountId}/numbers/UCLTDOMQ | Edit Information About a Number
+[**addaPublishertoaNumber()**](NumbersApi.md#addaPublishertoaNumber) | **PUT** /{accountId}/numbers/{numberId}/affiliate | Add a Publisher to a Number
+[**createNewNumber()**](NumbersApi.md#createNewNumber) | **POST** /{accountId}/numbers | Create New Number
+[**deleteUnusedNumbersFromYourAccount()**](NumbersApi.md#deleteUnusedNumbersFromYourAccount) | **DELETE** /{accountId}/numbers/ReleaseNonUsedNumbers | Delete Unused Numbers From Your Account
+[**deleteaNumberFromYourAccount()**](NumbersApi.md#deleteaNumberFromYourAccount) | **DELETE** /{accountId}/numbers/{numberId} | Delete a Number From Your Account
+[**editInformationAboutaNumber()**](NumbersApi.md#editInformationAboutaNumber) | **PATCH** /{accountId}/numbers/UCLTDOMQ | Edit Information About a Number
+[**getDetailsAboutaSpecificNumber()**](NumbersApi.md#getDetailsAboutaSpecificNumber) | **GET** /{accountId}/numbers/{numberId} | Get Details About a Specific Number
+[**getInboundReferencesforaSpecificNumber()**](NumbersApi.md#getInboundReferencesforaSpecificNumber) | **GET** /{accountId}/numbers/{numberId}/InboundReferences | Get Inbound References for a Specific Number
+[**getNumbersAssociatedwithAccount()**](NumbersApi.md#getNumbersAssociatedwithAccount) | **GET** /{accountId}/numbers | Get Numbers Associated with Account
+[**removeaPublisherfromaNumber()**](NumbersApi.md#removeaPublisherfromaNumber) | **DELETE** /{accountId}/numbers/{numberId}/Affiliate/{publisherId} | Remove a Publisher from a Number
 
 
-## `accountIdNumbersGet()`
-
-```php
-accountIdNumbersGet($accountId, $authorization): object
-```
-
-Get Numbers Associated with Account
-
-Get all numbers associated with your account.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information) <br>
-
-### Example
+## `addaPublishertoaNumber()`
 
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Ringba\Api\NumbersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$accountId = 'accountId_example'; // string
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-
-try {
-    $result = $apiInstance->accountIdNumbersGet($accountId, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `accountIdNumbersNumberIdAffiliatePublisherIdDelete()`
-
-```php
-accountIdNumbersNumberIdAffiliatePublisherIdDelete($accountId, $numberId, $publisherId, $authorization): object
-```
-
-Remove a Publisher from a Number
-
-Request to remove a publisher from a number associated with your account.   ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information)  `numberId` Find your [numberIds](#get-numbers-associated-with-your-account). The response returned from the \"GET Get Numbers Associated With Your Account\" request will contain an object for each number. Each number object will have a id which is the ID needed for this request.  `publisherID` The ID of the publisher that is currently assigned to the specified number. You can see what publisher is assigned to the number using the \"GET Get Details About a Specific Number\" request above. The response from that request will have an object called `affiliate` which will contain an `id` which is the ID of the publisher associated with the number. <br> <br>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Ringba\Api\NumbersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$accountId = 'accountId_example'; // string
-$numberId = 'numberId_example'; // string
-$publisherId = 'publisherId_example'; // string
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-
-try {
-    $result = $apiInstance->accountIdNumbersNumberIdAffiliatePublisherIdDelete($accountId, $numberId, $publisherId, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdAffiliatePublisherIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**|  |
- **numberId** | **string**|  |
- **publisherId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `accountIdNumbersNumberIdAffiliatePut()`
-
-```php
-accountIdNumbersNumberIdAffiliatePut($accountId, $numberId, $authorization, $body): object
+addaPublishertoaNumber($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest): \Ringba\Model\AddaPublishertoaNumber
 ```
 
 Add a Publisher to a Number
@@ -158,16 +38,16 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
-$numberId = 'numberId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-$body = array('key' => new \stdClass); // object
+$accountId = 'accountId_example'; // string | 
+$numberId = 'numberId_example'; // string | 
+$addaPublishertoaNumberRequest = {"affiliateId":"{{publisherId}}"}; // \Ringba\Model\AddaPublishertoaNumberRequest | 
 
 try {
-    $result = $apiInstance->accountIdNumbersNumberIdAffiliatePut($accountId, $numberId, $authorization, $body);
+    $result = $apiInstance->addaPublishertoaNumber($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdAffiliatePut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NumbersApi->addaPublishertoaNumber: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -175,14 +55,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
- **body** | **object**|  | [optional]
+ **addaPublishertoaNumberRequest** | [**\Ringba\Model\AddaPublishertoaNumberRequest**](../Model/AddaPublishertoaNumberRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Ringba\Model\AddaPublishertoaNumber**](../Model/AddaPublishertoaNumber.md)
 
 ### Authorization
 
@@ -191,196 +71,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `accountIdNumbersNumberIdDelete()`
+## `createNewNumber()`
 
 ```php
-accountIdNumbersNumberIdDelete($accountId, $numberId, $authorization): object
-```
-
-Delete a Number From Your Account
-
-Request to delete a specific number from your account.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information)  `numberId` Find your [numberIds](#get-numbers-associated-with-your-account). The response returned from the \"GET Get Numbers Associated With Your Account\" request will contain an object for each number. Each number object will have a id which is the ID needed for this request. <br> <br>  __NOTE:__ If the number you are attempting to delete is linked to other objects (publishers, campaigns, etc.) this request will fail (see the \"Delete a Number From Your Account (failed because number is linked to other objects)\" example). One way to solve this is to manually unlink the number from anything it is linked to. Another option is to use the following optional query parameter:  `?unlink=true` See the \"Delete a Number From Your Account with unlink query parameter\" example.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Ringba\Api\NumbersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$accountId = 'accountId_example'; // string
-$numberId = 'numberId_example'; // string
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-
-try {
-    $result = $apiInstance->accountIdNumbersNumberIdDelete($accountId, $numberId, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**|  |
- **numberId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `accountIdNumbersNumberIdGet()`
-
-```php
-accountIdNumbersNumberIdGet($accountId, $numberId, $authorization): object
-```
-
-Get Details About a Specific Number
-
-Get information about a single phone number associated with your account.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information)  `numberId` Find your [numberIds](#get-numbers-associated-with-your-account). The response returned from the \"GET Get Numbers Associated With Your Account\" request will contain an object for each number. Each number object will have a id which is the ID needed for this request. <br> <br>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Ringba\Api\NumbersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$accountId = 'accountId_example'; // string
-$numberId = 'numberId_example'; // string
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-
-try {
-    $result = $apiInstance->accountIdNumbersNumberIdGet($accountId, $numberId, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**|  |
- **numberId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `accountIdNumbersNumberIdInboundReferencesGet()`
-
-```php
-accountIdNumbersNumberIdInboundReferencesGet($accountId, $numberId, $authorization): object
-```
-
-Get Inbound References for a Specific Number
-
-Request to view the references to a specific number.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information)  `numberId` Find your [numberIds](#get-numbers-associated-with-your-account). The response returned from the \"GET Get Numbers Associated With Your Account\" request will contain an object for each number. Each number object will have a id which is the ID needed for this request. <br> <br>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Ringba\Api\NumbersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$accountId = 'accountId_example'; // string
-$numberId = 'numberId_example'; // string
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-
-try {
-    $result = $apiInstance->accountIdNumbersNumberIdInboundReferencesGet($accountId, $numberId, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersNumberIdInboundReferencesGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**|  |
- **numberId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `accountIdNumbersPost()`
-
-```php
-accountIdNumbersPost($accountId, $authorization, $body): object
+createNewNumber($authorization, $accountId, $createNewNumberRequest): \Ringba\Model\CreateNewNumberNotTollFree
 ```
 
 Create New Number
@@ -400,15 +100,15 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-$body = array('key' => new \stdClass); // object
+$accountId = 'accountId_example'; // string | 
+$createNewNumberRequest = {"countryCode":"US","chargeAccountIfNeeded":true,"isTollFree":true,"areaCode":"877"}; // \Ringba\Model\CreateNewNumberRequest | 
 
 try {
-    $result = $apiInstance->accountIdNumbersPost($accountId, $authorization, $body);
+    $result = $apiInstance->createNewNumber($authorization, $accountId, $createNewNumberRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NumbersApi->createNewNumber: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -416,13 +116,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
- **body** | **object**|  | [optional]
+ **createNewNumberRequest** | [**\Ringba\Model\CreateNewNumberRequest**](../Model/CreateNewNumberRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Ringba\Model\CreateNewNumberNotTollFree**](../Model/CreateNewNumberNotTollFree.md)
 
 ### Authorization
 
@@ -431,16 +131,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `accountIdNumbersReleaseNonUsedNumbersDelete()`
+## `deleteUnusedNumbersFromYourAccount()`
 
 ```php
-accountIdNumbersReleaseNonUsedNumbersDelete($accountId, $authorization): object
+deleteUnusedNumbersFromYourAccount($authorization, $accountId): \Ringba\Model\DeleteUnusedNumbersFromYourAccount
 ```
 
 Delete Unused Numbers From Your Account
@@ -460,14 +160,14 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
 
 try {
-    $result = $apiInstance->accountIdNumbersReleaseNonUsedNumbersDelete($accountId, $authorization);
+    $result = $apiInstance->deleteUnusedNumbersFromYourAccount($authorization, $accountId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersReleaseNonUsedNumbersDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NumbersApi->deleteUnusedNumbersFromYourAccount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -475,12 +175,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
-**object**
+[**\Ringba\Model\DeleteUnusedNumbersFromYourAccount**](../Model/DeleteUnusedNumbersFromYourAccount.md)
 
 ### Authorization
 
@@ -489,16 +189,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `accountIdNumbersUCLTDOMQPatch()`
+## `deleteaNumberFromYourAccount()`
 
 ```php
-accountIdNumbersUCLTDOMQPatch($accountId, $authorization, $body): object
+deleteaNumberFromYourAccount($authorization, $accountId, $numberId): \Ringba\Model\DeleteaNumberFromYourAccountwithunlinkqueryparameter
+```
+
+Delete a Number From Your Account
+
+Request to delete a specific number from your account.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information)  `numberId` Find your [numberIds](#get-numbers-associated-with-your-account). The response returned from the \"GET Get Numbers Associated With Your Account\" request will contain an object for each number. Each number object will have a id which is the ID needed for this request. <br> <br>  __NOTE:__ If the number you are attempting to delete is linked to other objects (publishers, campaigns, etc.) this request will fail (see the \"Delete a Number From Your Account (failed because number is linked to other objects)\" example). One way to solve this is to manually unlink the number from anything it is linked to. Another option is to use the following optional query parameter:  `?unlink=true` See the \"Delete a Number From Your Account with unlink query parameter\" example.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Ringba\Api\NumbersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+$numberId = 'numberId_example'; // string | 
+
+try {
+    $result = $apiInstance->deleteaNumberFromYourAccount($authorization, $accountId, $numberId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NumbersApi->deleteaNumberFromYourAccount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\DeleteaNumberFromYourAccountwithunlinkqueryparameter**](../Model/DeleteaNumberFromYourAccountwithunlinkqueryparameter.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json; charset=utf-8`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `editInformationAboutaNumber()`
+
+```php
+editInformationAboutaNumber($authorization, $accountId, $editInformationAboutaNumberRequest): \Ringba\Model\EditInformationAboutaNumber
 ```
 
 Edit Information About a Number
@@ -518,15 +278,15 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accountId = 'accountId_example'; // string
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
-$body = array('key' => new \stdClass); // object
+$accountId = 'accountId_example'; // string | 
+$editInformationAboutaNumberRequest = {"enabled":true,"name":"New Name","tags":[{"tagName":"TagName","tagValue":"TagValue"}]}; // \Ringba\Model\EditInformationAboutaNumberRequest | 
 
 try {
-    $result = $apiInstance->accountIdNumbersUCLTDOMQPatch($accountId, $authorization, $body);
+    $result = $apiInstance->editInformationAboutaNumber($authorization, $accountId, $editInformationAboutaNumberRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NumbersApi->accountIdNumbersUCLTDOMQPatch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NumbersApi->editInformationAboutaNumber: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -534,13 +294,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
- **body** | **object**|  | [optional]
+ **editInformationAboutaNumberRequest** | [**\Ringba\Model\EditInformationAboutaNumberRequest**](../Model/EditInformationAboutaNumberRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Ringba\Model\EditInformationAboutaNumber**](../Model/EditInformationAboutaNumber.md)
 
 ### Authorization
 
@@ -549,7 +309,247 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json; charset=utf-8`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getDetailsAboutaSpecificNumber()`
+
+```php
+getDetailsAboutaSpecificNumber($authorization, $accountId, $numberId): \Ringba\Model\GetDetailsAboutaSpecificNumber
+```
+
+Get Details About a Specific Number
+
+Get information about a single phone number associated with your account.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information)  `numberId` Find your [numberIds](#get-numbers-associated-with-your-account). The response returned from the \"GET Get Numbers Associated With Your Account\" request will contain an object for each number. Each number object will have a id which is the ID needed for this request. <br> <br>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Ringba\Api\NumbersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+$numberId = 'numberId_example'; // string | 
+
+try {
+    $result = $apiInstance->getDetailsAboutaSpecificNumber($authorization, $accountId, $numberId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NumbersApi->getDetailsAboutaSpecificNumber: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\GetDetailsAboutaSpecificNumber**](../Model/GetDetailsAboutaSpecificNumber.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json; charset=utf-8`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getInboundReferencesforaSpecificNumber()`
+
+```php
+getInboundReferencesforaSpecificNumber($authorization, $accountId, $numberId): \Ringba\Model\GetInboundReferencesforaSpecificNumberwithaJsTag
+```
+
+Get Inbound References for a Specific Number
+
+Request to view the references to a specific number.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information)  `numberId` Find your [numberIds](#get-numbers-associated-with-your-account). The response returned from the \"GET Get Numbers Associated With Your Account\" request will contain an object for each number. Each number object will have a id which is the ID needed for this request. <br> <br>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Ringba\Api\NumbersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+$numberId = 'numberId_example'; // string | 
+
+try {
+    $result = $apiInstance->getInboundReferencesforaSpecificNumber($authorization, $accountId, $numberId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NumbersApi->getInboundReferencesforaSpecificNumber: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\GetInboundReferencesforaSpecificNumberwithaJsTag**](../Model/GetInboundReferencesforaSpecificNumberwithaJsTag.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json; charset=utf-8`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getNumbersAssociatedwithAccount()`
+
+```php
+getNumbersAssociatedwithAccount($authorization, $accountId): \Ringba\Model\GetNumbersAssociatedwithAccount
+```
+
+Get Numbers Associated with Account
+
+Get all numbers associated with your account.  ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information) <br>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Ringba\Api\NumbersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+
+try {
+    $result = $apiInstance->getNumbersAssociatedwithAccount($authorization, $accountId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NumbersApi->getNumbersAssociatedwithAccount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
+ **accountId** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\GetNumbersAssociatedwithAccount**](../Model/GetNumbersAssociatedwithAccount.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json; charset=utf-8`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `removeaPublisherfromaNumber()`
+
+```php
+removeaPublisherfromaNumber($authorization, $accountId, $numberId, $publisherId): \Ringba\Model\RemoveaPublisherfromaNumber
+```
+
+Remove a Publisher from a Number
+
+Request to remove a publisher from a number associated with your account.   ### Path Variables <hr> <br>  `accountId` Find your [accountId](#get-your-account-information)  `numberId` Find your [numberIds](#get-numbers-associated-with-your-account). The response returned from the \"GET Get Numbers Associated With Your Account\" request will contain an object for each number. Each number object will have a id which is the ID needed for this request.  `publisherID` The ID of the publisher that is currently assigned to the specified number. You can see what publisher is assigned to the number using the \"GET Get Details About a Specific Number\" request above. The response from that request will have an object called `affiliate` which will contain an `id` which is the ID of the publisher associated with the number. <br> <br>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Ringba\Api\NumbersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
+$accountId = 'accountId_example'; // string | 
+$numberId = 'numberId_example'; // string | 
+$publisherId = 'publisherId_example'; // string | 
+
+try {
+    $result = $apiInstance->removeaPublisherfromaNumber($authorization, $accountId, $numberId, $publisherId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NumbersApi->removeaPublisherfromaNumber: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
+ **accountId** | **string**|  |
+ **numberId** | **string**|  |
+ **publisherId** | **string**|  |
+
+### Return type
+
+[**\Ringba\Model\RemoveaPublisherfromaNumber**](../Model/RemoveaPublisherfromaNumber.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json; charset=utf-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
