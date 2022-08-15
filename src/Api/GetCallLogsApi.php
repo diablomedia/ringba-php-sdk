@@ -121,7 +121,7 @@ class GetCallLogsApi
      * Get Call Log
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -143,7 +143,7 @@ class GetCallLogsApi
      * Get Call Log
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -247,7 +247,7 @@ class GetCallLogsApi
      * Get Call Log
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -272,7 +272,7 @@ class GetCallLogsApi
      * Get Call Log
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -326,7 +326,7 @@ class GetCallLogsApi
      * Create request for operation 'getCallLog'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -433,7 +433,7 @@ class GetCallLogsApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -454,7 +454,7 @@ class GetCallLogsApi
      * Get Column Names
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -475,7 +475,7 @@ class GetCallLogsApi
      * Get Column Names
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -578,7 +578,7 @@ class GetCallLogsApi
      * Get Column Names
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -602,7 +602,7 @@ class GetCallLogsApi
      * Get Column Names
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -655,7 +655,7 @@ class GetCallLogsApi
      * Create request for operation 'getColumnNames'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -749,7 +749,7 @@ class GetCallLogsApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -770,7 +770,7 @@ class GetCallLogsApi
      * Get Details About Specific Calls
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -792,7 +792,7 @@ class GetCallLogsApi
      * Get Details About Specific Calls
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -896,7 +896,7 @@ class GetCallLogsApi
      * Get Details About Specific Calls
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -921,7 +921,7 @@ class GetCallLogsApi
      * Get Details About Specific Calls
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -975,7 +975,7 @@ class GetCallLogsApi
      * Create request for operation 'getDetailsAboutSpecificCalls'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1082,7 +1082,7 @@ class GetCallLogsApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1103,7 +1103,7 @@ class GetCallLogsApi
      * Get Tags for Filtering Call Log
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1124,7 +1124,7 @@ class GetCallLogsApi
      * Get Tags for Filtering Call Log
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1227,7 +1227,7 @@ class GetCallLogsApi
      * Get Tags for Filtering Call Log
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1251,7 +1251,7 @@ class GetCallLogsApi
      * Get Tags for Filtering Call Log
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1304,7 +1304,7 @@ class GetCallLogsApi
      * Create request for operation 'getTagsforFilteringCallLog'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1398,7 +1398,7 @@ class GetCallLogsApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

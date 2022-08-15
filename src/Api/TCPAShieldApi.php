@@ -121,7 +121,7 @@ class TCPAShieldApi
      * Lookup Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  int $number Phone number with country code that you want to look up (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -143,7 +143,7 @@ class TCPAShieldApi
      * Lookup Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  int $number Phone number with country code that you want to look up (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -270,7 +270,7 @@ class TCPAShieldApi
      * Lookup Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  int $number Phone number with country code that you want to look up (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -295,7 +295,7 @@ class TCPAShieldApi
      * Lookup Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  int $number Phone number with country code that you want to look up (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -349,7 +349,7 @@ class TCPAShieldApi
      * Create request for operation 'lookupNumber'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  int $number Phone number with country code that you want to look up (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -459,7 +459,7 @@ class TCPAShieldApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -480,7 +480,7 @@ class TCPAShieldApi
      * Lookup Numbers Bulk
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -502,7 +502,7 @@ class TCPAShieldApi
      * Lookup Numbers Bulk
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -606,7 +606,7 @@ class TCPAShieldApi
      * Lookup Numbers Bulk
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -631,7 +631,7 @@ class TCPAShieldApi
      * Lookup Numbers Bulk
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -685,7 +685,7 @@ class TCPAShieldApi
      * Create request for operation 'lookupNumbersBulk'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -792,7 +792,7 @@ class TCPAShieldApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

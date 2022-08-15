@@ -1,6 +1,6 @@
 # Ringba\AccountInformationApi
 
-All URIs are relative to http://api.ringba.com/v2.
+All URIs are relative to https://api.ringba.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

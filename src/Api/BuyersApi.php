@@ -121,7 +121,7 @@ class BuyersApi
      * Get Buyers
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -142,7 +142,7 @@ class BuyersApi
      * Get Buyers
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -245,7 +245,7 @@ class BuyersApi
      * Get Buyers
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -269,7 +269,7 @@ class BuyersApi
      * Get Buyers
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -322,7 +322,7 @@ class BuyersApi
      * Create request for operation 'getBuyers'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -416,7 +416,7 @@ class BuyersApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

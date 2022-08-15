@@ -121,7 +121,7 @@ class IVRTreesApi
      * Add IVR Tree to a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -144,7 +144,7 @@ class IVRTreesApi
      * Add IVR Tree to a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -249,7 +249,7 @@ class IVRTreesApi
      * Add IVR Tree to a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -275,7 +275,7 @@ class IVRTreesApi
      * Add IVR Tree to a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -330,7 +330,7 @@ class IVRTreesApi
      * Create request for operation 'addIVRTreetoaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -452,7 +452,7 @@ class IVRTreesApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -473,7 +473,7 @@ class IVRTreesApi
      * Get IVR Trees Associated with Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -493,7 +493,7 @@ class IVRTreesApi
      * Get IVR Trees Associated with Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -556,7 +556,7 @@ class IVRTreesApi
      * Get IVR Trees Associated with Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -580,7 +580,7 @@ class IVRTreesApi
      * Get IVR Trees Associated with Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -620,7 +620,7 @@ class IVRTreesApi
      * Create request for operation 'getIVRTreesAssociatedwithAccount'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -714,7 +714,7 @@ class IVRTreesApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -735,7 +735,7 @@ class IVRTreesApi
      * Remove IVR Tree from a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -757,7 +757,7 @@ class IVRTreesApi
      * Remove IVR Tree from a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -861,7 +861,7 @@ class IVRTreesApi
      * Remove IVR Tree from a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -886,7 +886,7 @@ class IVRTreesApi
      * Remove IVR Tree from a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -940,7 +940,7 @@ class IVRTreesApi
      * Create request for operation 'removeIVRTreefromaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1049,7 +1049,7 @@ class IVRTreesApi
             $headers
         );
 
-        $operationHosts = ["http://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
