@@ -121,7 +121,7 @@ class APITokensApi
      * Create Api Token
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  \Ringba\Model\CreateApiTokenRequest $createApiTokenRequest  (required)
      *
@@ -140,7 +140,7 @@ class APITokensApi
      * Create Api Token
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  \Ringba\Model\CreateApiTokenRequest $createApiTokenRequest  (required)
      *
@@ -202,7 +202,7 @@ class APITokensApi
      * Create Api Token
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  \Ringba\Model\CreateApiTokenRequest $createApiTokenRequest  (required)
      *
@@ -225,7 +225,7 @@ class APITokensApi
      * Create Api Token
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  \Ringba\Model\CreateApiTokenRequest $createApiTokenRequest  (required)
      *
@@ -264,7 +264,7 @@ class APITokensApi
      * Create request for operation 'createApiToken'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  \Ringba\Model\CreateApiTokenRequest $createApiTokenRequest  (required)
      *
@@ -349,7 +349,7 @@ class APITokensApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -370,7 +370,7 @@ class APITokensApi
      * Delete Api Token
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $apiTokenId  (required)
      *
@@ -390,7 +390,7 @@ class APITokensApi
      * Delete Api Token
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $apiTokenId  (required)
      *
@@ -492,7 +492,7 @@ class APITokensApi
      * Delete Api Token
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $apiTokenId  (required)
      *
@@ -515,7 +515,7 @@ class APITokensApi
      * Delete Api Token
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $apiTokenId  (required)
      *
@@ -567,7 +567,7 @@ class APITokensApi
      * Create request for operation 'deleteApiToken'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $apiTokenId  (required)
      *
@@ -654,7 +654,7 @@ class APITokensApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -675,7 +675,7 @@ class APITokensApi
      * Get API Tokens
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      *
      * @throws \Ringba\ApiException on non-2xx response
@@ -694,7 +694,7 @@ class APITokensApi
      * Get API Tokens
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      *
      * @throws \Ringba\ApiException on non-2xx response
@@ -795,7 +795,7 @@ class APITokensApi
      * Get API Tokens
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      *
      * @throws \InvalidArgumentException
@@ -817,7 +817,7 @@ class APITokensApi
      * Get API Tokens
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      *
      * @throws \InvalidArgumentException
@@ -868,7 +868,7 @@ class APITokensApi
      * Create request for operation 'getAPITokens'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      *
      * @throws \InvalidArgumentException
@@ -940,7 +940,7 @@ class APITokensApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

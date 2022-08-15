@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "http://example.com",
+      "url": "http://api.ringba.com/v2/",
       "variables": {}
     },
     {
@@ -200,7 +200,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -391,7 +391,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -428,7 +428,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -585,7 +585,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -763,7 +763,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -949,7 +949,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -1153,7 +1153,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -1347,7 +1347,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -1560,7 +1560,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -1737,7 +1737,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -2050,7 +2050,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -2244,7 +2244,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -2439,7 +2439,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -2675,7 +2675,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -2866,7 +2866,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -3057,7 +3057,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -3248,7 +3248,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -3438,7 +3438,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -3625,7 +3625,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -3812,7 +3812,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -5259,7 +5259,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -5440,7 +5440,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -5783,7 +5783,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -6347,7 +6347,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -6761,7 +6761,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -6940,7 +6940,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -7832,7 +7832,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -8077,7 +8077,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -8268,7 +8268,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -8443,7 +8443,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -8748,7 +8748,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -8925,7 +8925,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -9119,7 +9119,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -9457,7 +9457,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -10012,7 +10012,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -10521,7 +10521,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -11056,7 +11056,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -11552,7 +11552,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -12034,7 +12034,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -12252,7 +12252,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -12462,7 +12462,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -12655,7 +12655,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -12875,7 +12875,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -13419,7 +13419,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -13935,7 +13935,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -14160,7 +14160,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -14340,7 +14340,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -14546,7 +14546,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -14723,7 +14723,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -14924,7 +14924,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -15209,7 +15209,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -15394,7 +15394,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -15573,7 +15573,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -15860,7 +15860,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -16147,7 +16147,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -16341,7 +16341,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -16635,7 +16635,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -16819,7 +16819,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -17038,7 +17038,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -17225,7 +17225,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -17292,7 +17292,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -17506,7 +17506,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -17831,7 +17831,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -18060,7 +18060,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -18257,7 +18257,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -18581,7 +18581,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -18832,7 +18832,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -19087,7 +19087,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -19264,7 +19264,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -19331,7 +19331,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -19775,7 +19775,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -19970,7 +19970,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -20017,7 +20017,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -20206,7 +20206,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -20605,7 +20605,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -20808,7 +20808,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -21005,7 +21005,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -21189,7 +21189,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -21381,7 +21381,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -21587,7 +21587,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -21788,7 +21788,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -22106,7 +22106,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -22337,7 +22337,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -22556,7 +22556,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -22751,7 +22751,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -22959,7 +22959,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -23162,7 +23162,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -23349,7 +23349,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -23514,7 +23514,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -23837,7 +23837,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -24061,7 +24061,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -24453,7 +24453,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -24637,7 +24637,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -24870,7 +24870,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -25111,7 +25111,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -25677,7 +25677,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -25897,7 +25897,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -26083,7 +26083,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -26288,7 +26288,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -26483,7 +26483,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -26699,7 +26699,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -27005,7 +27005,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -27278,7 +27278,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -27469,7 +27469,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -27672,7 +27672,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -27867,7 +27867,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -28070,7 +28070,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -28257,7 +28257,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -28436,7 +28436,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -28646,7 +28646,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -28825,7 +28825,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -29681,7 +29681,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -29874,7 +29874,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -30068,7 +30068,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -30276,7 +30276,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -30484,7 +30484,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -30707,7 +30707,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -30896,7 +30896,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -31101,7 +31101,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -31307,7 +31307,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -31502,7 +31502,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -31692,7 +31692,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -31897,7 +31897,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -32074,7 +32074,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -32794,7 +32794,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -32996,7 +32996,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -33215,7 +33215,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -33455,7 +33455,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -33686,7 +33686,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -33863,7 +33863,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -34054,7 +34054,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -34248,7 +34248,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -34489,7 +34489,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -34731,7 +34731,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -34929,7 +34929,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -35146,7 +35146,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -35440,7 +35440,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -35679,7 +35679,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -36016,7 +36016,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -36298,7 +36298,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -36485,7 +36485,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -36765,7 +36765,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -36986,7 +36986,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -37184,7 +37184,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -37415,7 +37415,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -37723,7 +37723,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -37920,7 +37920,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -38121,7 +38121,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -38361,7 +38361,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -38644,7 +38644,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -38863,7 +38863,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -39018,7 +39018,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -39234,7 +39234,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -39435,7 +39435,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -39612,7 +39612,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]
@@ -39821,7 +39821,7 @@
         "security": [],
         "servers": [
           {
-            "url": "http://example.com",
+            "url": "http://http://api.ringba.com/v2/",
             "variables": {}
           }
         ]

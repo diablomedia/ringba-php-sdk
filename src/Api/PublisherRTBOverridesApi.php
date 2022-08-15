@@ -121,7 +121,7 @@ class PublisherRTBOverridesApi
      * Get RTB Settings for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -143,7 +143,7 @@ class PublisherRTBOverridesApi
      * Get RTB Settings for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -208,7 +208,7 @@ class PublisherRTBOverridesApi
      * Get RTB Settings for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -234,7 +234,7 @@ class PublisherRTBOverridesApi
      * Get RTB Settings for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -276,7 +276,7 @@ class PublisherRTBOverridesApi
      * Create request for operation 'getRTBSettingsforaPublisher'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -400,7 +400,7 @@ class PublisherRTBOverridesApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -421,7 +421,7 @@ class PublisherRTBOverridesApi
      * Get RTB URLs for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -444,7 +444,7 @@ class PublisherRTBOverridesApi
      * Get RTB URLs for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -549,7 +549,7 @@ class PublisherRTBOverridesApi
      * Get RTB URLs for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -575,7 +575,7 @@ class PublisherRTBOverridesApi
      * Get RTB URLs for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -630,7 +630,7 @@ class PublisherRTBOverridesApi
      * Create request for operation 'getRTBURLsforaPublisher'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -754,7 +754,7 @@ class PublisherRTBOverridesApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -775,7 +775,7 @@ class PublisherRTBOverridesApi
      * Override RTB Settings for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -799,7 +799,7 @@ class PublisherRTBOverridesApi
      * Override RTB Settings for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -905,7 +905,7 @@ class PublisherRTBOverridesApi
      * Override RTB Settings for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -932,7 +932,7 @@ class PublisherRTBOverridesApi
      * Override RTB Settings for a Publisher
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -988,7 +988,7 @@ class PublisherRTBOverridesApi
      * Create request for operation 'overrideRTBSettingsforaPublisher'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1125,7 +1125,7 @@ class PublisherRTBOverridesApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

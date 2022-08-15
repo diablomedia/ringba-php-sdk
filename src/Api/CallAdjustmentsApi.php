@@ -121,7 +121,7 @@ class CallAdjustmentsApi
      * Add Annotation to a Call
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -143,7 +143,7 @@ class CallAdjustmentsApi
      * Add Annotation to a Call
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -247,7 +247,7 @@ class CallAdjustmentsApi
      * Add Annotation to a Call
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -272,7 +272,7 @@ class CallAdjustmentsApi
      * Add Annotation to a Call
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -326,7 +326,7 @@ class CallAdjustmentsApi
      * Create request for operation 'addAnnotationtoaCall'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -433,7 +433,7 @@ class CallAdjustmentsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -454,7 +454,7 @@ class CallAdjustmentsApi
      * Adjust Revenue and/or Payment for a Call (with absolute adjustments)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -476,7 +476,7 @@ class CallAdjustmentsApi
      * Adjust Revenue and/or Payment for a Call (with absolute adjustments)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -580,7 +580,7 @@ class CallAdjustmentsApi
      * Adjust Revenue and/or Payment for a Call (with absolute adjustments)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -605,7 +605,7 @@ class CallAdjustmentsApi
      * Adjust Revenue and/or Payment for a Call (with absolute adjustments)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -659,7 +659,7 @@ class CallAdjustmentsApi
      * Create request for operation 'adjustRevenueandOrPaymentforaCallWithabsoluteadjustments'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -766,7 +766,7 @@ class CallAdjustmentsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -787,7 +787,7 @@ class CallAdjustmentsApi
      * Adjust Revenue and/or Payment for a Call (with relative adjustments)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -809,7 +809,7 @@ class CallAdjustmentsApi
      * Adjust Revenue and/or Payment for a Call (with relative adjustments)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -913,7 +913,7 @@ class CallAdjustmentsApi
      * Adjust Revenue and/or Payment for a Call (with relative adjustments)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -938,7 +938,7 @@ class CallAdjustmentsApi
      * Adjust Revenue and/or Payment for a Call (with relative adjustments)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -992,7 +992,7 @@ class CallAdjustmentsApi
      * Create request for operation 'adjustRevenueandOrPaymentforaCallWithrelativeadjustments'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1099,7 +1099,7 @@ class CallAdjustmentsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1120,7 +1120,7 @@ class CallAdjustmentsApi
      * BUYER Request for Payout Adjustment (with absolute adjustment)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1142,7 +1142,7 @@ class CallAdjustmentsApi
      * BUYER Request for Payout Adjustment (with absolute adjustment)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1246,7 +1246,7 @@ class CallAdjustmentsApi
      * BUYER Request for Payout Adjustment (with absolute adjustment)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1271,7 +1271,7 @@ class CallAdjustmentsApi
      * BUYER Request for Payout Adjustment (with absolute adjustment)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1325,7 +1325,7 @@ class CallAdjustmentsApi
      * Create request for operation 'bUYERRequestforPayoutAdjustmentWithabsoluteadjustment'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1432,7 +1432,7 @@ class CallAdjustmentsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1453,7 +1453,7 @@ class CallAdjustmentsApi
      * BUYER Request for Payout Adjustment (with relative adjustment)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1475,7 +1475,7 @@ class CallAdjustmentsApi
      * BUYER Request for Payout Adjustment (with relative adjustment)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1579,7 +1579,7 @@ class CallAdjustmentsApi
      * BUYER Request for Payout Adjustment (with relative adjustment)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1604,7 +1604,7 @@ class CallAdjustmentsApi
      * BUYER Request for Payout Adjustment (with relative adjustment)
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1658,7 +1658,7 @@ class CallAdjustmentsApi
      * Create request for operation 'bUYERRequestforPayoutAdjustmentWithrelativeadjustment'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
@@ -1765,7 +1765,7 @@ class CallAdjustmentsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1786,7 +1786,7 @@ class CallAdjustmentsApi
      * Void Revenue and/or Payment for a Call
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1808,7 +1808,7 @@ class CallAdjustmentsApi
      * Void Revenue and/or Payment for a Call
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1912,7 +1912,7 @@ class CallAdjustmentsApi
      * Void Revenue and/or Payment for a Call
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1937,7 +1937,7 @@ class CallAdjustmentsApi
      * Void Revenue and/or Payment for a Call
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1991,7 +1991,7 @@ class CallAdjustmentsApi
      * Create request for operation 'voidRevenueandOrPaymentforaCall'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2098,7 +2098,7 @@ class CallAdjustmentsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

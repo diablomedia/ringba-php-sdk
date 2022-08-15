@@ -1,6 +1,6 @@
 # Ringba\CampaignRTBSettingsApi
 
-All URIs are relative to http://example.com.
+All URIs are relative to http://api.ringba.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -121,7 +121,7 @@ class CampaignRTBSettingsApi
      * Disable RTB for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -143,7 +143,7 @@ class CampaignRTBSettingsApi
      * Disable RTB for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -247,7 +247,7 @@ class CampaignRTBSettingsApi
      * Disable RTB for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -272,7 +272,7 @@ class CampaignRTBSettingsApi
      * Disable RTB for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -326,7 +326,7 @@ class CampaignRTBSettingsApi
      * Create request for operation 'disableRTBforaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -435,7 +435,7 @@ class CampaignRTBSettingsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -456,7 +456,7 @@ class CampaignRTBSettingsApi
      * Edit RTB Settings for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -479,7 +479,7 @@ class CampaignRTBSettingsApi
      * Edit RTB Settings for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -584,7 +584,7 @@ class CampaignRTBSettingsApi
      * Edit RTB Settings for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -610,7 +610,7 @@ class CampaignRTBSettingsApi
      * Edit RTB Settings for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -665,7 +665,7 @@ class CampaignRTBSettingsApi
      * Create request for operation 'editRTBSettingsforaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -787,7 +787,7 @@ class CampaignRTBSettingsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -808,7 +808,7 @@ class CampaignRTBSettingsApi
      * Enable RTB for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -831,7 +831,7 @@ class CampaignRTBSettingsApi
      * Enable RTB for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -936,7 +936,7 @@ class CampaignRTBSettingsApi
      * Enable RTB for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -962,7 +962,7 @@ class CampaignRTBSettingsApi
      * Enable RTB for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1017,7 +1017,7 @@ class CampaignRTBSettingsApi
      * Create request for operation 'enableRTBforaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1139,7 +1139,7 @@ class CampaignRTBSettingsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1160,7 +1160,7 @@ class CampaignRTBSettingsApi
      * Get RTB for Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1182,7 +1182,7 @@ class CampaignRTBSettingsApi
      * Get RTB for Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1309,7 +1309,7 @@ class CampaignRTBSettingsApi
      * Get RTB for Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1334,7 +1334,7 @@ class CampaignRTBSettingsApi
      * Get RTB for Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1388,7 +1388,7 @@ class CampaignRTBSettingsApi
      * Create request for operation 'getRTBforCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://example.com
+     * URL: http://http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1497,7 +1497,7 @@ class CampaignRTBSettingsApi
             $headers
         );
 
-        $operationHosts = ["http://example.com"];
+        $operationHosts = ["http://http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

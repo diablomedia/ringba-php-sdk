@@ -73,7 +73,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://example.com*
+All URIs are relative to *http://api.ringba.com/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
