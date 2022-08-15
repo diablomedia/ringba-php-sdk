@@ -123,18 +123,18 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\AddaPublishertoaNumberRequest $addaPublishertoaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AddaPublishertoaNumber
      */
-    public function addaPublishertoaNumber($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest)
+    public function addaPublishertoaNumber($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization = null)
     {
-        list($response) = $this->addaPublishertoaNumberWithHttpInfo($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest);
+        list($response) = $this->addaPublishertoaNumberWithHttpInfo($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization);
         return $response;
     }
 
@@ -146,18 +146,18 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\AddaPublishertoaNumberRequest $addaPublishertoaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AddaPublishertoaNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addaPublishertoaNumberWithHttpInfo($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest)
+    public function addaPublishertoaNumberWithHttpInfo($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization = null)
     {
-        $request = $this->addaPublishertoaNumberRequest($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest);
+        $request = $this->addaPublishertoaNumberRequest($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -251,17 +251,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\AddaPublishertoaNumberRequest $addaPublishertoaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addaPublishertoaNumberAsync($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest)
+    public function addaPublishertoaNumberAsync($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization = null)
     {
-        return $this->addaPublishertoaNumberAsyncWithHttpInfo($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest)
+        return $this->addaPublishertoaNumberAsyncWithHttpInfo($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,18 +277,18 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\AddaPublishertoaNumberRequest $addaPublishertoaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addaPublishertoaNumberAsyncWithHttpInfo($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest)
+    public function addaPublishertoaNumberAsyncWithHttpInfo($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AddaPublishertoaNumber';
-        $request = $this->addaPublishertoaNumberRequest($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest);
+        $request = $this->addaPublishertoaNumberRequest($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,22 +332,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\AddaPublishertoaNumberRequest $addaPublishertoaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addaPublishertoaNumberRequest($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest)
+    public function addaPublishertoaNumberRequest($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling addaPublishertoaNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -475,17 +469,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewNumberRequest $createNewNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateNewNumberNotTollFree|\Ringba\Model\CreateNewNumberfailedduetolackofinventory1
      */
-    public function createNewNumber($authorization, $accountId, $createNewNumberRequest)
+    public function createNewNumber($accountId, $createNewNumberRequest, $authorization = null)
     {
-        list($response) = $this->createNewNumberWithHttpInfo($authorization, $accountId, $createNewNumberRequest);
+        list($response) = $this->createNewNumberWithHttpInfo($accountId, $createNewNumberRequest, $authorization);
         return $response;
     }
 
@@ -497,17 +491,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewNumberRequest $createNewNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateNewNumberNotTollFree|\Ringba\Model\CreateNewNumberfailedduetolackofinventory1, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createNewNumberWithHttpInfo($authorization, $accountId, $createNewNumberRequest)
+    public function createNewNumberWithHttpInfo($accountId, $createNewNumberRequest, $authorization = null)
     {
-        $request = $this->createNewNumberRequest($authorization, $accountId, $createNewNumberRequest);
+        $request = $this->createNewNumberRequest($accountId, $createNewNumberRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -624,16 +618,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewNumberRequest $createNewNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewNumberAsync($authorization, $accountId, $createNewNumberRequest)
+    public function createNewNumberAsync($accountId, $createNewNumberRequest, $authorization = null)
     {
-        return $this->createNewNumberAsyncWithHttpInfo($authorization, $accountId, $createNewNumberRequest)
+        return $this->createNewNumberAsyncWithHttpInfo($accountId, $createNewNumberRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -649,17 +643,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewNumberRequest $createNewNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewNumberAsyncWithHttpInfo($authorization, $accountId, $createNewNumberRequest)
+    public function createNewNumberAsyncWithHttpInfo($accountId, $createNewNumberRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateNewNumberNotTollFree';
-        $request = $this->createNewNumberRequest($authorization, $accountId, $createNewNumberRequest);
+        $request = $this->createNewNumberRequest($accountId, $createNewNumberRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -703,21 +697,15 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewNumberRequest $createNewNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createNewNumberRequest($authorization, $accountId, $createNewNumberRequest)
+    public function createNewNumberRequest($accountId, $createNewNumberRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createNewNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -831,16 +819,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeleteUnusedNumbersFromYourAccount
      */
-    public function deleteUnusedNumbersFromYourAccount($authorization, $accountId)
+    public function deleteUnusedNumbersFromYourAccount($accountId, $authorization = null)
     {
-        list($response) = $this->deleteUnusedNumbersFromYourAccountWithHttpInfo($authorization, $accountId);
+        list($response) = $this->deleteUnusedNumbersFromYourAccountWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -852,16 +840,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeleteUnusedNumbersFromYourAccount, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUnusedNumbersFromYourAccountWithHttpInfo($authorization, $accountId)
+    public function deleteUnusedNumbersFromYourAccountWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->deleteUnusedNumbersFromYourAccountRequest($authorization, $accountId);
+        $request = $this->deleteUnusedNumbersFromYourAccountRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -955,15 +943,15 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUnusedNumbersFromYourAccountAsync($authorization, $accountId)
+    public function deleteUnusedNumbersFromYourAccountAsync($accountId, $authorization = null)
     {
-        return $this->deleteUnusedNumbersFromYourAccountAsyncWithHttpInfo($authorization, $accountId)
+        return $this->deleteUnusedNumbersFromYourAccountAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -979,16 +967,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUnusedNumbersFromYourAccountAsyncWithHttpInfo($authorization, $accountId)
+    public function deleteUnusedNumbersFromYourAccountAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeleteUnusedNumbersFromYourAccount';
-        $request = $this->deleteUnusedNumbersFromYourAccountRequest($authorization, $accountId);
+        $request = $this->deleteUnusedNumbersFromYourAccountRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1032,20 +1020,14 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteUnusedNumbersFromYourAccountRequest($authorization, $accountId)
+    public function deleteUnusedNumbersFromYourAccountRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deleteUnusedNumbersFromYourAccount'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1147,17 +1129,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeleteaNumberFromYourAccountfailedrequestTryingtodeleteanumberthatwasalreadydeleted1|\Ringba\Model\DeleteaNumberFromYourAccountwithunlinkqueryparameter|\Ringba\Model\DeleteaNumberFromYourAccountfailedbecausenumberislinkedtootherobjects1
      */
-    public function deleteaNumberFromYourAccount($authorization, $accountId, $numberId)
+    public function deleteaNumberFromYourAccount($accountId, $numberId, $authorization = null)
     {
-        list($response) = $this->deleteaNumberFromYourAccountWithHttpInfo($authorization, $accountId, $numberId);
+        list($response) = $this->deleteaNumberFromYourAccountWithHttpInfo($accountId, $numberId, $authorization);
         return $response;
     }
 
@@ -1169,17 +1151,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeleteaNumberFromYourAccountfailedrequestTryingtodeleteanumberthatwasalreadydeleted1|\Ringba\Model\DeleteaNumberFromYourAccountwithunlinkqueryparameter|\Ringba\Model\DeleteaNumberFromYourAccountfailedbecausenumberislinkedtootherobjects1, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteaNumberFromYourAccountWithHttpInfo($authorization, $accountId, $numberId)
+    public function deleteaNumberFromYourAccountWithHttpInfo($accountId, $numberId, $authorization = null)
     {
-        $request = $this->deleteaNumberFromYourAccountRequest($authorization, $accountId, $numberId);
+        $request = $this->deleteaNumberFromYourAccountRequest($accountId, $numberId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1319,16 +1301,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteaNumberFromYourAccountAsync($authorization, $accountId, $numberId)
+    public function deleteaNumberFromYourAccountAsync($accountId, $numberId, $authorization = null)
     {
-        return $this->deleteaNumberFromYourAccountAsyncWithHttpInfo($authorization, $accountId, $numberId)
+        return $this->deleteaNumberFromYourAccountAsyncWithHttpInfo($accountId, $numberId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1344,17 +1326,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteaNumberFromYourAccountAsyncWithHttpInfo($authorization, $accountId, $numberId)
+    public function deleteaNumberFromYourAccountAsyncWithHttpInfo($accountId, $numberId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeleteaNumberFromYourAccountwithunlinkqueryparameter';
-        $request = $this->deleteaNumberFromYourAccountRequest($authorization, $accountId, $numberId);
+        $request = $this->deleteaNumberFromYourAccountRequest($accountId, $numberId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1398,21 +1380,15 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteaNumberFromYourAccountRequest($authorization, $accountId, $numberId)
+    public function deleteaNumberFromYourAccountRequest($accountId, $numberId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deleteaNumberFromYourAccount'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1528,17 +1504,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\EditInformationAboutaNumberRequest $editInformationAboutaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\EditInformationAboutaNumber
      */
-    public function editInformationAboutaNumber($authorization, $accountId, $editInformationAboutaNumberRequest)
+    public function editInformationAboutaNumber($accountId, $editInformationAboutaNumberRequest, $authorization = null)
     {
-        list($response) = $this->editInformationAboutaNumberWithHttpInfo($authorization, $accountId, $editInformationAboutaNumberRequest);
+        list($response) = $this->editInformationAboutaNumberWithHttpInfo($accountId, $editInformationAboutaNumberRequest, $authorization);
         return $response;
     }
 
@@ -1550,17 +1526,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\EditInformationAboutaNumberRequest $editInformationAboutaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\EditInformationAboutaNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editInformationAboutaNumberWithHttpInfo($authorization, $accountId, $editInformationAboutaNumberRequest)
+    public function editInformationAboutaNumberWithHttpInfo($accountId, $editInformationAboutaNumberRequest, $authorization = null)
     {
-        $request = $this->editInformationAboutaNumberRequest($authorization, $accountId, $editInformationAboutaNumberRequest);
+        $request = $this->editInformationAboutaNumberRequest($accountId, $editInformationAboutaNumberRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1654,16 +1630,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\EditInformationAboutaNumberRequest $editInformationAboutaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editInformationAboutaNumberAsync($authorization, $accountId, $editInformationAboutaNumberRequest)
+    public function editInformationAboutaNumberAsync($accountId, $editInformationAboutaNumberRequest, $authorization = null)
     {
-        return $this->editInformationAboutaNumberAsyncWithHttpInfo($authorization, $accountId, $editInformationAboutaNumberRequest)
+        return $this->editInformationAboutaNumberAsyncWithHttpInfo($accountId, $editInformationAboutaNumberRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1679,17 +1655,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\EditInformationAboutaNumberRequest $editInformationAboutaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editInformationAboutaNumberAsyncWithHttpInfo($authorization, $accountId, $editInformationAboutaNumberRequest)
+    public function editInformationAboutaNumberAsyncWithHttpInfo($accountId, $editInformationAboutaNumberRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\EditInformationAboutaNumber';
-        $request = $this->editInformationAboutaNumberRequest($authorization, $accountId, $editInformationAboutaNumberRequest);
+        $request = $this->editInformationAboutaNumberRequest($accountId, $editInformationAboutaNumberRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1733,21 +1709,15 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\EditInformationAboutaNumberRequest $editInformationAboutaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function editInformationAboutaNumberRequest($authorization, $accountId, $editInformationAboutaNumberRequest)
+    public function editInformationAboutaNumberRequest($accountId, $editInformationAboutaNumberRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling editInformationAboutaNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1861,17 +1831,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDetailsAboutaSpecificNumber
      */
-    public function getDetailsAboutaSpecificNumber($authorization, $accountId, $numberId)
+    public function getDetailsAboutaSpecificNumber($accountId, $numberId, $authorization = null)
     {
-        list($response) = $this->getDetailsAboutaSpecificNumberWithHttpInfo($authorization, $accountId, $numberId);
+        list($response) = $this->getDetailsAboutaSpecificNumberWithHttpInfo($accountId, $numberId, $authorization);
         return $response;
     }
 
@@ -1883,17 +1853,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDetailsAboutaSpecificNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDetailsAboutaSpecificNumberWithHttpInfo($authorization, $accountId, $numberId)
+    public function getDetailsAboutaSpecificNumberWithHttpInfo($accountId, $numberId, $authorization = null)
     {
-        $request = $this->getDetailsAboutaSpecificNumberRequest($authorization, $accountId, $numberId);
+        $request = $this->getDetailsAboutaSpecificNumberRequest($accountId, $numberId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1987,16 +1957,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutaSpecificNumberAsync($authorization, $accountId, $numberId)
+    public function getDetailsAboutaSpecificNumberAsync($accountId, $numberId, $authorization = null)
     {
-        return $this->getDetailsAboutaSpecificNumberAsyncWithHttpInfo($authorization, $accountId, $numberId)
+        return $this->getDetailsAboutaSpecificNumberAsyncWithHttpInfo($accountId, $numberId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2012,17 +1982,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutaSpecificNumberAsyncWithHttpInfo($authorization, $accountId, $numberId)
+    public function getDetailsAboutaSpecificNumberAsyncWithHttpInfo($accountId, $numberId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDetailsAboutaSpecificNumber';
-        $request = $this->getDetailsAboutaSpecificNumberRequest($authorization, $accountId, $numberId);
+        $request = $this->getDetailsAboutaSpecificNumberRequest($accountId, $numberId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2066,21 +2036,15 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDetailsAboutaSpecificNumberRequest($authorization, $accountId, $numberId)
+    public function getDetailsAboutaSpecificNumberRequest($accountId, $numberId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDetailsAboutaSpecificNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2196,17 +2160,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetInboundReferencesforaSpecificNumberwithaJsTag
      */
-    public function getInboundReferencesforaSpecificNumber($authorization, $accountId, $numberId)
+    public function getInboundReferencesforaSpecificNumber($accountId, $numberId, $authorization = null)
     {
-        list($response) = $this->getInboundReferencesforaSpecificNumberWithHttpInfo($authorization, $accountId, $numberId);
+        list($response) = $this->getInboundReferencesforaSpecificNumberWithHttpInfo($accountId, $numberId, $authorization);
         return $response;
     }
 
@@ -2218,17 +2182,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetInboundReferencesforaSpecificNumberwithaJsTag, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInboundReferencesforaSpecificNumberWithHttpInfo($authorization, $accountId, $numberId)
+    public function getInboundReferencesforaSpecificNumberWithHttpInfo($accountId, $numberId, $authorization = null)
     {
-        $request = $this->getInboundReferencesforaSpecificNumberRequest($authorization, $accountId, $numberId);
+        $request = $this->getInboundReferencesforaSpecificNumberRequest($accountId, $numberId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2322,16 +2286,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInboundReferencesforaSpecificNumberAsync($authorization, $accountId, $numberId)
+    public function getInboundReferencesforaSpecificNumberAsync($accountId, $numberId, $authorization = null)
     {
-        return $this->getInboundReferencesforaSpecificNumberAsyncWithHttpInfo($authorization, $accountId, $numberId)
+        return $this->getInboundReferencesforaSpecificNumberAsyncWithHttpInfo($accountId, $numberId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2347,17 +2311,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInboundReferencesforaSpecificNumberAsyncWithHttpInfo($authorization, $accountId, $numberId)
+    public function getInboundReferencesforaSpecificNumberAsyncWithHttpInfo($accountId, $numberId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetInboundReferencesforaSpecificNumberwithaJsTag';
-        $request = $this->getInboundReferencesforaSpecificNumberRequest($authorization, $accountId, $numberId);
+        $request = $this->getInboundReferencesforaSpecificNumberRequest($accountId, $numberId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2401,21 +2365,15 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getInboundReferencesforaSpecificNumberRequest($authorization, $accountId, $numberId)
+    public function getInboundReferencesforaSpecificNumberRequest($accountId, $numberId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getInboundReferencesforaSpecificNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2531,16 +2489,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetNumbersAssociatedwithAccount
      */
-    public function getNumbersAssociatedwithAccount($authorization, $accountId)
+    public function getNumbersAssociatedwithAccount($accountId, $authorization = null)
     {
-        list($response) = $this->getNumbersAssociatedwithAccountWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getNumbersAssociatedwithAccountWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -2552,16 +2510,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetNumbersAssociatedwithAccount, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getNumbersAssociatedwithAccountWithHttpInfo($authorization, $accountId)
+    public function getNumbersAssociatedwithAccountWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getNumbersAssociatedwithAccountRequest($authorization, $accountId);
+        $request = $this->getNumbersAssociatedwithAccountRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2655,15 +2613,15 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getNumbersAssociatedwithAccountAsync($authorization, $accountId)
+    public function getNumbersAssociatedwithAccountAsync($accountId, $authorization = null)
     {
-        return $this->getNumbersAssociatedwithAccountAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getNumbersAssociatedwithAccountAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2679,16 +2637,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getNumbersAssociatedwithAccountAsyncWithHttpInfo($authorization, $accountId)
+    public function getNumbersAssociatedwithAccountAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetNumbersAssociatedwithAccount';
-        $request = $this->getNumbersAssociatedwithAccountRequest($authorization, $accountId);
+        $request = $this->getNumbersAssociatedwithAccountRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2732,20 +2690,14 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getNumbersAssociatedwithAccountRequest($authorization, $accountId)
+    public function getNumbersAssociatedwithAccountRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getNumbersAssociatedwithAccount'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2847,18 +2799,18 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\RemoveaPublisherfromaNumber
      */
-    public function removeaPublisherfromaNumber($authorization, $accountId, $numberId, $publisherId)
+    public function removeaPublisherfromaNumber($accountId, $numberId, $publisherId, $authorization = null)
     {
-        list($response) = $this->removeaPublisherfromaNumberWithHttpInfo($authorization, $accountId, $numberId, $publisherId);
+        list($response) = $this->removeaPublisherfromaNumberWithHttpInfo($accountId, $numberId, $publisherId, $authorization);
         return $response;
     }
 
@@ -2870,18 +2822,18 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\RemoveaPublisherfromaNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeaPublisherfromaNumberWithHttpInfo($authorization, $accountId, $numberId, $publisherId)
+    public function removeaPublisherfromaNumberWithHttpInfo($accountId, $numberId, $publisherId, $authorization = null)
     {
-        $request = $this->removeaPublisherfromaNumberRequest($authorization, $accountId, $numberId, $publisherId);
+        $request = $this->removeaPublisherfromaNumberRequest($accountId, $numberId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2975,17 +2927,17 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeaPublisherfromaNumberAsync($authorization, $accountId, $numberId, $publisherId)
+    public function removeaPublisherfromaNumberAsync($accountId, $numberId, $publisherId, $authorization = null)
     {
-        return $this->removeaPublisherfromaNumberAsyncWithHttpInfo($authorization, $accountId, $numberId, $publisherId)
+        return $this->removeaPublisherfromaNumberAsyncWithHttpInfo($accountId, $numberId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3001,18 +2953,18 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeaPublisherfromaNumberAsyncWithHttpInfo($authorization, $accountId, $numberId, $publisherId)
+    public function removeaPublisherfromaNumberAsyncWithHttpInfo($accountId, $numberId, $publisherId, $authorization = null)
     {
         $returnType = '\Ringba\Model\RemoveaPublisherfromaNumber';
-        $request = $this->removeaPublisherfromaNumberRequest($authorization, $accountId, $numberId, $publisherId);
+        $request = $this->removeaPublisherfromaNumberRequest($accountId, $numberId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3056,22 +3008,16 @@ class NumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $numberId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function removeaPublisherfromaNumberRequest($authorization, $accountId, $numberId, $publisherId)
+    public function removeaPublisherfromaNumberRequest($accountId, $numberId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling removeaPublisherfromaNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

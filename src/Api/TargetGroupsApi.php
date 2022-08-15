@@ -123,18 +123,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddRemoveMultipleTargetstofromTargetGroupRequest $addRemoveMultipleTargetstofromTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\RemoveMultipleTargetsfromTargetGroup
      */
-    public function addRemoveMultipleTargetstoFromTargetGroup($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest)
+    public function addRemoveMultipleTargetstoFromTargetGroup($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization = null)
     {
-        list($response) = $this->addRemoveMultipleTargetstoFromTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest);
+        list($response) = $this->addRemoveMultipleTargetstoFromTargetGroupWithHttpInfo($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization);
         return $response;
     }
 
@@ -146,18 +146,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddRemoveMultipleTargetstofromTargetGroupRequest $addRemoveMultipleTargetstofromTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\RemoveMultipleTargetsfromTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addRemoveMultipleTargetstoFromTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest)
+    public function addRemoveMultipleTargetstoFromTargetGroupWithHttpInfo($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization = null)
     {
-        $request = $this->addRemoveMultipleTargetstoFromTargetGroupRequest($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest);
+        $request = $this->addRemoveMultipleTargetstoFromTargetGroupRequest($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -251,17 +251,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddRemoveMultipleTargetstofromTargetGroupRequest $addRemoveMultipleTargetstofromTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addRemoveMultipleTargetstoFromTargetGroupAsync($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest)
+    public function addRemoveMultipleTargetstoFromTargetGroupAsync($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization = null)
     {
-        return $this->addRemoveMultipleTargetstoFromTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest)
+        return $this->addRemoveMultipleTargetstoFromTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,18 +277,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddRemoveMultipleTargetstofromTargetGroupRequest $addRemoveMultipleTargetstofromTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addRemoveMultipleTargetstoFromTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest)
+    public function addRemoveMultipleTargetstoFromTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\RemoveMultipleTargetsfromTargetGroup';
-        $request = $this->addRemoveMultipleTargetstoFromTargetGroupRequest($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest);
+        $request = $this->addRemoveMultipleTargetstoFromTargetGroupRequest($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,22 +332,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddRemoveMultipleTargetstofromTargetGroupRequest $addRemoveMultipleTargetstofromTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addRemoveMultipleTargetstoFromTargetGroupRequest($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest)
+    public function addRemoveMultipleTargetstoFromTargetGroupRequest($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling addRemoveMultipleTargetstoFromTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -475,18 +469,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddSingleTargettoTargetGroupRequest $addSingleTargettoTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AddSingleTargettoTargetGroup
      */
-    public function addSingleTargettoTargetGroup($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest)
+    public function addSingleTargettoTargetGroup($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization = null)
     {
-        list($response) = $this->addSingleTargettoTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest);
+        list($response) = $this->addSingleTargettoTargetGroupWithHttpInfo($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization);
         return $response;
     }
 
@@ -498,18 +492,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddSingleTargettoTargetGroupRequest $addSingleTargettoTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AddSingleTargettoTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addSingleTargettoTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest)
+    public function addSingleTargettoTargetGroupWithHttpInfo($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization = null)
     {
-        $request = $this->addSingleTargettoTargetGroupRequest($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest);
+        $request = $this->addSingleTargettoTargetGroupRequest($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -603,17 +597,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddSingleTargettoTargetGroupRequest $addSingleTargettoTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addSingleTargettoTargetGroupAsync($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest)
+    public function addSingleTargettoTargetGroupAsync($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization = null)
     {
-        return $this->addSingleTargettoTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest)
+        return $this->addSingleTargettoTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -629,18 +623,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddSingleTargettoTargetGroupRequest $addSingleTargettoTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addSingleTargettoTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest)
+    public function addSingleTargettoTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AddSingleTargettoTargetGroup';
-        $request = $this->addSingleTargettoTargetGroupRequest($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest);
+        $request = $this->addSingleTargettoTargetGroupRequest($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -684,22 +678,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AddSingleTargettoTargetGroupRequest $addSingleTargettoTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addSingleTargettoTargetGroupRequest($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest)
+    public function addSingleTargettoTargetGroupRequest($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling addSingleTargettoTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -827,18 +815,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AssignTargetGrouptoaBuyerRequest $assignTargetGrouptoaBuyerRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AddBuyertoTargetGroup
      */
-    public function assignTargetGrouptoaBuyer($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest)
+    public function assignTargetGrouptoaBuyer($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization = null)
     {
-        list($response) = $this->assignTargetGrouptoaBuyerWithHttpInfo($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest);
+        list($response) = $this->assignTargetGrouptoaBuyerWithHttpInfo($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization);
         return $response;
     }
 
@@ -850,18 +838,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AssignTargetGrouptoaBuyerRequest $assignTargetGrouptoaBuyerRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AddBuyertoTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function assignTargetGrouptoaBuyerWithHttpInfo($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest)
+    public function assignTargetGrouptoaBuyerWithHttpInfo($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization = null)
     {
-        $request = $this->assignTargetGrouptoaBuyerRequest($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest);
+        $request = $this->assignTargetGrouptoaBuyerRequest($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -955,17 +943,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AssignTargetGrouptoaBuyerRequest $assignTargetGrouptoaBuyerRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function assignTargetGrouptoaBuyerAsync($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest)
+    public function assignTargetGrouptoaBuyerAsync($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization = null)
     {
-        return $this->assignTargetGrouptoaBuyerAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest)
+        return $this->assignTargetGrouptoaBuyerAsyncWithHttpInfo($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -981,18 +969,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AssignTargetGrouptoaBuyerRequest $assignTargetGrouptoaBuyerRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function assignTargetGrouptoaBuyerAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest)
+    public function assignTargetGrouptoaBuyerAsyncWithHttpInfo($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AddBuyertoTargetGroup';
-        $request = $this->assignTargetGrouptoaBuyerRequest($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest);
+        $request = $this->assignTargetGrouptoaBuyerRequest($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1036,22 +1024,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\AssignTargetGrouptoaBuyerRequest $assignTargetGrouptoaBuyerRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function assignTargetGrouptoaBuyerRequest($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest)
+    public function assignTargetGrouptoaBuyerRequest($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling assignTargetGrouptoaBuyer'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1179,17 +1161,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateTargetGroupRequest $createTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateTargetGroup
      */
-    public function createTargetGroup($authorization, $accountId, $createTargetGroupRequest)
+    public function createTargetGroup($accountId, $createTargetGroupRequest, $authorization = null)
     {
-        list($response) = $this->createTargetGroupWithHttpInfo($authorization, $accountId, $createTargetGroupRequest);
+        list($response) = $this->createTargetGroupWithHttpInfo($accountId, $createTargetGroupRequest, $authorization);
         return $response;
     }
 
@@ -1201,17 +1183,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateTargetGroupRequest $createTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTargetGroupWithHttpInfo($authorization, $accountId, $createTargetGroupRequest)
+    public function createTargetGroupWithHttpInfo($accountId, $createTargetGroupRequest, $authorization = null)
     {
-        $request = $this->createTargetGroupRequest($authorization, $accountId, $createTargetGroupRequest);
+        $request = $this->createTargetGroupRequest($accountId, $createTargetGroupRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1305,16 +1287,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateTargetGroupRequest $createTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTargetGroupAsync($authorization, $accountId, $createTargetGroupRequest)
+    public function createTargetGroupAsync($accountId, $createTargetGroupRequest, $authorization = null)
     {
-        return $this->createTargetGroupAsyncWithHttpInfo($authorization, $accountId, $createTargetGroupRequest)
+        return $this->createTargetGroupAsyncWithHttpInfo($accountId, $createTargetGroupRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1330,17 +1312,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateTargetGroupRequest $createTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTargetGroupAsyncWithHttpInfo($authorization, $accountId, $createTargetGroupRequest)
+    public function createTargetGroupAsyncWithHttpInfo($accountId, $createTargetGroupRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateTargetGroup';
-        $request = $this->createTargetGroupRequest($authorization, $accountId, $createTargetGroupRequest);
+        $request = $this->createTargetGroupRequest($accountId, $createTargetGroupRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1384,21 +1366,15 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateTargetGroupRequest $createTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createTargetGroupRequest($authorization, $accountId, $createTargetGroupRequest)
+    public function createTargetGroupRequest($accountId, $createTargetGroupRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1512,18 +1488,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $targetId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeleteSingleTargetfromTargetGroup
      */
-    public function deleteSingleTargetfromTargetGroup($authorization, $accountId, $targetGroupId, $targetId)
+    public function deleteSingleTargetfromTargetGroup($accountId, $targetGroupId, $targetId, $authorization = null)
     {
-        list($response) = $this->deleteSingleTargetfromTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $targetId);
+        list($response) = $this->deleteSingleTargetfromTargetGroupWithHttpInfo($accountId, $targetGroupId, $targetId, $authorization);
         return $response;
     }
 
@@ -1535,18 +1511,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $targetId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeleteSingleTargetfromTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSingleTargetfromTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $targetId)
+    public function deleteSingleTargetfromTargetGroupWithHttpInfo($accountId, $targetGroupId, $targetId, $authorization = null)
     {
-        $request = $this->deleteSingleTargetfromTargetGroupRequest($authorization, $accountId, $targetGroupId, $targetId);
+        $request = $this->deleteSingleTargetfromTargetGroupRequest($accountId, $targetGroupId, $targetId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1640,17 +1616,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $targetId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSingleTargetfromTargetGroupAsync($authorization, $accountId, $targetGroupId, $targetId)
+    public function deleteSingleTargetfromTargetGroupAsync($accountId, $targetGroupId, $targetId, $authorization = null)
     {
-        return $this->deleteSingleTargetfromTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $targetId)
+        return $this->deleteSingleTargetfromTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $targetId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1666,18 +1642,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $targetId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSingleTargetfromTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $targetId)
+    public function deleteSingleTargetfromTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $targetId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeleteSingleTargetfromTargetGroup';
-        $request = $this->deleteSingleTargetfromTargetGroupRequest($authorization, $accountId, $targetGroupId, $targetId);
+        $request = $this->deleteSingleTargetfromTargetGroupRequest($accountId, $targetGroupId, $targetId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1721,22 +1697,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $targetId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteSingleTargetfromTargetGroupRequest($authorization, $accountId, $targetGroupId, $targetId)
+    public function deleteSingleTargetfromTargetGroupRequest($accountId, $targetGroupId, $targetId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deleteSingleTargetfromTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1866,17 +1836,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeleteTargetGroupError1|\Ringba\Model\DeleteTargetGroup
      */
-    public function deleteTargetGroup($authorization, $accountId, $targetGroupId)
+    public function deleteTargetGroup($accountId, $targetGroupId, $authorization = null)
     {
-        list($response) = $this->deleteTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId);
+        list($response) = $this->deleteTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization);
         return $response;
     }
 
@@ -1888,17 +1858,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeleteTargetGroupError1|\Ringba\Model\DeleteTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function deleteTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
-        $request = $this->deleteTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->deleteTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2015,16 +1985,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTargetGroupAsync($authorization, $accountId, $targetGroupId)
+    public function deleteTargetGroupAsync($accountId, $targetGroupId, $authorization = null)
     {
-        return $this->deleteTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+        return $this->deleteTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2040,17 +2010,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function deleteTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeleteTargetGroup';
-        $request = $this->deleteTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->deleteTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2094,21 +2064,15 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteTargetGroupRequest($authorization, $accountId, $targetGroupId)
+    public function deleteTargetGroupRequest($accountId, $targetGroupId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deleteTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2224,18 +2188,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\EditTargetGroupRequest $editTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\EditTargetGroup
      */
-    public function editTargetGroup($authorization, $accountId, $targetGroupId, $editTargetGroupRequest)
+    public function editTargetGroup($accountId, $targetGroupId, $editTargetGroupRequest, $authorization = null)
     {
-        list($response) = $this->editTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $editTargetGroupRequest);
+        list($response) = $this->editTargetGroupWithHttpInfo($accountId, $targetGroupId, $editTargetGroupRequest, $authorization);
         return $response;
     }
 
@@ -2247,18 +2211,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\EditTargetGroupRequest $editTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\EditTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $editTargetGroupRequest)
+    public function editTargetGroupWithHttpInfo($accountId, $targetGroupId, $editTargetGroupRequest, $authorization = null)
     {
-        $request = $this->editTargetGroupRequest($authorization, $accountId, $targetGroupId, $editTargetGroupRequest);
+        $request = $this->editTargetGroupRequest($accountId, $targetGroupId, $editTargetGroupRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2352,17 +2316,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\EditTargetGroupRequest $editTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editTargetGroupAsync($authorization, $accountId, $targetGroupId, $editTargetGroupRequest)
+    public function editTargetGroupAsync($accountId, $targetGroupId, $editTargetGroupRequest, $authorization = null)
     {
-        return $this->editTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $editTargetGroupRequest)
+        return $this->editTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $editTargetGroupRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2378,18 +2342,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\EditTargetGroupRequest $editTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $editTargetGroupRequest)
+    public function editTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $editTargetGroupRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\EditTargetGroup';
-        $request = $this->editTargetGroupRequest($authorization, $accountId, $targetGroupId, $editTargetGroupRequest);
+        $request = $this->editTargetGroupRequest($accountId, $targetGroupId, $editTargetGroupRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2433,22 +2397,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  \Ringba\Model\EditTargetGroupRequest $editTargetGroupRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function editTargetGroupRequest($authorization, $accountId, $targetGroupId, $editTargetGroupRequest)
+    public function editTargetGroupRequest($accountId, $targetGroupId, $editTargetGroupRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling editTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2576,17 +2534,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDetailsaboutSpecificTargetGroup
      */
-    public function getDetailsaboutSpecificTargetGroup($authorization, $accountId, $targetGroupId)
+    public function getDetailsaboutSpecificTargetGroup($accountId, $targetGroupId, $authorization = null)
     {
-        list($response) = $this->getDetailsaboutSpecificTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId);
+        list($response) = $this->getDetailsaboutSpecificTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization);
         return $response;
     }
 
@@ -2598,17 +2556,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDetailsaboutSpecificTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDetailsaboutSpecificTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function getDetailsaboutSpecificTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
-        $request = $this->getDetailsaboutSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->getDetailsaboutSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2702,16 +2660,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsaboutSpecificTargetGroupAsync($authorization, $accountId, $targetGroupId)
+    public function getDetailsaboutSpecificTargetGroupAsync($accountId, $targetGroupId, $authorization = null)
     {
-        return $this->getDetailsaboutSpecificTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+        return $this->getDetailsaboutSpecificTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2727,17 +2685,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsaboutSpecificTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function getDetailsaboutSpecificTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDetailsaboutSpecificTargetGroup';
-        $request = $this->getDetailsaboutSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->getDetailsaboutSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2781,21 +2739,15 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDetailsaboutSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId)
+    public function getDetailsaboutSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDetailsaboutSpecificTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2911,17 +2863,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetInboundReferencesforSpecificTargetGroup
      */
-    public function getInboundReferencesforSpecificTargetGroup($authorization, $accountId, $targetGroupId)
+    public function getInboundReferencesforSpecificTargetGroup($accountId, $targetGroupId, $authorization = null)
     {
-        list($response) = $this->getInboundReferencesforSpecificTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId);
+        list($response) = $this->getInboundReferencesforSpecificTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization);
         return $response;
     }
 
@@ -2933,17 +2885,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetInboundReferencesforSpecificTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInboundReferencesforSpecificTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function getInboundReferencesforSpecificTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
-        $request = $this->getInboundReferencesforSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->getInboundReferencesforSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3037,16 +2989,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInboundReferencesforSpecificTargetGroupAsync($authorization, $accountId, $targetGroupId)
+    public function getInboundReferencesforSpecificTargetGroupAsync($accountId, $targetGroupId, $authorization = null)
     {
-        return $this->getInboundReferencesforSpecificTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+        return $this->getInboundReferencesforSpecificTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3062,17 +3014,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInboundReferencesforSpecificTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function getInboundReferencesforSpecificTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetInboundReferencesforSpecificTargetGroup';
-        $request = $this->getInboundReferencesforSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->getInboundReferencesforSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3116,21 +3068,15 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getInboundReferencesforSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId)
+    public function getInboundReferencesforSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getInboundReferencesforSpecificTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -3246,17 +3192,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetStatsforSpecificTargetGroup
      */
-    public function getStatsforSpecificTargetGroup($authorization, $accountId, $targetGroupId)
+    public function getStatsforSpecificTargetGroup($accountId, $targetGroupId, $authorization = null)
     {
-        list($response) = $this->getStatsforSpecificTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId);
+        list($response) = $this->getStatsforSpecificTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization);
         return $response;
     }
 
@@ -3268,17 +3214,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetStatsforSpecificTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStatsforSpecificTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function getStatsforSpecificTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
-        $request = $this->getStatsforSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->getStatsforSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3372,16 +3318,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatsforSpecificTargetGroupAsync($authorization, $accountId, $targetGroupId)
+    public function getStatsforSpecificTargetGroupAsync($accountId, $targetGroupId, $authorization = null)
     {
-        return $this->getStatsforSpecificTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+        return $this->getStatsforSpecificTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3397,17 +3343,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatsforSpecificTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function getStatsforSpecificTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetStatsforSpecificTargetGroup';
-        $request = $this->getStatsforSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->getStatsforSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3451,21 +3397,15 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStatsforSpecificTargetGroupRequest($authorization, $accountId, $targetGroupId)
+    public function getStatsforSpecificTargetGroupRequest($accountId, $targetGroupId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getStatsforSpecificTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -3581,16 +3521,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetTargetGroups
      */
-    public function getTargetGroups($authorization, $accountId)
+    public function getTargetGroups($accountId, $authorization = null)
     {
-        list($response) = $this->getTargetGroupsWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getTargetGroupsWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -3602,16 +3542,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetTargetGroups, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTargetGroupsWithHttpInfo($authorization, $accountId)
+    public function getTargetGroupsWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getTargetGroupsRequest($authorization, $accountId);
+        $request = $this->getTargetGroupsRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3705,15 +3645,15 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTargetGroupsAsync($authorization, $accountId)
+    public function getTargetGroupsAsync($accountId, $authorization = null)
     {
-        return $this->getTargetGroupsAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getTargetGroupsAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3729,16 +3669,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTargetGroupsAsyncWithHttpInfo($authorization, $accountId)
+    public function getTargetGroupsAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetTargetGroups';
-        $request = $this->getTargetGroupsRequest($authorization, $accountId);
+        $request = $this->getTargetGroupsRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3782,20 +3722,14 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTargetGroupsRequest($authorization, $accountId)
+    public function getTargetGroupsRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getTargetGroups'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -3897,17 +3831,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetTargetsforTargetGroup
      */
-    public function getTargetsforTargetGroup($authorization, $accountId, $targetGroupId)
+    public function getTargetsforTargetGroup($accountId, $targetGroupId, $authorization = null)
     {
-        list($response) = $this->getTargetsforTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId);
+        list($response) = $this->getTargetsforTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization);
         return $response;
     }
 
@@ -3919,17 +3853,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetTargetsforTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTargetsforTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function getTargetsforTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
-        $request = $this->getTargetsforTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->getTargetsforTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4023,16 +3957,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTargetsforTargetGroupAsync($authorization, $accountId, $targetGroupId)
+    public function getTargetsforTargetGroupAsync($accountId, $targetGroupId, $authorization = null)
     {
-        return $this->getTargetsforTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+        return $this->getTargetsforTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4048,17 +3982,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTargetsforTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function getTargetsforTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetTargetsforTargetGroup';
-        $request = $this->getTargetsforTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->getTargetsforTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4102,21 +4036,15 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTargetsforTargetGroupRequest($authorization, $accountId, $targetGroupId)
+    public function getTargetsforTargetGroupRequest($accountId, $targetGroupId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getTargetsforTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -4232,18 +4160,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $buyerId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\RemoveBuyerfromTargetGroup
      */
-    public function removeBuyerfromTargetGroup($authorization, $accountId, $targetGroupId, $buyerId)
+    public function removeBuyerfromTargetGroup($accountId, $targetGroupId, $buyerId, $authorization = null)
     {
-        list($response) = $this->removeBuyerfromTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $buyerId);
+        list($response) = $this->removeBuyerfromTargetGroupWithHttpInfo($accountId, $targetGroupId, $buyerId, $authorization);
         return $response;
     }
 
@@ -4255,18 +4183,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $buyerId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\RemoveBuyerfromTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeBuyerfromTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId, $buyerId)
+    public function removeBuyerfromTargetGroupWithHttpInfo($accountId, $targetGroupId, $buyerId, $authorization = null)
     {
-        $request = $this->removeBuyerfromTargetGroupRequest($authorization, $accountId, $targetGroupId, $buyerId);
+        $request = $this->removeBuyerfromTargetGroupRequest($accountId, $targetGroupId, $buyerId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4360,17 +4288,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $buyerId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeBuyerfromTargetGroupAsync($authorization, $accountId, $targetGroupId, $buyerId)
+    public function removeBuyerfromTargetGroupAsync($accountId, $targetGroupId, $buyerId, $authorization = null)
     {
-        return $this->removeBuyerfromTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $buyerId)
+        return $this->removeBuyerfromTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $buyerId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4386,18 +4314,18 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $buyerId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeBuyerfromTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId, $buyerId)
+    public function removeBuyerfromTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $buyerId, $authorization = null)
     {
         $returnType = '\Ringba\Model\RemoveBuyerfromTargetGroup';
-        $request = $this->removeBuyerfromTargetGroupRequest($authorization, $accountId, $targetGroupId, $buyerId);
+        $request = $this->removeBuyerfromTargetGroupRequest($accountId, $targetGroupId, $buyerId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4441,22 +4369,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
      * @param  string $buyerId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function removeBuyerfromTargetGroupRequest($authorization, $accountId, $targetGroupId, $buyerId)
+    public function removeBuyerfromTargetGroupRequest($accountId, $targetGroupId, $buyerId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling removeBuyerfromTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -4586,17 +4508,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\ResetCountsforTargetGroup
      */
-    public function resetCountsforTargetGroup($authorization, $accountId, $targetGroupId)
+    public function resetCountsforTargetGroup($accountId, $targetGroupId, $authorization = null)
     {
-        list($response) = $this->resetCountsforTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId);
+        list($response) = $this->resetCountsforTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization);
         return $response;
     }
 
@@ -4608,17 +4530,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\ResetCountsforTargetGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function resetCountsforTargetGroupWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function resetCountsforTargetGroupWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
-        $request = $this->resetCountsforTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->resetCountsforTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4712,16 +4634,16 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resetCountsforTargetGroupAsync($authorization, $accountId, $targetGroupId)
+    public function resetCountsforTargetGroupAsync($accountId, $targetGroupId, $authorization = null)
     {
-        return $this->resetCountsforTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+        return $this->resetCountsforTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4737,17 +4659,17 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resetCountsforTargetGroupAsyncWithHttpInfo($authorization, $accountId, $targetGroupId)
+    public function resetCountsforTargetGroupAsyncWithHttpInfo($accountId, $targetGroupId, $authorization = null)
     {
         $returnType = '\Ringba\Model\ResetCountsforTargetGroup';
-        $request = $this->resetCountsforTargetGroupRequest($authorization, $accountId, $targetGroupId);
+        $request = $this->resetCountsforTargetGroupRequest($accountId, $targetGroupId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4791,21 +4713,15 @@ class TargetGroupsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $targetGroupId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function resetCountsforTargetGroupRequest($authorization, $accountId, $targetGroupId)
+    public function resetCountsforTargetGroupRequest($accountId, $targetGroupId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling resetCountsforTargetGroup'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

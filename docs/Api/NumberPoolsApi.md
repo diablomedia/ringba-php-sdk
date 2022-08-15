@@ -31,7 +31,7 @@ Method | HTTP request | Description
 ## `addaSpecificNumbertoaNumberPool()`
 
 ```php
-addaSpecificNumbertoaNumberPool($authorization, $accountId, $numberPoolId, $addaSpecificNumbertoaNumberPoolRequest): \Ringba\Model\AddaSpecificNumbertoaNumberPool
+addaSpecificNumbertoaNumberPool($accountId, $numberPoolId, $addaSpecificNumbertoaNumberPoolRequest, $authorization): \Ringba\Model\AddaSpecificNumbertoaNumberPool
 ```
 
 Add a Specific Number to a Number Pool
@@ -51,13 +51,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $addaSpecificNumbertoaNumberPoolRequest = {"numberId":"{{numberId}}"}; // \Ringba\Model\AddaSpecificNumbertoaNumberPoolRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addaSpecificNumbertoaNumberPool($authorization, $accountId, $numberPoolId, $addaSpecificNumbertoaNumberPoolRequest);
+    $result = $apiInstance->addaSpecificNumbertoaNumberPool($accountId, $numberPoolId, $addaSpecificNumbertoaNumberPoolRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->addaSpecificNumbertoaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -68,10 +68,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **addaSpecificNumbertoaNumberPoolRequest** | [**\Ringba\Model\AddaSpecificNumbertoaNumberPoolRequest**](../Model/AddaSpecificNumbertoaNumberPoolRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -93,7 +93,7 @@ No authorization required
 ## `allocateMoreNumberstoaNumberPool()`
 
 ```php
-allocateMoreNumberstoaNumberPool($authorization, $accountId, $numberPoolId, $allocateMoreNumberstoaNumberPoolRequest): \Ringba\Model\AllocateMoreNumbersFailed
+allocateMoreNumberstoaNumberPool($accountId, $numberPoolId, $allocateMoreNumberstoaNumberPoolRequest, $authorization): \Ringba\Model\AllocateMoreNumbersFailed
 ```
 
 Allocate More Numbers to a Number Pool
@@ -113,13 +113,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $allocateMoreNumberstoaNumberPoolRequest = {"allocation":3,"chargeAccountIfNeeded":false}; // \Ringba\Model\AllocateMoreNumberstoaNumberPoolRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->allocateMoreNumberstoaNumberPool($authorization, $accountId, $numberPoolId, $allocateMoreNumberstoaNumberPoolRequest);
+    $result = $apiInstance->allocateMoreNumberstoaNumberPool($accountId, $numberPoolId, $allocateMoreNumberstoaNumberPoolRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->allocateMoreNumberstoaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -130,10 +130,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **allocateMoreNumberstoaNumberPoolRequest** | [**\Ringba\Model\AllocateMoreNumberstoaNumberPoolRequest**](../Model/AllocateMoreNumberstoaNumberPoolRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -155,7 +155,7 @@ No authorization required
 ## `assignaPublishertoaNumberPool()`
 
 ```php
-assignaPublishertoaNumberPool($authorization, $accountId, $numberPoolId, $assignaPublishertoaNumberPoolRequest): \Ringba\Model\AssignaPublishertoaNumberPool
+assignaPublishertoaNumberPool($accountId, $numberPoolId, $assignaPublishertoaNumberPoolRequest, $authorization): \Ringba\Model\AssignaPublishertoaNumberPool
 ```
 
 Assign a Publisher to a  Number Pool
@@ -175,13 +175,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $assignaPublishertoaNumberPoolRequest = {"affiliateId":"{{publisherId}}"}; // \Ringba\Model\AssignaPublishertoaNumberPoolRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->assignaPublishertoaNumberPool($authorization, $accountId, $numberPoolId, $assignaPublishertoaNumberPoolRequest);
+    $result = $apiInstance->assignaPublishertoaNumberPool($accountId, $numberPoolId, $assignaPublishertoaNumberPoolRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->assignaPublishertoaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -192,10 +192,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **assignaPublishertoaNumberPoolRequest** | [**\Ringba\Model\AssignaPublishertoaNumberPoolRequest**](../Model/AssignaPublishertoaNumberPoolRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -217,7 +217,7 @@ No authorization required
 ## `createNewNumberPool()`
 
 ```php
-createNewNumberPool($authorization, $accountId, $createNewNumberPoolRequest): \Ringba\Model\CreateNewNumberPool
+createNewNumberPool($accountId, $createNewNumberPoolRequest, $authorization): \Ringba\Model\CreateNewNumberPool
 ```
 
 Create New Number Pool
@@ -237,12 +237,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $createNewNumberPoolRequest = {"name":"New new Number Pool","assignmentSettings":{"countryCode":"US","isTollFree":false,"areaCode":"213","chargeAccountIfNeeded":true},"holdNumberOutOfPoolInSeconds":30,"totalTimeForNumberOutOfPoolInSeconds":300}; // \Ringba\Model\CreateNewNumberPoolRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewNumberPool($authorization, $accountId, $createNewNumberPoolRequest);
+    $result = $apiInstance->createNewNumberPool($accountId, $createNewNumberPoolRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->createNewNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -253,9 +253,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **createNewNumberPoolRequest** | [**\Ringba\Model\CreateNewNumberPoolRequest**](../Model/CreateNewNumberPoolRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -277,7 +277,7 @@ No authorization required
 ## `decreaseSizeofaNumberPool()`
 
 ```php
-decreaseSizeofaNumberPool($authorization, $accountId, $numberPoolId, $decreaseSizeofaNumberPoolRequest): \Ringba\Model\DecreaseSizeofaNumberPool
+decreaseSizeofaNumberPool($accountId, $numberPoolId, $decreaseSizeofaNumberPoolRequest, $authorization): \Ringba\Model\DecreaseSizeofaNumberPool
 ```
 
 Decrease Size of a Number Pool
@@ -297,13 +297,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $decreaseSizeofaNumberPoolRequest = {"count":1,"keepNumbers":true}; // \Ringba\Model\DecreaseSizeofaNumberPoolRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->decreaseSizeofaNumberPool($authorization, $accountId, $numberPoolId, $decreaseSizeofaNumberPoolRequest);
+    $result = $apiInstance->decreaseSizeofaNumberPool($accountId, $numberPoolId, $decreaseSizeofaNumberPoolRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->decreaseSizeofaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -314,10 +314,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **decreaseSizeofaNumberPoolRequest** | [**\Ringba\Model\DecreaseSizeofaNumberPoolRequest**](../Model/DecreaseSizeofaNumberPoolRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -339,7 +339,7 @@ No authorization required
 ## `deleteaNumberPool()`
 
 ```php
-deleteaNumberPool($force, $keepNumbers, $authorization, $accountId, $numberPoolId): \Ringba\Model\DeleteaNumberPool
+deleteaNumberPool($force, $keepNumbers, $accountId, $numberPoolId, $authorization): \Ringba\Model\DeleteaNumberPool
 ```
 
 Delete a Number Pool
@@ -361,12 +361,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
 );
 $force = false; // bool | Forces request even if the number pool is being used elsewhere in your account.
 $keepNumbers = true; // bool | Keep numbers in your account after the number pool has been removed
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteaNumberPool($force, $keepNumbers, $authorization, $accountId, $numberPoolId);
+    $result = $apiInstance->deleteaNumberPool($force, $keepNumbers, $accountId, $numberPoolId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->deleteaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -379,9 +379,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **force** | **bool**| Forces request even if the number pool is being used elsewhere in your account. |
  **keepNumbers** | **bool**| Keep numbers in your account after the number pool has been removed |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -403,7 +403,7 @@ No authorization required
 ## `deleteaSpecificNumberfromaNumberPool()`
 
 ```php
-deleteaSpecificNumberfromaNumberPool($authorization, $accountId, $numberPoolId, $numberId): \Ringba\Model\DeleteaSpecificNumberfromaNumberPool
+deleteaSpecificNumberfromaNumberPool($accountId, $numberPoolId, $numberId, $authorization): \Ringba\Model\DeleteaSpecificNumberfromaNumberPool
 ```
 
 Delete a Specific Number from a Number Pool
@@ -423,13 +423,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteaSpecificNumberfromaNumberPool($authorization, $accountId, $numberPoolId, $numberId);
+    $result = $apiInstance->deleteaSpecificNumberfromaNumberPool($accountId, $numberPoolId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->deleteaSpecificNumberfromaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -440,10 +440,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -465,7 +465,7 @@ No authorization required
 ## `deleteanAllocationJob()`
 
 ```php
-deleteanAllocationJob($authorization, $accountId, $numberPoolId, $allocationJobId): \Ringba\Model\DeleteanAllocationJob
+deleteanAllocationJob($accountId, $numberPoolId, $allocationJobId, $authorization): \Ringba\Model\DeleteanAllocationJob
 ```
 
 Delete an Allocation Job
@@ -485,13 +485,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $allocationJobId = 'allocationJobId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteanAllocationJob($authorization, $accountId, $numberPoolId, $allocationJobId);
+    $result = $apiInstance->deleteanAllocationJob($accountId, $numberPoolId, $allocationJobId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->deleteanAllocationJob: ', $e->getMessage(), PHP_EOL;
@@ -502,10 +502,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **allocationJobId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -527,7 +527,7 @@ No authorization required
 ## `editInformationforaNumberPool()`
 
 ```php
-editInformationforaNumberPool($authorization, $accountId, $numberPoolId, $editInformationforaNumberPoolRequest): \Ringba\Model\EditInformationforaNumberPool
+editInformationforaNumberPool($accountId, $numberPoolId, $editInformationforaNumberPoolRequest, $authorization): \Ringba\Model\EditInformationforaNumberPool
 ```
 
 Edit Information for a Number Pool
@@ -547,13 +547,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $editInformationforaNumberPoolRequest = {"name":"New Name","holdNumberOutOfPoolInSeconds":45,"totalTimeForNumberOutOfPoolInSeconds":200,"poolSize":1,"assignmentSettings":{"countryCode":"US","isTollFree":false,"areaCode":"213","chargeAccountIfNeeded":true}}; // \Ringba\Model\EditInformationforaNumberPoolRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->editInformationforaNumberPool($authorization, $accountId, $numberPoolId, $editInformationforaNumberPoolRequest);
+    $result = $apiInstance->editInformationforaNumberPool($accountId, $numberPoolId, $editInformationforaNumberPoolRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->editInformationforaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -564,10 +564,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **editInformationforaNumberPoolRequest** | [**\Ringba\Model\EditInformationforaNumberPoolRequest**](../Model/EditInformationforaNumberPoolRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -589,7 +589,7 @@ No authorization required
 ## `getAllocationJobs()`
 
 ```php
-getAllocationJobs($authorization, $accountId, $numberPoolId): \Ringba\Model\GetAllocationJobs
+getAllocationJobs($accountId, $numberPoolId, $authorization): \Ringba\Model\GetAllocationJobs
 ```
 
 Get Allocation Jobs
@@ -609,12 +609,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getAllocationJobs($authorization, $accountId, $numberPoolId);
+    $result = $apiInstance->getAllocationJobs($accountId, $numberPoolId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getAllocationJobs: ', $e->getMessage(), PHP_EOL;
@@ -625,9 +625,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -649,7 +649,7 @@ No authorization required
 ## `getCountofAvailableNumbersinaNumberPool()`
 
 ```php
-getCountofAvailableNumbersinaNumberPool($authorization, $accountId, $numberPoolId): \Ringba\Model\GetCountofAvailableNumbersinaNumberPool
+getCountofAvailableNumbersinaNumberPool($accountId, $numberPoolId, $authorization): \Ringba\Model\GetCountofAvailableNumbersinaNumberPool
 ```
 
 Get Count of Available Numbers in a Number Pool
@@ -669,12 +669,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getCountofAvailableNumbersinaNumberPool($authorization, $accountId, $numberPoolId);
+    $result = $apiInstance->getCountofAvailableNumbersinaNumberPool($accountId, $numberPoolId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getCountofAvailableNumbersinaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -685,9 +685,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -709,7 +709,7 @@ No authorization required
 ## `getDetailsAboutaSingleNumberPool()`
 
 ```php
-getDetailsAboutaSingleNumberPool($authorization, $accountId, $numberPoolId): \Ringba\Model\GetDetailsAboutaSingleNumberPool
+getDetailsAboutaSingleNumberPool($accountId, $numberPoolId, $authorization): \Ringba\Model\GetDetailsAboutaSingleNumberPool
 ```
 
 Get Details About a Single Number Pool
@@ -729,12 +729,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsAboutaSingleNumberPool($authorization, $accountId, $numberPoolId);
+    $result = $apiInstance->getDetailsAboutaSingleNumberPool($accountId, $numberPoolId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getDetailsAboutaSingleNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -745,9 +745,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -769,7 +769,7 @@ No authorization required
 ## `getDetailsAboutanAllocationJob()`
 
 ```php
-getDetailsAboutanAllocationJob($authorization, $accountId, $numberPoolId, $allocationJobId): \Ringba\Model\GetDetailsAboutanAllocationJob
+getDetailsAboutanAllocationJob($accountId, $numberPoolId, $allocationJobId, $authorization): \Ringba\Model\GetDetailsAboutanAllocationJob
 ```
 
 Get Details About an Allocation Job
@@ -789,13 +789,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $allocationJobId = 'allocationJobId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsAboutanAllocationJob($authorization, $accountId, $numberPoolId, $allocationJobId);
+    $result = $apiInstance->getDetailsAboutanAllocationJob($accountId, $numberPoolId, $allocationJobId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getDetailsAboutanAllocationJob: ', $e->getMessage(), PHP_EOL;
@@ -806,10 +806,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **allocationJobId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -831,7 +831,7 @@ No authorization required
 ## `getInboundReferencesforaNumberPool()`
 
 ```php
-getInboundReferencesforaNumberPool($authorization, $accountId, $numberPoolId): \Ringba\Model\GetInboundReferencesforaNumberPool
+getInboundReferencesforaNumberPool($accountId, $numberPoolId, $authorization): \Ringba\Model\GetInboundReferencesforaNumberPool
 ```
 
 Get Inbound References for a Number Pool
@@ -851,12 +851,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getInboundReferencesforaNumberPool($authorization, $accountId, $numberPoolId);
+    $result = $apiInstance->getInboundReferencesforaNumberPool($accountId, $numberPoolId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getInboundReferencesforaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -867,9 +867,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -891,7 +891,7 @@ No authorization required
 ## `getNumberPoolsAssociatedWithYourAccount()`
 
 ```php
-getNumberPoolsAssociatedWithYourAccount($authorization, $accountId): \Ringba\Model\GetNumberPoolsAssociatedWithYourAccount
+getNumberPoolsAssociatedWithYourAccount($accountId, $authorization): \Ringba\Model\GetNumberPoolsAssociatedWithYourAccount
 ```
 
 Get Number Pools Associated With Your Account
@@ -911,11 +911,11 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getNumberPoolsAssociatedWithYourAccount($authorization, $accountId);
+    $result = $apiInstance->getNumberPoolsAssociatedWithYourAccount($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getNumberPoolsAssociatedWithYourAccount: ', $e->getMessage(), PHP_EOL;
@@ -926,8 +926,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -949,7 +949,7 @@ No authorization required
 ## `getNumbersCurrentlyInUse()`
 
 ```php
-getNumbersCurrentlyInUse($authorization, $accountId, $numberPoolId): \Ringba\Model\GetNumbersCurrentlyInUse
+getNumbersCurrentlyInUse($accountId, $numberPoolId, $authorization): \Ringba\Model\GetNumbersCurrentlyInUse
 ```
 
 Get Numbers Currently In Use
@@ -969,12 +969,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getNumbersCurrentlyInUse($authorization, $accountId, $numberPoolId);
+    $result = $apiInstance->getNumbersCurrentlyInUse($accountId, $numberPoolId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getNumbersCurrentlyInUse: ', $e->getMessage(), PHP_EOL;
@@ -985,9 +985,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -1009,7 +1009,7 @@ No authorization required
 ## `getNumbersforaNumberPool()`
 
 ```php
-getNumbersforaNumberPool($authorization, $accountId, $numberPoolId): \Ringba\Model\GetNumbersforaNumberPool
+getNumbersforaNumberPool($accountId, $numberPoolId, $authorization): \Ringba\Model\GetNumbersforaNumberPool
 ```
 
 Get Numbers for a Number Pool
@@ -1029,12 +1029,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getNumbersforaNumberPool($authorization, $accountId, $numberPoolId);
+    $result = $apiInstance->getNumbersforaNumberPool($accountId, $numberPoolId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getNumbersforaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -1045,9 +1045,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -1069,7 +1069,7 @@ No authorization required
 ## `getnumberpoolstats()`
 
 ```php
-getnumberpoolstats($type, $authorization, $accountid): \Ringba\Model\Getnumberpoolwithmisses
+getnumberpoolstats($type, $accountid, $authorization): \Ringba\Model\Getnumberpoolwithmisses
 ```
 
 Get number pool stats
@@ -1090,11 +1090,11 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     new GuzzleHttp\Client()
 );
 $type = {{type}}; // string | Optional  - If the <b>type</b> parameter is not added it will default to <b>day</b>. <h6>Options</h6> <b>day</b><br> Shows the stats  for the current day<br><br> <b>month</b><br> Shows the stats  for the current month
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountid = 'accountid_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getnumberpoolstats($type, $authorization, $accountid);
+    $result = $apiInstance->getnumberpoolstats($type, $accountid, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->getnumberpoolstats: ', $e->getMessage(), PHP_EOL;
@@ -1106,8 +1106,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **string**| Optional  - If the &lt;b&gt;type&lt;/b&gt; parameter is not added it will default to &lt;b&gt;day&lt;/b&gt;. &lt;h6&gt;Options&lt;/h6&gt; &lt;b&gt;day&lt;/b&gt;&lt;br&gt; Shows the stats  for the current day&lt;br&gt;&lt;br&gt; &lt;b&gt;month&lt;/b&gt;&lt;br&gt; Shows the stats  for the current month |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountid** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -1129,7 +1129,7 @@ No authorization required
 ## `increaseSizeofaNumberPool()`
 
 ```php
-increaseSizeofaNumberPool($authorization, $accountId, $numberPoolId, $increaseSizeofaNumberPoolRequest): \Ringba\Model\IncreaseSizeofaNumberPool
+increaseSizeofaNumberPool($accountId, $numberPoolId, $increaseSizeofaNumberPoolRequest, $authorization): \Ringba\Model\IncreaseSizeofaNumberPool
 ```
 
 Increase Size of a Number Pool
@@ -1149,13 +1149,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $increaseSizeofaNumberPoolRequest = {"allocation":1,"chargeAccountIfNeeded":false}; // \Ringba\Model\IncreaseSizeofaNumberPoolRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->increaseSizeofaNumberPool($authorization, $accountId, $numberPoolId, $increaseSizeofaNumberPoolRequest);
+    $result = $apiInstance->increaseSizeofaNumberPool($accountId, $numberPoolId, $increaseSizeofaNumberPoolRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->increaseSizeofaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -1166,10 +1166,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **increaseSizeofaNumberPoolRequest** | [**\Ringba\Model\IncreaseSizeofaNumberPoolRequest**](../Model/IncreaseSizeofaNumberPoolRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -1191,7 +1191,7 @@ No authorization required
 ## `removeaPublisherfromaNumberPool()`
 
 ```php
-removeaPublisherfromaNumberPool($authorization, $accountId, $numberPoolId, $publisherId): \Ringba\Model\RemoveaPublisherfromaNumberPool
+removeaPublisherfromaNumberPool($accountId, $numberPoolId, $publisherId, $authorization): \Ringba\Model\RemoveaPublisherfromaNumberPool
 ```
 
 Remove a Publisher from a Number Pool
@@ -1211,13 +1211,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeaPublisherfromaNumberPool($authorization, $accountId, $numberPoolId, $publisherId);
+    $result = $apiInstance->removeaPublisherfromaNumberPool($accountId, $numberPoolId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->removeaPublisherfromaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -1228,10 +1228,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -1253,7 +1253,7 @@ No authorization required
 ## `replaceNumbersInaNumberPool()`
 
 ```php
-replaceNumbersInaNumberPool($authorization, $accountId, $numberPoolId, $replaceNumbersInaNumberPoolRequest): \Ringba\Model\ReplaceNumbersInaNumberPool
+replaceNumbersInaNumberPool($accountId, $numberPoolId, $replaceNumbersInaNumberPoolRequest, $authorization): \Ringba\Model\ReplaceNumbersInaNumberPool
 ```
 
 Replace Numbers In a Number Pool
@@ -1273,13 +1273,13 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
 $replaceNumbersInaNumberPoolRequest = {"count":2}; // \Ringba\Model\ReplaceNumbersInaNumberPoolRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->replaceNumbersInaNumberPool($authorization, $accountId, $numberPoolId, $replaceNumbersInaNumberPoolRequest);
+    $result = $apiInstance->replaceNumbersInaNumberPool($accountId, $numberPoolId, $replaceNumbersInaNumberPoolRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->replaceNumbersInaNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -1290,10 +1290,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
  **replaceNumbersInaNumberPoolRequest** | [**\Ringba\Model\ReplaceNumbersInaNumberPoolRequest**](../Model/ReplaceNumbersInaNumberPoolRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -1315,7 +1315,7 @@ No authorization required
 ## `verifyNumbersinNumberPool()`
 
 ```php
-verifyNumbersinNumberPool($authorization, $accountId, $numberPoolId): \Ringba\Model\VerifyNumbersinNumberPool
+verifyNumbersinNumberPool($accountId, $numberPoolId, $authorization): \Ringba\Model\VerifyNumbersinNumberPool
 ```
 
 Verify Numbers in Number Pool
@@ -1335,12 +1335,12 @@ $apiInstance = new Ringba\Api\NumberPoolsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberPoolId = 'numberPoolId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->verifyNumbersinNumberPool($authorization, $accountId, $numberPoolId);
+    $result = $apiInstance->verifyNumbersinNumberPool($accountId, $numberPoolId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberPoolsApi->verifyNumbersinNumberPool: ', $e->getMessage(), PHP_EOL;
@@ -1351,9 +1351,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberPoolId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `createRTBBulkAdjustmentfromCSV()`
 
 ```php
-createRTBBulkAdjustmentfromCSV($name, $authorization, $accountId, $file): \Ringba\Model\CreateRTBBulkAdjustmentfromCSV
+createRTBBulkAdjustmentfromCSV($name, $accountId, $file, $authorization): \Ringba\Model\CreateRTBBulkAdjustmentfromCSV
 ```
 
 Create RTB Bulk Adjustment from CSV
@@ -31,12 +31,12 @@ $apiInstance = new Ringba\Api\RTBBulkModifiersApi(
     new GuzzleHttp\Client()
 );
 $name = Age-Bulk-Modifier; // string | 
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $file = "/path/to/file.txt"; // \SplFileObject
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createRTBBulkAdjustmentfromCSV($name, $authorization, $accountId, $file);
+    $result = $apiInstance->createRTBBulkAdjustmentfromCSV($name, $accountId, $file, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RTBBulkModifiersApi->createRTBBulkAdjustmentfromCSV: ', $e->getMessage(), PHP_EOL;
@@ -48,9 +48,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**|  |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **file** | **\SplFileObject****\SplFileObject**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getBuyers()`
 
 ```php
-getBuyers($authorization, $accountId): \Ringba\Model\GetBuyers
+getBuyers($accountId, $authorization): \Ringba\Model\GetBuyers
 ```
 
 Get Buyers
@@ -30,11 +30,11 @@ $apiInstance = new Ringba\Api\BuyersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getBuyers($authorization, $accountId);
+    $result = $apiInstance->getBuyers($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BuyersApi->getBuyers: ', $e->getMessage(), PHP_EOL;
@@ -45,8 +45,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

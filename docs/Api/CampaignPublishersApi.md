@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `addPublishertoaCampaign()`
 
 ```php
-addPublishertoaCampaign($authorization, $accountId, $campaignId, $addPublishertoaCampaignRequest): \Ringba\Model\AddPublishertoaCampaign
+addPublishertoaCampaign($accountId, $campaignId, $addPublishertoaCampaignRequest, $authorization): \Ringba\Model\AddPublishertoaCampaign
 ```
 
 Add Publisher to a Campaign
@@ -31,13 +31,13 @@ $apiInstance = new Ringba\Api\CampaignPublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $addPublishertoaCampaignRequest = {"publisherId":"{{publisherId}}"}; // \Ringba\Model\AddPublishertoaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addPublishertoaCampaign($authorization, $accountId, $campaignId, $addPublishertoaCampaignRequest);
+    $result = $apiInstance->addPublishertoaCampaign($accountId, $campaignId, $addPublishertoaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignPublishersApi->addPublishertoaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -48,10 +48,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **addPublishertoaCampaignRequest** | [**\Ringba\Model\AddPublishertoaCampaignRequest**](../Model/AddPublishertoaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `removePublisherfromaCampaign()`
 
 ```php
-removePublisherfromaCampaign($authorization, $accountId, $campaignId, $publisherId): \Ringba\Model\RemovePublisherfromaCampaign
+removePublisherfromaCampaign($accountId, $campaignId, $publisherId, $authorization): \Ringba\Model\RemovePublisherfromaCampaign
 ```
 
 Remove Publisher from a Campaign
@@ -93,13 +93,13 @@ $apiInstance = new Ringba\Api\CampaignPublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removePublisherfromaCampaign($authorization, $accountId, $campaignId, $publisherId);
+    $result = $apiInstance->removePublisherfromaCampaign($accountId, $campaignId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignPublishersApi->removePublisherfromaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -110,10 +110,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

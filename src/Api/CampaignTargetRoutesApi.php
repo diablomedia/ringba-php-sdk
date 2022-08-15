@@ -123,18 +123,18 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddTargetRoutetoaCampaignRequest $addTargetRoutetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AddTargetRoutetoaCampaignwithdefaulttargetsettings
      */
-    public function addTargetRoutetoaCampaign($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest)
+    public function addTargetRoutetoaCampaign($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization = null)
     {
-        list($response) = $this->addTargetRoutetoaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest);
+        list($response) = $this->addTargetRoutetoaCampaignWithHttpInfo($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization);
         return $response;
     }
 
@@ -146,18 +146,18 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddTargetRoutetoaCampaignRequest $addTargetRoutetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AddTargetRoutetoaCampaignwithdefaulttargetsettings, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addTargetRoutetoaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest)
+    public function addTargetRoutetoaCampaignWithHttpInfo($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization = null)
     {
-        $request = $this->addTargetRoutetoaCampaignRequest($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest);
+        $request = $this->addTargetRoutetoaCampaignRequest($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -251,17 +251,17 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddTargetRoutetoaCampaignRequest $addTargetRoutetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addTargetRoutetoaCampaignAsync($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest)
+    public function addTargetRoutetoaCampaignAsync($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization = null)
     {
-        return $this->addTargetRoutetoaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest)
+        return $this->addTargetRoutetoaCampaignAsyncWithHttpInfo($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,18 +277,18 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddTargetRoutetoaCampaignRequest $addTargetRoutetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addTargetRoutetoaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest)
+    public function addTargetRoutetoaCampaignAsyncWithHttpInfo($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AddTargetRoutetoaCampaignwithdefaulttargetsettings';
-        $request = $this->addTargetRoutetoaCampaignRequest($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest);
+        $request = $this->addTargetRoutetoaCampaignRequest($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,22 +332,16 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddTargetRoutetoaCampaignRequest $addTargetRoutetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addTargetRoutetoaCampaignRequest($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest)
+    public function addTargetRoutetoaCampaignRequest($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling addTargetRoutetoaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -475,17 +469,17 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\RemoveTargetRoutefromaCampaign
      */
-    public function removeTargetRoutefromaCampaign($authorization, $accountId, $campaignId)
+    public function removeTargetRoutefromaCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->removeTargetRoutefromaCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->removeTargetRoutefromaCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -497,17 +491,17 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\RemoveTargetRoutefromaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeTargetRoutefromaCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function removeTargetRoutefromaCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->removeTargetRoutefromaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->removeTargetRoutefromaCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -601,16 +595,16 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeTargetRoutefromaCampaignAsync($authorization, $accountId, $campaignId)
+    public function removeTargetRoutefromaCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->removeTargetRoutefromaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->removeTargetRoutefromaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -626,17 +620,17 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeTargetRoutefromaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function removeTargetRoutefromaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\RemoveTargetRoutefromaCampaign';
-        $request = $this->removeTargetRoutefromaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->removeTargetRoutefromaCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -680,21 +674,15 @@ class CampaignTargetRoutesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function removeTargetRoutefromaCampaignRequest($authorization, $accountId, $campaignId)
+    public function removeTargetRoutefromaCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling removeTargetRoutefromaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

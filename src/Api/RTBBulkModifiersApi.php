@@ -124,17 +124,17 @@ class RTBBulkModifiersApi
      * URL: https://api.ringba.com/v2/
      *
      * @param  string $name  (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \SplFileObject $file file (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateRTBBulkAdjustmentfromCSV
      */
-    public function createRTBBulkAdjustmentfromCSV($name, $authorization, $accountId, $file)
+    public function createRTBBulkAdjustmentfromCSV($name, $accountId, $file, $authorization = null)
     {
-        list($response) = $this->createRTBBulkAdjustmentfromCSVWithHttpInfo($name, $authorization, $accountId, $file);
+        list($response) = $this->createRTBBulkAdjustmentfromCSVWithHttpInfo($name, $accountId, $file, $authorization);
         return $response;
     }
 
@@ -147,17 +147,17 @@ class RTBBulkModifiersApi
      * URL: https://api.ringba.com/v2/
      *
      * @param  string $name  (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \SplFileObject $file (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateRTBBulkAdjustmentfromCSV, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createRTBBulkAdjustmentfromCSVWithHttpInfo($name, $authorization, $accountId, $file)
+    public function createRTBBulkAdjustmentfromCSVWithHttpInfo($name, $accountId, $file, $authorization = null)
     {
-        $request = $this->createRTBBulkAdjustmentfromCSVRequest($name, $authorization, $accountId, $file);
+        $request = $this->createRTBBulkAdjustmentfromCSVRequest($name, $accountId, $file, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -252,16 +252,16 @@ class RTBBulkModifiersApi
      * URL: https://api.ringba.com/v2/
      *
      * @param  string $name  (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \SplFileObject $file (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRTBBulkAdjustmentfromCSVAsync($name, $authorization, $accountId, $file)
+    public function createRTBBulkAdjustmentfromCSVAsync($name, $accountId, $file, $authorization = null)
     {
-        return $this->createRTBBulkAdjustmentfromCSVAsyncWithHttpInfo($name, $authorization, $accountId, $file)
+        return $this->createRTBBulkAdjustmentfromCSVAsyncWithHttpInfo($name, $accountId, $file, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -278,17 +278,17 @@ class RTBBulkModifiersApi
      * URL: https://api.ringba.com/v2/
      *
      * @param  string $name  (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \SplFileObject $file (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRTBBulkAdjustmentfromCSVAsyncWithHttpInfo($name, $authorization, $accountId, $file)
+    public function createRTBBulkAdjustmentfromCSVAsyncWithHttpInfo($name, $accountId, $file, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateRTBBulkAdjustmentfromCSV';
-        $request = $this->createRTBBulkAdjustmentfromCSVRequest($name, $authorization, $accountId, $file);
+        $request = $this->createRTBBulkAdjustmentfromCSVRequest($name, $accountId, $file, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -333,25 +333,19 @@ class RTBBulkModifiersApi
      * URL: https://api.ringba.com/v2/
      *
      * @param  string $name  (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \SplFileObject $file (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createRTBBulkAdjustmentfromCSVRequest($name, $authorization, $accountId, $file)
+    public function createRTBBulkAdjustmentfromCSVRequest($name, $accountId, $file, $authorization = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling createRTBBulkAdjustmentfromCSV'
-            );
-        }
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createRTBBulkAdjustmentfromCSV'
             );
         }
         // verify the required parameter 'accountId' is set

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `getCallLog()`
 
 ```php
-getCallLog($authorization, $accountId, $getCallLogRequest): \Ringba\Model\GetCallLogWithFilters
+getCallLog($accountId, $getCallLogRequest, $authorization): \Ringba\Model\GetCallLogWithFilters
 ```
 
 Get Call Log
@@ -33,12 +33,12 @@ $apiInstance = new Ringba\Api\GetCallLogsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $getCallLogRequest = {"reportEnd":"2021-02-04T07:59:59Z","reportStart":"2021-02-01T08:00:00Z"}; // \Ringba\Model\GetCallLogRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getCallLog($authorization, $accountId, $getCallLogRequest);
+    $result = $apiInstance->getCallLog($accountId, $getCallLogRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GetCallLogsApi->getCallLog: ', $e->getMessage(), PHP_EOL;
@@ -49,9 +49,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **getCallLogRequest** | [**\Ringba\Model\GetCallLogRequest**](../Model/GetCallLogRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `getColumnNames()`
 
 ```php
-getColumnNames($authorization, $accountId): \Ringba\Model\GetColumnNames
+getColumnNames($accountId, $authorization): \Ringba\Model\GetColumnNames
 ```
 
 Get Column Names
@@ -93,11 +93,11 @@ $apiInstance = new Ringba\Api\GetCallLogsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getColumnNames($authorization, $accountId);
+    $result = $apiInstance->getColumnNames($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GetCallLogsApi->getColumnNames: ', $e->getMessage(), PHP_EOL;
@@ -108,8 +108,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -131,7 +131,7 @@ No authorization required
 ## `getDetailsAboutSpecificCalls()`
 
 ```php
-getDetailsAboutSpecificCalls($authorization, $accountId, $getDetailsAboutSpecificCallsRequest): \Ringba\Model\GetDetailsAboutSingleCall
+getDetailsAboutSpecificCalls($accountId, $getDetailsAboutSpecificCallsRequest, $authorization): \Ringba\Model\GetDetailsAboutSingleCall
 ```
 
 Get Details About Specific Calls
@@ -151,12 +151,12 @@ $apiInstance = new Ringba\Api\GetCallLogsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $getDetailsAboutSpecificCallsRequest = {"InboundCallIds":["{{InboundCallId}}","{{InboundCallId2}}","{{InboundCallId3}}"]}; // \Ringba\Model\GetDetailsAboutSpecificCallsRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsAboutSpecificCalls($authorization, $accountId, $getDetailsAboutSpecificCallsRequest);
+    $result = $apiInstance->getDetailsAboutSpecificCalls($accountId, $getDetailsAboutSpecificCallsRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GetCallLogsApi->getDetailsAboutSpecificCalls: ', $e->getMessage(), PHP_EOL;
@@ -167,9 +167,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **getDetailsAboutSpecificCallsRequest** | [**\Ringba\Model\GetDetailsAboutSpecificCallsRequest**](../Model/GetDetailsAboutSpecificCallsRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -191,7 +191,7 @@ No authorization required
 ## `getTagsforFilteringCallLog()`
 
 ```php
-getTagsforFilteringCallLog($authorization, $accountId): \Ringba\Model\GetTagNamesforTypeInboundNumbers
+getTagsforFilteringCallLog($accountId, $authorization): \Ringba\Model\GetTagNamesforTypeInboundNumbers
 ```
 
 Get Tags for Filtering Call Log
@@ -211,11 +211,11 @@ $apiInstance = new Ringba\Api\GetCallLogsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getTagsforFilteringCallLog($authorization, $accountId);
+    $result = $apiInstance->getTagsforFilteringCallLog($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GetCallLogsApi->getTagsforFilteringCallLog: ', $e->getMessage(), PHP_EOL;
@@ -226,8 +226,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `addPublisherNumbertoaCampaign()`
 
 ```php
-addPublisherNumbertoaCampaign($authorization, $accountId, $campaignId, $addPublisherNumbertoaCampaignRequest): \Ringba\Model\AddPublisherNumbertoaCampaign
+addPublisherNumbertoaCampaign($accountId, $campaignId, $addPublisherNumbertoaCampaignRequest, $authorization): \Ringba\Model\AddPublisherNumbertoaCampaign
 ```
 
 Add Publisher Number to a Campaign
@@ -32,13 +32,13 @@ $apiInstance = new Ringba\Api\CampaignNumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $addPublisherNumbertoaCampaignRequest = {"numberId":"{{numberId}}"}; // \Ringba\Model\AddPublisherNumbertoaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addPublisherNumbertoaCampaign($authorization, $accountId, $campaignId, $addPublisherNumbertoaCampaignRequest);
+    $result = $apiInstance->addPublisherNumbertoaCampaign($accountId, $campaignId, $addPublisherNumbertoaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignNumbersApi->addPublisherNumbertoaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -49,10 +49,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **addPublisherNumbertoaCampaignRequest** | [**\Ringba\Model\AddPublisherNumbertoaCampaignRequest**](../Model/AddPublisherNumbertoaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ No authorization required
 ## `addaDefaultNumberforaCampaign()`
 
 ```php
-addaDefaultNumberforaCampaign($authorization, $accountId, $campaignId, $addaDefaultNumberforaCampaignRequest): \Ringba\Model\AddaDefaultNumberforaCampaign
+addaDefaultNumberforaCampaign($accountId, $campaignId, $addaDefaultNumberforaCampaignRequest, $authorization): \Ringba\Model\AddaDefaultNumberforaCampaign
 ```
 
 Add a Default Number for a Campaign
@@ -94,13 +94,13 @@ $apiInstance = new Ringba\Api\CampaignNumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $addaDefaultNumberforaCampaignRequest = {"numberId":"{{numberId}}"}; // \Ringba\Model\AddaDefaultNumberforaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addaDefaultNumberforaCampaign($authorization, $accountId, $campaignId, $addaDefaultNumberforaCampaignRequest);
+    $result = $apiInstance->addaDefaultNumberforaCampaign($accountId, $campaignId, $addaDefaultNumberforaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignNumbersApi->addaDefaultNumberforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -111,10 +111,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **addaDefaultNumberforaCampaignRequest** | [**\Ringba\Model\AddaDefaultNumberforaCampaignRequest**](../Model/AddaDefaultNumberforaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -136,7 +136,7 @@ No authorization required
 ## `removeDefaultNumberfromaCampaign()`
 
 ```php
-removeDefaultNumberfromaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\RemoveDefaultNumberfromaCampaign
+removeDefaultNumberfromaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\RemoveDefaultNumberfromaCampaign
 ```
 
 Remove Default Number from a Campaign
@@ -156,12 +156,12 @@ $apiInstance = new Ringba\Api\CampaignNumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeDefaultNumberfromaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->removeDefaultNumberfromaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignNumbersApi->removeDefaultNumberfromaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -172,9 +172,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

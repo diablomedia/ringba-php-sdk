@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getRTBSettingsforaPublisher()`
 
 ```php
-getRTBSettingsforaPublisher($authorization, $accountId, $campaignId, $publisherId)
+getRTBSettingsforaPublisher($accountId, $campaignId, $publisherId, $authorization)
 ```
 
 Get RTB Settings for a Publisher
@@ -32,13 +32,13 @@ $apiInstance = new Ringba\Api\PublisherRTBOverridesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $apiInstance->getRTBSettingsforaPublisher($authorization, $accountId, $campaignId, $publisherId);
+    $apiInstance->getRTBSettingsforaPublisher($accountId, $campaignId, $publisherId, $authorization);
 } catch (Exception $e) {
     echo 'Exception when calling PublisherRTBOverridesApi->getRTBSettingsforaPublisher: ', $e->getMessage(), PHP_EOL;
 }
@@ -48,10 +48,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `getRTBURLsforaPublisher()`
 
 ```php
-getRTBURLsforaPublisher($authorization, $accountId, $campaignId, $publisherId): \Ringba\Model\GetRTBURLsforaPublisher
+getRTBURLsforaPublisher($accountId, $campaignId, $publisherId, $authorization): \Ringba\Model\GetRTBURLsforaPublisher
 ```
 
 Get RTB URLs for a Publisher
@@ -93,13 +93,13 @@ $apiInstance = new Ringba\Api\PublisherRTBOverridesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getRTBURLsforaPublisher($authorization, $accountId, $campaignId, $publisherId);
+    $result = $apiInstance->getRTBURLsforaPublisher($accountId, $campaignId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublisherRTBOverridesApi->getRTBURLsforaPublisher: ', $e->getMessage(), PHP_EOL;
@@ -110,10 +110,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -135,7 +135,7 @@ No authorization required
 ## `overrideRTBSettingsforaPublisher()`
 
 ```php
-overrideRTBSettingsforaPublisher($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest): \Ringba\Model\OverrideRTBSettingsforaPublisher
+overrideRTBSettingsforaPublisher($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization): \Ringba\Model\OverrideRTBSettingsforaPublisher
 ```
 
 Override RTB Settings for a Publisher
@@ -155,14 +155,14 @@ $apiInstance = new Ringba\Api\PublisherRTBOverridesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $overrideRTBSettingsforaPublisherRequest = {"enabled":true,"callerIdRequiredOverride":false,"rateLimitOverride":{"maxRequests":12,"perSeconds":86400},"bidSettingsOverride":{"baseBidAmount":9,"maxBidAmount":21,"conversionType":"callLength","conversionArgs":{"callLengthInSeconds":30,"startTimerEvent":"OnCallConnected"},"deDupeSetting":{"secondsFromLastCall":3600}},"bidAdjustmentsOverride":[{"criteria":{"tagId":"some tag","comparisonType":"EQUALS","value":"1","isNegativeMatch":false},"adjustmentType":"Add","adjustmentValue":2,"bulkListId":null},{"criteria":{"tagId":"tag one","comparisonType":"BULK","value":"","isNegativeMatch":false},"adjustmentType":"Add","adjustmentValue":2},{"criteria":{"tagId":"tag two","comparisonType":"CONTAINS","value":"value","isNegativeMatch":false},"adjustmentType":"Add","adjustmentValue":-2,"bulkListId":null},{"criteria":{"tagId":"tag three","comparisonType":"GREATER_THAN","value":"3","isNegativeMatch":false},"adjustmentType":"Multiply","adjustmentValue":2,"bulkListId":null},{"criteria":{"tagId":"tag four","comparisonType":"MATCH","value":"?*","isNegativeMatch":true},"adjustmentType":"Override","adjustmentValue":5,"bulkListId":null},{"criteria":{"tagId":"tag five","comparisonType":"REQUIRED","value":"","isNegativeMatch":false}},{"criteria":{"tagId":"ip address","comparisonType":"REGEX","value":"201\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}","isNegativeMatch":false},"adjustmentType":"Add","adjustmentValue":10,"bulkListId":null},{"criteria":{"tagId":"full name","comparisonType":"MATCH","value":"*Smith*","isNegativeMatch":false},"adjustmentType":"Add","adjustmentValue":12,"bulkListId":null}]}; // \Ringba\Model\OverrideRTBSettingsforaPublisherRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->overrideRTBSettingsforaPublisher($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest);
+    $result = $apiInstance->overrideRTBSettingsforaPublisher($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublisherRTBOverridesApi->overrideRTBSettingsforaPublisher: ', $e->getMessage(), PHP_EOL;
@@ -173,11 +173,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **overrideRTBSettingsforaPublisherRequest** | [**\Ringba\Model\OverrideRTBSettingsforaPublisherRequest**](../Model/OverrideRTBSettingsforaPublisherRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

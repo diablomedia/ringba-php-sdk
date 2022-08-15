@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `exportCSVByJobId()`
 
 ```php
-exportCSVByJobId($authorization, $accountId, $cSVJobId): \Ringba\Model\ExportByJobId
+exportCSVByJobId($accountId, $cSVJobId, $authorization): \Ringba\Model\ExportByJobId
 ```
 
 Export CSV By Job Id
@@ -31,12 +31,12 @@ $apiInstance = new Ringba\Api\ExportCallLogsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $cSVJobId = 'cSVJobId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->exportCSVByJobId($authorization, $accountId, $cSVJobId);
+    $result = $apiInstance->exportCSVByJobId($accountId, $cSVJobId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportCallLogsApi->exportCSVByJobId: ', $e->getMessage(), PHP_EOL;
@@ -47,9 +47,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **cSVJobId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 ## `exportCallLogCSV()`
 
 ```php
-exportCallLogCSV($authorization, $accountId, $exportCallLogCSVRequest): \Ringba\Model\ExportCallLogCSV
+exportCallLogCSV($accountId, $exportCallLogCSVRequest, $authorization): \Ringba\Model\ExportCallLogCSV
 ```
 
 Export Call Log - CSV
@@ -91,12 +91,12 @@ $apiInstance = new Ringba\Api\ExportCallLogsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $exportCallLogCSVRequest = {"reportEnd":"2021-02-02T07:59:59Z","reportStart":"2021-02-01T08:00:00Z","orderByColumns":[{"column":"numberId","direction":"desc"},{"column":"callDt","direction":"desc"}],"valueColumns":[{"column":"campaignName"},{"column":"publisherName"},{"column":"targetName"},{"column":"targetNumber"},{"column":"buyer"},{"column":"targetGroupName"},{"column":"campaignId"},{"column":"publisherId"},{"column":"publisherSubId"},{"column":"targetId"},{"column":"targetSubId"},{"column":"buyerId"},{"column":"targetBuyerSubId"},{"column":"targetGroupId"},{"column":"inboundCallId"},{"column":"callDt"},{"column":"inboundPhoneNumber"},{"column":"number"},{"column":"numberId"},{"column":"callCompletedDt"},{"column":"callConnectionDt"},{"column":"endCallSource"},{"column":"hasConnected"},{"column":"isIncomplete"},{"column":"hasRecording"},{"column":"isLive"},{"column":"recordingUrl"},{"column":"isFromNumberPool"},{"column":"numberPoolId"},{"column":"numberPoolName"},{"column":"timeToCallInSeconds"},{"column":"callLengthInSeconds"},{"column":"connectedCallLengthInSeconds"},{"column":"timeToConnectInSeconds"},{"column":"noPayoutReason"},{"column":"noConversionReason"},{"column":"blockReason"},{"column":"incompleteCallReason"},{"column":"offlineConversionUploaded"},{"column":"hasPayout"},{"column":"isDuplicate"},{"column":"hasPreviouslyConnected"},{"column":"hasConverted"},{"column":"wasBlocked"},{"column":"convAdjustmentsApprovedAmount"},{"column":"conversionAmount"},{"column":"profitNet"},{"column":"profitGross"},{"column":"payoutAmount"},{"column":"hasVoiceMail"},{"column":"totalCost"},{"column":"telcoCost"},{"column":"wasConversionAdjusted"},{"column":"conversionAdjustedCalls"},{"column":"wasPayoutAdjusted"},{"column":"hasAnnotations"},{"column":"convAdjustmentsRejectedCount"},{"column":"convAdjustmentRequestCount"},{"column":"convAdjustmentsApproved"},{"column":"tcpaCount"},{"column":"wasBlockedByTCPA"},{"column":"tcpaCost"},{"column":"dataEnrichmentCount"},{"column":"icpCost"},{"column":"ivrDepth"},{"column":"pingSuccessCount"},{"column":"pingFailCount"},{"column":"pingTotalBidAmount"},{"column":"pingDynamicCallLengthInSeconds"},{"column":"avgPingTreeBidAmount"},{"column":"winningBid"},{"column":"winningBidCallAccepted"},{"column":"winningBidCallRejected"}]}; // \Ringba\Model\ExportCallLogCSVRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->exportCallLogCSV($authorization, $accountId, $exportCallLogCSVRequest);
+    $result = $apiInstance->exportCallLogCSV($accountId, $exportCallLogCSVRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportCallLogsApi->exportCallLogCSV: ', $e->getMessage(), PHP_EOL;
@@ -107,9 +107,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **exportCallLogCSVRequest** | [**\Ringba\Model\ExportCallLogCSVRequest**](../Model/ExportCallLogCSVRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

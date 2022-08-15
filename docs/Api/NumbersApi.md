@@ -18,7 +18,7 @@ Method | HTTP request | Description
 ## `addaPublishertoaNumber()`
 
 ```php
-addaPublishertoaNumber($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest): \Ringba\Model\AddaPublishertoaNumber
+addaPublishertoaNumber($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization): \Ringba\Model\AddaPublishertoaNumber
 ```
 
 Add a Publisher to a Number
@@ -38,13 +38,13 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
 $addaPublishertoaNumberRequest = {"affiliateId":"{{publisherId}}"}; // \Ringba\Model\AddaPublishertoaNumberRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addaPublishertoaNumber($authorization, $accountId, $numberId, $addaPublishertoaNumberRequest);
+    $result = $apiInstance->addaPublishertoaNumber($accountId, $numberId, $addaPublishertoaNumberRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->addaPublishertoaNumber: ', $e->getMessage(), PHP_EOL;
@@ -55,10 +55,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberId** | **string**|  |
  **addaPublishertoaNumberRequest** | [**\Ringba\Model\AddaPublishertoaNumberRequest**](../Model/AddaPublishertoaNumberRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -80,7 +80,7 @@ No authorization required
 ## `createNewNumber()`
 
 ```php
-createNewNumber($authorization, $accountId, $createNewNumberRequest): \Ringba\Model\CreateNewNumberNotTollFree
+createNewNumber($accountId, $createNewNumberRequest, $authorization): \Ringba\Model\CreateNewNumberNotTollFree
 ```
 
 Create New Number
@@ -100,12 +100,12 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $createNewNumberRequest = {"countryCode":"US","chargeAccountIfNeeded":true,"isTollFree":true,"areaCode":"877"}; // \Ringba\Model\CreateNewNumberRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewNumber($authorization, $accountId, $createNewNumberRequest);
+    $result = $apiInstance->createNewNumber($accountId, $createNewNumberRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->createNewNumber: ', $e->getMessage(), PHP_EOL;
@@ -116,9 +116,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **createNewNumberRequest** | [**\Ringba\Model\CreateNewNumberRequest**](../Model/CreateNewNumberRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -140,7 +140,7 @@ No authorization required
 ## `deleteUnusedNumbersFromYourAccount()`
 
 ```php
-deleteUnusedNumbersFromYourAccount($authorization, $accountId): \Ringba\Model\DeleteUnusedNumbersFromYourAccount
+deleteUnusedNumbersFromYourAccount($accountId, $authorization): \Ringba\Model\DeleteUnusedNumbersFromYourAccount
 ```
 
 Delete Unused Numbers From Your Account
@@ -160,11 +160,11 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteUnusedNumbersFromYourAccount($authorization, $accountId);
+    $result = $apiInstance->deleteUnusedNumbersFromYourAccount($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->deleteUnusedNumbersFromYourAccount: ', $e->getMessage(), PHP_EOL;
@@ -175,8 +175,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -198,7 +198,7 @@ No authorization required
 ## `deleteaNumberFromYourAccount()`
 
 ```php
-deleteaNumberFromYourAccount($authorization, $accountId, $numberId): \Ringba\Model\DeleteaNumberFromYourAccountwithunlinkqueryparameter
+deleteaNumberFromYourAccount($accountId, $numberId, $authorization): \Ringba\Model\DeleteaNumberFromYourAccountwithunlinkqueryparameter
 ```
 
 Delete a Number From Your Account
@@ -218,12 +218,12 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteaNumberFromYourAccount($authorization, $accountId, $numberId);
+    $result = $apiInstance->deleteaNumberFromYourAccount($accountId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->deleteaNumberFromYourAccount: ', $e->getMessage(), PHP_EOL;
@@ -234,9 +234,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -258,7 +258,7 @@ No authorization required
 ## `editInformationAboutaNumber()`
 
 ```php
-editInformationAboutaNumber($authorization, $accountId, $editInformationAboutaNumberRequest): \Ringba\Model\EditInformationAboutaNumber
+editInformationAboutaNumber($accountId, $editInformationAboutaNumberRequest, $authorization): \Ringba\Model\EditInformationAboutaNumber
 ```
 
 Edit Information About a Number
@@ -278,12 +278,12 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $editInformationAboutaNumberRequest = {"enabled":true,"name":"New Name","tags":[{"tagName":"TagName","tagValue":"TagValue"}]}; // \Ringba\Model\EditInformationAboutaNumberRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->editInformationAboutaNumber($authorization, $accountId, $editInformationAboutaNumberRequest);
+    $result = $apiInstance->editInformationAboutaNumber($accountId, $editInformationAboutaNumberRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->editInformationAboutaNumber: ', $e->getMessage(), PHP_EOL;
@@ -294,9 +294,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **editInformationAboutaNumberRequest** | [**\Ringba\Model\EditInformationAboutaNumberRequest**](../Model/EditInformationAboutaNumberRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -318,7 +318,7 @@ No authorization required
 ## `getDetailsAboutaSpecificNumber()`
 
 ```php
-getDetailsAboutaSpecificNumber($authorization, $accountId, $numberId): \Ringba\Model\GetDetailsAboutaSpecificNumber
+getDetailsAboutaSpecificNumber($accountId, $numberId, $authorization): \Ringba\Model\GetDetailsAboutaSpecificNumber
 ```
 
 Get Details About a Specific Number
@@ -338,12 +338,12 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsAboutaSpecificNumber($authorization, $accountId, $numberId);
+    $result = $apiInstance->getDetailsAboutaSpecificNumber($accountId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->getDetailsAboutaSpecificNumber: ', $e->getMessage(), PHP_EOL;
@@ -354,9 +354,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -378,7 +378,7 @@ No authorization required
 ## `getInboundReferencesforaSpecificNumber()`
 
 ```php
-getInboundReferencesforaSpecificNumber($authorization, $accountId, $numberId): \Ringba\Model\GetInboundReferencesforaSpecificNumberwithaJsTag
+getInboundReferencesforaSpecificNumber($accountId, $numberId, $authorization): \Ringba\Model\GetInboundReferencesforaSpecificNumberwithaJsTag
 ```
 
 Get Inbound References for a Specific Number
@@ -398,12 +398,12 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getInboundReferencesforaSpecificNumber($authorization, $accountId, $numberId);
+    $result = $apiInstance->getInboundReferencesforaSpecificNumber($accountId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->getInboundReferencesforaSpecificNumber: ', $e->getMessage(), PHP_EOL;
@@ -414,9 +414,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -438,7 +438,7 @@ No authorization required
 ## `getNumbersAssociatedwithAccount()`
 
 ```php
-getNumbersAssociatedwithAccount($authorization, $accountId): \Ringba\Model\GetNumbersAssociatedwithAccount
+getNumbersAssociatedwithAccount($accountId, $authorization): \Ringba\Model\GetNumbersAssociatedwithAccount
 ```
 
 Get Numbers Associated with Account
@@ -458,11 +458,11 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getNumbersAssociatedwithAccount($authorization, $accountId);
+    $result = $apiInstance->getNumbersAssociatedwithAccount($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->getNumbersAssociatedwithAccount: ', $e->getMessage(), PHP_EOL;
@@ -473,8 +473,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -496,7 +496,7 @@ No authorization required
 ## `removeaPublisherfromaNumber()`
 
 ```php
-removeaPublisherfromaNumber($authorization, $accountId, $numberId, $publisherId): \Ringba\Model\RemoveaPublisherfromaNumber
+removeaPublisherfromaNumber($accountId, $numberId, $publisherId, $authorization): \Ringba\Model\RemoveaPublisherfromaNumber
 ```
 
 Remove a Publisher from a Number
@@ -516,13 +516,13 @@ $apiInstance = new Ringba\Api\NumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeaPublisherfromaNumber($authorization, $accountId, $numberId, $publisherId);
+    $result = $apiInstance->removeaPublisherfromaNumber($accountId, $numberId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumbersApi->removeaPublisherfromaNumber: ', $e->getMessage(), PHP_EOL;
@@ -533,10 +533,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **numberId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

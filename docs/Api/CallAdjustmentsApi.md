@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `addAnnotationtoaCall()`
 
 ```php
-addAnnotationtoaCall($authorization, $accountId, $addAnnotationtoaCallRequest): \Ringba\Model\AddAnnotationtoaCall
+addAnnotationtoaCall($accountId, $addAnnotationtoaCallRequest, $authorization): \Ringba\Model\AddAnnotationtoaCall
 ```
 
 Add Annotation to a Call
@@ -35,12 +35,12 @@ $apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $addAnnotationtoaCallRequest = {"inboundCallId":"{{InboundCallId}}","tags":[{"tagType":"Annotations","tagName":"Any Name","tagValue":"Any Value"}]}; // \Ringba\Model\AddAnnotationtoaCallRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addAnnotationtoaCall($authorization, $accountId, $addAnnotationtoaCallRequest);
+    $result = $apiInstance->addAnnotationtoaCall($accountId, $addAnnotationtoaCallRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->addAnnotationtoaCall: ', $e->getMessage(), PHP_EOL;
@@ -51,9 +51,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **addAnnotationtoaCallRequest** | [**\Ringba\Model\AddAnnotationtoaCallRequest**](../Model/AddAnnotationtoaCallRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -75,7 +75,7 @@ No authorization required
 ## `adjustRevenueandOrPaymentforaCallWithabsoluteadjustments()`
 
 ```php
-adjustRevenueandOrPaymentforaCallWithabsoluteadjustments($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest): \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustments
+adjustRevenueandOrPaymentforaCallWithabsoluteadjustments($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization): \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustments
 ```
 
 Adjust Revenue and/or Payment for a Call (with absolute adjustments)
@@ -95,12 +95,12 @@ $apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest = {"inboundCallId":"{{InboundCallId}}","reason":"Call payments adjusted by acct. Admin.","adjustConversion":true,"adjustPayout":true,"newConversionAmount":0.1,"newPayoutAmount":0.1}; // \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->adjustRevenueandOrPaymentforaCallWithabsoluteadjustments($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest);
+    $result = $apiInstance->adjustRevenueandOrPaymentforaCallWithabsoluteadjustments($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->adjustRevenueandOrPaymentforaCallWithabsoluteadjustments: ', $e->getMessage(), PHP_EOL;
@@ -111,9 +111,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest** | [**\Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest**](../Model/AdjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -135,7 +135,7 @@ No authorization required
 ## `adjustRevenueandOrPaymentforaCallWithrelativeadjustments()`
 
 ```php
-adjustRevenueandOrPaymentforaCallWithrelativeadjustments($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest): \Ringba\Model\AdjustRevenueandPaymentforaCallwithrelativeadjustment
+adjustRevenueandOrPaymentforaCallWithrelativeadjustments($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization): \Ringba\Model\AdjustRevenueandPaymentforaCallwithrelativeadjustment
 ```
 
 Adjust Revenue and/or Payment for a Call (with relative adjustments)
@@ -155,12 +155,12 @@ $apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest = {"inboundCallId":"{{InboundCallId}}","reason":"Call payments adjusted by acct. Admin.","adjustConversion":true,"adjustPayout":true,"adjustConverionByAmount":-0.01,"adjustPayoutByAmount":0.01}; // \Ringba\Model\AdjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->adjustRevenueandOrPaymentforaCallWithrelativeadjustments($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest);
+    $result = $apiInstance->adjustRevenueandOrPaymentforaCallWithrelativeadjustments($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->adjustRevenueandOrPaymentforaCallWithrelativeadjustments: ', $e->getMessage(), PHP_EOL;
@@ -171,9 +171,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest** | [**\Ringba\Model\AdjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest**](../Model/AdjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -195,7 +195,7 @@ No authorization required
 ## `bUYERRequestforPayoutAdjustmentWithabsoluteadjustment()`
 
 ```php
-bUYERRequestforPayoutAdjustmentWithabsoluteadjustment($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest): \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustment
+bUYERRequestforPayoutAdjustmentWithabsoluteadjustment($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization): \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustment
 ```
 
 BUYER Request for Payout Adjustment (with absolute adjustment)
@@ -215,12 +215,12 @@ $apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{buyerApiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $buyerAccountId = 'buyerAccountId_example'; // string | 
 $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest = {"inboundCallId":"{{InboundCallId}}","reason":"Test call revenue adjustment request","amount":0.4}; // \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest | 
+$authorization = Token {{buyerApiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->bUYERRequestforPayoutAdjustmentWithabsoluteadjustment($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest);
+    $result = $apiInstance->bUYERRequestforPayoutAdjustmentWithabsoluteadjustment($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->bUYERRequestforPayoutAdjustmentWithabsoluteadjustment: ', $e->getMessage(), PHP_EOL;
@@ -231,9 +231,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **buyerAccountId** | **string**|  |
  **bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest** | [**\Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest**](../Model/BUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -255,7 +255,7 @@ No authorization required
 ## `bUYERRequestforPayoutAdjustmentWithrelativeadjustment()`
 
 ```php
-bUYERRequestforPayoutAdjustmentWithrelativeadjustment($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest): \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustment
+bUYERRequestforPayoutAdjustmentWithrelativeadjustment($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization): \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustment
 ```
 
 BUYER Request for Payout Adjustment (with relative adjustment)
@@ -275,12 +275,12 @@ $apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{buyerApiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $buyerAccountId = 'buyerAccountId_example'; // string | 
 $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest = {"inboundCallId":"{{InboundCallId}}","reason":"Test call revenue adjustment request","amount":0.2}; // \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest | 
+$authorization = Token {{buyerApiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->bUYERRequestforPayoutAdjustmentWithrelativeadjustment($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest);
+    $result = $apiInstance->bUYERRequestforPayoutAdjustmentWithrelativeadjustment($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->bUYERRequestforPayoutAdjustmentWithrelativeadjustment: ', $e->getMessage(), PHP_EOL;
@@ -291,9 +291,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **buyerAccountId** | **string**|  |
  **bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest** | [**\Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest**](../Model/BUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -315,7 +315,7 @@ No authorization required
 ## `voidRevenueandOrPaymentforaCall()`
 
 ```php
-voidRevenueandOrPaymentforaCall($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest): \Ringba\Model\VoidRevenueandPaymentforaCall
+voidRevenueandOrPaymentforaCall($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization): \Ringba\Model\VoidRevenueandPaymentforaCall
 ```
 
 Void Revenue and/or Payment for a Call
@@ -335,12 +335,12 @@ $apiInstance = new Ringba\Api\CallAdjustmentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $voidRevenueandorPaymentforaCallRequest = {"inboundCallId":"{{InboundCallId}}","voidReason":"Test call voiding","voidConversion":true,"voidPayout":true,"voidConverionAmount":0.03,"voidPayoutAmount":0.06}; // \Ringba\Model\VoidRevenueandorPaymentforaCallRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->voidRevenueandOrPaymentforaCall($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest);
+    $result = $apiInstance->voidRevenueandOrPaymentforaCall($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CallAdjustmentsApi->voidRevenueandOrPaymentforaCall: ', $e->getMessage(), PHP_EOL;
@@ -351,9 +351,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **voidRevenueandorPaymentforaCallRequest** | [**\Ringba\Model\VoidRevenueandorPaymentforaCallRequest**](../Model/VoidRevenueandorPaymentforaCallRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

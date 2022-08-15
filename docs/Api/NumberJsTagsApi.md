@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `createNewJsTagforaNumber()`
 
 ```php
-createNewJsTagforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest): \Ringba\Model\CreateNewJsTagforaNumber
+createNewJsTagforaNumber($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization): \Ringba\Model\CreateNewJsTagforaNumber
 ```
 
 Create New Js Tag for a Number
@@ -33,15 +33,15 @@ $apiInstance = new Ringba\Api\NumberJsTagsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
 $createNewJsTagforaNumberRequest = {"name":"Example Tag","e164ExistingNumber":"+18885551234","hasNumberPool":false,"numberPoolId":null}; // \Ringba\Model\CreateNewJsTagforaNumberRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewJsTagforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest);
+    $result = $apiInstance->createNewJsTagforaNumber($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberJsTagsApi->createNewJsTagforaNumber: ', $e->getMessage(), PHP_EOL;
@@ -52,12 +52,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **numberId** | **string**|  |
  **createNewJsTagforaNumberRequest** | [**\Ringba\Model\CreateNewJsTagforaNumberRequest**](../Model/CreateNewJsTagforaNumberRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -79,7 +79,7 @@ No authorization required
 ## `getJsTagsforaNumber()`
 
 ```php
-getJsTagsforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId): \Ringba\Model\GetJsTagsforaNumber
+getJsTagsforaNumber($accountId, $campaignId, $publisherId, $numberId, $authorization): \Ringba\Model\GetJsTagsforaNumber
 ```
 
 Get Js Tags for a Number
@@ -99,14 +99,14 @@ $apiInstance = new Ringba\Api\NumberJsTagsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getJsTagsforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId);
+    $result = $apiInstance->getJsTagsforaNumber($accountId, $campaignId, $publisherId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberJsTagsApi->getJsTagsforaNumber: ', $e->getMessage(), PHP_EOL;
@@ -117,11 +117,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -143,7 +143,7 @@ No authorization required
 ## `modifyJsTagforaNumber()`
 
 ```php
-modifyJsTagforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest): \Ringba\Model\ModifyJsTagforaNumber
+modifyJsTagforaNumber($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization): \Ringba\Model\ModifyJsTagforaNumber
 ```
 
 Modify Js Tag for a Number
@@ -163,16 +163,16 @@ $apiInstance = new Ringba\Api\NumberJsTagsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
 $jsTagId = 'jsTagId_example'; // string | 
 $modifyJsTagforaNumberRequest = {"name":"New Name","e164ExistingNumber":"+18885559876"}; // \Ringba\Model\ModifyJsTagforaNumberRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->modifyJsTagforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest);
+    $result = $apiInstance->modifyJsTagforaNumber($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberJsTagsApi->modifyJsTagforaNumber: ', $e->getMessage(), PHP_EOL;
@@ -183,13 +183,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **numberId** | **string**|  |
  **jsTagId** | **string**|  |
  **modifyJsTagforaNumberRequest** | [**\Ringba\Model\ModifyJsTagforaNumberRequest**](../Model/ModifyJsTagforaNumberRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -211,7 +211,7 @@ No authorization required
 ## `removeaJsTagfromaNumber()`
 
 ```php
-removeaJsTagfromaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId): \Ringba\Model\RemoveaJsTagfromaNumber
+removeaJsTagfromaNumber($accountId, $campaignId, $publisherId, $numberId, $authorization): \Ringba\Model\RemoveaJsTagfromaNumber
 ```
 
 Remove a Js Tag from a Number
@@ -231,14 +231,14 @@ $apiInstance = new Ringba\Api\NumberJsTagsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $numberId = 'numberId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeaJsTagfromaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId);
+    $result = $apiInstance->removeaJsTagfromaNumber($accountId, $campaignId, $publisherId, $numberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NumberJsTagsApi->removeaJsTagfromaNumber: ', $e->getMessage(), PHP_EOL;
@@ -249,11 +249,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **numberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

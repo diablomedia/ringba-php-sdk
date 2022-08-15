@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createNewAddress()`
 
 ```php
-createNewAddress($authorization, $accountId, $createNewAddressRequest): \Ringba\Model\CreateNewAddress
+createNewAddress($accountId, $createNewAddressRequest, $authorization): \Ringba\Model\CreateNewAddress
 ```
 
 Create New Address
@@ -37,12 +37,12 @@ $apiInstance = new Ringba\Api\AddressesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $createNewAddressRequest = {"city":"Midlothian","countryCode":"US","countryName":"United States","customerName":"Paper Street Soap Company","name":"Test2","postalCode":"23112","region":"Virginia","streetAddress":"456 Paper St"}; // \Ringba\Model\CreateNewAddressRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewAddress($authorization, $accountId, $createNewAddressRequest);
+    $result = $apiInstance->createNewAddress($accountId, $createNewAddressRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->createNewAddress: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +53,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **createNewAddressRequest** | [**\Ringba\Model\CreateNewAddressRequest**](../Model/CreateNewAddressRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -137,7 +137,7 @@ No authorization required
 ## `editAddress()`
 
 ```php
-editAddress($authorization, $accountId, $addressId, $editAddressRequest): \Ringba\Model\EditAddress
+editAddress($accountId, $addressId, $editAddressRequest, $authorization): \Ringba\Model\EditAddress
 ```
 
 Edit Address
@@ -157,13 +157,13 @@ $apiInstance = new Ringba\Api\AddressesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $addressId = 'addressId_example'; // string | 
 $editAddressRequest = {"name":"new name","customerName":"some business","streetAddress":"456 Example St","city":"San Diego","region":"California","postalCode":"92115","countryName":"United States","countryCode":"US"}; // \Ringba\Model\EditAddressRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->editAddress($authorization, $accountId, $addressId, $editAddressRequest);
+    $result = $apiInstance->editAddress($accountId, $addressId, $editAddressRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->editAddress: ', $e->getMessage(), PHP_EOL;
@@ -174,10 +174,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **addressId** | **string**|  |
  **editAddressRequest** | [**\Ringba\Model\EditAddressRequest**](../Model/EditAddressRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -199,7 +199,7 @@ No authorization required
 ## `getAddressbyID()`
 
 ```php
-getAddressbyID($authorization, $accountId, $addressId): \Ringba\Model\GetAddressbyID
+getAddressbyID($accountId, $addressId, $authorization): \Ringba\Model\GetAddressbyID
 ```
 
 Get Address by ID
@@ -219,12 +219,12 @@ $apiInstance = new Ringba\Api\AddressesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $addressId = 'addressId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getAddressbyID($authorization, $accountId, $addressId);
+    $result = $apiInstance->getAddressbyID($accountId, $addressId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->getAddressbyID: ', $e->getMessage(), PHP_EOL;
@@ -235,9 +235,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **addressId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -259,7 +259,7 @@ No authorization required
 ## `getAddresses()`
 
 ```php
-getAddresses($authorization, $accountId): \Ringba\Model\GetAddresses
+getAddresses($accountId, $authorization): \Ringba\Model\GetAddresses
 ```
 
 Get Addresses
@@ -279,11 +279,11 @@ $apiInstance = new Ringba\Api\AddressesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getAddresses($authorization, $accountId);
+    $result = $apiInstance->getAddresses($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->getAddresses: ', $e->getMessage(), PHP_EOL;
@@ -294,8 +294,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -317,7 +317,7 @@ No authorization required
 ## `getCountriesAssociatedWithAccount()`
 
 ```php
-getCountriesAssociatedWithAccount($authorization, $accountId): \Ringba\Model\GetAddressesbyCountry[]
+getCountriesAssociatedWithAccount($accountId, $authorization): \Ringba\Model\GetAddressesbyCountry[]
 ```
 
 Get Countries Associated With Account
@@ -337,11 +337,11 @@ $apiInstance = new Ringba\Api\AddressesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getCountriesAssociatedWithAccount($authorization, $accountId);
+    $result = $apiInstance->getCountriesAssociatedWithAccount($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->getCountriesAssociatedWithAccount: ', $e->getMessage(), PHP_EOL;
@@ -352,8 +352,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -375,7 +375,7 @@ No authorization required
 ## `getDetailsandRequirementsforaSpecificCountry()`
 
 ```php
-getDetailsandRequirementsforaSpecificCountry($authorization, $accountId, $countryCode): \Ringba\Model\GetDetailsaboutaspecificcountry
+getDetailsandRequirementsforaSpecificCountry($accountId, $countryCode, $authorization): \Ringba\Model\GetDetailsaboutaspecificcountry
 ```
 
 Get Details and Requirements for a Specific Country
@@ -393,12 +393,12 @@ $apiInstance = new Ringba\Api\AddressesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $countryCode = 'countryCode_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsandRequirementsforaSpecificCountry($authorization, $accountId, $countryCode);
+    $result = $apiInstance->getDetailsandRequirementsforaSpecificCountry($accountId, $countryCode, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->getDetailsandRequirementsforaSpecificCountry: ', $e->getMessage(), PHP_EOL;
@@ -409,9 +409,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **countryCode** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -433,7 +433,7 @@ No authorization required
 ## `setDefaultAddress()`
 
 ```php
-setDefaultAddress($authorization, $accountId, $addressId): \Ringba\Model\SetDefaultAddress
+setDefaultAddress($accountId, $addressId, $authorization): \Ringba\Model\SetDefaultAddress
 ```
 
 Set Default Address
@@ -453,12 +453,12 @@ $apiInstance = new Ringba\Api\AddressesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $addressId = 'addressId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->setDefaultAddress($authorization, $accountId, $addressId);
+    $result = $apiInstance->setDefaultAddress($accountId, $addressId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->setDefaultAddress: ', $e->getMessage(), PHP_EOL;
@@ -469,9 +469,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **addressId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

@@ -123,16 +123,16 @@ class BuyersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetBuyers
      */
-    public function getBuyers($authorization, $accountId)
+    public function getBuyers($accountId, $authorization = null)
     {
-        list($response) = $this->getBuyersWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getBuyersWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -144,16 +144,16 @@ class BuyersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetBuyers, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBuyersWithHttpInfo($authorization, $accountId)
+    public function getBuyersWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getBuyersRequest($authorization, $accountId);
+        $request = $this->getBuyersRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -247,15 +247,15 @@ class BuyersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBuyersAsync($authorization, $accountId)
+    public function getBuyersAsync($accountId, $authorization = null)
     {
-        return $this->getBuyersAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getBuyersAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -271,16 +271,16 @@ class BuyersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBuyersAsyncWithHttpInfo($authorization, $accountId)
+    public function getBuyersAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetBuyers';
-        $request = $this->getBuyersRequest($authorization, $accountId);
+        $request = $this->getBuyersRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -324,20 +324,14 @@ class BuyersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBuyersRequest($authorization, $accountId)
+    public function getBuyersRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getBuyers'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

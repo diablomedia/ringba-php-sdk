@@ -123,17 +123,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateNewWebhook
      */
-    public function createNewWebhook($authorization, $accountId, $createNewWebhookRequest)
+    public function createNewWebhook($accountId, $createNewWebhookRequest, $authorization = null)
     {
-        list($response) = $this->createNewWebhookWithHttpInfo($authorization, $accountId, $createNewWebhookRequest);
+        list($response) = $this->createNewWebhookWithHttpInfo($accountId, $createNewWebhookRequest, $authorization);
         return $response;
     }
 
@@ -145,17 +145,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateNewWebhook, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createNewWebhookWithHttpInfo($authorization, $accountId, $createNewWebhookRequest)
+    public function createNewWebhookWithHttpInfo($accountId, $createNewWebhookRequest, $authorization = null)
     {
-        $request = $this->createNewWebhookRequest($authorization, $accountId, $createNewWebhookRequest);
+        $request = $this->createNewWebhookRequest($accountId, $createNewWebhookRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,16 +249,16 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewWebhookAsync($authorization, $accountId, $createNewWebhookRequest)
+    public function createNewWebhookAsync($accountId, $createNewWebhookRequest, $authorization = null)
     {
-        return $this->createNewWebhookAsyncWithHttpInfo($authorization, $accountId, $createNewWebhookRequest)
+        return $this->createNewWebhookAsyncWithHttpInfo($accountId, $createNewWebhookRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,17 +274,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewWebhookAsyncWithHttpInfo($authorization, $accountId, $createNewWebhookRequest)
+    public function createNewWebhookAsyncWithHttpInfo($accountId, $createNewWebhookRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateNewWebhook';
-        $request = $this->createNewWebhookRequest($authorization, $accountId, $createNewWebhookRequest);
+        $request = $this->createNewWebhookRequest($accountId, $createNewWebhookRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -328,21 +328,15 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createNewWebhookRequest($authorization, $accountId, $createNewWebhookRequest)
+    public function createNewWebhookRequest($accountId, $createNewWebhookRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createNewWebhook'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -456,17 +450,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeleteaWebhook
      */
-    public function deleteaWebhook($authorization, $accountId, $webHookId)
+    public function deleteaWebhook($accountId, $webHookId, $authorization = null)
     {
-        list($response) = $this->deleteaWebhookWithHttpInfo($authorization, $accountId, $webHookId);
+        list($response) = $this->deleteaWebhookWithHttpInfo($accountId, $webHookId, $authorization);
         return $response;
     }
 
@@ -478,17 +472,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeleteaWebhook, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteaWebhookWithHttpInfo($authorization, $accountId, $webHookId)
+    public function deleteaWebhookWithHttpInfo($accountId, $webHookId, $authorization = null)
     {
-        $request = $this->deleteaWebhookRequest($authorization, $accountId, $webHookId);
+        $request = $this->deleteaWebhookRequest($accountId, $webHookId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -582,16 +576,16 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteaWebhookAsync($authorization, $accountId, $webHookId)
+    public function deleteaWebhookAsync($accountId, $webHookId, $authorization = null)
     {
-        return $this->deleteaWebhookAsyncWithHttpInfo($authorization, $accountId, $webHookId)
+        return $this->deleteaWebhookAsyncWithHttpInfo($accountId, $webHookId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -607,17 +601,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteaWebhookAsyncWithHttpInfo($authorization, $accountId, $webHookId)
+    public function deleteaWebhookAsyncWithHttpInfo($accountId, $webHookId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeleteaWebhook';
-        $request = $this->deleteaWebhookRequest($authorization, $accountId, $webHookId);
+        $request = $this->deleteaWebhookRequest($accountId, $webHookId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -661,21 +655,15 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteaWebhookRequest($authorization, $accountId, $webHookId)
+    public function deleteaWebhookRequest($accountId, $webHookId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deleteaWebhook'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -791,17 +779,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDetailsforaSingleWebhook
      */
-    public function getDetailsforaSingleWebhook($authorization, $accountId, $webHookId)
+    public function getDetailsforaSingleWebhook($accountId, $webHookId, $authorization = null)
     {
-        list($response) = $this->getDetailsforaSingleWebhookWithHttpInfo($authorization, $accountId, $webHookId);
+        list($response) = $this->getDetailsforaSingleWebhookWithHttpInfo($accountId, $webHookId, $authorization);
         return $response;
     }
 
@@ -813,17 +801,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDetailsforaSingleWebhook, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDetailsforaSingleWebhookWithHttpInfo($authorization, $accountId, $webHookId)
+    public function getDetailsforaSingleWebhookWithHttpInfo($accountId, $webHookId, $authorization = null)
     {
-        $request = $this->getDetailsforaSingleWebhookRequest($authorization, $accountId, $webHookId);
+        $request = $this->getDetailsforaSingleWebhookRequest($accountId, $webHookId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -917,16 +905,16 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsforaSingleWebhookAsync($authorization, $accountId, $webHookId)
+    public function getDetailsforaSingleWebhookAsync($accountId, $webHookId, $authorization = null)
     {
-        return $this->getDetailsforaSingleWebhookAsyncWithHttpInfo($authorization, $accountId, $webHookId)
+        return $this->getDetailsforaSingleWebhookAsyncWithHttpInfo($accountId, $webHookId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -942,17 +930,17 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsforaSingleWebhookAsyncWithHttpInfo($authorization, $accountId, $webHookId)
+    public function getDetailsforaSingleWebhookAsyncWithHttpInfo($accountId, $webHookId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDetailsforaSingleWebhook';
-        $request = $this->getDetailsforaSingleWebhookRequest($authorization, $accountId, $webHookId);
+        $request = $this->getDetailsforaSingleWebhookRequest($accountId, $webHookId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -996,21 +984,15 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDetailsforaSingleWebhookRequest($authorization, $accountId, $webHookId)
+    public function getDetailsforaSingleWebhookRequest($accountId, $webHookId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDetailsforaSingleWebhook'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1126,16 +1108,16 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetWebhooks
      */
-    public function getWebhooks($authorization, $accountId)
+    public function getWebhooks($accountId, $authorization = null)
     {
-        list($response) = $this->getWebhooksWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getWebhooksWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -1147,16 +1129,16 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetWebhooks, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWebhooksWithHttpInfo($authorization, $accountId)
+    public function getWebhooksWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getWebhooksRequest($authorization, $accountId);
+        $request = $this->getWebhooksRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1250,15 +1232,15 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWebhooksAsync($authorization, $accountId)
+    public function getWebhooksAsync($accountId, $authorization = null)
     {
-        return $this->getWebhooksAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getWebhooksAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1274,16 +1256,16 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWebhooksAsyncWithHttpInfo($authorization, $accountId)
+    public function getWebhooksAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetWebhooks';
-        $request = $this->getWebhooksRequest($authorization, $accountId);
+        $request = $this->getWebhooksRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1327,20 +1309,14 @@ class WebhooksApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getWebhooksRequest($authorization, $accountId)
+    public function getWebhooksRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getWebhooks'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

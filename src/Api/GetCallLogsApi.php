@@ -123,17 +123,17 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetCallLogRequest $getCallLogRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetCallLogWithFilters
      */
-    public function getCallLog($authorization, $accountId, $getCallLogRequest)
+    public function getCallLog($accountId, $getCallLogRequest, $authorization = null)
     {
-        list($response) = $this->getCallLogWithHttpInfo($authorization, $accountId, $getCallLogRequest);
+        list($response) = $this->getCallLogWithHttpInfo($accountId, $getCallLogRequest, $authorization);
         return $response;
     }
 
@@ -145,17 +145,17 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetCallLogRequest $getCallLogRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetCallLogWithFilters, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCallLogWithHttpInfo($authorization, $accountId, $getCallLogRequest)
+    public function getCallLogWithHttpInfo($accountId, $getCallLogRequest, $authorization = null)
     {
-        $request = $this->getCallLogRequest($authorization, $accountId, $getCallLogRequest);
+        $request = $this->getCallLogRequest($accountId, $getCallLogRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,16 +249,16 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetCallLogRequest $getCallLogRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCallLogAsync($authorization, $accountId, $getCallLogRequest)
+    public function getCallLogAsync($accountId, $getCallLogRequest, $authorization = null)
     {
-        return $this->getCallLogAsyncWithHttpInfo($authorization, $accountId, $getCallLogRequest)
+        return $this->getCallLogAsyncWithHttpInfo($accountId, $getCallLogRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,17 +274,17 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetCallLogRequest $getCallLogRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCallLogAsyncWithHttpInfo($authorization, $accountId, $getCallLogRequest)
+    public function getCallLogAsyncWithHttpInfo($accountId, $getCallLogRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetCallLogWithFilters';
-        $request = $this->getCallLogRequest($authorization, $accountId, $getCallLogRequest);
+        $request = $this->getCallLogRequest($accountId, $getCallLogRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -328,21 +328,15 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetCallLogRequest $getCallLogRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCallLogRequest($authorization, $accountId, $getCallLogRequest)
+    public function getCallLogRequest($accountId, $getCallLogRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getCallLog'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -456,16 +450,16 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetColumnNames
      */
-    public function getColumnNames($authorization, $accountId)
+    public function getColumnNames($accountId, $authorization = null)
     {
-        list($response) = $this->getColumnNamesWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getColumnNamesWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -477,16 +471,16 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetColumnNames, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getColumnNamesWithHttpInfo($authorization, $accountId)
+    public function getColumnNamesWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getColumnNamesRequest($authorization, $accountId);
+        $request = $this->getColumnNamesRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -580,15 +574,15 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getColumnNamesAsync($authorization, $accountId)
+    public function getColumnNamesAsync($accountId, $authorization = null)
     {
-        return $this->getColumnNamesAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getColumnNamesAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -604,16 +598,16 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getColumnNamesAsyncWithHttpInfo($authorization, $accountId)
+    public function getColumnNamesAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetColumnNames';
-        $request = $this->getColumnNamesRequest($authorization, $accountId);
+        $request = $this->getColumnNamesRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -657,20 +651,14 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getColumnNamesRequest($authorization, $accountId)
+    public function getColumnNamesRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getColumnNames'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -772,17 +760,17 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetDetailsAboutSpecificCallsRequest $getDetailsAboutSpecificCallsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDetailsAboutSingleCall
      */
-    public function getDetailsAboutSpecificCalls($authorization, $accountId, $getDetailsAboutSpecificCallsRequest)
+    public function getDetailsAboutSpecificCalls($accountId, $getDetailsAboutSpecificCallsRequest, $authorization = null)
     {
-        list($response) = $this->getDetailsAboutSpecificCallsWithHttpInfo($authorization, $accountId, $getDetailsAboutSpecificCallsRequest);
+        list($response) = $this->getDetailsAboutSpecificCallsWithHttpInfo($accountId, $getDetailsAboutSpecificCallsRequest, $authorization);
         return $response;
     }
 
@@ -794,17 +782,17 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetDetailsAboutSpecificCallsRequest $getDetailsAboutSpecificCallsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDetailsAboutSingleCall, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDetailsAboutSpecificCallsWithHttpInfo($authorization, $accountId, $getDetailsAboutSpecificCallsRequest)
+    public function getDetailsAboutSpecificCallsWithHttpInfo($accountId, $getDetailsAboutSpecificCallsRequest, $authorization = null)
     {
-        $request = $this->getDetailsAboutSpecificCallsRequest($authorization, $accountId, $getDetailsAboutSpecificCallsRequest);
+        $request = $this->getDetailsAboutSpecificCallsRequest($accountId, $getDetailsAboutSpecificCallsRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -898,16 +886,16 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetDetailsAboutSpecificCallsRequest $getDetailsAboutSpecificCallsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutSpecificCallsAsync($authorization, $accountId, $getDetailsAboutSpecificCallsRequest)
+    public function getDetailsAboutSpecificCallsAsync($accountId, $getDetailsAboutSpecificCallsRequest, $authorization = null)
     {
-        return $this->getDetailsAboutSpecificCallsAsyncWithHttpInfo($authorization, $accountId, $getDetailsAboutSpecificCallsRequest)
+        return $this->getDetailsAboutSpecificCallsAsyncWithHttpInfo($accountId, $getDetailsAboutSpecificCallsRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -923,17 +911,17 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetDetailsAboutSpecificCallsRequest $getDetailsAboutSpecificCallsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutSpecificCallsAsyncWithHttpInfo($authorization, $accountId, $getDetailsAboutSpecificCallsRequest)
+    public function getDetailsAboutSpecificCallsAsyncWithHttpInfo($accountId, $getDetailsAboutSpecificCallsRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDetailsAboutSingleCall';
-        $request = $this->getDetailsAboutSpecificCallsRequest($authorization, $accountId, $getDetailsAboutSpecificCallsRequest);
+        $request = $this->getDetailsAboutSpecificCallsRequest($accountId, $getDetailsAboutSpecificCallsRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -977,21 +965,15 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\GetDetailsAboutSpecificCallsRequest $getDetailsAboutSpecificCallsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDetailsAboutSpecificCallsRequest($authorization, $accountId, $getDetailsAboutSpecificCallsRequest)
+    public function getDetailsAboutSpecificCallsRequest($accountId, $getDetailsAboutSpecificCallsRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDetailsAboutSpecificCalls'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1105,16 +1087,16 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetTagNamesforTypeInboundNumbers
      */
-    public function getTagsforFilteringCallLog($authorization, $accountId)
+    public function getTagsforFilteringCallLog($accountId, $authorization = null)
     {
-        list($response) = $this->getTagsforFilteringCallLogWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getTagsforFilteringCallLogWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -1126,16 +1108,16 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetTagNamesforTypeInboundNumbers, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTagsforFilteringCallLogWithHttpInfo($authorization, $accountId)
+    public function getTagsforFilteringCallLogWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getTagsforFilteringCallLogRequest($authorization, $accountId);
+        $request = $this->getTagsforFilteringCallLogRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1229,15 +1211,15 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTagsforFilteringCallLogAsync($authorization, $accountId)
+    public function getTagsforFilteringCallLogAsync($accountId, $authorization = null)
     {
-        return $this->getTagsforFilteringCallLogAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getTagsforFilteringCallLogAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1253,16 +1235,16 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTagsforFilteringCallLogAsyncWithHttpInfo($authorization, $accountId)
+    public function getTagsforFilteringCallLogAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetTagNamesforTypeInboundNumbers';
-        $request = $this->getTagsforFilteringCallLogRequest($authorization, $accountId);
+        $request = $this->getTagsforFilteringCallLogRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1306,20 +1288,14 @@ class GetCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTagsforFilteringCallLogRequest($authorization, $accountId)
+    public function getTagsforFilteringCallLogRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getTagsforFilteringCallLog'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

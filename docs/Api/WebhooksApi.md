@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `createNewWebhook()`
 
 ```php
-createNewWebhook($authorization, $accountId, $createNewWebhookRequest): \Ringba\Model\CreateNewWebhook
+createNewWebhook($accountId, $createNewWebhookRequest, $authorization): \Ringba\Model\CreateNewWebhook
 ```
 
 Create New Webhook
@@ -33,12 +33,12 @@ $apiInstance = new Ringba\Api\WebhooksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $createNewWebhookRequest = {"name":"New Webhook","incomingCallIdQueryStringParameter":"call_id","conversionAmountQueryStringParameter":"call_revenue","conversionCriteriaParameterMatch":"sale_successful=yes"}; // \Ringba\Model\CreateNewWebhookRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewWebhook($authorization, $accountId, $createNewWebhookRequest);
+    $result = $apiInstance->createNewWebhook($accountId, $createNewWebhookRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->createNewWebhook: ', $e->getMessage(), PHP_EOL;
@@ -49,9 +49,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **createNewWebhookRequest** | [**\Ringba\Model\CreateNewWebhookRequest**](../Model/CreateNewWebhookRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `deleteaWebhook()`
 
 ```php
-deleteaWebhook($authorization, $accountId, $webHookId): \Ringba\Model\DeleteaWebhook
+deleteaWebhook($accountId, $webHookId, $authorization): \Ringba\Model\DeleteaWebhook
 ```
 
 Delete a Webhook
@@ -93,12 +93,12 @@ $apiInstance = new Ringba\Api\WebhooksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $webHookId = 'webHookId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteaWebhook($authorization, $accountId, $webHookId);
+    $result = $apiInstance->deleteaWebhook($accountId, $webHookId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->deleteaWebhook: ', $e->getMessage(), PHP_EOL;
@@ -109,9 +109,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **webHookId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -133,7 +133,7 @@ No authorization required
 ## `getDetailsforaSingleWebhook()`
 
 ```php
-getDetailsforaSingleWebhook($authorization, $accountId, $webHookId): \Ringba\Model\GetDetailsforaSingleWebhook
+getDetailsforaSingleWebhook($accountId, $webHookId, $authorization): \Ringba\Model\GetDetailsforaSingleWebhook
 ```
 
 Get Details for a Single Webhook
@@ -153,12 +153,12 @@ $apiInstance = new Ringba\Api\WebhooksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $webHookId = 'webHookId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsforaSingleWebhook($authorization, $accountId, $webHookId);
+    $result = $apiInstance->getDetailsforaSingleWebhook($accountId, $webHookId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->getDetailsforaSingleWebhook: ', $e->getMessage(), PHP_EOL;
@@ -169,9 +169,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **webHookId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -193,7 +193,7 @@ No authorization required
 ## `getWebhooks()`
 
 ```php
-getWebhooks($authorization, $accountId): \Ringba\Model\GetWebhooks
+getWebhooks($accountId, $authorization): \Ringba\Model\GetWebhooks
 ```
 
 Get Webhooks
@@ -213,11 +213,11 @@ $apiInstance = new Ringba\Api\WebhooksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getWebhooks($authorization, $accountId);
+    $result = $apiInstance->getWebhooks($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->getWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -228,8 +228,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

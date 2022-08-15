@@ -23,7 +23,7 @@ Method | HTTP request | Description
 ## `addRemoveMultipleTargetstoFromTargetGroup()`
 
 ```php
-addRemoveMultipleTargetstoFromTargetGroup($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest): \Ringba\Model\RemoveMultipleTargetsfromTargetGroup
+addRemoveMultipleTargetstoFromTargetGroup($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization): \Ringba\Model\RemoveMultipleTargetsfromTargetGroup
 ```
 
 Add/Remove Multiple Targets to/from Target Group
@@ -43,13 +43,13 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
 $addRemoveMultipleTargetstofromTargetGroupRequest = {"targetAddIds":["TAfa4c37e44a274af8b8927ed67d536d89","TA1183b884e2df4541ad9651c168e3bab9"],"targetRemoveIds":[]}; // \Ringba\Model\AddRemoveMultipleTargetstofromTargetGroupRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addRemoveMultipleTargetstoFromTargetGroup($authorization, $accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest);
+    $result = $apiInstance->addRemoveMultipleTargetstoFromTargetGroup($accountId, $targetGroupId, $addRemoveMultipleTargetstofromTargetGroupRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->addRemoveMultipleTargetstoFromTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -60,10 +60,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
  **addRemoveMultipleTargetstofromTargetGroupRequest** | [**\Ringba\Model\AddRemoveMultipleTargetstofromTargetGroupRequest**](../Model/AddRemoveMultipleTargetstofromTargetGroupRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -85,7 +85,7 @@ No authorization required
 ## `addSingleTargettoTargetGroup()`
 
 ```php
-addSingleTargettoTargetGroup($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest): \Ringba\Model\AddSingleTargettoTargetGroup
+addSingleTargettoTargetGroup($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization): \Ringba\Model\AddSingleTargettoTargetGroup
 ```
 
 Add Single Target to Target Group
@@ -105,13 +105,13 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
 $addSingleTargettoTargetGroupRequest = {"targetId":"{{targetId}}"}; // \Ringba\Model\AddSingleTargettoTargetGroupRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addSingleTargettoTargetGroup($authorization, $accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest);
+    $result = $apiInstance->addSingleTargettoTargetGroup($accountId, $targetGroupId, $addSingleTargettoTargetGroupRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->addSingleTargettoTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -122,10 +122,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
  **addSingleTargettoTargetGroupRequest** | [**\Ringba\Model\AddSingleTargettoTargetGroupRequest**](../Model/AddSingleTargettoTargetGroupRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -147,7 +147,7 @@ No authorization required
 ## `assignTargetGrouptoaBuyer()`
 
 ```php
-assignTargetGrouptoaBuyer($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest): \Ringba\Model\AddBuyertoTargetGroup
+assignTargetGrouptoaBuyer($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization): \Ringba\Model\AddBuyertoTargetGroup
 ```
 
 Assign Target Group to a Buyer
@@ -167,13 +167,13 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
 $assignTargetGrouptoaBuyerRequest = {"buyerId":"{{buyerId}}"}; // \Ringba\Model\AssignTargetGrouptoaBuyerRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->assignTargetGrouptoaBuyer($authorization, $accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest);
+    $result = $apiInstance->assignTargetGrouptoaBuyer($accountId, $targetGroupId, $assignTargetGrouptoaBuyerRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->assignTargetGrouptoaBuyer: ', $e->getMessage(), PHP_EOL;
@@ -184,10 +184,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
  **assignTargetGrouptoaBuyerRequest** | [**\Ringba\Model\AssignTargetGrouptoaBuyerRequest**](../Model/AssignTargetGrouptoaBuyerRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -209,7 +209,7 @@ No authorization required
 ## `createTargetGroup()`
 
 ```php
-createTargetGroup($authorization, $accountId, $createTargetGroupRequest): \Ringba\Model\CreateTargetGroup
+createTargetGroup($accountId, $createTargetGroupRequest, $authorization): \Ringba\Model\CreateTargetGroup
 ```
 
 Create Target Group
@@ -229,12 +229,12 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $createTargetGroupRequest = {"name":"Example Target Grouprtert","isSimalDial":false,"schedule":{"timeZoneId":"Pacific Standard Time"}}; // \Ringba\Model\CreateTargetGroupRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createTargetGroup($authorization, $accountId, $createTargetGroupRequest);
+    $result = $apiInstance->createTargetGroup($accountId, $createTargetGroupRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->createTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -245,9 +245,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **createTargetGroupRequest** | [**\Ringba\Model\CreateTargetGroupRequest**](../Model/CreateTargetGroupRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -269,7 +269,7 @@ No authorization required
 ## `deleteSingleTargetfromTargetGroup()`
 
 ```php
-deleteSingleTargetfromTargetGroup($authorization, $accountId, $targetGroupId, $targetId): \Ringba\Model\DeleteSingleTargetfromTargetGroup
+deleteSingleTargetfromTargetGroup($accountId, $targetGroupId, $targetId, $authorization): \Ringba\Model\DeleteSingleTargetfromTargetGroup
 ```
 
 Delete Single Target from Target Group
@@ -289,13 +289,13 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteSingleTargetfromTargetGroup($authorization, $accountId, $targetGroupId, $targetId);
+    $result = $apiInstance->deleteSingleTargetfromTargetGroup($accountId, $targetGroupId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->deleteSingleTargetfromTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -306,10 +306,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
  **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -331,7 +331,7 @@ No authorization required
 ## `deleteTargetGroup()`
 
 ```php
-deleteTargetGroup($authorization, $accountId, $targetGroupId): \Ringba\Model\DeleteTargetGroup
+deleteTargetGroup($accountId, $targetGroupId, $authorization): \Ringba\Model\DeleteTargetGroup
 ```
 
 Delete Target Group
@@ -351,12 +351,12 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteTargetGroup($authorization, $accountId, $targetGroupId);
+    $result = $apiInstance->deleteTargetGroup($accountId, $targetGroupId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->deleteTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -367,9 +367,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -391,7 +391,7 @@ No authorization required
 ## `editTargetGroup()`
 
 ```php
-editTargetGroup($authorization, $accountId, $targetGroupId, $editTargetGroupRequest): \Ringba\Model\EditTargetGroup
+editTargetGroup($accountId, $targetGroupId, $editTargetGroupRequest, $authorization): \Ringba\Model\EditTargetGroup
 ```
 
 Edit Target Group
@@ -411,13 +411,13 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
 $editTargetGroupRequest = {"name":"New Name"}; // \Ringba\Model\EditTargetGroupRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->editTargetGroup($authorization, $accountId, $targetGroupId, $editTargetGroupRequest);
+    $result = $apiInstance->editTargetGroup($accountId, $targetGroupId, $editTargetGroupRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->editTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -428,10 +428,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
  **editTargetGroupRequest** | [**\Ringba\Model\EditTargetGroupRequest**](../Model/EditTargetGroupRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -453,7 +453,7 @@ No authorization required
 ## `getDetailsaboutSpecificTargetGroup()`
 
 ```php
-getDetailsaboutSpecificTargetGroup($authorization, $accountId, $targetGroupId): \Ringba\Model\GetDetailsaboutSpecificTargetGroup
+getDetailsaboutSpecificTargetGroup($accountId, $targetGroupId, $authorization): \Ringba\Model\GetDetailsaboutSpecificTargetGroup
 ```
 
 Get Details about Specific Target Group
@@ -473,12 +473,12 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsaboutSpecificTargetGroup($authorization, $accountId, $targetGroupId);
+    $result = $apiInstance->getDetailsaboutSpecificTargetGroup($accountId, $targetGroupId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->getDetailsaboutSpecificTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -489,9 +489,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -513,7 +513,7 @@ No authorization required
 ## `getInboundReferencesforSpecificTargetGroup()`
 
 ```php
-getInboundReferencesforSpecificTargetGroup($authorization, $accountId, $targetGroupId): \Ringba\Model\GetInboundReferencesforSpecificTargetGroup
+getInboundReferencesforSpecificTargetGroup($accountId, $targetGroupId, $authorization): \Ringba\Model\GetInboundReferencesforSpecificTargetGroup
 ```
 
 Get Inbound References for Specific Target Group
@@ -533,12 +533,12 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getInboundReferencesforSpecificTargetGroup($authorization, $accountId, $targetGroupId);
+    $result = $apiInstance->getInboundReferencesforSpecificTargetGroup($accountId, $targetGroupId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->getInboundReferencesforSpecificTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -549,9 +549,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -573,7 +573,7 @@ No authorization required
 ## `getStatsforSpecificTargetGroup()`
 
 ```php
-getStatsforSpecificTargetGroup($authorization, $accountId, $targetGroupId): \Ringba\Model\GetStatsforSpecificTargetGroup
+getStatsforSpecificTargetGroup($accountId, $targetGroupId, $authorization): \Ringba\Model\GetStatsforSpecificTargetGroup
 ```
 
 Get Stats for Specific Target Group
@@ -593,12 +593,12 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getStatsforSpecificTargetGroup($authorization, $accountId, $targetGroupId);
+    $result = $apiInstance->getStatsforSpecificTargetGroup($accountId, $targetGroupId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->getStatsforSpecificTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -609,9 +609,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -633,7 +633,7 @@ No authorization required
 ## `getTargetGroups()`
 
 ```php
-getTargetGroups($authorization, $accountId): \Ringba\Model\GetTargetGroups
+getTargetGroups($accountId, $authorization): \Ringba\Model\GetTargetGroups
 ```
 
 Get Target Groups
@@ -653,11 +653,11 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getTargetGroups($authorization, $accountId);
+    $result = $apiInstance->getTargetGroups($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->getTargetGroups: ', $e->getMessage(), PHP_EOL;
@@ -668,8 +668,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -691,7 +691,7 @@ No authorization required
 ## `getTargetsforTargetGroup()`
 
 ```php
-getTargetsforTargetGroup($authorization, $accountId, $targetGroupId): \Ringba\Model\GetTargetsforTargetGroup
+getTargetsforTargetGroup($accountId, $targetGroupId, $authorization): \Ringba\Model\GetTargetsforTargetGroup
 ```
 
 Get Targets for Target Group
@@ -711,12 +711,12 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getTargetsforTargetGroup($authorization, $accountId, $targetGroupId);
+    $result = $apiInstance->getTargetsforTargetGroup($accountId, $targetGroupId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->getTargetsforTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -727,9 +727,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -751,7 +751,7 @@ No authorization required
 ## `removeBuyerfromTargetGroup()`
 
 ```php
-removeBuyerfromTargetGroup($authorization, $accountId, $targetGroupId, $buyerId): \Ringba\Model\RemoveBuyerfromTargetGroup
+removeBuyerfromTargetGroup($accountId, $targetGroupId, $buyerId, $authorization): \Ringba\Model\RemoveBuyerfromTargetGroup
 ```
 
 Remove Buyer from Target Group
@@ -771,13 +771,13 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
 $buyerId = 'buyerId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeBuyerfromTargetGroup($authorization, $accountId, $targetGroupId, $buyerId);
+    $result = $apiInstance->removeBuyerfromTargetGroup($accountId, $targetGroupId, $buyerId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->removeBuyerfromTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -788,10 +788,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
  **buyerId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -813,7 +813,7 @@ No authorization required
 ## `resetCountsforTargetGroup()`
 
 ```php
-resetCountsforTargetGroup($authorization, $accountId, $targetGroupId): \Ringba\Model\ResetCountsforTargetGroup
+resetCountsforTargetGroup($accountId, $targetGroupId, $authorization): \Ringba\Model\ResetCountsforTargetGroup
 ```
 
 Reset Counts for Target Group
@@ -833,12 +833,12 @@ $apiInstance = new Ringba\Api\TargetGroupsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetGroupId = 'targetGroupId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->resetCountsforTargetGroup($authorization, $accountId, $targetGroupId);
+    $result = $apiInstance->resetCountsforTargetGroup($accountId, $targetGroupId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetGroupsApi->resetCountsforTargetGroup: ', $e->getMessage(), PHP_EOL;
@@ -849,9 +849,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetGroupId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

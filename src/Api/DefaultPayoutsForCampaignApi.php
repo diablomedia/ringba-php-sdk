@@ -123,18 +123,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddNewDefaultPayoutforaCampaignRequest $addNewDefaultPayoutforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AddNewDefaultPayoutforaCampaignWithAllOptionalParametersSpecified
      */
-    public function addNewDefaultPayoutforaCampaign($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest)
+    public function addNewDefaultPayoutforaCampaign($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization = null)
     {
-        list($response) = $this->addNewDefaultPayoutforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest);
+        list($response) = $this->addNewDefaultPayoutforaCampaignWithHttpInfo($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization);
         return $response;
     }
 
@@ -146,18 +146,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddNewDefaultPayoutforaCampaignRequest $addNewDefaultPayoutforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AddNewDefaultPayoutforaCampaignWithAllOptionalParametersSpecified, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addNewDefaultPayoutforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest)
+    public function addNewDefaultPayoutforaCampaignWithHttpInfo($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization = null)
     {
-        $request = $this->addNewDefaultPayoutforaCampaignRequest($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest);
+        $request = $this->addNewDefaultPayoutforaCampaignRequest($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -251,17 +251,17 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddNewDefaultPayoutforaCampaignRequest $addNewDefaultPayoutforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addNewDefaultPayoutforaCampaignAsync($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest)
+    public function addNewDefaultPayoutforaCampaignAsync($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization = null)
     {
-        return $this->addNewDefaultPayoutforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest)
+        return $this->addNewDefaultPayoutforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,18 +277,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddNewDefaultPayoutforaCampaignRequest $addNewDefaultPayoutforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addNewDefaultPayoutforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest)
+    public function addNewDefaultPayoutforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AddNewDefaultPayoutforaCampaignWithAllOptionalParametersSpecified';
-        $request = $this->addNewDefaultPayoutforaCampaignRequest($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest);
+        $request = $this->addNewDefaultPayoutforaCampaignRequest($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,22 +332,16 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddNewDefaultPayoutforaCampaignRequest $addNewDefaultPayoutforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addNewDefaultPayoutforaCampaignRequest($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest)
+    public function addNewDefaultPayoutforaCampaignRequest($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling addNewDefaultPayoutforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -475,18 +469,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\RemoveDefaultPayoutSettingformaCampaign
      */
-    public function removeDefaultPayoutSettingformaCampaign($authorization, $accountId, $campaignId, $payoutId)
+    public function removeDefaultPayoutSettingformaCampaign($accountId, $campaignId, $payoutId, $authorization = null)
     {
-        list($response) = $this->removeDefaultPayoutSettingformaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $payoutId);
+        list($response) = $this->removeDefaultPayoutSettingformaCampaignWithHttpInfo($accountId, $campaignId, $payoutId, $authorization);
         return $response;
     }
 
@@ -498,18 +492,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\RemoveDefaultPayoutSettingformaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeDefaultPayoutSettingformaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $payoutId)
+    public function removeDefaultPayoutSettingformaCampaignWithHttpInfo($accountId, $campaignId, $payoutId, $authorization = null)
     {
-        $request = $this->removeDefaultPayoutSettingformaCampaignRequest($authorization, $accountId, $campaignId, $payoutId);
+        $request = $this->removeDefaultPayoutSettingformaCampaignRequest($accountId, $campaignId, $payoutId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -603,17 +597,17 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeDefaultPayoutSettingformaCampaignAsync($authorization, $accountId, $campaignId, $payoutId)
+    public function removeDefaultPayoutSettingformaCampaignAsync($accountId, $campaignId, $payoutId, $authorization = null)
     {
-        return $this->removeDefaultPayoutSettingformaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $payoutId)
+        return $this->removeDefaultPayoutSettingformaCampaignAsyncWithHttpInfo($accountId, $campaignId, $payoutId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -629,18 +623,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeDefaultPayoutSettingformaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $payoutId)
+    public function removeDefaultPayoutSettingformaCampaignAsyncWithHttpInfo($accountId, $campaignId, $payoutId, $authorization = null)
     {
         $returnType = '\Ringba\Model\RemoveDefaultPayoutSettingformaCampaign';
-        $request = $this->removeDefaultPayoutSettingformaCampaignRequest($authorization, $accountId, $campaignId, $payoutId);
+        $request = $this->removeDefaultPayoutSettingformaCampaignRequest($accountId, $campaignId, $payoutId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -684,22 +678,16 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function removeDefaultPayoutSettingformaCampaignRequest($authorization, $accountId, $campaignId, $payoutId)
+    public function removeDefaultPayoutSettingformaCampaignRequest($accountId, $campaignId, $payoutId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling removeDefaultPayoutSettingformaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -829,18 +817,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\UpdateALLDefaultPayoutSettingsforaCampaignRequest $updateALLDefaultPayoutSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\UpdateAllDefaultPayoutSettingsforaCampaign
      */
-    public function updateALLDefaultPayoutSettingsforaCampaign($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest)
+    public function updateALLDefaultPayoutSettingsforaCampaign($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization = null)
     {
-        list($response) = $this->updateALLDefaultPayoutSettingsforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest);
+        list($response) = $this->updateALLDefaultPayoutSettingsforaCampaignWithHttpInfo($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization);
         return $response;
     }
 
@@ -852,18 +840,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\UpdateALLDefaultPayoutSettingsforaCampaignRequest $updateALLDefaultPayoutSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\UpdateAllDefaultPayoutSettingsforaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateALLDefaultPayoutSettingsforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest)
+    public function updateALLDefaultPayoutSettingsforaCampaignWithHttpInfo($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization = null)
     {
-        $request = $this->updateALLDefaultPayoutSettingsforaCampaignRequest($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest);
+        $request = $this->updateALLDefaultPayoutSettingsforaCampaignRequest($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -957,17 +945,17 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\UpdateALLDefaultPayoutSettingsforaCampaignRequest $updateALLDefaultPayoutSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateALLDefaultPayoutSettingsforaCampaignAsync($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest)
+    public function updateALLDefaultPayoutSettingsforaCampaignAsync($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization = null)
     {
-        return $this->updateALLDefaultPayoutSettingsforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest)
+        return $this->updateALLDefaultPayoutSettingsforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -983,18 +971,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\UpdateALLDefaultPayoutSettingsforaCampaignRequest $updateALLDefaultPayoutSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateALLDefaultPayoutSettingsforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest)
+    public function updateALLDefaultPayoutSettingsforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\UpdateAllDefaultPayoutSettingsforaCampaign';
-        $request = $this->updateALLDefaultPayoutSettingsforaCampaignRequest($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest);
+        $request = $this->updateALLDefaultPayoutSettingsforaCampaignRequest($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1038,22 +1026,16 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\UpdateALLDefaultPayoutSettingsforaCampaignRequest $updateALLDefaultPayoutSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateALLDefaultPayoutSettingsforaCampaignRequest($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest)
+    public function updateALLDefaultPayoutSettingsforaCampaignRequest($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling updateALLDefaultPayoutSettingsforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1181,19 +1163,19 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSingleDefaultPayoutSettingsRequest $updateSingleDefaultPayoutSettingsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\UpdateSingleDefaultPayoutSettingswithonlyonechange
      */
-    public function updateSingleDefaultPayoutSettings($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest)
+    public function updateSingleDefaultPayoutSettings($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization = null)
     {
-        list($response) = $this->updateSingleDefaultPayoutSettingsWithHttpInfo($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest);
+        list($response) = $this->updateSingleDefaultPayoutSettingsWithHttpInfo($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization);
         return $response;
     }
 
@@ -1205,19 +1187,19 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSingleDefaultPayoutSettingsRequest $updateSingleDefaultPayoutSettingsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\UpdateSingleDefaultPayoutSettingswithonlyonechange, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateSingleDefaultPayoutSettingsWithHttpInfo($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest)
+    public function updateSingleDefaultPayoutSettingsWithHttpInfo($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization = null)
     {
-        $request = $this->updateSingleDefaultPayoutSettingsRequest($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest);
+        $request = $this->updateSingleDefaultPayoutSettingsRequest($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1311,18 +1293,18 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSingleDefaultPayoutSettingsRequest $updateSingleDefaultPayoutSettingsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateSingleDefaultPayoutSettingsAsync($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest)
+    public function updateSingleDefaultPayoutSettingsAsync($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization = null)
     {
-        return $this->updateSingleDefaultPayoutSettingsAsyncWithHttpInfo($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest)
+        return $this->updateSingleDefaultPayoutSettingsAsyncWithHttpInfo($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1338,19 +1320,19 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSingleDefaultPayoutSettingsRequest $updateSingleDefaultPayoutSettingsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateSingleDefaultPayoutSettingsAsyncWithHttpInfo($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest)
+    public function updateSingleDefaultPayoutSettingsAsyncWithHttpInfo($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\UpdateSingleDefaultPayoutSettingswithonlyonechange';
-        $request = $this->updateSingleDefaultPayoutSettingsRequest($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest);
+        $request = $this->updateSingleDefaultPayoutSettingsRequest($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1394,23 +1376,17 @@ class DefaultPayoutsForCampaignApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSingleDefaultPayoutSettingsRequest $updateSingleDefaultPayoutSettingsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateSingleDefaultPayoutSettingsRequest($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest)
+    public function updateSingleDefaultPayoutSettingsRequest($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling updateSingleDefaultPayoutSettings'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

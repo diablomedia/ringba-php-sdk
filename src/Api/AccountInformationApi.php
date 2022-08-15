@@ -123,13 +123,13 @@ class AccountInformationApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetAccountInfo
      */
-    public function getAccountInfousingAPIToken($authorization)
+    public function getAccountInfousingAPIToken($authorization = null)
     {
         list($response) = $this->getAccountInfousingAPITokenWithHttpInfo($authorization);
         return $response;
@@ -143,13 +143,13 @@ class AccountInformationApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetAccountInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAccountInfousingAPITokenWithHttpInfo($authorization)
+    public function getAccountInfousingAPITokenWithHttpInfo($authorization = null)
     {
         $request = $this->getAccountInfousingAPITokenRequest($authorization);
 
@@ -245,12 +245,12 @@ class AccountInformationApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountInfousingAPITokenAsync($authorization)
+    public function getAccountInfousingAPITokenAsync($authorization = null)
     {
         return $this->getAccountInfousingAPITokenAsyncWithHttpInfo($authorization)
             ->then(
@@ -268,12 +268,12 @@ class AccountInformationApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountInfousingAPITokenAsyncWithHttpInfo($authorization)
+    public function getAccountInfousingAPITokenAsyncWithHttpInfo($authorization = null)
     {
         $returnType = '\Ringba\Model\GetAccountInfo';
         $request = $this->getAccountInfousingAPITokenRequest($authorization);
@@ -320,19 +320,13 @@ class AccountInformationApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAccountInfousingAPITokenRequest($authorization)
+    public function getAccountInfousingAPITokenRequest($authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getAccountInfousingAPIToken'
-            );
-        }
 
         $resourcePath = '/ringbaaccounts';
         $formParams = [];

@@ -123,17 +123,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\BlockaPhoneNumberRequest $blockaPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\Blockanonymousnumbersfor8hoursinspecificcampaign
      */
-    public function blockaPhoneNumber($authorization, $accountId, $blockaPhoneNumberRequest)
+    public function blockaPhoneNumber($accountId, $blockaPhoneNumberRequest, $authorization = null)
     {
-        list($response) = $this->blockaPhoneNumberWithHttpInfo($authorization, $accountId, $blockaPhoneNumberRequest);
+        list($response) = $this->blockaPhoneNumberWithHttpInfo($accountId, $blockaPhoneNumberRequest, $authorization);
         return $response;
     }
 
@@ -145,17 +145,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\BlockaPhoneNumberRequest $blockaPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\Blockanonymousnumbersfor8hoursinspecificcampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function blockaPhoneNumberWithHttpInfo($authorization, $accountId, $blockaPhoneNumberRequest)
+    public function blockaPhoneNumberWithHttpInfo($accountId, $blockaPhoneNumberRequest, $authorization = null)
     {
-        $request = $this->blockaPhoneNumberRequest($authorization, $accountId, $blockaPhoneNumberRequest);
+        $request = $this->blockaPhoneNumberRequest($accountId, $blockaPhoneNumberRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,16 +249,16 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\BlockaPhoneNumberRequest $blockaPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blockaPhoneNumberAsync($authorization, $accountId, $blockaPhoneNumberRequest)
+    public function blockaPhoneNumberAsync($accountId, $blockaPhoneNumberRequest, $authorization = null)
     {
-        return $this->blockaPhoneNumberAsyncWithHttpInfo($authorization, $accountId, $blockaPhoneNumberRequest)
+        return $this->blockaPhoneNumberAsyncWithHttpInfo($accountId, $blockaPhoneNumberRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,17 +274,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\BlockaPhoneNumberRequest $blockaPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blockaPhoneNumberAsyncWithHttpInfo($authorization, $accountId, $blockaPhoneNumberRequest)
+    public function blockaPhoneNumberAsyncWithHttpInfo($accountId, $blockaPhoneNumberRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\Blockanonymousnumbersfor8hoursinspecificcampaign';
-        $request = $this->blockaPhoneNumberRequest($authorization, $accountId, $blockaPhoneNumberRequest);
+        $request = $this->blockaPhoneNumberRequest($accountId, $blockaPhoneNumberRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -328,21 +328,15 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\BlockaPhoneNumberRequest $blockaPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function blockaPhoneNumberRequest($authorization, $accountId, $blockaPhoneNumberRequest)
+    public function blockaPhoneNumberRequest($accountId, $blockaPhoneNumberRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling blockaPhoneNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -456,16 +450,16 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetBlockedPhoneNumbers
      */
-    public function getBlockedPhoneNumbers($authorization, $accountId)
+    public function getBlockedPhoneNumbers($accountId, $authorization = null)
     {
-        list($response) = $this->getBlockedPhoneNumbersWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getBlockedPhoneNumbersWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -477,16 +471,16 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetBlockedPhoneNumbers, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBlockedPhoneNumbersWithHttpInfo($authorization, $accountId)
+    public function getBlockedPhoneNumbersWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getBlockedPhoneNumbersRequest($authorization, $accountId);
+        $request = $this->getBlockedPhoneNumbersRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -580,15 +574,15 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBlockedPhoneNumbersAsync($authorization, $accountId)
+    public function getBlockedPhoneNumbersAsync($accountId, $authorization = null)
     {
-        return $this->getBlockedPhoneNumbersAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getBlockedPhoneNumbersAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -604,16 +598,16 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBlockedPhoneNumbersAsyncWithHttpInfo($authorization, $accountId)
+    public function getBlockedPhoneNumbersAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetBlockedPhoneNumbers';
-        $request = $this->getBlockedPhoneNumbersRequest($authorization, $accountId);
+        $request = $this->getBlockedPhoneNumbersRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -657,20 +651,14 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBlockedPhoneNumbersRequest($authorization, $accountId)
+    public function getBlockedPhoneNumbersRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getBlockedPhoneNumbers'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -772,17 +760,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDetailsAboutaSingleBlockedNumber
      */
-    public function getDetailsAboutaSingleBlockedNumber($authorization, $accountId, $blockedNumberId)
+    public function getDetailsAboutaSingleBlockedNumber($accountId, $blockedNumberId, $authorization = null)
     {
-        list($response) = $this->getDetailsAboutaSingleBlockedNumberWithHttpInfo($authorization, $accountId, $blockedNumberId);
+        list($response) = $this->getDetailsAboutaSingleBlockedNumberWithHttpInfo($accountId, $blockedNumberId, $authorization);
         return $response;
     }
 
@@ -794,17 +782,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDetailsAboutaSingleBlockedNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDetailsAboutaSingleBlockedNumberWithHttpInfo($authorization, $accountId, $blockedNumberId)
+    public function getDetailsAboutaSingleBlockedNumberWithHttpInfo($accountId, $blockedNumberId, $authorization = null)
     {
-        $request = $this->getDetailsAboutaSingleBlockedNumberRequest($authorization, $accountId, $blockedNumberId);
+        $request = $this->getDetailsAboutaSingleBlockedNumberRequest($accountId, $blockedNumberId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -898,16 +886,16 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutaSingleBlockedNumberAsync($authorization, $accountId, $blockedNumberId)
+    public function getDetailsAboutaSingleBlockedNumberAsync($accountId, $blockedNumberId, $authorization = null)
     {
-        return $this->getDetailsAboutaSingleBlockedNumberAsyncWithHttpInfo($authorization, $accountId, $blockedNumberId)
+        return $this->getDetailsAboutaSingleBlockedNumberAsyncWithHttpInfo($accountId, $blockedNumberId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -923,17 +911,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutaSingleBlockedNumberAsyncWithHttpInfo($authorization, $accountId, $blockedNumberId)
+    public function getDetailsAboutaSingleBlockedNumberAsyncWithHttpInfo($accountId, $blockedNumberId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDetailsAboutaSingleBlockedNumber';
-        $request = $this->getDetailsAboutaSingleBlockedNumberRequest($authorization, $accountId, $blockedNumberId);
+        $request = $this->getDetailsAboutaSingleBlockedNumberRequest($accountId, $blockedNumberId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -977,21 +965,15 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDetailsAboutaSingleBlockedNumberRequest($authorization, $accountId, $blockedNumberId)
+    public function getDetailsAboutaSingleBlockedNumberRequest($accountId, $blockedNumberId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDetailsAboutaSingleBlockedNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1107,17 +1089,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\UnblockaPhoneNumber
      */
-    public function unblockaPhoneNumber($authorization, $accountId, $blockedNumberId)
+    public function unblockaPhoneNumber($accountId, $blockedNumberId, $authorization = null)
     {
-        list($response) = $this->unblockaPhoneNumberWithHttpInfo($authorization, $accountId, $blockedNumberId);
+        list($response) = $this->unblockaPhoneNumberWithHttpInfo($accountId, $blockedNumberId, $authorization);
         return $response;
     }
 
@@ -1129,17 +1111,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\UnblockaPhoneNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function unblockaPhoneNumberWithHttpInfo($authorization, $accountId, $blockedNumberId)
+    public function unblockaPhoneNumberWithHttpInfo($accountId, $blockedNumberId, $authorization = null)
     {
-        $request = $this->unblockaPhoneNumberRequest($authorization, $accountId, $blockedNumberId);
+        $request = $this->unblockaPhoneNumberRequest($accountId, $blockedNumberId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1233,16 +1215,16 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function unblockaPhoneNumberAsync($authorization, $accountId, $blockedNumberId)
+    public function unblockaPhoneNumberAsync($accountId, $blockedNumberId, $authorization = null)
     {
-        return $this->unblockaPhoneNumberAsyncWithHttpInfo($authorization, $accountId, $blockedNumberId)
+        return $this->unblockaPhoneNumberAsyncWithHttpInfo($accountId, $blockedNumberId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1258,17 +1240,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function unblockaPhoneNumberAsyncWithHttpInfo($authorization, $accountId, $blockedNumberId)
+    public function unblockaPhoneNumberAsyncWithHttpInfo($accountId, $blockedNumberId, $authorization = null)
     {
         $returnType = '\Ringba\Model\UnblockaPhoneNumber';
-        $request = $this->unblockaPhoneNumberRequest($authorization, $accountId, $blockedNumberId);
+        $request = $this->unblockaPhoneNumberRequest($accountId, $blockedNumberId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1312,21 +1294,15 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function unblockaPhoneNumberRequest($authorization, $accountId, $blockedNumberId)
+    public function unblockaPhoneNumberRequest($accountId, $blockedNumberId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling unblockaPhoneNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1442,18 +1418,18 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
      * @param  \Ringba\Model\UpdateaBlockedPhoneNumberRequest $updateaBlockedPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\UpdateaBlockedPhoneNumber
      */
-    public function updateaBlockedPhoneNumber($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest)
+    public function updateaBlockedPhoneNumber($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization = null)
     {
-        list($response) = $this->updateaBlockedPhoneNumberWithHttpInfo($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest);
+        list($response) = $this->updateaBlockedPhoneNumberWithHttpInfo($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization);
         return $response;
     }
 
@@ -1465,18 +1441,18 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
      * @param  \Ringba\Model\UpdateaBlockedPhoneNumberRequest $updateaBlockedPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\UpdateaBlockedPhoneNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateaBlockedPhoneNumberWithHttpInfo($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest)
+    public function updateaBlockedPhoneNumberWithHttpInfo($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization = null)
     {
-        $request = $this->updateaBlockedPhoneNumberRequest($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest);
+        $request = $this->updateaBlockedPhoneNumberRequest($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1570,17 +1546,17 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
      * @param  \Ringba\Model\UpdateaBlockedPhoneNumberRequest $updateaBlockedPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateaBlockedPhoneNumberAsync($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest)
+    public function updateaBlockedPhoneNumberAsync($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization = null)
     {
-        return $this->updateaBlockedPhoneNumberAsyncWithHttpInfo($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest)
+        return $this->updateaBlockedPhoneNumberAsyncWithHttpInfo($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1596,18 +1572,18 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
      * @param  \Ringba\Model\UpdateaBlockedPhoneNumberRequest $updateaBlockedPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateaBlockedPhoneNumberAsyncWithHttpInfo($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest)
+    public function updateaBlockedPhoneNumberAsyncWithHttpInfo($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\UpdateaBlockedPhoneNumber';
-        $request = $this->updateaBlockedPhoneNumberRequest($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest);
+        $request = $this->updateaBlockedPhoneNumberRequest($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1651,22 +1627,16 @@ class BlockedNumbersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $blockedNumberId  (required)
      * @param  \Ringba\Model\UpdateaBlockedPhoneNumberRequest $updateaBlockedPhoneNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateaBlockedPhoneNumberRequest($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest)
+    public function updateaBlockedPhoneNumberRequest($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling updateaBlockedPhoneNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `createaDraftOfferforaCampaign()`
 
 ```php
-createaDraftOfferforaCampaign($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest): \Ringba\Model\CreateaDraftOffer
+createaDraftOfferforaCampaign($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization): \Ringba\Model\CreateaDraftOffer
 ```
 
 Create a Draft Offer for a Campaign
@@ -40,13 +40,13 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $createaDraftOfferforaCampaignRequest = {"numberRestrictions":{"allowTF":true,"allowDID":true,"maxNumbersPerPublisher":1},"offerVisibility":"private","languageCodes":["EN"],"requireApproval":false,"name":"New Offer","description":"This is an offer to be sent to publishers","notes":"These notes can only be seen in the detail view","category":"Home Services\\Tree Removal","expiration":"03/10/2021 03:48 PM","timeZoneId":"Mountain Standard Time"}; // \Ringba\Model\CreateaDraftOfferforaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createaDraftOfferforaCampaign($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest);
+    $result = $apiInstance->createaDraftOfferforaCampaign($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->createaDraftOfferforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -57,10 +57,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **createaDraftOfferforaCampaignRequest** | [**\Ringba\Model\CreateaDraftOfferforaCampaignRequest**](../Model/CreateaDraftOfferforaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -82,7 +82,7 @@ No authorization required
 ## `deletePublishedOfferforaCampaign()`
 
 ```php
-deletePublishedOfferforaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\DeletePublishedOfferforaCampaign
+deletePublishedOfferforaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\DeletePublishedOfferforaCampaign
 ```
 
 Delete Published Offer for a Campaign
@@ -102,12 +102,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deletePublishedOfferforaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->deletePublishedOfferforaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->deletePublishedOfferforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -118,9 +118,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -142,7 +142,7 @@ No authorization required
 ## `deleteaDraftOfferBeforePublishing()`
 
 ```php
-deleteaDraftOfferBeforePublishing($authorization, $accountId, $campaignId): \Ringba\Model\DeleteaDraftOfferBeforePublishing
+deleteaDraftOfferBeforePublishing($accountId, $campaignId, $authorization): \Ringba\Model\DeleteaDraftOfferBeforePublishing
 ```
 
 Delete a Draft Offer Before Publishing
@@ -162,12 +162,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteaDraftOfferBeforePublishing($authorization, $accountId, $campaignId);
+    $result = $apiInstance->deleteaDraftOfferBeforePublishing($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->deleteaDraftOfferBeforePublishing: ', $e->getMessage(), PHP_EOL;
@@ -178,9 +178,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -202,7 +202,7 @@ No authorization required
 ## `getAllOffersforaCampaign()`
 
 ```php
-getAllOffersforaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\GetAllOffersforaCampaign
+getAllOffersforaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\GetAllOffersforaCampaign
 ```
 
 Get All Offers for a Campaign
@@ -222,12 +222,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getAllOffersforaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->getAllOffersforaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->getAllOffersforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -238,9 +238,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -262,7 +262,7 @@ No authorization required
 ## `getDraftOffersforaCampaign()`
 
 ```php
-getDraftOffersforaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\GetDraftOffersforaCampaignwithnodraftoffersincampaign
+getDraftOffersforaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\GetDraftOffersforaCampaignwithnodraftoffersincampaign
 ```
 
 Get Draft Offers for a Campaign
@@ -282,12 +282,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDraftOffersforaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->getDraftOffersforaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->getDraftOffersforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -298,9 +298,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -322,7 +322,7 @@ No authorization required
 ## `getPublishedOffersforaCampaign()`
 
 ```php
-getPublishedOffersforaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\GetPublishedOffersforaCampaign
+getPublishedOffersforaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\GetPublishedOffersforaCampaign
 ```
 
 Get Published Offers for a Campaign
@@ -342,12 +342,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getPublishedOffersforaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->getPublishedOffersforaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->getPublishedOffersforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -358,9 +358,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -382,7 +382,7 @@ No authorization required
 ## `invitePublishertoParticipateinOffer()`
 
 ```php
-invitePublishertoParticipateinOffer($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest): \Ringba\Model\InvitePublishertoParticipateinOffer
+invitePublishertoParticipateinOffer($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization): \Ringba\Model\InvitePublishertoParticipateinOffer
 ```
 
 Invite Publisher to Participate in Offer
@@ -402,13 +402,13 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $invitePublishertoParticipateinOfferRequest = {"publisherId":"{{publisherId}}","message":"Please join my new offer"}; // \Ringba\Model\InvitePublishertoParticipateinOfferRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->invitePublishertoParticipateinOffer($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest);
+    $result = $apiInstance->invitePublishertoParticipateinOffer($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->invitePublishertoParticipateinOffer: ', $e->getMessage(), PHP_EOL;
@@ -419,10 +419,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **invitePublishertoParticipateinOfferRequest** | [**\Ringba\Model\InvitePublishertoParticipateinOfferRequest**](../Model/InvitePublishertoParticipateinOfferRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -444,7 +444,7 @@ No authorization required
 ## `pauseaPublishedOfferforaCampaign()`
 
 ```php
-pauseaPublishedOfferforaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\PauseaPublishedOfferforaCampaign
+pauseaPublishedOfferforaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\PauseaPublishedOfferforaCampaign
 ```
 
 Pause a Published Offer for a Campaign
@@ -464,12 +464,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->pauseaPublishedOfferforaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->pauseaPublishedOfferforaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->pauseaPublishedOfferforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -480,9 +480,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -504,7 +504,7 @@ No authorization required
 ## `publishDraftOffers()`
 
 ```php
-publishDraftOffers($authorization, $accountId, $campaignId): \Ringba\Model\PublishDraftOffers
+publishDraftOffers($accountId, $campaignId, $authorization): \Ringba\Model\PublishDraftOffers
 ```
 
 Publish Draft Offers
@@ -524,12 +524,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->publishDraftOffers($authorization, $accountId, $campaignId);
+    $result = $apiInstance->publishDraftOffers($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->publishDraftOffers: ', $e->getMessage(), PHP_EOL;
@@ -540,9 +540,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -564,7 +564,7 @@ No authorization required
 ## `resumeaPausedOffer()`
 
 ```php
-resumeaPausedOffer($authorization, $accountId, $campaignId): \Ringba\Model\ResumeaPausedOffer
+resumeaPausedOffer($accountId, $campaignId, $authorization): \Ringba\Model\ResumeaPausedOffer
 ```
 
 Resume a Paused Offer
@@ -584,12 +584,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->resumeaPausedOffer($authorization, $accountId, $campaignId);
+    $result = $apiInstance->resumeaPausedOffer($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->resumeaPausedOffer: ', $e->getMessage(), PHP_EOL;
@@ -600,9 +600,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -624,7 +624,7 @@ No authorization required
 ## `viewPublishersParticipatinginPublishedOffer()`
 
 ```php
-viewPublishersParticipatinginPublishedOffer($authorization, $accountId, $campaignId): \Ringba\Model\ViewPublishersParticipatinginPublishedOffers
+viewPublishersParticipatinginPublishedOffer($accountId, $campaignId, $authorization): \Ringba\Model\ViewPublishersParticipatinginPublishedOffers
 ```
 
 View Publishers Participating in Published Offer
@@ -644,12 +644,12 @@ $apiInstance = new Ringba\Api\CampaignOffersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->viewPublishersParticipatinginPublishedOffer($authorization, $accountId, $campaignId);
+    $result = $apiInstance->viewPublishersParticipatinginPublishedOffer($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignOffersApi->viewPublishersParticipatinginPublishedOffer: ', $e->getMessage(), PHP_EOL;
@@ -660,9 +660,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

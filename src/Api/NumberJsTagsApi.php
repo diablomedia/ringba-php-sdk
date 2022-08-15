@@ -123,20 +123,20 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\CreateNewJsTagforaNumberRequest $createNewJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateNewJsTagforaNumber
      */
-    public function createNewJsTagforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest)
+    public function createNewJsTagforaNumber($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization = null)
     {
-        list($response) = $this->createNewJsTagforaNumberWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest);
+        list($response) = $this->createNewJsTagforaNumberWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization);
         return $response;
     }
 
@@ -148,20 +148,20 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\CreateNewJsTagforaNumberRequest $createNewJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateNewJsTagforaNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createNewJsTagforaNumberWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest)
+    public function createNewJsTagforaNumberWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization = null)
     {
-        $request = $this->createNewJsTagforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest);
+        $request = $this->createNewJsTagforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -255,19 +255,19 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\CreateNewJsTagforaNumberRequest $createNewJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewJsTagforaNumberAsync($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest)
+    public function createNewJsTagforaNumberAsync($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization = null)
     {
-        return $this->createNewJsTagforaNumberAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest)
+        return $this->createNewJsTagforaNumberAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -283,20 +283,20 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\CreateNewJsTagforaNumberRequest $createNewJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewJsTagforaNumberAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest)
+    public function createNewJsTagforaNumberAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateNewJsTagforaNumber';
-        $request = $this->createNewJsTagforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest);
+        $request = $this->createNewJsTagforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -340,24 +340,18 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  \Ringba\Model\CreateNewJsTagforaNumberRequest $createNewJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createNewJsTagforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest)
+    public function createNewJsTagforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $createNewJsTagforaNumberRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createNewJsTagforaNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -513,19 +507,19 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetJsTagsforaNumber
      */
-    public function getJsTagsforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function getJsTagsforaNumber($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
-        list($response) = $this->getJsTagsforaNumberWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId);
+        list($response) = $this->getJsTagsforaNumberWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $authorization);
         return $response;
     }
 
@@ -537,19 +531,19 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetJsTagsforaNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getJsTagsforaNumberWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function getJsTagsforaNumberWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
-        $request = $this->getJsTagsforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId);
+        $request = $this->getJsTagsforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -643,18 +637,18 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getJsTagsforaNumberAsync($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function getJsTagsforaNumberAsync($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
-        return $this->getJsTagsforaNumberAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId)
+        return $this->getJsTagsforaNumberAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -670,19 +664,19 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getJsTagsforaNumberAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function getJsTagsforaNumberAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetJsTagsforaNumber';
-        $request = $this->getJsTagsforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId);
+        $request = $this->getJsTagsforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -726,23 +720,17 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getJsTagsforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function getJsTagsforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getJsTagsforaNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -886,21 +874,21 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  string $jsTagId  (required)
      * @param  \Ringba\Model\ModifyJsTagforaNumberRequest $modifyJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\ModifyJsTagforaNumber
      */
-    public function modifyJsTagforaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest)
+    public function modifyJsTagforaNumber($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization = null)
     {
-        list($response) = $this->modifyJsTagforaNumberWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest);
+        list($response) = $this->modifyJsTagforaNumberWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization);
         return $response;
     }
 
@@ -912,21 +900,21 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  string $jsTagId  (required)
      * @param  \Ringba\Model\ModifyJsTagforaNumberRequest $modifyJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\ModifyJsTagforaNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function modifyJsTagforaNumberWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest)
+    public function modifyJsTagforaNumberWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization = null)
     {
-        $request = $this->modifyJsTagforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest);
+        $request = $this->modifyJsTagforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1020,20 +1008,20 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  string $jsTagId  (required)
      * @param  \Ringba\Model\ModifyJsTagforaNumberRequest $modifyJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function modifyJsTagforaNumberAsync($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest)
+    public function modifyJsTagforaNumberAsync($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization = null)
     {
-        return $this->modifyJsTagforaNumberAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest)
+        return $this->modifyJsTagforaNumberAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1049,21 +1037,21 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  string $jsTagId  (required)
      * @param  \Ringba\Model\ModifyJsTagforaNumberRequest $modifyJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function modifyJsTagforaNumberAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest)
+    public function modifyJsTagforaNumberAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\ModifyJsTagforaNumber';
-        $request = $this->modifyJsTagforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest);
+        $request = $this->modifyJsTagforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1107,25 +1095,19 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
      * @param  string $jsTagId  (required)
      * @param  \Ringba\Model\ModifyJsTagforaNumberRequest $modifyJsTagforaNumberRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function modifyJsTagforaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest)
+    public function modifyJsTagforaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $jsTagId, $modifyJsTagforaNumberRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling modifyJsTagforaNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1295,19 +1277,19 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\RemoveaJsTagfromaNumber
      */
-    public function removeaJsTagfromaNumber($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function removeaJsTagfromaNumber($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
-        list($response) = $this->removeaJsTagfromaNumberWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId);
+        list($response) = $this->removeaJsTagfromaNumberWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $authorization);
         return $response;
     }
 
@@ -1319,19 +1301,19 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\RemoveaJsTagfromaNumber, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeaJsTagfromaNumberWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function removeaJsTagfromaNumberWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
-        $request = $this->removeaJsTagfromaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId);
+        $request = $this->removeaJsTagfromaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1425,18 +1407,18 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeaJsTagfromaNumberAsync($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function removeaJsTagfromaNumberAsync($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
-        return $this->removeaJsTagfromaNumberAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId)
+        return $this->removeaJsTagfromaNumberAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1452,19 +1434,19 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeaJsTagfromaNumberAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function removeaJsTagfromaNumberAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
         $returnType = '\Ringba\Model\RemoveaJsTagfromaNumber';
-        $request = $this->removeaJsTagfromaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId);
+        $request = $this->removeaJsTagfromaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1508,23 +1490,17 @@ class NumberJsTagsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $numberId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function removeaJsTagfromaNumberRequest($authorization, $accountId, $campaignId, $publisherId, $numberId)
+    public function removeaJsTagfromaNumberRequest($accountId, $campaignId, $publisherId, $numberId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling removeaJsTagfromaNumber'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

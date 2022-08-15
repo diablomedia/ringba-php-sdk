@@ -123,17 +123,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateNewAddress
      */
-    public function createNewAddress($authorization, $accountId, $createNewAddressRequest)
+    public function createNewAddress($accountId, $createNewAddressRequest, $authorization = null)
     {
-        list($response) = $this->createNewAddressWithHttpInfo($authorization, $accountId, $createNewAddressRequest);
+        list($response) = $this->createNewAddressWithHttpInfo($accountId, $createNewAddressRequest, $authorization);
         return $response;
     }
 
@@ -145,17 +145,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateNewAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createNewAddressWithHttpInfo($authorization, $accountId, $createNewAddressRequest)
+    public function createNewAddressWithHttpInfo($accountId, $createNewAddressRequest, $authorization = null)
     {
-        $request = $this->createNewAddressRequest($authorization, $accountId, $createNewAddressRequest);
+        $request = $this->createNewAddressRequest($accountId, $createNewAddressRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,16 +249,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewAddressAsync($authorization, $accountId, $createNewAddressRequest)
+    public function createNewAddressAsync($accountId, $createNewAddressRequest, $authorization = null)
     {
-        return $this->createNewAddressAsyncWithHttpInfo($authorization, $accountId, $createNewAddressRequest)
+        return $this->createNewAddressAsyncWithHttpInfo($accountId, $createNewAddressRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,17 +274,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewAddressAsyncWithHttpInfo($authorization, $accountId, $createNewAddressRequest)
+    public function createNewAddressAsyncWithHttpInfo($accountId, $createNewAddressRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateNewAddress';
-        $request = $this->createNewAddressRequest($authorization, $accountId, $createNewAddressRequest);
+        $request = $this->createNewAddressRequest($accountId, $createNewAddressRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -328,21 +328,15 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createNewAddressRequest($authorization, $accountId, $createNewAddressRequest)
+    public function createNewAddressRequest($accountId, $createNewAddressRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createNewAddress'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -791,18 +785,18 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
      * @param  \Ringba\Model\EditAddressRequest $editAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\EditAddress
      */
-    public function editAddress($authorization, $accountId, $addressId, $editAddressRequest)
+    public function editAddress($accountId, $addressId, $editAddressRequest, $authorization = null)
     {
-        list($response) = $this->editAddressWithHttpInfo($authorization, $accountId, $addressId, $editAddressRequest);
+        list($response) = $this->editAddressWithHttpInfo($accountId, $addressId, $editAddressRequest, $authorization);
         return $response;
     }
 
@@ -814,18 +808,18 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
      * @param  \Ringba\Model\EditAddressRequest $editAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\EditAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editAddressWithHttpInfo($authorization, $accountId, $addressId, $editAddressRequest)
+    public function editAddressWithHttpInfo($accountId, $addressId, $editAddressRequest, $authorization = null)
     {
-        $request = $this->editAddressRequest($authorization, $accountId, $addressId, $editAddressRequest);
+        $request = $this->editAddressRequest($accountId, $addressId, $editAddressRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -919,17 +913,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
      * @param  \Ringba\Model\EditAddressRequest $editAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editAddressAsync($authorization, $accountId, $addressId, $editAddressRequest)
+    public function editAddressAsync($accountId, $addressId, $editAddressRequest, $authorization = null)
     {
-        return $this->editAddressAsyncWithHttpInfo($authorization, $accountId, $addressId, $editAddressRequest)
+        return $this->editAddressAsyncWithHttpInfo($accountId, $addressId, $editAddressRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -945,18 +939,18 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
      * @param  \Ringba\Model\EditAddressRequest $editAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editAddressAsyncWithHttpInfo($authorization, $accountId, $addressId, $editAddressRequest)
+    public function editAddressAsyncWithHttpInfo($accountId, $addressId, $editAddressRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\EditAddress';
-        $request = $this->editAddressRequest($authorization, $accountId, $addressId, $editAddressRequest);
+        $request = $this->editAddressRequest($accountId, $addressId, $editAddressRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1000,22 +994,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
      * @param  \Ringba\Model\EditAddressRequest $editAddressRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function editAddressRequest($authorization, $accountId, $addressId, $editAddressRequest)
+    public function editAddressRequest($accountId, $addressId, $editAddressRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling editAddress'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1143,17 +1131,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetAddressbyID
      */
-    public function getAddressbyID($authorization, $accountId, $addressId)
+    public function getAddressbyID($accountId, $addressId, $authorization = null)
     {
-        list($response) = $this->getAddressbyIDWithHttpInfo($authorization, $accountId, $addressId);
+        list($response) = $this->getAddressbyIDWithHttpInfo($accountId, $addressId, $authorization);
         return $response;
     }
 
@@ -1165,17 +1153,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetAddressbyID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAddressbyIDWithHttpInfo($authorization, $accountId, $addressId)
+    public function getAddressbyIDWithHttpInfo($accountId, $addressId, $authorization = null)
     {
-        $request = $this->getAddressbyIDRequest($authorization, $accountId, $addressId);
+        $request = $this->getAddressbyIDRequest($accountId, $addressId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1269,16 +1257,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddressbyIDAsync($authorization, $accountId, $addressId)
+    public function getAddressbyIDAsync($accountId, $addressId, $authorization = null)
     {
-        return $this->getAddressbyIDAsyncWithHttpInfo($authorization, $accountId, $addressId)
+        return $this->getAddressbyIDAsyncWithHttpInfo($accountId, $addressId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1294,17 +1282,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddressbyIDAsyncWithHttpInfo($authorization, $accountId, $addressId)
+    public function getAddressbyIDAsyncWithHttpInfo($accountId, $addressId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetAddressbyID';
-        $request = $this->getAddressbyIDRequest($authorization, $accountId, $addressId);
+        $request = $this->getAddressbyIDRequest($accountId, $addressId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1348,21 +1336,15 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAddressbyIDRequest($authorization, $accountId, $addressId)
+    public function getAddressbyIDRequest($accountId, $addressId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getAddressbyID'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1478,16 +1460,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetAddresses
      */
-    public function getAddresses($authorization, $accountId)
+    public function getAddresses($accountId, $authorization = null)
     {
-        list($response) = $this->getAddressesWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getAddressesWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -1499,16 +1481,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetAddresses, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAddressesWithHttpInfo($authorization, $accountId)
+    public function getAddressesWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getAddressesRequest($authorization, $accountId);
+        $request = $this->getAddressesRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1602,15 +1584,15 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddressesAsync($authorization, $accountId)
+    public function getAddressesAsync($accountId, $authorization = null)
     {
-        return $this->getAddressesAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getAddressesAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1626,16 +1608,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddressesAsyncWithHttpInfo($authorization, $accountId)
+    public function getAddressesAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetAddresses';
-        $request = $this->getAddressesRequest($authorization, $accountId);
+        $request = $this->getAddressesRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1679,20 +1661,14 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAddressesRequest($authorization, $accountId)
+    public function getAddressesRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getAddresses'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1794,16 +1770,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetAddressesbyCountry[]
      */
-    public function getCountriesAssociatedWithAccount($authorization, $accountId)
+    public function getCountriesAssociatedWithAccount($accountId, $authorization = null)
     {
-        list($response) = $this->getCountriesAssociatedWithAccountWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getCountriesAssociatedWithAccountWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -1815,16 +1791,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetAddressesbyCountry[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCountriesAssociatedWithAccountWithHttpInfo($authorization, $accountId)
+    public function getCountriesAssociatedWithAccountWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getCountriesAssociatedWithAccountRequest($authorization, $accountId);
+        $request = $this->getCountriesAssociatedWithAccountRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1918,15 +1894,15 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCountriesAssociatedWithAccountAsync($authorization, $accountId)
+    public function getCountriesAssociatedWithAccountAsync($accountId, $authorization = null)
     {
-        return $this->getCountriesAssociatedWithAccountAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getCountriesAssociatedWithAccountAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1942,16 +1918,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCountriesAssociatedWithAccountAsyncWithHttpInfo($authorization, $accountId)
+    public function getCountriesAssociatedWithAccountAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetAddressesbyCountry[]';
-        $request = $this->getCountriesAssociatedWithAccountRequest($authorization, $accountId);
+        $request = $this->getCountriesAssociatedWithAccountRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1995,20 +1971,14 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCountriesAssociatedWithAccountRequest($authorization, $accountId)
+    public function getCountriesAssociatedWithAccountRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getCountriesAssociatedWithAccount'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2110,17 +2080,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDetailsaboutaspecificcountry
      */
-    public function getDetailsandRequirementsforaSpecificCountry($authorization, $accountId, $countryCode)
+    public function getDetailsandRequirementsforaSpecificCountry($accountId, $countryCode, $authorization = null)
     {
-        list($response) = $this->getDetailsandRequirementsforaSpecificCountryWithHttpInfo($authorization, $accountId, $countryCode);
+        list($response) = $this->getDetailsandRequirementsforaSpecificCountryWithHttpInfo($accountId, $countryCode, $authorization);
         return $response;
     }
 
@@ -2132,17 +2102,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDetailsaboutaspecificcountry, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDetailsandRequirementsforaSpecificCountryWithHttpInfo($authorization, $accountId, $countryCode)
+    public function getDetailsandRequirementsforaSpecificCountryWithHttpInfo($accountId, $countryCode, $authorization = null)
     {
-        $request = $this->getDetailsandRequirementsforaSpecificCountryRequest($authorization, $accountId, $countryCode);
+        $request = $this->getDetailsandRequirementsforaSpecificCountryRequest($accountId, $countryCode, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2236,16 +2206,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsandRequirementsforaSpecificCountryAsync($authorization, $accountId, $countryCode)
+    public function getDetailsandRequirementsforaSpecificCountryAsync($accountId, $countryCode, $authorization = null)
     {
-        return $this->getDetailsandRequirementsforaSpecificCountryAsyncWithHttpInfo($authorization, $accountId, $countryCode)
+        return $this->getDetailsandRequirementsforaSpecificCountryAsyncWithHttpInfo($accountId, $countryCode, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2261,17 +2231,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsandRequirementsforaSpecificCountryAsyncWithHttpInfo($authorization, $accountId, $countryCode)
+    public function getDetailsandRequirementsforaSpecificCountryAsyncWithHttpInfo($accountId, $countryCode, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDetailsaboutaspecificcountry';
-        $request = $this->getDetailsandRequirementsforaSpecificCountryRequest($authorization, $accountId, $countryCode);
+        $request = $this->getDetailsandRequirementsforaSpecificCountryRequest($accountId, $countryCode, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2315,21 +2285,15 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDetailsandRequirementsforaSpecificCountryRequest($authorization, $accountId, $countryCode)
+    public function getDetailsandRequirementsforaSpecificCountryRequest($accountId, $countryCode, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDetailsandRequirementsforaSpecificCountry'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2445,17 +2409,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\SetDefaultAddress
      */
-    public function setDefaultAddress($authorization, $accountId, $addressId)
+    public function setDefaultAddress($accountId, $addressId, $authorization = null)
     {
-        list($response) = $this->setDefaultAddressWithHttpInfo($authorization, $accountId, $addressId);
+        list($response) = $this->setDefaultAddressWithHttpInfo($accountId, $addressId, $authorization);
         return $response;
     }
 
@@ -2467,17 +2431,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\SetDefaultAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setDefaultAddressWithHttpInfo($authorization, $accountId, $addressId)
+    public function setDefaultAddressWithHttpInfo($accountId, $addressId, $authorization = null)
     {
-        $request = $this->setDefaultAddressRequest($authorization, $accountId, $addressId);
+        $request = $this->setDefaultAddressRequest($accountId, $addressId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2571,16 +2535,16 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setDefaultAddressAsync($authorization, $accountId, $addressId)
+    public function setDefaultAddressAsync($accountId, $addressId, $authorization = null)
     {
-        return $this->setDefaultAddressAsyncWithHttpInfo($authorization, $accountId, $addressId)
+        return $this->setDefaultAddressAsyncWithHttpInfo($accountId, $addressId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2596,17 +2560,17 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setDefaultAddressAsyncWithHttpInfo($authorization, $accountId, $addressId)
+    public function setDefaultAddressAsyncWithHttpInfo($accountId, $addressId, $authorization = null)
     {
         $returnType = '\Ringba\Model\SetDefaultAddress';
-        $request = $this->setDefaultAddressRequest($authorization, $accountId, $addressId);
+        $request = $this->setDefaultAddressRequest($accountId, $addressId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2650,21 +2614,15 @@ class AddressesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function setDefaultAddressRequest($authorization, $accountId, $addressId)
+    public function setDefaultAddressRequest($accountId, $addressId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling setDefaultAddress'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

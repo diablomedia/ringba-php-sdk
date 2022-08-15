@@ -123,17 +123,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AddAnnotationtoaCallRequest $addAnnotationtoaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AddAnnotationtoaCall
      */
-    public function addAnnotationtoaCall($authorization, $accountId, $addAnnotationtoaCallRequest)
+    public function addAnnotationtoaCall($accountId, $addAnnotationtoaCallRequest, $authorization = null)
     {
-        list($response) = $this->addAnnotationtoaCallWithHttpInfo($authorization, $accountId, $addAnnotationtoaCallRequest);
+        list($response) = $this->addAnnotationtoaCallWithHttpInfo($accountId, $addAnnotationtoaCallRequest, $authorization);
         return $response;
     }
 
@@ -145,17 +145,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AddAnnotationtoaCallRequest $addAnnotationtoaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AddAnnotationtoaCall, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addAnnotationtoaCallWithHttpInfo($authorization, $accountId, $addAnnotationtoaCallRequest)
+    public function addAnnotationtoaCallWithHttpInfo($accountId, $addAnnotationtoaCallRequest, $authorization = null)
     {
-        $request = $this->addAnnotationtoaCallRequest($authorization, $accountId, $addAnnotationtoaCallRequest);
+        $request = $this->addAnnotationtoaCallRequest($accountId, $addAnnotationtoaCallRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,16 +249,16 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AddAnnotationtoaCallRequest $addAnnotationtoaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addAnnotationtoaCallAsync($authorization, $accountId, $addAnnotationtoaCallRequest)
+    public function addAnnotationtoaCallAsync($accountId, $addAnnotationtoaCallRequest, $authorization = null)
     {
-        return $this->addAnnotationtoaCallAsyncWithHttpInfo($authorization, $accountId, $addAnnotationtoaCallRequest)
+        return $this->addAnnotationtoaCallAsyncWithHttpInfo($accountId, $addAnnotationtoaCallRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,17 +274,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AddAnnotationtoaCallRequest $addAnnotationtoaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addAnnotationtoaCallAsyncWithHttpInfo($authorization, $accountId, $addAnnotationtoaCallRequest)
+    public function addAnnotationtoaCallAsyncWithHttpInfo($accountId, $addAnnotationtoaCallRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AddAnnotationtoaCall';
-        $request = $this->addAnnotationtoaCallRequest($authorization, $accountId, $addAnnotationtoaCallRequest);
+        $request = $this->addAnnotationtoaCallRequest($accountId, $addAnnotationtoaCallRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -328,21 +328,15 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AddAnnotationtoaCallRequest $addAnnotationtoaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addAnnotationtoaCallRequest($authorization, $accountId, $addAnnotationtoaCallRequest)
+    public function addAnnotationtoaCallRequest($accountId, $addAnnotationtoaCallRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling addAnnotationtoaCall'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -456,17 +450,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustments
      */
-    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustments($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustments($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization = null)
     {
-        list($response) = $this->adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsWithHttpInfo($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest);
+        list($response) = $this->adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsWithHttpInfo($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization);
         return $response;
     }
 
@@ -478,17 +472,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustments, HTTP status code, HTTP response headers (array of strings)
      */
-    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsWithHttpInfo($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsWithHttpInfo($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization = null)
     {
-        $request = $this->adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsRequest($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest);
+        $request = $this->adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsRequest($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -582,16 +576,16 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsAsync($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsAsync($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization = null)
     {
-        return $this->adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsAsyncWithHttpInfo($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest)
+        return $this->adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsAsyncWithHttpInfo($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -607,17 +601,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsAsyncWithHttpInfo($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsAsyncWithHttpInfo($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustments';
-        $request = $this->adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsRequest($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest);
+        $request = $this->adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsRequest($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -661,21 +655,15 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsRequest($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithabsoluteadjustmentsRequest($accountId, $adjustRevenueandorPaymentforaCallwithabsoluteadjustmentsRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling adjustRevenueandOrPaymentforaCallWithabsoluteadjustments'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -789,17 +777,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AdjustRevenueandPaymentforaCallwithrelativeadjustment
      */
-    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustments($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustments($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization = null)
     {
-        list($response) = $this->adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsWithHttpInfo($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest);
+        list($response) = $this->adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsWithHttpInfo($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization);
         return $response;
     }
 
@@ -811,17 +799,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AdjustRevenueandPaymentforaCallwithrelativeadjustment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsWithHttpInfo($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsWithHttpInfo($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization = null)
     {
-        $request = $this->adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsRequest($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest);
+        $request = $this->adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsRequest($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -915,16 +903,16 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsAsync($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsAsync($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization = null)
     {
-        return $this->adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsAsyncWithHttpInfo($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest)
+        return $this->adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsAsyncWithHttpInfo($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -940,17 +928,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsAsyncWithHttpInfo($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsAsyncWithHttpInfo($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AdjustRevenueandPaymentforaCallwithrelativeadjustment';
-        $request = $this->adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsRequest($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest);
+        $request = $this->adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsRequest($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -994,21 +982,15 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\AdjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsRequest($authorization, $accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest)
+    public function adjustRevenueandOrPaymentforaCallWithrelativeadjustmentsRequest($accountId, $adjustRevenueandorPaymentforaCallwithrelativeadjustmentsRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling adjustRevenueandOrPaymentforaCallWithrelativeadjustments'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1122,17 +1104,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustment
      */
-    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustment($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustment($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization = null)
     {
-        list($response) = $this->bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentWithHttpInfo($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest);
+        list($response) = $this->bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentWithHttpInfo($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization);
         return $response;
     }
 
@@ -1144,17 +1126,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentWithHttpInfo($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentWithHttpInfo($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization = null)
     {
-        $request = $this->bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentRequest($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest);
+        $request = $this->bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentRequest($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1248,16 +1230,16 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentAsync($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentAsync($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization = null)
     {
-        return $this->bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentAsyncWithHttpInfo($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest)
+        return $this->bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentAsyncWithHttpInfo($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1273,17 +1255,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentAsyncWithHttpInfo($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentAsyncWithHttpInfo($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustment';
-        $request = $this->bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentRequest($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest);
+        $request = $this->bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentRequest($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1327,21 +1309,15 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentRequest($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithabsoluteadjustmentRequest($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithabsoluteadjustmentRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling bUYERRequestforPayoutAdjustmentWithabsoluteadjustment'
-            );
-        }
         // verify the required parameter 'buyerAccountId' is set
         if ($buyerAccountId === null || (is_array($buyerAccountId) && count($buyerAccountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1455,17 +1431,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustment
      */
-    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustment($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustment($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization = null)
     {
-        list($response) = $this->bUYERRequestforPayoutAdjustmentWithrelativeadjustmentWithHttpInfo($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest);
+        list($response) = $this->bUYERRequestforPayoutAdjustmentWithrelativeadjustmentWithHttpInfo($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization);
         return $response;
     }
 
@@ -1477,17 +1453,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustmentWithHttpInfo($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustmentWithHttpInfo($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization = null)
     {
-        $request = $this->bUYERRequestforPayoutAdjustmentWithrelativeadjustmentRequest($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest);
+        $request = $this->bUYERRequestforPayoutAdjustmentWithrelativeadjustmentRequest($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1581,16 +1557,16 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustmentAsync($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustmentAsync($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization = null)
     {
-        return $this->bUYERRequestforPayoutAdjustmentWithrelativeadjustmentAsyncWithHttpInfo($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest)
+        return $this->bUYERRequestforPayoutAdjustmentWithrelativeadjustmentAsyncWithHttpInfo($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1606,17 +1582,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustmentAsyncWithHttpInfo($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustmentAsyncWithHttpInfo($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustment';
-        $request = $this->bUYERRequestforPayoutAdjustmentWithrelativeadjustmentRequest($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest);
+        $request = $this->bUYERRequestforPayoutAdjustmentWithrelativeadjustmentRequest($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1660,21 +1636,15 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $buyerAccountId  (required)
      * @param  \Ringba\Model\BUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustmentRequest($authorization, $buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest)
+    public function bUYERRequestforPayoutAdjustmentWithrelativeadjustmentRequest($buyerAccountId, $bUYERRequestforPayoutAdjustmentwithrelativeadjustmentRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling bUYERRequestforPayoutAdjustmentWithrelativeadjustment'
-            );
-        }
         // verify the required parameter 'buyerAccountId' is set
         if ($buyerAccountId === null || (is_array($buyerAccountId) && count($buyerAccountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1788,17 +1758,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\VoidRevenueandorPaymentforaCallRequest $voidRevenueandorPaymentforaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\VoidRevenueandPaymentforaCall
      */
-    public function voidRevenueandOrPaymentforaCall($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest)
+    public function voidRevenueandOrPaymentforaCall($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization = null)
     {
-        list($response) = $this->voidRevenueandOrPaymentforaCallWithHttpInfo($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest);
+        list($response) = $this->voidRevenueandOrPaymentforaCallWithHttpInfo($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization);
         return $response;
     }
 
@@ -1810,17 +1780,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\VoidRevenueandorPaymentforaCallRequest $voidRevenueandorPaymentforaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\VoidRevenueandPaymentforaCall, HTTP status code, HTTP response headers (array of strings)
      */
-    public function voidRevenueandOrPaymentforaCallWithHttpInfo($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest)
+    public function voidRevenueandOrPaymentforaCallWithHttpInfo($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization = null)
     {
-        $request = $this->voidRevenueandOrPaymentforaCallRequest($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest);
+        $request = $this->voidRevenueandOrPaymentforaCallRequest($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1914,16 +1884,16 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\VoidRevenueandorPaymentforaCallRequest $voidRevenueandorPaymentforaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function voidRevenueandOrPaymentforaCallAsync($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest)
+    public function voidRevenueandOrPaymentforaCallAsync($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization = null)
     {
-        return $this->voidRevenueandOrPaymentforaCallAsyncWithHttpInfo($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest)
+        return $this->voidRevenueandOrPaymentforaCallAsyncWithHttpInfo($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1939,17 +1909,17 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\VoidRevenueandorPaymentforaCallRequest $voidRevenueandorPaymentforaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function voidRevenueandOrPaymentforaCallAsyncWithHttpInfo($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest)
+    public function voidRevenueandOrPaymentforaCallAsyncWithHttpInfo($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\VoidRevenueandPaymentforaCall';
-        $request = $this->voidRevenueandOrPaymentforaCallRequest($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest);
+        $request = $this->voidRevenueandOrPaymentforaCallRequest($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1993,21 +1963,15 @@ class CallAdjustmentsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\VoidRevenueandorPaymentforaCallRequest $voidRevenueandorPaymentforaCallRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function voidRevenueandOrPaymentforaCallRequest($authorization, $accountId, $voidRevenueandorPaymentforaCallRequest)
+    public function voidRevenueandOrPaymentforaCallRequest($accountId, $voidRevenueandorPaymentforaCallRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling voidRevenueandOrPaymentforaCall'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

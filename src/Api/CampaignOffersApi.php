@@ -123,18 +123,18 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\CreateaDraftOfferforaCampaignRequest $createaDraftOfferforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateaDraftOffer
      */
-    public function createaDraftOfferforaCampaign($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest)
+    public function createaDraftOfferforaCampaign($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization = null)
     {
-        list($response) = $this->createaDraftOfferforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest);
+        list($response) = $this->createaDraftOfferforaCampaignWithHttpInfo($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization);
         return $response;
     }
 
@@ -146,18 +146,18 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\CreateaDraftOfferforaCampaignRequest $createaDraftOfferforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateaDraftOffer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createaDraftOfferforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest)
+    public function createaDraftOfferforaCampaignWithHttpInfo($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization = null)
     {
-        $request = $this->createaDraftOfferforaCampaignRequest($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest);
+        $request = $this->createaDraftOfferforaCampaignRequest($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -251,17 +251,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\CreateaDraftOfferforaCampaignRequest $createaDraftOfferforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createaDraftOfferforaCampaignAsync($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest)
+    public function createaDraftOfferforaCampaignAsync($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization = null)
     {
-        return $this->createaDraftOfferforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest)
+        return $this->createaDraftOfferforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,18 +277,18 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\CreateaDraftOfferforaCampaignRequest $createaDraftOfferforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createaDraftOfferforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest)
+    public function createaDraftOfferforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateaDraftOffer';
-        $request = $this->createaDraftOfferforaCampaignRequest($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest);
+        $request = $this->createaDraftOfferforaCampaignRequest($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,22 +332,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\CreateaDraftOfferforaCampaignRequest $createaDraftOfferforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createaDraftOfferforaCampaignRequest($authorization, $accountId, $campaignId, $createaDraftOfferforaCampaignRequest)
+    public function createaDraftOfferforaCampaignRequest($accountId, $campaignId, $createaDraftOfferforaCampaignRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createaDraftOfferforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -475,17 +469,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeletePublishedOfferforaCampaignwhennopublishedoffersarepresent1|\Ringba\Model\DeletePublishedOfferforaCampaign
      */
-    public function deletePublishedOfferforaCampaign($authorization, $accountId, $campaignId)
+    public function deletePublishedOfferforaCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->deletePublishedOfferforaCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->deletePublishedOfferforaCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -497,17 +491,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeletePublishedOfferforaCampaignwhennopublishedoffersarepresent1|\Ringba\Model\DeletePublishedOfferforaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletePublishedOfferforaCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function deletePublishedOfferforaCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->deletePublishedOfferforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->deletePublishedOfferforaCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -624,16 +618,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePublishedOfferforaCampaignAsync($authorization, $accountId, $campaignId)
+    public function deletePublishedOfferforaCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->deletePublishedOfferforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->deletePublishedOfferforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -649,17 +643,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePublishedOfferforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function deletePublishedOfferforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeletePublishedOfferforaCampaign';
-        $request = $this->deletePublishedOfferforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->deletePublishedOfferforaCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -703,21 +697,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletePublishedOfferforaCampaignRequest($authorization, $accountId, $campaignId)
+    public function deletePublishedOfferforaCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deletePublishedOfferforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -833,17 +821,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeleteaDraftOfferBeforePublishing
      */
-    public function deleteaDraftOfferBeforePublishing($authorization, $accountId, $campaignId)
+    public function deleteaDraftOfferBeforePublishing($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->deleteaDraftOfferBeforePublishingWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->deleteaDraftOfferBeforePublishingWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -855,17 +843,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeleteaDraftOfferBeforePublishing, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteaDraftOfferBeforePublishingWithHttpInfo($authorization, $accountId, $campaignId)
+    public function deleteaDraftOfferBeforePublishingWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->deleteaDraftOfferBeforePublishingRequest($authorization, $accountId, $campaignId);
+        $request = $this->deleteaDraftOfferBeforePublishingRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -959,16 +947,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteaDraftOfferBeforePublishingAsync($authorization, $accountId, $campaignId)
+    public function deleteaDraftOfferBeforePublishingAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->deleteaDraftOfferBeforePublishingAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->deleteaDraftOfferBeforePublishingAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -984,17 +972,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteaDraftOfferBeforePublishingAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function deleteaDraftOfferBeforePublishingAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeleteaDraftOfferBeforePublishing';
-        $request = $this->deleteaDraftOfferBeforePublishingRequest($authorization, $accountId, $campaignId);
+        $request = $this->deleteaDraftOfferBeforePublishingRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1038,21 +1026,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteaDraftOfferBeforePublishingRequest($authorization, $accountId, $campaignId)
+    public function deleteaDraftOfferBeforePublishingRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deleteaDraftOfferBeforePublishing'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1168,17 +1150,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetAllOffersforaCampaign
      */
-    public function getAllOffersforaCampaign($authorization, $accountId, $campaignId)
+    public function getAllOffersforaCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->getAllOffersforaCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->getAllOffersforaCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -1190,17 +1172,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetAllOffersforaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllOffersforaCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function getAllOffersforaCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->getAllOffersforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->getAllOffersforaCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1294,16 +1276,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllOffersforaCampaignAsync($authorization, $accountId, $campaignId)
+    public function getAllOffersforaCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->getAllOffersforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->getAllOffersforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1319,17 +1301,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllOffersforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function getAllOffersforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetAllOffersforaCampaign';
-        $request = $this->getAllOffersforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->getAllOffersforaCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1373,21 +1355,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllOffersforaCampaignRequest($authorization, $accountId, $campaignId)
+    public function getAllOffersforaCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getAllOffersforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1503,17 +1479,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDraftOffersforaCampaignwithnodraftoffersincampaign
      */
-    public function getDraftOffersforaCampaign($authorization, $accountId, $campaignId)
+    public function getDraftOffersforaCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->getDraftOffersforaCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->getDraftOffersforaCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -1525,17 +1501,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDraftOffersforaCampaignwithnodraftoffersincampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDraftOffersforaCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function getDraftOffersforaCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->getDraftOffersforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->getDraftOffersforaCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1629,16 +1605,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDraftOffersforaCampaignAsync($authorization, $accountId, $campaignId)
+    public function getDraftOffersforaCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->getDraftOffersforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->getDraftOffersforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1654,17 +1630,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDraftOffersforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function getDraftOffersforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDraftOffersforaCampaignwithnodraftoffersincampaign';
-        $request = $this->getDraftOffersforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->getDraftOffersforaCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1708,21 +1684,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDraftOffersforaCampaignRequest($authorization, $accountId, $campaignId)
+    public function getDraftOffersforaCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDraftOffersforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1838,17 +1808,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetPublishedOffersforaCampaign
      */
-    public function getPublishedOffersforaCampaign($authorization, $accountId, $campaignId)
+    public function getPublishedOffersforaCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->getPublishedOffersforaCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->getPublishedOffersforaCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -1860,17 +1830,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetPublishedOffersforaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPublishedOffersforaCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function getPublishedOffersforaCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->getPublishedOffersforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->getPublishedOffersforaCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1964,16 +1934,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublishedOffersforaCampaignAsync($authorization, $accountId, $campaignId)
+    public function getPublishedOffersforaCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->getPublishedOffersforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->getPublishedOffersforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1989,17 +1959,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublishedOffersforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function getPublishedOffersforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetPublishedOffersforaCampaign';
-        $request = $this->getPublishedOffersforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->getPublishedOffersforaCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2043,21 +2013,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPublishedOffersforaCampaignRequest($authorization, $accountId, $campaignId)
+    public function getPublishedOffersforaCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getPublishedOffersforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2173,18 +2137,18 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\InvitePublishertoParticipateinOfferRequest $invitePublishertoParticipateinOfferRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\InvitePublishertoParticipateinOffer
      */
-    public function invitePublishertoParticipateinOffer($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest)
+    public function invitePublishertoParticipateinOffer($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization = null)
     {
-        list($response) = $this->invitePublishertoParticipateinOfferWithHttpInfo($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest);
+        list($response) = $this->invitePublishertoParticipateinOfferWithHttpInfo($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization);
         return $response;
     }
 
@@ -2196,18 +2160,18 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\InvitePublishertoParticipateinOfferRequest $invitePublishertoParticipateinOfferRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\InvitePublishertoParticipateinOffer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function invitePublishertoParticipateinOfferWithHttpInfo($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest)
+    public function invitePublishertoParticipateinOfferWithHttpInfo($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization = null)
     {
-        $request = $this->invitePublishertoParticipateinOfferRequest($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest);
+        $request = $this->invitePublishertoParticipateinOfferRequest($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2301,17 +2265,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\InvitePublishertoParticipateinOfferRequest $invitePublishertoParticipateinOfferRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function invitePublishertoParticipateinOfferAsync($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest)
+    public function invitePublishertoParticipateinOfferAsync($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization = null)
     {
-        return $this->invitePublishertoParticipateinOfferAsyncWithHttpInfo($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest)
+        return $this->invitePublishertoParticipateinOfferAsyncWithHttpInfo($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2327,18 +2291,18 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\InvitePublishertoParticipateinOfferRequest $invitePublishertoParticipateinOfferRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function invitePublishertoParticipateinOfferAsyncWithHttpInfo($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest)
+    public function invitePublishertoParticipateinOfferAsyncWithHttpInfo($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\InvitePublishertoParticipateinOffer';
-        $request = $this->invitePublishertoParticipateinOfferRequest($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest);
+        $request = $this->invitePublishertoParticipateinOfferRequest($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2382,22 +2346,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\InvitePublishertoParticipateinOfferRequest $invitePublishertoParticipateinOfferRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function invitePublishertoParticipateinOfferRequest($authorization, $accountId, $campaignId, $invitePublishertoParticipateinOfferRequest)
+    public function invitePublishertoParticipateinOfferRequest($accountId, $campaignId, $invitePublishertoParticipateinOfferRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling invitePublishertoParticipateinOffer'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2525,17 +2483,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\PauseaPublishedOfferforaCampaign|\Ringba\Model\PauseaPublishedOfferforaCampaignwhenthereisnoactiveoffertopause1
      */
-    public function pauseaPublishedOfferforaCampaign($authorization, $accountId, $campaignId)
+    public function pauseaPublishedOfferforaCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->pauseaPublishedOfferforaCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->pauseaPublishedOfferforaCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -2547,17 +2505,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\PauseaPublishedOfferforaCampaign|\Ringba\Model\PauseaPublishedOfferforaCampaignwhenthereisnoactiveoffertopause1, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pauseaPublishedOfferforaCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function pauseaPublishedOfferforaCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->pauseaPublishedOfferforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->pauseaPublishedOfferforaCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2674,16 +2632,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pauseaPublishedOfferforaCampaignAsync($authorization, $accountId, $campaignId)
+    public function pauseaPublishedOfferforaCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->pauseaPublishedOfferforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->pauseaPublishedOfferforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2699,17 +2657,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pauseaPublishedOfferforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function pauseaPublishedOfferforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\PauseaPublishedOfferforaCampaign';
-        $request = $this->pauseaPublishedOfferforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->pauseaPublishedOfferforaCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2753,21 +2711,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function pauseaPublishedOfferforaCampaignRequest($authorization, $accountId, $campaignId)
+    public function pauseaPublishedOfferforaCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling pauseaPublishedOfferforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2883,17 +2835,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\PublishDraftOffers
      */
-    public function publishDraftOffers($authorization, $accountId, $campaignId)
+    public function publishDraftOffers($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->publishDraftOffersWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->publishDraftOffersWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -2905,17 +2857,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\PublishDraftOffers, HTTP status code, HTTP response headers (array of strings)
      */
-    public function publishDraftOffersWithHttpInfo($authorization, $accountId, $campaignId)
+    public function publishDraftOffersWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->publishDraftOffersRequest($authorization, $accountId, $campaignId);
+        $request = $this->publishDraftOffersRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3009,16 +2961,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function publishDraftOffersAsync($authorization, $accountId, $campaignId)
+    public function publishDraftOffersAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->publishDraftOffersAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->publishDraftOffersAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3034,17 +2986,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function publishDraftOffersAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function publishDraftOffersAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\PublishDraftOffers';
-        $request = $this->publishDraftOffersRequest($authorization, $accountId, $campaignId);
+        $request = $this->publishDraftOffersRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3088,21 +3040,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function publishDraftOffersRequest($authorization, $accountId, $campaignId)
+    public function publishDraftOffersRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling publishDraftOffers'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -3218,17 +3164,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\ResumeaPausedOfferwhennopausedoffersarepresent1|\Ringba\Model\ResumeaPausedOffer
      */
-    public function resumeaPausedOffer($authorization, $accountId, $campaignId)
+    public function resumeaPausedOffer($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->resumeaPausedOfferWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->resumeaPausedOfferWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -3240,17 +3186,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\ResumeaPausedOfferwhennopausedoffersarepresent1|\Ringba\Model\ResumeaPausedOffer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function resumeaPausedOfferWithHttpInfo($authorization, $accountId, $campaignId)
+    public function resumeaPausedOfferWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->resumeaPausedOfferRequest($authorization, $accountId, $campaignId);
+        $request = $this->resumeaPausedOfferRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3367,16 +3313,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resumeaPausedOfferAsync($authorization, $accountId, $campaignId)
+    public function resumeaPausedOfferAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->resumeaPausedOfferAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->resumeaPausedOfferAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3392,17 +3338,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resumeaPausedOfferAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function resumeaPausedOfferAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\ResumeaPausedOffer';
-        $request = $this->resumeaPausedOfferRequest($authorization, $accountId, $campaignId);
+        $request = $this->resumeaPausedOfferRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3446,21 +3392,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function resumeaPausedOfferRequest($authorization, $accountId, $campaignId)
+    public function resumeaPausedOfferRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling resumeaPausedOffer'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -3576,17 +3516,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\ViewPublishersParticipatinginPublishedOffers
      */
-    public function viewPublishersParticipatinginPublishedOffer($authorization, $accountId, $campaignId)
+    public function viewPublishersParticipatinginPublishedOffer($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->viewPublishersParticipatinginPublishedOfferWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->viewPublishersParticipatinginPublishedOfferWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -3598,17 +3538,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\ViewPublishersParticipatinginPublishedOffers, HTTP status code, HTTP response headers (array of strings)
      */
-    public function viewPublishersParticipatinginPublishedOfferWithHttpInfo($authorization, $accountId, $campaignId)
+    public function viewPublishersParticipatinginPublishedOfferWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->viewPublishersParticipatinginPublishedOfferRequest($authorization, $accountId, $campaignId);
+        $request = $this->viewPublishersParticipatinginPublishedOfferRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3702,16 +3642,16 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function viewPublishersParticipatinginPublishedOfferAsync($authorization, $accountId, $campaignId)
+    public function viewPublishersParticipatinginPublishedOfferAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->viewPublishersParticipatinginPublishedOfferAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->viewPublishersParticipatinginPublishedOfferAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3727,17 +3667,17 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function viewPublishersParticipatinginPublishedOfferAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function viewPublishersParticipatinginPublishedOfferAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\ViewPublishersParticipatinginPublishedOffers';
-        $request = $this->viewPublishersParticipatinginPublishedOfferRequest($authorization, $accountId, $campaignId);
+        $request = $this->viewPublishersParticipatinginPublishedOfferRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3781,21 +3721,15 @@ class CampaignOffersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function viewPublishersParticipatinginPublishedOfferRequest($authorization, $accountId, $campaignId)
+    public function viewPublishersParticipatinginPublishedOfferRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling viewPublishersParticipatinginPublishedOffer'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

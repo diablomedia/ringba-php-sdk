@@ -123,18 +123,18 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddIVRTreetoaCampaignRequest $addIVRTreetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AddIVRTreetoaCampaign
      */
-    public function addIVRTreetoaCampaign($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest)
+    public function addIVRTreetoaCampaign($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization = null)
     {
-        list($response) = $this->addIVRTreetoaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest);
+        list($response) = $this->addIVRTreetoaCampaignWithHttpInfo($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization);
         return $response;
     }
 
@@ -146,18 +146,18 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddIVRTreetoaCampaignRequest $addIVRTreetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AddIVRTreetoaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addIVRTreetoaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest)
+    public function addIVRTreetoaCampaignWithHttpInfo($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization = null)
     {
-        $request = $this->addIVRTreetoaCampaignRequest($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest);
+        $request = $this->addIVRTreetoaCampaignRequest($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -251,17 +251,17 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddIVRTreetoaCampaignRequest $addIVRTreetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addIVRTreetoaCampaignAsync($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest)
+    public function addIVRTreetoaCampaignAsync($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization = null)
     {
-        return $this->addIVRTreetoaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest)
+        return $this->addIVRTreetoaCampaignAsyncWithHttpInfo($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,18 +277,18 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddIVRTreetoaCampaignRequest $addIVRTreetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addIVRTreetoaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest)
+    public function addIVRTreetoaCampaignAsyncWithHttpInfo($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AddIVRTreetoaCampaign';
-        $request = $this->addIVRTreetoaCampaignRequest($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest);
+        $request = $this->addIVRTreetoaCampaignRequest($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,22 +332,16 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\AddIVRTreetoaCampaignRequest $addIVRTreetoaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addIVRTreetoaCampaignRequest($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest)
+    public function addIVRTreetoaCampaignRequest($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling addIVRTreetoaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -475,16 +469,16 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function getIVRTreesAssociatedwithAccount($authorization, $accountId)
+    public function getIVRTreesAssociatedwithAccount($accountId, $authorization = null)
     {
-        $this->getIVRTreesAssociatedwithAccountWithHttpInfo($authorization, $accountId);
+        $this->getIVRTreesAssociatedwithAccountWithHttpInfo($accountId, $authorization);
     }
 
     /**
@@ -495,16 +489,16 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getIVRTreesAssociatedwithAccountWithHttpInfo($authorization, $accountId)
+    public function getIVRTreesAssociatedwithAccountWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getIVRTreesAssociatedwithAccountRequest($authorization, $accountId);
+        $request = $this->getIVRTreesAssociatedwithAccountRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -558,15 +552,15 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getIVRTreesAssociatedwithAccountAsync($authorization, $accountId)
+    public function getIVRTreesAssociatedwithAccountAsync($accountId, $authorization = null)
     {
-        return $this->getIVRTreesAssociatedwithAccountAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getIVRTreesAssociatedwithAccountAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -582,16 +576,16 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getIVRTreesAssociatedwithAccountAsyncWithHttpInfo($authorization, $accountId)
+    public function getIVRTreesAssociatedwithAccountAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '';
-        $request = $this->getIVRTreesAssociatedwithAccountRequest($authorization, $accountId);
+        $request = $this->getIVRTreesAssociatedwithAccountRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -622,20 +616,14 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getIVRTreesAssociatedwithAccountRequest($authorization, $accountId)
+    public function getIVRTreesAssociatedwithAccountRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getIVRTreesAssociatedwithAccount'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -737,17 +725,17 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\RemoveIVRTreefromaCampaign
      */
-    public function removeIVRTreefromaCampaign($authorization, $accountId, $campaignId)
+    public function removeIVRTreefromaCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->removeIVRTreefromaCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->removeIVRTreefromaCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -759,17 +747,17 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\RemoveIVRTreefromaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeIVRTreefromaCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function removeIVRTreefromaCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->removeIVRTreefromaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->removeIVRTreefromaCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -863,16 +851,16 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeIVRTreefromaCampaignAsync($authorization, $accountId, $campaignId)
+    public function removeIVRTreefromaCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->removeIVRTreefromaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->removeIVRTreefromaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -888,17 +876,17 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeIVRTreefromaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function removeIVRTreefromaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\RemoveIVRTreefromaCampaign';
-        $request = $this->removeIVRTreefromaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->removeIVRTreefromaCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -942,21 +930,15 @@ class IVRTreesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function removeIVRTreefromaCampaignRequest($authorization, $accountId, $campaignId)
+    public function removeIVRTreefromaCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling removeIVRTreefromaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

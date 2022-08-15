@@ -123,18 +123,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeleteanInvitation
      */
-    public function deleteanInvitation($authorization, $accountId, $publisherId, $invitationId)
+    public function deleteanInvitation($accountId, $publisherId, $invitationId, $authorization = null)
     {
-        list($response) = $this->deleteanInvitationWithHttpInfo($authorization, $accountId, $publisherId, $invitationId);
+        list($response) = $this->deleteanInvitationWithHttpInfo($accountId, $publisherId, $invitationId, $authorization);
         return $response;
     }
 
@@ -146,18 +146,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeleteanInvitation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteanInvitationWithHttpInfo($authorization, $accountId, $publisherId, $invitationId)
+    public function deleteanInvitationWithHttpInfo($accountId, $publisherId, $invitationId, $authorization = null)
     {
-        $request = $this->deleteanInvitationRequest($authorization, $accountId, $publisherId, $invitationId);
+        $request = $this->deleteanInvitationRequest($accountId, $publisherId, $invitationId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -251,17 +251,17 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteanInvitationAsync($authorization, $accountId, $publisherId, $invitationId)
+    public function deleteanInvitationAsync($accountId, $publisherId, $invitationId, $authorization = null)
     {
-        return $this->deleteanInvitationAsyncWithHttpInfo($authorization, $accountId, $publisherId, $invitationId)
+        return $this->deleteanInvitationAsyncWithHttpInfo($accountId, $publisherId, $invitationId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,18 +277,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteanInvitationAsyncWithHttpInfo($authorization, $accountId, $publisherId, $invitationId)
+    public function deleteanInvitationAsyncWithHttpInfo($accountId, $publisherId, $invitationId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeleteanInvitation';
-        $request = $this->deleteanInvitationRequest($authorization, $accountId, $publisherId, $invitationId);
+        $request = $this->deleteanInvitationRequest($accountId, $publisherId, $invitationId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,22 +332,16 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteanInvitationRequest($authorization, $accountId, $publisherId, $invitationId)
+    public function deleteanInvitationRequest($accountId, $publisherId, $invitationId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deleteanInvitation'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -477,18 +471,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDetailsAboutanInvitation
      */
-    public function getDetailsAboutanInvitation($authorization, $accountId, $publisherId, $invitationId)
+    public function getDetailsAboutanInvitation($accountId, $publisherId, $invitationId, $authorization = null)
     {
-        list($response) = $this->getDetailsAboutanInvitationWithHttpInfo($authorization, $accountId, $publisherId, $invitationId);
+        list($response) = $this->getDetailsAboutanInvitationWithHttpInfo($accountId, $publisherId, $invitationId, $authorization);
         return $response;
     }
 
@@ -500,18 +494,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDetailsAboutanInvitation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDetailsAboutanInvitationWithHttpInfo($authorization, $accountId, $publisherId, $invitationId)
+    public function getDetailsAboutanInvitationWithHttpInfo($accountId, $publisherId, $invitationId, $authorization = null)
     {
-        $request = $this->getDetailsAboutanInvitationRequest($authorization, $accountId, $publisherId, $invitationId);
+        $request = $this->getDetailsAboutanInvitationRequest($accountId, $publisherId, $invitationId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -605,17 +599,17 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutanInvitationAsync($authorization, $accountId, $publisherId, $invitationId)
+    public function getDetailsAboutanInvitationAsync($accountId, $publisherId, $invitationId, $authorization = null)
     {
-        return $this->getDetailsAboutanInvitationAsyncWithHttpInfo($authorization, $accountId, $publisherId, $invitationId)
+        return $this->getDetailsAboutanInvitationAsyncWithHttpInfo($accountId, $publisherId, $invitationId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -631,18 +625,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutanInvitationAsyncWithHttpInfo($authorization, $accountId, $publisherId, $invitationId)
+    public function getDetailsAboutanInvitationAsyncWithHttpInfo($accountId, $publisherId, $invitationId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDetailsAboutanInvitation';
-        $request = $this->getDetailsAboutanInvitationRequest($authorization, $accountId, $publisherId, $invitationId);
+        $request = $this->getDetailsAboutanInvitationRequest($accountId, $publisherId, $invitationId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -686,22 +680,16 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  string $invitationId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDetailsAboutanInvitationRequest($authorization, $accountId, $publisherId, $invitationId)
+    public function getDetailsAboutanInvitationRequest($accountId, $publisherId, $invitationId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDetailsAboutanInvitation'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -831,17 +819,17 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetInvitationsforaPublisher
      */
-    public function getInvitationsforaPublisher($authorization, $accountId, $publisherId)
+    public function getInvitationsforaPublisher($accountId, $publisherId, $authorization = null)
     {
-        list($response) = $this->getInvitationsforaPublisherWithHttpInfo($authorization, $accountId, $publisherId);
+        list($response) = $this->getInvitationsforaPublisherWithHttpInfo($accountId, $publisherId, $authorization);
         return $response;
     }
 
@@ -853,17 +841,17 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetInvitationsforaPublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInvitationsforaPublisherWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getInvitationsforaPublisherWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
-        $request = $this->getInvitationsforaPublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getInvitationsforaPublisherRequest($accountId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -957,16 +945,16 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvitationsforaPublisherAsync($authorization, $accountId, $publisherId)
+    public function getInvitationsforaPublisherAsync($accountId, $publisherId, $authorization = null)
     {
-        return $this->getInvitationsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+        return $this->getInvitationsforaPublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -982,17 +970,17 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvitationsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getInvitationsforaPublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetInvitationsforaPublisher';
-        $request = $this->getInvitationsforaPublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getInvitationsforaPublisherRequest($accountId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1036,21 +1024,15 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getInvitationsforaPublisherRequest($authorization, $accountId, $publisherId)
+    public function getInvitationsforaPublisherRequest($accountId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getInvitationsforaPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1166,18 +1148,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\InviteUsertoJoinPublisherRequest $inviteUsertoJoinPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\InviteUser
      */
-    public function inviteUsertoJoinPublisher($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest)
+    public function inviteUsertoJoinPublisher($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization = null)
     {
-        list($response) = $this->inviteUsertoJoinPublisherWithHttpInfo($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest);
+        list($response) = $this->inviteUsertoJoinPublisherWithHttpInfo($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization);
         return $response;
     }
 
@@ -1189,18 +1171,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\InviteUsertoJoinPublisherRequest $inviteUsertoJoinPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\InviteUser, HTTP status code, HTTP response headers (array of strings)
      */
-    public function inviteUsertoJoinPublisherWithHttpInfo($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest)
+    public function inviteUsertoJoinPublisherWithHttpInfo($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization = null)
     {
-        $request = $this->inviteUsertoJoinPublisherRequest($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest);
+        $request = $this->inviteUsertoJoinPublisherRequest($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1294,17 +1276,17 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\InviteUsertoJoinPublisherRequest $inviteUsertoJoinPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function inviteUsertoJoinPublisherAsync($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest)
+    public function inviteUsertoJoinPublisherAsync($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization = null)
     {
-        return $this->inviteUsertoJoinPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest)
+        return $this->inviteUsertoJoinPublisherAsyncWithHttpInfo($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1320,18 +1302,18 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\InviteUsertoJoinPublisherRequest $inviteUsertoJoinPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function inviteUsertoJoinPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest)
+    public function inviteUsertoJoinPublisherAsyncWithHttpInfo($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\InviteUser';
-        $request = $this->inviteUsertoJoinPublisherRequest($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest);
+        $request = $this->inviteUsertoJoinPublisherRequest($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1375,22 +1357,16 @@ class PublisherInvitationsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\InviteUsertoJoinPublisherRequest $inviteUsertoJoinPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function inviteUsertoJoinPublisherRequest($authorization, $accountId, $publisherId, $inviteUsertoJoinPublisherRequest)
+    public function inviteUsertoJoinPublisherRequest($accountId, $publisherId, $inviteUsertoJoinPublisherRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling inviteUsertoJoinPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

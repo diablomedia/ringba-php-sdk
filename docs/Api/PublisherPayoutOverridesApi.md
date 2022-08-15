@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createNewPublisherPayoutOverride()`
 
 ```php
-createNewPublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest): \Ringba\Model\CreateNewPublisherPayoutOverride
+createNewPublisherPayoutOverride($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization): \Ringba\Model\CreateNewPublisherPayoutOverride
 ```
 
 Create New Publisher Payout Override
@@ -34,14 +34,14 @@ $apiInstance = new Ringba\Api\PublisherPayoutOverridesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $createNewPublisherPayoutOverrideRequest = {"deDupeSetting":{"secondsFromLastCall":0},"isRevShare":false,"priority":0,"allTimeCap":-1,"monthlyCap":-1,"dailyCap":-1,"hourlyCap":-1,"concurrencyCap":-1,"allTimeSumCap":-1,"monthlySumCap":-1,"dailySumCap":-1,"hourlySumCap":-1,"payoutConversionType":"connectedCall","payoutAmount":12,"notUsedPayout":false,"sendNotifications":false}; // \Ringba\Model\CreateNewPublisherPayoutOverrideRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewPublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest);
+    $result = $apiInstance->createNewPublisherPayoutOverride($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublisherPayoutOverridesApi->createNewPublisherPayoutOverride: ', $e->getMessage(), PHP_EOL;
@@ -52,11 +52,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **createNewPublisherPayoutOverrideRequest** | [**\Ringba\Model\CreateNewPublisherPayoutOverrideRequest**](../Model/CreateNewPublisherPayoutOverrideRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -78,7 +78,7 @@ No authorization required
 ## `getPublisherPayoutOverrides()`
 
 ```php
-getPublisherPayoutOverrides($authorization, $accountId, $campaignId, $publisherId)
+getPublisherPayoutOverrides($accountId, $campaignId, $publisherId, $authorization)
 ```
 
 Get Publisher Payout Overrides
@@ -98,13 +98,13 @@ $apiInstance = new Ringba\Api\PublisherPayoutOverridesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $apiInstance->getPublisherPayoutOverrides($authorization, $accountId, $campaignId, $publisherId);
+    $apiInstance->getPublisherPayoutOverrides($accountId, $campaignId, $publisherId, $authorization);
 } catch (Exception $e) {
     echo 'Exception when calling PublisherPayoutOverridesApi->getPublisherPayoutOverrides: ', $e->getMessage(), PHP_EOL;
 }
@@ -114,10 +114,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -139,7 +139,7 @@ No authorization required
 ## `removeaPublisherPayoutOverride()`
 
 ```php
-removeaPublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $payoutId): \Ringba\Model\RemoveaPublisherPayoutOverride
+removeaPublisherPayoutOverride($accountId, $campaignId, $publisherId, $payoutId, $authorization): \Ringba\Model\RemoveaPublisherPayoutOverride
 ```
 
 Remove a Publisher Payout Override
@@ -159,14 +159,14 @@ $apiInstance = new Ringba\Api\PublisherPayoutOverridesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $payoutId = 'payoutId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeaPublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $payoutId);
+    $result = $apiInstance->removeaPublisherPayoutOverride($accountId, $campaignId, $publisherId, $payoutId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublisherPayoutOverridesApi->removeaPublisherPayoutOverride: ', $e->getMessage(), PHP_EOL;
@@ -177,11 +177,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **payoutId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -203,7 +203,7 @@ No authorization required
 ## `updateALLPublisherPayoutOverrides()`
 
 ```php
-updateALLPublisherPayoutOverrides($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest): \Ringba\Model\UpdateALLPublisherPayoutOverrides
+updateALLPublisherPayoutOverrides($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization): \Ringba\Model\UpdateALLPublisherPayoutOverrides
 ```
 
 Update ALL Publisher Payout Overrides
@@ -223,14 +223,14 @@ $apiInstance = new Ringba\Api\PublisherPayoutOverridesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $updateALLPublisherPayoutOverridesRequest = {"allPayouts":[{"deDupeSetting":{"secondsFromLastCall":0},"isRevShare":false,"priority":0,"allTimeCap":-1,"monthlyCap":-1,"dailyCap":-1,"hourlyCap":-1,"concurrencyCap":-1,"allTimeSumCap":-1,"monthlySumCap":-1,"dailySumCap":-1,"hourlySumCap":-1,"payoutConversionType":"connectedCall","payoutAmount":12,"notUsedPayout":false},{"deDupeSetting":{"secondsFromLastCall":21600},"isRevShare":true,"priority":1,"revSharePercentage":95,"allTimeCap":10,"monthlyCap":-1,"dailyCap":-1,"hourlyCap":-1,"concurrencyCap":-1,"allTimeSumCap":2000,"monthlySumCap":-1,"dailySumCap":200,"hourlySumCap":-1,"payoutConversionType":"convertedCall","payoutAmount":-1,"payoutHours":[{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false}],"timeZoneId":"Mountain Standard Time","notUsedPayout":false}],"sendNotifications":false}; // \Ringba\Model\UpdateALLPublisherPayoutOverridesRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->updateALLPublisherPayoutOverrides($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest);
+    $result = $apiInstance->updateALLPublisherPayoutOverrides($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublisherPayoutOverridesApi->updateALLPublisherPayoutOverrides: ', $e->getMessage(), PHP_EOL;
@@ -241,11 +241,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **updateALLPublisherPayoutOverridesRequest** | [**\Ringba\Model\UpdateALLPublisherPayoutOverridesRequest**](../Model/UpdateALLPublisherPayoutOverridesRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -267,7 +267,7 @@ No authorization required
 ## `updateSinglePublisherPayoutOverride()`
 
 ```php
-updateSinglePublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest): \Ringba\Model\UpdateSinglePublisherPayoutOverride
+updateSinglePublisherPayoutOverride($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization): \Ringba\Model\UpdateSinglePublisherPayoutOverride
 ```
 
 Update Single Publisher Payout Override
@@ -287,15 +287,15 @@ $apiInstance = new Ringba\Api\PublisherPayoutOverridesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $payoutId = 'payoutId_example'; // string | 
 $updateSinglePublisherPayoutOverrideRequest = {"priority":1,"isRevShare":false,"payoutAmount":7,"revShareMaxPayoutAmount":-1,"revShareMinPayoutAmount":-1,"payoutConversionType":"incomingCall","isGlobal":false,"allTimeCap":100,"monthlyCap":-1,"dailyCap":-1,"hourlyCap":-1,"allTimeSumCap":-1,"monthlySumCap":700,"dailySumCap":-1,"hourlySumCap":-1,"concurrencyCap":-1,"deDupeSetting":{"secondsFromLastCall":0},"notUsedPayout":false,"sendNotifications":false}; // \Ringba\Model\UpdateSinglePublisherPayoutOverrideRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->updateSinglePublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest);
+    $result = $apiInstance->updateSinglePublisherPayoutOverride($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublisherPayoutOverridesApi->updateSinglePublisherPayoutOverride: ', $e->getMessage(), PHP_EOL;
@@ -306,12 +306,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **publisherId** | **string**|  |
  **payoutId** | **string**|  |
  **updateSinglePublisherPayoutOverrideRequest** | [**\Ringba\Model\UpdateSinglePublisherPayoutOverrideRequest**](../Model/UpdateSinglePublisherPayoutOverrideRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

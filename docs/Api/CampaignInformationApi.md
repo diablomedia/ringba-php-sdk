@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `cloneaCampaign()`
 
 ```php
-cloneaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\CloneaCampaign
+cloneaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\CloneaCampaign
 ```
 
 Clone a Campaign
@@ -37,12 +37,12 @@ $apiInstance = new Ringba\Api\CampaignInformationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->cloneaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->cloneaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignInformationApi->cloneaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +53,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -77,7 +77,7 @@ No authorization required
 ## `createNewCampaign()`
 
 ```php
-createNewCampaign($authorization, $accountId, $createNewCampaignRequest): \Ringba\Model\CreateNewCampaignwithallavailableparametersspecified
+createNewCampaign($accountId, $createNewCampaignRequest, $authorization): \Ringba\Model\CreateNewCampaignwithallavailableparametersspecified
 ```
 
 Create New Campaign
@@ -97,12 +97,12 @@ $apiInstance = new Ringba\Api\CampaignInformationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $createNewCampaignRequest = {"name":"New Campaign","userCampaignId":"Test Campaign","numberDisplayFormat":"(nnn) nnn-nnnn","countryCode":"US","duplicateSettings":{"duplicateSetting":"ON_CALL_LENGTH","callLengthInSeconds":21},"deDupeSettings":{"routeToOriginal":true,"routeToDifferent":false,"strict":true},"dialSettings":{"dialAttempts":7},"evalAnonymDuplication":false,"payoutDupesGlobal":true,"recordSetting":{"record":true,"recordFromAnswer":false,"trimSilence":true},"spamDetection":{"blockDuplicatesForSeconds":"3","trackAnonymous":true}}; // \Ringba\Model\CreateNewCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewCampaign($authorization, $accountId, $createNewCampaignRequest);
+    $result = $apiInstance->createNewCampaign($accountId, $createNewCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignInformationApi->createNewCampaign: ', $e->getMessage(), PHP_EOL;
@@ -113,9 +113,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **createNewCampaignRequest** | [**\Ringba\Model\CreateNewCampaignRequest**](../Model/CreateNewCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -137,7 +137,7 @@ No authorization required
 ## `deleteaCampaign()`
 
 ```php
-deleteaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\DeleteaCampaign
+deleteaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\DeleteaCampaign
 ```
 
 Delete a Campaign
@@ -157,12 +157,12 @@ $apiInstance = new Ringba\Api\CampaignInformationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->deleteaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignInformationApi->deleteaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -173,9 +173,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -197,7 +197,7 @@ No authorization required
 ## `getCampaigns()`
 
 ```php
-getCampaigns($authorization, $accountId): \Ringba\Model\GetCampaigns
+getCampaigns($accountId, $authorization): \Ringba\Model\GetCampaigns
 ```
 
 Get Campaigns
@@ -217,11 +217,11 @@ $apiInstance = new Ringba\Api\CampaignInformationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getCampaigns($authorization, $accountId);
+    $result = $apiInstance->getCampaigns($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignInformationApi->getCampaigns: ', $e->getMessage(), PHP_EOL;
@@ -232,8 +232,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -255,7 +255,7 @@ No authorization required
 ## `getCampaignsStatsonly()`
 
 ```php
-getCampaignsStatsonly($authorization, $accountId): \Ringba\Model\GetCampaignsStatsOnly
+getCampaignsStatsonly($accountId, $authorization): \Ringba\Model\GetCampaignsStatsOnly
 ```
 
 Get Campaigns Stats only
@@ -275,11 +275,11 @@ $apiInstance = new Ringba\Api\CampaignInformationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getCampaignsStatsonly($authorization, $accountId);
+    $result = $apiInstance->getCampaignsStatsonly($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignInformationApi->getCampaignsStatsonly: ', $e->getMessage(), PHP_EOL;
@@ -290,8 +290,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -313,7 +313,7 @@ No authorization required
 ## `getInboundReferencesforaSingleCampaign()`
 
 ```php
-getInboundReferencesforaSingleCampaign($authorization, $accountId, $campaignId): \Ringba\Model\GetInboundReferencesforaSingleCampaign
+getInboundReferencesforaSingleCampaign($accountId, $campaignId, $authorization): \Ringba\Model\GetInboundReferencesforaSingleCampaign
 ```
 
 Get Inbound References for a Single Campaign
@@ -333,12 +333,12 @@ $apiInstance = new Ringba\Api\CampaignInformationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getInboundReferencesforaSingleCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->getInboundReferencesforaSingleCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignInformationApi->getInboundReferencesforaSingleCampaign: ', $e->getMessage(), PHP_EOL;
@@ -349,9 +349,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -373,7 +373,7 @@ No authorization required
 ## `getInformationAboutaSingleCampaign()`
 
 ```php
-getInformationAboutaSingleCampaign($authorization, $accountId, $campaignId): \Ringba\Model\GetInformationAboutaSingleCampaign
+getInformationAboutaSingleCampaign($accountId, $campaignId, $authorization): \Ringba\Model\GetInformationAboutaSingleCampaign
 ```
 
 Get Information About a Single Campaign
@@ -393,12 +393,12 @@ $apiInstance = new Ringba\Api\CampaignInformationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getInformationAboutaSingleCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->getInformationAboutaSingleCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignInformationApi->getInformationAboutaSingleCampaign: ', $e->getMessage(), PHP_EOL;
@@ -409,9 +409,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -433,7 +433,7 @@ No authorization required
 ## `updateaCampaign()`
 
 ```php
-updateaCampaign($authorization, $accountId, $campaignId, $updateaCampaignRequest): \Ringba\Model\UpdateaCampaign
+updateaCampaign($accountId, $campaignId, $updateaCampaignRequest, $authorization): \Ringba\Model\UpdateaCampaign
 ```
 
 Update a Campaign
@@ -453,13 +453,13 @@ $apiInstance = new Ringba\Api\CampaignInformationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $updateaCampaignRequest = {"name":"New Name","userCampaignId":"New ID","numberDisplayFormat":"nnn-nnn-nnnn","countryCode":"US","duplicateSettings":{"duplicateSetting":"ON_CONNECT","callLengthInSeconds":0},"deDupeSettings":{"routeToOriginal":false,"routeToDifferent":true,"strict":false},"dialSettings":{"dialAttempts":3},"evalAnonymDuplication":true,"payoutDupesGlobal":false,"recordSetting":{"record":false,"recordFromAnswer":false,"trimSilence":false},"spamDetection":{"blockDuplicatesForSeconds":"7","trackAnonymous":false}}; // \Ringba\Model\UpdateaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->updateaCampaign($authorization, $accountId, $campaignId, $updateaCampaignRequest);
+    $result = $apiInstance->updateaCampaign($accountId, $campaignId, $updateaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignInformationApi->updateaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -470,10 +470,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **updateaCampaignRequest** | [**\Ringba\Model\UpdateaCampaignRequest**](../Model/UpdateaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

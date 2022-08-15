@@ -123,17 +123,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewPublisherRequest $createNewPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateNewPublisher
      */
-    public function createNewPublisher($authorization, $accountId, $createNewPublisherRequest)
+    public function createNewPublisher($accountId, $createNewPublisherRequest, $authorization = null)
     {
-        list($response) = $this->createNewPublisherWithHttpInfo($authorization, $accountId, $createNewPublisherRequest);
+        list($response) = $this->createNewPublisherWithHttpInfo($accountId, $createNewPublisherRequest, $authorization);
         return $response;
     }
 
@@ -145,17 +145,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewPublisherRequest $createNewPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateNewPublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createNewPublisherWithHttpInfo($authorization, $accountId, $createNewPublisherRequest)
+    public function createNewPublisherWithHttpInfo($accountId, $createNewPublisherRequest, $authorization = null)
     {
-        $request = $this->createNewPublisherRequest($authorization, $accountId, $createNewPublisherRequest);
+        $request = $this->createNewPublisherRequest($accountId, $createNewPublisherRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,16 +249,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewPublisherRequest $createNewPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewPublisherAsync($authorization, $accountId, $createNewPublisherRequest)
+    public function createNewPublisherAsync($accountId, $createNewPublisherRequest, $authorization = null)
     {
-        return $this->createNewPublisherAsyncWithHttpInfo($authorization, $accountId, $createNewPublisherRequest)
+        return $this->createNewPublisherAsyncWithHttpInfo($accountId, $createNewPublisherRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,17 +274,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewPublisherRequest $createNewPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewPublisherAsyncWithHttpInfo($authorization, $accountId, $createNewPublisherRequest)
+    public function createNewPublisherAsyncWithHttpInfo($accountId, $createNewPublisherRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateNewPublisher';
-        $request = $this->createNewPublisherRequest($authorization, $accountId, $createNewPublisherRequest);
+        $request = $this->createNewPublisherRequest($accountId, $createNewPublisherRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -328,21 +328,15 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewPublisherRequest $createNewPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createNewPublisherRequest($authorization, $accountId, $createNewPublisherRequest)
+    public function createNewPublisherRequest($accountId, $createNewPublisherRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createNewPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -458,17 +452,17 @@ class PublishersApi
      *
      * @param  bool $force If set to true, pulisher will be deleted even if it has active inbound references (required)
      * @param  bool $keepNumbers If set to true, numbers associated with the publisher will stay in your account. If set to false, hte numbers will be deallocated. (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DeleteaPublisher
      */
-    public function deleteaPublisher($force, $keepNumbers, $authorization, $accountId, $publisherId)
+    public function deleteaPublisher($force, $keepNumbers, $accountId, $publisherId, $authorization = null)
     {
-        list($response) = $this->deleteaPublisherWithHttpInfo($force, $keepNumbers, $authorization, $accountId, $publisherId);
+        list($response) = $this->deleteaPublisherWithHttpInfo($force, $keepNumbers, $accountId, $publisherId, $authorization);
         return $response;
     }
 
@@ -482,17 +476,17 @@ class PublishersApi
      *
      * @param  bool $force If set to true, pulisher will be deleted even if it has active inbound references (required)
      * @param  bool $keepNumbers If set to true, numbers associated with the publisher will stay in your account. If set to false, hte numbers will be deallocated. (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DeleteaPublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteaPublisherWithHttpInfo($force, $keepNumbers, $authorization, $accountId, $publisherId)
+    public function deleteaPublisherWithHttpInfo($force, $keepNumbers, $accountId, $publisherId, $authorization = null)
     {
-        $request = $this->deleteaPublisherRequest($force, $keepNumbers, $authorization, $accountId, $publisherId);
+        $request = $this->deleteaPublisherRequest($force, $keepNumbers, $accountId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -588,16 +582,16 @@ class PublishersApi
      *
      * @param  bool $force If set to true, pulisher will be deleted even if it has active inbound references (required)
      * @param  bool $keepNumbers If set to true, numbers associated with the publisher will stay in your account. If set to false, hte numbers will be deallocated. (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteaPublisherAsync($force, $keepNumbers, $authorization, $accountId, $publisherId)
+    public function deleteaPublisherAsync($force, $keepNumbers, $accountId, $publisherId, $authorization = null)
     {
-        return $this->deleteaPublisherAsyncWithHttpInfo($force, $keepNumbers, $authorization, $accountId, $publisherId)
+        return $this->deleteaPublisherAsyncWithHttpInfo($force, $keepNumbers, $accountId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -615,17 +609,17 @@ class PublishersApi
      *
      * @param  bool $force If set to true, pulisher will be deleted even if it has active inbound references (required)
      * @param  bool $keepNumbers If set to true, numbers associated with the publisher will stay in your account. If set to false, hte numbers will be deallocated. (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteaPublisherAsyncWithHttpInfo($force, $keepNumbers, $authorization, $accountId, $publisherId)
+    public function deleteaPublisherAsyncWithHttpInfo($force, $keepNumbers, $accountId, $publisherId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DeleteaPublisher';
-        $request = $this->deleteaPublisherRequest($force, $keepNumbers, $authorization, $accountId, $publisherId);
+        $request = $this->deleteaPublisherRequest($force, $keepNumbers, $accountId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -671,14 +665,14 @@ class PublishersApi
      *
      * @param  bool $force If set to true, pulisher will be deleted even if it has active inbound references (required)
      * @param  bool $keepNumbers If set to true, numbers associated with the publisher will stay in your account. If set to false, hte numbers will be deallocated. (required)
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteaPublisherRequest($force, $keepNumbers, $authorization, $accountId, $publisherId)
+    public function deleteaPublisherRequest($force, $keepNumbers, $accountId, $publisherId, $authorization = null)
     {
         // verify the required parameter 'force' is set
         if ($force === null || (is_array($force) && count($force) === 0)) {
@@ -690,12 +684,6 @@ class PublishersApi
         if ($keepNumbers === null || (is_array($keepNumbers) && count($keepNumbers) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $keepNumbers when calling deleteaPublisher'
-            );
-        }
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling deleteaPublisher'
             );
         }
         // verify the required parameter 'accountId' is set
@@ -831,18 +819,18 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\EditaPublisherRequest $editaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\EditaPublisher
      */
-    public function editaPublisher($authorization, $accountId, $publisherId, $editaPublisherRequest)
+    public function editaPublisher($accountId, $publisherId, $editaPublisherRequest, $authorization = null)
     {
-        list($response) = $this->editaPublisherWithHttpInfo($authorization, $accountId, $publisherId, $editaPublisherRequest);
+        list($response) = $this->editaPublisherWithHttpInfo($accountId, $publisherId, $editaPublisherRequest, $authorization);
         return $response;
     }
 
@@ -854,18 +842,18 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\EditaPublisherRequest $editaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\EditaPublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editaPublisherWithHttpInfo($authorization, $accountId, $publisherId, $editaPublisherRequest)
+    public function editaPublisherWithHttpInfo($accountId, $publisherId, $editaPublisherRequest, $authorization = null)
     {
-        $request = $this->editaPublisherRequest($authorization, $accountId, $publisherId, $editaPublisherRequest);
+        $request = $this->editaPublisherRequest($accountId, $publisherId, $editaPublisherRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -959,17 +947,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\EditaPublisherRequest $editaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editaPublisherAsync($authorization, $accountId, $publisherId, $editaPublisherRequest)
+    public function editaPublisherAsync($accountId, $publisherId, $editaPublisherRequest, $authorization = null)
     {
-        return $this->editaPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId, $editaPublisherRequest)
+        return $this->editaPublisherAsyncWithHttpInfo($accountId, $publisherId, $editaPublisherRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -985,18 +973,18 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\EditaPublisherRequest $editaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editaPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId, $editaPublisherRequest)
+    public function editaPublisherAsyncWithHttpInfo($accountId, $publisherId, $editaPublisherRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\EditaPublisher';
-        $request = $this->editaPublisherRequest($authorization, $accountId, $publisherId, $editaPublisherRequest);
+        $request = $this->editaPublisherRequest($accountId, $publisherId, $editaPublisherRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1040,22 +1028,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\EditaPublisherRequest $editaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function editaPublisherRequest($authorization, $accountId, $publisherId, $editaPublisherRequest)
+    public function editaPublisherRequest($accountId, $publisherId, $editaPublisherRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling editaPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1183,16 +1165,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetCallStatisticsforPublishers
      */
-    public function getCallStatisticsforPublishers($authorization, $accountId)
+    public function getCallStatisticsforPublishers($accountId, $authorization = null)
     {
-        list($response) = $this->getCallStatisticsforPublishersWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getCallStatisticsforPublishersWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -1204,16 +1186,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetCallStatisticsforPublishers, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCallStatisticsforPublishersWithHttpInfo($authorization, $accountId)
+    public function getCallStatisticsforPublishersWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getCallStatisticsforPublishersRequest($authorization, $accountId);
+        $request = $this->getCallStatisticsforPublishersRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1307,15 +1289,15 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCallStatisticsforPublishersAsync($authorization, $accountId)
+    public function getCallStatisticsforPublishersAsync($accountId, $authorization = null)
     {
-        return $this->getCallStatisticsforPublishersAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getCallStatisticsforPublishersAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1331,16 +1313,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCallStatisticsforPublishersAsyncWithHttpInfo($authorization, $accountId)
+    public function getCallStatisticsforPublishersAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetCallStatisticsforPublishers';
-        $request = $this->getCallStatisticsforPublishersRequest($authorization, $accountId);
+        $request = $this->getCallStatisticsforPublishersRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1384,20 +1366,14 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCallStatisticsforPublishersRequest($authorization, $accountId)
+    public function getCallStatisticsforPublishersRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getCallStatisticsforPublishers'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1499,17 +1475,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetDetailsAboutSinglePublisher
      */
-    public function getDetailsAboutSinglePublisher($authorization, $accountId, $publisherId)
+    public function getDetailsAboutSinglePublisher($accountId, $publisherId, $authorization = null)
     {
-        list($response) = $this->getDetailsAboutSinglePublisherWithHttpInfo($authorization, $accountId, $publisherId);
+        list($response) = $this->getDetailsAboutSinglePublisherWithHttpInfo($accountId, $publisherId, $authorization);
         return $response;
     }
 
@@ -1521,17 +1497,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetDetailsAboutSinglePublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDetailsAboutSinglePublisherWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getDetailsAboutSinglePublisherWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
-        $request = $this->getDetailsAboutSinglePublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getDetailsAboutSinglePublisherRequest($accountId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1625,16 +1601,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutSinglePublisherAsync($authorization, $accountId, $publisherId)
+    public function getDetailsAboutSinglePublisherAsync($accountId, $publisherId, $authorization = null)
     {
-        return $this->getDetailsAboutSinglePublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+        return $this->getDetailsAboutSinglePublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1650,17 +1626,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDetailsAboutSinglePublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getDetailsAboutSinglePublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetDetailsAboutSinglePublisher';
-        $request = $this->getDetailsAboutSinglePublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getDetailsAboutSinglePublisherRequest($accountId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1704,21 +1680,15 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDetailsAboutSinglePublisherRequest($authorization, $accountId, $publisherId)
+    public function getDetailsAboutSinglePublisherRequest($accountId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getDetailsAboutSinglePublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1834,17 +1804,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetInboundReferencesforaPublisher
      */
-    public function getInboundReferencesforaPublisher($authorization, $accountId, $publisherId)
+    public function getInboundReferencesforaPublisher($accountId, $publisherId, $authorization = null)
     {
-        list($response) = $this->getInboundReferencesforaPublisherWithHttpInfo($authorization, $accountId, $publisherId);
+        list($response) = $this->getInboundReferencesforaPublisherWithHttpInfo($accountId, $publisherId, $authorization);
         return $response;
     }
 
@@ -1856,17 +1826,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetInboundReferencesforaPublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInboundReferencesforaPublisherWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getInboundReferencesforaPublisherWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
-        $request = $this->getInboundReferencesforaPublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getInboundReferencesforaPublisherRequest($accountId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1960,16 +1930,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInboundReferencesforaPublisherAsync($authorization, $accountId, $publisherId)
+    public function getInboundReferencesforaPublisherAsync($accountId, $publisherId, $authorization = null)
     {
-        return $this->getInboundReferencesforaPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+        return $this->getInboundReferencesforaPublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1985,17 +1955,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInboundReferencesforaPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getInboundReferencesforaPublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetInboundReferencesforaPublisher';
-        $request = $this->getInboundReferencesforaPublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getInboundReferencesforaPublisherRequest($accountId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2039,21 +2009,15 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getInboundReferencesforaPublisherRequest($authorization, $accountId, $publisherId)
+    public function getInboundReferencesforaPublisherRequest($accountId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getInboundReferencesforaPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2169,17 +2133,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetPhoneNumbersforaSinglePublisher
      */
-    public function getPhoneNumbersforaSinglePublisher($authorization, $accountId, $publisherId)
+    public function getPhoneNumbersforaSinglePublisher($accountId, $publisherId, $authorization = null)
     {
-        list($response) = $this->getPhoneNumbersforaSinglePublisherWithHttpInfo($authorization, $accountId, $publisherId);
+        list($response) = $this->getPhoneNumbersforaSinglePublisherWithHttpInfo($accountId, $publisherId, $authorization);
         return $response;
     }
 
@@ -2191,17 +2155,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetPhoneNumbersforaSinglePublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPhoneNumbersforaSinglePublisherWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getPhoneNumbersforaSinglePublisherWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
-        $request = $this->getPhoneNumbersforaSinglePublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getPhoneNumbersforaSinglePublisherRequest($accountId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2295,16 +2259,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPhoneNumbersforaSinglePublisherAsync($authorization, $accountId, $publisherId)
+    public function getPhoneNumbersforaSinglePublisherAsync($accountId, $publisherId, $authorization = null)
     {
-        return $this->getPhoneNumbersforaSinglePublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+        return $this->getPhoneNumbersforaSinglePublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2320,17 +2284,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPhoneNumbersforaSinglePublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getPhoneNumbersforaSinglePublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetPhoneNumbersforaSinglePublisher';
-        $request = $this->getPhoneNumbersforaSinglePublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getPhoneNumbersforaSinglePublisherRequest($accountId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2374,21 +2338,15 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPhoneNumbersforaSinglePublisherRequest($authorization, $accountId, $publisherId)
+    public function getPhoneNumbersforaSinglePublisherRequest($accountId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getPhoneNumbersforaSinglePublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2504,16 +2462,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetPublishers
      */
-    public function getPublishers($authorization, $accountId)
+    public function getPublishers($accountId, $authorization = null)
     {
-        list($response) = $this->getPublishersWithHttpInfo($authorization, $accountId);
+        list($response) = $this->getPublishersWithHttpInfo($accountId, $authorization);
         return $response;
     }
 
@@ -2525,16 +2483,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetPublishers, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPublishersWithHttpInfo($authorization, $accountId)
+    public function getPublishersWithHttpInfo($accountId, $authorization = null)
     {
-        $request = $this->getPublishersRequest($authorization, $accountId);
+        $request = $this->getPublishersRequest($accountId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2628,15 +2586,15 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublishersAsync($authorization, $accountId)
+    public function getPublishersAsync($accountId, $authorization = null)
     {
-        return $this->getPublishersAsyncWithHttpInfo($authorization, $accountId)
+        return $this->getPublishersAsyncWithHttpInfo($accountId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2652,16 +2610,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublishersAsyncWithHttpInfo($authorization, $accountId)
+    public function getPublishersAsyncWithHttpInfo($accountId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetPublishers';
-        $request = $this->getPublishersRequest($authorization, $accountId);
+        $request = $this->getPublishersRequest($accountId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2705,20 +2663,14 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPublishersRequest($authorization, $accountId)
+    public function getPublishersRequest($accountId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getPublishers'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -2820,17 +2772,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetUserDetailsforaPublisher
      */
-    public function getUserDetailsforaPublisher($authorization, $accountId, $publisherId)
+    public function getUserDetailsforaPublisher($accountId, $publisherId, $authorization = null)
     {
-        list($response) = $this->getUserDetailsforaPublisherWithHttpInfo($authorization, $accountId, $publisherId);
+        list($response) = $this->getUserDetailsforaPublisherWithHttpInfo($accountId, $publisherId, $authorization);
         return $response;
     }
 
@@ -2842,17 +2794,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetUserDetailsforaPublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserDetailsforaPublisherWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getUserDetailsforaPublisherWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
-        $request = $this->getUserDetailsforaPublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getUserDetailsforaPublisherRequest($accountId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2946,16 +2898,16 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserDetailsforaPublisherAsync($authorization, $accountId, $publisherId)
+    public function getUserDetailsforaPublisherAsync($accountId, $publisherId, $authorization = null)
     {
-        return $this->getUserDetailsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+        return $this->getUserDetailsforaPublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2971,17 +2923,17 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserDetailsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $publisherId)
+    public function getUserDetailsforaPublisherAsyncWithHttpInfo($accountId, $publisherId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetUserDetailsforaPublisher';
-        $request = $this->getUserDetailsforaPublisherRequest($authorization, $accountId, $publisherId);
+        $request = $this->getUserDetailsforaPublisherRequest($accountId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3025,21 +2977,15 @@ class PublishersApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUserDetailsforaPublisherRequest($authorization, $accountId, $publisherId)
+    public function getUserDetailsforaPublisherRequest($accountId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getUserDetailsforaPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

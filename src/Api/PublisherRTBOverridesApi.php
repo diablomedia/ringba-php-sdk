@@ -123,18 +123,18 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function getRTBSettingsforaPublisher($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBSettingsforaPublisher($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        $this->getRTBSettingsforaPublisherWithHttpInfo($authorization, $accountId, $campaignId, $publisherId);
+        $this->getRTBSettingsforaPublisherWithHttpInfo($accountId, $campaignId, $publisherId, $authorization);
     }
 
     /**
@@ -145,18 +145,18 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRTBSettingsforaPublisherWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBSettingsforaPublisherWithHttpInfo($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        $request = $this->getRTBSettingsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId);
+        $request = $this->getRTBSettingsforaPublisherRequest($accountId, $campaignId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -210,17 +210,17 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRTBSettingsforaPublisherAsync($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBSettingsforaPublisherAsync($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        return $this->getRTBSettingsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+        return $this->getRTBSettingsforaPublisherAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -236,18 +236,18 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRTBSettingsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBSettingsforaPublisherAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $authorization = null)
     {
         $returnType = '';
-        $request = $this->getRTBSettingsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId);
+        $request = $this->getRTBSettingsforaPublisherRequest($accountId, $campaignId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -278,22 +278,16 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRTBSettingsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBSettingsforaPublisherRequest($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getRTBSettingsforaPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -423,18 +417,18 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetRTBURLsforaPublisher
      */
-    public function getRTBURLsforaPublisher($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBURLsforaPublisher($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        list($response) = $this->getRTBURLsforaPublisherWithHttpInfo($authorization, $accountId, $campaignId, $publisherId);
+        list($response) = $this->getRTBURLsforaPublisherWithHttpInfo($accountId, $campaignId, $publisherId, $authorization);
         return $response;
     }
 
@@ -446,18 +440,18 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetRTBURLsforaPublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRTBURLsforaPublisherWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBURLsforaPublisherWithHttpInfo($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        $request = $this->getRTBURLsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId);
+        $request = $this->getRTBURLsforaPublisherRequest($accountId, $campaignId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -551,17 +545,17 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRTBURLsforaPublisherAsync($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBURLsforaPublisherAsync($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        return $this->getRTBURLsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+        return $this->getRTBURLsforaPublisherAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -577,18 +571,18 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRTBURLsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBURLsforaPublisherAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetRTBURLsforaPublisher';
-        $request = $this->getRTBURLsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId);
+        $request = $this->getRTBURLsforaPublisherRequest($accountId, $campaignId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -632,22 +626,16 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRTBURLsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId)
+    public function getRTBURLsforaPublisherRequest($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getRTBURLsforaPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -777,19 +765,19 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\OverrideRTBSettingsforaPublisherRequest $overrideRTBSettingsforaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\OverrideRTBSettingsforaPublisher
      */
-    public function overrideRTBSettingsforaPublisher($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest)
+    public function overrideRTBSettingsforaPublisher($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization = null)
     {
-        list($response) = $this->overrideRTBSettingsforaPublisherWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest);
+        list($response) = $this->overrideRTBSettingsforaPublisherWithHttpInfo($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization);
         return $response;
     }
 
@@ -801,19 +789,19 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\OverrideRTBSettingsforaPublisherRequest $overrideRTBSettingsforaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\OverrideRTBSettingsforaPublisher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function overrideRTBSettingsforaPublisherWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest)
+    public function overrideRTBSettingsforaPublisherWithHttpInfo($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization = null)
     {
-        $request = $this->overrideRTBSettingsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest);
+        $request = $this->overrideRTBSettingsforaPublisherRequest($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -907,18 +895,18 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\OverrideRTBSettingsforaPublisherRequest $overrideRTBSettingsforaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function overrideRTBSettingsforaPublisherAsync($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest)
+    public function overrideRTBSettingsforaPublisherAsync($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization = null)
     {
-        return $this->overrideRTBSettingsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest)
+        return $this->overrideRTBSettingsforaPublisherAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -934,19 +922,19 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\OverrideRTBSettingsforaPublisherRequest $overrideRTBSettingsforaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function overrideRTBSettingsforaPublisherAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest)
+    public function overrideRTBSettingsforaPublisherAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\OverrideRTBSettingsforaPublisher';
-        $request = $this->overrideRTBSettingsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest);
+        $request = $this->overrideRTBSettingsforaPublisherRequest($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -990,23 +978,17 @@ class PublisherRTBOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\OverrideRTBSettingsforaPublisherRequest $overrideRTBSettingsforaPublisherRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function overrideRTBSettingsforaPublisherRequest($authorization, $accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest)
+    public function overrideRTBSettingsforaPublisherRequest($accountId, $campaignId, $publisherId, $overrideRTBSettingsforaPublisherRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling overrideRTBSettingsforaPublisher'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

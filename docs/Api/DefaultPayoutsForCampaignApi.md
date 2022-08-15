@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `addNewDefaultPayoutforaCampaign()`
 
 ```php
-addNewDefaultPayoutforaCampaign($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest): \Ringba\Model\AddNewDefaultPayoutforaCampaignWithAllOptionalParametersSpecified
+addNewDefaultPayoutforaCampaign($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization): \Ringba\Model\AddNewDefaultPayoutforaCampaignWithAllOptionalParametersSpecified
 ```
 
 Add New Default Payout for a Campaign
@@ -33,13 +33,13 @@ $apiInstance = new Ringba\Api\DefaultPayoutsForCampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $addNewDefaultPayoutforaCampaignRequest = {"isRevShare":true,"priority":1,"revSharePercentage":90,"revShareMinPayoutAmount":1,"revShareMaxPayoutAmount":10,"deDupeSetting":{"secondsFromLastCall":-1},"allTimeCap":100,"monthlyCap":10,"dailyCap":-1,"hourlyCap":2,"concurrencyCap":-1,"allTimeSumCap":1000,"monthlySumCap":100,"dailySumCap":-1,"hourlySumCap":-1,"payoutHours":[{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":true},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":false},{"openTime":{"hour":9,"minute":0},"closeTime":{"hour":17,"minute":0},"inverted":false,"isClosed":true}],"timeZoneId":"Mountain Standard Time","notUsedPayout":false,"sendNotifications":false}; // \Ringba\Model\AddNewDefaultPayoutforaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addNewDefaultPayoutforaCampaign($authorization, $accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest);
+    $result = $apiInstance->addNewDefaultPayoutforaCampaign($accountId, $campaignId, $addNewDefaultPayoutforaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultPayoutsForCampaignApi->addNewDefaultPayoutforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -50,10 +50,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **addNewDefaultPayoutforaCampaignRequest** | [**\Ringba\Model\AddNewDefaultPayoutforaCampaignRequest**](../Model/AddNewDefaultPayoutforaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -75,7 +75,7 @@ No authorization required
 ## `removeDefaultPayoutSettingformaCampaign()`
 
 ```php
-removeDefaultPayoutSettingformaCampaign($authorization, $accountId, $campaignId, $payoutId): \Ringba\Model\RemoveDefaultPayoutSettingformaCampaign
+removeDefaultPayoutSettingformaCampaign($accountId, $campaignId, $payoutId, $authorization): \Ringba\Model\RemoveDefaultPayoutSettingformaCampaign
 ```
 
 Remove Default Payout Setting form a Campaign
@@ -95,13 +95,13 @@ $apiInstance = new Ringba\Api\DefaultPayoutsForCampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $payoutId = 'payoutId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeDefaultPayoutSettingformaCampaign($authorization, $accountId, $campaignId, $payoutId);
+    $result = $apiInstance->removeDefaultPayoutSettingformaCampaign($accountId, $campaignId, $payoutId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultPayoutsForCampaignApi->removeDefaultPayoutSettingformaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -112,10 +112,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **payoutId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -137,7 +137,7 @@ No authorization required
 ## `updateALLDefaultPayoutSettingsforaCampaign()`
 
 ```php
-updateALLDefaultPayoutSettingsforaCampaign($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest): \Ringba\Model\UpdateAllDefaultPayoutSettingsforaCampaign
+updateALLDefaultPayoutSettingsforaCampaign($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization): \Ringba\Model\UpdateAllDefaultPayoutSettingsforaCampaign
 ```
 
 Update ALL Default Payout Settings for a Campaign
@@ -157,13 +157,13 @@ $apiInstance = new Ringba\Api\DefaultPayoutsForCampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $updateALLDefaultPayoutSettingsforaCampaignRequest = new \Ringba\Model\UpdateALLDefaultPayoutSettingsforaCampaignRequest(); // \Ringba\Model\UpdateALLDefaultPayoutSettingsforaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->updateALLDefaultPayoutSettingsforaCampaign($authorization, $accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest);
+    $result = $apiInstance->updateALLDefaultPayoutSettingsforaCampaign($accountId, $campaignId, $updateALLDefaultPayoutSettingsforaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultPayoutsForCampaignApi->updateALLDefaultPayoutSettingsforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -174,10 +174,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **updateALLDefaultPayoutSettingsforaCampaignRequest** | [**\Ringba\Model\UpdateALLDefaultPayoutSettingsforaCampaignRequest**](../Model/UpdateALLDefaultPayoutSettingsforaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -199,7 +199,7 @@ No authorization required
 ## `updateSingleDefaultPayoutSettings()`
 
 ```php
-updateSingleDefaultPayoutSettings($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest): \Ringba\Model\UpdateSingleDefaultPayoutSettingswithonlyonechange
+updateSingleDefaultPayoutSettings($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization): \Ringba\Model\UpdateSingleDefaultPayoutSettingswithonlyonechange
 ```
 
 Update Single Default Payout Settings
@@ -219,14 +219,14 @@ $apiInstance = new Ringba\Api\DefaultPayoutsForCampaignApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $payoutId = 'payoutId_example'; // string | 
 $updateSingleDefaultPayoutSettingsRequest = {"priority":1,"isRevShare":false,"payoutAmount":10,"revShareMaxPayoutAmount":-1,"revShareMinPayoutAmount":-1,"payoutConversionType":"incomingCall","isGlobal":false,"allTimeCap":-1,"monthlyCap":-1,"dailyCap":-1,"hourlyCap":-1,"allTimeSumCap":-1,"monthlySumCap":-1,"dailySumCap":-1,"hourlySumCap":-1,"concurrencyCap":-1,"deDupeSetting":{"secondsFromLastCall":0},"notUsedPayout":false,"sendNotifications":false}; // \Ringba\Model\UpdateSingleDefaultPayoutSettingsRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->updateSingleDefaultPayoutSettings($authorization, $accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest);
+    $result = $apiInstance->updateSingleDefaultPayoutSettings($accountId, $campaignId, $payoutId, $updateSingleDefaultPayoutSettingsRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultPayoutsForCampaignApi->updateSingleDefaultPayoutSettings: ', $e->getMessage(), PHP_EOL;
@@ -237,11 +237,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **payoutId** | **string**|  |
  **updateSingleDefaultPayoutSettingsRequest** | [**\Ringba\Model\UpdateSingleDefaultPayoutSettingsRequest**](../Model/UpdateSingleDefaultPayoutSettingsRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

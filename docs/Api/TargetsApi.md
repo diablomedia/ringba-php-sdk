@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `assignTargettoBuyer()`
 
 ```php
-assignTargettoBuyer($authorization, $accountId, $targetId, $assignTargettoBuyerRequest): \Ringba\Model\AddBuyertoTarget
+assignTargettoBuyer($accountId, $targetId, $assignTargettoBuyerRequest, $authorization): \Ringba\Model\AddBuyertoTarget
 ```
 
 Assign Target to Buyer
@@ -40,13 +40,13 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
 $assignTargettoBuyerRequest = {"buyerId":"{{buyerId}}"}; // \Ringba\Model\AssignTargettoBuyerRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->assignTargettoBuyer($authorization, $accountId, $targetId, $assignTargettoBuyerRequest);
+    $result = $apiInstance->assignTargettoBuyer($accountId, $targetId, $assignTargettoBuyerRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->assignTargettoBuyer: ', $e->getMessage(), PHP_EOL;
@@ -57,10 +57,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetId** | **string**|  |
  **assignTargettoBuyerRequest** | [**\Ringba\Model\AssignTargettoBuyerRequest**](../Model/AssignTargettoBuyerRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -82,7 +82,7 @@ No authorization required
 ## `checkDuplicateTargets()`
 
 ```php
-checkDuplicateTargets($authorization, $accountId, $checkDuplicateTargetsRequest): \Ringba\Model\CheckDuplicateTargetswithnonDuplicatetarget
+checkDuplicateTargets($accountId, $checkDuplicateTargetsRequest, $authorization): \Ringba\Model\CheckDuplicateTargetswithnonDuplicatetarget
 ```
 
 Check Duplicate Targets
@@ -102,12 +102,12 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $checkDuplicateTargetsRequest = {"id":"TAa58f7dbd65be4b9f938fd4172d63ce57","targetGroupId":"","instructions":{"connectionTimeOut":0,"callType":"number","number":"+18885852294"},"isHighRateTarget":false,"highRateCost":0.0,"ringbaNumberId":"PNZFWQO0","targetCallIncrement":"onConvert","_SearchNumer":"number:+18885852294","capsMigrated":true,"owner":{"accountId":"RA25107ee2411049989cd8672852278bdb","id":"BUec50e9c7fa294283ba10a35893b13198","userIds":["1f14ed10-c279-4897-b033-7e4d2db8a0c5"],"canPauseTargets":true,"canSetConcurrencyCaps":false,"canDisputeConversions":true,"capacity":{"timeZoneId":"UTC","allTimeSumCap":-1.0,"monthlySumCap":-1.0,"dailySumCap":-1.0,"hourlySumCap":-1.0,"allTimeCap":-1,"monthlyCap":-1,"dailyCap":-1,"hourlyCap":-1},"name":"Example Buyer Co.","enabled":true,"version":1},"conversionTimerOffset":0,"schedule":{"concurrencyCap":-1,"timeZoneId":"Pacific Standard Time","allTimeSumCap":-1.0,"monthlySumCap":-1.0,"dailySumCap":-1.0,"hourlySumCap":-1.0,"allTimeCap":-1,"monthlyCap":-1,"dailyCap":-1,"hourlyCap":-1},"blockRecordings":false,"name":"Ringba Test Target - Copy","accountId":"RA25107ee2411049989cd8672852278bdb","enabled":true,"version":1}; // \Ringba\Model\CheckDuplicateTargetsRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->checkDuplicateTargets($authorization, $accountId, $checkDuplicateTargetsRequest);
+    $result = $apiInstance->checkDuplicateTargets($accountId, $checkDuplicateTargetsRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->checkDuplicateTargets: ', $e->getMessage(), PHP_EOL;
@@ -118,9 +118,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **checkDuplicateTargetsRequest** | [**\Ringba\Model\CheckDuplicateTargetsRequest**](../Model/CheckDuplicateTargetsRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -142,7 +142,7 @@ No authorization required
 ## `createNewTarget()`
 
 ```php
-createNewTarget($authorization, $accountId, $createNewTargetRequest): \Ringba\Model\CreateNewTargetWithPhoneNumber
+createNewTarget($accountId, $createNewTargetRequest, $authorization): \Ringba\Model\CreateNewTargetWithPhoneNumber
 ```
 
 Create New Target
@@ -162,12 +162,12 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $createNewTargetRequest = {"name":"New Target","subId":"New","instructions":{"callType":"number","number":"+13075551234","connectionTimeOut":0},"schedule":{"timeZoneId":"Hawaiian Standard Time"}}; // \Ringba\Model\CreateNewTargetRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewTarget($authorization, $accountId, $createNewTargetRequest);
+    $result = $apiInstance->createNewTarget($accountId, $createNewTargetRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->createNewTarget: ', $e->getMessage(), PHP_EOL;
@@ -178,9 +178,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **createNewTargetRequest** | [**\Ringba\Model\CreateNewTargetRequest**](../Model/CreateNewTargetRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -202,7 +202,7 @@ No authorization required
 ## `deleteBuyerFromTarget()`
 
 ```php
-deleteBuyerFromTarget($authorization, $accountId, $targetId, $buyerId): \Ringba\Model\DeleteBuyerFromTarget
+deleteBuyerFromTarget($accountId, $targetId, $buyerId, $authorization): \Ringba\Model\DeleteBuyerFromTarget
 ```
 
 Delete Buyer From Target
@@ -222,13 +222,13 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
 $buyerId = 'buyerId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteBuyerFromTarget($authorization, $accountId, $targetId, $buyerId);
+    $result = $apiInstance->deleteBuyerFromTarget($accountId, $targetId, $buyerId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->deleteBuyerFromTarget: ', $e->getMessage(), PHP_EOL;
@@ -239,10 +239,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetId** | **string**|  |
  **buyerId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -264,7 +264,7 @@ No authorization required
 ## `deleteTarget()`
 
 ```php
-deleteTarget($authorization, $accountId, $targetId): \Ringba\Model\DeleteTarget
+deleteTarget($accountId, $targetId, $authorization): \Ringba\Model\DeleteTarget
 ```
 
 Delete Target
@@ -284,12 +284,12 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteTarget($authorization, $accountId, $targetId);
+    $result = $apiInstance->deleteTarget($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->deleteTarget: ', $e->getMessage(), PHP_EOL;
@@ -300,9 +300,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -324,7 +324,7 @@ No authorization required
 ## `getDetailsAboutaSpecificTarget()`
 
 ```php
-getDetailsAboutaSpecificTarget($authorization, $accountId, $targetId): \Ringba\Model\GetDetailsAboutaSpecificTarget
+getDetailsAboutaSpecificTarget($accountId, $targetId, $authorization): \Ringba\Model\GetDetailsAboutaSpecificTarget
 ```
 
 Get Details About a Specific Target
@@ -344,12 +344,12 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsAboutaSpecificTarget($authorization, $accountId, $targetId);
+    $result = $apiInstance->getDetailsAboutaSpecificTarget($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->getDetailsAboutaSpecificTarget: ', $e->getMessage(), PHP_EOL;
@@ -360,9 +360,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -384,7 +384,7 @@ No authorization required
 ## `getInboundReferencesforaSpecificTarget()`
 
 ```php
-getInboundReferencesforaSpecificTarget($authorization, $accountId, $targetId): \Ringba\Model\GetInboundReferencesforaSpecificTarget
+getInboundReferencesforaSpecificTarget($accountId, $targetId, $authorization): \Ringba\Model\GetInboundReferencesforaSpecificTarget
 ```
 
 Get Inbound References for a Specific Target
@@ -404,12 +404,12 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getInboundReferencesforaSpecificTarget($authorization, $accountId, $targetId);
+    $result = $apiInstance->getInboundReferencesforaSpecificTarget($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->getInboundReferencesforaSpecificTarget: ', $e->getMessage(), PHP_EOL;
@@ -420,9 +420,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -444,7 +444,7 @@ No authorization required
 ## `getStatsforaSpecificTarget()`
 
 ```php
-getStatsforaSpecificTarget($authorization, $accountId, $targetId): \Ringba\Model\GetStatsforaSpecificTarget
+getStatsforaSpecificTarget($accountId, $targetId, $authorization): \Ringba\Model\GetStatsforaSpecificTarget
 ```
 
 Get Stats for a Specific Target
@@ -464,12 +464,12 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getStatsforaSpecificTarget($authorization, $accountId, $targetId);
+    $result = $apiInstance->getStatsforaSpecificTarget($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->getStatsforaSpecificTarget: ', $e->getMessage(), PHP_EOL;
@@ -480,9 +480,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -504,7 +504,7 @@ No authorization required
 ## `getTargets()`
 
 ```php
-getTargets($authorization, $accountId): \Ringba\Model\GetTargets
+getTargets($accountId, $authorization): \Ringba\Model\GetTargets
 ```
 
 Get Targets
@@ -524,11 +524,11 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getTargets($authorization, $accountId);
+    $result = $apiInstance->getTargets($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->getTargets: ', $e->getMessage(), PHP_EOL;
@@ -539,8 +539,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -562,7 +562,7 @@ No authorization required
 ## `resetCountforaSpecificTarget()`
 
 ```php
-resetCountforaSpecificTarget($authorization, $accountId, $targetId): \Ringba\Model\ResetCountforaSpecificTarget
+resetCountforaSpecificTarget($accountId, $targetId, $authorization): \Ringba\Model\ResetCountforaSpecificTarget
 ```
 
 Reset Count for a Specific Target
@@ -582,12 +582,12 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->resetCountforaSpecificTarget($authorization, $accountId, $targetId);
+    $result = $apiInstance->resetCountforaSpecificTarget($accountId, $targetId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->resetCountforaSpecificTarget: ', $e->getMessage(), PHP_EOL;
@@ -598,9 +598,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -622,7 +622,7 @@ No authorization required
 ## `updateTarget()`
 
 ```php
-updateTarget($authorization, $accountId, $targetId, $body): \Ringba\Model\UpdateTarget
+updateTarget($accountId, $targetId, $body, $authorization): \Ringba\Model\UpdateTarget
 ```
 
 Update Target
@@ -642,7 +642,6 @@ $apiInstance = new Ringba\Api\TargetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $targetId = 'targetId_example'; // string | 
 $body = // {
@@ -681,9 +680,10 @@ $body = // {
 {
     "name": "Test Target Three"
 }; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->updateTarget($authorization, $accountId, $targetId, $body);
+    $result = $apiInstance->updateTarget($accountId, $targetId, $body, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TargetsApi->updateTarget: ', $e->getMessage(), PHP_EOL;
@@ -694,10 +694,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **targetId** | **string**|  |
  **body** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `addTargetRoutetoaCampaign()`
 
 ```php
-addTargetRoutetoaCampaign($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest): \Ringba\Model\AddTargetRoutetoaCampaignwithdefaulttargetsettings
+addTargetRoutetoaCampaign($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization): \Ringba\Model\AddTargetRoutetoaCampaignwithdefaulttargetsettings
 ```
 
 Add Target Route to a Campaign
@@ -31,13 +31,13 @@ $apiInstance = new Ringba\Api\CampaignTargetRoutesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $addTargetRoutetoaCampaignRequest = {"targetid":"{{targetId}}","priority":{"priority":2,"weight":2},"callConversion":{"conversionType":"callLength","conversionValue":0,"conversionArgs":{"startTimerEvent":"OnConnectedCall","callLengthInSeconds":30}}}; // \Ringba\Model\AddTargetRoutetoaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addTargetRoutetoaCampaign($authorization, $accountId, $campaignId, $addTargetRoutetoaCampaignRequest);
+    $result = $apiInstance->addTargetRoutetoaCampaign($accountId, $campaignId, $addTargetRoutetoaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignTargetRoutesApi->addTargetRoutetoaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -48,10 +48,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **addTargetRoutetoaCampaignRequest** | [**\Ringba\Model\AddTargetRoutetoaCampaignRequest**](../Model/AddTargetRoutetoaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `removeTargetRoutefromaCampaign()`
 
 ```php
-removeTargetRoutefromaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\RemoveTargetRoutefromaCampaign
+removeTargetRoutefromaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\RemoveTargetRoutefromaCampaign
 ```
 
 Remove Target Route from a Campaign
@@ -93,12 +93,12 @@ $apiInstance = new Ringba\Api\CampaignTargetRoutesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeTargetRoutefromaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->removeTargetRoutefromaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignTargetRoutesApi->removeTargetRoutefromaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -109,9 +109,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

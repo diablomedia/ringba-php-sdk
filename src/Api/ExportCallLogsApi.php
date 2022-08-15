@@ -123,17 +123,17 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\ExportByJobId
      */
-    public function exportCSVByJobId($authorization, $accountId, $cSVJobId)
+    public function exportCSVByJobId($accountId, $cSVJobId, $authorization = null)
     {
-        list($response) = $this->exportCSVByJobIdWithHttpInfo($authorization, $accountId, $cSVJobId);
+        list($response) = $this->exportCSVByJobIdWithHttpInfo($accountId, $cSVJobId, $authorization);
         return $response;
     }
 
@@ -145,17 +145,17 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\ExportByJobId, HTTP status code, HTTP response headers (array of strings)
      */
-    public function exportCSVByJobIdWithHttpInfo($authorization, $accountId, $cSVJobId)
+    public function exportCSVByJobIdWithHttpInfo($accountId, $cSVJobId, $authorization = null)
     {
-        $request = $this->exportCSVByJobIdRequest($authorization, $accountId, $cSVJobId);
+        $request = $this->exportCSVByJobIdRequest($accountId, $cSVJobId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,16 +249,16 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportCSVByJobIdAsync($authorization, $accountId, $cSVJobId)
+    public function exportCSVByJobIdAsync($accountId, $cSVJobId, $authorization = null)
     {
-        return $this->exportCSVByJobIdAsyncWithHttpInfo($authorization, $accountId, $cSVJobId)
+        return $this->exportCSVByJobIdAsyncWithHttpInfo($accountId, $cSVJobId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,17 +274,17 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportCSVByJobIdAsyncWithHttpInfo($authorization, $accountId, $cSVJobId)
+    public function exportCSVByJobIdAsyncWithHttpInfo($accountId, $cSVJobId, $authorization = null)
     {
         $returnType = '\Ringba\Model\ExportByJobId';
-        $request = $this->exportCSVByJobIdRequest($authorization, $accountId, $cSVJobId);
+        $request = $this->exportCSVByJobIdRequest($accountId, $cSVJobId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -328,21 +328,15 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function exportCSVByJobIdRequest($authorization, $accountId, $cSVJobId)
+    public function exportCSVByJobIdRequest($accountId, $cSVJobId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling exportCSVByJobId'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -458,17 +452,17 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\ExportCallLogCSV
      */
-    public function exportCallLogCSV($authorization, $accountId, $exportCallLogCSVRequest)
+    public function exportCallLogCSV($accountId, $exportCallLogCSVRequest, $authorization = null)
     {
-        list($response) = $this->exportCallLogCSVWithHttpInfo($authorization, $accountId, $exportCallLogCSVRequest);
+        list($response) = $this->exportCallLogCSVWithHttpInfo($accountId, $exportCallLogCSVRequest, $authorization);
         return $response;
     }
 
@@ -480,17 +474,17 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\ExportCallLogCSV, HTTP status code, HTTP response headers (array of strings)
      */
-    public function exportCallLogCSVWithHttpInfo($authorization, $accountId, $exportCallLogCSVRequest)
+    public function exportCallLogCSVWithHttpInfo($accountId, $exportCallLogCSVRequest, $authorization = null)
     {
-        $request = $this->exportCallLogCSVRequest($authorization, $accountId, $exportCallLogCSVRequest);
+        $request = $this->exportCallLogCSVRequest($accountId, $exportCallLogCSVRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -584,16 +578,16 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportCallLogCSVAsync($authorization, $accountId, $exportCallLogCSVRequest)
+    public function exportCallLogCSVAsync($accountId, $exportCallLogCSVRequest, $authorization = null)
     {
-        return $this->exportCallLogCSVAsyncWithHttpInfo($authorization, $accountId, $exportCallLogCSVRequest)
+        return $this->exportCallLogCSVAsyncWithHttpInfo($accountId, $exportCallLogCSVRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -609,17 +603,17 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportCallLogCSVAsyncWithHttpInfo($authorization, $accountId, $exportCallLogCSVRequest)
+    public function exportCallLogCSVAsyncWithHttpInfo($accountId, $exportCallLogCSVRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\ExportCallLogCSV';
-        $request = $this->exportCallLogCSVRequest($authorization, $accountId, $exportCallLogCSVRequest);
+        $request = $this->exportCallLogCSVRequest($accountId, $exportCallLogCSVRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -663,21 +657,15 @@ class ExportCallLogsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function exportCallLogCSVRequest($authorization, $accountId, $exportCallLogCSVRequest)
+    public function exportCallLogCSVRequest($accountId, $exportCallLogCSVRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling exportCallLogCSV'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

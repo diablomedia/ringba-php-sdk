@@ -123,19 +123,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\CreateNewPublisherPayoutOverrideRequest $createNewPublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\CreateNewPublisherPayoutOverride
      */
-    public function createNewPublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest)
+    public function createNewPublisherPayoutOverride($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization = null)
     {
-        list($response) = $this->createNewPublisherPayoutOverrideWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest);
+        list($response) = $this->createNewPublisherPayoutOverrideWithHttpInfo($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization);
         return $response;
     }
 
@@ -147,19 +147,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\CreateNewPublisherPayoutOverrideRequest $createNewPublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\CreateNewPublisherPayoutOverride, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createNewPublisherPayoutOverrideWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest)
+    public function createNewPublisherPayoutOverrideWithHttpInfo($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization = null)
     {
-        $request = $this->createNewPublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest);
+        $request = $this->createNewPublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -253,18 +253,18 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\CreateNewPublisherPayoutOverrideRequest $createNewPublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewPublisherPayoutOverrideAsync($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest)
+    public function createNewPublisherPayoutOverrideAsync($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization = null)
     {
-        return $this->createNewPublisherPayoutOverrideAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest)
+        return $this->createNewPublisherPayoutOverrideAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -280,19 +280,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\CreateNewPublisherPayoutOverrideRequest $createNewPublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createNewPublisherPayoutOverrideAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest)
+    public function createNewPublisherPayoutOverrideAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\CreateNewPublisherPayoutOverride';
-        $request = $this->createNewPublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest);
+        $request = $this->createNewPublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,23 +336,17 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\CreateNewPublisherPayoutOverrideRequest $createNewPublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createNewPublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest)
+    public function createNewPublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $createNewPublisherPayoutOverrideRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling createNewPublisherPayoutOverride'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -494,18 +488,18 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function getPublisherPayoutOverrides($authorization, $accountId, $campaignId, $publisherId)
+    public function getPublisherPayoutOverrides($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        $this->getPublisherPayoutOverridesWithHttpInfo($authorization, $accountId, $campaignId, $publisherId);
+        $this->getPublisherPayoutOverridesWithHttpInfo($accountId, $campaignId, $publisherId, $authorization);
     }
 
     /**
@@ -516,18 +510,18 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPublisherPayoutOverridesWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+    public function getPublisherPayoutOverridesWithHttpInfo($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        $request = $this->getPublisherPayoutOverridesRequest($authorization, $accountId, $campaignId, $publisherId);
+        $request = $this->getPublisherPayoutOverridesRequest($accountId, $campaignId, $publisherId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -581,17 +575,17 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublisherPayoutOverridesAsync($authorization, $accountId, $campaignId, $publisherId)
+    public function getPublisherPayoutOverridesAsync($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        return $this->getPublisherPayoutOverridesAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+        return $this->getPublisherPayoutOverridesAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -607,18 +601,18 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublisherPayoutOverridesAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId)
+    public function getPublisherPayoutOverridesAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $authorization = null)
     {
         $returnType = '';
-        $request = $this->getPublisherPayoutOverridesRequest($authorization, $accountId, $campaignId, $publisherId);
+        $request = $this->getPublisherPayoutOverridesRequest($accountId, $campaignId, $publisherId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -649,22 +643,16 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPublisherPayoutOverridesRequest($authorization, $accountId, $campaignId, $publisherId)
+    public function getPublisherPayoutOverridesRequest($accountId, $campaignId, $publisherId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getPublisherPayoutOverrides'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -794,19 +782,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\RemoveaPublisherPayoutOverride
      */
-    public function removeaPublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $payoutId)
+    public function removeaPublisherPayoutOverride($accountId, $campaignId, $publisherId, $payoutId, $authorization = null)
     {
-        list($response) = $this->removeaPublisherPayoutOverrideWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $payoutId);
+        list($response) = $this->removeaPublisherPayoutOverrideWithHttpInfo($accountId, $campaignId, $publisherId, $payoutId, $authorization);
         return $response;
     }
 
@@ -818,19 +806,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\RemoveaPublisherPayoutOverride, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeaPublisherPayoutOverrideWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $payoutId)
+    public function removeaPublisherPayoutOverrideWithHttpInfo($accountId, $campaignId, $publisherId, $payoutId, $authorization = null)
     {
-        $request = $this->removeaPublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $payoutId);
+        $request = $this->removeaPublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $payoutId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -924,18 +912,18 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeaPublisherPayoutOverrideAsync($authorization, $accountId, $campaignId, $publisherId, $payoutId)
+    public function removeaPublisherPayoutOverrideAsync($accountId, $campaignId, $publisherId, $payoutId, $authorization = null)
     {
-        return $this->removeaPublisherPayoutOverrideAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $payoutId)
+        return $this->removeaPublisherPayoutOverrideAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $payoutId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -951,19 +939,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeaPublisherPayoutOverrideAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $payoutId)
+    public function removeaPublisherPayoutOverrideAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $payoutId, $authorization = null)
     {
         $returnType = '\Ringba\Model\RemoveaPublisherPayoutOverride';
-        $request = $this->removeaPublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $payoutId);
+        $request = $this->removeaPublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $payoutId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1007,23 +995,17 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function removeaPublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $payoutId)
+    public function removeaPublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $payoutId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling removeaPublisherPayoutOverride'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1167,19 +1149,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\UpdateALLPublisherPayoutOverridesRequest $updateALLPublisherPayoutOverridesRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\UpdateALLPublisherPayoutOverrides
      */
-    public function updateALLPublisherPayoutOverrides($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest)
+    public function updateALLPublisherPayoutOverrides($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization = null)
     {
-        list($response) = $this->updateALLPublisherPayoutOverridesWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest);
+        list($response) = $this->updateALLPublisherPayoutOverridesWithHttpInfo($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization);
         return $response;
     }
 
@@ -1191,19 +1173,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\UpdateALLPublisherPayoutOverridesRequest $updateALLPublisherPayoutOverridesRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\UpdateALLPublisherPayoutOverrides, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateALLPublisherPayoutOverridesWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest)
+    public function updateALLPublisherPayoutOverridesWithHttpInfo($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization = null)
     {
-        $request = $this->updateALLPublisherPayoutOverridesRequest($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest);
+        $request = $this->updateALLPublisherPayoutOverridesRequest($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1297,18 +1279,18 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\UpdateALLPublisherPayoutOverridesRequest $updateALLPublisherPayoutOverridesRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateALLPublisherPayoutOverridesAsync($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest)
+    public function updateALLPublisherPayoutOverridesAsync($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization = null)
     {
-        return $this->updateALLPublisherPayoutOverridesAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest)
+        return $this->updateALLPublisherPayoutOverridesAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1324,19 +1306,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\UpdateALLPublisherPayoutOverridesRequest $updateALLPublisherPayoutOverridesRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateALLPublisherPayoutOverridesAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest)
+    public function updateALLPublisherPayoutOverridesAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\UpdateALLPublisherPayoutOverrides';
-        $request = $this->updateALLPublisherPayoutOverridesRequest($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest);
+        $request = $this->updateALLPublisherPayoutOverridesRequest($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1380,23 +1362,17 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  \Ringba\Model\UpdateALLPublisherPayoutOverridesRequest $updateALLPublisherPayoutOverridesRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateALLPublisherPayoutOverridesRequest($authorization, $accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest)
+    public function updateALLPublisherPayoutOverridesRequest($accountId, $campaignId, $publisherId, $updateALLPublisherPayoutOverridesRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling updateALLPublisherPayoutOverrides'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1538,20 +1514,20 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSinglePublisherPayoutOverrideRequest $updateSinglePublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\UpdateSinglePublisherPayoutOverride
      */
-    public function updateSinglePublisherPayoutOverride($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest)
+    public function updateSinglePublisherPayoutOverride($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization = null)
     {
-        list($response) = $this->updateSinglePublisherPayoutOverrideWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest);
+        list($response) = $this->updateSinglePublisherPayoutOverrideWithHttpInfo($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization);
         return $response;
     }
 
@@ -1563,20 +1539,20 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSinglePublisherPayoutOverrideRequest $updateSinglePublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\UpdateSinglePublisherPayoutOverride, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateSinglePublisherPayoutOverrideWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest)
+    public function updateSinglePublisherPayoutOverrideWithHttpInfo($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization = null)
     {
-        $request = $this->updateSinglePublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest);
+        $request = $this->updateSinglePublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1670,19 +1646,19 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSinglePublisherPayoutOverrideRequest $updateSinglePublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateSinglePublisherPayoutOverrideAsync($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest)
+    public function updateSinglePublisherPayoutOverrideAsync($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization = null)
     {
-        return $this->updateSinglePublisherPayoutOverrideAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest)
+        return $this->updateSinglePublisherPayoutOverrideAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1698,20 +1674,20 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSinglePublisherPayoutOverrideRequest $updateSinglePublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateSinglePublisherPayoutOverrideAsyncWithHttpInfo($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest)
+    public function updateSinglePublisherPayoutOverrideAsyncWithHttpInfo($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\UpdateSinglePublisherPayoutOverride';
-        $request = $this->updateSinglePublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest);
+        $request = $this->updateSinglePublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1755,24 +1731,18 @@ class PublisherPayoutOverridesApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  string $publisherId  (required)
      * @param  string $payoutId  (required)
      * @param  \Ringba\Model\UpdateSinglePublisherPayoutOverrideRequest $updateSinglePublisherPayoutOverrideRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateSinglePublisherPayoutOverrideRequest($authorization, $accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest)
+    public function updateSinglePublisherPayoutOverrideRequest($accountId, $campaignId, $publisherId, $payoutId, $updateSinglePublisherPayoutOverrideRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling updateSinglePublisherPayoutOverride'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(

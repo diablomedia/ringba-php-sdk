@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `disableRTBforaCampaign()`
 
 ```php
-disableRTBforaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\DisableRTBforaCampaign
+disableRTBforaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\DisableRTBforaCampaign
 ```
 
 Disable RTB for a Campaign
@@ -33,12 +33,12 @@ $apiInstance = new Ringba\Api\CampaignRTBSettingsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->disableRTBforaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->disableRTBforaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignRTBSettingsApi->disableRTBforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -49,9 +49,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 ## `editRTBSettingsforaCampaign()`
 
 ```php
-editRTBSettingsforaCampaign($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest): \Ringba\Model\AddBulkModifiertoaCampaign
+editRTBSettingsforaCampaign($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization): \Ringba\Model\AddBulkModifiertoaCampaign
 ```
 
 Edit RTB Settings for a Campaign
@@ -93,13 +93,13 @@ $apiInstance = new Ringba\Api\CampaignRTBSettingsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $editRTBSettingsforaCampaignRequest = {"bidAdjustments":[{"criteria":{"tagId":"{Demographics:Age}","comparisonType":"BULK","value":"1","isNegativeMatch":false},"adjustmentType":"Multiply","adjustmentValue":1.0,"bulkListId":"RTBLISTc5de66696f8142448b0f0de930c35acb"}]}; // \Ringba\Model\EditRTBSettingsforaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->editRTBSettingsforaCampaign($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest);
+    $result = $apiInstance->editRTBSettingsforaCampaign($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignRTBSettingsApi->editRTBSettingsforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -110,10 +110,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **editRTBSettingsforaCampaignRequest** | [**\Ringba\Model\EditRTBSettingsforaCampaignRequest**](../Model/EditRTBSettingsforaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -135,7 +135,7 @@ No authorization required
 ## `enableRTBforaCampaign()`
 
 ```php
-enableRTBforaCampaign($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest): \Ringba\Model\EnableRTBforaCampaign
+enableRTBforaCampaign($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization): \Ringba\Model\EnableRTBforaCampaign
 ```
 
 Enable RTB for a Campaign
@@ -155,13 +155,13 @@ $apiInstance = new Ringba\Api\CampaignRTBSettingsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $enableRTBforaCampaignRequest = {"enabled":true,"sipOnly":false,"callerIdRequired":false,"icp":"Off","customIntegrations":{"journayaTCPA":{"state":"Off"}},"bidExpirationPolicy":{"bidExpirationInSeconds":20,"routeCallsForStaleBids":false},"rateLimit":{"maxRequests":10,"perSeconds":60},"bidSettings":{"baseBidAmount":10,"maxBidAmount":25,"conversionType":"incomingCall","conversionArgs":{"callLengthInSeconds":30,"startTimerEvent":"OnIncomingCall"},"deDupeSetting":{"secondsFromLastCall":0}},"bidAdjustments":[]}; // \Ringba\Model\EnableRTBforaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->enableRTBforaCampaign($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest);
+    $result = $apiInstance->enableRTBforaCampaign($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignRTBSettingsApi->enableRTBforaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -172,10 +172,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **enableRTBforaCampaignRequest** | [**\Ringba\Model\EnableRTBforaCampaignRequest**](../Model/EnableRTBforaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -197,7 +197,7 @@ No authorization required
 ## `getRTBforCampaign()`
 
 ```php
-getRTBforCampaign($authorization, $accountId, $campaignId): \Ringba\Model\GetRTBforCampaignwithRTBenabled
+getRTBforCampaign($accountId, $campaignId, $authorization): \Ringba\Model\GetRTBforCampaignwithRTBenabled
 ```
 
 Get RTB for Campaign
@@ -217,12 +217,12 @@ $apiInstance = new Ringba\Api\CampaignRTBSettingsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getRTBforCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->getRTBforCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignRTBSettingsApi->getRTBforCampaign: ', $e->getMessage(), PHP_EOL;
@@ -233,9 +233,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

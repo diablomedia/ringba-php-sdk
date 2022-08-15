@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `blockaPhoneNumber()`
 
 ```php
-blockaPhoneNumber($authorization, $accountId, $blockaPhoneNumberRequest): \Ringba\Model\Blockanonymousnumbersfor8hoursinspecificcampaign
+blockaPhoneNumber($accountId, $blockaPhoneNumberRequest, $authorization): \Ringba\Model\Blockanonymousnumbersfor8hoursinspecificcampaign
 ```
 
 Block a Phone Number
@@ -34,12 +34,12 @@ $apiInstance = new Ringba\Api\BlockedNumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $blockaPhoneNumberRequest = {"phoneNumber":"+anonymous","campaignId":"CAa2714586592f464f817efc493f3a4b50","expInHour":8}; // \Ringba\Model\BlockaPhoneNumberRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->blockaPhoneNumber($authorization, $accountId, $blockaPhoneNumberRequest);
+    $result = $apiInstance->blockaPhoneNumber($accountId, $blockaPhoneNumberRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->blockaPhoneNumber: ', $e->getMessage(), PHP_EOL;
@@ -50,9 +50,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **blockaPhoneNumberRequest** | [**\Ringba\Model\BlockaPhoneNumberRequest**](../Model/BlockaPhoneNumberRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ No authorization required
 ## `getBlockedPhoneNumbers()`
 
 ```php
-getBlockedPhoneNumbers($authorization, $accountId): \Ringba\Model\GetBlockedPhoneNumbers
+getBlockedPhoneNumbers($accountId, $authorization): \Ringba\Model\GetBlockedPhoneNumbers
 ```
 
 Get Blocked Phone Numbers
@@ -94,11 +94,11 @@ $apiInstance = new Ringba\Api\BlockedNumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getBlockedPhoneNumbers($authorization, $accountId);
+    $result = $apiInstance->getBlockedPhoneNumbers($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->getBlockedPhoneNumbers: ', $e->getMessage(), PHP_EOL;
@@ -109,8 +109,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -132,7 +132,7 @@ No authorization required
 ## `getDetailsAboutaSingleBlockedNumber()`
 
 ```php
-getDetailsAboutaSingleBlockedNumber($authorization, $accountId, $blockedNumberId): \Ringba\Model\GetDetailsAboutaSingleBlockedNumber
+getDetailsAboutaSingleBlockedNumber($accountId, $blockedNumberId, $authorization): \Ringba\Model\GetDetailsAboutaSingleBlockedNumber
 ```
 
 Get Details About a Single Blocked Number
@@ -152,12 +152,12 @@ $apiInstance = new Ringba\Api\BlockedNumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $blockedNumberId = 'blockedNumberId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsAboutaSingleBlockedNumber($authorization, $accountId, $blockedNumberId);
+    $result = $apiInstance->getDetailsAboutaSingleBlockedNumber($accountId, $blockedNumberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->getDetailsAboutaSingleBlockedNumber: ', $e->getMessage(), PHP_EOL;
@@ -168,9 +168,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **blockedNumberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -192,7 +192,7 @@ No authorization required
 ## `unblockaPhoneNumber()`
 
 ```php
-unblockaPhoneNumber($authorization, $accountId, $blockedNumberId): \Ringba\Model\UnblockaPhoneNumber
+unblockaPhoneNumber($accountId, $blockedNumberId, $authorization): \Ringba\Model\UnblockaPhoneNumber
 ```
 
 Unblock a Phone Number
@@ -212,12 +212,12 @@ $apiInstance = new Ringba\Api\BlockedNumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $blockedNumberId = 'blockedNumberId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->unblockaPhoneNumber($authorization, $accountId, $blockedNumberId);
+    $result = $apiInstance->unblockaPhoneNumber($accountId, $blockedNumberId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->unblockaPhoneNumber: ', $e->getMessage(), PHP_EOL;
@@ -228,9 +228,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **blockedNumberId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -252,7 +252,7 @@ No authorization required
 ## `updateaBlockedPhoneNumber()`
 
 ```php
-updateaBlockedPhoneNumber($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest): \Ringba\Model\UpdateaBlockedPhoneNumber
+updateaBlockedPhoneNumber($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization): \Ringba\Model\UpdateaBlockedPhoneNumber
 ```
 
 Update a Blocked Phone Number
@@ -272,13 +272,13 @@ $apiInstance = new Ringba\Api\BlockedNumbersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $blockedNumberId = 'blockedNumberId_example'; // string | 
 $updateaBlockedPhoneNumberRequest = {"phoneNumber":"+anonymous","campaignId":"CAa2714586592f464f817efc493f3a4b50","expiration":"2021-04-06T05:36:25.104Z","timeLimited":true}; // \Ringba\Model\UpdateaBlockedPhoneNumberRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->updateaBlockedPhoneNumber($authorization, $accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest);
+    $result = $apiInstance->updateaBlockedPhoneNumber($accountId, $blockedNumberId, $updateaBlockedPhoneNumberRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedNumbersApi->updateaBlockedPhoneNumber: ', $e->getMessage(), PHP_EOL;
@@ -289,10 +289,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **blockedNumberId** | **string**|  |
  **updateaBlockedPhoneNumberRequest** | [**\Ringba\Model\UpdateaBlockedPhoneNumberRequest**](../Model/UpdateaBlockedPhoneNumberRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

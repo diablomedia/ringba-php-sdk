@@ -18,7 +18,7 @@ Method | HTTP request | Description
 ## `createNewPublisher()`
 
 ```php
-createNewPublisher($authorization, $accountId, $createNewPublisherRequest): \Ringba\Model\CreateNewPublisher
+createNewPublisher($accountId, $createNewPublisherRequest, $authorization): \Ringba\Model\CreateNewPublisher
 ```
 
 Create New Publisher
@@ -38,12 +38,12 @@ $apiInstance = new Ringba\Api\PublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $createNewPublisherRequest = {"name":"New Publisher","subId":"pubSubId","createNumbers":true,"doNotCreateUser":true,"blockCallsIfCapped":false,"accessToRecordings":true}; // \Ringba\Model\CreateNewPublisherRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->createNewPublisher($authorization, $accountId, $createNewPublisherRequest);
+    $result = $apiInstance->createNewPublisher($accountId, $createNewPublisherRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->createNewPublisher: ', $e->getMessage(), PHP_EOL;
@@ -54,9 +54,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **createNewPublisherRequest** | [**\Ringba\Model\CreateNewPublisherRequest**](../Model/CreateNewPublisherRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -78,7 +78,7 @@ No authorization required
 ## `deleteaPublisher()`
 
 ```php
-deleteaPublisher($force, $keepNumbers, $authorization, $accountId, $publisherId): \Ringba\Model\DeleteaPublisher
+deleteaPublisher($force, $keepNumbers, $accountId, $publisherId, $authorization): \Ringba\Model\DeleteaPublisher
 ```
 
 Delete a Publisher
@@ -100,12 +100,12 @@ $apiInstance = new Ringba\Api\PublishersApi(
 );
 $force = false; // bool | If set to true, pulisher will be deleted even if it has active inbound references
 $keepNumbers = true; // bool | If set to true, numbers associated with the publisher will stay in your account. If set to false, hte numbers will be deallocated.
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->deleteaPublisher($force, $keepNumbers, $authorization, $accountId, $publisherId);
+    $result = $apiInstance->deleteaPublisher($force, $keepNumbers, $accountId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->deleteaPublisher: ', $e->getMessage(), PHP_EOL;
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **force** | **bool**| If set to true, pulisher will be deleted even if it has active inbound references |
  **keepNumbers** | **bool**| If set to true, numbers associated with the publisher will stay in your account. If set to false, hte numbers will be deallocated. |
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -142,7 +142,7 @@ No authorization required
 ## `editaPublisher()`
 
 ```php
-editaPublisher($authorization, $accountId, $publisherId, $editaPublisherRequest): \Ringba\Model\EditaPublisher
+editaPublisher($accountId, $publisherId, $editaPublisherRequest, $authorization): \Ringba\Model\EditaPublisher
 ```
 
 Edit a Publisher
@@ -162,13 +162,13 @@ $apiInstance = new Ringba\Api\PublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
 $editaPublisherRequest = {"name":"New Name","subId":"newPubSubId","enabled":true,"createNumbers":false,"blockCallsIfCapped":null,"accessToRecordings":false}; // \Ringba\Model\EditaPublisherRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->editaPublisher($authorization, $accountId, $publisherId, $editaPublisherRequest);
+    $result = $apiInstance->editaPublisher($accountId, $publisherId, $editaPublisherRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->editaPublisher: ', $e->getMessage(), PHP_EOL;
@@ -179,10 +179,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
  **editaPublisherRequest** | [**\Ringba\Model\EditaPublisherRequest**](../Model/EditaPublisherRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -204,7 +204,7 @@ No authorization required
 ## `getCallStatisticsforPublishers()`
 
 ```php
-getCallStatisticsforPublishers($authorization, $accountId): \Ringba\Model\GetCallStatisticsforPublishers
+getCallStatisticsforPublishers($accountId, $authorization): \Ringba\Model\GetCallStatisticsforPublishers
 ```
 
 Get Call Statistics for Publishers
@@ -224,11 +224,11 @@ $apiInstance = new Ringba\Api\PublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getCallStatisticsforPublishers($authorization, $accountId);
+    $result = $apiInstance->getCallStatisticsforPublishers($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->getCallStatisticsforPublishers: ', $e->getMessage(), PHP_EOL;
@@ -239,8 +239,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -262,7 +262,7 @@ No authorization required
 ## `getDetailsAboutSinglePublisher()`
 
 ```php
-getDetailsAboutSinglePublisher($authorization, $accountId, $publisherId): \Ringba\Model\GetDetailsAboutSinglePublisher
+getDetailsAboutSinglePublisher($accountId, $publisherId, $authorization): \Ringba\Model\GetDetailsAboutSinglePublisher
 ```
 
 Get Details About Single Publisher
@@ -282,12 +282,12 @@ $apiInstance = new Ringba\Api\PublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getDetailsAboutSinglePublisher($authorization, $accountId, $publisherId);
+    $result = $apiInstance->getDetailsAboutSinglePublisher($accountId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->getDetailsAboutSinglePublisher: ', $e->getMessage(), PHP_EOL;
@@ -298,9 +298,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -322,7 +322,7 @@ No authorization required
 ## `getInboundReferencesforaPublisher()`
 
 ```php
-getInboundReferencesforaPublisher($authorization, $accountId, $publisherId): \Ringba\Model\GetInboundReferencesforaPublisher
+getInboundReferencesforaPublisher($accountId, $publisherId, $authorization): \Ringba\Model\GetInboundReferencesforaPublisher
 ```
 
 Get Inbound References for a Publisher
@@ -342,12 +342,12 @@ $apiInstance = new Ringba\Api\PublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getInboundReferencesforaPublisher($authorization, $accountId, $publisherId);
+    $result = $apiInstance->getInboundReferencesforaPublisher($accountId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->getInboundReferencesforaPublisher: ', $e->getMessage(), PHP_EOL;
@@ -358,9 +358,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -382,7 +382,7 @@ No authorization required
 ## `getPhoneNumbersforaSinglePublisher()`
 
 ```php
-getPhoneNumbersforaSinglePublisher($authorization, $accountId, $publisherId): \Ringba\Model\GetPhoneNumbersforaSinglePublisher
+getPhoneNumbersforaSinglePublisher($accountId, $publisherId, $authorization): \Ringba\Model\GetPhoneNumbersforaSinglePublisher
 ```
 
 Get Phone Numbers for a Single Publisher
@@ -402,12 +402,12 @@ $apiInstance = new Ringba\Api\PublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getPhoneNumbersforaSinglePublisher($authorization, $accountId, $publisherId);
+    $result = $apiInstance->getPhoneNumbersforaSinglePublisher($accountId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->getPhoneNumbersforaSinglePublisher: ', $e->getMessage(), PHP_EOL;
@@ -418,9 +418,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -442,7 +442,7 @@ No authorization required
 ## `getPublishers()`
 
 ```php
-getPublishers($authorization, $accountId): \Ringba\Model\GetPublishers
+getPublishers($accountId, $authorization): \Ringba\Model\GetPublishers
 ```
 
 Get Publishers
@@ -462,11 +462,11 @@ $apiInstance = new Ringba\Api\PublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getPublishers($authorization, $accountId);
+    $result = $apiInstance->getPublishers($accountId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->getPublishers: ', $e->getMessage(), PHP_EOL;
@@ -477,8 +477,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -500,7 +500,7 @@ No authorization required
 ## `getUserDetailsforaPublisher()`
 
 ```php
-getUserDetailsforaPublisher($authorization, $accountId, $publisherId): \Ringba\Model\GetUserDetailsforaPublisher
+getUserDetailsforaPublisher($accountId, $publisherId, $authorization): \Ringba\Model\GetUserDetailsforaPublisher
 ```
 
 Get User Details for a Publisher
@@ -520,12 +520,12 @@ $apiInstance = new Ringba\Api\PublishersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $publisherId = 'publisherId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->getUserDetailsforaPublisher($authorization, $accountId, $publisherId);
+    $result = $apiInstance->getUserDetailsforaPublisher($accountId, $publisherId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublishersApi->getUserDetailsforaPublisher: ', $e->getMessage(), PHP_EOL;
@@ -536,9 +536,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **publisherId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

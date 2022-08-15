@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `addIVRTreetoaCampaign()`
 
 ```php
-addIVRTreetoaCampaign($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest): \Ringba\Model\AddIVRTreetoaCampaign
+addIVRTreetoaCampaign($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization): \Ringba\Model\AddIVRTreetoaCampaign
 ```
 
 Add IVR Tree to a Campaign
@@ -32,13 +32,13 @@ $apiInstance = new Ringba\Api\IVRTreesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
 $addIVRTreetoaCampaignRequest = {"ivrTreeId":"{{IVRTreeId}}"}; // \Ringba\Model\AddIVRTreetoaCampaignRequest | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->addIVRTreetoaCampaign($authorization, $accountId, $campaignId, $addIVRTreetoaCampaignRequest);
+    $result = $apiInstance->addIVRTreetoaCampaign($accountId, $campaignId, $addIVRTreetoaCampaignRequest, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IVRTreesApi->addIVRTreetoaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -49,10 +49,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
  **addIVRTreetoaCampaignRequest** | [**\Ringba\Model\AddIVRTreetoaCampaignRequest**](../Model/AddIVRTreetoaCampaignRequest.md)|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ No authorization required
 ## `getIVRTreesAssociatedwithAccount()`
 
 ```php
-getIVRTreesAssociatedwithAccount($authorization, $accountId)
+getIVRTreesAssociatedwithAccount($accountId, $authorization)
 ```
 
 Get IVR Trees Associated with Account
@@ -94,11 +94,11 @@ $apiInstance = new Ringba\Api\IVRTreesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $apiInstance->getIVRTreesAssociatedwithAccount($authorization, $accountId);
+    $apiInstance->getIVRTreesAssociatedwithAccount($accountId, $authorization);
 } catch (Exception $e) {
     echo 'Exception when calling IVRTreesApi->getIVRTreesAssociatedwithAccount: ', $e->getMessage(), PHP_EOL;
 }
@@ -108,8 +108,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 
@@ -131,7 +131,7 @@ No authorization required
 ## `removeIVRTreefromaCampaign()`
 
 ```php
-removeIVRTreefromaCampaign($authorization, $accountId, $campaignId): \Ringba\Model\RemoveIVRTreefromaCampaign
+removeIVRTreefromaCampaign($accountId, $campaignId, $authorization): \Ringba\Model\RemoveIVRTreefromaCampaign
 ```
 
 Remove IVR Tree from a Campaign
@@ -151,12 +151,12 @@ $apiInstance = new Ringba\Api\IVRTreesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
+$authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {
-    $result = $apiInstance->removeIVRTreefromaCampaign($authorization, $accountId, $campaignId);
+    $result = $apiInstance->removeIVRTreefromaCampaign($accountId, $campaignId, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IVRTreesApi->removeIVRTreefromaCampaign: ', $e->getMessage(), PHP_EOL;
@@ -167,9 +167,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) |
  **accountId** | **string**|  |
  **campaignId** | **string**|  |
+ **authorization** | **string**| Find your [apiToken](#get-or-create-api-token) | [optional]
 
 ### Return type
 

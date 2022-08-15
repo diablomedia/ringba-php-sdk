@@ -123,17 +123,17 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\DisableRTBforaCampaign
      */
-    public function disableRTBforaCampaign($authorization, $accountId, $campaignId)
+    public function disableRTBforaCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->disableRTBforaCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->disableRTBforaCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -145,17 +145,17 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\DisableRTBforaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function disableRTBforaCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function disableRTBforaCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->disableRTBforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->disableRTBforaCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,16 +249,16 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disableRTBforaCampaignAsync($authorization, $accountId, $campaignId)
+    public function disableRTBforaCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->disableRTBforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->disableRTBforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,17 +274,17 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disableRTBforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function disableRTBforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\DisableRTBforaCampaign';
-        $request = $this->disableRTBforaCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->disableRTBforaCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -328,21 +328,15 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function disableRTBforaCampaignRequest($authorization, $accountId, $campaignId)
+    public function disableRTBforaCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling disableRTBforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -458,18 +452,18 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EditRTBSettingsforaCampaignRequest $editRTBSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\AddBulkModifiertoaCampaign
      */
-    public function editRTBSettingsforaCampaign($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest)
+    public function editRTBSettingsforaCampaign($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization = null)
     {
-        list($response) = $this->editRTBSettingsforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest);
+        list($response) = $this->editRTBSettingsforaCampaignWithHttpInfo($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization);
         return $response;
     }
 
@@ -481,18 +475,18 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EditRTBSettingsforaCampaignRequest $editRTBSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\AddBulkModifiertoaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editRTBSettingsforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest)
+    public function editRTBSettingsforaCampaignWithHttpInfo($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization = null)
     {
-        $request = $this->editRTBSettingsforaCampaignRequest($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest);
+        $request = $this->editRTBSettingsforaCampaignRequest($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -586,17 +580,17 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EditRTBSettingsforaCampaignRequest $editRTBSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editRTBSettingsforaCampaignAsync($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest)
+    public function editRTBSettingsforaCampaignAsync($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization = null)
     {
-        return $this->editRTBSettingsforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest)
+        return $this->editRTBSettingsforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -612,18 +606,18 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EditRTBSettingsforaCampaignRequest $editRTBSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editRTBSettingsforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest)
+    public function editRTBSettingsforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\AddBulkModifiertoaCampaign';
-        $request = $this->editRTBSettingsforaCampaignRequest($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest);
+        $request = $this->editRTBSettingsforaCampaignRequest($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -667,22 +661,16 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EditRTBSettingsforaCampaignRequest $editRTBSettingsforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function editRTBSettingsforaCampaignRequest($authorization, $accountId, $campaignId, $editRTBSettingsforaCampaignRequest)
+    public function editRTBSettingsforaCampaignRequest($accountId, $campaignId, $editRTBSettingsforaCampaignRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling editRTBSettingsforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -810,18 +798,18 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EnableRTBforaCampaignRequest $enableRTBforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\EnableRTBforaCampaign
      */
-    public function enableRTBforaCampaign($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest)
+    public function enableRTBforaCampaign($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization = null)
     {
-        list($response) = $this->enableRTBforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest);
+        list($response) = $this->enableRTBforaCampaignWithHttpInfo($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization);
         return $response;
     }
 
@@ -833,18 +821,18 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EnableRTBforaCampaignRequest $enableRTBforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\EnableRTBforaCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enableRTBforaCampaignWithHttpInfo($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest)
+    public function enableRTBforaCampaignWithHttpInfo($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization = null)
     {
-        $request = $this->enableRTBforaCampaignRequest($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest);
+        $request = $this->enableRTBforaCampaignRequest($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -938,17 +926,17 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EnableRTBforaCampaignRequest $enableRTBforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enableRTBforaCampaignAsync($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest)
+    public function enableRTBforaCampaignAsync($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization = null)
     {
-        return $this->enableRTBforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest)
+        return $this->enableRTBforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -964,18 +952,18 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EnableRTBforaCampaignRequest $enableRTBforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enableRTBforaCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest)
+    public function enableRTBforaCampaignAsyncWithHttpInfo($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization = null)
     {
         $returnType = '\Ringba\Model\EnableRTBforaCampaign';
-        $request = $this->enableRTBforaCampaignRequest($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest);
+        $request = $this->enableRTBforaCampaignRequest($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1019,22 +1007,16 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
      * @param  \Ringba\Model\EnableRTBforaCampaignRequest $enableRTBforaCampaignRequest  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function enableRTBforaCampaignRequest($authorization, $accountId, $campaignId, $enableRTBforaCampaignRequest)
+    public function enableRTBforaCampaignRequest($accountId, $campaignId, $enableRTBforaCampaignRequest, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling enableRTBforaCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1162,17 +1144,17 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\GetRTBforCampaignwithRTBenabled|\Ringba\Model\GetRTBforCampaignwithoutRTBenabled1
      */
-    public function getRTBforCampaign($authorization, $accountId, $campaignId)
+    public function getRTBforCampaign($accountId, $campaignId, $authorization = null)
     {
-        list($response) = $this->getRTBforCampaignWithHttpInfo($authorization, $accountId, $campaignId);
+        list($response) = $this->getRTBforCampaignWithHttpInfo($accountId, $campaignId, $authorization);
         return $response;
     }
 
@@ -1184,17 +1166,17 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\GetRTBforCampaignwithRTBenabled|\Ringba\Model\GetRTBforCampaignwithoutRTBenabled1, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRTBforCampaignWithHttpInfo($authorization, $accountId, $campaignId)
+    public function getRTBforCampaignWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
-        $request = $this->getRTBforCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->getRTBforCampaignRequest($accountId, $campaignId, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1311,16 +1293,16 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRTBforCampaignAsync($authorization, $accountId, $campaignId)
+    public function getRTBforCampaignAsync($accountId, $campaignId, $authorization = null)
     {
-        return $this->getRTBforCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+        return $this->getRTBforCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1336,17 +1318,17 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRTBforCampaignAsyncWithHttpInfo($authorization, $accountId, $campaignId)
+    public function getRTBforCampaignAsyncWithHttpInfo($accountId, $campaignId, $authorization = null)
     {
         $returnType = '\Ringba\Model\GetRTBforCampaignwithRTBenabled';
-        $request = $this->getRTBforCampaignRequest($authorization, $accountId, $campaignId);
+        $request = $this->getRTBforCampaignRequest($accountId, $campaignId, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1390,21 +1372,15 @@ class CampaignRTBSettingsApi
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: https://api.ringba.com/v2/
      *
-     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
+     * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRTBforCampaignRequest($authorization, $accountId, $campaignId)
+    public function getRTBforCampaignRequest($accountId, $campaignId, $authorization = null)
     {
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null || (is_array($authorization) && count($authorization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $authorization when calling getRTBforCampaign'
-            );
-        }
         // verify the required parameter 'accountId' is set
         if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
             throw new \InvalidArgumentException(
