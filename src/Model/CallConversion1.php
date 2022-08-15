@@ -1,6 +1,6 @@
 <?php
 /**
- * CallConversion
+ * CallConversion1
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Ringba\ObjectSerializer;
 
 /**
- * CallConversion Class Doc Comment
+ * CallConversion1 Class Doc Comment
  *
  * @category Class
  * @package  Ringba
@@ -40,7 +40,7 @@ use \Ringba\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
+class CallConversion1 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CallConversion';
+    protected static $openAPIModelName = 'CallConversion1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,7 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'conversionType' => 'string',
         'conversionValue' => 'int',
-        'conversionArgs' => '\Ringba\Model\ConversionArgs1',
-        'deDupeSetting' => '\Ringba\Model\DeDupeSetting'
+        'conversionArgs' => '\Ringba\Model\ConversionArgs1'
     ];
 
     /**
@@ -73,8 +72,7 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'conversionType' => null,
         'conversionValue' => 'int32',
-        'conversionArgs' => null,
-        'deDupeSetting' => null
+        'conversionArgs' => null
     ];
 
     /**
@@ -106,8 +104,7 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'conversionType' => 'conversionType',
         'conversionValue' => 'conversionValue',
-        'conversionArgs' => 'conversionArgs',
-        'deDupeSetting' => 'deDupeSetting'
+        'conversionArgs' => 'conversionArgs'
     ];
 
     /**
@@ -118,8 +115,7 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'conversionType' => 'setConversionType',
         'conversionValue' => 'setConversionValue',
-        'conversionArgs' => 'setConversionArgs',
-        'deDupeSetting' => 'setDeDupeSetting'
+        'conversionArgs' => 'setConversionArgs'
     ];
 
     /**
@@ -130,8 +126,7 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'conversionType' => 'getConversionType',
         'conversionValue' => 'getConversionValue',
-        'conversionArgs' => 'getConversionArgs',
-        'deDupeSetting' => 'getDeDupeSetting'
+        'conversionArgs' => 'getConversionArgs'
     ];
 
     /**
@@ -194,7 +189,6 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['conversionType'] = $data['conversionType'] ?? null;
         $this->container['conversionValue'] = $data['conversionValue'] ?? null;
         $this->container['conversionArgs'] = $data['conversionArgs'] ?? null;
-        $this->container['deDupeSetting'] = $data['deDupeSetting'] ?? null;
     }
 
     /**
@@ -214,9 +208,6 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['conversionArgs'] === null) {
             $invalidProperties[] = "'conversionArgs' can't be null";
-        }
-        if ($this->container['deDupeSetting'] === null) {
-            $invalidProperties[] = "'deDupeSetting' can't be null";
         }
         return $invalidProperties;
     }
@@ -301,30 +292,6 @@ class CallConversion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setConversionArgs($conversionArgs)
     {
         $this->container['conversionArgs'] = $conversionArgs;
-
-        return $this;
-    }
-
-    /**
-     * Gets deDupeSetting
-     *
-     * @return \Ringba\Model\DeDupeSetting
-     */
-    public function getDeDupeSetting()
-    {
-        return $this->container['deDupeSetting'];
-    }
-
-    /**
-     * Sets deDupeSetting
-     *
-     * @param \Ringba\Model\DeDupeSetting $deDupeSetting deDupeSetting
-     *
-     * @return self
-     */
-    public function setDeDupeSetting($deDupeSetting)
-    {
-        $this->container['deDupeSetting'] = $deDupeSetting;
 
         return $this;
     }

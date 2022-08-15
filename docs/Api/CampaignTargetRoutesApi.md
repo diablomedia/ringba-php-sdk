@@ -33,7 +33,7 @@ $apiInstance = new Ringba\Api\CampaignTargetRoutesApi(
 );
 $accountId = 'accountId_example'; // string | 
 $campaignId = 'campaignId_example'; // string | 
-$addTargetRoutetoaCampaignRequest = {"targetid":"{{targetId}}","priority":{"priority":2,"weight":2},"callConversion":{"conversionType":"callLength","conversionValue":0,"conversionArgs":{"startTimerEvent":"OnConnectedCall","callLengthInSeconds":30}}}; // \Ringba\Model\AddTargetRoutetoaCampaignRequest | 
+$addTargetRoutetoaCampaignRequest = {"targetid":"{{targetId}}","priority":{"priority":2,"weight":2},"callConversion":{"conversionType":"callLength","conversionValue":0,"conversionArgs":{"startTimerEvent":"OnConnectedCall","callLengthInSeconds":30},"deDupeSetting":{"secondsFromLastCall":432000}}}; // \Ringba\Model\AddTargetRoutetoaCampaignRequest | 
 $authorization = Token {{apiToken}}; // string | Find your [apiToken](#get-or-create-api-token)
 
 try {

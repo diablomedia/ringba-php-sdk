@@ -59,7 +59,7 @@ class AddTargetGroupRoutetoaCampaignRequest implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'targetGroupId' => 'string',
         'priority' => '\Ringba\Model\Priority',
-        'callConversion' => '\Ringba\Model\CallConversion'
+        'callConversion' => '\Ringba\Model\CallConversion1'
     ];
 
     /**
@@ -275,7 +275,7 @@ class AddTargetGroupRoutetoaCampaignRequest implements ModelInterface, ArrayAcce
     /**
      * Gets callConversion
      *
-     * @return \Ringba\Model\CallConversion
+     * @return \Ringba\Model\CallConversion1
      */
     public function getCallConversion()
     {
@@ -285,7 +285,7 @@ class AddTargetGroupRoutetoaCampaignRequest implements ModelInterface, ArrayAcce
     /**
      * Sets callConversion
      *
-     * @param \Ringba\Model\CallConversion $callConversion callConversion
+     * @param \Ringba\Model\CallConversion1 $callConversion callConversion
      *
      * @return self
      */

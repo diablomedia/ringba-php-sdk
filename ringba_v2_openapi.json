@@ -13107,6 +13107,9 @@
                   "conversionArgs": {
                     "startTimerEvent": "OnConnectedCall",
                     "callLengthInSeconds": 30
+                  },
+                  "deDupeSetting": {
+                    "secondsFromLastCall": 432000
                   }
                 }
               }
@@ -59810,6 +59813,9 @@
             "conversionArgs": {
               "startTimerEvent": "OnConnectedCall",
               "callLengthInSeconds": 30
+            },
+            "deDupeSetting": {
+              "secondsFromLastCall": 432000
             }
           }
         }
@@ -59819,7 +59825,8 @@
         "required": [
           "conversionType",
           "conversionValue",
-          "conversionArgs"
+          "conversionArgs",
+          "deDupeSetting"
         ],
         "type": "object",
         "properties": {
@@ -59832,6 +59839,9 @@
           },
           "conversionArgs": {
             "$ref": "#/components/schemas/ConversionArgs1"
+          },
+          "deDupeSetting": {
+            "$ref": "#/components/schemas/DeDupeSetting"
           }
         },
         "example": {
@@ -59840,6 +59850,9 @@
           "conversionArgs": {
             "startTimerEvent": "OnConnectedCall",
             "callLengthInSeconds": 30
+          },
+          "deDupeSetting": {
+            "secondsFromLastCall": 432000
           }
         }
       },
@@ -62108,7 +62121,7 @@
             "$ref": "#/components/schemas/Priority"
           },
           "callConversion": {
-            "$ref": "#/components/schemas/CallConversion"
+            "$ref": "#/components/schemas/CallConversion1"
           }
         },
         "example": {
@@ -62124,6 +62137,35 @@
               "startTimerEvent": "OnConnectedCall",
               "callLengthInSeconds": 30
             }
+          }
+        }
+      },
+      "CallConversion1": {
+        "title": "CallConversion1",
+        "required": [
+          "conversionType",
+          "conversionValue",
+          "conversionArgs"
+        ],
+        "type": "object",
+        "properties": {
+          "conversionType": {
+            "type": "string"
+          },
+          "conversionValue": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "conversionArgs": {
+            "$ref": "#/components/schemas/ConversionArgs1"
+          }
+        },
+        "example": {
+          "conversionType": "dialed",
+          "conversionValue": 0,
+          "conversionArgs": {
+            "startTimerEvent": "OnConnectedCall",
+            "callLengthInSeconds": 30
           }
         }
       },

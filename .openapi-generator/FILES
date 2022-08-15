@@ -139,6 +139,7 @@ docs/Model/CA74c0b7f1f3824246b73e72a9238b4bfc.md
 docs/Model/CA9f6800fa2f074f41afde0aadd88292bd.md
 docs/Model/CAa2714586592f464f817efc493f3a4b50.md
 docs/Model/CallConversion.md
+docs/Model/CallConversion1.md
 docs/Model/CallIVRTree.md
 docs/Model/CallIVRTree6.md
 docs/Model/CallTarget.md
@@ -738,6 +739,7 @@ src/Model/CA74c0b7f1f3824246b73e72a9238b4bfc.php
 src/Model/CA9f6800fa2f074f41afde0aadd88292bd.php
 src/Model/CAa2714586592f464f817efc493f3a4b50.php
 src/Model/CallConversion.php
+src/Model/CallConversion1.php
 src/Model/CallIVRTree.php
 src/Model/CallIVRTree6.php
 src/Model/CallTarget.php
@@ -1198,3 +1200,4 @@ src/Model/Warnings.php
 src/Model/Warnings1.php
 src/Model/WebHook.php
 src/ObjectSerializer.php
+test/Model/CallConversion1Test.php

@@ -6475,7 +6475,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"targetid\": \"{{targetId}}\",\n    \"priority\": {\n        \"priority\": 2,\n        \"weight\": 2\n    },\n    \"callConversion\": {\n        \"conversionType\": \"callLength\",\n        \"conversionValue\": 0,\n        \"conversionArgs\": {\n            \"startTimerEvent\": \"OnConnectedCall\",\n            \"callLengthInSeconds\": 30\n        }\n    }\n}",
+									"raw": "{\n    \"targetid\": \"{{targetId}}\",\n    \"priority\": {\n        \"priority\": 2,\n        \"weight\": 2\n    },\n    \"callConversion\": {\n        \"conversionType\": \"callLength\",\n        \"conversionValue\": 0,\n        \"conversionArgs\": {\n            \"startTimerEvent\": \"OnConnectedCall\",\n            \"callLengthInSeconds\": 30\n        },\n        \"deDupeSetting\": {\n            \"secondsFromLastCall\": 432000\n        }\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
