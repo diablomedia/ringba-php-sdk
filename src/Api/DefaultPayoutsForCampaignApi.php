@@ -121,7 +121,7 @@ class DefaultPayoutsForCampaignApi
      * Add New Default Payout for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -144,7 +144,7 @@ class DefaultPayoutsForCampaignApi
      * Add New Default Payout for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -249,7 +249,7 @@ class DefaultPayoutsForCampaignApi
      * Add New Default Payout for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -275,7 +275,7 @@ class DefaultPayoutsForCampaignApi
      * Add New Default Payout for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -330,7 +330,7 @@ class DefaultPayoutsForCampaignApi
      * Create request for operation 'addNewDefaultPayoutforaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -452,7 +452,7 @@ class DefaultPayoutsForCampaignApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -473,7 +473,7 @@ class DefaultPayoutsForCampaignApi
      * Remove Default Payout Setting form a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -496,7 +496,7 @@ class DefaultPayoutsForCampaignApi
      * Remove Default Payout Setting form a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -601,7 +601,7 @@ class DefaultPayoutsForCampaignApi
      * Remove Default Payout Setting form a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -627,7 +627,7 @@ class DefaultPayoutsForCampaignApi
      * Remove Default Payout Setting form a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -682,7 +682,7 @@ class DefaultPayoutsForCampaignApi
      * Create request for operation 'removeDefaultPayoutSettingformaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -806,7 +806,7 @@ class DefaultPayoutsForCampaignApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -827,7 +827,7 @@ class DefaultPayoutsForCampaignApi
      * Update ALL Default Payout Settings for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -850,7 +850,7 @@ class DefaultPayoutsForCampaignApi
      * Update ALL Default Payout Settings for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -955,7 +955,7 @@ class DefaultPayoutsForCampaignApi
      * Update ALL Default Payout Settings for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -981,7 +981,7 @@ class DefaultPayoutsForCampaignApi
      * Update ALL Default Payout Settings for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1036,7 +1036,7 @@ class DefaultPayoutsForCampaignApi
      * Create request for operation 'updateALLDefaultPayoutSettingsforaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1158,7 +1158,7 @@ class DefaultPayoutsForCampaignApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1179,7 +1179,7 @@ class DefaultPayoutsForCampaignApi
      * Update Single Default Payout Settings
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1203,7 +1203,7 @@ class DefaultPayoutsForCampaignApi
      * Update Single Default Payout Settings
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1309,7 +1309,7 @@ class DefaultPayoutsForCampaignApi
      * Update Single Default Payout Settings
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1336,7 +1336,7 @@ class DefaultPayoutsForCampaignApi
      * Update Single Default Payout Settings
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1392,7 +1392,7 @@ class DefaultPayoutsForCampaignApi
      * Create request for operation 'updateSingleDefaultPayoutSettings'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1529,7 +1529,7 @@ class DefaultPayoutsForCampaignApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

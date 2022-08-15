@@ -121,7 +121,7 @@ class RTBBulkModifiersApi
      * Create RTB Bulk Adjustment from CSV
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $name  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -144,7 +144,7 @@ class RTBBulkModifiersApi
      * Create RTB Bulk Adjustment from CSV
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $name  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -249,7 +249,7 @@ class RTBBulkModifiersApi
      * Create RTB Bulk Adjustment from CSV
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $name  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -275,7 +275,7 @@ class RTBBulkModifiersApi
      * Create RTB Bulk Adjustment from CSV
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $name  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -330,7 +330,7 @@ class RTBBulkModifiersApi
      * Create request for operation 'createRTBBulkAdjustmentfromCSV'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $name  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -459,7 +459,7 @@ class RTBBulkModifiersApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

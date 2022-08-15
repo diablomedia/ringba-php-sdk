@@ -121,7 +121,7 @@ class NumberPoolsApi
      * Add a Specific Number to a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -144,7 +144,7 @@ class NumberPoolsApi
      * Add a Specific Number to a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -249,7 +249,7 @@ class NumberPoolsApi
      * Add a Specific Number to a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -275,7 +275,7 @@ class NumberPoolsApi
      * Add a Specific Number to a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -330,7 +330,7 @@ class NumberPoolsApi
      * Create request for operation 'addaSpecificNumbertoaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -452,7 +452,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -473,7 +473,7 @@ class NumberPoolsApi
      * Allocate More Numbers to a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -496,7 +496,7 @@ class NumberPoolsApi
      * Allocate More Numbers to a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -601,7 +601,7 @@ class NumberPoolsApi
      * Allocate More Numbers to a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -627,7 +627,7 @@ class NumberPoolsApi
      * Allocate More Numbers to a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -682,7 +682,7 @@ class NumberPoolsApi
      * Create request for operation 'allocateMoreNumberstoaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -804,7 +804,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -825,7 +825,7 @@ class NumberPoolsApi
      * Assign a Publisher to a  Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -848,7 +848,7 @@ class NumberPoolsApi
      * Assign a Publisher to a  Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -953,7 +953,7 @@ class NumberPoolsApi
      * Assign a Publisher to a  Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -979,7 +979,7 @@ class NumberPoolsApi
      * Assign a Publisher to a  Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1034,7 +1034,7 @@ class NumberPoolsApi
      * Create request for operation 'assignaPublishertoaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1156,7 +1156,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1177,7 +1177,7 @@ class NumberPoolsApi
      * Create New Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1199,7 +1199,7 @@ class NumberPoolsApi
      * Create New Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1303,7 +1303,7 @@ class NumberPoolsApi
      * Create New Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1328,7 +1328,7 @@ class NumberPoolsApi
      * Create New Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1382,7 +1382,7 @@ class NumberPoolsApi
      * Create request for operation 'createNewNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1489,7 +1489,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1510,7 +1510,7 @@ class NumberPoolsApi
      * Decrease Size of a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1533,7 +1533,7 @@ class NumberPoolsApi
      * Decrease Size of a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1638,7 +1638,7 @@ class NumberPoolsApi
      * Decrease Size of a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1664,7 +1664,7 @@ class NumberPoolsApi
      * Decrease Size of a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1719,7 +1719,7 @@ class NumberPoolsApi
      * Create request for operation 'decreaseSizeofaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -1841,7 +1841,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1862,7 +1862,7 @@ class NumberPoolsApi
      * Delete a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  bool $force Forces request even if the number pool is being used elsewhere in your account. (required)
      * @param  bool $keepNumbers Keep numbers in your account after the number pool has been removed (required)
@@ -1886,7 +1886,7 @@ class NumberPoolsApi
      * Delete a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  bool $force Forces request even if the number pool is being used elsewhere in your account. (required)
      * @param  bool $keepNumbers Keep numbers in your account after the number pool has been removed (required)
@@ -2015,7 +2015,7 @@ class NumberPoolsApi
      * Delete a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  bool $force Forces request even if the number pool is being used elsewhere in your account. (required)
      * @param  bool $keepNumbers Keep numbers in your account after the number pool has been removed (required)
@@ -2042,7 +2042,7 @@ class NumberPoolsApi
      * Delete a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  bool $force Forces request even if the number pool is being used elsewhere in your account. (required)
      * @param  bool $keepNumbers Keep numbers in your account after the number pool has been removed (required)
@@ -2098,7 +2098,7 @@ class NumberPoolsApi
      * Create request for operation 'deleteaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  bool $force Forces request even if the number pool is being used elsewhere in your account. (required)
      * @param  bool $keepNumbers Keep numbers in your account after the number pool has been removed (required)
@@ -2239,7 +2239,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -2260,7 +2260,7 @@ class NumberPoolsApi
      * Delete a Specific Number from a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2283,7 +2283,7 @@ class NumberPoolsApi
      * Delete a Specific Number from a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2388,7 +2388,7 @@ class NumberPoolsApi
      * Delete a Specific Number from a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2414,7 +2414,7 @@ class NumberPoolsApi
      * Delete a Specific Number from a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2469,7 +2469,7 @@ class NumberPoolsApi
      * Create request for operation 'deleteaSpecificNumberfromaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2593,7 +2593,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -2614,7 +2614,7 @@ class NumberPoolsApi
      * Delete an Allocation Job
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2637,7 +2637,7 @@ class NumberPoolsApi
      * Delete an Allocation Job
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2742,7 +2742,7 @@ class NumberPoolsApi
      * Delete an Allocation Job
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2768,7 +2768,7 @@ class NumberPoolsApi
      * Delete an Allocation Job
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2823,7 +2823,7 @@ class NumberPoolsApi
      * Create request for operation 'deleteanAllocationJob'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2947,7 +2947,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -2968,7 +2968,7 @@ class NumberPoolsApi
      * Edit Information for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -2991,7 +2991,7 @@ class NumberPoolsApi
      * Edit Information for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3096,7 +3096,7 @@ class NumberPoolsApi
      * Edit Information for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3122,7 +3122,7 @@ class NumberPoolsApi
      * Edit Information for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3177,7 +3177,7 @@ class NumberPoolsApi
      * Create request for operation 'editInformationforaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3299,7 +3299,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -3320,7 +3320,7 @@ class NumberPoolsApi
      * Get Allocation Jobs
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3342,7 +3342,7 @@ class NumberPoolsApi
      * Get Allocation Jobs
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3446,7 +3446,7 @@ class NumberPoolsApi
      * Get Allocation Jobs
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3471,7 +3471,7 @@ class NumberPoolsApi
      * Get Allocation Jobs
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3525,7 +3525,7 @@ class NumberPoolsApi
      * Create request for operation 'getAllocationJobs'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3634,7 +3634,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -3655,7 +3655,7 @@ class NumberPoolsApi
      * Get Count of Available Numbers in a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3677,7 +3677,7 @@ class NumberPoolsApi
      * Get Count of Available Numbers in a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3781,7 +3781,7 @@ class NumberPoolsApi
      * Get Count of Available Numbers in a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3806,7 +3806,7 @@ class NumberPoolsApi
      * Get Count of Available Numbers in a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3860,7 +3860,7 @@ class NumberPoolsApi
      * Create request for operation 'getCountofAvailableNumbersinaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -3969,7 +3969,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -3990,7 +3990,7 @@ class NumberPoolsApi
      * Get Details About a Single Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4012,7 +4012,7 @@ class NumberPoolsApi
      * Get Details About a Single Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4116,7 +4116,7 @@ class NumberPoolsApi
      * Get Details About a Single Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4141,7 +4141,7 @@ class NumberPoolsApi
      * Get Details About a Single Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4195,7 +4195,7 @@ class NumberPoolsApi
      * Create request for operation 'getDetailsAboutaSingleNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4304,7 +4304,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -4325,7 +4325,7 @@ class NumberPoolsApi
      * Get Details About an Allocation Job
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4348,7 +4348,7 @@ class NumberPoolsApi
      * Get Details About an Allocation Job
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4453,7 +4453,7 @@ class NumberPoolsApi
      * Get Details About an Allocation Job
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4479,7 +4479,7 @@ class NumberPoolsApi
      * Get Details About an Allocation Job
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4534,7 +4534,7 @@ class NumberPoolsApi
      * Create request for operation 'getDetailsAboutanAllocationJob'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4658,7 +4658,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -4679,7 +4679,7 @@ class NumberPoolsApi
      * Get Inbound References for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4701,7 +4701,7 @@ class NumberPoolsApi
      * Get Inbound References for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4805,7 +4805,7 @@ class NumberPoolsApi
      * Get Inbound References for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4830,7 +4830,7 @@ class NumberPoolsApi
      * Get Inbound References for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4884,7 +4884,7 @@ class NumberPoolsApi
      * Create request for operation 'getInboundReferencesforaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -4993,7 +4993,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -5014,7 +5014,7 @@ class NumberPoolsApi
      * Get Number Pools Associated With Your Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5035,7 +5035,7 @@ class NumberPoolsApi
      * Get Number Pools Associated With Your Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5138,7 +5138,7 @@ class NumberPoolsApi
      * Get Number Pools Associated With Your Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5162,7 +5162,7 @@ class NumberPoolsApi
      * Get Number Pools Associated With Your Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5215,7 +5215,7 @@ class NumberPoolsApi
      * Create request for operation 'getNumberPoolsAssociatedWithYourAccount'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5309,7 +5309,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -5330,7 +5330,7 @@ class NumberPoolsApi
      * Get Numbers Currently In Use
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5352,7 +5352,7 @@ class NumberPoolsApi
      * Get Numbers Currently In Use
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5456,7 +5456,7 @@ class NumberPoolsApi
      * Get Numbers Currently In Use
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5481,7 +5481,7 @@ class NumberPoolsApi
      * Get Numbers Currently In Use
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5535,7 +5535,7 @@ class NumberPoolsApi
      * Create request for operation 'getNumbersCurrentlyInUse'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5644,7 +5644,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -5665,7 +5665,7 @@ class NumberPoolsApi
      * Get Numbers for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5687,7 +5687,7 @@ class NumberPoolsApi
      * Get Numbers for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5791,7 +5791,7 @@ class NumberPoolsApi
      * Get Numbers for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5816,7 +5816,7 @@ class NumberPoolsApi
      * Get Numbers for a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5870,7 +5870,7 @@ class NumberPoolsApi
      * Create request for operation 'getNumbersforaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -5979,7 +5979,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -6000,7 +6000,7 @@ class NumberPoolsApi
      * Get number pool stats
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $type Optional  - If the &lt;b&gt;type&lt;/b&gt; parameter is not added it will default to &lt;b&gt;day&lt;/b&gt;. &lt;h6&gt;Options&lt;/h6&gt; &lt;b&gt;day&lt;/b&gt;&lt;br&gt; Shows the stats  for the current day&lt;br&gt;&lt;br&gt; &lt;b&gt;month&lt;/b&gt;&lt;br&gt; Shows the stats  for the current month (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -6022,7 +6022,7 @@ class NumberPoolsApi
      * Get number pool stats
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $type Optional  - If the &lt;b&gt;type&lt;/b&gt; parameter is not added it will default to &lt;b&gt;day&lt;/b&gt;. &lt;h6&gt;Options&lt;/h6&gt; &lt;b&gt;day&lt;/b&gt;&lt;br&gt; Shows the stats  for the current day&lt;br&gt;&lt;br&gt; &lt;b&gt;month&lt;/b&gt;&lt;br&gt; Shows the stats  for the current month (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -6126,7 +6126,7 @@ class NumberPoolsApi
      * Get number pool stats
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $type Optional  - If the &lt;b&gt;type&lt;/b&gt; parameter is not added it will default to &lt;b&gt;day&lt;/b&gt;. &lt;h6&gt;Options&lt;/h6&gt; &lt;b&gt;day&lt;/b&gt;&lt;br&gt; Shows the stats  for the current day&lt;br&gt;&lt;br&gt; &lt;b&gt;month&lt;/b&gt;&lt;br&gt; Shows the stats  for the current month (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -6151,7 +6151,7 @@ class NumberPoolsApi
      * Get number pool stats
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $type Optional  - If the &lt;b&gt;type&lt;/b&gt; parameter is not added it will default to &lt;b&gt;day&lt;/b&gt;. &lt;h6&gt;Options&lt;/h6&gt; &lt;b&gt;day&lt;/b&gt;&lt;br&gt; Shows the stats  for the current day&lt;br&gt;&lt;br&gt; &lt;b&gt;month&lt;/b&gt;&lt;br&gt; Shows the stats  for the current month (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -6205,7 +6205,7 @@ class NumberPoolsApi
      * Create request for operation 'getnumberpoolstats'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $type Optional  - If the &lt;b&gt;type&lt;/b&gt; parameter is not added it will default to &lt;b&gt;day&lt;/b&gt;. &lt;h6&gt;Options&lt;/h6&gt; &lt;b&gt;day&lt;/b&gt;&lt;br&gt; Shows the stats  for the current day&lt;br&gt;&lt;br&gt; &lt;b&gt;month&lt;/b&gt;&lt;br&gt; Shows the stats  for the current month (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
@@ -6315,7 +6315,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -6336,7 +6336,7 @@ class NumberPoolsApi
      * Increase Size of a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6359,7 +6359,7 @@ class NumberPoolsApi
      * Increase Size of a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6464,7 +6464,7 @@ class NumberPoolsApi
      * Increase Size of a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6490,7 +6490,7 @@ class NumberPoolsApi
      * Increase Size of a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6545,7 +6545,7 @@ class NumberPoolsApi
      * Create request for operation 'increaseSizeofaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6667,7 +6667,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -6688,7 +6688,7 @@ class NumberPoolsApi
      * Remove a Publisher from a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6711,7 +6711,7 @@ class NumberPoolsApi
      * Remove a Publisher from a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6816,7 +6816,7 @@ class NumberPoolsApi
      * Remove a Publisher from a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6842,7 +6842,7 @@ class NumberPoolsApi
      * Remove a Publisher from a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -6897,7 +6897,7 @@ class NumberPoolsApi
      * Create request for operation 'removeaPublisherfromaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7021,7 +7021,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -7042,7 +7042,7 @@ class NumberPoolsApi
      * Replace Numbers In a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7065,7 +7065,7 @@ class NumberPoolsApi
      * Replace Numbers In a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7170,7 +7170,7 @@ class NumberPoolsApi
      * Replace Numbers In a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7196,7 +7196,7 @@ class NumberPoolsApi
      * Replace Numbers In a Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7251,7 +7251,7 @@ class NumberPoolsApi
      * Create request for operation 'replaceNumbersInaNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7373,7 +7373,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -7394,7 +7394,7 @@ class NumberPoolsApi
      * Verify Numbers in Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7416,7 +7416,7 @@ class NumberPoolsApi
      * Verify Numbers in Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7520,7 +7520,7 @@ class NumberPoolsApi
      * Verify Numbers in Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7545,7 +7545,7 @@ class NumberPoolsApi
      * Verify Numbers in Number Pool
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7599,7 +7599,7 @@ class NumberPoolsApi
      * Create request for operation 'verifyNumbersinNumberPool'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: http://http://api.ringba.com/v2/
+     * URL: http://api.ringba.com/v2/
      *
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (required)
      * @param  string $accountId  (required)
@@ -7708,7 +7708,7 @@ class NumberPoolsApi
             $headers
         );
 
-        $operationHosts = ["http://http://api.ringba.com/v2/"];
+        $operationHosts = ["http://api.ringba.com/v2/"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
