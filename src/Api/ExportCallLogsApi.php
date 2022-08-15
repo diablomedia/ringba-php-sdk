@@ -121,7 +121,7 @@ class ExportCallLogsApi
      * Export CSV By Job Id
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
@@ -143,7 +143,7 @@ class ExportCallLogsApi
      * Export CSV By Job Id
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
@@ -247,7 +247,7 @@ class ExportCallLogsApi
      * Export CSV By Job Id
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
@@ -272,7 +272,7 @@ class ExportCallLogsApi
      * Export CSV By Job Id
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
@@ -326,7 +326,7 @@ class ExportCallLogsApi
      * Create request for operation 'exportCSVByJobId'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $cSVJobId  (required)
@@ -429,7 +429,7 @@ class ExportCallLogsApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -450,7 +450,7 @@ class ExportCallLogsApi
      * Export Call Log - CSV
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
@@ -472,7 +472,7 @@ class ExportCallLogsApi
      * Export Call Log - CSV
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
@@ -576,7 +576,7 @@ class ExportCallLogsApi
      * Export Call Log - CSV
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
@@ -601,7 +601,7 @@ class ExportCallLogsApi
      * Export Call Log - CSV
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
@@ -655,7 +655,7 @@ class ExportCallLogsApi
      * Create request for operation 'exportCallLogCSV'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\ExportCallLogCSVRequest $exportCallLogCSVRequest  (required)
@@ -756,7 +756,7 @@ class ExportCallLogsApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

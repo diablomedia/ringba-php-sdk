@@ -121,7 +121,7 @@ class NumberJsTagsApi
      * Create New Js Tag for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -146,7 +146,7 @@ class NumberJsTagsApi
      * Create New Js Tag for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -253,7 +253,7 @@ class NumberJsTagsApi
      * Create New Js Tag for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -281,7 +281,7 @@ class NumberJsTagsApi
      * Create New Js Tag for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -338,7 +338,7 @@ class NumberJsTagsApi
      * Create request for operation 'createNewJsTagforaNumber'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -484,7 +484,7 @@ class NumberJsTagsApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -505,7 +505,7 @@ class NumberJsTagsApi
      * Get Js Tags for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -529,7 +529,7 @@ class NumberJsTagsApi
      * Get Js Tags for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -635,7 +635,7 @@ class NumberJsTagsApi
      * Get Js Tags for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -662,7 +662,7 @@ class NumberJsTagsApi
      * Get Js Tags for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -718,7 +718,7 @@ class NumberJsTagsApi
      * Create request for operation 'getJsTagsforaNumber'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -851,7 +851,7 @@ class NumberJsTagsApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -872,7 +872,7 @@ class NumberJsTagsApi
      * Modify Js Tag for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -898,7 +898,7 @@ class NumberJsTagsApi
      * Modify Js Tag for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1006,7 +1006,7 @@ class NumberJsTagsApi
      * Modify Js Tag for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1035,7 +1035,7 @@ class NumberJsTagsApi
      * Modify Js Tag for a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1093,7 +1093,7 @@ class NumberJsTagsApi
      * Create request for operation 'modifyJsTagforaNumber'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1254,7 +1254,7 @@ class NumberJsTagsApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1275,7 +1275,7 @@ class NumberJsTagsApi
      * Remove a Js Tag from a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1299,7 +1299,7 @@ class NumberJsTagsApi
      * Remove a Js Tag from a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1405,7 +1405,7 @@ class NumberJsTagsApi
      * Remove a Js Tag from a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1432,7 +1432,7 @@ class NumberJsTagsApi
      * Remove a Js Tag from a Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1488,7 +1488,7 @@ class NumberJsTagsApi
      * Create request for operation 'removeaJsTagfromaNumber'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1621,7 +1621,7 @@ class NumberJsTagsApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

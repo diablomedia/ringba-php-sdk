@@ -58,7 +58,7 @@ class RemoveIVRTreefromaCampaign implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign29',
+        'campaign' => '\Ringba\Model\Campaign30',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class RemoveIVRTreefromaCampaign implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign29
+     * @return \Ringba\Model\Campaign30
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class RemoveIVRTreefromaCampaign implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign29 $campaign campaign
+     * @param \Ringba\Model\Campaign30 $campaign campaign
      *
      * @return self
      */

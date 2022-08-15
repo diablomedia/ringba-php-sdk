@@ -121,7 +121,7 @@ class CampaignNumbersApi
      * Add Publisher Number to a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -144,7 +144,7 @@ class CampaignNumbersApi
      * Add Publisher Number to a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -249,7 +249,7 @@ class CampaignNumbersApi
      * Add Publisher Number to a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -275,7 +275,7 @@ class CampaignNumbersApi
      * Add Publisher Number to a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -330,7 +330,7 @@ class CampaignNumbersApi
      * Create request for operation 'addPublisherNumbertoaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -446,7 +446,7 @@ class CampaignNumbersApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -467,7 +467,7 @@ class CampaignNumbersApi
      * Add a Default Number for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -490,7 +490,7 @@ class CampaignNumbersApi
      * Add a Default Number for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -595,7 +595,7 @@ class CampaignNumbersApi
      * Add a Default Number for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -621,7 +621,7 @@ class CampaignNumbersApi
      * Add a Default Number for a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -676,7 +676,7 @@ class CampaignNumbersApi
      * Create request for operation 'addaDefaultNumberforaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -792,7 +792,7 @@ class CampaignNumbersApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -813,7 +813,7 @@ class CampaignNumbersApi
      * Remove Default Number from a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -835,7 +835,7 @@ class CampaignNumbersApi
      * Remove Default Number from a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -939,7 +939,7 @@ class CampaignNumbersApi
      * Remove Default Number from a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -964,7 +964,7 @@ class CampaignNumbersApi
      * Remove Default Number from a Campaign
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1018,7 +1018,7 @@ class CampaignNumbersApi
      * Create request for operation 'removeDefaultNumberfromaCampaign'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1121,7 +1121,7 @@ class CampaignNumbersApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

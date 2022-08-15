@@ -68,7 +68,7 @@ class Campaign15 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'bool',
         'affiliateNumbers' => '\Ringba\Model\AffiliateNumber11[]',
         'deDupeSettings' => '\Ringba\Model\DeDupeSettings',
-        'routes' => '\Ringba\Model\Route9[]',
+        'routes' => '\Ringba\Model\Route8[]',
         'duplicateSettings' => '\Ringba\Model\DuplicateSettings',
         'dialSettings' => '\Ringba\Model\DialSettings',
         'recordSetting' => '\Ringba\Model\RecordSetting',
@@ -653,7 +653,7 @@ class Campaign15 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets routes
      *
-     * @return \Ringba\Model\Route9[]
+     * @return \Ringba\Model\Route8[]
      */
     public function getRoutes()
     {
@@ -663,7 +663,7 @@ class Campaign15 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets routes
      *
-     * @param \Ringba\Model\Route9[] $routes 
+     * @param \Ringba\Model\Route8[] $routes 
      *
      * @return self
      */

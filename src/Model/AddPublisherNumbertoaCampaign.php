@@ -58,7 +58,7 @@ class AddPublisherNumbertoaCampaign implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign7',
+        'campaign' => '\Ringba\Model\Campaign8',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls1',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class AddPublisherNumbertoaCampaign implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign7
+     * @return \Ringba\Model\Campaign8
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class AddPublisherNumbertoaCampaign implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign7 $campaign campaign
+     * @param \Ringba\Model\Campaign8 $campaign campaign
      *
      * @return self
      */

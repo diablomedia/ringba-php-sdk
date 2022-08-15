@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transactionId** | **string** |  |
-**campaign** | [**\Ringba\Model\Campaign24**](Campaign24.md) |  |
+**campaign** | [**\Ringba\Model\Campaign25**](Campaign25.md) |  |
 **jsTags** | [**\Ringba\Model\JsTags1**](JsTags1.md) |  |
 **pubNumberEnrichmentUrls** | [**\Ringba\Model\PubNumberEnrichmentUrls**](PubNumberEnrichmentUrls.md) |  |
 **rtb** | [**\Ringba\Model\Rtb**](Rtb.md) |  |

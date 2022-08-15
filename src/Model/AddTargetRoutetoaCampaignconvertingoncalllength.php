@@ -58,7 +58,7 @@ class AddTargetRoutetoaCampaignconvertingoncalllength implements ModelInterface,
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign15',
+        'campaign' => '\Ringba\Model\Campaign16',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls7',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class AddTargetRoutetoaCampaignconvertingoncalllength implements ModelInterface,
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign15
+     * @return \Ringba\Model\Campaign16
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class AddTargetRoutetoaCampaignconvertingoncalllength implements ModelInterface,
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign15 $campaign campaign
+     * @param \Ringba\Model\Campaign16 $campaign campaign
      *
      * @return self
      */

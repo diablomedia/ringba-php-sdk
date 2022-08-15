@@ -1,25 +1,26 @@
-# # Campaign14
+# # Campaign26
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**defaultPayout** | [**\Ringba\Model\DefaultPayout**](DefaultPayout.md) |  |
-**defaultPayouts** | [**\Ringba\Model\DefaultPayout[]**](DefaultPayout.md) |  |
+**defaultPayout** | [**\Ringba\Model\DefaultPayout2**](DefaultPayout2.md) |  |
+**defaultPayouts** | [**\Ringba\Model\DefaultPayout3[]**](DefaultPayout3.md) |  |
 **ivrEnabled** | **bool** |  |
 **userCampaignId** | **string** |  |
 **countryCode** | **string** |  |
 **completed** | **bool** |  |
 **distributionSetting** | **string** |  |
+**offerId** | **string** |  |
 **evalAnonymDuplication** | **bool** |  |
 **payoutDupesGlobal** | **bool** |  |
-**affiliateNumbers** | [**\Ringba\Model\AffiliateNumber11[]**](AffiliateNumber11.md) |  |
+**affiliateNumbers** | [**\Ringba\Model\AffiliateNumber2[]**](AffiliateNumber2.md) |  |
 **deDupeSettings** | [**\Ringba\Model\DeDupeSettings**](DeDupeSettings.md) |  |
-**routes** | [**\Ringba\Model\Route8[]**](Route8.md) |  |
+**routes** | [**\Ringba\Model\Route1[]**](Route1.md) |  |
 **duplicateSettings** | [**\Ringba\Model\DuplicateSettings**](DuplicateSettings.md) |  |
 **dialSettings** | [**\Ringba\Model\DialSettings**](DialSettings.md) |  |
 **recordSetting** | [**\Ringba\Model\RecordSetting**](RecordSetting.md) |  |
-**affiliates** | [**\Ringba\Model\Affiliate2[]**](Affiliate2.md) |  |
+**affiliates** | [**\Ringba\Model\Affiliate45[]**](Affiliate45.md) |  |
 **id** | **string** |  |
 **name** | **string** |  |
 **accountId** | **string** |  |

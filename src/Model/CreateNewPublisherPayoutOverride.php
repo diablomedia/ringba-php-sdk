@@ -58,7 +58,7 @@ class CreateNewPublisherPayoutOverride implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign24',
+        'campaign' => '\Ringba\Model\Campaign25',
         'jsTags' => '\Ringba\Model\JsTags1',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class CreateNewPublisherPayoutOverride implements ModelInterface, ArrayAccess, \
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign24
+     * @return \Ringba\Model\Campaign25
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class CreateNewPublisherPayoutOverride implements ModelInterface, ArrayAccess, \
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign24 $campaign campaign
+     * @param \Ringba\Model\Campaign25 $campaign campaign
      *
      * @return self
      */

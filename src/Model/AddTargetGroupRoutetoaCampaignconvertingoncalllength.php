@@ -58,7 +58,7 @@ class AddTargetGroupRoutetoaCampaignconvertingoncalllength implements ModelInter
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign16',
+        'campaign' => '\Ringba\Model\Campaign17',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls7',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class AddTargetGroupRoutetoaCampaignconvertingoncalllength implements ModelInter
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign16
+     * @return \Ringba\Model\Campaign17
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class AddTargetGroupRoutetoaCampaignconvertingoncalllength implements ModelInter
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign16 $campaign campaign
+     * @param \Ringba\Model\Campaign17 $campaign campaign
      *
      * @return self
      */

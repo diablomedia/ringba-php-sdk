@@ -121,19 +121,18 @@ class TCPAShieldApi
      * Lookup Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
      * @param  int $number Phone number with country code that you want to look up (required)
-     * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ringba\Model\LookupNumberNumbernotblocked|string
      */
-    public function lookupNumber($number, $accountId, $authorization = null)
+    public function lookupNumber($number, $authorization = null)
     {
-        list($response) = $this->lookupNumberWithHttpInfo($number, $accountId, $authorization);
+        list($response) = $this->lookupNumberWithHttpInfo($number, $authorization);
         return $response;
     }
 
@@ -143,19 +142,18 @@ class TCPAShieldApi
      * Lookup Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
      * @param  int $number Phone number with country code that you want to look up (required)
-     * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \Ringba\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ringba\Model\LookupNumberNumbernotblocked|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lookupNumberWithHttpInfo($number, $accountId, $authorization = null)
+    public function lookupNumberWithHttpInfo($number, $authorization = null)
     {
-        $request = $this->lookupNumberRequest($number, $accountId, $authorization);
+        $request = $this->lookupNumberRequest($number, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -270,18 +268,17 @@ class TCPAShieldApi
      * Lookup Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
      * @param  int $number Phone number with country code that you want to look up (required)
-     * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lookupNumberAsync($number, $accountId, $authorization = null)
+    public function lookupNumberAsync($number, $authorization = null)
     {
-        return $this->lookupNumberAsyncWithHttpInfo($number, $accountId, $authorization)
+        return $this->lookupNumberAsyncWithHttpInfo($number, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -295,19 +292,18 @@ class TCPAShieldApi
      * Lookup Number
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
      * @param  int $number Phone number with country code that you want to look up (required)
-     * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lookupNumberAsyncWithHttpInfo($number, $accountId, $authorization = null)
+    public function lookupNumberAsyncWithHttpInfo($number, $authorization = null)
     {
         $returnType = '\Ringba\Model\LookupNumberNumbernotblocked';
-        $request = $this->lookupNumberRequest($number, $accountId, $authorization);
+        $request = $this->lookupNumberRequest($number, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -349,16 +345,15 @@ class TCPAShieldApi
      * Create request for operation 'lookupNumber'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
      * @param  int $number Phone number with country code that you want to look up (required)
-     * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function lookupNumberRequest($number, $accountId, $authorization = null)
+    public function lookupNumberRequest($number, $authorization = null)
     {
         // verify the required parameter 'number' is set
         if ($number === null || (is_array($number) && count($number) === 0)) {
@@ -366,14 +361,8 @@ class TCPAShieldApi
                 'Missing the required parameter $number when calling lookupNumber'
             );
         }
-        // verify the required parameter 'accountId' is set
-        if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountId when calling lookupNumber'
-            );
-        }
 
-        $resourcePath = '/api/v1/{accountId}/lookup';
+        $resourcePath = '/lookup';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -395,14 +384,6 @@ class TCPAShieldApi
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
         }
 
-        // path params
-        if ($accountId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountId' . '}',
-                ObjectSerializer::toPathValue($accountId),
-                $resourcePath
-            );
-        }
 
 
         if ($multipart) {
@@ -453,7 +434,7 @@ class TCPAShieldApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["http://example.com/api/v1/{accountId}"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -474,9 +455,8 @@ class TCPAShieldApi
      * Lookup Numbers Bulk
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
-     * @param  string $accountId  (required)
      * @param  \Ringba\Model\LookupNumbersBulkRequest $lookupNumbersBulkRequest  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
@@ -484,9 +464,9 @@ class TCPAShieldApi
      * @throws \InvalidArgumentException
      * @return string[]
      */
-    public function lookupNumbersBulk($accountId, $lookupNumbersBulkRequest, $authorization = null)
+    public function lookupNumbersBulk($lookupNumbersBulkRequest, $authorization = null)
     {
-        list($response) = $this->lookupNumbersBulkWithHttpInfo($accountId, $lookupNumbersBulkRequest, $authorization);
+        list($response) = $this->lookupNumbersBulkWithHttpInfo($lookupNumbersBulkRequest, $authorization);
         return $response;
     }
 
@@ -496,9 +476,8 @@ class TCPAShieldApi
      * Lookup Numbers Bulk
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
-     * @param  string $accountId  (required)
      * @param  \Ringba\Model\LookupNumbersBulkRequest $lookupNumbersBulkRequest  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
@@ -506,9 +485,9 @@ class TCPAShieldApi
      * @throws \InvalidArgumentException
      * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function lookupNumbersBulkWithHttpInfo($accountId, $lookupNumbersBulkRequest, $authorization = null)
+    public function lookupNumbersBulkWithHttpInfo($lookupNumbersBulkRequest, $authorization = null)
     {
-        $request = $this->lookupNumbersBulkRequest($accountId, $lookupNumbersBulkRequest, $authorization);
+        $request = $this->lookupNumbersBulkRequest($lookupNumbersBulkRequest, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -600,18 +579,17 @@ class TCPAShieldApi
      * Lookup Numbers Bulk
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
-     * @param  string $accountId  (required)
      * @param  \Ringba\Model\LookupNumbersBulkRequest $lookupNumbersBulkRequest  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lookupNumbersBulkAsync($accountId, $lookupNumbersBulkRequest, $authorization = null)
+    public function lookupNumbersBulkAsync($lookupNumbersBulkRequest, $authorization = null)
     {
-        return $this->lookupNumbersBulkAsyncWithHttpInfo($accountId, $lookupNumbersBulkRequest, $authorization)
+        return $this->lookupNumbersBulkAsyncWithHttpInfo($lookupNumbersBulkRequest, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -625,19 +603,18 @@ class TCPAShieldApi
      * Lookup Numbers Bulk
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
-     * @param  string $accountId  (required)
      * @param  \Ringba\Model\LookupNumbersBulkRequest $lookupNumbersBulkRequest  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lookupNumbersBulkAsyncWithHttpInfo($accountId, $lookupNumbersBulkRequest, $authorization = null)
+    public function lookupNumbersBulkAsyncWithHttpInfo($lookupNumbersBulkRequest, $authorization = null)
     {
         $returnType = 'string[]';
-        $request = $this->lookupNumbersBulkRequest($accountId, $lookupNumbersBulkRequest, $authorization);
+        $request = $this->lookupNumbersBulkRequest($lookupNumbersBulkRequest, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -679,23 +656,16 @@ class TCPAShieldApi
      * Create request for operation 'lookupNumbersBulk'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: http://example.com/api/v1/{accountId}
      *
-     * @param  string $accountId  (required)
      * @param  \Ringba\Model\LookupNumbersBulkRequest $lookupNumbersBulkRequest  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function lookupNumbersBulkRequest($accountId, $lookupNumbersBulkRequest, $authorization = null)
+    public function lookupNumbersBulkRequest($lookupNumbersBulkRequest, $authorization = null)
     {
-        // verify the required parameter 'accountId' is set
-        if ($accountId === null || (is_array($accountId) && count($accountId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accountId when calling lookupNumbersBulk'
-            );
-        }
         // verify the required parameter 'lookupNumbersBulkRequest' is set
         if ($lookupNumbersBulkRequest === null || (is_array($lookupNumbersBulkRequest) && count($lookupNumbersBulkRequest) === 0)) {
             throw new \InvalidArgumentException(
@@ -703,7 +673,7 @@ class TCPAShieldApi
             );
         }
 
-        $resourcePath = '/api/v1/{accountId}/lookupbulk';
+        $resourcePath = '/lookupbulk';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -716,14 +686,6 @@ class TCPAShieldApi
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
         }
 
-        // path params
-        if ($accountId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountId' . '}',
-                ObjectSerializer::toPathValue($accountId),
-                $resourcePath
-            );
-        }
 
 
         if ($multipart) {
@@ -780,7 +742,7 @@ class TCPAShieldApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["http://example.com/api/v1/{accountId}"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

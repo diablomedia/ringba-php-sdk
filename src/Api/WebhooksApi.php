@@ -121,7 +121,7 @@ class WebhooksApi
      * Create New Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
@@ -143,7 +143,7 @@ class WebhooksApi
      * Create New Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
@@ -247,7 +247,7 @@ class WebhooksApi
      * Create New Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
@@ -272,7 +272,7 @@ class WebhooksApi
      * Create New Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
@@ -326,7 +326,7 @@ class WebhooksApi
      * Create request for operation 'createNewWebhook'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewWebhookRequest $createNewWebhookRequest  (required)
@@ -427,7 +427,7 @@ class WebhooksApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -448,7 +448,7 @@ class WebhooksApi
      * Delete a Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -470,7 +470,7 @@ class WebhooksApi
      * Delete a Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -574,7 +574,7 @@ class WebhooksApi
      * Delete a Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -599,7 +599,7 @@ class WebhooksApi
      * Delete a Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -653,7 +653,7 @@ class WebhooksApi
      * Create request for operation 'deleteaWebhook'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -756,7 +756,7 @@ class WebhooksApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -777,7 +777,7 @@ class WebhooksApi
      * Get Details for a Single Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -799,7 +799,7 @@ class WebhooksApi
      * Get Details for a Single Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -903,7 +903,7 @@ class WebhooksApi
      * Get Details for a Single Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -928,7 +928,7 @@ class WebhooksApi
      * Get Details for a Single Webhook
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -982,7 +982,7 @@ class WebhooksApi
      * Create request for operation 'getDetailsforaSingleWebhook'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $webHookId  (required)
@@ -1085,7 +1085,7 @@ class WebhooksApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1106,7 +1106,7 @@ class WebhooksApi
      * Get Webhooks
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1127,7 +1127,7 @@ class WebhooksApi
      * Get Webhooks
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1230,7 +1230,7 @@ class WebhooksApi
      * Get Webhooks
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1254,7 +1254,7 @@ class WebhooksApi
      * Get Webhooks
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1307,7 +1307,7 @@ class WebhooksApi
      * Create request for operation 'getWebhooks'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1395,7 +1395,7 @@ class WebhooksApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

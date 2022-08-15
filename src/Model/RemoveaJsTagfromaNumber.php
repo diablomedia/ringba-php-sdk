@@ -58,7 +58,7 @@ class RemoveaJsTagfromaNumber implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign11',
+        'campaign' => '\Ringba\Model\Campaign12',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class RemoveaJsTagfromaNumber implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign11
+     * @return \Ringba\Model\Campaign12
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class RemoveaJsTagfromaNumber implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign11 $campaign campaign
+     * @param \Ringba\Model\Campaign12 $campaign campaign
      *
      * @return self
      */

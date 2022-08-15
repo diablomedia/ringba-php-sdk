@@ -1,6 +1,6 @@
 <?php
 /**
- * Campaign22
+ * Campaign12
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Ringba\ObjectSerializer;
 
 /**
- * Campaign22 Class Doc Comment
+ * Campaign12 Class Doc Comment
  *
  * @category Class
  * @package  Ringba
@@ -40,7 +40,7 @@ use \Ringba\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Campaign22 implements ModelInterface, ArrayAccess, \JsonSerializable
+class Campaign12 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Campaign22 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Campaign22';
+    protected static $openAPIModelName = 'Campaign12';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class Campaign22 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'defaultPayout' => '\Ringba\Model\DefaultPayout40',
-        'defaultPayouts' => '\Ringba\Model\DefaultPayout3[]',
+        'defaultPayout' => '\Ringba\Model\DefaultPayout',
+        'defaultPayouts' => '\Ringba\Model\DefaultPayout[]',
         'ivrEnabled' => 'bool',
         'userCampaignId' => 'string',
         'countryCode' => 'string',
@@ -398,7 +398,7 @@ class Campaign22 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets defaultPayout
      *
-     * @return \Ringba\Model\DefaultPayout40
+     * @return \Ringba\Model\DefaultPayout
      */
     public function getDefaultPayout()
     {
@@ -408,7 +408,7 @@ class Campaign22 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets defaultPayout
      *
-     * @param \Ringba\Model\DefaultPayout40 $defaultPayout defaultPayout
+     * @param \Ringba\Model\DefaultPayout $defaultPayout defaultPayout
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class Campaign22 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets defaultPayouts
      *
-     * @return \Ringba\Model\DefaultPayout3[]
+     * @return \Ringba\Model\DefaultPayout[]
      */
     public function getDefaultPayouts()
     {
@@ -432,7 +432,7 @@ class Campaign22 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets defaultPayouts
      *
-     * @param \Ringba\Model\DefaultPayout3[] $defaultPayouts 
+     * @param \Ringba\Model\DefaultPayout[] $defaultPayouts 
      *
      * @return self
      */

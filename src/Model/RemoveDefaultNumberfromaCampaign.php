@@ -58,7 +58,7 @@ class RemoveDefaultNumberfromaCampaign implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign8',
+        'campaign' => '\Ringba\Model\Campaign9',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls1',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class RemoveDefaultNumberfromaCampaign implements ModelInterface, ArrayAccess, \
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign8
+     * @return \Ringba\Model\Campaign9
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class RemoveDefaultNumberfromaCampaign implements ModelInterface, ArrayAccess, \
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign8 $campaign campaign
+     * @param \Ringba\Model\Campaign9 $campaign campaign
      *
      * @return self
      */

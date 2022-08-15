@@ -69,7 +69,7 @@ class Campaign29 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'bool',
         'affiliateNumbers' => '\Ringba\Model\AffiliateNumber25[]',
         'deDupeSettings' => '\Ringba\Model\DeDupeSettings',
-        'routes' => '\Ringba\Model\Route1[]',
+        'callIVRTree' => '\Ringba\Model\CallIVRTree6',
         'duplicateSettings' => '\Ringba\Model\DuplicateSettings',
         'dialSettings' => '\Ringba\Model\DialSettings',
         'recordSetting' => '\Ringba\Model\RecordSetting',
@@ -101,7 +101,7 @@ class Campaign29 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => null,
         'affiliateNumbers' => null,
         'deDupeSettings' => null,
-        'routes' => null,
+        'callIVRTree' => null,
         'duplicateSettings' => null,
         'dialSettings' => null,
         'recordSetting' => null,
@@ -152,7 +152,7 @@ class Campaign29 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'payoutDupesGlobal',
         'affiliateNumbers' => 'affiliateNumbers',
         'deDupeSettings' => 'deDupeSettings',
-        'routes' => 'routes',
+        'callIVRTree' => 'callIVRTree',
         'duplicateSettings' => 'duplicateSettings',
         'dialSettings' => 'dialSettings',
         'recordSetting' => 'recordSetting',
@@ -182,7 +182,7 @@ class Campaign29 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'setPayoutDupesGlobal',
         'affiliateNumbers' => 'setAffiliateNumbers',
         'deDupeSettings' => 'setDeDupeSettings',
-        'routes' => 'setRoutes',
+        'callIVRTree' => 'setCallIVRTree',
         'duplicateSettings' => 'setDuplicateSettings',
         'dialSettings' => 'setDialSettings',
         'recordSetting' => 'setRecordSetting',
@@ -212,7 +212,7 @@ class Campaign29 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'getPayoutDupesGlobal',
         'affiliateNumbers' => 'getAffiliateNumbers',
         'deDupeSettings' => 'getDeDupeSettings',
-        'routes' => 'getRoutes',
+        'callIVRTree' => 'getCallIVRTree',
         'duplicateSettings' => 'getDuplicateSettings',
         'dialSettings' => 'getDialSettings',
         'recordSetting' => 'getRecordSetting',
@@ -293,7 +293,7 @@ class Campaign29 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['payoutDupesGlobal'] = $data['payoutDupesGlobal'] ?? null;
         $this->container['affiliateNumbers'] = $data['affiliateNumbers'] ?? null;
         $this->container['deDupeSettings'] = $data['deDupeSettings'] ?? null;
-        $this->container['routes'] = $data['routes'] ?? null;
+        $this->container['callIVRTree'] = $data['callIVRTree'] ?? null;
         $this->container['duplicateSettings'] = $data['duplicateSettings'] ?? null;
         $this->container['dialSettings'] = $data['dialSettings'] ?? null;
         $this->container['recordSetting'] = $data['recordSetting'] ?? null;
@@ -350,8 +350,8 @@ class Campaign29 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['deDupeSettings'] === null) {
             $invalidProperties[] = "'deDupeSettings' can't be null";
         }
-        if ($this->container['routes'] === null) {
-            $invalidProperties[] = "'routes' can't be null";
+        if ($this->container['callIVRTree'] === null) {
+            $invalidProperties[] = "'callIVRTree' can't be null";
         }
         if ($this->container['duplicateSettings'] === null) {
             $invalidProperties[] = "'duplicateSettings' can't be null";
@@ -684,25 +684,25 @@ class Campaign29 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets routes
+     * Gets callIVRTree
      *
-     * @return \Ringba\Model\Route1[]
+     * @return \Ringba\Model\CallIVRTree6
      */
-    public function getRoutes()
+    public function getCallIVRTree()
     {
-        return $this->container['routes'];
+        return $this->container['callIVRTree'];
     }
 
     /**
-     * Sets routes
+     * Sets callIVRTree
      *
-     * @param \Ringba\Model\Route1[] $routes 
+     * @param \Ringba\Model\CallIVRTree6 $callIVRTree callIVRTree
      *
      * @return self
      */
-    public function setRoutes($routes)
+    public function setCallIVRTree($callIVRTree)
     {
-        $this->container['routes'] = $routes;
+        $this->container['callIVRTree'] = $callIVRTree;
 
         return $this;
     }

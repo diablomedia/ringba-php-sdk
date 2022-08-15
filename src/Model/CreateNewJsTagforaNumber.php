@@ -58,7 +58,7 @@ class CreateNewJsTagforaNumber implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign11',
+        'campaign' => '\Ringba\Model\Campaign12',
         'jsTags' => '\Ringba\Model\JsTags1',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class CreateNewJsTagforaNumber implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign11
+     * @return \Ringba\Model\Campaign12
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class CreateNewJsTagforaNumber implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign11 $campaign campaign
+     * @param \Ringba\Model\Campaign12 $campaign campaign
      *
      * @return self
      */

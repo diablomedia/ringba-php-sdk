@@ -1,10 +1,10 @@
-# # Campaign24
+# # Campaign23
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**defaultPayout** | [**\Ringba\Model\DefaultPayout40**](DefaultPayout40.md) |  |
+**defaultPayout** | [**\Ringba\Model\DefaultPayout42**](DefaultPayout42.md) |  |
 **defaultPayouts** | [**\Ringba\Model\DefaultPayout3[]**](DefaultPayout3.md) |  |
 **ivrEnabled** | **bool** |  |
 **userCampaignId** | **string** |  |
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **duplicateSettings** | [**\Ringba\Model\DuplicateSettings**](DuplicateSettings.md) |  |
 **dialSettings** | [**\Ringba\Model\DialSettings**](DialSettings.md) |  |
 **recordSetting** | [**\Ringba\Model\RecordSetting**](RecordSetting.md) |  |
-**affiliates** | [**\Ringba\Model\Affiliate43[]**](Affiliate43.md) |  |
+**affiliates** | [**\Ringba\Model\Affiliate17[]**](Affiliate17.md) |  |
 **id** | **string** |  |
 **name** | **string** |  |
 **accountId** | **string** |  |

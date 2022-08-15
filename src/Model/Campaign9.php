@@ -67,13 +67,13 @@ class Campaign9 implements ModelInterface, ArrayAccess, \JsonSerializable
         'offerDraftId' => 'string',
         'evalAnonymDuplication' => 'bool',
         'payoutDupesGlobal' => 'bool',
-        'affiliateNumbers' => '\Ringba\Model\AffiliateNumber6[]',
+        'affiliateNumbers' => '\Ringba\Model\AffiliateNumber3[]',
         'deDupeSettings' => '\Ringba\Model\DeDupeSettings',
         'routes' => '\Ringba\Model\Route1[]',
         'duplicateSettings' => '\Ringba\Model\DuplicateSettings',
         'dialSettings' => '\Ringba\Model\DialSettings',
         'recordSetting' => '\Ringba\Model\RecordSetting',
-        'affiliates' => '\Ringba\Model\Affiliate9[]',
+        'affiliates' => '\Ringba\Model\Affiliate7[]',
         'id' => 'string',
         'name' => 'string',
         'accountId' => 'string',
@@ -638,7 +638,7 @@ class Campaign9 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affiliateNumbers
      *
-     * @return \Ringba\Model\AffiliateNumber6[]
+     * @return \Ringba\Model\AffiliateNumber3[]
      */
     public function getAffiliateNumbers()
     {
@@ -648,7 +648,7 @@ class Campaign9 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affiliateNumbers
      *
-     * @param \Ringba\Model\AffiliateNumber6[] $affiliateNumbers 
+     * @param \Ringba\Model\AffiliateNumber3[] $affiliateNumbers 
      *
      * @return self
      */
@@ -782,7 +782,7 @@ class Campaign9 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affiliates
      *
-     * @return \Ringba\Model\Affiliate9[]
+     * @return \Ringba\Model\Affiliate7[]
      */
     public function getAffiliates()
     {
@@ -792,7 +792,7 @@ class Campaign9 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affiliates
      *
-     * @param \Ringba\Model\Affiliate9[] $affiliates 
+     * @param \Ringba\Model\Affiliate7[] $affiliates 
      *
      * @return self
      */

@@ -1,11 +1,11 @@
-# # Campaign22
+# # Campaign12
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**defaultPayout** | [**\Ringba\Model\DefaultPayout40**](DefaultPayout40.md) |  |
-**defaultPayouts** | [**\Ringba\Model\DefaultPayout3[]**](DefaultPayout3.md) |  |
+**defaultPayout** | [**\Ringba\Model\DefaultPayout**](DefaultPayout.md) |  |
+**defaultPayouts** | [**\Ringba\Model\DefaultPayout[]**](DefaultPayout.md) |  |
 **ivrEnabled** | **bool** |  |
 **userCampaignId** | **string** |  |
 **countryCode** | **string** |  |

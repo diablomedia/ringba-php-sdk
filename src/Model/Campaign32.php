@@ -59,6 +59,7 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'campaignId' => 'string',
         'campaignName' => 'string',
+        'campaignDefaultTarget' => 'string',
         'campaignNoRoutes' => 'string'
     ];
 
@@ -72,6 +73,7 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'campaignId' => null,
         'campaignName' => null,
+        'campaignDefaultTarget' => null,
         'campaignNoRoutes' => null
     ];
 
@@ -104,6 +106,7 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'campaignId' => 'campaignId',
         'campaignName' => 'campaignName',
+        'campaignDefaultTarget' => 'campaignDefaultTarget',
         'campaignNoRoutes' => 'campaignNoRoutes'
     ];
 
@@ -115,6 +118,7 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'campaignId' => 'setCampaignId',
         'campaignName' => 'setCampaignName',
+        'campaignDefaultTarget' => 'setCampaignDefaultTarget',
         'campaignNoRoutes' => 'setCampaignNoRoutes'
     ];
 
@@ -126,6 +130,7 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'campaignId' => 'getCampaignId',
         'campaignName' => 'getCampaignName',
+        'campaignDefaultTarget' => 'getCampaignDefaultTarget',
         'campaignNoRoutes' => 'getCampaignNoRoutes'
     ];
 
@@ -188,6 +193,7 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['campaignId'] = $data['campaignId'] ?? null;
         $this->container['campaignName'] = $data['campaignName'] ?? null;
+        $this->container['campaignDefaultTarget'] = $data['campaignDefaultTarget'] ?? null;
         $this->container['campaignNoRoutes'] = $data['campaignNoRoutes'] ?? null;
     }
 
@@ -206,8 +212,8 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['campaignName'] === null) {
             $invalidProperties[] = "'campaignName' can't be null";
         }
-        if ($this->container['campaignNoRoutes'] === null) {
-            $invalidProperties[] = "'campaignNoRoutes' can't be null";
+        if ($this->container['campaignDefaultTarget'] === null) {
+            $invalidProperties[] = "'campaignDefaultTarget' can't be null";
         }
         return $invalidProperties;
     }
@@ -273,9 +279,33 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets campaignNoRoutes
+     * Gets campaignDefaultTarget
      *
      * @return string
+     */
+    public function getCampaignDefaultTarget()
+    {
+        return $this->container['campaignDefaultTarget'];
+    }
+
+    /**
+     * Sets campaignDefaultTarget
+     *
+     * @param string $campaignDefaultTarget campaignDefaultTarget
+     *
+     * @return self
+     */
+    public function setCampaignDefaultTarget($campaignDefaultTarget)
+    {
+        $this->container['campaignDefaultTarget'] = $campaignDefaultTarget;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaignNoRoutes
+     *
+     * @return string|null
      */
     public function getCampaignNoRoutes()
     {
@@ -285,7 +315,7 @@ class Campaign32 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets campaignNoRoutes
      *
-     * @param string $campaignNoRoutes campaignNoRoutes
+     * @param string|null $campaignNoRoutes campaignNoRoutes
      *
      * @return self
      */

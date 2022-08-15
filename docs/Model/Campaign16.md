@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **payoutDupesGlobal** | **bool** |  |
 **affiliateNumbers** | [**\Ringba\Model\AffiliateNumber11[]**](AffiliateNumber11.md) |  |
 **deDupeSettings** | [**\Ringba\Model\DeDupeSettings**](DeDupeSettings.md) |  |
-**routes** | [**\Ringba\Model\Route10[]**](Route10.md) |  |
+**routes** | [**\Ringba\Model\Route9[]**](Route9.md) |  |
 **duplicateSettings** | [**\Ringba\Model\DuplicateSettings**](DuplicateSettings.md) |  |
 **dialSettings** | [**\Ringba\Model\DialSettings**](DialSettings.md) |  |
 **recordSetting** | [**\Ringba\Model\RecordSetting**](RecordSetting.md) |  |

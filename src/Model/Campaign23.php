@@ -1,6 +1,6 @@
 <?php
 /**
- * Campaign19
+ * Campaign23
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Ringba\ObjectSerializer;
 
 /**
- * Campaign19 Class Doc Comment
+ * Campaign23 Class Doc Comment
  *
  * @category Class
  * @package  Ringba
@@ -40,7 +40,7 @@ use \Ringba\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
+class Campaign23 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Campaign19';
+    protected static $openAPIModelName = 'Campaign23';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'defaultPayout' => '\Ringba\Model\DefaultPayout2',
-        'defaultPayouts' => '\Ringba\Model\DefaultPayout2[]',
+        'defaultPayout' => '\Ringba\Model\DefaultPayout42',
+        'defaultPayouts' => '\Ringba\Model\DefaultPayout3[]',
         'ivrEnabled' => 'bool',
         'userCampaignId' => 'string',
         'countryCode' => 'string',
@@ -69,11 +69,11 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'bool',
         'affiliateNumbers' => '\Ringba\Model\AffiliateNumber2[]',
         'deDupeSettings' => '\Ringba\Model\DeDupeSettings',
-        'routes' => '\Ringba\Model\Route1[]',
+        'callIVRTree' => '\Ringba\Model\CallIVRTree',
         'duplicateSettings' => '\Ringba\Model\DuplicateSettings',
         'dialSettings' => '\Ringba\Model\DialSettings',
         'recordSetting' => '\Ringba\Model\RecordSetting',
-        'affiliates' => '\Ringba\Model\Affiliate4[]',
+        'affiliates' => '\Ringba\Model\Affiliate17[]',
         'id' => 'string',
         'name' => 'string',
         'accountId' => 'string',
@@ -101,7 +101,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => null,
         'affiliateNumbers' => null,
         'deDupeSettings' => null,
-        'routes' => null,
+        'callIVRTree' => null,
         'duplicateSettings' => null,
         'dialSettings' => null,
         'recordSetting' => null,
@@ -152,7 +152,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'payoutDupesGlobal',
         'affiliateNumbers' => 'affiliateNumbers',
         'deDupeSettings' => 'deDupeSettings',
-        'routes' => 'routes',
+        'callIVRTree' => 'callIVRTree',
         'duplicateSettings' => 'duplicateSettings',
         'dialSettings' => 'dialSettings',
         'recordSetting' => 'recordSetting',
@@ -182,7 +182,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'setPayoutDupesGlobal',
         'affiliateNumbers' => 'setAffiliateNumbers',
         'deDupeSettings' => 'setDeDupeSettings',
-        'routes' => 'setRoutes',
+        'callIVRTree' => 'setCallIVRTree',
         'duplicateSettings' => 'setDuplicateSettings',
         'dialSettings' => 'setDialSettings',
         'recordSetting' => 'setRecordSetting',
@@ -212,7 +212,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
         'payoutDupesGlobal' => 'getPayoutDupesGlobal',
         'affiliateNumbers' => 'getAffiliateNumbers',
         'deDupeSettings' => 'getDeDupeSettings',
-        'routes' => 'getRoutes',
+        'callIVRTree' => 'getCallIVRTree',
         'duplicateSettings' => 'getDuplicateSettings',
         'dialSettings' => 'getDialSettings',
         'recordSetting' => 'getRecordSetting',
@@ -293,7 +293,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['payoutDupesGlobal'] = $data['payoutDupesGlobal'] ?? null;
         $this->container['affiliateNumbers'] = $data['affiliateNumbers'] ?? null;
         $this->container['deDupeSettings'] = $data['deDupeSettings'] ?? null;
-        $this->container['routes'] = $data['routes'] ?? null;
+        $this->container['callIVRTree'] = $data['callIVRTree'] ?? null;
         $this->container['duplicateSettings'] = $data['duplicateSettings'] ?? null;
         $this->container['dialSettings'] = $data['dialSettings'] ?? null;
         $this->container['recordSetting'] = $data['recordSetting'] ?? null;
@@ -350,8 +350,8 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['deDupeSettings'] === null) {
             $invalidProperties[] = "'deDupeSettings' can't be null";
         }
-        if ($this->container['routes'] === null) {
-            $invalidProperties[] = "'routes' can't be null";
+        if ($this->container['callIVRTree'] === null) {
+            $invalidProperties[] = "'callIVRTree' can't be null";
         }
         if ($this->container['duplicateSettings'] === null) {
             $invalidProperties[] = "'duplicateSettings' can't be null";
@@ -398,7 +398,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets defaultPayout
      *
-     * @return \Ringba\Model\DefaultPayout2
+     * @return \Ringba\Model\DefaultPayout42
      */
     public function getDefaultPayout()
     {
@@ -408,7 +408,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets defaultPayout
      *
-     * @param \Ringba\Model\DefaultPayout2 $defaultPayout defaultPayout
+     * @param \Ringba\Model\DefaultPayout42 $defaultPayout defaultPayout
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets defaultPayouts
      *
-     * @return \Ringba\Model\DefaultPayout2[]
+     * @return \Ringba\Model\DefaultPayout3[]
      */
     public function getDefaultPayouts()
     {
@@ -432,7 +432,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets defaultPayouts
      *
-     * @param \Ringba\Model\DefaultPayout2[] $defaultPayouts 
+     * @param \Ringba\Model\DefaultPayout3[] $defaultPayouts 
      *
      * @return self
      */
@@ -684,25 +684,25 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets routes
+     * Gets callIVRTree
      *
-     * @return \Ringba\Model\Route1[]
+     * @return \Ringba\Model\CallIVRTree
      */
-    public function getRoutes()
+    public function getCallIVRTree()
     {
-        return $this->container['routes'];
+        return $this->container['callIVRTree'];
     }
 
     /**
-     * Sets routes
+     * Sets callIVRTree
      *
-     * @param \Ringba\Model\Route1[] $routes 
+     * @param \Ringba\Model\CallIVRTree $callIVRTree callIVRTree
      *
      * @return self
      */
-    public function setRoutes($routes)
+    public function setCallIVRTree($callIVRTree)
     {
-        $this->container['routes'] = $routes;
+        $this->container['callIVRTree'] = $callIVRTree;
 
         return $this;
     }
@@ -782,7 +782,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affiliates
      *
-     * @return \Ringba\Model\Affiliate4[]
+     * @return \Ringba\Model\Affiliate17[]
      */
     public function getAffiliates()
     {
@@ -792,7 +792,7 @@ class Campaign19 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affiliates
      *
-     * @param \Ringba\Model\Affiliate4[] $affiliates 
+     * @param \Ringba\Model\Affiliate17[] $affiliates 
      *
      * @return self
      */

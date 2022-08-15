@@ -58,7 +58,7 @@ class AddIVRTreetoaCampaign implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign28',
+        'campaign' => '\Ringba\Model\Campaign29',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class AddIVRTreetoaCampaign implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign28
+     * @return \Ringba\Model\Campaign29
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class AddIVRTreetoaCampaign implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign28 $campaign campaign
+     * @param \Ringba\Model\Campaign29 $campaign campaign
      *
      * @return self
      */

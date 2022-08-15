@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
 *CampaignInformationApi* | [**getCampaignsStatsonly**](docs/Api/CampaignInformationApi.md#getcampaignsstatsonly) | **GET** /{accountId}/campaigns/stats | Get Campaigns Stats only
 *CampaignInformationApi* | [**getInboundReferencesforaSingleCampaign**](docs/Api/CampaignInformationApi.md#getinboundreferencesforasinglecampaign) | **GET** /{accountId}/campaigns/{campaignId}/InboundReferences | Get Inbound References for a Single Campaign
 *CampaignInformationApi* | [**getInformationAboutaSingleCampaign**](docs/Api/CampaignInformationApi.md#getinformationaboutasinglecampaign) | **GET** /{accountId}/campaigns/{campaignId} | Get Information About a Single Campaign
+*CampaignInformationApi* | [**linkItemtoCampaign**](docs/Api/CampaignInformationApi.md#linkitemtocampaign) | **PATCH** /{accountId}/campaigns/{campaignId}/link | Link Item to Campaign
 *CampaignInformationApi* | [**updateaCampaign**](docs/Api/CampaignInformationApi.md#updateacampaign) | **PATCH** /{accountId}/campaigns/{campaignId} | Update a Campaign
 *CampaignNumbersApi* | [**addPublisherNumbertoaCampaign**](docs/Api/CampaignNumbersApi.md#addpublishernumbertoacampaign) | **PATCH** /{accountId}/campaigns/{campaignId}/affiliateNumbers | Add Publisher Number to a Campaign
 *CampaignNumbersApi* | [**addaDefaultNumberforaCampaign**](docs/Api/CampaignNumbersApi.md#addadefaultnumberforacampaign) | **PATCH** /{accountId}/campaigns/{campaignId}/defaultNumber | Add a Default Number for a Campaign
@@ -206,8 +207,8 @@ Class | Method | HTTP request | Description
 *RealTimeBiddingRTBApi* | [**gETXML**](docs/Api/RealTimeBiddingRTBApi.md#getxml) | **GET** /{rtbId}.xml | GET XML
 *RealTimeBiddingRTBApi* | [**pOSTJSON**](docs/Api/RealTimeBiddingRTBApi.md#postjson) | **POST** /{rtbId}.json | POST JSON
 *RealTimeBiddingRTBApi* | [**pOSTXML**](docs/Api/RealTimeBiddingRTBApi.md#postxml) | **POST** /{rtbId}.xml | POST XML
-*TCPAShieldApi* | [**lookupNumber**](docs/Api/TCPAShieldApi.md#lookupnumber) | **GET** /api/v1/{accountId}/lookup | Lookup Number
-*TCPAShieldApi* | [**lookupNumbersBulk**](docs/Api/TCPAShieldApi.md#lookupnumbersbulk) | **POST** /api/v1/{accountId}/lookupbulk | Lookup Numbers Bulk
+*TCPAShieldApi* | [**lookupNumber**](docs/Api/TCPAShieldApi.md#lookupnumber) | **GET** /lookup | Lookup Number
+*TCPAShieldApi* | [**lookupNumbersBulk**](docs/Api/TCPAShieldApi.md#lookupnumbersbulk) | **POST** /lookupbulk | Lookup Numbers Bulk
 *TargetGroupsApi* | [**addRemoveMultipleTargetstoFromTargetGroup**](docs/Api/TargetGroupsApi.md#addremovemultipletargetstofromtargetgroup) | **PATCH** /{accountId}/targetgroups/{targetGroupId}/targets/bulkUpdate | Add/Remove Multiple Targets to/from Target Group
 *TargetGroupsApi* | [**addSingleTargettoTargetGroup**](docs/Api/TargetGroupsApi.md#addsingletargettotargetgroup) | **PATCH** /{accountId}/TargetGroups/{targetGroupId}/Targets | Add Single Target to Target Group
 *TargetGroupsApi* | [**assignTargetGrouptoaBuyer**](docs/Api/TargetGroupsApi.md#assigntargetgrouptoabuyer) | **PUT** /{accountId}/TargetGroups/{targetGroupId}/Buyer | Assign Target Group to a Buyer
@@ -356,23 +357,23 @@ Class | Method | HTTP request | Description
 - [Campaign1](docs/Model/Campaign1.md)
 - [Campaign10](docs/Model/Campaign10.md)
 - [Campaign11](docs/Model/Campaign11.md)
-- [Campaign14](docs/Model/Campaign14.md)
+- [Campaign12](docs/Model/Campaign12.md)
 - [Campaign15](docs/Model/Campaign15.md)
 - [Campaign16](docs/Model/Campaign16.md)
-- [Campaign19](docs/Model/Campaign19.md)
+- [Campaign17](docs/Model/Campaign17.md)
 - [Campaign2](docs/Model/Campaign2.md)
-- [Campaign22](docs/Model/Campaign22.md)
-- [Campaign24](docs/Model/Campaign24.md)
+- [Campaign20](docs/Model/Campaign20.md)
+- [Campaign23](docs/Model/Campaign23.md)
 - [Campaign25](docs/Model/Campaign25.md)
-- [Campaign28](docs/Model/Campaign28.md)
+- [Campaign26](docs/Model/Campaign26.md)
 - [Campaign29](docs/Model/Campaign29.md)
 - [Campaign3](docs/Model/Campaign3.md)
 - [Campaign30](docs/Model/Campaign30.md)
 - [Campaign31](docs/Model/Campaign31.md)
 - [Campaign32](docs/Model/Campaign32.md)
+- [Campaign33](docs/Model/Campaign33.md)
 - [Campaign4](docs/Model/Campaign4.md)
 - [Campaign5](docs/Model/Campaign5.md)
-- [Campaign6](docs/Model/Campaign6.md)
 - [Campaign7](docs/Model/Campaign7.md)
 - [Campaign8](docs/Model/Campaign8.md)
 - [Campaign9](docs/Model/Campaign9.md)
@@ -448,7 +449,7 @@ Class | Method | HTTP request | Description
 - [DefaultPayout](docs/Model/DefaultPayout.md)
 - [DefaultPayout2](docs/Model/DefaultPayout2.md)
 - [DefaultPayout3](docs/Model/DefaultPayout3.md)
-- [DefaultPayout40](docs/Model/DefaultPayout40.md)
+- [DefaultPayout42](docs/Model/DefaultPayout42.md)
 - [DeleteAddress](docs/Model/DeleteAddress.md)
 - [DeleteApiToken](docs/Model/DeleteApiToken.md)
 - [DeleteBuyerFromTarget](docs/Model/DeleteBuyerFromTarget.md)
@@ -586,6 +587,8 @@ Class | Method | HTTP request | Description
 - [JsTags](docs/Model/JsTags.md)
 - [JsTags1](docs/Model/JsTags1.md)
 - [Jstags11](docs/Model/Jstags11.md)
+- [LinkItemtoCampaign](docs/Model/LinkItemtoCampaign.md)
+- [LinkItemtoCampaignRequest](docs/Model/LinkItemtoCampaignRequest.md)
 - [LookupNumberBlacklisednumber](docs/Model/LookupNumberBlacklisednumber.md)
 - [LookupNumberNumbernotblocked](docs/Model/LookupNumberNumbernotblocked.md)
 - [LookupNumbersBulkRequest](docs/Model/LookupNumbersBulkRequest.md)

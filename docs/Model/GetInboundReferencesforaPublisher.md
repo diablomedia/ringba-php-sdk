@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **string** |  |
 **hasReferences** | **bool** |  |
 **refByAccount** | **bool** |  |
-**campaigns** | [**\Ringba\Model\Campaign30[]**](Campaign30.md) |  |
+**campaigns** | [**\Ringba\Model\Campaign31[]**](Campaign31.md) |  |
 **numbers** | [**\Ringba\Model\Number[]**](Number.md) |  |
 **ringbausers** | [**\Ringba\Model\Ringbauser[]**](Ringbauser.md) |  |
 

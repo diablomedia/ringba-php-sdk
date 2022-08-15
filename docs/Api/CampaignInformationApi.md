@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**getCampaignsStatsonly()**](CampaignInformationApi.md#getCampaignsStatsonly) | **GET** /{accountId}/campaigns/stats | Get Campaigns Stats only
 [**getInboundReferencesforaSingleCampaign()**](CampaignInformationApi.md#getInboundReferencesforaSingleCampaign) | **GET** /{accountId}/campaigns/{campaignId}/InboundReferences | Get Inbound References for a Single Campaign
 [**getInformationAboutaSingleCampaign()**](CampaignInformationApi.md#getInformationAboutaSingleCampaign) | **GET** /{accountId}/campaigns/{campaignId} | Get Information About a Single Campaign
+[**linkItemtoCampaign()**](CampaignInformationApi.md#linkItemtoCampaign) | **PATCH** /{accountId}/campaigns/{campaignId}/link | Link Item to Campaign
 [**updateaCampaign()**](CampaignInformationApi.md#updateaCampaign) | **PATCH** /{accountId}/campaigns/{campaignId} | Update a Campaign
 
 
@@ -425,6 +426,68 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json; charset=utf-8`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `linkItemtoCampaign()`
+
+```php
+linkItemtoCampaign($accountId, $campaignId, $linkItemtoCampaignRequest): \Ringba\Model\LinkItemtoCampaign
+```
+
+Link Item to Campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: httpBearer
+$config = Ringba\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Ringba\Api\CampaignInformationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$accountId = 'accountId_example'; // string | 
+$campaignId = 'campaignId_example'; // string | 
+$linkItemtoCampaignRequest = {"memberName":"eventCallBacks","memberId":"EV8f9da089d9d89898f9sd08908f9ds8908f9s0"}; // \Ringba\Model\LinkItemtoCampaignRequest | 
+
+try {
+    $result = $apiInstance->linkItemtoCampaign($accountId, $campaignId, $linkItemtoCampaignRequest);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CampaignInformationApi->linkItemtoCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**|  |
+ **campaignId** | **string**|  |
+ **linkItemtoCampaignRequest** | [**\Ringba\Model\LinkItemtoCampaignRequest**](../Model/LinkItemtoCampaignRequest.md)|  |
+
+### Return type
+
+[**\Ringba\Model\LinkItemtoCampaign**](../Model/LinkItemtoCampaign.md)
+
+### Authorization
+
+[httpBearer](../../README.md#httpBearer)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

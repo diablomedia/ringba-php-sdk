@@ -58,7 +58,7 @@ class RemoveTargetRoutefromaCampaign implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign14',
+        'campaign' => '\Ringba\Model\Campaign15',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls7',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class RemoveTargetRoutefromaCampaign implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign14
+     * @return \Ringba\Model\Campaign15
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class RemoveTargetRoutefromaCampaign implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign14 $campaign campaign
+     * @param \Ringba\Model\Campaign15 $campaign campaign
      *
      * @return self
      */

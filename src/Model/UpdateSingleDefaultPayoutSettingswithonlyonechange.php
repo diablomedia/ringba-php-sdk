@@ -58,7 +58,7 @@ class UpdateSingleDefaultPayoutSettingswithonlyonechange implements ModelInterfa
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign22',
+        'campaign' => '\Ringba\Model\Campaign23',
         'jsTags' => '\Ringba\Model\JsTags1',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class UpdateSingleDefaultPayoutSettingswithonlyonechange implements ModelInterfa
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign22
+     * @return \Ringba\Model\Campaign23
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class UpdateSingleDefaultPayoutSettingswithonlyonechange implements ModelInterfa
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign22 $campaign campaign
+     * @param \Ringba\Model\Campaign23 $campaign campaign
      *
      * @return self
      */

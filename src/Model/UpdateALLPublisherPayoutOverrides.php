@@ -58,7 +58,7 @@ class UpdateALLPublisherPayoutOverrides implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign25'
+        'campaign' => '\Ringba\Model\Campaign26'
     ];
 
     /**
@@ -242,7 +242,7 @@ class UpdateALLPublisherPayoutOverrides implements ModelInterface, ArrayAccess, 
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign25
+     * @return \Ringba\Model\Campaign26
      */
     public function getCampaign()
     {
@@ -252,7 +252,7 @@ class UpdateALLPublisherPayoutOverrides implements ModelInterface, ArrayAccess, 
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign25 $campaign campaign
+     * @param \Ringba\Model\Campaign26 $campaign campaign
      *
      * @return self
      */

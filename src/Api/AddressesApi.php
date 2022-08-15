@@ -121,7 +121,7 @@ class AddressesApi
      * Create New Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
@@ -143,7 +143,7 @@ class AddressesApi
      * Create New Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
@@ -247,7 +247,7 @@ class AddressesApi
      * Create New Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
@@ -272,7 +272,7 @@ class AddressesApi
      * Create New Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
@@ -326,7 +326,7 @@ class AddressesApi
      * Create request for operation 'createNewAddress'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  \Ringba\Model\CreateNewAddressRequest $createNewAddressRequest  (required)
@@ -427,7 +427,7 @@ class AddressesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -448,7 +448,7 @@ class AddressesApi
      * Delete Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $authorization Find your [apiToken](#a63045f1-9e95-46cd-896d-1fa137b3abc2) (required)
      * @param  string $accountId  (required)
@@ -470,7 +470,7 @@ class AddressesApi
      * Delete Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $authorization Find your [apiToken](#a63045f1-9e95-46cd-896d-1fa137b3abc2) (required)
      * @param  string $accountId  (required)
@@ -574,7 +574,7 @@ class AddressesApi
      * Delete Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $authorization Find your [apiToken](#a63045f1-9e95-46cd-896d-1fa137b3abc2) (required)
      * @param  string $accountId  (required)
@@ -599,7 +599,7 @@ class AddressesApi
      * Delete Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $authorization Find your [apiToken](#a63045f1-9e95-46cd-896d-1fa137b3abc2) (required)
      * @param  string $accountId  (required)
@@ -653,7 +653,7 @@ class AddressesApi
      * Create request for operation 'deleteAddress'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $authorization Find your [apiToken](#a63045f1-9e95-46cd-896d-1fa137b3abc2) (required)
      * @param  string $accountId  (required)
@@ -762,7 +762,7 @@ class AddressesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -783,7 +783,7 @@ class AddressesApi
      * Edit Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -806,7 +806,7 @@ class AddressesApi
      * Edit Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -911,7 +911,7 @@ class AddressesApi
      * Edit Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -937,7 +937,7 @@ class AddressesApi
      * Edit Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -992,7 +992,7 @@ class AddressesApi
      * Create request for operation 'editAddress'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -1108,7 +1108,7 @@ class AddressesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1129,7 +1129,7 @@ class AddressesApi
      * Get Address by ID
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -1151,7 +1151,7 @@ class AddressesApi
      * Get Address by ID
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -1255,7 +1255,7 @@ class AddressesApi
      * Get Address by ID
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -1280,7 +1280,7 @@ class AddressesApi
      * Get Address by ID
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -1334,7 +1334,7 @@ class AddressesApi
      * Create request for operation 'getAddressbyID'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -1437,7 +1437,7 @@ class AddressesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1458,7 +1458,7 @@ class AddressesApi
      * Get Addresses
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1479,7 +1479,7 @@ class AddressesApi
      * Get Addresses
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1582,7 +1582,7 @@ class AddressesApi
      * Get Addresses
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1606,7 +1606,7 @@ class AddressesApi
      * Get Addresses
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1659,7 +1659,7 @@ class AddressesApi
      * Create request for operation 'getAddresses'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1747,7 +1747,7 @@ class AddressesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1768,7 +1768,7 @@ class AddressesApi
      * Get Countries Associated With Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1789,7 +1789,7 @@ class AddressesApi
      * Get Countries Associated With Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1892,7 +1892,7 @@ class AddressesApi
      * Get Countries Associated With Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1916,7 +1916,7 @@ class AddressesApi
      * Get Countries Associated With Account
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -1969,7 +1969,7 @@ class AddressesApi
      * Create request for operation 'getCountriesAssociatedWithAccount'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $authorization Find your [apiToken](#get-or-create-api-token) (optional)
@@ -2057,7 +2057,7 @@ class AddressesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -2078,7 +2078,7 @@ class AddressesApi
      * Get Details and Requirements for a Specific Country
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
@@ -2100,7 +2100,7 @@ class AddressesApi
      * Get Details and Requirements for a Specific Country
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
@@ -2204,7 +2204,7 @@ class AddressesApi
      * Get Details and Requirements for a Specific Country
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
@@ -2229,7 +2229,7 @@ class AddressesApi
      * Get Details and Requirements for a Specific Country
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
@@ -2283,7 +2283,7 @@ class AddressesApi
      * Create request for operation 'getDetailsandRequirementsforaSpecificCountry'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $countryCode  (required)
@@ -2386,7 +2386,7 @@ class AddressesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -2407,7 +2407,7 @@ class AddressesApi
      * Set Default Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -2429,7 +2429,7 @@ class AddressesApi
      * Set Default Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -2533,7 +2533,7 @@ class AddressesApi
      * Set Default Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -2558,7 +2558,7 @@ class AddressesApi
      * Set Default Address
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -2612,7 +2612,7 @@ class AddressesApi
      * Create request for operation 'setDefaultAddress'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $addressId  (required)
@@ -2715,7 +2715,7 @@ class AddressesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

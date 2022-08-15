@@ -8,13 +8,21 @@
   },
   "servers": [
     {
-      "url": "https://api.ringba.com/v2/",
+      "url": "https://api.ringba.com/v2",
       "variables": {}
     },
     {
       "url": "https://rtb.ringba.com/v1/{environment}",
       "variables": {
         "environment": {
+          "default": "DefaultParameterValue"
+        }
+      }
+    },
+    {
+      "url": "http://example.com/api/v1/{accountId}",
+      "variables": {
+        "accountId": {
           "default": "DefaultParameterValue"
         }
       }
@@ -200,7 +208,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -391,7 +399,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -428,7 +436,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -585,7 +593,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -763,7 +771,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -949,7 +957,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -1153,7 +1161,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -1347,7 +1355,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -1560,7 +1568,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -1737,7 +1745,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -2050,7 +2058,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -2244,7 +2252,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -2439,7 +2447,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -2675,7 +2683,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -2866,7 +2874,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -3057,7 +3065,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -3248,7 +3256,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -3438,7 +3446,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -3457,7 +3465,7 @@
             "name": "Authorization",
             "in": "header",
             "description": "Find your [apiToken](#get-or-create-api-token)",
-            "required": false,
+            "required": true,
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3625,7 +3633,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -3644,7 +3652,7 @@
             "name": "Authorization",
             "in": "header",
             "description": "Find your [apiToken](#get-or-create-api-token)",
-            "required": false,
+            "required": true,
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3812,7 +3820,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -5259,7 +5267,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -5440,7 +5448,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -5783,7 +5791,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -6347,7 +6355,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -6761,7 +6769,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -6940,7 +6948,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -7832,7 +7840,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -8077,7 +8085,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -8268,7 +8276,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -8443,7 +8451,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -8748,7 +8756,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -8925,7 +8933,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -9119,7 +9127,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -9457,7 +9465,165 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/{accountId}/campaigns/{campaignId}/link": {
+      "patch": {
+        "tags": [
+          "Campaign Information"
+        ],
+        "summary": "Link Item to Campaign",
+        "operationId": "LinkItemtoCampaign",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaignId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkItemtoCampaignRequest"
+              },
+              "example": {
+                "memberName": "eventCallBacks",
+                "memberId": "EV8f9da089d9d89898f9sd08908f9ds8908f9s0"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkItemtoCampaign"
+                },
+                "example": {
+                  "transactionId": "TRf4ff4041-3c13-41eb-95b4-c9000c0e770a",
+                  "campaign": {
+                    "defaultPayout": {
+                      "id": "PSe3a0d11525b440849c744454b2c73974",
+                      "name": "Campaign Default",
+                      "priority": 0,
+                      "isRevShare": false,
+                      "payoutAmount": 0,
+                      "revSharePercentage": -1,
+                      "revShareMaxPayoutAmount": -1,
+                      "revShareMinPayoutAmount": -1,
+                      "payoutConversionType": "incomingCall",
+                      "isGlobal": false,
+                      "allTimeCap": -1,
+                      "monthlyCap": -1,
+                      "dailyCap": -1,
+                      "hourlyCap": -1,
+                      "allTimeSumCap": -1,
+                      "monthlySumCap": -1,
+                      "dailySumCap": -1,
+                      "hourlySumCap": -1,
+                      "concurrencyCap": -1,
+                      "timeZoneId": "UTC",
+                      "deDupeSetting": {
+                        "secondsFromLastCall": 0
+                      }
+                    },
+                    "defaultPayouts": [
+                      {
+                        "id": "PSe3a0d11525b440849c744454b2c73974",
+                        "name": "Campaign Default",
+                        "priority": 0,
+                        "isRevShare": false,
+                        "payoutAmount": 0,
+                        "revSharePercentage": -1,
+                        "revShareMaxPayoutAmount": -1,
+                        "revShareMinPayoutAmount": -1,
+                        "payoutConversionType": "incomingCall",
+                        "isGlobal": false,
+                        "allTimeCap": -1,
+                        "monthlyCap": -1,
+                        "dailyCap": -1,
+                        "hourlyCap": -1,
+                        "allTimeSumCap": -1,
+                        "monthlySumCap": -1,
+                        "dailySumCap": -1,
+                        "hourlySumCap": -1,
+                        "concurrencyCap": -1,
+                        "timeZoneId": "UTC",
+                        "deDupeSetting": {
+                          "secondsFromLastCall": 0
+                        }
+                      }
+                    ],
+                    "ivrEnabled": true,
+                    "userCampaignId": "New ID",
+                    "numberDisplayFormat": "nnn-nnn-nnnn",
+                    "countryCode": "US",
+                    "completed": true,
+                    "distributionSetting": "WEIGHT_BY_TARGETS_AVAILABLE",
+                    "evalAnonymDuplication": true,
+                    "payoutDupesGlobal": false,
+                    "spamDetection": {
+                      "blockDuplicatesForSeconds": 7,
+                      "trackAnonymous": false
+                    },
+                    "deDupeSettings": {
+                      "routeToOriginal": false,
+                      "routeToDifferent": true,
+                      "strict": false
+                    },
+                    "duplicateSettings": {
+                      "duplicateSetting": "ON_CONNECT",
+                      "callLengthInSeconds": 0
+                    },
+                    "dialSettings": {
+                      "dialAttempts": 3
+                    },
+                    "recordSetting": {
+                      "record": false,
+                      "recordFromAnswer": false,
+                      "trimSilence": false,
+                      "dualChannelRecording": true
+                    },
+                    "id": "CAa32ff0c29a764cf99ca4304b8d941c12",
+                    "name": "New Name",
+                    "accountId": "RA25107ee2411049989cd8672852278bdb",
+                    "enabled": true,
+                    "version": 3
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -10012,7 +10178,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -10521,7 +10687,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -11056,7 +11222,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -11552,7 +11718,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -12034,7 +12200,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -12252,7 +12418,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -12462,7 +12628,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -12655,7 +12821,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -12875,7 +13041,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -13419,7 +13585,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -13935,7 +14101,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -14160,7 +14326,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -14340,7 +14506,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -14546,7 +14712,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -14723,7 +14889,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -14924,7 +15090,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -15209,7 +15375,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -15394,7 +15560,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -15573,7 +15739,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -15860,7 +16026,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -16147,7 +16313,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -16341,7 +16507,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -16635,7 +16801,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -16819,7 +16985,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -17038,7 +17204,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -17225,7 +17391,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -17292,7 +17458,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -17506,7 +17672,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -17831,7 +17997,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -18060,7 +18226,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -18257,7 +18423,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -18581,7 +18747,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -18832,7 +18998,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -19087,7 +19253,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -19264,7 +19430,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -19331,7 +19497,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -19775,7 +19941,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -19970,7 +20136,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -20017,7 +20183,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -20206,7 +20372,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -20605,7 +20771,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -20808,7 +20974,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -21005,7 +21171,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -21189,7 +21355,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -21381,7 +21547,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -21587,7 +21753,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -21788,7 +21954,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -22106,7 +22272,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -22337,7 +22503,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -22556,7 +22722,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -22751,7 +22917,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -22959,7 +23125,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -23162,7 +23328,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -23349,7 +23515,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -23514,7 +23680,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -23837,7 +24003,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -24061,7 +24227,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -24453,7 +24619,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -24637,7 +24803,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -24870,7 +25036,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -25111,7 +25277,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -25677,7 +25843,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -25897,7 +26063,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -26083,7 +26249,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -26288,7 +26454,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -26483,7 +26649,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -26699,7 +26865,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -27005,7 +27171,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -27278,7 +27444,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -27469,7 +27635,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -27672,7 +27838,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -27867,7 +28033,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -28070,7 +28236,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -28257,7 +28423,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -28436,7 +28602,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -28646,7 +28812,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -28825,7 +28991,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -29681,7 +29847,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -29874,7 +30040,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -30068,7 +30234,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -30276,7 +30442,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -30484,7 +30650,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -30707,7 +30873,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -30896,7 +31062,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -31101,7 +31267,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -31307,7 +31473,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -31502,7 +31668,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -31692,7 +31858,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -31897,7 +32063,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -32074,7 +32240,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -32794,7 +32960,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -32996,7 +33162,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -33215,7 +33381,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -33455,7 +33621,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -33686,7 +33852,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -33863,7 +34029,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -34054,7 +34220,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -34248,7 +34414,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -34489,7 +34655,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -34731,7 +34897,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -34929,7 +35095,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -35146,7 +35312,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -35440,7 +35606,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -35679,7 +35845,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -36016,7 +36182,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -36298,7 +36464,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -36485,7 +36651,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -36765,7 +36931,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -36986,7 +37152,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -37184,7 +37350,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -37415,7 +37581,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -37723,7 +37889,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -37920,7 +38086,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -38121,7 +38287,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -38361,7 +38527,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -38644,13 +38810,13 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
       }
     },
-    "/api/v1/{accountId}/lookup": {
+    "/lookup": {
       "get": {
         "tags": [
           "TCPA Shield"
@@ -38680,16 +38846,6 @@
             "schema": {
               "type": "string",
               "example": "Token {{apiToken}}"
-            }
-          },
-          {
-            "name": "accountId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -38863,13 +39019,17 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
-            "variables": {}
+            "url": "http://example.com/api/v1/{accountId}",
+            "variables": {
+              "accountId": {
+                "default": "DefaultParameterValue"
+              }
+            }
           }
         ]
       }
     },
-    "/api/v1/{accountId}/lookupbulk": {
+    "/lookupbulk": {
       "post": {
         "tags": [
           "TCPA Shield"
@@ -38887,16 +39047,6 @@
             "schema": {
               "type": "string",
               "example": "Token {{apiToken}}"
-            }
-          },
-          {
-            "name": "accountId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -39018,8 +39168,12 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
-            "variables": {}
+            "url": "http://example.com/api/v1/{accountId}",
+            "variables": {
+              "accountId": {
+                "default": "DefaultParameterValue"
+              }
+            }
           }
         ]
       }
@@ -39234,7 +39388,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -39435,7 +39589,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -39612,7 +39766,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -39821,7 +39975,7 @@
         "security": [],
         "servers": [
           {
-            "url": "https://api.ringba.com/v2/",
+            "url": "https://api.ringba.com/v2",
             "variables": {}
           }
         ]
@@ -52767,6 +52921,134 @@
           "isSuccessful": true
         }
       },
+      "LinkItemtoCampaignRequest": {
+        "title": "LinkItemtoCampaignRequest",
+        "required": [
+          "memberName",
+          "memberId"
+        ],
+        "type": "object",
+        "properties": {
+          "memberName": {
+            "type": "string"
+          },
+          "memberId": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "memberName": "eventCallBacks",
+          "memberId": "EV8f9da089d9d89898f9sd08908f9ds8908f9s0"
+        }
+      },
+      "LinkItemtoCampaign": {
+        "title": "LinkItemtoCampaign",
+        "required": [
+          "transactionId",
+          "campaign"
+        ],
+        "type": "object",
+        "properties": {
+          "transactionId": {
+            "type": "string"
+          },
+          "campaign": {
+            "$ref": "#/components/schemas/Campaign5"
+          }
+        },
+        "example": {
+          "transactionId": "TRf4ff4041-3c13-41eb-95b4-c9000c0e770a",
+          "campaign": {
+            "defaultPayout": {
+              "id": "PSe3a0d11525b440849c744454b2c73974",
+              "name": "Campaign Default",
+              "priority": 0,
+              "isRevShare": false,
+              "payoutAmount": 0,
+              "revSharePercentage": -1,
+              "revShareMaxPayoutAmount": -1,
+              "revShareMinPayoutAmount": -1,
+              "payoutConversionType": "incomingCall",
+              "isGlobal": false,
+              "allTimeCap": -1,
+              "monthlyCap": -1,
+              "dailyCap": -1,
+              "hourlyCap": -1,
+              "allTimeSumCap": -1,
+              "monthlySumCap": -1,
+              "dailySumCap": -1,
+              "hourlySumCap": -1,
+              "concurrencyCap": -1,
+              "timeZoneId": "UTC",
+              "deDupeSetting": {
+                "secondsFromLastCall": 0
+              }
+            },
+            "defaultPayouts": [
+              {
+                "id": "PSe3a0d11525b440849c744454b2c73974",
+                "name": "Campaign Default",
+                "priority": 0,
+                "isRevShare": false,
+                "payoutAmount": 0,
+                "revSharePercentage": -1,
+                "revShareMaxPayoutAmount": -1,
+                "revShareMinPayoutAmount": -1,
+                "payoutConversionType": "incomingCall",
+                "isGlobal": false,
+                "allTimeCap": -1,
+                "monthlyCap": -1,
+                "dailyCap": -1,
+                "hourlyCap": -1,
+                "allTimeSumCap": -1,
+                "monthlySumCap": -1,
+                "dailySumCap": -1,
+                "hourlySumCap": -1,
+                "concurrencyCap": -1,
+                "timeZoneId": "UTC",
+                "deDupeSetting": {
+                  "secondsFromLastCall": 0
+                }
+              }
+            ],
+            "ivrEnabled": true,
+            "userCampaignId": "New ID",
+            "numberDisplayFormat": "nnn-nnn-nnnn",
+            "countryCode": "US",
+            "completed": true,
+            "distributionSetting": "WEIGHT_BY_TARGETS_AVAILABLE",
+            "evalAnonymDuplication": true,
+            "payoutDupesGlobal": false,
+            "spamDetection": {
+              "blockDuplicatesForSeconds": 7,
+              "trackAnonymous": false
+            },
+            "deDupeSettings": {
+              "routeToOriginal": false,
+              "routeToDifferent": true,
+              "strict": false
+            },
+            "duplicateSettings": {
+              "duplicateSetting": "ON_CONNECT",
+              "callLengthInSeconds": 0
+            },
+            "dialSettings": {
+              "dialAttempts": 3
+            },
+            "recordSetting": {
+              "record": false,
+              "recordFromAnswer": false,
+              "trimSilence": false,
+              "dualChannelRecording": true
+            },
+            "id": "CAa32ff0c29a764cf99ca4304b8d941c12",
+            "name": "New Name",
+            "accountId": "RA25107ee2411049989cd8672852278bdb",
+            "enabled": true,
+            "version": 3
+          }
+        }
+      },
       "AddaDefaultNumberforaCampaignRequest": {
         "title": "AddaDefaultNumberforaCampaignRequest",
         "required": [
@@ -52797,7 +53079,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign6"
+            "$ref": "#/components/schemas/Campaign7"
           },
           "jsTags": {
             "type": "object"
@@ -53176,8 +53458,8 @@
           }
         }
       },
-      "Campaign6": {
-        "title": "Campaign6",
+      "Campaign7": {
+        "title": "Campaign7",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -54302,7 +54584,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign7"
+            "$ref": "#/components/schemas/Campaign8"
           },
           "jsTags": {
             "type": "object"
@@ -54661,8 +54943,8 @@
           }
         }
       },
-      "Campaign7": {
-        "title": "Campaign7",
+      "Campaign8": {
+        "title": "Campaign8",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -55383,7 +55665,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign8"
+            "$ref": "#/components/schemas/Campaign9"
           },
           "jsTags": {
             "type": "object"
@@ -55732,8 +56014,8 @@
           }
         }
       },
-      "Campaign8": {
-        "title": "Campaign8",
+      "Campaign9": {
+        "title": "Campaign9",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -56196,7 +56478,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign9"
+            "$ref": "#/components/schemas/Campaign10"
           }
         },
         "example": {
@@ -56507,8 +56789,8 @@
           }
         }
       },
-      "Campaign9": {
-        "title": "Campaign9",
+      "Campaign10": {
+        "title": "Campaign10",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -57109,7 +57391,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign10"
+            "$ref": "#/components/schemas/Campaign11"
           }
         },
         "example": {
@@ -57410,8 +57692,8 @@
           }
         }
       },
-      "Campaign10": {
-        "title": "Campaign10",
+      "Campaign11": {
+        "title": "Campaign11",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -57967,7 +58249,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign11"
+            "$ref": "#/components/schemas/Campaign12"
           },
           "jsTags": {
             "$ref": "#/components/schemas/JsTags1"
@@ -57980,8 +58262,8 @@
           }
         }
       },
-      "Campaign11": {
-        "title": "Campaign11",
+      "Campaign12": {
+        "title": "Campaign12",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -59456,7 +59738,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign11"
+            "$ref": "#/components/schemas/Campaign12"
           },
           "jsTags": {
             "$ref": "#/components/schemas/JsTags1"
@@ -59484,7 +59766,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign11"
+            "$ref": "#/components/schemas/Campaign12"
           },
           "jsTags": {
             "type": "object"
@@ -59597,7 +59879,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign14"
+            "$ref": "#/components/schemas/Campaign15"
           },
           "jsTags": {
             "type": "object"
@@ -59953,8 +60235,8 @@
           }
         }
       },
-      "Campaign14": {
-        "title": "Campaign14",
+      "Campaign15": {
+        "title": "Campaign15",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -60836,7 +61118,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign15"
+            "$ref": "#/components/schemas/Campaign16"
           },
           "jsTags": {
             "type": "object"
@@ -61196,8 +61478,8 @@
           }
         }
       },
-      "Campaign15": {
-        "title": "Campaign15",
+      "Campaign16": {
+        "title": "Campaign16",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -61860,7 +62142,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign16"
+            "$ref": "#/components/schemas/Campaign17"
           },
           "jsTags": {
             "type": "object"
@@ -62212,8 +62494,8 @@
           }
         }
       },
-      "Campaign16": {
-        "title": "Campaign16",
+      "Campaign17": {
+        "title": "Campaign17",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -63031,7 +63313,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign14"
+            "$ref": "#/components/schemas/Campaign15"
           },
           "jsTags": {
             "type": "object"
@@ -64486,7 +64768,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign19"
+            "$ref": "#/components/schemas/Campaign20"
           },
           "jsTags": {
             "$ref": "#/components/schemas/JsTags"
@@ -64499,8 +64781,8 @@
           }
         }
       },
-      "Campaign19": {
-        "title": "Campaign19",
+      "Campaign20": {
+        "title": "Campaign20",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -64627,7 +64909,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign19"
+            "$ref": "#/components/schemas/Campaign20"
           },
           "jsTags": {
             "$ref": "#/components/schemas/JsTags"
@@ -64943,7 +65225,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign22"
+            "$ref": "#/components/schemas/Campaign23"
           },
           "jsTags": {
             "$ref": "#/components/schemas/JsTags1"
@@ -64956,8 +65238,8 @@
           }
         }
       },
-      "Campaign22": {
-        "title": "Campaign22",
+      "Campaign23": {
+        "title": "Campaign23",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -64985,7 +65267,7 @@
         "type": "object",
         "properties": {
           "defaultPayout": {
-            "$ref": "#/components/schemas/DefaultPayout40"
+            "$ref": "#/components/schemas/DefaultPayout42"
           },
           "defaultPayouts": {
             "type": "array",
@@ -65065,8 +65347,8 @@
           }
         }
       },
-      "DefaultPayout40": {
-        "title": "DefaultPayout40",
+      "DefaultPayout42": {
+        "title": "DefaultPayout42",
         "required": [
           "id",
           "priority",
@@ -65300,7 +65582,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign22"
+            "$ref": "#/components/schemas/Campaign23"
           },
           "jsTags": {
             "$ref": "#/components/schemas/JsTags1"
@@ -65451,7 +65733,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign24"
+            "$ref": "#/components/schemas/Campaign25"
           },
           "jsTags": {
             "$ref": "#/components/schemas/JsTags1"
@@ -65464,8 +65746,8 @@
           }
         }
       },
-      "Campaign24": {
-        "title": "Campaign24",
+      "Campaign25": {
+        "title": "Campaign25",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -65493,7 +65775,7 @@
         "type": "object",
         "properties": {
           "defaultPayout": {
-            "$ref": "#/components/schemas/DefaultPayout40"
+            "$ref": "#/components/schemas/DefaultPayout42"
           },
           "defaultPayouts": {
             "type": "array",
@@ -66441,12 +66723,12 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign25"
+            "$ref": "#/components/schemas/Campaign26"
           }
         }
       },
-      "Campaign25": {
-        "title": "Campaign25",
+      "Campaign26": {
+        "title": "Campaign26",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -68641,7 +68923,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign28"
+            "$ref": "#/components/schemas/Campaign29"
           },
           "jsTags": {
             "type": "object"
@@ -68654,8 +68936,8 @@
           }
         }
       },
-      "Campaign28": {
-        "title": "Campaign28",
+      "Campaign29": {
+        "title": "Campaign29",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -69095,7 +69377,7 @@
             "type": "string"
           },
           "campaign": {
-            "$ref": "#/components/schemas/Campaign29"
+            "$ref": "#/components/schemas/Campaign30"
           },
           "jsTags": {
             "type": "object"
@@ -69334,8 +69616,8 @@
           }
         }
       },
-      "Campaign29": {
-        "title": "Campaign29",
+      "Campaign30": {
+        "title": "Campaign30",
         "required": [
           "defaultPayout",
           "defaultPayouts",
@@ -70702,7 +70984,7 @@
           "campaigns": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Campaign30"
+              "$ref": "#/components/schemas/Campaign31"
             },
             "description": ""
           },
@@ -70766,8 +71048,8 @@
           ]
         }
       },
-      "Campaign30": {
-        "title": "Campaign30",
+      "Campaign31": {
+        "title": "Campaign31",
         "required": [
           "campaignId",
           "campaignName"
@@ -79025,7 +79307,7 @@
           "campaigns": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Campaign31"
+              "$ref": "#/components/schemas/Campaign32"
             },
             "description": ""
           }
@@ -79050,8 +79332,8 @@
           ]
         }
       },
-      "Campaign31": {
-        "title": "Campaign31",
+      "Campaign32": {
+        "title": "Campaign32",
         "required": [
           "campaignId",
           "campaignName",
@@ -83034,7 +83316,7 @@
           "campaigns": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Campaign32"
+              "$ref": "#/components/schemas/Campaign33"
             },
             "description": ""
           },
@@ -83070,8 +83352,8 @@
           ]
         }
       },
-      "Campaign32": {
-        "title": "Campaign32",
+      "Campaign33": {
+        "title": "Campaign33",
         "required": [
           "campaignId",
           "campaignName",

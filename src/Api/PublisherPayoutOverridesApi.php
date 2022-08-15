@@ -121,7 +121,7 @@ class PublisherPayoutOverridesApi
      * Create New Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -145,7 +145,7 @@ class PublisherPayoutOverridesApi
      * Create New Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -251,7 +251,7 @@ class PublisherPayoutOverridesApi
      * Create New Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -278,7 +278,7 @@ class PublisherPayoutOverridesApi
      * Create New Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -334,7 +334,7 @@ class PublisherPayoutOverridesApi
      * Create request for operation 'createNewPublisherPayoutOverride'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -465,7 +465,7 @@ class PublisherPayoutOverridesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -486,7 +486,7 @@ class PublisherPayoutOverridesApi
      * Get Publisher Payout Overrides
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -508,7 +508,7 @@ class PublisherPayoutOverridesApi
      * Get Publisher Payout Overrides
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -573,7 +573,7 @@ class PublisherPayoutOverridesApi
      * Get Publisher Payout Overrides
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -599,7 +599,7 @@ class PublisherPayoutOverridesApi
      * Get Publisher Payout Overrides
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -641,7 +641,7 @@ class PublisherPayoutOverridesApi
      * Create request for operation 'getPublisherPayoutOverrides'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -759,7 +759,7 @@ class PublisherPayoutOverridesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -780,7 +780,7 @@ class PublisherPayoutOverridesApi
      * Remove a Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -804,7 +804,7 @@ class PublisherPayoutOverridesApi
      * Remove a Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -910,7 +910,7 @@ class PublisherPayoutOverridesApi
      * Remove a Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -937,7 +937,7 @@ class PublisherPayoutOverridesApi
      * Remove a Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -993,7 +993,7 @@ class PublisherPayoutOverridesApi
      * Create request for operation 'removeaPublisherPayoutOverride'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1126,7 +1126,7 @@ class PublisherPayoutOverridesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1147,7 +1147,7 @@ class PublisherPayoutOverridesApi
      * Update ALL Publisher Payout Overrides
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1171,7 +1171,7 @@ class PublisherPayoutOverridesApi
      * Update ALL Publisher Payout Overrides
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1277,7 +1277,7 @@ class PublisherPayoutOverridesApi
      * Update ALL Publisher Payout Overrides
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1304,7 +1304,7 @@ class PublisherPayoutOverridesApi
      * Update ALL Publisher Payout Overrides
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1360,7 +1360,7 @@ class PublisherPayoutOverridesApi
      * Create request for operation 'updateALLPublisherPayoutOverrides'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1491,7 +1491,7 @@ class PublisherPayoutOverridesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }
@@ -1512,7 +1512,7 @@ class PublisherPayoutOverridesApi
      * Update Single Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1537,7 +1537,7 @@ class PublisherPayoutOverridesApi
      * Update Single Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1644,7 +1644,7 @@ class PublisherPayoutOverridesApi
      * Update Single Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1672,7 +1672,7 @@ class PublisherPayoutOverridesApi
      * Update Single Publisher Payout Override
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1729,7 +1729,7 @@ class PublisherPayoutOverridesApi
      * Create request for operation 'updateSinglePublisherPayoutOverride'
      *
      * This operation contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-     * URL: https://api.ringba.com/v2/
+     * URL: https://api.ringba.com/v2
      *
      * @param  string $accountId  (required)
      * @param  string $campaignId  (required)
@@ -1875,7 +1875,7 @@ class PublisherPayoutOverridesApi
             $headers
         );
 
-        $operationHosts = ["https://api.ringba.com/v2/"];
+        $operationHosts = ["https://api.ringba.com/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
         }

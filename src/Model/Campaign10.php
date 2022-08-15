@@ -73,7 +73,7 @@ class Campaign10 implements ModelInterface, ArrayAccess, \JsonSerializable
         'duplicateSettings' => '\Ringba\Model\DuplicateSettings',
         'dialSettings' => '\Ringba\Model\DialSettings',
         'recordSetting' => '\Ringba\Model\RecordSetting',
-        'affiliates' => '\Ringba\Model\Affiliate7[]',
+        'affiliates' => '\Ringba\Model\Affiliate9[]',
         'id' => 'string',
         'name' => 'string',
         'accountId' => 'string',
@@ -782,7 +782,7 @@ class Campaign10 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affiliates
      *
-     * @return \Ringba\Model\Affiliate7[]
+     * @return \Ringba\Model\Affiliate9[]
      */
     public function getAffiliates()
     {
@@ -792,7 +792,7 @@ class Campaign10 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affiliates
      *
-     * @param \Ringba\Model\Affiliate7[] $affiliates 
+     * @param \Ringba\Model\Affiliate9[] $affiliates 
      *
      * @return self
      */

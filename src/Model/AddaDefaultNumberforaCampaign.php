@@ -58,7 +58,7 @@ class AddaDefaultNumberforaCampaign implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign6',
+        'campaign' => '\Ringba\Model\Campaign7',
         'jsTags' => 'object',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls1',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class AddaDefaultNumberforaCampaign implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign6
+     * @return \Ringba\Model\Campaign7
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class AddaDefaultNumberforaCampaign implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign6 $campaign campaign
+     * @param \Ringba\Model\Campaign7 $campaign campaign
      *
      * @return self
      */

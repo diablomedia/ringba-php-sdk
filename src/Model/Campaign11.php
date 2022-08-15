@@ -64,16 +64,16 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryCode' => 'string',
         'completed' => 'bool',
         'distributionSetting' => 'string',
-        'offerId' => 'string',
+        'offerDraftId' => 'string',
         'evalAnonymDuplication' => 'bool',
         'payoutDupesGlobal' => 'bool',
-        'affiliateNumbers' => '\Ringba\Model\AffiliateNumber2[]',
+        'affiliateNumbers' => '\Ringba\Model\AffiliateNumber6[]',
         'deDupeSettings' => '\Ringba\Model\DeDupeSettings',
-        'callIVRTree' => '\Ringba\Model\CallIVRTree',
+        'routes' => '\Ringba\Model\Route1[]',
         'duplicateSettings' => '\Ringba\Model\DuplicateSettings',
         'dialSettings' => '\Ringba\Model\DialSettings',
         'recordSetting' => '\Ringba\Model\RecordSetting',
-        'affiliates' => '\Ringba\Model\Affiliate17[]',
+        'affiliates' => '\Ringba\Model\Affiliate7[]',
         'id' => 'string',
         'name' => 'string',
         'accountId' => 'string',
@@ -96,12 +96,12 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryCode' => null,
         'completed' => null,
         'distributionSetting' => null,
-        'offerId' => null,
+        'offerDraftId' => null,
         'evalAnonymDuplication' => null,
         'payoutDupesGlobal' => null,
         'affiliateNumbers' => null,
         'deDupeSettings' => null,
-        'callIVRTree' => null,
+        'routes' => null,
         'duplicateSettings' => null,
         'dialSettings' => null,
         'recordSetting' => null,
@@ -147,12 +147,12 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryCode' => 'countryCode',
         'completed' => 'completed',
         'distributionSetting' => 'distributionSetting',
-        'offerId' => 'offerId',
+        'offerDraftId' => 'offerDraftId',
         'evalAnonymDuplication' => 'evalAnonymDuplication',
         'payoutDupesGlobal' => 'payoutDupesGlobal',
         'affiliateNumbers' => 'affiliateNumbers',
         'deDupeSettings' => 'deDupeSettings',
-        'callIVRTree' => 'callIVRTree',
+        'routes' => 'routes',
         'duplicateSettings' => 'duplicateSettings',
         'dialSettings' => 'dialSettings',
         'recordSetting' => 'recordSetting',
@@ -177,12 +177,12 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryCode' => 'setCountryCode',
         'completed' => 'setCompleted',
         'distributionSetting' => 'setDistributionSetting',
-        'offerId' => 'setOfferId',
+        'offerDraftId' => 'setOfferDraftId',
         'evalAnonymDuplication' => 'setEvalAnonymDuplication',
         'payoutDupesGlobal' => 'setPayoutDupesGlobal',
         'affiliateNumbers' => 'setAffiliateNumbers',
         'deDupeSettings' => 'setDeDupeSettings',
-        'callIVRTree' => 'setCallIVRTree',
+        'routes' => 'setRoutes',
         'duplicateSettings' => 'setDuplicateSettings',
         'dialSettings' => 'setDialSettings',
         'recordSetting' => 'setRecordSetting',
@@ -207,12 +207,12 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryCode' => 'getCountryCode',
         'completed' => 'getCompleted',
         'distributionSetting' => 'getDistributionSetting',
-        'offerId' => 'getOfferId',
+        'offerDraftId' => 'getOfferDraftId',
         'evalAnonymDuplication' => 'getEvalAnonymDuplication',
         'payoutDupesGlobal' => 'getPayoutDupesGlobal',
         'affiliateNumbers' => 'getAffiliateNumbers',
         'deDupeSettings' => 'getDeDupeSettings',
-        'callIVRTree' => 'getCallIVRTree',
+        'routes' => 'getRoutes',
         'duplicateSettings' => 'getDuplicateSettings',
         'dialSettings' => 'getDialSettings',
         'recordSetting' => 'getRecordSetting',
@@ -288,12 +288,12 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['countryCode'] = $data['countryCode'] ?? null;
         $this->container['completed'] = $data['completed'] ?? null;
         $this->container['distributionSetting'] = $data['distributionSetting'] ?? null;
-        $this->container['offerId'] = $data['offerId'] ?? null;
+        $this->container['offerDraftId'] = $data['offerDraftId'] ?? null;
         $this->container['evalAnonymDuplication'] = $data['evalAnonymDuplication'] ?? null;
         $this->container['payoutDupesGlobal'] = $data['payoutDupesGlobal'] ?? null;
         $this->container['affiliateNumbers'] = $data['affiliateNumbers'] ?? null;
         $this->container['deDupeSettings'] = $data['deDupeSettings'] ?? null;
-        $this->container['callIVRTree'] = $data['callIVRTree'] ?? null;
+        $this->container['routes'] = $data['routes'] ?? null;
         $this->container['duplicateSettings'] = $data['duplicateSettings'] ?? null;
         $this->container['dialSettings'] = $data['dialSettings'] ?? null;
         $this->container['recordSetting'] = $data['recordSetting'] ?? null;
@@ -335,8 +335,8 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['distributionSetting'] === null) {
             $invalidProperties[] = "'distributionSetting' can't be null";
         }
-        if ($this->container['offerId'] === null) {
-            $invalidProperties[] = "'offerId' can't be null";
+        if ($this->container['offerDraftId'] === null) {
+            $invalidProperties[] = "'offerDraftId' can't be null";
         }
         if ($this->container['evalAnonymDuplication'] === null) {
             $invalidProperties[] = "'evalAnonymDuplication' can't be null";
@@ -350,8 +350,8 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['deDupeSettings'] === null) {
             $invalidProperties[] = "'deDupeSettings' can't be null";
         }
-        if ($this->container['callIVRTree'] === null) {
-            $invalidProperties[] = "'callIVRTree' can't be null";
+        if ($this->container['routes'] === null) {
+            $invalidProperties[] = "'routes' can't be null";
         }
         if ($this->container['duplicateSettings'] === null) {
             $invalidProperties[] = "'duplicateSettings' can't be null";
@@ -564,25 +564,25 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets offerId
+     * Gets offerDraftId
      *
      * @return string
      */
-    public function getOfferId()
+    public function getOfferDraftId()
     {
-        return $this->container['offerId'];
+        return $this->container['offerDraftId'];
     }
 
     /**
-     * Sets offerId
+     * Sets offerDraftId
      *
-     * @param string $offerId offerId
+     * @param string $offerDraftId offerDraftId
      *
      * @return self
      */
-    public function setOfferId($offerId)
+    public function setOfferDraftId($offerDraftId)
     {
-        $this->container['offerId'] = $offerId;
+        $this->container['offerDraftId'] = $offerDraftId;
 
         return $this;
     }
@@ -638,7 +638,7 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affiliateNumbers
      *
-     * @return \Ringba\Model\AffiliateNumber2[]
+     * @return \Ringba\Model\AffiliateNumber6[]
      */
     public function getAffiliateNumbers()
     {
@@ -648,7 +648,7 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affiliateNumbers
      *
-     * @param \Ringba\Model\AffiliateNumber2[] $affiliateNumbers 
+     * @param \Ringba\Model\AffiliateNumber6[] $affiliateNumbers 
      *
      * @return self
      */
@@ -684,25 +684,25 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets callIVRTree
+     * Gets routes
      *
-     * @return \Ringba\Model\CallIVRTree
+     * @return \Ringba\Model\Route1[]
      */
-    public function getCallIVRTree()
+    public function getRoutes()
     {
-        return $this->container['callIVRTree'];
+        return $this->container['routes'];
     }
 
     /**
-     * Sets callIVRTree
+     * Sets routes
      *
-     * @param \Ringba\Model\CallIVRTree $callIVRTree callIVRTree
+     * @param \Ringba\Model\Route1[] $routes 
      *
      * @return self
      */
-    public function setCallIVRTree($callIVRTree)
+    public function setRoutes($routes)
     {
-        $this->container['callIVRTree'] = $callIVRTree;
+        $this->container['routes'] = $routes;
 
         return $this;
     }
@@ -782,7 +782,7 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affiliates
      *
-     * @return \Ringba\Model\Affiliate17[]
+     * @return \Ringba\Model\Affiliate7[]
      */
     public function getAffiliates()
     {
@@ -792,7 +792,7 @@ class Campaign11 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affiliates
      *
-     * @param \Ringba\Model\Affiliate17[] $affiliates 
+     * @param \Ringba\Model\Affiliate7[] $affiliates 
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# # Campaign6
+# # Campaign17
 
 ## Properties
 
@@ -11,17 +11,15 @@ Name | Type | Description | Notes
 **countryCode** | **string** |  |
 **completed** | **bool** |  |
 **distributionSetting** | **string** |  |
-**offerDraftId** | **string** |  |
 **evalAnonymDuplication** | **bool** |  |
 **payoutDupesGlobal** | **bool** |  |
-**defaultNumber** | [**\Ringba\Model\DefaultNumber**](DefaultNumber.md) |  |
-**affiliateNumbers** | [**\Ringba\Model\AffiliateNumber3[]**](AffiliateNumber3.md) |  |
+**affiliateNumbers** | [**\Ringba\Model\AffiliateNumber11[]**](AffiliateNumber11.md) |  |
 **deDupeSettings** | [**\Ringba\Model\DeDupeSettings**](DeDupeSettings.md) |  |
-**routes** | [**\Ringba\Model\Route1[]**](Route1.md) |  |
+**routes** | [**\Ringba\Model\Route10[]**](Route10.md) |  |
 **duplicateSettings** | [**\Ringba\Model\DuplicateSettings**](DuplicateSettings.md) |  |
 **dialSettings** | [**\Ringba\Model\DialSettings**](DialSettings.md) |  |
 **recordSetting** | [**\Ringba\Model\RecordSetting**](RecordSetting.md) |  |
-**affiliates** | [**\Ringba\Model\Affiliate7[]**](Affiliate7.md) |  |
+**affiliates** | [**\Ringba\Model\Affiliate2[]**](Affiliate2.md) |  |
 **id** | **string** |  |
 **name** | **string** |  |
 **accountId** | **string** |  |

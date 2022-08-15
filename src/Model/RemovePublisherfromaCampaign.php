@@ -58,7 +58,7 @@ class RemovePublisherfromaCampaign implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign10'
+        'campaign' => '\Ringba\Model\Campaign11'
     ];
 
     /**
@@ -242,7 +242,7 @@ class RemovePublisherfromaCampaign implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign10
+     * @return \Ringba\Model\Campaign11
      */
     public function getCampaign()
     {
@@ -252,7 +252,7 @@ class RemovePublisherfromaCampaign implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign10 $campaign campaign
+     * @param \Ringba\Model\Campaign11 $campaign campaign
      *
      * @return self
      */

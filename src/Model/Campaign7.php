@@ -67,13 +67,14 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
         'offerDraftId' => 'string',
         'evalAnonymDuplication' => 'bool',
         'payoutDupesGlobal' => 'bool',
+        'defaultNumber' => '\Ringba\Model\DefaultNumber',
         'affiliateNumbers' => '\Ringba\Model\AffiliateNumber3[]',
         'deDupeSettings' => '\Ringba\Model\DeDupeSettings',
         'routes' => '\Ringba\Model\Route1[]',
         'duplicateSettings' => '\Ringba\Model\DuplicateSettings',
         'dialSettings' => '\Ringba\Model\DialSettings',
         'recordSetting' => '\Ringba\Model\RecordSetting',
-        'affiliates' => '\Ringba\Model\Affiliate9[]',
+        'affiliates' => '\Ringba\Model\Affiliate7[]',
         'id' => 'string',
         'name' => 'string',
         'accountId' => 'string',
@@ -99,6 +100,7 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
         'offerDraftId' => null,
         'evalAnonymDuplication' => null,
         'payoutDupesGlobal' => null,
+        'defaultNumber' => null,
         'affiliateNumbers' => null,
         'deDupeSettings' => null,
         'routes' => null,
@@ -150,6 +152,7 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
         'offerDraftId' => 'offerDraftId',
         'evalAnonymDuplication' => 'evalAnonymDuplication',
         'payoutDupesGlobal' => 'payoutDupesGlobal',
+        'defaultNumber' => 'defaultNumber',
         'affiliateNumbers' => 'affiliateNumbers',
         'deDupeSettings' => 'deDupeSettings',
         'routes' => 'routes',
@@ -180,6 +183,7 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
         'offerDraftId' => 'setOfferDraftId',
         'evalAnonymDuplication' => 'setEvalAnonymDuplication',
         'payoutDupesGlobal' => 'setPayoutDupesGlobal',
+        'defaultNumber' => 'setDefaultNumber',
         'affiliateNumbers' => 'setAffiliateNumbers',
         'deDupeSettings' => 'setDeDupeSettings',
         'routes' => 'setRoutes',
@@ -210,6 +214,7 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
         'offerDraftId' => 'getOfferDraftId',
         'evalAnonymDuplication' => 'getEvalAnonymDuplication',
         'payoutDupesGlobal' => 'getPayoutDupesGlobal',
+        'defaultNumber' => 'getDefaultNumber',
         'affiliateNumbers' => 'getAffiliateNumbers',
         'deDupeSettings' => 'getDeDupeSettings',
         'routes' => 'getRoutes',
@@ -291,6 +296,7 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['offerDraftId'] = $data['offerDraftId'] ?? null;
         $this->container['evalAnonymDuplication'] = $data['evalAnonymDuplication'] ?? null;
         $this->container['payoutDupesGlobal'] = $data['payoutDupesGlobal'] ?? null;
+        $this->container['defaultNumber'] = $data['defaultNumber'] ?? null;
         $this->container['affiliateNumbers'] = $data['affiliateNumbers'] ?? null;
         $this->container['deDupeSettings'] = $data['deDupeSettings'] ?? null;
         $this->container['routes'] = $data['routes'] ?? null;
@@ -343,6 +349,9 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['payoutDupesGlobal'] === null) {
             $invalidProperties[] = "'payoutDupesGlobal' can't be null";
+        }
+        if ($this->container['defaultNumber'] === null) {
+            $invalidProperties[] = "'defaultNumber' can't be null";
         }
         if ($this->container['affiliateNumbers'] === null) {
             $invalidProperties[] = "'affiliateNumbers' can't be null";
@@ -636,6 +645,30 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets defaultNumber
+     *
+     * @return \Ringba\Model\DefaultNumber
+     */
+    public function getDefaultNumber()
+    {
+        return $this->container['defaultNumber'];
+    }
+
+    /**
+     * Sets defaultNumber
+     *
+     * @param \Ringba\Model\DefaultNumber $defaultNumber defaultNumber
+     *
+     * @return self
+     */
+    public function setDefaultNumber($defaultNumber)
+    {
+        $this->container['defaultNumber'] = $defaultNumber;
+
+        return $this;
+    }
+
+    /**
      * Gets affiliateNumbers
      *
      * @return \Ringba\Model\AffiliateNumber3[]
@@ -782,7 +815,7 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affiliates
      *
-     * @return \Ringba\Model\Affiliate9[]
+     * @return \Ringba\Model\Affiliate7[]
      */
     public function getAffiliates()
     {
@@ -792,7 +825,7 @@ class Campaign7 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affiliates
      *
-     * @param \Ringba\Model\Affiliate9[] $affiliates 
+     * @param \Ringba\Model\Affiliate7[] $affiliates 
      *
      * @return self
      */

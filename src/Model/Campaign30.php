@@ -57,8 +57,28 @@ class Campaign30 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'campaignId' => 'string',
-        'campaignName' => 'string'
+        'defaultPayout' => '\Ringba\Model\DefaultPayout',
+        'defaultPayouts' => '\Ringba\Model\DefaultPayout[]',
+        'ivrEnabled' => 'bool',
+        'userCampaignId' => 'string',
+        'countryCode' => 'string',
+        'completed' => 'bool',
+        'distributionSetting' => 'string',
+        'offerId' => 'string',
+        'evalAnonymDuplication' => 'bool',
+        'payoutDupesGlobal' => 'bool',
+        'affiliateNumbers' => '\Ringba\Model\AffiliateNumber25[]',
+        'deDupeSettings' => '\Ringba\Model\DeDupeSettings',
+        'routes' => '\Ringba\Model\Route1[]',
+        'duplicateSettings' => '\Ringba\Model\DuplicateSettings',
+        'dialSettings' => '\Ringba\Model\DialSettings',
+        'recordSetting' => '\Ringba\Model\RecordSetting',
+        'affiliates' => '\Ringba\Model\Affiliate17[]',
+        'id' => 'string',
+        'name' => 'string',
+        'accountId' => 'string',
+        'enabled' => 'bool',
+        'version' => 'int'
     ];
 
     /**
@@ -69,8 +89,28 @@ class Campaign30 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'campaignId' => null,
-        'campaignName' => null
+        'defaultPayout' => null,
+        'defaultPayouts' => null,
+        'ivrEnabled' => null,
+        'userCampaignId' => null,
+        'countryCode' => null,
+        'completed' => null,
+        'distributionSetting' => null,
+        'offerId' => null,
+        'evalAnonymDuplication' => null,
+        'payoutDupesGlobal' => null,
+        'affiliateNumbers' => null,
+        'deDupeSettings' => null,
+        'routes' => null,
+        'duplicateSettings' => null,
+        'dialSettings' => null,
+        'recordSetting' => null,
+        'affiliates' => null,
+        'id' => null,
+        'name' => null,
+        'accountId' => null,
+        'enabled' => null,
+        'version' => 'int32'
     ];
 
     /**
@@ -100,8 +140,28 @@ class Campaign30 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'campaignId' => 'campaignId',
-        'campaignName' => 'campaignName'
+        'defaultPayout' => 'defaultPayout',
+        'defaultPayouts' => 'defaultPayouts',
+        'ivrEnabled' => 'ivrEnabled',
+        'userCampaignId' => 'userCampaignId',
+        'countryCode' => 'countryCode',
+        'completed' => 'completed',
+        'distributionSetting' => 'distributionSetting',
+        'offerId' => 'offerId',
+        'evalAnonymDuplication' => 'evalAnonymDuplication',
+        'payoutDupesGlobal' => 'payoutDupesGlobal',
+        'affiliateNumbers' => 'affiliateNumbers',
+        'deDupeSettings' => 'deDupeSettings',
+        'routes' => 'routes',
+        'duplicateSettings' => 'duplicateSettings',
+        'dialSettings' => 'dialSettings',
+        'recordSetting' => 'recordSetting',
+        'affiliates' => 'affiliates',
+        'id' => 'id',
+        'name' => 'name',
+        'accountId' => 'accountId',
+        'enabled' => 'enabled',
+        'version' => 'version'
     ];
 
     /**
@@ -110,8 +170,28 @@ class Campaign30 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'campaignId' => 'setCampaignId',
-        'campaignName' => 'setCampaignName'
+        'defaultPayout' => 'setDefaultPayout',
+        'defaultPayouts' => 'setDefaultPayouts',
+        'ivrEnabled' => 'setIvrEnabled',
+        'userCampaignId' => 'setUserCampaignId',
+        'countryCode' => 'setCountryCode',
+        'completed' => 'setCompleted',
+        'distributionSetting' => 'setDistributionSetting',
+        'offerId' => 'setOfferId',
+        'evalAnonymDuplication' => 'setEvalAnonymDuplication',
+        'payoutDupesGlobal' => 'setPayoutDupesGlobal',
+        'affiliateNumbers' => 'setAffiliateNumbers',
+        'deDupeSettings' => 'setDeDupeSettings',
+        'routes' => 'setRoutes',
+        'duplicateSettings' => 'setDuplicateSettings',
+        'dialSettings' => 'setDialSettings',
+        'recordSetting' => 'setRecordSetting',
+        'affiliates' => 'setAffiliates',
+        'id' => 'setId',
+        'name' => 'setName',
+        'accountId' => 'setAccountId',
+        'enabled' => 'setEnabled',
+        'version' => 'setVersion'
     ];
 
     /**
@@ -120,8 +200,28 @@ class Campaign30 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'campaignId' => 'getCampaignId',
-        'campaignName' => 'getCampaignName'
+        'defaultPayout' => 'getDefaultPayout',
+        'defaultPayouts' => 'getDefaultPayouts',
+        'ivrEnabled' => 'getIvrEnabled',
+        'userCampaignId' => 'getUserCampaignId',
+        'countryCode' => 'getCountryCode',
+        'completed' => 'getCompleted',
+        'distributionSetting' => 'getDistributionSetting',
+        'offerId' => 'getOfferId',
+        'evalAnonymDuplication' => 'getEvalAnonymDuplication',
+        'payoutDupesGlobal' => 'getPayoutDupesGlobal',
+        'affiliateNumbers' => 'getAffiliateNumbers',
+        'deDupeSettings' => 'getDeDupeSettings',
+        'routes' => 'getRoutes',
+        'duplicateSettings' => 'getDuplicateSettings',
+        'dialSettings' => 'getDialSettings',
+        'recordSetting' => 'getRecordSetting',
+        'affiliates' => 'getAffiliates',
+        'id' => 'getId',
+        'name' => 'getName',
+        'accountId' => 'getAccountId',
+        'enabled' => 'getEnabled',
+        'version' => 'getVersion'
     ];
 
     /**
@@ -181,8 +281,28 @@ class Campaign30 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['campaignId'] = $data['campaignId'] ?? null;
-        $this->container['campaignName'] = $data['campaignName'] ?? null;
+        $this->container['defaultPayout'] = $data['defaultPayout'] ?? null;
+        $this->container['defaultPayouts'] = $data['defaultPayouts'] ?? null;
+        $this->container['ivrEnabled'] = $data['ivrEnabled'] ?? null;
+        $this->container['userCampaignId'] = $data['userCampaignId'] ?? null;
+        $this->container['countryCode'] = $data['countryCode'] ?? null;
+        $this->container['completed'] = $data['completed'] ?? null;
+        $this->container['distributionSetting'] = $data['distributionSetting'] ?? null;
+        $this->container['offerId'] = $data['offerId'] ?? null;
+        $this->container['evalAnonymDuplication'] = $data['evalAnonymDuplication'] ?? null;
+        $this->container['payoutDupesGlobal'] = $data['payoutDupesGlobal'] ?? null;
+        $this->container['affiliateNumbers'] = $data['affiliateNumbers'] ?? null;
+        $this->container['deDupeSettings'] = $data['deDupeSettings'] ?? null;
+        $this->container['routes'] = $data['routes'] ?? null;
+        $this->container['duplicateSettings'] = $data['duplicateSettings'] ?? null;
+        $this->container['dialSettings'] = $data['dialSettings'] ?? null;
+        $this->container['recordSetting'] = $data['recordSetting'] ?? null;
+        $this->container['affiliates'] = $data['affiliates'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['accountId'] = $data['accountId'] ?? null;
+        $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['version'] = $data['version'] ?? null;
     }
 
     /**
@@ -194,11 +314,71 @@ class Campaign30 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['campaignId'] === null) {
-            $invalidProperties[] = "'campaignId' can't be null";
+        if ($this->container['defaultPayout'] === null) {
+            $invalidProperties[] = "'defaultPayout' can't be null";
         }
-        if ($this->container['campaignName'] === null) {
-            $invalidProperties[] = "'campaignName' can't be null";
+        if ($this->container['defaultPayouts'] === null) {
+            $invalidProperties[] = "'defaultPayouts' can't be null";
+        }
+        if ($this->container['ivrEnabled'] === null) {
+            $invalidProperties[] = "'ivrEnabled' can't be null";
+        }
+        if ($this->container['userCampaignId'] === null) {
+            $invalidProperties[] = "'userCampaignId' can't be null";
+        }
+        if ($this->container['countryCode'] === null) {
+            $invalidProperties[] = "'countryCode' can't be null";
+        }
+        if ($this->container['completed'] === null) {
+            $invalidProperties[] = "'completed' can't be null";
+        }
+        if ($this->container['distributionSetting'] === null) {
+            $invalidProperties[] = "'distributionSetting' can't be null";
+        }
+        if ($this->container['offerId'] === null) {
+            $invalidProperties[] = "'offerId' can't be null";
+        }
+        if ($this->container['evalAnonymDuplication'] === null) {
+            $invalidProperties[] = "'evalAnonymDuplication' can't be null";
+        }
+        if ($this->container['payoutDupesGlobal'] === null) {
+            $invalidProperties[] = "'payoutDupesGlobal' can't be null";
+        }
+        if ($this->container['affiliateNumbers'] === null) {
+            $invalidProperties[] = "'affiliateNumbers' can't be null";
+        }
+        if ($this->container['deDupeSettings'] === null) {
+            $invalidProperties[] = "'deDupeSettings' can't be null";
+        }
+        if ($this->container['routes'] === null) {
+            $invalidProperties[] = "'routes' can't be null";
+        }
+        if ($this->container['duplicateSettings'] === null) {
+            $invalidProperties[] = "'duplicateSettings' can't be null";
+        }
+        if ($this->container['dialSettings'] === null) {
+            $invalidProperties[] = "'dialSettings' can't be null";
+        }
+        if ($this->container['recordSetting'] === null) {
+            $invalidProperties[] = "'recordSetting' can't be null";
+        }
+        if ($this->container['affiliates'] === null) {
+            $invalidProperties[] = "'affiliates' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['accountId'] === null) {
+            $invalidProperties[] = "'accountId' can't be null";
+        }
+        if ($this->container['enabled'] === null) {
+            $invalidProperties[] = "'enabled' can't be null";
+        }
+        if ($this->container['version'] === null) {
+            $invalidProperties[] = "'version' can't be null";
         }
         return $invalidProperties;
     }
@@ -216,49 +396,529 @@ class Campaign30 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets campaignId
+     * Gets defaultPayout
      *
-     * @return string
+     * @return \Ringba\Model\DefaultPayout
      */
-    public function getCampaignId()
+    public function getDefaultPayout()
     {
-        return $this->container['campaignId'];
+        return $this->container['defaultPayout'];
     }
 
     /**
-     * Sets campaignId
+     * Sets defaultPayout
      *
-     * @param string $campaignId campaignId
+     * @param \Ringba\Model\DefaultPayout $defaultPayout defaultPayout
      *
      * @return self
      */
-    public function setCampaignId($campaignId)
+    public function setDefaultPayout($defaultPayout)
     {
-        $this->container['campaignId'] = $campaignId;
+        $this->container['defaultPayout'] = $defaultPayout;
 
         return $this;
     }
 
     /**
-     * Gets campaignName
+     * Gets defaultPayouts
      *
-     * @return string
+     * @return \Ringba\Model\DefaultPayout[]
      */
-    public function getCampaignName()
+    public function getDefaultPayouts()
     {
-        return $this->container['campaignName'];
+        return $this->container['defaultPayouts'];
     }
 
     /**
-     * Sets campaignName
+     * Sets defaultPayouts
      *
-     * @param string $campaignName campaignName
+     * @param \Ringba\Model\DefaultPayout[] $defaultPayouts 
      *
      * @return self
      */
-    public function setCampaignName($campaignName)
+    public function setDefaultPayouts($defaultPayouts)
     {
-        $this->container['campaignName'] = $campaignName;
+        $this->container['defaultPayouts'] = $defaultPayouts;
+
+        return $this;
+    }
+
+    /**
+     * Gets ivrEnabled
+     *
+     * @return bool
+     */
+    public function getIvrEnabled()
+    {
+        return $this->container['ivrEnabled'];
+    }
+
+    /**
+     * Sets ivrEnabled
+     *
+     * @param bool $ivrEnabled ivrEnabled
+     *
+     * @return self
+     */
+    public function setIvrEnabled($ivrEnabled)
+    {
+        $this->container['ivrEnabled'] = $ivrEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets userCampaignId
+     *
+     * @return string
+     */
+    public function getUserCampaignId()
+    {
+        return $this->container['userCampaignId'];
+    }
+
+    /**
+     * Sets userCampaignId
+     *
+     * @param string $userCampaignId userCampaignId
+     *
+     * @return self
+     */
+    public function setUserCampaignId($userCampaignId)
+    {
+        $this->container['userCampaignId'] = $userCampaignId;
+
+        return $this;
+    }
+
+    /**
+     * Gets countryCode
+     *
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->container['countryCode'];
+    }
+
+    /**
+     * Sets countryCode
+     *
+     * @param string $countryCode countryCode
+     *
+     * @return self
+     */
+    public function setCountryCode($countryCode)
+    {
+        $this->container['countryCode'] = $countryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets completed
+     *
+     * @return bool
+     */
+    public function getCompleted()
+    {
+        return $this->container['completed'];
+    }
+
+    /**
+     * Sets completed
+     *
+     * @param bool $completed completed
+     *
+     * @return self
+     */
+    public function setCompleted($completed)
+    {
+        $this->container['completed'] = $completed;
+
+        return $this;
+    }
+
+    /**
+     * Gets distributionSetting
+     *
+     * @return string
+     */
+    public function getDistributionSetting()
+    {
+        return $this->container['distributionSetting'];
+    }
+
+    /**
+     * Sets distributionSetting
+     *
+     * @param string $distributionSetting distributionSetting
+     *
+     * @return self
+     */
+    public function setDistributionSetting($distributionSetting)
+    {
+        $this->container['distributionSetting'] = $distributionSetting;
+
+        return $this;
+    }
+
+    /**
+     * Gets offerId
+     *
+     * @return string
+     */
+    public function getOfferId()
+    {
+        return $this->container['offerId'];
+    }
+
+    /**
+     * Sets offerId
+     *
+     * @param string $offerId offerId
+     *
+     * @return self
+     */
+    public function setOfferId($offerId)
+    {
+        $this->container['offerId'] = $offerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets evalAnonymDuplication
+     *
+     * @return bool
+     */
+    public function getEvalAnonymDuplication()
+    {
+        return $this->container['evalAnonymDuplication'];
+    }
+
+    /**
+     * Sets evalAnonymDuplication
+     *
+     * @param bool $evalAnonymDuplication evalAnonymDuplication
+     *
+     * @return self
+     */
+    public function setEvalAnonymDuplication($evalAnonymDuplication)
+    {
+        $this->container['evalAnonymDuplication'] = $evalAnonymDuplication;
+
+        return $this;
+    }
+
+    /**
+     * Gets payoutDupesGlobal
+     *
+     * @return bool
+     */
+    public function getPayoutDupesGlobal()
+    {
+        return $this->container['payoutDupesGlobal'];
+    }
+
+    /**
+     * Sets payoutDupesGlobal
+     *
+     * @param bool $payoutDupesGlobal payoutDupesGlobal
+     *
+     * @return self
+     */
+    public function setPayoutDupesGlobal($payoutDupesGlobal)
+    {
+        $this->container['payoutDupesGlobal'] = $payoutDupesGlobal;
+
+        return $this;
+    }
+
+    /**
+     * Gets affiliateNumbers
+     *
+     * @return \Ringba\Model\AffiliateNumber25[]
+     */
+    public function getAffiliateNumbers()
+    {
+        return $this->container['affiliateNumbers'];
+    }
+
+    /**
+     * Sets affiliateNumbers
+     *
+     * @param \Ringba\Model\AffiliateNumber25[] $affiliateNumbers 
+     *
+     * @return self
+     */
+    public function setAffiliateNumbers($affiliateNumbers)
+    {
+        $this->container['affiliateNumbers'] = $affiliateNumbers;
+
+        return $this;
+    }
+
+    /**
+     * Gets deDupeSettings
+     *
+     * @return \Ringba\Model\DeDupeSettings
+     */
+    public function getDeDupeSettings()
+    {
+        return $this->container['deDupeSettings'];
+    }
+
+    /**
+     * Sets deDupeSettings
+     *
+     * @param \Ringba\Model\DeDupeSettings $deDupeSettings deDupeSettings
+     *
+     * @return self
+     */
+    public function setDeDupeSettings($deDupeSettings)
+    {
+        $this->container['deDupeSettings'] = $deDupeSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets routes
+     *
+     * @return \Ringba\Model\Route1[]
+     */
+    public function getRoutes()
+    {
+        return $this->container['routes'];
+    }
+
+    /**
+     * Sets routes
+     *
+     * @param \Ringba\Model\Route1[] $routes 
+     *
+     * @return self
+     */
+    public function setRoutes($routes)
+    {
+        $this->container['routes'] = $routes;
+
+        return $this;
+    }
+
+    /**
+     * Gets duplicateSettings
+     *
+     * @return \Ringba\Model\DuplicateSettings
+     */
+    public function getDuplicateSettings()
+    {
+        return $this->container['duplicateSettings'];
+    }
+
+    /**
+     * Sets duplicateSettings
+     *
+     * @param \Ringba\Model\DuplicateSettings $duplicateSettings duplicateSettings
+     *
+     * @return self
+     */
+    public function setDuplicateSettings($duplicateSettings)
+    {
+        $this->container['duplicateSettings'] = $duplicateSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets dialSettings
+     *
+     * @return \Ringba\Model\DialSettings
+     */
+    public function getDialSettings()
+    {
+        return $this->container['dialSettings'];
+    }
+
+    /**
+     * Sets dialSettings
+     *
+     * @param \Ringba\Model\DialSettings $dialSettings dialSettings
+     *
+     * @return self
+     */
+    public function setDialSettings($dialSettings)
+    {
+        $this->container['dialSettings'] = $dialSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets recordSetting
+     *
+     * @return \Ringba\Model\RecordSetting
+     */
+    public function getRecordSetting()
+    {
+        return $this->container['recordSetting'];
+    }
+
+    /**
+     * Sets recordSetting
+     *
+     * @param \Ringba\Model\RecordSetting $recordSetting recordSetting
+     *
+     * @return self
+     */
+    public function setRecordSetting($recordSetting)
+    {
+        $this->container['recordSetting'] = $recordSetting;
+
+        return $this;
+    }
+
+    /**
+     * Gets affiliates
+     *
+     * @return \Ringba\Model\Affiliate17[]
+     */
+    public function getAffiliates()
+    {
+        return $this->container['affiliates'];
+    }
+
+    /**
+     * Sets affiliates
+     *
+     * @param \Ringba\Model\Affiliate17[] $affiliates 
+     *
+     * @return self
+     */
+    public function setAffiliates($affiliates)
+    {
+        $this->container['affiliates'] = $affiliates;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountId
+     *
+     * @return string
+     */
+    public function getAccountId()
+    {
+        return $this->container['accountId'];
+    }
+
+    /**
+     * Sets accountId
+     *
+     * @param string $accountId accountId
+     *
+     * @return self
+     */
+    public function setAccountId($accountId)
+    {
+        $this->container['accountId'] = $accountId;
+
+        return $this;
+    }
+
+    /**
+     * Gets enabled
+     *
+     * @return bool
+     */
+    public function getEnabled()
+    {
+        return $this->container['enabled'];
+    }
+
+    /**
+     * Sets enabled
+     *
+     * @param bool $enabled enabled
+     *
+     * @return self
+     */
+    public function setEnabled($enabled)
+    {
+        $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets version
+     *
+     * @return int
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /**
+     * Sets version
+     *
+     * @param int $version version
+     *
+     * @return self
+     */
+    public function setVersion($version)
+    {
+        $this->container['version'] = $version;
 
         return $this;
     }

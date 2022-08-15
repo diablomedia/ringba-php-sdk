@@ -61,7 +61,7 @@ class GetInboundReferencesforaPublisher implements ModelInterface, ArrayAccess, 
         'id' => 'string',
         'hasReferences' => 'bool',
         'refByAccount' => 'bool',
-        'campaigns' => '\Ringba\Model\Campaign30[]',
+        'campaigns' => '\Ringba\Model\Campaign31[]',
         'numbers' => '\Ringba\Model\Number[]',
         'ringbausers' => '\Ringba\Model\Ringbauser[]'
     ];
@@ -359,7 +359,7 @@ class GetInboundReferencesforaPublisher implements ModelInterface, ArrayAccess, 
     /**
      * Gets campaigns
      *
-     * @return \Ringba\Model\Campaign30[]
+     * @return \Ringba\Model\Campaign31[]
      */
     public function getCampaigns()
     {
@@ -369,7 +369,7 @@ class GetInboundReferencesforaPublisher implements ModelInterface, ArrayAccess, 
     /**
      * Sets campaigns
      *
-     * @param \Ringba\Model\Campaign30[] $campaigns 
+     * @param \Ringba\Model\Campaign31[] $campaigns 
      *
      * @return self
      */

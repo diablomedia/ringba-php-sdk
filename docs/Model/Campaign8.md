@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **duplicateSettings** | [**\Ringba\Model\DuplicateSettings**](DuplicateSettings.md) |  |
 **dialSettings** | [**\Ringba\Model\DialSettings**](DialSettings.md) |  |
 **recordSetting** | [**\Ringba\Model\RecordSetting**](RecordSetting.md) |  |
-**affiliates** | [**\Ringba\Model\Affiliate7[]**](Affiliate7.md) |  |
+**affiliates** | [**\Ringba\Model\Affiliate9[]**](Affiliate9.md) |  |
 **id** | **string** |  |
 **name** | **string** |  |
 **accountId** | **string** |  |

@@ -58,7 +58,7 @@ class AddNewDefaultPayoutforaCampaignwithFixedAmountwithrequiredparametersonly i
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign19',
+        'campaign' => '\Ringba\Model\Campaign20',
         'jsTags' => '\Ringba\Model\JsTags',
         'pubNumberEnrichmentUrls' => '\Ringba\Model\PubNumberEnrichmentUrls',
         'rtb' => '\Ringba\Model\Rtb'
@@ -269,7 +269,7 @@ class AddNewDefaultPayoutforaCampaignwithFixedAmountwithrequiredparametersonly i
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign19
+     * @return \Ringba\Model\Campaign20
      */
     public function getCampaign()
     {
@@ -279,7 +279,7 @@ class AddNewDefaultPayoutforaCampaignwithFixedAmountwithrequiredparametersonly i
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign19 $campaign campaign
+     * @param \Ringba\Model\Campaign20 $campaign campaign
      *
      * @return self
      */

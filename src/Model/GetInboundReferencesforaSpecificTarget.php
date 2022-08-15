@@ -61,7 +61,7 @@ class GetInboundReferencesforaSpecificTarget implements ModelInterface, ArrayAcc
         'id' => 'string',
         'hasReferences' => 'bool',
         'refByAccount' => 'bool',
-        'campaigns' => '\Ringba\Model\Campaign31[]'
+        'campaigns' => '\Ringba\Model\Campaign32[]'
     ];
 
     /**
@@ -341,7 +341,7 @@ class GetInboundReferencesforaSpecificTarget implements ModelInterface, ArrayAcc
     /**
      * Gets campaigns
      *
-     * @return \Ringba\Model\Campaign31[]
+     * @return \Ringba\Model\Campaign32[]
      */
     public function getCampaigns()
     {
@@ -351,7 +351,7 @@ class GetInboundReferencesforaSpecificTarget implements ModelInterface, ArrayAcc
     /**
      * Sets campaigns
      *
-     * @param \Ringba\Model\Campaign31[] $campaigns 
+     * @param \Ringba\Model\Campaign32[] $campaigns 
      *
      * @return self
      */

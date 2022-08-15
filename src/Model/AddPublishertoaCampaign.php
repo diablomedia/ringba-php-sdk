@@ -58,7 +58,7 @@ class AddPublishertoaCampaign implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'transactionId' => 'string',
-        'campaign' => '\Ringba\Model\Campaign9'
+        'campaign' => '\Ringba\Model\Campaign10'
     ];
 
     /**
@@ -242,7 +242,7 @@ class AddPublishertoaCampaign implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets campaign
      *
-     * @return \Ringba\Model\Campaign9
+     * @return \Ringba\Model\Campaign10
      */
     public function getCampaign()
     {
@@ -252,7 +252,7 @@ class AddPublishertoaCampaign implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets campaign
      *
-     * @param \Ringba\Model\Campaign9 $campaign campaign
+     * @param \Ringba\Model\Campaign10 $campaign campaign
      *
      * @return self
      */

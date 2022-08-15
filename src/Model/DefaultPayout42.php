@@ -1,6 +1,6 @@
 <?php
 /**
- * DefaultPayout40
+ * DefaultPayout42
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Ringba\ObjectSerializer;
 
 /**
- * DefaultPayout40 Class Doc Comment
+ * DefaultPayout42 Class Doc Comment
  *
  * @category Class
  * @package  Ringba
@@ -40,7 +40,7 @@ use \Ringba\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DefaultPayout40 implements ModelInterface, ArrayAccess, \JsonSerializable
+class DefaultPayout42 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DefaultPayout40 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DefaultPayout40';
+    protected static $openAPIModelName = 'DefaultPayout42';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
